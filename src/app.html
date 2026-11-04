@@ -1,0 +1,1370 @@
+<script>
+(function () {
+  'use strict';
+
+  var B = window.BOOT;
+  var S = window.Srs;
+  var esc = S.escapeHtml;
+  var EXAM_DATE = '2026-12-18';
+  var SESSION_MAX = 40;
+
+  /* ================= Đồng hồ theo server ================= */
+  var clockOffset = (B.state.nowMs || Date.now()) - Date.now();
+  function now() { return Date.now() + clockOffset; }
+  function today() { return S.vnDate(now()); }
+  function nowIso() { return new Date(now()).toISOString(); }
+
+  /* ================= localStorage (bọc try/catch) ================= */
+  var LS = {
+    get: function (k, d) { try { var v = localStorage.getItem(k); return v == null ? d : JSON.parse(v); } catch (e) { return d; } },
+    set: function (k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) { /* bỏ qua */ } }
+  };
+
+  var DEVICE = (function () {
+    var id = LS.get('gre.device', null);
+    if (!id) { id = Math.random().toString(36).slice(2, 8); LS.set('gre.device', id); }
+    var mobile = /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent);
+    return (mobile ? 'mobile-' : 'desktop-') + id;
+  })();
+  var evCounter = 0;
+  function evId() { return DEVICE + '-' + now().toString(36) + '-' + (evCounter++).toString(36); }
+
+  /* ================= Trạng thái ứng dụng ================= */
+  var DEFAULT_SETTINGS = { newPerDay: 10, autoStart: false, thinkFirst: true, examMode: false };
+  var App = {
+    progress: {},
+    settings: Object.assign({}, DEFAULT_SETTINGS, B.state.settings || {}),
+    customWords: (B.state.customWords || []).slice(),
+    daily: B.state.daily || {},
+    exLast: B.state.exLast || {},
+    sheetUrl: B.state.sheetUrl,
+    admin: !!B.admin,
+    idx: null,
+    view: 'today',
+    session: null,
+    lastQueue: null,
+    vocab: { cluster: null, q: '', prio: 'all', group: 'all', status: 'all', open: null },
+    practice: { cluster: 'all', group: 'all', p3: false, mode: 'w2m', count: '20' },
+    editId: null,
+    keyHandler: null,
+    timer: null
+  };
+  Object.keys(B.state.progress || {}).forEach(function (id) { App.progress[id] = S.normalizeState(B.state.progress[id]); });
+  function rebuildIndex() { App.idx = S.buildIndex(B.vocab, App.customWords); }
+
+  /* ================= Hàng đợi đồng bộ ================= */
+  var Sync = {
+    queue: LS.get('gre.queue', []),
+    inflight: false, timer: null, retryTimer: null, retryN: 0, state: 'saved',
+    push: function (ev) {
+      this.queue.push(ev);
+      this.persist();
+      this.setStatus('pending');
+      clearTimeout(this.timer);
+      if (this.queue.length >= 10) this.flush();
+      else this.timer = setTimeout(this.flush.bind(this), 2000);
+    },
+    persist: function () { LS.set('gre.queue', this.queue); },
+    flush: function () {
+      clearTimeout(this.timer);
+      if (this.inflight) return;
+      if (!this.queue.length) { this.setStatus('saved'); return; }
+      if (!(window.google && google.script && google.script.run)) { this.fail(); return; }
+      var self = this;
+      var batch = this.queue.slice(0, 50);
+      this.inflight = true;
+      this.setStatus('saving');
+      google.script.run
+        .withSuccessHandler(function (res) {
+          var ids = {};
+          batch.forEach(function (e) { ids[e.id] = true; });
+          self.queue = self.queue.filter(function (e) { return !ids[e.id]; });
+          self.persist();
+          self.inflight = false;
+          self.retryN = 0;
+          clearTimeout(self.retryTimer);
+          if (res) {
+            if (res.nowMs) clockOffset = res.nowMs - Date.now();
+            mergeServerStates(res.states || {});
+          }
+          if (self.queue.length) self.flush(); else self.setStatus('saved');
+        })
+        .withFailureHandler(function (err) {
+          self.inflight = false;
+          self.fail(err);
+        })
+        .saveEvents(batch);
+    },
+    fail: function () {
+      this.setStatus('error');
+      var delays = [5, 15, 60];
+      var d = delays[Math.min(this.retryN, delays.length - 1)];
+      this.retryN++;
+      clearTimeout(this.retryTimer);
+      this.retryTimer = setTimeout(this.flush.bind(this), d * 1000);
+    },
+    setStatus: function (s) {
+      this.state = s;
+      var el = document.getElementById('sync');
+      if (!el) return;
+      el.setAttribute('data-s', s);
+      var text = { saved: 'Đã lưu', pending: 'Đang lưu', saving: 'Đang lưu', error: 'Chưa lưu được, sẽ thử lại' }[s];
+      el.querySelector('.sync-text').textContent = text;
+      el.title = text;
+    }
+  };
+
+  function mergeServerStates(states) {
+    Object.keys(states).forEach(function (id) {
+      App.progress[id] = S.newer(App.progress[id], S.normalizeState(states[id]));
+    });
+  }
+
+  /** Áp lại các sự kiện còn trong hàng đợi (chưa lên server) lên dữ liệu vừa tải. */
+  function applyPending(countDaily) {
+    Sync.queue.forEach(function (ev) {
+      if (ev.type === 'review') {
+        if (ev.state && ev.wordId) App.progress[ev.wordId] = S.newer(App.progress[ev.wordId], S.normalizeState(ev.state));
+        if (countDaily) bumpDaily(ev.day, ev.isNew);
+        if (ev.exerciseId && (!App.exLast[ev.exerciseId] || App.exLast[ev.exerciseId] < ev.ts)) App.exLast[ev.exerciseId] = ev.ts;
+      } else if (ev.type === 'custom_upsert') {
+        upsertCustomLocal(ev.word);
+      } else if (ev.type === 'custom_delete') {
+        App.customWords = App.customWords.filter(function (w) { return w.id !== ev.wordId; });
+      } else if (ev.type === 'setting') {
+        App.settings[ev.key] = ev.value;
+      }
+    });
+  }
+
+  function upsertCustomLocal(w) {
+    var i = App.customWords.findIndex(function (x) { return x.id === w.id; });
+    if (i < 0) App.customWords.push(w);
+    else if (!App.customWords[i].updatedAt || w.updatedAt >= App.customWords[i].updatedAt) App.customWords[i] = w;
+  }
+
+  function refreshFromServer() {
+    if (!(window.google && google.script && google.script.run)) return;
+    Sync.flush();
+    google.script.run.withSuccessHandler(function (st) {
+      if (!st) return;
+      clockOffset = st.nowMs - Date.now();
+      mergeServerStates(st.progress || {});
+      App.customWords = st.customWords || [];
+      App.settings = Object.assign({}, DEFAULT_SETTINGS, st.settings || {});
+      App.daily = st.daily || {};
+      Object.keys(st.exLast || {}).forEach(function (k) {
+        if (!App.exLast[k] || App.exLast[k] < st.exLast[k]) App.exLast[k] = st.exLast[k];
+      });
+      applyPending(true);
+      rebuildIndex();
+      if (App.view !== 'session') render();
+    }).getState();
+  }
+
+  /* ================= Ghi nhận kết quả ================= */
+  function bumpDaily(day, isNew) {
+    var d = App.daily[day] || (App.daily[day] = { r: 0, n: 0 });
+    d.r += 1;
+    if (isNew) d.n += 1;
+  }
+
+  function pushReview(wordId, state, info, isNew) {
+    var t = today();
+    bumpDaily(t, isNew);
+    if (info.exerciseId) App.exLast[info.exerciseId] = nowIso();
+    Sync.push({
+      id: evId(), type: 'review', ts: state ? state.updatedAt : nowIso(), day: t, wordId: wordId || '',
+      mode: info.mode, result: info.result, exerciseId: info.exerciseId || '', chosen: info.chosen || '',
+      device: DEVICE, isNew: !!isNew, state: state || null
+    });
+  }
+
+  /** Áp dụng kết quả ('again' | 'hard' | 'good') cho một từ và đưa sự kiện vào hàng đợi. */
+  function record(wordId, result, info, confusedWith) {
+    var prev = App.progress[wordId] || S.newState(wordId);
+    var st = prev;
+    (confusedWith || []).forEach(function (c) { st = S.addConfusion(st, c, nowIso()); });
+    var next = S.applyResult(st, result, today(), nowIso());
+    App.progress[wordId] = next;
+    var isNew = !prev.box && next.box >= 1;
+    pushReview(wordId, next, { mode: info.mode, result: result, exerciseId: info.exerciseId, chosen: info.chosen }, isNew);
+    return next;
+  }
+
+  function touch(wordId, info) {
+    var prev = App.progress[wordId] || S.newState(wordId);
+    var next = S.touchReview(prev, nowIso());
+    App.progress[wordId] = next;
+    pushReview(wordId, next, { mode: info.mode, result: 'seen', exerciseId: info.exerciseId, chosen: info.chosen }, false);
+  }
+
+  /* ================= Tiện ích ================= */
+  function $(sel, el) { return (el || document).querySelector(sel); }
+  function word(id) { return App.idx.byId[id]; }
+  function stateOf(id) { return App.progress[id]; }
+  function fmtDate(d) { if (!d) return '—'; var p = d.split('-'); return p[2] + '/' + p[1] + '/' + p[0]; }
+  function fmtIsoDate(iso) { if (!iso) return '—'; var ms = Date.parse(iso); return isNaN(ms) ? '—' : fmtDate(S.vnDate(ms)); }
+  var WEEKDAYS = ['Chủ nhật', 'Thứ Hai', 'Thứ Ba', 'Thứ Tư', 'Thứ Năm', 'Thứ Sáu', 'Thứ Bảy'];
+  function weekday(d) { var p = d.split('-'); return WEEKDAYS[new Date(Date.UTC(+p[0], +p[1] - 1, +p[2])).getUTCDay()]; }
+  function stars(p) { return '<span class="prio prio-' + p + '" title="Mức ưu tiên ' + p + '/3" aria-label="Ưu tiên ' + p + ' trên 3">' + '★★★'.slice(0, p) + '</span>'; }
+  var POS = { v: 'động từ', n: 'danh từ', adj: 'tính từ', adv: 'trạng từ', 'v/n': 'động từ / danh từ' };
+  function posLabel(p) { return POS[p] || p || ''; }
+  function fold(s) {
+    return String(s || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/đ/g, 'd').replace(/Đ/g, 'D').toLowerCase();
+  }
+  function shuffle(a) { return S.shuffle(a); }
+  function newToday() { var d = App.daily[today()]; return d ? d.n : 0; }
+  function activeDays() { return Object.keys(App.daily).filter(function (d) { return App.daily[d].r > 0; }); }
+  function leechWords() {
+    return App.idx.words.filter(function (w) { return S.isLeech(stateOf(w.id)); })
+      .sort(function (a, b) { return stateOf(b.id).lapses - stateOf(a.id).lapses; });
+  }
+  function dailyQueue() {
+    return S.buildDailyQueue(App.idx, App.progress, {
+      today: today(), newLimit: Number(App.settings.newPerDay) || 0, newDoneToday: newToday(), max: SESSION_MAX
+    });
+  }
+  function toast(msg) {
+    var t = document.getElementById('toast');
+    t.textContent = msg;
+    t.hidden = false;
+    clearTimeout(toast._t);
+    toast._t = setTimeout(function () { t.hidden = true; }, 2600);
+  }
+  function maskForms(html, w) {
+    var forms = (w.forms || []).filter(function (f) { return f.length >= 4; })
+      .map(function (f) { return f.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); });
+    if (!forms.length) return html;
+    var re = new RegExp('(^|[^A-Za-z-])(' + forms.join('|') + ')[a-z]*', 'gi');
+    return html.replace(re, '$1_____');
+  }
+  function statusLabel(s) {
+    return { new: 'Chưa học', learning: 'Đang học', known: 'Đã thuộc', leech: 'Hay quên' }[s];
+  }
+  function statusTag(id) {
+    var st = S.statusOf(stateOf(id));
+    if (st === 'new') return '';
+    var icon = { learning: '◔', known: '✓', leech: '!' }[st];
+    var box = stateOf(id).box;
+    return '<span class="tag ' + st + '">' + icon + ' ' + (st === 'leech' ? 'Hay quên' : 'Hộp ' + box) + '</span>';
+  }
+
+  /* ================= Điều hướng ================= */
+  var ICONS = {
+    today: '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M4 6.5h16M4 6.5V19a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V6.5M4 6.5 5 4h14l1 2.5M8 11h3v3H8z"/></svg>',
+    vocab: '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M5 4.5h10.5a3 3 0 0 1 3 3V20H8a3 3 0 0 1-3-3V4.5Zm0 12.5a3 3 0 0 1 3-3h10.5M9 8.5h5.5"/></svg>',
+    practice: '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M9 4.5h6M10 4.5v4.2L5.2 17a2 2 0 0 0 1.7 3h10.2a2 2 0 0 0 1.7-3L14 8.7V4.5M7.5 14h9"/></svg>',
+    book: '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Zm0-13v5m0 3.2v.3"/></svg>',
+    add: '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M12 5v14M5 12h14"/></svg>'
+  };
+  var TABS = [
+    { id: 'today', long: 'Hôm nay', short: 'Hôm nay' },
+    { id: 'vocab', long: 'Từ vựng', short: 'Từ vựng' },
+    { id: 'practice', long: 'Luyện tập', short: 'Luyện tập' },
+    { id: 'book', long: 'Sổ từ hay quên', short: 'Hay quên' },
+    { id: 'add', long: 'Thêm từ', short: 'Thêm từ' }
+  ];
+  function renderTabs() {
+    var current = App.view === 'session' ? (App.session && App.session.from) || 'today' : App.view;
+    var nLeech = leechWords().length;
+    document.getElementById('tabs').innerHTML = TABS.map(function (t) {
+      var badge = t.id === 'book' && nLeech ? '<span class="badge" aria-label="' + nLeech + ' từ">' + nLeech + '</span>' : '';
+      return '<button class="tab" data-nav="' + t.id + '"' + (current === t.id ? ' aria-current="page"' : '') + '>' +
+        ICONS[t.id] + '<span class="tab-long">' + t.long + '</span><span class="tab-short">' + t.short + '</span>' + badge + '</button>';
+    }).join('');
+  }
+
+  function go(view) {
+    stopTimer();
+    App.view = view;
+    if (view !== 'session') App.session = null;
+    render();
+    window.scrollTo(0, 0);
+  }
+
+  function render() {
+    stopTimer();
+    App.keyHandler = null;
+    renderTabs();
+    var v = document.getElementById('view');
+    switch (App.view) {
+      case 'today': v.innerHTML = viewToday(); break;
+      case 'vocab': v.innerHTML = viewVocab(); break;
+      case 'practice': v.innerHTML = viewPractice(); break;
+      case 'book': v.innerHTML = viewBook(); break;
+      case 'add': v.innerHTML = viewAdd(); break;
+      case 'session': renderSession(); return;
+    }
+  }
+
+  /* ================= Hôm nay ================= */
+  function viewToday() {
+    var t = today();
+    var q = dailyQueue();
+    App.lastQueue = q;
+    var leeches = leechWords().length;
+    var limit = Number(App.settings.newPerDay) || 0;
+    var streak = S.streakDays(activeDays(), t);
+    var left = S.daysBetween(t, EXAM_DATE);
+    var h = '';
+    h += '<div class="today-date">' + weekday(t) + ', ' + fmtDate(t) + '</div>';
+    h += '<h1 class="hero-title">' + (q.total ? 'Hôm nay có ' + q.total + ' thẻ cần ôn' : 'Hôm nay đã ôn xong') + '</h1>';
+    h += '<div class="stats">' +
+      stat(q.dueCount, '', 'từ đến hạn ôn') +
+      stat(newToday(), '/' + limit, 'từ mới hôm nay') +
+      stat(leeches, '', 'từ trong sổ hay quên', leeches > 0) +
+      stat(streak, '', 'ngày ôn liên tục') +
+      '</div>';
+    if (q.total) {
+      var label = q.items.length < q.total ? 'Bắt đầu ôn (' + q.items.length + ' / ' + q.total + ' thẻ)' : 'Bắt đầu ôn';
+      h += '<button class="btn primary big" data-act="start-daily">' + label + ' <kbd>Enter</kbd></button>';
+      var parts = [];
+      if (q.dueCount) parts.push(q.dueCount + ' từ đến hạn');
+      if (q.newCount) parts.push(q.newCount + ' từ mới');
+      h += '<p class="muted small" style="margin:8px 0 0">Gồm ' + parts.join(' và ') + '. Tiến độ tự lưu sau mỗi thẻ.</p>';
+    } else {
+      var more = S.unlearnedWords(App.idx, App.progress).length;
+      h += '<div class="done-note"><h3>Không còn thẻ nào đến hạn.</h3><p class="muted">Bạn có thể học thêm từ mới hoặc làm vài câu GRE.</p>' +
+        '<div class="done-actions">' +
+        (more ? '<button class="btn" data-act="more-new">Học thêm 5 từ mới</button>' : '') +
+        '<button class="btn" data-act="quick-gre">Làm 10 câu GRE</button></div></div>';
+    }
+    h += '<div class="countdown" style="margin-top:22px"><b>' + Math.max(0, left) + '</b><span>ngày đến kỳ thi GRE (' + fmtDate(EXAM_DATE) + ')</span></div>';
+    h += '<h2 class="section">Tiến độ theo cụm</h2>';
+    App.idx.clusters.forEach(function (c) {
+      var ws = App.idx.words.filter(function (w) { return w.clusterId === c.id; });
+      if (!ws.length) return;
+      var counts = [0, 0, 0, 0, 0, 0];
+      ws.forEach(function (w) { var s = stateOf(w.id); counts[s ? s.box : 0]++; });
+      var learned = ws.length - counts[0];
+      h += '<div class="cluster-progress"><div class="cp-head"><span class="cp-title">' + esc(c.title) + '</span>' +
+        '<span class="muted small">' + learned + '/' + ws.length + ' từ đã học</span></div>' +
+        '<div class="bar" role="img" aria-label="' + counts.map(function (n, b) { return 'hộp ' + b + ': ' + n; }).join(', ') + '">' +
+        counts.map(function (n, b) { return n ? '<span class="b' + b + '" style="width:' + (100 * n / ws.length) + '%" title="Hộp ' + b + ': ' + n + ' từ"></span>' : ''; }).join('') +
+        '</div></div>';
+    });
+    h += '<div class="legend">' + ['Chưa học', 'Hộp 1', 'Hộp 2', 'Hộp 3', 'Hộp 4', 'Hộp 5'].map(function (l, b) {
+      return '<span><i class="b' + b + '"></i>' + l + '</span>';
+    }).join('') + '</div>';
+    App.keyHandler = function (e) {
+      if (e.key === 'Enter' && q.total && !isTyping(e)) { e.preventDefault(); startDaily(); }
+    };
+    return h;
+  }
+  function stat(n, suffix, label, alert) {
+    return '<div class="stat' + (alert ? ' alert' : '') + '"><div class="stat-num">' + n + (suffix ? '<small>' + suffix + '</small>' : '') + '</div><div class="stat-label">' + label + '</div></div>';
+  }
+
+  /* ================= Từ vựng ================= */
+  function viewVocab() {
+    var V = App.vocab;
+    var clusters = App.idx.clusters.filter(function (c) { return !c.custom || App.customWords.length; });
+    if (!V.cluster || !App.idx.clusterById[V.cluster]) V.cluster = clusters[0].id;
+    var c = App.idx.clusterById[V.cluster];
+    var h = '<div class="page-head"><h1>Từ vựng</h1><p>' + esc(c.description || '') + '</p></div>';
+    h += '<div class="toolbar">';
+    if (clusters.length > 1) {
+      h += '<div class="seg" role="group" aria-label="Chọn cụm">' + clusters.map(function (x) {
+        return '<button class="chip" data-act="v-cluster" data-id="' + x.id + '" aria-pressed="' + (x.id === V.cluster) + '">' + esc(x.title) + '</button>';
+      }).join('') + '</div>';
+    }
+    h += '<div class="search"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" d="m20 20-4.5-4.5M17 10.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0Z"/></svg>' +
+      '<input class="input" id="vq" type="search" placeholder="Tìm từ hoặc nghĩa tiếng Việt" value="' + esc(V.q) + '" aria-label="Tìm kiếm"></div>';
+    h += '<div class="seg" role="group" aria-label="Lọc theo ưu tiên">' + [['all', 'Mọi mức'], ['3', '★★★ phải thuộc'], ['2', '★★ nên biết'], ['1', '★ lướt qua']].map(function (p) {
+      return '<button class="chip" data-act="v-prio" data-id="' + p[0] + '" aria-pressed="' + (V.prio === p[0]) + '">' + p[1] + '</button>';
+    }).join('') + '</div>';
+    h += '<div class="filters"><select class="input" id="vgroup" aria-label="Lọc theo nhóm"><option value="all">Mọi nhóm</option>' +
+      c.groups.map(function (g) { return '<option value="' + g.id + '"' + (V.group === g.id ? ' selected' : '') + '>' + esc(g.title) + '</option>'; }).join('') +
+      '</select><select class="input" id="vstatus" aria-label="Lọc theo trạng thái">' +
+      [['all', 'Mọi trạng thái'], ['new', 'Chưa học'], ['learning', 'Đang học'], ['known', 'Đã thuộc'], ['leech', 'Hay quên']].map(function (s) {
+        return '<option value="' + s[0] + '"' + (V.status === s[0] ? ' selected' : '') + '>' + s[1] + '</option>';
+      }).join('') + '</select></div></div>';
+    h += '<div id="vlist">' + vocabList() + '</div>';
+    return h;
+  }
+
+  function vocabMatches(w) {
+    var V = App.vocab;
+    if (V.prio !== 'all' && String(w.priority) !== V.prio) return false;
+    if (V.group !== 'all' && w.group !== V.group) return false;
+    if (V.status !== 'all' && S.statusOf(stateOf(w.id)) !== V.status) return false;
+    if (V.q) {
+      var q = fold(V.q.trim());
+      if (q && fold(w.word).indexOf(q) < 0 && fold(w.meaning).indexOf(q) < 0) return false;
+    }
+    return true;
+  }
+
+  function vocabList() {
+    var V = App.vocab;
+    var c = App.idx.clusterById[V.cluster];
+    var words = App.idx.words.filter(function (w) { return w.clusterId === c.id && vocabMatches(w); });
+    var total = App.idx.words.filter(function (w) { return w.clusterId === c.id; }).length;
+    var h = '<div class="count-line">' + (words.length === total ? total + ' từ' : words.length + ' / ' + total + ' từ khớp bộ lọc') + '</div>';
+    if (!words.length) return h + '<div class="empty">Không có từ nào khớp. Thử bỏ bớt bộ lọc.</div>';
+    c.groups.forEach(function (g) {
+      var gw = words.filter(function (w) { return w.group === g.id; });
+      if (!gw.length) return;
+      h += '<section class="group"><div class="group-head"><h3>' + esc(g.title) + '</h3>' +
+        (g.scale ? '<span class="scale-tag">Thang nhẹ → mạnh</span>' : '') + '</div>';
+      if (g.note) h += '<p class="group-note">' + esc(g.note) + '</p>';
+      if (g.scale) {
+        var levels = [];
+        gw.forEach(function (w) { if (levels.indexOf(w.level) < 0) levels.push(w.level); });
+        levels.sort();
+        h += '<div class="ladder">' + levels.map(function (lv) {
+          var meter = '';
+          for (var k = 1; k <= 4; k++) meter += '<i' + (k <= lv ? ' class="on"' : '') + '></i>';
+          return '<div class="rung"><div class="rung-label">Mức ' + lv + '<span class="rung-meter" aria-hidden="true">' + meter + '</span></div><div class="rung-words">' +
+            gw.filter(function (w) { return w.level === lv; }).map(wordRow).join('') + '</div></div>';
+        }).join('') + '</div>';
+      } else {
+        h += gw.map(wordRow).join('');
+      }
+      h += '</section>';
+    });
+    return h;
+  }
+
+  function wordRow(w) {
+    var open = App.vocab.open === w.id;
+    return '<button class="wrow" id="w-' + w.id + '" data-act="v-open" data-id="' + w.id + '" aria-expanded="' + open + '">' +
+      '<span class="w-main"><span class="w-word">' + esc(w.word) + '</span><span class="pos">' + esc(w.pos) + '</span></span>' +
+      '<span class="w-side">' + statusTag(w.id) + stars(w.priority) + '</span>' +
+      '<span class="w-meaning">' + esc(w.meaning) + '</span></button>' +
+      (open ? '<div class="wdetail">' + wordDetail(w, true) + '</div>' : '');
+  }
+
+  function wordDetail(w, withStatus) {
+    var g = App.idx.groupById[w.group];
+    var h = '<dl class="dl">';
+    if (w.nuance) h += '<dt>Sắc thái</dt><dd>' + esc(w.nuance) + '</dd>';
+    if (w.level) h += '<dt>Mức</dt><dd>' + w.level + '/4 trên “' + esc(g ? g.title : '') + '”</dd>';
+    if (w.example) h += '<dt>Ví dụ</dt><dd class="example">' + S.renderMarkup(w.example) + '</dd>';
+    if (w.collocations && w.collocations.length) h += '<dt>Collocation</dt><dd><ul class="colls">' + w.collocations.map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ul></dd>';
+    if (w.root) h += '<dt>Gốc từ</dt><dd>' + esc(w.root) + '</dd>';
+    var conf = (w.confusables || []).filter(function (id) { return word(id); });
+    if (conf.length) {
+      h += '<dt>Dễ nhầm với</dt><dd>' + conf.map(function (id) {
+        return withStatus ? '<button class="linkish" data-act="v-jump" data-id="' + id + '">' + esc(word(id).word) + '</button>' : '<b>' + esc(word(id).word) + '</b>';
+      }).join(', ') + '</dd>';
+    }
+    if (withStatus) {
+      var s = stateOf(w.id);
+      h += '<dt>Của tôi</dt><dd>' + (s && s.box ? '<div class="mystat"><span>Hộp <b>' + s.box + '</b>/5</span><span>Quên <b>' + s.lapses + '</b> lần</span>' +
+        '<span>Ôn gần nhất <b>' + fmtIsoDate(s.lastReviewed) + '</b></span><span>Đến hạn <b>' + fmtDate(s.dueDate) + '</b></span>' +
+        (s.confusedWith.length ? '<span>Hay nhầm với <b>' + s.confusedWith.map(function (id) { return word(id) ? esc(word(id).word) : esc(id); }).join(', ') + '</b></span>' : '') +
+        '</div>' : '<span class="muted">Chưa học</span>') + '</dd>';
+    }
+    return h + '</dl>';
+  }
+
+  /* ================= Luyện tập: chọn phạm vi ================= */
+  function practiceScopeWords() {
+    var P = App.practice;
+    return App.idx.words.filter(function (w) {
+      if (P.cluster !== 'all' && w.clusterId !== P.cluster) return false;
+      if (P.group !== 'all' && w.group !== P.group) return false;
+      if (P.p3 && w.priority !== 3) return false;
+      return true;
+    });
+  }
+  function practiceScopeExercises(words) {
+    var ids = {};
+    words.forEach(function (w) { ids[w.id] = true; });
+    return App.idx.exercises.filter(function (ex) { return (ex.targets || []).some(function (t) { return ids[t]; }); });
+  }
+  function practiceScopeScales() {
+    var P = App.practice;
+    return Object.keys(App.idx.groupById).map(function (k) { return App.idx.groupById[k]; }).filter(function (g) {
+      if (!g.scale) return false;
+      if (P.cluster !== 'all' && g.clusterId !== P.cluster) return false;
+      if (P.group !== 'all' && g.id !== P.group) return false;
+      return App.idx.words.some(function (w) { return w.group === g.id; });
+    });
+  }
+
+  function viewPractice() {
+    var P = App.practice;
+    var clusters = App.idx.clusters.filter(function (c) { return !c.custom || App.customWords.length; });
+    var groups = [];
+    clusters.forEach(function (c) { if (P.cluster === 'all' || P.cluster === c.id) groups = groups.concat(c.groups); });
+    if (P.group !== 'all' && !groups.some(function (g) { return g.id === P.group; })) P.group = 'all';
+    var words = practiceScopeWords();
+    var exs = practiceScopeExercises(words);
+    var scales = practiceScopeScales();
+    var avail = { w2m: words.length, m2w: words.length, gre: exs.length, scale: scales.length };
+    if (!avail[P.mode]) P.mode = 'w2m';
+    var h = '<div class="page-head"><h1>Luyện tập</h1><p>Chọn phạm vi và dạng bài. Kết quả cũng được tính vào lịch ôn.</p></div>';
+    h += '<div class="form-grid">';
+    h += '<div class="field"><label for="pcluster">Cụm</label><select class="input" id="pcluster"><option value="all">Tất cả các cụm</option>' +
+      clusters.map(function (c) { return '<option value="' + c.id + '"' + (P.cluster === c.id ? ' selected' : '') + '>' + esc(c.title) + '</option>'; }).join('') + '</select></div>';
+    h += '<div class="field"><label for="pgroup">Nhóm</label><select class="input" id="pgroup"><option value="all">Mọi nhóm</option>' +
+      groups.map(function (g) { return '<option value="' + g.id + '"' + (P.group === g.id ? ' selected' : '') + '>' + esc(g.title) + (g.scale ? ' (thang)' : '') + '</option>'; }).join('') + '</select></div>';
+    h += '<div class="switch-row"><div class="t"><b>Chỉ từ ưu tiên ★★★</b><span>Những từ phải thuộc</span></div>' + switchHtml('pp3', P.p3) + '</div>';
+    h += '<div class="field"><span class="label">Dạng bài</span><div class="modes" role="radiogroup">' +
+      modeOpt('w2m', 'Từ → Nghĩa', 'Tự nhớ nghĩa rồi tự chấm', avail.w2m + ' từ') +
+      modeOpt('m2w', 'Nghĩa → Từ', 'Trắc nghiệm 4 phương án, bẫy sắc thái và mức độ', avail.m2w + ' từ') +
+      modeOpt('gre', 'GRE chuẩn', 'Text Completion và Sentence Equivalence', avail.gre + ' câu') +
+      modeOpt('scale', 'Xếp thang mức độ', 'Sắp từ nhẹ đến mạnh', avail.scale + ' thang') +
+      '</div></div>';
+    if (P.mode !== 'scale') {
+      h += '<div class="field"><span class="label">Số câu</span><div class="seg" role="group">' + [['10', '10'], ['20', '20'], ['all', 'Tất cả']].map(function (x) {
+        return '<button class="chip" data-act="p-count" data-id="' + x[0] + '" aria-pressed="' + (P.count === x[0]) + '">' + x[1] + '</button>';
+      }).join('') + '</div></div>';
+    }
+    h += '<div class="switch-row"><div class="t"><b>Chế độ thi</b><span>Không gợi ý, không tự nghĩ trước, ~1 phút mỗi câu GRE, giải thích ở cuối</span></div>' + switchHtml('pexam', !!App.settings.examMode) + '</div>';
+    h += '<button class="btn primary big" data-act="start-practice"' + (avail[P.mode] ? '' : ' disabled') + '>Bắt đầu luyện tập</button>';
+    h += '</div>';
+    function modeOpt(id, title, desc, n) {
+      return '<label class="mode"><input type="radio" name="pmode" value="' + id + '"' + (P.mode === id ? ' checked' : '') + (avail[id] ? '' : ' disabled') + '>' +
+        '<span><b>' + title + '</b><span>' + desc + ' · ' + n + '</span></span></label>';
+    }
+    return h;
+  }
+  function switchHtml(id, on) {
+    return '<span class="switch"><input type="checkbox" id="' + id + '"' + (on ? ' checked' : '') + ' role="switch"><span class="track"></span></span>';
+  }
+
+  /* ================= Sổ từ hay quên ================= */
+  function viewBook() {
+    var list = leechWords();
+    var h = '<div class="page-head"><h1>Sổ từ hay quên</h1><p>Từ quên từ 2 lần trở lên, hoặc vừa quên. Rời sổ sau 3 lần đúng liên tiếp ở các ngày khác nhau.</p></div>';
+    if (!list.length) return h + '<div class="empty">Sổ đang trống. Từ nào bạn hay quên sẽ tự xuất hiện ở đây.</div>';
+    h += '<button class="btn primary big" data-act="start-book">Ôn sổ này ngay (' + list.length + ' từ)</button>';
+    h += '<ul class="review-list" style="margin-top:14px">' + list.map(function (w) {
+      var s = stateOf(w.id);
+      var conf = s.confusedWith.filter(function (id) { return word(id); }).map(function (id) { return esc(word(id).word); });
+      return '<li><div class="row"><span class="w-word">' + esc(w.word) + '</span><span class="pos">' + esc(w.pos) + '</span><span class="spacer"></span>' +
+        '<span class="tag leech">! Quên ' + s.lapses + ' lần</span></div><div>' + esc(w.meaning) + '</div>' +
+        (conf.length ? '<div class="muted small">Hay nhầm với: ' + conf.join(', ') + '</div>' : '') + '</li>';
+    }).join('') + '</ul>';
+    return h;
+  }
+
+  /* ================= Thêm từ ================= */
+  function viewAdd() {
+    var editing = App.editId ? App.customWords.find(function (w) { return w.id === App.editId; }) : null;
+    var w = editing || { word: '', pos: 'v', priority: 2, meaning: '', nuance: '', example: '', collocations: [], root: '' };
+    var h = '<div class="page-head"><h1>' + (editing ? 'Sửa từ' : 'Thêm từ') + '</h1><p>Từ tự thêm nằm trong cụm “Từ tự thêm” và được đưa vào lịch ôn như các từ khác.</p></div>';
+    h += '<form id="addForm" class="form-grid" autocomplete="off">';
+    h += '<div class="two"><div class="field"><label for="f-word">Từ *</label><input class="input" id="f-word" required maxlength="120" value="' + esc(w.word) + '" placeholder="vd: panegyric"></div>' +
+      '<div class="field"><label for="f-pos">Loại từ</label><select class="input" id="f-pos">' +
+      ['v', 'n', 'adj', 'adv', 'v/n'].map(function (p) { return '<option value="' + p + '"' + (w.pos === p ? ' selected' : '') + '>' + p + ' · ' + posLabel(p) + '</option>'; }).join('') +
+      '</select></div></div>';
+    h += '<div class="field"><label for="f-meaning">Nghĩa *</label><input class="input" id="f-meaning" required maxlength="500" value="' + esc(w.meaning) + '" placeholder="Nghĩa tiếng Việt ngắn gọn"></div>';
+    h += '<div class="field"><label for="f-nuance">Sắc thái</label><textarea class="input" id="f-nuance" maxlength="1000" placeholder="Khen hay chê, mạnh hay nhẹ, dùng trong hoàn cảnh nào">' + esc(w.nuance) + '</textarea></div>';
+    h += '<div class="field"><label for="f-example">Ví dụ</label><textarea class="input" id="f-example" maxlength="1000" placeholder="The speech was a *panegyric* **to** the founder.">' + esc(w.example) + '</textarea>' +
+      '<div class="help">Đặt từ đang học trong *dấu sao*, collocation trong **hai dấu sao**.</div></div>';
+    h += '<div class="field"><label for="f-coll">Collocation</label><textarea class="input" id="f-coll" maxlength="1000" placeholder="Mỗi dòng một collocation">' + esc((w.collocations || []).join('\n')) + '</textarea></div>';
+    h += '<div class="two"><div class="field"><span class="label">Mức ưu tiên</span><div class="seg" role="radiogroup">' + [3, 2, 1].map(function (p) {
+      return '<button type="button" class="chip" data-act="f-prio" data-id="' + p + '" aria-pressed="' + (Number(w.priority) === p) + '">' + '★★★'.slice(0, p) + '</button>';
+    }).join('') + '</div></div>' +
+      '<div class="field"><label for="f-root">Gốc từ (tùy chọn)</label><input class="input" id="f-root" maxlength="200" value="' + esc(w.root) + '"></div></div>';
+    h += '<input type="hidden" id="f-priority" value="' + (w.priority || 2) + '">';
+    h += '<div class="row"><button class="btn primary" type="submit" style="flex:1">' + (editing ? 'Lưu thay đổi' : 'Thêm từ') + '</button>' +
+      (editing ? '<button class="btn" type="button" data-act="f-cancel">Hủy</button>' : '') + '</div>';
+    h += '</form>';
+    h += '<h2 class="section">Từ đã thêm (' + App.customWords.length + ')</h2>';
+    if (!App.customWords.length) h += '<div class="empty">Chưa có từ nào.</div>';
+    else h += '<div class="custom-list">' + App.customWords.slice().reverse().map(function (x) {
+      return '<div class="wrow" style="cursor:default"><span class="w-main"><span class="w-word">' + esc(x.word) + '</span><span class="pos">' + esc(x.pos) + '</span></span>' +
+        '<span class="w-side">' + statusTag(x.id) + '<span class="custom-actions"><button class="btn quiet" data-act="c-edit" data-id="' + x.id + '">Sửa</button>' +
+        '<button class="btn quiet" style="color:var(--bad)" data-act="c-del" data-id="' + x.id + '">Xóa</button></span></span>' +
+        '<span class="w-meaning">' + esc(x.meaning) + '</span></div>';
+    }).join('') + '</div>';
+    return h;
+  }
+
+  function submitCustom() {
+    var get = function (id) { return document.getElementById(id).value.trim(); };
+    var wordText = get('f-word'), meaning = get('f-meaning');
+    if (!wordText || !meaning) { toast('Cần điền Từ và Nghĩa.'); return; }
+    var ts = nowIso();
+    var old = App.editId ? App.customWords.find(function (w) { return w.id === App.editId; }) : null;
+    var w = {
+      id: old ? old.id : 'c-' + now().toString(36) + '-' + Math.random().toString(36).slice(2, 6),
+      word: wordText, pos: get('f-pos'), priority: Number(get('f-priority')) || 2, meaning: meaning,
+      nuance: get('f-nuance'), example: get('f-example'),
+      collocations: get('f-coll').split('\n').map(function (x) { return x.trim(); }).filter(Boolean),
+      root: get('f-root'), createdAt: old ? old.createdAt : ts, updatedAt: ts
+    };
+    upsertCustomLocal(w);
+    rebuildIndex();
+    Sync.push({ id: evId(), type: 'custom_upsert', ts: ts, word: w });
+    App.editId = null;
+    toast(old ? 'Đã lưu “' + w.word + '”.' : 'Đã thêm “' + w.word + '”.');
+    render();
+  }
+
+  /* ================= Cài đặt ================= */
+  function openSettings() {
+    var el = document.getElementById('settings');
+    var st = App.settings;
+    var h = '<div class="settings-head"><h2>Cài đặt</h2><button class="icon-btn" data-act="close-settings" aria-label="Đóng">' +
+      '<svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path stroke="currentColor" stroke-width="2" d="m6 6 12 12M18 6 6 18"/></svg></button></div>';
+    h += '<div class="switch-row"><div class="t"><b>Số từ mới mỗi ngày</b><span>Áp dụng từ phiên ôn tiếp theo</span></div>' +
+      '<div class="num-input"><button data-act="s-new" data-d="-1" aria-label="Bớt">−</button><output id="s-new-val">' + st.newPerDay + '</output><button data-act="s-new" data-d="1" aria-label="Thêm">+</button></div></div>';
+    h += setRow('autoStart', 'Tự bắt đầu ôn khi mở web', 'Mở web là vào phiên ôn hôm nay luôn');
+    h += setRow('thinkFirst', 'Tự nghĩ trước', 'Ẩn phương án cho tới khi bấm Hiện lựa chọn');
+    h += setRow('examMode', 'Chế độ thi', 'Không gợi ý, ~1 phút mỗi câu GRE, giải thích ở cuối phiên');
+    h += '<hr class="rule"><a class="btn block" href="' + esc(App.sheetUrl) + '" target="_blank" rel="noopener">Mở Google Sheet tiến độ ↗</a>';
+    h += '<p class="muted small">Tiến độ tự lưu vào Sheet sau mỗi thẻ và đồng bộ giữa các thiết bị cùng tài khoản Google.</p>';
+    if (App.admin) {
+      h += '<hr class="rule"><div class="field"><label for="s-reset">Xóa toàn bộ tiến độ, nhật ký và từ tự thêm</label>' +
+        '<input class="input" id="s-reset" placeholder="Gõ XOA để xác nhận"><div class="help">Không hoàn tác được. Cài đặt được giữ nguyên.</div></div>' +
+        '<button class="btn danger block" data-act="s-reset" style="margin-top:8px">Xóa tiến độ</button>';
+    }
+    el.innerHTML = h;
+    el.hidden = false;
+    document.getElementById('settingsBackdrop').hidden = false;
+    function setRow(k, title, desc) {
+      return '<div class="switch-row"><div class="t"><b>' + title + '</b><span>' + desc + '</span></div>' +
+        '<span class="switch"><input type="checkbox" data-setting="' + k + '"' + (st[k] ? ' checked' : '') + ' role="switch" aria-label="' + title + '"><span class="track"></span></span></div>';
+    }
+  }
+  function closeSettings() {
+    document.getElementById('settings').hidden = true;
+    document.getElementById('settingsBackdrop').hidden = true;
+    if (App.view !== 'session') render();
+  }
+  function setSetting(k, v) {
+    App.settings[k] = v;
+    Sync.push({ id: evId(), type: 'setting', ts: nowIso(), key: k, value: v });
+  }
+
+  /* ================= Phiên ôn ================= */
+  function startSession(kind, cards, opts) {
+    opts = opts || {};
+    App.session = {
+      kind: kind, cards: cards, i: 0, from: opts.from || App.view, title: opts.title || '',
+      exam: !!App.settings.examMode, thinkFirst: !!App.settings.thinkFirst && !App.settings.examMode,
+      answered: 0, right: 0, wrong: {}, examLog: [], requeued: {}, alt: 0
+    };
+    App.view = 'session';
+    render();
+    window.scrollTo(0, 0);
+  }
+
+  function qType(i) { return i % 2 ? 'm2w' : 'w2m'; }
+
+  function cardsForDaily(items) {
+    var out = [], alt = 0, usedEx = {};
+    var news = items.filter(function (x) { return x.isNew; });
+    items.filter(function (x) { return !x.isNew; }).forEach(function (it) {
+      var s = stateOf(it.wordId);
+      if (s && s.box >= 3) {
+        var ex = S.pickExerciseForWord(it.wordId, App.idx, Object.assign({}, App.exLast, usedEx));
+        if (ex && !usedEx[ex.id]) {
+          usedEx[ex.id] = '9999';
+          out.push({ type: 'gre', exId: ex.id, focus: it.wordId });
+          return;
+        }
+        out.push({ type: 'w2m', wordId: it.wordId });
+        return;
+      }
+      out.push({ type: qType(alt++), wordId: it.wordId });
+    });
+    // từ mới: giới thiệu trước, câu hỏi chậm một thẻ để không hỏi ngay sau khi vừa đọc
+    news.forEach(function (it, k) {
+      out.push({ type: 'intro', wordId: it.wordId });
+      if (k > 0) out.push({ type: qType(alt++), wordId: news[k - 1].wordId, isNew: true });
+    });
+    if (news.length) out.push({ type: qType(alt++), wordId: news[news.length - 1].wordId, isNew: true });
+    return out;
+  }
+
+  function startDaily() {
+    var q = dailyQueue();
+    if (!q.items.length) { toast('Hôm nay không còn thẻ nào.'); return; }
+    startSession('daily', cardsForDaily(q.items), { from: 'today', title: 'Ôn hôm nay' });
+  }
+
+  function startWordsSession(kind, ids, title, from) {
+    var cards = shuffle(ids).map(function (id, i) { return { type: qType(i), wordId: id }; });
+    startSession(kind, cards, { from: from, title: title });
+  }
+
+  function startPractice() {
+    var P = App.practice;
+    var n = P.count === 'all' ? 9999 : Number(P.count);
+    var cards;
+    if (P.mode === 'gre') {
+      cards = shuffle(practiceScopeExercises(practiceScopeWords())).slice(0, n).map(function (ex) { return { type: 'gre', exId: ex.id }; });
+    } else if (P.mode === 'scale') {
+      cards = shuffle(practiceScopeScales()).map(function (g) { return { type: 'scale', groupId: g.id }; });
+    } else {
+      cards = shuffle(practiceScopeWords()).slice(0, n).map(function (w) { return { type: P.mode, wordId: w.id }; });
+    }
+    if (!cards.length) { toast('Phạm vi này chưa có bài.'); return; }
+    startSession('practice', cards, { from: 'practice', title: 'Luyện tập' });
+  }
+
+  /** Đưa từ vừa sai quay lại sau 3–5 thẻ, đổi sang dạng bài còn lại (tối đa 3 lần mỗi phiên). */
+  function requeue(wordId, failedType) {
+    var se = App.session;
+    se.requeued[wordId] = (se.requeued[wordId] || 0) + 1;
+    if (se.requeued[wordId] > 3) return;
+    var pos = Math.min(se.cards.length, se.i + 1 + 3 + Math.floor(Math.random() * 3));
+    se.cards.splice(pos, 0, { type: failedType === 'w2m' ? 'm2w' : 'w2m', wordId: wordId, requeue: true });
+  }
+
+  function noteResult(ok, wordIds) {
+    var se = App.session;
+    se.answered++;
+    if (ok) se.right++;
+    else (wordIds || []).forEach(function (id) { se.wrong[id] = true; });
+  }
+
+  function nextCard() {
+    var se = App.session;
+    if (!se) return;
+    se.i++;
+    renderSession();
+    window.scrollTo(0, 0);
+  }
+
+  function renderSession() {
+    stopTimer();
+    App.keyHandler = null;
+    renderTabs();
+    var se = App.session;
+    var v = document.getElementById('view');
+    if (se.i >= se.cards.length) { v.innerHTML = viewSummary(); bindSummaryKeys(); return; }
+    var card = se.cards[se.i];
+    var pct = Math.round(100 * se.i / se.cards.length);
+    var head = '<div class="session-top"><button class="btn quiet" data-act="end-session" aria-label="Dừng phiên">✕ Dừng</button>' +
+      '<div class="progress" aria-hidden="true"><span style="width:' + pct + '%"></span></div>' +
+      '<span class="session-count">' + (se.i + 1) + ' / ' + se.cards.length + '</span></div>';
+    var body;
+    switch (card.type) {
+      case 'intro': body = cardIntro(card); break;
+      case 'w2m': body = cardW2M(card); break;
+      case 'm2w': body = cardM2W(card); break;
+      case 'gre': body = cardGRE(card); break;
+      case 'scale': body = cardScale(card); break;
+    }
+    v.innerHTML = head + body;
+    if (card.type === 'w2m') {
+      var ta = document.getElementById('typed');
+      if (ta) ta.value = card.typed || '';
+    }
+    if (card.type === 'gre') startGreTimer(card);
+    if (card.type === 'scale') bindScaleDnD(card);
+  }
+
+  function kindLine(card, label) {
+    var bits = ['<span>' + label + '</span>'];
+    var id = card.wordId || card.focus;
+    if (id && card.type !== 'intro') {
+      var s = stateOf(id);
+      bits.push('<span class="dotsep">' + (s && s.box ? 'Hộp ' + s.box : 'Từ mới') + '</span>');
+      if (S.isLeech(s)) bits.push('<span class="tag leech">! Hay quên</span>');
+    }
+    if (card.requeue) bits.push('<span class="dotsep">Ôn lại</span>');
+    return '<div class="card-kind">' + bits.join('') + '</div>';
+  }
+
+  /* ---- Thẻ giới thiệu từ mới ---- */
+  function cardIntro(card) {
+    var w = word(card.wordId);
+    if (!w) return skipCard();
+    App.keyHandler = function (e) {
+      if ((e.key === 'Enter' || e.key === ' ') && !isTyping(e)) { e.preventDefault(); nextCard(); }
+    };
+    return '<article class="card">' + kindLine(card, 'Từ mới · ' + esc(App.idx.clusterById[w.clusterId].title)) +
+      '<h2 class="word-big">' + esc(w.word) + '</h2><div class="word-sub"><span class="pos">' + esc(posLabel(w.pos)) + '</span>' + stars(w.priority) + '</div>' +
+      '<div class="meaning-big">' + esc(w.meaning) + '</div>' + wordDetail(w, false) +
+      '<div class="card-actions"><button class="btn primary" data-act="next">Đã đọc, sang câu tiếp <kbd>Enter</kbd></button></div></article>';
+  }
+
+  function skipCard() {
+    setTimeout(nextCard, 0);
+    return '';
+  }
+
+  /* ---- Từ → Nghĩa (tự chấm) ---- */
+  function cardW2M(card) {
+    var w = word(card.wordId);
+    if (!w) return skipCard();
+    var h = '<article class="card">' + kindLine(card, 'Từ → Nghĩa') +
+      '<h2 class="word-big">' + esc(w.word) + '</h2><div class="word-sub"><span class="pos">' + esc(posLabel(w.pos)) + '</span>' + stars(w.priority) + '</div>';
+    if (!card.revealed) {
+      h += '<label class="sr-only" for="typed">Nghĩa bạn nhớ</label><textarea class="input" id="typed" rows="2" placeholder="Viết nghĩa bạn nhớ (không bắt buộc)"></textarea>' +
+        '<div class="card-actions"><button class="btn primary" data-act="w2m-reveal">Xem đáp án <kbd>Space</kbd></button></div>';
+      App.keyHandler = function (e) {
+        if (e.key === 'Enter' && e.target.id === 'typed' && !e.shiftKey) { e.preventDefault(); revealW2M(); return; }
+        if ((e.key === ' ' || e.key === 'Enter') && !isTyping(e)) { e.preventDefault(); revealW2M(); }
+      };
+    } else {
+      if (card.typed) h += '<div class="muted small">Bạn viết: <span style="color:var(--ink)">' + esc(card.typed) + '</span></div>';
+      h += '<div class="answer"><div class="meaning-big">' + esc(w.meaning) + '</div>' + wordDetail(w, false);
+      var checks = card.checks || [false, false, false];
+      h += '<ul class="checklist" aria-label="Tự kiểm tra">' + ['Hướng (khen hay chê)', 'Mức độ (nhẹ hay mạnh)', 'Điều kiện hoặc sắc thái riêng'].map(function (t, k) {
+        return '<li><label><input type="checkbox" data-act="w2m-check" data-k="' + k + '"' + (checks[k] ? ' checked' : '') + '><span>' + t + '</span></label></li>';
+      }).join('') + '</ul>';
+      var n = checks.filter(Boolean).length;
+      var suggest = card.checksTouched ? (n === 3 ? 'good' : n === 2 ? 'hard' : 'again') : '';
+      h += '<p class="grade-hint">Đủ ba ý thì chấm Thuộc. Thiếu một ý thì chấm Tạm.</p><div class="grades">' +
+        gradeBtn('again', 'Chưa nhớ', '1', suggest) + gradeBtn('hard', 'Tạm', '2', suggest) + gradeBtn('good', 'Thuộc', '3', suggest) + '</div></div>';
+      App.keyHandler = function (e) {
+        if (isTyping(e)) return;
+        var m = { '1': 'again', '2': 'hard', '3': 'good' }[e.key];
+        if (m) { e.preventDefault(); gradeW2M(m); }
+        else if (e.key === 'Enter' && suggest) { e.preventDefault(); gradeW2M(suggest); }
+      };
+    }
+    return h + '</article>';
+  }
+  function gradeBtn(r, label, key, suggest) {
+    return '<button class="btn grade ' + r + (suggest === r ? ' suggest' : '') + '" data-act="w2m-grade" data-r="' + r + '">' +
+      '<span class="g-label">' + { again: '✗ ', hard: '~ ', good: '✓ ' }[r] + label + '</span><kbd>' + key + '</kbd></button>';
+  }
+  function revealW2M() {
+    var card = App.session.cards[App.session.i];
+    var ta = document.getElementById('typed');
+    card.typed = ta ? ta.value.trim() : '';
+    card.revealed = true;
+    if (document.activeElement) document.activeElement.blur();
+    renderSession();
+  }
+  function gradeW2M(r) {
+    var card = App.session.cards[App.session.i];
+    if (card.done) return;
+    card.done = true;
+    record(card.wordId, r, { mode: 'w2m', chosen: (card.typed || '').slice(0, 200) });
+    noteResult(r !== 'again', [card.wordId]);
+    if (r === 'again') requeue(card.wordId, 'w2m');
+    nextCard();
+  }
+
+  /* ---- Nghĩa → Từ (trắc nghiệm) ---- */
+  function cardM2W(card) {
+    var w = word(card.wordId);
+    if (!w) return skipCard();
+    var se = App.session;
+    if (!card.options) card.options = shuffle([w.id].concat(S.pickDistractors(w, App.idx, 3)));
+    var h = '<article class="card">' + kindLine(card, 'Nghĩa → Từ') +
+      '<div class="meaning-big">' + esc(w.meaning) + '</div>' +
+      (w.nuance ? '<p class="nuance">' + maskForms(esc(w.nuance), w) + '</p>' : '') +
+      (w.example ? '<div class="prompt-example example">' + maskForms(S.renderMarkup(w.example, true), w) + '</div>' : '');
+    var showOpts = card.revealed || !se.thinkFirst;
+    if (!showOpts) {
+      h += '<div class="think"><p>Tự nghĩ ra từ trước, rồi mới xem lựa chọn.</p><button class="btn primary" data-act="m2w-show">Hiện lựa chọn <kbd>Space</kbd></button></div>';
+      App.keyHandler = function (e) { if ((e.key === ' ' || e.key === 'Enter') && !isTyping(e)) { e.preventDefault(); card.revealed = true; renderSession(); } };
+      return h + '</article>';
+    }
+    h += '<div class="options" role="group" aria-label="Chọn từ đúng">' + card.options.map(function (id, k) {
+      var o = word(id);
+      var cls = '', mark = '';
+      if (card.picked) {
+        if (id === w.id) { cls = ' correct'; mark = '✓ Đúng'; }
+        else if (id === card.picked) { cls = ' wrong'; mark = '✗ Bạn chọn'; }
+      }
+      return '<button class="opt' + cls + '" data-act="m2w-pick" data-id="' + id + '"' + (card.picked ? ' disabled' : '') + '>' +
+        '<span class="num">' + (k + 1) + '</span><span>' + esc(o.word) + '</span><span class="mark">' + mark + '</span></button>';
+    }).join('') + '</div>';
+    if (card.picked) {
+      var ok = card.picked === w.id;
+      h += resultLine(ok, ok ? 'Chính xác' : 'Chưa đúng. Đáp án: ' + esc(w.word));
+      if (!ok) {
+        var p = word(card.picked);
+        h += '<div class="explain"><b>' + esc(p.word) + '</b>: ' + esc(p.meaning) + (p.nuance ? '. ' + esc(p.nuance) : '') + '</div>';
+      }
+      if (w.example) h += '<div class="example" style="margin-top:12px">' + S.renderMarkup(w.example) + '</div>';
+      h += '<div class="card-actions"><button class="btn primary" data-act="next">Câu tiếp <kbd>Enter</kbd></button></div>';
+      App.keyHandler = function (e) { if (e.key === 'Enter' && !isTyping(e)) { e.preventDefault(); nextCard(); } };
+    } else {
+      App.keyHandler = function (e) {
+        if (isTyping(e)) return;
+        var k = parseInt(e.key, 10);
+        if (k >= 1 && k <= card.options.length) { e.preventDefault(); pickM2W(card.options[k - 1]); }
+      };
+    }
+    return h + '</article>';
+  }
+  function pickM2W(id) {
+    var card = App.session.cards[App.session.i];
+    if (card.picked) return;
+    card.picked = id;
+    var ok = id === card.wordId;
+    record(card.wordId, ok ? 'good' : 'again', { mode: 'm2w', chosen: id }, ok ? [] : [id]);
+    noteResult(ok, [card.wordId]);
+    if (!ok) requeue(card.wordId, 'm2w');
+    renderSession();
+  }
+  function resultLine(ok, text) {
+    return '<div class="result-line ' + (ok ? 'ok' : 'no') + '" role="status"><span class="ico" aria-hidden="true">' + (ok ? '✓' : '✗') + '</span><span>' + text + '</span></div>';
+  }
+
+  /* ---- GRE: Text Completion / Sentence Equivalence ---- */
+  var ROMAN = ['i', 'ii', 'iii'];
+  function cardGRE(card) {
+    var ex = App.idx.exById[card.exId];
+    if (!ex) return skipCard();
+    var se = App.session;
+    var isSE = ex.type === 'se';
+    if (!card.order) {
+      card.order = isSE ? [shuffle(ex.options)] : ex.blanks.map(function (b) { return shuffle(b.options); });
+      card.choice = isSE ? [] : ex.blanks.map(function () { return null; });
+      if (se.exam) card.deadline = now() + 60000;
+    }
+    var nBlanks = isSE ? 1 : ex.blanks.length;
+    var label = isSE ? 'Sentence Equivalence' : 'Text Completion' + (nBlanks > 1 ? ' · ' + nBlanks + ' chỗ trống' : '');
+    var h = '<article class="card">' + kindLine(card, 'GRE · ' + label) .replace('</div>', se.exam && !card.checked ? '<span class="dotsep timer" id="timer"></span></div>' : '</div>');
+    // câu với chỗ trống
+    var sent = esc(ex.sentence).replace(/\{(\d+)\}/g, function (_, n) {
+      n = +n;
+      var filled = isSE ? (card.choice.length ? card.choice.join(' / ') : '') : card.choice[n];
+      return '<span class="gap' + (filled ? ' filled' : '') + '">' + (filled ? esc(filled) : '&nbsp;') + (nBlanks > 1 ? '<small>(' + ROMAN[n] + ')</small>' : '') + '</span>';
+    });
+    h += '<p class="gre-sentence">' + sent + '</p>';
+    if (isSE && !card.checked) h += '<p class="muted small" style="margin:0">Chọn <b>đúng 2</b> từ cho câu cùng nghĩa.</p>';
+    var showOpts = card.revealed || !se.thinkFirst;
+    if (!showOpts) {
+      h += '<div class="think"><p>Đọc câu, tự đoán từ cho chỗ trống trước.</p><button class="btn primary" data-act="gre-show">Hiện lựa chọn <kbd>Space</kbd></button></div>';
+      if (!se.exam) h += hintArea(card, ex);
+      App.keyHandler = function (e) { if ((e.key === ' ' || e.key === 'Enter') && !isTyping(e)) { e.preventDefault(); card.revealed = true; renderSession(); } };
+      return h + '</article>';
+    }
+    var showResult = card.checked && !se.exam;
+    var keyBase = 0;
+    if (isSE) {
+      h += '<div class="options" role="group" aria-label="Chọn 2 phương án">' + card.order[0].map(function (o, k) {
+        var on = card.choice.indexOf(o) >= 0;
+        var cls = '', mark = '';
+        if (showResult) {
+          if (ex.answers.indexOf(o) >= 0) { cls = ' correct'; mark = '✓'; }
+          else if (on) { cls = ' wrong'; mark = '✗'; }
+        }
+        return '<button class="opt se-box' + cls + '" role="checkbox" aria-checked="' + on + '" data-act="gre-pick" data-b="0" data-o="' + esc(o) + '"' + (card.checked ? ' disabled' : '') + '>' +
+          '<span class="num">' + (k + 1) + '</span><span>' + esc(o) + '</span><span class="mark">' + mark + '</span></button>';
+      }).join('') + '</div>';
+      if (!card.checked) h += '<div class="se-count">Đã chọn ' + card.choice.length + '/2</div>';
+    } else {
+      h += '<div class="blank-cols n' + nBlanks + '">' + card.order.map(function (opts, b) {
+        var col = '<div class="blank-col">' + (nBlanks > 1 ? '<h4>Chỗ trống (' + ROMAN[b] + ')</h4>' : '') + '<div class="options" role="radiogroup">';
+        col += opts.map(function (o, k) {
+          var on = card.choice[b] === o;
+          var cls = '', mark = '';
+          if (showResult) {
+            if (o === ex.blanks[b].answer) { cls = ' correct'; mark = '✓'; }
+            else if (on) { cls = ' wrong'; mark = '✗'; }
+          }
+          return '<button class="opt' + cls + '" role="radio" aria-checked="' + on + '" data-act="gre-pick" data-b="' + b + '" data-o="' + esc(o) + '"' + (card.checked ? ' disabled' : '') + '>' +
+            '<span class="num">' + (keyBase + k + 1) + '</span><span>' + esc(o) + '</span><span class="mark">' + mark + '</span></button>';
+        }).join('');
+        keyBase += opts.length;
+        return col + '</div></div>';
+      }).join('') + '</div>';
+    }
+    if (!card.checked) {
+      var complete = isSE ? card.choice.length === 2 : card.choice.every(Boolean);
+      if (!se.exam) h += hintArea(card, ex);
+      h += '<div class="card-actions"><button class="btn primary" data-act="gre-check"' + (complete ? '' : ' disabled') + '>' +
+        (se.exam ? 'Trả lời và sang câu tiếp' : 'Kiểm tra') + ' <kbd>Enter</kbd></button></div>';
+      App.keyHandler = function (e) {
+        if (isTyping(e)) return;
+        var k = parseInt(e.key, 10);
+        if (k >= 1) {
+          var flat = [];
+          card.order.forEach(function (opts, b) { opts.forEach(function (o) { flat.push([b, o]); }); });
+          if (k <= flat.length) { e.preventDefault(); pickGRE(flat[k - 1][0], flat[k - 1][1]); }
+        } else if (e.key === 'Enter' && complete) { e.preventDefault(); checkGRE(); }
+      };
+    } else {
+      var ok = card.correct;
+      var answerText = isSE ? ex.answers.join(', ') : ex.blanks.map(function (b) { return b.answer; }).join(' · ');
+      h += resultLine(ok, ok ? 'Chính xác' : 'Chưa đúng. Đáp án: ' + esc(answerText));
+      h += '<div class="explain">' + esc(ex.explanation || '') + '</div>';
+      h += '<div class="card-actions"><button class="btn primary" data-act="next">Câu tiếp <kbd>Enter</kbd></button></div>';
+      App.keyHandler = function (e) { if (e.key === 'Enter' && !isTyping(e)) { e.preventDefault(); nextCard(); } };
+    }
+    return h + '</article>';
+  }
+  function hintArea(card, ex) {
+    if (!ex.hint) return '';
+    return card.hint ? '<div class="hintbox"><b>Gợi ý:</b> ' + esc(ex.hint) + '</div>' :
+      '<div style="margin-top:10px"><button class="btn quiet" data-act="gre-hint">Gợi ý</button></div>';
+  }
+  function pickGRE(b, o) {
+    var card = App.session.cards[App.session.i];
+    if (card.checked) return;
+    var ex = App.idx.exById[card.exId];
+    if (ex.type === 'se') {
+      var i = card.choice.indexOf(o);
+      if (i >= 0) card.choice.splice(i, 1);
+      else if (card.choice.length < 2) card.choice.push(o);
+      else { toast('Chỉ chọn 2 từ. Bỏ một từ trước khi chọn từ khác.'); return; }
+    } else {
+      card.choice[b] = o;
+    }
+    renderSession();
+  }
+  function checkGRE(force) {
+    var se = App.session;
+    var card = se.cards[se.i];
+    if (card.checked) return;
+    var ex = App.idx.exById[card.exId];
+    var complete = ex.type === 'se' ? card.choice.length === 2 : card.choice.every(Boolean);
+    if (!complete && !force) return;
+    card.checked = true;
+    var g = S.gradeExercise(ex, card.choice, App.idx);
+    card.correct = g.correct;
+    var result = g.correct ? 'good' : 'again';
+    var chosen = card.choice.filter(Boolean).join(' | ');
+    var info = { mode: 'gre', exerciseId: ex.id, chosen: chosen };
+    var graded = {};
+    g.answerIds.forEach(function (id) {
+      var conf = g.confusions.filter(function (c) { return c.wordId === id; }).map(function (c) { return c.confusedWith; });
+      record(id, result, info, conf);
+      graded[id] = true;
+    });
+    if (card.focus && !graded[card.focus] && word(card.focus)) { record(card.focus, result, info); graded[card.focus] = true; }
+    g.otherTargetIds.forEach(function (id) { if (!graded[id]) touch(id, info); });
+    var affected = Object.keys(graded);
+    noteResult(g.correct, affected);
+    if (!g.correct && se.kind !== 'practice' && card.focus) requeue(card.focus, 'gre');
+    if (se.exam) {
+      se.examLog.push({ exId: ex.id, correct: g.correct, choice: card.choice.slice() });
+      nextCard();
+    } else {
+      renderSession();
+    }
+  }
+  function startGreTimer(card) {
+    if (!App.session.exam || card.checked || !card.deadline) return;
+    var tick = function () {
+      var el = document.getElementById('timer');
+      var left = Math.max(0, Math.ceil((card.deadline - now()) / 1000));
+      if (el) {
+        el.textContent = '⏱ ' + Math.floor(left / 60) + ':' + ('0' + (left % 60)).slice(-2);
+        el.classList.toggle('late', left <= 10);
+      }
+      if (left <= 0) { stopTimer(); checkGRE(true); }
+    };
+    tick();
+    App.timer = setInterval(tick, 500);
+  }
+  function stopTimer() { if (App.timer) { clearInterval(App.timer); App.timer = null; } }
+
+  /* ---- Xếp thang ---- */
+  function cardScale(card) {
+    var g = App.idx.groupById[card.groupId];
+    var ws = App.idx.words.filter(function (w) { return w.group === g.id; });
+    if (!card.order) {
+      var ids = ws.map(function (w) { return w.id; });
+      var sh = shuffle(ids);
+      var tries = 0;
+      while (isSorted(sh) && tries++ < 10) sh = shuffle(ids);
+      card.order = sh;
+    }
+    var h = '<article class="card">' + kindLine(card, 'Xếp thang · ' + esc(g.title)) +
+      '<p style="margin:0">Sắp các từ từ <b>nhẹ nhất</b> (trên cùng) đến <b>mạnh nhất</b> (dưới cùng). Từ cùng mức đổi chỗ cho nhau vẫn tính đúng.</p>';
+    var levelsSorted = card.order.map(function (id) { return word(id).level; }).slice().sort(function (a, b) { return a - b; });
+    h += '<div class="scale-axis"><span>↑ Nhẹ nhất</span></div><ol class="scale-list" id="scaleList">' + card.order.map(function (id, k) {
+      var w = word(id);
+      var cls = card.checked ? (w.level === levelsSorted[k] ? ' correct' : ' wrong') : '';
+      return '<li class="scale-item' + cls + '" data-id="' + id + '"' + (card.checked ? '' : ' draggable="true"') + '>' +
+        '<span class="pos-n">' + (k + 1) + '</span><span>' + esc(w.word) + (card.checked ? ' <span class="muted small">· mức ' + w.level + (w.level === levelsSorted[k] ? ' ✓' : ' ✗') + '</span>' : '') + '</span>' +
+        (card.checked ? '<span></span>' : '<span class="moves"><button data-act="sc-move" data-id="' + id + '" data-d="-1" aria-label="Đưa ' + esc(w.word) + ' lên"' + (k === 0 ? ' disabled' : '') + '>↑</button>' +
+          '<button data-act="sc-move" data-id="' + id + '" data-d="1" aria-label="Đưa ' + esc(w.word) + ' xuống"' + (k === card.order.length - 1 ? ' disabled' : '') + '>↓</button></span>') +
+        '</li>';
+    }).join('') + '</ol><div class="scale-axis"><span>↓ Mạnh nhất</span></div>';
+    if (!card.checked) {
+      h += '<div class="card-actions"><button class="btn primary" data-act="sc-check">Kiểm tra <kbd>Enter</kbd></button></div>';
+      App.keyHandler = function (e) { if (e.key === 'Enter' && !isTyping(e)) { e.preventDefault(); checkScale(); } };
+    } else {
+      h += resultLine(card.correct, card.correct ? 'Đúng thứ tự' : 'Chưa đúng thứ tự');
+      var right = ws.slice().sort(function (a, b) { return a.level - b.level || a.fileIndex - b.fileIndex; });
+      h += '<h2 class="section" style="margin-top:14px">Thứ tự đúng</h2><ol class="scale-answer review-list">' + right.map(function (w) {
+        return '<li><span class="muted small">Mức ' + w.level + '</span> · <b class="w-word" style="font-size:17px">' + esc(w.word) + '</b>: ' + esc(w.meaning) + '</li>';
+      }).join('') + '</ol>';
+      h += '<div class="card-actions"><button class="btn primary" data-act="next">Câu tiếp <kbd>Enter</kbd></button></div>';
+      App.keyHandler = function (e) { if (e.key === 'Enter' && !isTyping(e)) { e.preventDefault(); nextCard(); } };
+    }
+    return h + '</article>';
+  }
+  function isSorted(ids) {
+    for (var i = 1; i < ids.length; i++) if (word(ids[i]).level < word(ids[i - 1]).level) return false;
+    return true;
+  }
+  function checkScale() {
+    var se = App.session;
+    var card = se.cards[se.i];
+    if (card.checked) return;
+    card.checked = true;
+    card.correct = isSorted(card.order);
+    noteResult(card.correct, []);
+    pushReview('', null, { mode: 'scale', result: card.correct ? 'good' : 'again', exerciseId: 'scale:' + card.groupId, chosen: card.order.join(' < ') }, false);
+    renderSession();
+  }
+  function bindScaleDnD(card) {
+    var list = document.getElementById('scaleList');
+    if (!list || card.checked) return;
+    var dragId = null;
+    list.addEventListener('dragstart', function (e) {
+      var li = e.target.closest('.scale-item');
+      if (!li) return;
+      dragId = li.dataset.id;
+      li.classList.add('dragging');
+      try { e.dataTransfer.setData('text/plain', dragId); e.dataTransfer.effectAllowed = 'move'; } catch (err) { /* ignore */ }
+    });
+    list.addEventListener('dragover', function (e) {
+      e.preventDefault();
+      var li = e.target.closest('.scale-item');
+      list.querySelectorAll('.over').forEach(function (x) { x.classList.remove('over'); });
+      if (li && li.dataset.id !== dragId) li.classList.add('over');
+    });
+    list.addEventListener('dragleave', function (e) {
+      var li = e.target.closest('.scale-item');
+      if (li) li.classList.remove('over');
+    });
+    list.addEventListener('drop', function (e) {
+      e.preventDefault();
+      var li = e.target.closest('.scale-item');
+      if (!li || !dragId || li.dataset.id === dragId) return;
+      var from = card.order.indexOf(dragId);
+      card.order.splice(from, 1);
+      var to = card.order.indexOf(li.dataset.id);
+      if (from <= to) to += 1;
+      card.order.splice(to, 0, dragId);
+      renderSession();
+    });
+    list.addEventListener('dragend', function () { dragId = null; renderSession(); });
+  }
+
+  /* ---- Tổng kết ---- */
+  function viewSummary() {
+    var se = App.session;
+    var wrongIds = Object.keys(se.wrong).filter(function (id) { return word(id); });
+    var h = '<div class="page-head"><h1>' + (se.kind === 'daily' ? 'Xong phiên ôn' : 'Tổng kết') + '</h1></div>';
+    h += '<div class="summary-score">' + se.right + '<small> / ' + se.answered + ' câu đúng</small></div>';
+    if (se.examLog.length) {
+      h += '<h2 class="section">Các câu GRE</h2><ul class="review-list">' + se.examLog.map(function (x, k) {
+        var ex = App.idx.exById[x.exId];
+        var ans = ex.type === 'se' ? ex.answers.join(', ') : ex.blanks.map(function (b) { return b.answer; }).join(' · ');
+        var sent = esc(ex.sentence).replace(/\{(\d+)\}/g, function (_, n) { return '<span class="gap">' + (ex.blanks && ex.blanks.length > 1 ? '(' + ROMAN[+n] + ')' : '&nbsp;') + '</span>'; });
+        return '<li><div class="row"><b>Câu ' + (k + 1) + '</b>' + (x.correct ? '<span class="tag known">✓ Đúng</span>' : '<span class="tag leech">✗ Sai</span>') + '</div>' +
+          '<p class="example" style="margin:6px 0">' + sent + '</p>' +
+          '<div class="small">Bạn chọn: <b>' + esc(x.choice.filter(Boolean).join(', ') || '(bỏ trống)') + '</b> · Đáp án: <b>' + esc(ans) + '</b></div>' +
+          '<div class="explain small">' + esc(ex.explanation || '') + '</div></li>';
+      }).join('') + '</ul>';
+    }
+    if (wrongIds.length) {
+      h += '<h2 class="section">Từ cần xem lại (' + wrongIds.length + ')</h2><ul class="review-list">' + wrongIds.map(function (id) {
+        var w = word(id);
+        return '<li><span class="w-word">' + esc(w.word) + '</span> <span class="pos">' + esc(w.pos) + '</span><div>' + esc(w.meaning) + '</div></li>';
+      }).join('') + '</ul>';
+    } else if (se.answered) {
+      h += '<p class="muted">Không sai từ nào trong phiên này.</p>';
+    }
+    h += '<div class="form-grid" style="margin-top:20px">';
+    if (wrongIds.length) h += '<button class="btn primary big" data-act="retry-wrong">Ôn lại các từ sai <kbd>Enter</kbd></button>';
+    if (se.kind === 'daily') {
+      var q = dailyQueue();
+      if (q.total) h += '<button class="btn big' + (wrongIds.length ? '' : ' primary') + '" data-act="start-daily">Ôn tiếp (' + q.total + ' thẻ còn lại)</button>';
+    }
+    h += '<button class="btn big" data-act="nav-from">Về ' + ({ today: 'Hôm nay', practice: 'Luyện tập', book: 'Sổ từ hay quên' }[se.from] || 'Hôm nay') + '</button></div>';
+    return h;
+  }
+  function bindSummaryKeys() {
+    var se = App.session;
+    App.keyHandler = function (e) {
+      if (e.key !== 'Enter' || isTyping(e)) return;
+      e.preventDefault();
+      if (Object.keys(se.wrong).some(function (id) { return word(id); })) retryWrong();
+      else go(se.from || 'today');
+    };
+  }
+  function retryWrong() {
+    var se = App.session;
+    var ids = Object.keys(se.wrong).filter(function (id) { return word(id); });
+    startWordsSession('retry', ids, 'Ôn lại các từ sai', se.from);
+  }
+
+  /* ================= Sự kiện ================= */
+  function isTyping(e) { return /^(INPUT|TEXTAREA|SELECT)$/.test((e.target && e.target.tagName) || ''); }
+
+  var ACTIONS = {
+    'start-daily': function () { startDaily(); },
+    'more-new': function () {
+      var ws = S.unlearnedWords(App.idx, App.progress).slice(0, 5);
+      startSession('daily', cardsForDaily(ws.map(function (w) { return { wordId: w.id, isNew: true }; })), { from: 'today', title: 'Học thêm từ mới' });
+    },
+    'quick-gre': function () {
+      var cards = shuffle(App.idx.exercises).slice(0, 10).map(function (ex) { return { type: 'gre', exId: ex.id }; });
+      startSession('practice', cards, { from: 'today', title: 'GRE' });
+    },
+    'v-cluster': function (t) { App.vocab.cluster = t.dataset.id; App.vocab.group = 'all'; App.vocab.open = null; render(); },
+    'v-prio': function (t) { App.vocab.prio = t.dataset.id; render(); },
+    'v-open': function (t) {
+      App.vocab.open = App.vocab.open === t.dataset.id ? null : t.dataset.id;
+      document.getElementById('vlist').innerHTML = vocabList();
+    },
+    'v-jump': function (t) {
+      var w = word(t.dataset.id);
+      if (!w) return;
+      App.vocab = { cluster: w.clusterId, q: '', prio: 'all', group: 'all', status: 'all', open: w.id };
+      render();
+      var el = document.getElementById('w-' + w.id);
+      if (el) { el.scrollIntoView({ block: 'center' }); el.focus({ preventScroll: true }); }
+    },
+    'p-count': function (t) { App.practice.count = t.dataset.id; render(); },
+    'start-practice': function () { startPractice(); },
+    'start-book': function () { startWordsSession('book', leechWords().map(function (w) { return w.id; }), 'Ôn sổ từ hay quên', 'book'); },
+    'f-prio': function (t) {
+      document.getElementById('f-priority').value = t.dataset.id;
+      document.querySelectorAll('[data-act="f-prio"]').forEach(function (b) { b.setAttribute('aria-pressed', b === t ? 'true' : 'false'); });
+    },
+    'f-cancel': function () { App.editId = null; render(); },
+    'c-edit': function (t) { App.editId = t.dataset.id; render(); window.scrollTo(0, 0); },
+    'c-del': function (t) {
+      if (t.dataset.armed !== '1') {
+        t.dataset.armed = '1';
+        t.textContent = 'Bấm lần nữa để xóa';
+        setTimeout(function () { if (t.isConnected) { t.dataset.armed = ''; t.textContent = 'Xóa'; } }, 3500);
+        return;
+      }
+      var id = t.dataset.id;
+      var w = App.customWords.find(function (x) { return x.id === id; });
+      App.customWords = App.customWords.filter(function (x) { return x.id !== id; });
+      rebuildIndex();
+      Sync.push({ id: evId(), type: 'custom_delete', ts: nowIso(), wordId: id });
+      if (App.editId === id) App.editId = null;
+      toast('Đã xóa “' + (w ? w.word : id) + '”.');
+      render();
+    },
+    'close-settings': function () { closeSettings(); },
+    's-new': function (t) {
+      var v = Math.max(0, Math.min(50, (Number(App.settings.newPerDay) || 0) + Number(t.dataset.d)));
+      setSetting('newPerDay', v);
+      document.getElementById('s-new-val').textContent = v;
+    },
+    's-reset': function () {
+      var v = document.getElementById('s-reset').value.trim();
+      if (v !== 'XOA') { toast('Gõ đúng XOA để xác nhận.'); return; }
+      Sync.queue = []; Sync.persist();
+      google.script.run.withSuccessHandler(function (st) {
+        App.progress = {};
+        Object.keys(st.progress || {}).forEach(function (id) { App.progress[id] = S.normalizeState(st.progress[id]); });
+        App.customWords = st.customWords || [];
+        App.daily = st.daily || {};
+        App.exLast = st.exLast || {};
+        rebuildIndex();
+        toast('Đã xóa toàn bộ tiến độ.');
+        closeSettings();
+        go('today');
+      }).withFailureHandler(function (err) { toast('Không xóa được: ' + (err && err.message)); }).resetAllProgress('XOA');
+    },
+    'end-session': function () { var from = App.session ? App.session.from : 'today'; go(from || 'today'); },
+    'next': function () { nextCard(); },
+    'w2m-reveal': function () { revealW2M(); },
+    'w2m-grade': function (t) { gradeW2M(t.dataset.r); },
+    'm2w-show': function () { App.session.cards[App.session.i].revealed = true; renderSession(); },
+    'm2w-pick': function (t) { pickM2W(t.dataset.id); },
+    'gre-show': function () { App.session.cards[App.session.i].revealed = true; renderSession(); },
+    'gre-hint': function () { App.session.cards[App.session.i].hint = true; renderSession(); },
+    'gre-pick': function (t) { pickGRE(Number(t.dataset.b), t.dataset.o); },
+    'gre-check': function () { checkGRE(); },
+    'sc-move': function (t) {
+      var card = App.session.cards[App.session.i];
+      var i = card.order.indexOf(t.dataset.id), j = i + Number(t.dataset.d);
+      if (j < 0 || j >= card.order.length) return;
+      var tmp = card.order[i]; card.order[i] = card.order[j]; card.order[j] = tmp;
+      renderSession();
+      var btn = document.querySelector('[data-act="sc-move"][data-id="' + t.dataset.id + '"][data-d="' + t.dataset.d + '"]');
+      if (btn && !btn.disabled) btn.focus();
+    },
+    'sc-check': function () { checkScale(); },
+    'retry-wrong': function () { retryWrong(); },
+    'nav-from': function () { go((App.session && App.session.from) || 'today'); }
+  };
+
+  document.addEventListener('click', function (e) {
+    var nav = e.target.closest('[data-nav]');
+    if (nav) { e.preventDefault(); go(nav.dataset.nav); return; }
+    var t = e.target.closest('[data-act]');
+    if (!t || t.disabled) return;
+    var fn = ACTIONS[t.dataset.act];
+    if (fn) {
+      if (t.tagName !== 'INPUT') e.preventDefault();
+      fn(t, e);
+    }
+  });
+
+  document.addEventListener('change', function (e) {
+    var t = e.target;
+    if (t.matches('[data-act="w2m-check"]')) {
+      var card = App.session.cards[App.session.i];
+      card.checks = card.checks || [false, false, false];
+      card.checks[Number(t.dataset.k)] = t.checked;
+      card.checksTouched = true;
+      renderSession();
+      return;
+    }
+    if (t.dataset.setting) {
+      setSetting(t.dataset.setting, t.checked);
+      return;
+    }
+    switch (t.id) {
+      case 'vgroup': App.vocab.group = t.value; document.getElementById('vlist').innerHTML = vocabList(); break;
+      case 'vstatus': App.vocab.status = t.value; document.getElementById('vlist').innerHTML = vocabList(); break;
+      case 'pcluster': App.practice.cluster = t.value; App.practice.group = 'all'; render(); break;
+      case 'pgroup': App.practice.group = t.value; render(); break;
+      case 'pp3': App.practice.p3 = t.checked; render(); break;
+      case 'pexam': setSetting('examMode', t.checked); break;
+    }
+    if (t.name === 'pmode') { App.practice.mode = t.value; render(); }
+  });
+
+  document.addEventListener('input', function (e) {
+    if (e.target.id === 'vq') {
+      App.vocab.q = e.target.value;
+      App.vocab.open = null;
+      document.getElementById('vlist').innerHTML = vocabList();
+    } else if (e.target.id === 'typed' && App.session) {
+      App.session.cards[App.session.i].typed = e.target.value;
+    }
+  });
+
+  document.addEventListener('submit', function (e) {
+    if (e.target.id === 'addForm') { e.preventDefault(); submitCustom(); }
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.ctrlKey || e.metaKey || e.altKey) return;
+    if (!document.getElementById('settings').hidden) {
+      if (e.key === 'Escape') closeSettings();
+      return;
+    }
+    var tag = (e.target && e.target.tagName) || '';
+    if ((e.key === 'Enter' || e.key === ' ') && (tag === 'BUTTON' || tag === 'A')) return; // để nút tự xử lý
+    if (App.keyHandler) App.keyHandler(e);
+  });
+
+  document.getElementById('openSettings').addEventListener('click', openSettings);
+  document.getElementById('settingsBackdrop').addEventListener('click', closeSettings);
+
+  var hiddenAt = null;
+  document.addEventListener('visibilitychange', function () {
+    if (document.visibilityState === 'hidden') {
+      hiddenAt = Date.now();
+      Sync.flush();
+    } else {
+      if (hiddenAt && Date.now() - hiddenAt > 10 * 60 * 1000) refreshFromServer();
+      hiddenAt = null;
+    }
+  });
+  window.addEventListener('pagehide', function () { Sync.flush(); });
+  window.addEventListener('online', function () { if (Sync.queue.length) Sync.flush(); });
+
+  /* ================= Khởi động ================= */
+  applyPending(true);
+  rebuildIndex();
+  render();
+  if (Sync.queue.length) Sync.flush(); else Sync.setStatus('saved');
+  if (App.settings.autoStart && dailyQueue().items.length) startDaily();
+})();
+</script>
