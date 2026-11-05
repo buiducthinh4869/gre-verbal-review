@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <base target="_top">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light dark">
+  <meta name="robots" content="noindex">
+  <title>Ôn GRE Verbal</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23284a8a'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='20' font-weight='600' text-anchor='middle' fill='%23fff'%3EG%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;1,7..72,400;1,7..72,500&display=swap&subset=vietnamese" rel="stylesheet">
-  <?!= include('styles') ?>
+  <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
   <header class="topbar">
@@ -22,21 +24,23 @@
         <span class="sync" id="sync" role="status" aria-live="polite">
           <span class="sync-dot" aria-hidden="true"></span><span class="sync-text">Đã lưu</span>
         </span>
-        <button class="icon-btn" id="openSettings" aria-label="Cài đặt">
-          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M19.4 13a7.6 7.6 0 0 0 0-2l2-1.6a.5.5 0 0 0 .1-.6l-1.9-3.3a.5.5 0 0 0-.6-.2l-2.4 1a7.3 7.3 0 0 0-1.7-1l-.4-2.6a.5.5 0 0 0-.5-.4h-3.8a.5.5 0 0 0-.5.4l-.4 2.6a7.3 7.3 0 0 0-1.7 1l-2.4-1a.5.5 0 0 0-.6.2L2.5 8.8a.5.5 0 0 0 .1.6l2 1.6a7.6 7.6 0 0 0 0 2l-2 1.6a.5.5 0 0 0-.1.6l1.9 3.3c.1.2.4.3.6.2l2.4-1c.5.4 1.1.7 1.7 1l.4 2.6c0 .2.3.4.5.4h3.8c.2 0 .5-.2.5-.4l.4-2.6c.6-.3 1.2-.6 1.7-1l2.4 1c.2.1.5 0 .6-.2l1.9-3.3a.5.5 0 0 0-.1-.6l-2-1.6ZM12 15.5A3.5 3.5 0 1 1 12 8.5a3.5 3.5 0 0 1 0 7Z"/></svg>
-        </button>
+        <div class="me">
+          <button class="me-btn" id="meBtn" aria-haspopup="menu" aria-expanded="false" aria-label="Tài khoản và cài đặt">
+            <span class="me-initial" id="meInitial" aria-hidden="true">?</span>
+          </button>
+          <div class="me-menu" id="meMenu" role="menu" hidden></div>
+        </div>
       </div>
     </div>
   </header>
 
-  <main id="view" class="view" tabindex="-1"></main>
+  <main id="view" class="view" tabindex="-1"><div class="loading">Đang tải…</div></main>
 
   <div class="sheet-backdrop" id="settingsBackdrop" hidden></div>
   <aside class="settings" id="settings" hidden aria-label="Cài đặt"></aside>
   <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
 
-  <script>window.BOOT = <?!= boot ?>;</script>
-  <?!= include('srs') ?>
-  <?!= include('app') ?>
+  <noscript><p style="padding:16px">Web cần bật JavaScript.</p></noscript>
+  <script type="module" src="assets/app.js"></script>
 </body>
 </html>

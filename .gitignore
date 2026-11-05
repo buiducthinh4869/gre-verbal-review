@@ -4,3 +4,7 @@ node_modules/
 .DS_Store
 DEPLOY_LOG.md
 preview/
+backups/
+initial-passwords.txt
+.admin-key
+apps-script/AdminKey.js

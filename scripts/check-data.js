@@ -1,20 +1,15 @@
 #!/usr/bin/env node
 /**
- * build.js
- * 1. Đọc data/index.json và data/clusters/*.json, kiểm tra schema.
- * 2. Gộp thành src/Data.js (const VOCAB_DATA = {...};).
- * 3. Bọc src/Srs.js thành src/srs.html để client dùng chung đúng một bản logic.
- * Dừng với mã lỗi 1 và danh sách lỗi rõ ràng nếu dữ liệu sai.
+ * check-data.js: kiểm tra schema mọi file trong data/ (npm run check).
+ * Dừng với mã lỗi 1 và danh sách lỗi rõ ràng nếu dữ liệu sai. KHÔNG sửa dữ liệu.
  */
-'use strict';
-const fs = require('fs');
-const path = require('path');
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-const ROOT = path.resolve(__dirname, '..');
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DATA_DIR = path.join(ROOT, 'data');
 const CLUSTER_DIR = path.join(DATA_DIR, 'clusters');
-const SRC = path.join(ROOT, 'src');
-
 function readJson(file) {
   const text = fs.readFileSync(file, 'utf8').replace(/^\uFEFF/, '');
   try {
@@ -140,7 +135,7 @@ function validate(index, clusters) {
   return errors;
 }
 
-function main() {
+export function loadAll() {
   const index = readJson(path.join(DATA_DIR, 'index.json'));
   if (!Array.isArray(index.clusters)) throw new Error('data/index.json phải có mảng "clusters"');
   const clusters = index.clusters.map((id) => {
@@ -150,33 +145,21 @@ function main() {
     c.__file = `${id}.json`;
     return c;
   });
+  return { index, clusters };
+}
 
+function main() {
+  const { index, clusters } = loadAll();
+  const dup = index.clusters.filter((id, i) => index.clusters.indexOf(id) !== i);
   const errors = validate(index, clusters);
+  dup.forEach((id) => errors.push(`  - [index.json] cụm "${id}" bị liệt kê hai lần`));
   if (errors.length) {
     console.error(`\n✗ Dữ liệu có ${errors.length} lỗi:\n${errors.join('\n')}\n`);
-    console.error('Không sinh src/Data.js. Sửa dữ liệu rồi chạy lại npm run build.');
     process.exit(1);
   }
-
-  const out = {
-    builtAt: new Date().toISOString(),
-    clusters: clusters.map((c) => {
-      const copy = Object.assign({}, c);
-      delete copy.__file;
-      return copy;
-    }),
-  };
-  const header = '// FILE SINH TỰ ĐỘNG bởi scripts/build.js từ data/. KHÔNG SỬA TAY.\n';
-  fs.writeFileSync(path.join(SRC, 'Data.js'), `${header}const VOCAB_DATA = ${JSON.stringify(out)};\n`, 'utf8');
-
-  const srs = fs.readFileSync(path.join(SRC, 'Srs.js'), 'utf8');
-  if (/<\/script/i.test(srs)) throw new Error('src/Srs.js không được chứa chuỗi </script');
-  fs.writeFileSync(path.join(SRC, 'srs.html'),
-    `<!-- FILE SINH TỰ ĐỘNG bởi scripts/build.js từ src/Srs.js. KHÔNG SỬA TAY. -->\n<script>\n${srs}\n</script>\n`, 'utf8');
-
   const nWords = clusters.reduce((s, c) => s + c.words.length, 0);
   const nEx = clusters.reduce((s, c) => s + c.exercises.length, 0);
-  console.log(`✓ Build xong: ${clusters.length} cụm, ${nWords} từ, ${nEx} bài GRE → src/Data.js, src/srs.html`);
+  console.log(`✓ Dữ liệu hợp lệ: ${clusters.length} cụm, ${nWords} từ, ${nEx} bài GRE`);
   clusters.forEach((c) => console.log(`  · ${c.title} (${c.id}): ${c.words.length} từ, ${c.exercises.length} bài`));
 }
 

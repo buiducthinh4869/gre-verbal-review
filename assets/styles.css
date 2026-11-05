@@ -1,4 +1,3 @@
-<style>
 :root {
   --bg: #f2f4f7;
   --paper: #ffffff;
@@ -481,7 +480,58 @@ textarea.input { min-height: 84px; resize: vertical; line-height: 1.5; }
 }
 @media (max-width: 859px) { .toast { bottom: calc(var(--nav-h) + 16px + env(safe-area-inset-bottom)); } }
 
+/* ---------- Menu tài khoản ---------- */
+.me { position: relative; }
+.me-btn {
+  width: 44px; height: 44px; display: grid; place-items: center; border: 0; background: none; border-radius: 50%; padding: 0;
+}
+.me-initial {
+  width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center;
+  font: 600 14px/1 var(--sans); color: var(--accent); background: var(--accent-soft); border: 1px solid var(--accent-line);
+}
+.me-btn:hover .me-initial, .me-btn[aria-expanded="true"] .me-initial { background: var(--accent); color: var(--accent-ink); }
+.me-menu {
+  position: absolute; right: 0; top: 50px; z-index: 50; min-width: 220px; padding: 6px;
+  background: var(--paper); border: 1px solid var(--rule-strong); border-radius: 12px; box-shadow: 0 10px 30px rgba(10, 20, 40, .16);
+}
+.me-menu button {
+  display: block; width: 100%; text-align: left; border: 0; background: none; padding: 11px 12px; border-radius: 8px; font-size: 15px;
+}
+.me-menu button:hover, .me-menu button:focus-visible { background: var(--accent-soft); }
+.menu-who { display: grid; padding: 8px 12px 10px; border-bottom: 1px solid var(--rule); margin-bottom: 4px; }
+body.is-auth .tabs, body.is-auth .topbar-right { display: none; }
+body.is-auth .view { padding-bottom: 48px; }
+.loading { padding: 40px 0; text-align: center; color: var(--muted); }
+
+/* ---------- Đăng nhập ---------- */
+.auth { max-width: 400px; margin: 4vh auto 0; }
+.auth h1 { font: 600 30px/1.2 var(--serif); margin: 18px 0 6px; letter-spacing: -.01em; }
+.auth > .muted { margin: 0 0 20px; }
+.auth-brand { display: flex; align-items: center; gap: 10px; font-weight: 600; }
+.auth-notice { padding: 10px 14px; border-left: 3px solid var(--warn); background: var(--warn-soft); border-radius: 0 8px 8px 0; }
+.form-error { margin: 0; color: var(--bad); font-weight: 500; }
+.auth .btn.quiet { justify-self: center; }
+
+/* ---------- Tài khoản ---------- */
+.panel { padding: 16px 0 18px; border-bottom: 1px solid var(--rule); gap: 10px; }
+.panel .btn { justify-self: start; }
+
+/* ---------- Quản lý ---------- */
+.acct { padding: 14px 0; border-bottom: 1px solid var(--rule); display: grid; gap: 10px; }
+.acct.off .acct-name { color: var(--muted); }
+.acct-head { display: flex; justify-content: space-between; gap: 12px; align-items: flex-start; }
+.acct-name { font: 600 18px/1.3 var(--serif); }
+.acct-stats { display: flex; flex-wrap: wrap; gap: 4px 18px; font-size: 14px; color: var(--muted); }
+.acct-stats b { color: var(--ink); font-variant-numeric: tabular-nums; }
+.acct-stats .bad b { color: var(--bad); }
+.acct-actions { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.acct-actions .btn { min-height: 40px; padding: 8px 14px; font-size: 14px; }
+.rename { display: grid; grid-template-columns: 1fr auto auto; gap: 8px; }
+.reveal { padding: 12px 14px; border: 1px solid var(--accent-line); background: var(--accent-soft); border-radius: var(--radius); display: grid; gap: 6px; }
+.reveal .pw { font: 600 22px/1.2 ui-monospace, "Cascadia Mono", Consolas, monospace; letter-spacing: .04em; user-select: all; }
+.reveal .btn { justify-self: start; }
+@media (max-width: 420px) { .rename { grid-template-columns: 1fr 1fr; } .rename .input { grid-column: 1 / -1; } }
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
 }
-</style>
