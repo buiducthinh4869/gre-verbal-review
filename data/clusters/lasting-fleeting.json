@@ -1,0 +1,705 @@
+{
+  "schemaVersion": 1,
+  "id": "lasting-fleeting",
+  "title": "Bền vững & Nhất thời",
+  "order": 12,
+  "description": "Thời gian và sự thay đổi: chóng tàn, lâu bền, ăn sâu, hay biến đổi, trì trệ, tiềm ẩn.",
+  "groups": [
+    {
+      "id": "fleeting",
+      "title": "Ngắn ngủi, chóng tàn",
+      "direction": "neutral",
+      "scale": false,
+      "note": "Ephemeral/evanescent: chóng phai như hơi sương. Transient/transitory: tạm thời, đi qua."
+    },
+    {
+      "id": "enduring",
+      "title": "Lâu bền, không đổi",
+      "direction": "positive",
+      "scale": false,
+      "note": "Inveterate/entrenched/ingrained: ăn sâu, khó bỏ (thường là thói xấu). Immutable: không thể thay đổi."
+    },
+    {
+      "id": "changing",
+      "title": "Hay thay đổi",
+      "direction": "neutral",
+      "scale": false,
+      "note": "Protean: biến hóa đa dạng (thường khen). Vicissitudes: thăng trầm."
+    },
+    {
+      "id": "static",
+      "title": "Trì trệ, tiềm ẩn",
+      "direction": "neutral",
+      "scale": false,
+      "note": "Latent: tiềm ẩn, chưa lộ ra. Dormant: đang ngủ yên, có thể thức dậy. Moribund: sắp chết, suy tàn."
+    }
+  ],
+  "words": [
+    {
+      "id": "ephemeral",
+      "word": "ephemeral",
+      "pos": "adj",
+      "group": "fleeting",
+      "priority": 3,
+      "meaning": "phù du, chóng tàn",
+      "nuance": "Tồn tại rất ngắn.",
+      "example": "Most viral trends are *ephemeral*.",
+      "collocations": [],
+      "root": "ephemera (thứ sống một ngày)",
+      "confusables": [
+        "evanescent",
+        "transient"
+      ]
+    },
+    {
+      "id": "evanescent",
+      "word": "evanescent",
+      "pos": "adj",
+      "group": "fleeting",
+      "priority": 3,
+      "meaning": "thoáng qua, tan biến nhanh",
+      "nuance": "Văn chương hơn ephemeral.",
+      "example": "The *evanescent* glow of the market rally faded within a week.",
+      "collocations": [],
+      "root": "evanesce (tan biến)",
+      "confusables": [
+        "ephemeral"
+      ]
+    },
+    {
+      "id": "transient",
+      "word": "transient",
+      "pos": "adj",
+      "group": "fleeting",
+      "priority": 3,
+      "meaning": "tạm thời, thoáng qua",
+      "nuance": "Trong kinh tế: transitory shocks, transient effects.",
+      "example": "The effect of the subsidy proved *transient*, disappearing after two years.",
+      "collocations": [
+        "transient effects"
+      ],
+      "confusables": [
+        "transitory",
+        "ephemeral"
+      ]
+    },
+    {
+      "id": "transitory",
+      "word": "transitory",
+      "pos": "adj",
+      "group": "fleeting",
+      "priority": 3,
+      "meaning": "nhất thời, tạm thời",
+      "nuance": "Thường đối lập với permanent.",
+      "example": "Friedman distinguished permanent from *transitory* income.",
+      "collocations": [
+        "transitory income",
+        "transitory shocks"
+      ],
+      "confusables": [
+        "transient"
+      ]
+    },
+    {
+      "id": "fleeting",
+      "word": "fleeting",
+      "pos": "adj",
+      "group": "fleeting",
+      "priority": 2,
+      "meaning": "lướt qua, ngắn ngủi",
+      "nuance": "",
+      "example": "She caught a *fleeting* glimpse of the minister.",
+      "collocations": [
+        "a fleeting glimpse"
+      ],
+      "confusables": [
+        "ephemeral"
+      ]
+    },
+    {
+      "id": "fugitive",
+      "word": "fugitive",
+      "pos": "adj",
+      "group": "fleeting",
+      "priority": 2,
+      "meaning": "thoáng qua, khó nắm bắt (nghĩa phụ)",
+      "nuance": "Bẫy nghĩa phụ: không chỉ là kẻ đào tẩu.",
+      "example": "He tried to capture the *fugitive* impressions of a dream.",
+      "collocations": [],
+      "confusables": [
+        "evanescent"
+      ]
+    },
+    {
+      "id": "enduring",
+      "word": "enduring",
+      "pos": "adj",
+      "group": "enduring",
+      "priority": 2,
+      "meaning": "lâu dài, bền bỉ",
+      "nuance": "",
+      "example": "The *enduring* appeal of the gold standard puzzles economists.",
+      "collocations": [],
+      "confusables": [
+        "abiding",
+        "perennial"
+      ]
+    },
+    {
+      "id": "abiding",
+      "word": "abiding",
+      "pos": "adj",
+      "group": "enduring",
+      "priority": 3,
+      "meaning": "lâu bền, không phai",
+      "nuance": "Thường đi với interest, love, faith.",
+      "example": "Her **abiding interest** in rural credit began in fieldwork.",
+      "collocations": [
+        "an abiding interest"
+      ],
+      "confusables": [
+        "enduring"
+      ]
+    },
+    {
+      "id": "perennial",
+      "word": "perennial",
+      "pos": "adj",
+      "group": "enduring",
+      "priority": 3,
+      "meaning": "lâu năm, lặp đi lặp lại",
+      "nuance": "Một vấn đề cứ quay lại mãi.",
+      "example": "Flooding is a *perennial* problem in the delta.",
+      "collocations": [
+        "a perennial problem"
+      ],
+      "confusables": [
+        "perpetual",
+        "enduring"
+      ]
+    },
+    {
+      "id": "perpetual",
+      "word": "perpetual",
+      "pos": "adj",
+      "group": "enduring",
+      "priority": 2,
+      "meaning": "vĩnh viễn; liên miên",
+      "nuance": "",
+      "example": "The office was in a state of *perpetual* reorganization.",
+      "collocations": [],
+      "confusables": [
+        "perennial"
+      ]
+    },
+    {
+      "id": "immutable",
+      "word": "immutable",
+      "pos": "adj",
+      "group": "enduring",
+      "priority": 3,
+      "meaning": "không thể thay đổi",
+      "nuance": "",
+      "example": "Preferences are not *immutable*.",
+      "collocations": [
+        "immutable laws"
+      ],
+      "root": "im- + mut- (thay đổi)",
+      "confusables": [
+        "mutable"
+      ]
+    },
+    {
+      "id": "inveterate",
+      "word": "inveterate",
+      "pos": "adj",
+      "group": "enduring",
+      "priority": 3,
+      "meaning": "thâm căn cố đế, thành tật",
+      "nuance": "Thường đi với thói xấu: an inveterate gambler.",
+      "example": "An *inveterate* optimist, he never revised his forecasts downward.",
+      "collocations": [
+        "an inveterate liar"
+      ],
+      "root": "veter- (cũ), như veteran",
+      "confusables": [
+        "entrenched",
+        "ingrained"
+      ]
+    },
+    {
+      "id": "entrenched",
+      "word": "entrenched",
+      "pos": "adj",
+      "group": "enduring",
+      "priority": 3,
+      "meaning": "cố thủ, ăn sâu, khó thay đổi",
+      "nuance": "Dùng cho quyền lợi, thể chế, thói quen.",
+      "example": "*Entrenched* interests blocked land reform.",
+      "collocations": [
+        "entrenched interests"
+      ],
+      "confusables": [
+        "ingrained",
+        "inveterate"
+      ]
+    },
+    {
+      "id": "ingrained",
+      "word": "ingrained",
+      "pos": "adj",
+      "group": "enduring",
+      "priority": 3,
+      "meaning": "ăn sâu, thâm căn",
+      "nuance": "Thường dùng cho niềm tin, thói quen, định kiến.",
+      "example": "Gender norms are deeply *ingrained*.",
+      "collocations": [
+        "deeply ingrained"
+      ],
+      "confusables": [
+        "entrenched"
+      ]
+    },
+    {
+      "id": "indelible",
+      "word": "indelible",
+      "pos": "adj",
+      "group": "enduring",
+      "priority": 3,
+      "meaning": "không thể xóa nhòa",
+      "nuance": "",
+      "example": "The famine left an *indelible* mark on the region.",
+      "collocations": [
+        "an indelible mark"
+      ],
+      "confusables": [
+        "enduring"
+      ]
+    },
+    {
+      "id": "mutable",
+      "word": "mutable",
+      "pos": "adj",
+      "group": "changing",
+      "priority": 2,
+      "meaning": "có thể thay đổi, hay đổi",
+      "nuance": "",
+      "example": "Social norms are more *mutable* than they appear.",
+      "collocations": [],
+      "root": "mut- (thay đổi)",
+      "confusables": [
+        "immutable"
+      ]
+    },
+    {
+      "id": "protean",
+      "word": "protean",
+      "pos": "adj",
+      "group": "changing",
+      "priority": 3,
+      "meaning": "biến hóa đa dạng, linh hoạt",
+      "nuance": "Thường khen: tài năng, khái niệm có nhiều dạng.",
+      "example": "'Inequality' is a *protean* concept with dozens of measures.",
+      "collocations": [],
+      "root": "Proteus (thần biến hình)",
+      "confusables": [
+        "mercurial",
+        "mutable"
+      ]
+    },
+    {
+      "id": "fluctuate",
+      "word": "fluctuate",
+      "pos": "v",
+      "group": "changing",
+      "priority": 2,
+      "meaning": "dao động, lên xuống",
+      "nuance": "",
+      "example": "Commodity prices *fluctuate* widely.",
+      "collocations": [],
+      "confusables": [
+        "oscillate"
+      ]
+    },
+    {
+      "id": "oscillate",
+      "word": "oscillate",
+      "pos": "v",
+      "group": "changing",
+      "priority": 2,
+      "meaning": "dao động qua lại giữa hai trạng thái",
+      "nuance": "",
+      "example": "Policy *oscillated* between austerity and stimulus.",
+      "collocations": [
+        "oscillate between X and Y"
+      ],
+      "confusables": [
+        "vacillate",
+        "fluctuate"
+      ]
+    },
+    {
+      "id": "flux",
+      "word": "flux",
+      "pos": "n",
+      "group": "changing",
+      "priority": 2,
+      "meaning": "sự thay đổi liên tục",
+      "nuance": "in flux: đang biến động.",
+      "example": "The rules are **in flux**.",
+      "collocations": [
+        "in a state of flux"
+      ],
+      "confusables": [
+        "fluctuate"
+      ]
+    },
+    {
+      "id": "vicissitudes",
+      "word": "vicissitudes",
+      "pos": "n",
+      "group": "changing",
+      "priority": 3,
+      "meaning": "những thăng trầm",
+      "nuance": "Luôn ở số nhiều.",
+      "example": "The firm survived the **vicissitudes of** the commodity cycle.",
+      "collocations": [
+        "the vicissitudes of X"
+      ],
+      "confusables": [
+        "flux"
+      ]
+    },
+    {
+      "id": "metamorphosis",
+      "word": "metamorphosis",
+      "pos": "n",
+      "group": "changing",
+      "priority": 2,
+      "meaning": "sự biến hình, biến đổi hoàn toàn",
+      "nuance": "",
+      "example": "The city's *metamorphosis* from port to tech hub took two decades.",
+      "collocations": [],
+      "confusables": [
+        "flux"
+      ]
+    },
+    {
+      "id": "stagnant",
+      "word": "stagnant",
+      "pos": "adj",
+      "group": "static",
+      "priority": 2,
+      "meaning": "trì trệ, tù đọng",
+      "nuance": "",
+      "example": "Wages remained *stagnant* for a decade.",
+      "collocations": [
+        "stagnant wages"
+      ],
+      "confusables": [
+        "moribund"
+      ]
+    },
+    {
+      "id": "inert",
+      "word": "inert",
+      "pos": "adj",
+      "group": "static",
+      "priority": 2,
+      "meaning": "trơ, bất động",
+      "nuance": "",
+      "example": "The committee remained *inert* while the crisis deepened.",
+      "collocations": [],
+      "confusables": [
+        "quiescent"
+      ]
+    },
+    {
+      "id": "quiescent",
+      "word": "quiescent",
+      "pos": "adj",
+      "group": "static",
+      "priority": 3,
+      "meaning": "yên lặng, tạm ngừng hoạt động",
+      "nuance": "Đang yên, nhưng có thể hoạt động lại.",
+      "example": "Inflation remained *quiescent* for years.",
+      "collocations": [],
+      "root": "qui- (yên), như quiet",
+      "confusables": [
+        "dormant",
+        "latent"
+      ]
+    },
+    {
+      "id": "dormant",
+      "word": "dormant",
+      "pos": "adj",
+      "group": "static",
+      "priority": 3,
+      "meaning": "ngủ yên, tạm ngừng",
+      "nuance": "Có thể thức dậy: a dormant volcano.",
+      "example": "The dispute lay *dormant* for decades before resurfacing.",
+      "collocations": [
+        "lie dormant"
+      ],
+      "confusables": [
+        "latent",
+        "quiescent"
+      ]
+    },
+    {
+      "id": "latent",
+      "word": "latent",
+      "pos": "adj",
+      "group": "static",
+      "priority": 3,
+      "meaning": "tiềm ẩn, chưa lộ ra",
+      "nuance": "Có sẵn nhưng chưa thể hiện. Trong thống kê: latent variable.",
+      "example": "The crisis revealed *latent* weaknesses in the banking system.",
+      "collocations": [
+        "latent demand",
+        "latent variable"
+      ],
+      "confusables": [
+        "dormant"
+      ]
+    },
+    {
+      "id": "moribund",
+      "word": "moribund",
+      "pos": "adj",
+      "group": "static",
+      "priority": 3,
+      "meaning": "sắp chết, suy tàn",
+      "nuance": "Dùng cho ngành, thể chế, nền kinh tế.",
+      "example": "The reforms revived a *moribund* textile industry.",
+      "collocations": [
+        "a moribund industry"
+      ],
+      "root": "mori- (chết)",
+      "confusables": [
+        "stagnant"
+      ]
+    },
+    {
+      "id": "ossified",
+      "word": "ossified",
+      "pos": "adj",
+      "group": "static",
+      "priority": 3,
+      "meaning": "xơ cứng, không còn linh hoạt",
+      "nuance": "Nghĩa đen là hóa xương; nghĩa bóng là thể chế cứng nhắc.",
+      "example": "An *ossified* bureaucracy resisted every innovation.",
+      "collocations": [],
+      "root": "oss- (xương)",
+      "confusables": [
+        "entrenched",
+        "moribund"
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "id": "lf01",
+      "type": "tc",
+      "sentence": "The stimulus produced only a {0} boost to consumption: within two quarters, spending had returned to its earlier trend.",
+      "blanks": [
+        {
+          "options": [
+            "transitory",
+            "indelible",
+            "abiding",
+            "perennial",
+            "entrenched"
+          ],
+          "answer": "transitory"
+        }
+      ],
+      "targets": [
+        "transitory",
+        "indelible",
+        "abiding"
+      ],
+      "hint": "'Returned to its earlier trend'.",
+      "explanation": "Quay về xu hướng cũ sau hai quý: tác động tạm thời, transitory."
+    },
+    {
+      "id": "lf02",
+      "type": "tc",
+      "sentence": "Although tariffs were abolished decades ago, the habits of protection they fostered remain {0} in the ministry, where officials still instinctively favor domestic suppliers.",
+      "blanks": [
+        {
+          "options": [
+            "ingrained",
+            "latent",
+            "dormant",
+            "quiescent",
+            "mutable"
+          ],
+          "answer": "ingrained"
+        }
+      ],
+      "targets": [
+        "ingrained",
+        "latent",
+        "dormant"
+      ],
+      "hint": "Thói quen đang thể hiện hay đang ngủ yên?",
+      "explanation": "Thói quen vẫn chi phối hành vi hằng ngày: ăn sâu, ingrained. Latent và dormant là tiềm ẩn, đang ngủ yên, trái với việc vẫn đang thể hiện ra."
+    },
+    {
+      "id": "lf03",
+      "type": "tc",
+      "sentence": "The disease can remain {0} for years, producing no symptoms until the immune system weakens.",
+      "blanks": [
+        {
+          "options": [
+            "latent",
+            "moribund",
+            "ossified",
+            "ephemeral",
+            "perennial"
+          ],
+          "answer": "latent"
+        }
+      ],
+      "targets": [
+        "latent",
+        "moribund",
+        "ossified"
+      ],
+      "hint": "'Producing no symptoms'.",
+      "explanation": "Có trong người nhưng chưa có triệu chứng: latent. Moribund là sắp chết; ossified là xơ cứng."
+    },
+    {
+      "id": "lf04",
+      "type": "tc",
+      "sentence": "Once dismissed as a {0} industry kept alive only by subsidies, shipbuilding has undergone a striking {1}, becoming one of the country's most profitable sectors.",
+      "blanks": [
+        {
+          "options": [
+            "moribund",
+            "protean",
+            "quiescent"
+          ],
+          "answer": "moribund"
+        },
+        {
+          "options": [
+            "metamorphosis",
+            "flux",
+            "stagnation"
+          ],
+          "answer": "metamorphosis"
+        }
+      ],
+      "targets": [
+        "moribund",
+        "metamorphosis",
+        "flux"
+      ],
+      "hint": "'Once dismissed… has undergone'.",
+      "explanation": "(i) Chỉ sống nhờ trợ cấp: suy tàn, moribund. (ii) Thành ngành có lãi nhất: biến đổi hoàn toàn, metamorphosis. Flux là thay đổi liên tục, không có điểm đến."
+    },
+    {
+      "id": "lf05",
+      "type": "tc",
+      "sentence": "Critics complain that the university's curriculum has become {0}: it has not changed in thirty years, and proposals for reform are routinely rejected.",
+      "blanks": [
+        {
+          "options": [
+            "ossified",
+            "ephemeral",
+            "protean",
+            "evanescent",
+            "mutable"
+          ],
+          "answer": "ossified"
+        }
+      ],
+      "targets": [
+        "ossified",
+        "protean"
+      ],
+      "hint": "'Has not changed in thirty years'.",
+      "explanation": "Ba mươi năm không đổi, mọi đề xuất cải cách bị bác: xơ cứng, ossified."
+    },
+    {
+      "id": "lf06",
+      "type": "se",
+      "sentence": "Fashion is by nature {0}: the styles celebrated this season will look dated by the next.",
+      "options": [
+        "ephemeral",
+        "evanescent",
+        "perennial",
+        "abiding",
+        "latent",
+        "dormant"
+      ],
+      "answers": [
+        "ephemeral",
+        "evanescent"
+      ],
+      "targets": [
+        "ephemeral",
+        "evanescent",
+        "perennial",
+        "abiding",
+        "latent",
+        "dormant"
+      ],
+      "hint": "Mùa này hợp mốt, mùa sau lỗi thời.",
+      "explanation": "Chóng lỗi thời: ephemeral, evanescent. Perennial và abiding là cặp sai hướng; latent và dormant là cặp tiềm ẩn."
+    },
+    {
+      "id": "lf07",
+      "type": "se",
+      "sentence": "Water shortages are a {0} problem in the region, returning every dry season despite repeated government programs.",
+      "options": [
+        "perennial",
+        "perpetual",
+        "transient",
+        "transitory",
+        "quiescent",
+        "latent"
+      ],
+      "answers": [
+        "perennial",
+        "perpetual"
+      ],
+      "targets": [
+        "perennial",
+        "perpetual",
+        "transient",
+        "transitory"
+      ],
+      "hint": "'Returning every dry season'.",
+      "explanation": "Lặp lại mỗi mùa khô: perennial, perpetual. Transient và transitory là cặp sai hướng."
+    },
+    {
+      "id": "lf08",
+      "type": "se",
+      "sentence": "Asked about the volcano, geologists insisted that it was {0} rather than extinct, and that another eruption was possible.",
+      "options": [
+        "dormant",
+        "quiescent",
+        "moribund",
+        "ossified",
+        "ephemeral",
+        "fleeting"
+      ],
+      "answers": [
+        "dormant",
+        "quiescent"
+      ],
+      "targets": [
+        "dormant",
+        "quiescent",
+        "moribund",
+        "ossified"
+      ],
+      "hint": "'Rather than extinct'.",
+      "explanation": "Đang ngủ yên nhưng có thể hoạt động lại: dormant, quiescent. Moribund và ossified là cặp suy tàn, xơ cứng."
+    }
+  ]
+}

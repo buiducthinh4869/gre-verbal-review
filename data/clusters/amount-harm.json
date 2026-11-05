@@ -1,0 +1,764 @@
+{
+  "schemaVersion": 1,
+  "id": "amount-harm",
+  "title": "Thừa thiếu, Tác hại & Vi phạm",
+  "order": 16,
+  "description": "Lượng nhiều hay ít, thừa hay vô ích; điều có hại; và việc coi thường luật lệ. Nhiều từ lấy từ bộ từ bạn sưu tầm.",
+  "groups": [
+    {
+      "id": "abundant",
+      "title": "Dồi dào, nhiều",
+      "direction": "neutral",
+      "scale": false,
+      "note": "Prodigious: to lớn đến kinh ngạc. Inordinate: quá mức hợp lý (chê)."
+    },
+    {
+      "id": "scarce",
+      "title": "Khan hiếm, ít ỏi",
+      "direction": "negative",
+      "scale": false,
+      "note": "Paucity/dearth: sự khan hiếm (danh từ). Scant/meager: ít ỏi, không đủ."
+    },
+    {
+      "id": "useless",
+      "title": "Thừa, vô ích",
+      "direction": "negative",
+      "scale": false,
+      "note": "Superfluous/redundant: thừa. Nugatory/futile: vô giá trị, vô ích. Gratuitous: không cần thiết, vô cớ."
+    },
+    {
+      "id": "harmful",
+      "title": "Có hại",
+      "direction": "negative",
+      "scale": false,
+      "note": "Pernicious/insidious: tác hại âm thầm, dần dần. Deleterious/noxious: có hại nói chung. Malign/malevolent: ác ý."
+    },
+    {
+      "id": "defy",
+      "title": "Coi thường, vi phạm",
+      "direction": "negative",
+      "scale": false,
+      "note": "Bẫy: flout (coi thường luật) khác flaunt (khoe khoang)."
+    }
+  ],
+  "words": [
+    {
+      "id": "copious",
+      "word": "copious",
+      "pos": "adj",
+      "group": "abundant",
+      "priority": 3,
+      "meaning": "dồi dào, nhiều",
+      "nuance": "",
+      "example": "She took *copious* notes during the interviews.",
+      "collocations": [
+        "copious notes"
+      ],
+      "confusables": [
+        "plethora",
+        "ample"
+      ]
+    },
+    {
+      "id": "plethora",
+      "word": "plethora",
+      "pos": "n",
+      "group": "abundant",
+      "priority": 3,
+      "meaning": "sự quá nhiều",
+      "nuance": "a plethora of X: rất nhiều X (đôi khi quá mức).",
+      "example": "Researchers face **a plethora of** competing estimates.",
+      "collocations": [
+        "a plethora of X"
+      ],
+      "confusables": [
+        "myriad",
+        "copious"
+      ]
+    },
+    {
+      "id": "myriad",
+      "word": "myriad",
+      "pos": "adj/n",
+      "group": "abundant",
+      "priority": 2,
+      "meaning": "vô số",
+      "nuance": "",
+      "example": "The reform has *myriad* unintended effects.",
+      "collocations": [
+        "a myriad of X"
+      ],
+      "confusables": [
+        "plethora"
+      ]
+    },
+    {
+      "id": "prodigious",
+      "word": "prodigious",
+      "pos": "adj",
+      "group": "abundant",
+      "priority": 3,
+      "meaning": "to lớn, phi thường",
+      "nuance": "",
+      "example": "He had a *prodigious* memory for statistics.",
+      "collocations": [
+        "a prodigious output"
+      ],
+      "confusables": [
+        "copious",
+        "prodigal"
+      ]
+    },
+    {
+      "id": "ample",
+      "word": "ample",
+      "pos": "adj",
+      "group": "abundant",
+      "priority": 2,
+      "meaning": "dư dả, đủ",
+      "nuance": "",
+      "example": "There is *ample* evidence that the policy worked.",
+      "collocations": [
+        "ample evidence"
+      ],
+      "confusables": [
+        "copious",
+        "scant"
+      ]
+    },
+    {
+      "id": "inordinate",
+      "word": "inordinate",
+      "pos": "adj",
+      "group": "abundant",
+      "priority": 3,
+      "meaning": "quá mức, thái quá",
+      "nuance": "Nhiều hơn mức hợp lý.",
+      "example": "The project took an *inordinate* amount of time.",
+      "collocations": [
+        "an inordinate amount of"
+      ],
+      "confusables": []
+    },
+    {
+      "id": "profuse",
+      "word": "profuse",
+      "pos": "adj",
+      "group": "abundant",
+      "priority": 2,
+      "meaning": "dồi dào, tuôn trào",
+      "nuance": "",
+      "example": "He offered *profuse* apologies.",
+      "collocations": [
+        "profuse apologies"
+      ],
+      "confusables": [
+        "copious"
+      ]
+    },
+    {
+      "id": "paucity",
+      "word": "paucity",
+      "pos": "n",
+      "group": "scarce",
+      "priority": 3,
+      "meaning": "sự khan hiếm, ít ỏi",
+      "nuance": "a paucity of X: thiếu X.",
+      "example": "**A paucity of** reliable data limits the analysis.",
+      "collocations": [
+        "a paucity of X"
+      ],
+      "root": "pauc- (ít)",
+      "confusables": [
+        "dearth",
+        "plethora"
+      ]
+    },
+    {
+      "id": "dearth",
+      "word": "dearth",
+      "pos": "n",
+      "group": "scarce",
+      "priority": 3,
+      "meaning": "sự thiếu hụt",
+      "nuance": "",
+      "example": "There is a *dearth* of qualified teachers in rural areas.",
+      "collocations": [
+        "a dearth of X"
+      ],
+      "confusables": [
+        "paucity"
+      ]
+    },
+    {
+      "id": "scant",
+      "word": "scant",
+      "pos": "adj",
+      "group": "scarce",
+      "priority": 3,
+      "meaning": "ít ỏi, không đủ",
+      "nuance": "",
+      "example": "The proposal pays *scant* attention to costs.",
+      "collocations": [
+        "scant attention",
+        "scant evidence"
+      ],
+      "confusables": [
+        "meager",
+        "ample"
+      ]
+    },
+    {
+      "id": "meager",
+      "word": "meager",
+      "pos": "adj",
+      "group": "scarce",
+      "priority": 2,
+      "meaning": "ít ỏi, nghèo nàn",
+      "nuance": "",
+      "example": "Farmers earn *meager* incomes from rice.",
+      "collocations": [
+        "meager income"
+      ],
+      "confusables": [
+        "scant"
+      ]
+    },
+    {
+      "id": "sparse",
+      "word": "sparse",
+      "pos": "adj",
+      "group": "scarce",
+      "priority": 2,
+      "meaning": "thưa thớt",
+      "nuance": "",
+      "example": "Population is *sparse* in the highlands.",
+      "collocations": [],
+      "confusables": [
+        "scant"
+      ]
+    },
+    {
+      "id": "superfluous",
+      "word": "superfluous",
+      "pos": "adj",
+      "group": "useless",
+      "priority": 3,
+      "meaning": "thừa, không cần thiết",
+      "nuance": "",
+      "example": "Cut the *superfluous* adjectives from your abstract.",
+      "collocations": [],
+      "root": "super- (trên) + flu- (chảy): tràn ra",
+      "confusables": [
+        "redundant",
+        "gratuitous"
+      ]
+    },
+    {
+      "id": "redundant",
+      "word": "redundant",
+      "pos": "adj",
+      "group": "useless",
+      "priority": 2,
+      "meaning": "thừa, lặp lại; bị cho nghỉ việc (Anh)",
+      "nuance": "",
+      "example": "The second robustness table is *redundant*.",
+      "collocations": [],
+      "confusables": [
+        "superfluous"
+      ]
+    },
+    {
+      "id": "nugatory",
+      "word": "nugatory",
+      "pos": "adj",
+      "group": "useless",
+      "priority": 3,
+      "meaning": "vô giá trị, vô hiệu",
+      "nuance": "Không có giá trị hoặc tác dụng thực tế.",
+      "example": "Without enforcement, the new law is *nugatory*.",
+      "collocations": [],
+      "confusables": [
+        "futile"
+      ]
+    },
+    {
+      "id": "futile",
+      "word": "futile",
+      "pos": "adj",
+      "group": "useless",
+      "priority": 2,
+      "meaning": "vô ích",
+      "nuance": "",
+      "example": "Resistance proved *futile*.",
+      "collocations": [],
+      "confusables": [
+        "nugatory"
+      ]
+    },
+    {
+      "id": "gratuitous",
+      "word": "gratuitous",
+      "pos": "adj",
+      "group": "useless",
+      "priority": 3,
+      "meaning": "vô cớ, không cần thiết",
+      "nuance": "Bẫy: không phải 'miễn phí' trong GRE; mà là không có lý do chính đáng.",
+      "example": "The film was criticized for its *gratuitous* violence.",
+      "collocations": [
+        "gratuitous violence",
+        "gratuitous insult"
+      ],
+      "confusables": [
+        "superfluous"
+      ]
+    },
+    {
+      "id": "otiose",
+      "word": "otiose",
+      "pos": "adj",
+      "group": "useless",
+      "priority": 2,
+      "meaning": "thừa, vô dụng",
+      "nuance": "Rất trang trọng.",
+      "example": "The final chapter is *otiose*; it repeats the introduction.",
+      "collocations": [],
+      "confusables": [
+        "superfluous"
+      ]
+    },
+    {
+      "id": "negligible",
+      "word": "negligible",
+      "pos": "adj",
+      "group": "useless",
+      "priority": 2,
+      "meaning": "không đáng kể",
+      "nuance": "",
+      "example": "The effect on employment was *negligible*.",
+      "collocations": [
+        "a negligible effect"
+      ],
+      "confusables": [
+        "nugatory"
+      ]
+    },
+    {
+      "id": "pernicious",
+      "word": "pernicious",
+      "pos": "adj",
+      "group": "harmful",
+      "priority": 3,
+      "meaning": "độc hại (âm thầm, dần dần)",
+      "nuance": "",
+      "example": "Inflation has a *pernicious* effect on savers.",
+      "collocations": [
+        "a pernicious influence"
+      ],
+      "confusables": [
+        "insidious",
+        "deleterious"
+      ]
+    },
+    {
+      "id": "insidious",
+      "word": "insidious",
+      "pos": "adj",
+      "group": "harmful",
+      "priority": 3,
+      "meaning": "âm thầm nguy hiểm, khó nhận ra",
+      "nuance": "Tác hại lan dần mà không ai để ý.",
+      "example": "The *insidious* spread of misinformation eroded trust.",
+      "collocations": [],
+      "confusables": [
+        "pernicious"
+      ]
+    },
+    {
+      "id": "deleterious",
+      "word": "deleterious",
+      "pos": "adj",
+      "group": "harmful",
+      "priority": 3,
+      "meaning": "có hại",
+      "nuance": "Từ trang trọng, rất hay gặp trong văn học thuật.",
+      "example": "Lead exposure has **deleterious effects on** cognition.",
+      "collocations": [
+        "deleterious effects on X"
+      ],
+      "confusables": [
+        "pernicious",
+        "noxious"
+      ]
+    },
+    {
+      "id": "noxious",
+      "word": "noxious",
+      "pos": "adj",
+      "group": "harmful",
+      "priority": 2,
+      "meaning": "độc hại; khó chịu",
+      "nuance": "",
+      "example": "*Noxious* fumes from the factory sickened residents.",
+      "collocations": [
+        "noxious fumes"
+      ],
+      "confusables": [
+        "deleterious"
+      ]
+    },
+    {
+      "id": "malign",
+      "word": "malign",
+      "pos": "adj/v",
+      "group": "harmful",
+      "priority": 3,
+      "meaning": "có hại, ác ý (adj); nói xấu, vu khống (v)",
+      "nuance": "Bẫy: động từ malign là bôi nhọ (gần vilify, denigrate).",
+      "example": "The much-*maligned* policy turned out to work well.",
+      "collocations": [
+        "much-maligned"
+      ],
+      "confusables": [
+        "benign",
+        "vilify",
+        "malevolent"
+      ]
+    },
+    {
+      "id": "malevolent",
+      "word": "malevolent",
+      "pos": "adj",
+      "group": "harmful",
+      "priority": 3,
+      "meaning": "có ác tâm, hiểm độc",
+      "nuance": "",
+      "example": "The rumors attributed *malevolent* motives to the regulator.",
+      "collocations": [],
+      "root": "mal- (xấu) + vol- (muốn)",
+      "confusables": [
+        "benevolent",
+        "malign"
+      ]
+    },
+    {
+      "id": "detrimental",
+      "word": "detrimental",
+      "pos": "adj",
+      "group": "harmful",
+      "priority": 2,
+      "meaning": "bất lợi, có hại",
+      "nuance": "",
+      "example": "Long commutes are *detrimental* **to** health.",
+      "collocations": [
+        "detrimental to X"
+      ],
+      "confusables": [
+        "deleterious"
+      ]
+    },
+    {
+      "id": "flout",
+      "word": "flout",
+      "pos": "v",
+      "group": "defy",
+      "priority": 3,
+      "meaning": "coi thường, công khai vi phạm (luật lệ)",
+      "nuance": "Bẫy: khác flaunt (khoe khoang).",
+      "example": "Firms openly *flouted* the emissions rules.",
+      "collocations": [
+        "flout the law",
+        "flout the rules"
+      ],
+      "confusables": [
+        "flaunt",
+        "contravene"
+      ]
+    },
+    {
+      "id": "contravene",
+      "word": "contravene",
+      "pos": "v",
+      "group": "defy",
+      "priority": 3,
+      "meaning": "vi phạm, trái với",
+      "nuance": "",
+      "example": "The contract *contravenes* competition law.",
+      "collocations": [],
+      "root": "contra- (ngược) + ven- (đi)",
+      "confusables": [
+        "flout",
+        "transgress"
+      ]
+    },
+    {
+      "id": "transgress",
+      "word": "transgress",
+      "pos": "v",
+      "group": "defy",
+      "priority": 2,
+      "meaning": "vượt quá giới hạn, vi phạm",
+      "nuance": "",
+      "example": "The editorial *transgressed* the paper's own standards.",
+      "collocations": [],
+      "root": "trans- (vượt) + gress- (bước)",
+      "confusables": [
+        "contravene"
+      ]
+    },
+    {
+      "id": "flagrant",
+      "word": "flagrant",
+      "pos": "adj",
+      "group": "defy",
+      "priority": 3,
+      "meaning": "trắng trợn, rành rành (vi phạm)",
+      "nuance": "Dùng cho vi phạm, sai trái lộ liễu.",
+      "example": "It was a *flagrant* violation of the ceasefire.",
+      "collocations": [
+        "a flagrant violation"
+      ],
+      "confusables": [
+        "blatant",
+        "brazen"
+      ]
+    },
+    {
+      "id": "blatant",
+      "word": "blatant",
+      "pos": "adj",
+      "group": "defy",
+      "priority": 3,
+      "meaning": "trắng trợn, lộ liễu",
+      "nuance": "",
+      "example": "The study is a *blatant* attempt to influence regulators.",
+      "collocations": [
+        "a blatant attempt"
+      ],
+      "confusables": [
+        "flagrant"
+      ]
+    },
+    {
+      "id": "defiance",
+      "word": "defiance",
+      "pos": "n",
+      "group": "defy",
+      "priority": 2,
+      "meaning": "sự thách thức, bất chấp",
+      "nuance": "in defiance of X.",
+      "example": "They marched **in defiance of** the ban.",
+      "collocations": [
+        "in defiance of X"
+      ],
+      "confusables": [
+        "flout"
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "id": "ah01",
+      "type": "tc",
+      "sentence": "Although the court ordered the factory to stop dumping waste, its owners continued to {0} the ruling, discharging sludge into the river in full view of inspectors.",
+      "blanks": [
+        {
+          "options": [
+            "flout",
+            "flaunt",
+            "contravene",
+            "appease",
+            "divulge"
+          ],
+          "answer": "flout"
+        }
+      ],
+      "targets": [
+        "flout",
+        "flaunt",
+        "contravene"
+      ],
+      "hint": "'In full view of inspectors': công khai coi thường.",
+      "explanation": "Tiếp tục công khai bất chấp phán quyết: flout. Flaunt là khoe khoang. Contravene đi với luật, hợp đồng, nhưng không có ý 'công khai coi thường' mà câu nhấn mạnh."
+    },
+    {
+      "id": "ah02",
+      "type": "tc",
+      "sentence": "The report's conclusions are weakened less by any error than by a {0} of data: only eleven villages were surveyed, and several of those only once.",
+      "blanks": [
+        {
+          "options": [
+            "paucity",
+            "plethora",
+            "myriad",
+            "profusion",
+            "superfluity"
+          ],
+          "answer": "paucity"
+        }
+      ],
+      "targets": [
+        "paucity",
+        "plethora",
+        "myriad"
+      ],
+      "hint": "Vấn đề nằm ở số lượng.",
+      "explanation": "Chỉ có mười một làng được khảo sát: thiếu dữ liệu, paucity. Plethora, myriad là ngược nghĩa."
+    },
+    {
+      "id": "ah03",
+      "type": "tc",
+      "sentence": "Unlike sudden shocks, which provoke an immediate response, the effects of chronic inflation are {0}: savings erode so gradually that households rarely notice until the damage is done.",
+      "blanks": [
+        {
+          "options": [
+            "insidious",
+            "noxious",
+            "flagrant",
+            "blatant",
+            "negligible"
+          ],
+          "answer": "insidious"
+        }
+      ],
+      "targets": [
+        "insidious",
+        "noxious",
+        "flagrant",
+        "negligible"
+      ],
+      "hint": "'So gradually… rarely notice'.",
+      "explanation": "Tác hại âm thầm, dần dần, không ai nhận ra: insidious. Flagrant và blatant là lộ liễu, ngược nghĩa; negligible là không đáng kể, trái với 'the damage'."
+    },
+    {
+      "id": "ah04",
+      "type": "tc",
+      "sentence": "The editor cut the final chapter as {0}, since it merely repeated arguments made at length in the introduction.",
+      "blanks": [
+        {
+          "options": [
+            "superfluous",
+            "prodigious",
+            "pernicious",
+            "copious",
+            "meager"
+          ],
+          "answer": "superfluous"
+        }
+      ],
+      "targets": [
+        "superfluous",
+        "prodigious",
+        "copious"
+      ],
+      "hint": "'Merely repeated'.",
+      "explanation": "Chỉ lặp lại điều đã nói: thừa, superfluous."
+    },
+    {
+      "id": "ah05",
+      "type": "tc",
+      "sentence": "Critics praised the war film for its restraint: unlike many of its rivals, it contains no {0} violence, and every scene of combat serves the story.",
+      "blanks": [
+        {
+          "options": [
+            "gratuitous",
+            "nugatory",
+            "scant",
+            "meager",
+            "negligible"
+          ],
+          "answer": "gratuitous"
+        }
+      ],
+      "targets": [
+        "gratuitous",
+        "nugatory",
+        "scant"
+      ],
+      "hint": "'Every scene… serves the story'.",
+      "explanation": "Không có cảnh bạo lực vô cớ, mọi cảnh đều phục vụ câu chuyện: gratuitous."
+    },
+    {
+      "id": "ah06",
+      "type": "tc",
+      "sentence": "Long dismissed as a {0} influence on public health, the much-{1} food additive has, according to new research, no measurable effect at all.",
+      "blanks": [
+        {
+          "options": [
+            "pernicious",
+            "negligible",
+            "benign"
+          ],
+          "answer": "pernicious"
+        },
+        {
+          "options": [
+            "maligned",
+            "flaunted",
+            "lauded"
+          ],
+          "answer": "maligned"
+        }
+      ],
+      "targets": [
+        "pernicious",
+        "malign",
+        "benign"
+      ],
+      "hint": "Cụm cố định 'much-…'.",
+      "explanation": "(i) Từng bị coi là có hại: pernicious. (ii) Cụm 'much-maligned': bị chỉ trích nhiều. Nghiên cứu mới thì cho thấy không có tác dụng gì."
+    },
+    {
+      "id": "ah07",
+      "type": "se",
+      "sentence": "Exposure to lead in childhood has well-documented {0} effects on cognitive development.",
+      "options": [
+        "deleterious",
+        "detrimental",
+        "negligible",
+        "nugatory",
+        "copious",
+        "prodigious"
+      ],
+      "answers": [
+        "deleterious",
+        "detrimental"
+      ],
+      "targets": [
+        "deleterious",
+        "detrimental",
+        "negligible",
+        "nugatory",
+        "copious",
+        "prodigious"
+      ],
+      "hint": "'Well-documented … effects on cognitive development'.",
+      "explanation": "Tác động có hại: deleterious, detrimental. Negligible và nugatory là cặp không đáng kể, vô giá trị."
+    },
+    {
+      "id": "ah08",
+      "type": "se",
+      "sentence": "The minister's claim that he had not known of the contract was a {0} falsehood: his signature appeared on every page.",
+      "options": [
+        "flagrant",
+        "blatant",
+        "insidious",
+        "pernicious",
+        "scant",
+        "meager"
+      ],
+      "answers": [
+        "flagrant",
+        "blatant"
+      ],
+      "targets": [
+        "flagrant",
+        "blatant",
+        "insidious",
+        "pernicious"
+      ],
+      "hint": "Lộ liễu hay âm thầm?",
+      "explanation": "Dối trá lộ liễu khi có chữ ký ở mọi trang: flagrant, blatant. Insidious và pernicious là cặp tác hại âm thầm, ngược với lộ liễu."
+    }
+  ]
+}

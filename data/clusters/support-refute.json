@@ -1,0 +1,717 @@
+{
+  "schemaVersion": 1,
+  "id": "support-refute",
+  "title": "Ủng hộ & Bác bỏ",
+  "order": 11,
+  "description": "Ngôn ngữ của lập luận học thuật: xác nhận, tán thành, bác bỏ, rút lại, thừa nhận. Cụm then chốt cho Reading.",
+  "groups": [
+    {
+      "id": "confirm",
+      "title": "Xác nhận bằng bằng chứng",
+      "direction": "positive",
+      "scale": false,
+      "note": "Corroborate: xác nhận bằng nguồn độc lập. Substantiate: chứng minh bằng bằng chứng. Vindicate: minh oan, chứng tỏ là đúng sau khi bị nghi ngờ."
+    },
+    {
+      "id": "endorse",
+      "title": "Tán thành, cổ vũ",
+      "direction": "positive",
+      "scale": false,
+      "note": "Espouse: theo, chấp nhận một quan điểm. Champion/advocate: đấu tranh cho một quan điểm."
+    },
+    {
+      "id": "refute",
+      "title": "Bác bỏ, phản bác",
+      "direction": "negative",
+      "scale": false,
+      "note": "Refute: chứng minh là sai. Rebut: đưa ra lập luận phản bác (chưa chắc đã thắng). Gainsay: phủ nhận, cãi lại."
+    },
+    {
+      "id": "weaken",
+      "title": "Làm suy yếu",
+      "direction": "negative",
+      "scale": false,
+      "note": ""
+    },
+    {
+      "id": "retract",
+      "title": "Rút lại, từ bỏ",
+      "direction": "negative",
+      "scale": false,
+      "note": "Recant: công khai rút lại niềm tin trước đây. Repudiate: bác bỏ, chối bỏ. Eschew: tránh xa, kiêng."
+    },
+    {
+      "id": "concede",
+      "title": "Thừa nhận, nhượng bộ",
+      "direction": "neutral",
+      "scale": false,
+      "note": ""
+    }
+  ],
+  "words": [
+    {
+      "id": "corroborate",
+      "word": "corroborate",
+      "pos": "v",
+      "group": "confirm",
+      "priority": 3,
+      "meaning": "xác nhận, chứng thực",
+      "nuance": "Thường bằng một nguồn độc lập thứ hai.",
+      "example": "Satellite data **corroborate** the survey estimates.",
+      "collocations": [
+        "corroborate a claim"
+      ],
+      "root": "cor- + robor- (sức mạnh)",
+      "confusables": [
+        "substantiate",
+        "vindicate"
+      ]
+    },
+    {
+      "id": "substantiate",
+      "word": "substantiate",
+      "pos": "v",
+      "group": "confirm",
+      "priority": 3,
+      "meaning": "chứng minh bằng bằng chứng",
+      "nuance": "",
+      "example": "The authors fail to *substantiate* their central claim.",
+      "collocations": [
+        "substantiate a claim"
+      ],
+      "confusables": [
+        "corroborate"
+      ]
+    },
+    {
+      "id": "validate",
+      "word": "validate",
+      "pos": "v",
+      "group": "confirm",
+      "priority": 2,
+      "meaning": "xác nhận tính đúng đắn",
+      "nuance": "",
+      "example": "We *validate* the model on an out-of-sample period.",
+      "collocations": [],
+      "confusables": [
+        "corroborate"
+      ]
+    },
+    {
+      "id": "vindicate",
+      "word": "vindicate",
+      "pos": "v",
+      "group": "confirm",
+      "priority": 3,
+      "meaning": "chứng tỏ là đúng, minh oan",
+      "nuance": "Sau khi từng bị nghi ngờ hoặc chỉ trích.",
+      "example": "The crisis **vindicated** economists who had warned about leverage.",
+      "collocations": [
+        "be vindicated by X"
+      ],
+      "confusables": [
+        "corroborate"
+      ]
+    },
+    {
+      "id": "bear-out",
+      "word": "bear out",
+      "pos": "v",
+      "group": "confirm",
+      "priority": 2,
+      "meaning": "xác nhận, chứng thực",
+      "nuance": "",
+      "example": "Later data **bore out** her prediction.",
+      "collocations": [
+        "bear out a prediction"
+      ],
+      "confusables": [
+        "corroborate"
+      ]
+    },
+    {
+      "id": "endorse",
+      "word": "endorse",
+      "pos": "v",
+      "group": "endorse",
+      "priority": 2,
+      "meaning": "tán thành, ủng hộ công khai",
+      "nuance": "",
+      "example": "The board *endorsed* the proposal.",
+      "collocations": [],
+      "confusables": [
+        "espouse"
+      ]
+    },
+    {
+      "id": "espouse",
+      "word": "espouse",
+      "pos": "v",
+      "group": "endorse",
+      "priority": 3,
+      "meaning": "tán thành, theo (một quan điểm)",
+      "nuance": "Chấp nhận và ủng hộ một học thuyết, niềm tin.",
+      "example": "Few economists now *espouse* strict monetarism.",
+      "collocations": [
+        "espouse a view"
+      ],
+      "confusables": [
+        "advocate",
+        "repudiate"
+      ]
+    },
+    {
+      "id": "advocate",
+      "word": "advocate",
+      "pos": "v/n",
+      "group": "endorse",
+      "priority": 2,
+      "meaning": "ủng hộ, biện hộ cho",
+      "nuance": "",
+      "example": "She *advocates* a carbon tax.",
+      "collocations": [],
+      "root": "voc- (gọi)",
+      "confusables": [
+        "champion"
+      ]
+    },
+    {
+      "id": "champion",
+      "word": "champion",
+      "pos": "v",
+      "group": "endorse",
+      "priority": 2,
+      "meaning": "đấu tranh cho, bênh vực",
+      "nuance": "Nghĩa động từ.",
+      "example": "He *championed* microfinance long before it was fashionable.",
+      "collocations": [],
+      "confusables": [
+        "advocate"
+      ]
+    },
+    {
+      "id": "uphold",
+      "word": "uphold",
+      "pos": "v",
+      "group": "endorse",
+      "priority": 2,
+      "meaning": "duy trì, giữ vững; y án",
+      "nuance": "",
+      "example": "The court *upheld* the ruling.",
+      "collocations": [
+        "uphold a decision"
+      ],
+      "confusables": [
+        "endorse"
+      ]
+    },
+    {
+      "id": "refute",
+      "word": "refute",
+      "pos": "v",
+      "group": "refute",
+      "priority": 3,
+      "meaning": "bác bỏ, chứng minh là sai",
+      "nuance": "Mạnh hơn rebut: không chỉ phản đối mà còn chứng minh sai.",
+      "example": "The new data decisively *refute* the hypothesis.",
+      "collocations": [],
+      "confusables": [
+        "rebut",
+        "gainsay"
+      ]
+    },
+    {
+      "id": "rebut",
+      "word": "rebut",
+      "pos": "v",
+      "group": "refute",
+      "priority": 3,
+      "meaning": "phản bác",
+      "nuance": "Đưa ra lập luận đáp trả, chưa chắc thuyết phục.",
+      "example": "The authors **rebut** each of the referee's objections in turn.",
+      "collocations": [
+        "rebut a charge"
+      ],
+      "confusables": [
+        "refute"
+      ]
+    },
+    {
+      "id": "debunk",
+      "word": "debunk",
+      "pos": "v",
+      "group": "refute",
+      "priority": 2,
+      "meaning": "vạch trần, bác bỏ (quan niệm sai)",
+      "nuance": "Thường dùng cho huyền thoại, niềm tin phổ biến.",
+      "example": "The study *debunks* the myth that the poor do not save.",
+      "collocations": [
+        "debunk a myth"
+      ],
+      "confusables": [
+        "refute"
+      ]
+    },
+    {
+      "id": "discredit",
+      "word": "discredit",
+      "pos": "v",
+      "group": "refute",
+      "priority": 3,
+      "meaning": "làm mất uy tín, làm mất tin tưởng",
+      "nuance": "",
+      "example": "The scandal *discredited* the theory's leading proponent.",
+      "collocations": [],
+      "confusables": [
+        "undermine"
+      ]
+    },
+    {
+      "id": "gainsay",
+      "word": "gainsay",
+      "pos": "v",
+      "group": "refute",
+      "priority": 3,
+      "meaning": "phủ nhận, cãi lại",
+      "nuance": "Thường ở dạng phủ định: there is no gainsaying X (không thể phủ nhận X).",
+      "example": "**There is no gainsaying** the importance of the result.",
+      "collocations": [
+        "there is no gainsaying X"
+      ],
+      "confusables": [
+        "refute",
+        "controvert"
+      ]
+    },
+    {
+      "id": "controvert",
+      "word": "controvert",
+      "pos": "v",
+      "group": "refute",
+      "priority": 2,
+      "meaning": "tranh luận, phản bác",
+      "nuance": "",
+      "example": "No one has been able to *controvert* her central finding.",
+      "collocations": [],
+      "confusables": [
+        "gainsay"
+      ]
+    },
+    {
+      "id": "undermine",
+      "word": "undermine",
+      "pos": "v",
+      "group": "weaken",
+      "priority": 3,
+      "meaning": "làm suy yếu (từ bên trong)",
+      "nuance": "",
+      "example": "Measurement error *undermines* the paper's main result.",
+      "collocations": [],
+      "confusables": [
+        "undercut",
+        "discredit"
+      ]
+    },
+    {
+      "id": "undercut",
+      "word": "undercut",
+      "pos": "v",
+      "group": "weaken",
+      "priority": 3,
+      "meaning": "làm suy yếu, làm mất tác dụng",
+      "nuance": "",
+      "example": "The new evidence *undercuts* the official explanation.",
+      "collocations": [],
+      "confusables": [
+        "undermine"
+      ]
+    },
+    {
+      "id": "vitiate",
+      "word": "vitiate",
+      "pos": "v",
+      "group": "weaken",
+      "priority": 3,
+      "meaning": "làm hỏng, làm mất hiệu lực",
+      "nuance": "Một lỗi làm vô hiệu toàn bộ.",
+      "example": "A single coding error *vitiated* the entire analysis.",
+      "collocations": [],
+      "confusables": [
+        "undermine"
+      ]
+    },
+    {
+      "id": "impair",
+      "word": "impair",
+      "pos": "v",
+      "group": "weaken",
+      "priority": 2,
+      "meaning": "làm suy giảm",
+      "nuance": "",
+      "example": "Malnutrition can *impair* children's learning.",
+      "collocations": [],
+      "confusables": [
+        "undermine"
+      ]
+    },
+    {
+      "id": "recant",
+      "word": "recant",
+      "pos": "v",
+      "group": "retract",
+      "priority": 3,
+      "meaning": "công khai rút lại (quan điểm, lời nói)",
+      "nuance": "",
+      "example": "Under pressure, the scientist **recanted** his earlier findings.",
+      "collocations": [],
+      "root": "re- + cant- (hát)",
+      "confusables": [
+        "retract",
+        "repudiate"
+      ]
+    },
+    {
+      "id": "retract",
+      "word": "retract",
+      "pos": "v",
+      "group": "retract",
+      "priority": 2,
+      "meaning": "rút lại (tuyên bố, bài báo)",
+      "nuance": "",
+      "example": "The journal *retracted* the paper.",
+      "collocations": [
+        "retract a paper"
+      ],
+      "confusables": [
+        "recant"
+      ]
+    },
+    {
+      "id": "repudiate",
+      "word": "repudiate",
+      "pos": "v",
+      "group": "retract",
+      "priority": 3,
+      "meaning": "bác bỏ, chối bỏ",
+      "nuance": "Từ chối thừa nhận hoặc chấp nhận.",
+      "example": "The party *repudiated* its former leader's views.",
+      "collocations": [],
+      "confusables": [
+        "recant",
+        "espouse"
+      ]
+    },
+    {
+      "id": "disavow",
+      "word": "disavow",
+      "pos": "v",
+      "group": "retract",
+      "priority": 2,
+      "meaning": "chối bỏ trách nhiệm hoặc liên quan",
+      "nuance": "",
+      "example": "The ministry *disavowed* the leaked memo.",
+      "collocations": [],
+      "confusables": [
+        "repudiate"
+      ]
+    },
+    {
+      "id": "renounce",
+      "word": "renounce",
+      "pos": "v",
+      "group": "retract",
+      "priority": 2,
+      "meaning": "từ bỏ (chính thức)",
+      "nuance": "",
+      "example": "He *renounced* his citizenship to take the post.",
+      "collocations": [],
+      "confusables": [
+        "repudiate"
+      ]
+    },
+    {
+      "id": "eschew",
+      "word": "eschew",
+      "pos": "v",
+      "group": "retract",
+      "priority": 3,
+      "meaning": "tránh xa, không dùng",
+      "nuance": "Cố ý tránh một cách làm.",
+      "example": "The authors *eschew* structural assumptions.",
+      "collocations": [],
+      "confusables": [
+        "repudiate"
+      ]
+    },
+    {
+      "id": "concede",
+      "word": "concede",
+      "pos": "v",
+      "group": "concede",
+      "priority": 3,
+      "meaning": "thừa nhận (một điểm), nhượng bộ",
+      "nuance": "Thừa nhận dù không muốn, thường trong tranh luận.",
+      "example": "Even critics **concede that** the program reduced poverty.",
+      "collocations": [
+        "concede that",
+        "concede a point"
+      ],
+      "confusables": [
+        "acknowledge"
+      ]
+    },
+    {
+      "id": "acknowledge",
+      "word": "acknowledge",
+      "pos": "v",
+      "group": "concede",
+      "priority": 1,
+      "meaning": "thừa nhận",
+      "nuance": "",
+      "example": "The authors *acknowledge* that their sample is small.",
+      "collocations": [],
+      "confusables": [
+        "concede"
+      ]
+    },
+    {
+      "id": "qualify-v",
+      "word": "qualify (v)",
+      "pos": "v",
+      "group": "concede",
+      "priority": 3,
+      "meaning": "giới hạn, thêm điều kiện cho (một nhận định)",
+      "nuance": "Bẫy nghĩa phụ, liên quan tính từ qualified.",
+      "example": "She *qualified* her earlier claim, noting that it holds only for small firms.",
+      "collocations": [
+        "qualify a statement"
+      ],
+      "confusables": [
+        "qualified",
+        "concede"
+      ]
+    },
+    {
+      "id": "reconcile",
+      "word": "reconcile",
+      "pos": "v",
+      "group": "concede",
+      "priority": 3,
+      "meaning": "dung hòa, làm cho khớp",
+      "nuance": "reconcile X with Y: làm cho X và Y không mâu thuẫn.",
+      "example": "It is hard to **reconcile** these findings **with** standard theory.",
+      "collocations": [
+        "reconcile X with Y"
+      ],
+      "confusables": [
+        "concede"
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "id": "sr01",
+      "type": "tc",
+      "sentence": "Dismissed for decades as a crank, the economist was finally {0} when the crisis unfolded exactly as she had predicted.",
+      "blanks": [
+        {
+          "options": [
+            "vindicated",
+            "corroborated",
+            "substantiated",
+            "endorsed",
+            "espoused"
+          ],
+          "answer": "vindicated"
+        }
+      ],
+      "targets": [
+        "vindicate",
+        "corroborate",
+        "substantiate"
+      ],
+      "hint": "Đối tượng là một người từng bị nghi ngờ.",
+      "explanation": "Từng bị coi là gàn dở, nay được chứng minh là đúng: vindicated. Corroborated và substantiated dùng cho một nhận định, không dùng cho người."
+    },
+    {
+      "id": "sr02",
+      "type": "tc",
+      "sentence": "The defense attorney did more than merely {0} the prosecution's case; she {1} it, producing records proving that the defendant had been abroad at the time.",
+      "blanks": [
+        {
+          "options": [
+            "rebut",
+            "espouse",
+            "corroborate"
+          ],
+          "answer": "rebut"
+        },
+        {
+          "options": [
+            "refuted",
+            "rebutted",
+            "conceded"
+          ],
+          "answer": "refuted"
+        }
+      ],
+      "targets": [
+        "rebut",
+        "refute"
+      ],
+      "hint": "Hai từ gần nghĩa, mức độ khác nhau.",
+      "explanation": "'Did more than merely X; Y' đòi Y mạnh hơn X: phản bác (rebut) rồi chứng minh sai hẳn (refuted)."
+    },
+    {
+      "id": "sr03",
+      "type": "tc",
+      "sentence": "Although he once {0} central planning with evangelical zeal, by the 1990s he had publicly {1} those views, describing them as the great error of his career.",
+      "blanks": [
+        {
+          "options": [
+            "espoused",
+            "debunked",
+            "eschewed"
+          ],
+          "answer": "espoused"
+        },
+        {
+          "options": [
+            "repudiated",
+            "championed",
+            "corroborated"
+          ],
+          "answer": "repudiated"
+        }
+      ],
+      "targets": [
+        "espouse",
+        "repudiate"
+      ],
+      "hint": "Bắt đầu từ chỗ (ii): 'the great error of his career'.",
+      "explanation": "(i) Nhiệt thành theo: espoused. (ii) 'Although… by the 1990s' đổi chiều, gọi đó là sai lầm lớn: repudiated."
+    },
+    {
+      "id": "sr04",
+      "type": "tc",
+      "sentence": "A single programming error {0} the entire analysis: once corrected, none of the paper's main results survived.",
+      "blanks": [
+        {
+          "options": [
+            "vitiated",
+            "qualified",
+            "undercut",
+            "reconciled",
+            "conceded"
+          ],
+          "answer": "vitiated"
+        }
+      ],
+      "targets": [
+        "vitiate",
+        "undercut",
+        "qualify-v"
+      ],
+      "hint": "'None of the main results survived'.",
+      "explanation": "Một lỗi làm vô hiệu toàn bộ phân tích: vitiated. Undercut chỉ là làm suy yếu; qualified là thêm điều kiện."
+    },
+    {
+      "id": "sr05",
+      "type": "tc",
+      "sentence": "Even the program's harshest critics {0} that it reduced child mortality; their objection is to its cost, not its effectiveness.",
+      "blanks": [
+        {
+          "options": [
+            "concede",
+            "gainsay",
+            "repudiate",
+            "refute",
+            "disavow"
+          ],
+          "answer": "concede"
+        }
+      ],
+      "targets": [
+        "concede",
+        "gainsay"
+      ],
+      "hint": "'Their objection is… not its effectiveness'.",
+      "explanation": "Ngay cả người phê phán gay gắt nhất cũng thừa nhận: concede. Gainsay là phủ nhận, ngược nghĩa."
+    },
+    {
+      "id": "sr06",
+      "type": "se",
+      "sentence": "Independent audits {0} the company's claim that its emissions had fallen by half.",
+      "options": [
+        "corroborated",
+        "substantiated",
+        "vindicated",
+        "debunked",
+        "refuted",
+        "eschewed"
+      ],
+      "answers": [
+        "corroborated",
+        "substantiated"
+      ],
+      "targets": [
+        "corroborate",
+        "substantiate",
+        "vindicate",
+        "debunk",
+        "refute"
+      ],
+      "hint": "Đối tượng là một tuyên bố.",
+      "explanation": "Kiểm toán độc lập xác nhận tuyên bố: corroborated, substantiated. Vindicated dùng cho người; debunked và refuted là cặp sai hướng."
+    },
+    {
+      "id": "sr07",
+      "type": "se",
+      "sentence": "There is no {0} the significance of the discovery, whatever one thinks of the methods used to make it.",
+      "options": [
+        "gainsaying",
+        "denying",
+        "conceding",
+        "espousing",
+        "reconciling",
+        "qualifying"
+      ],
+      "answers": [
+        "gainsaying",
+        "denying"
+      ],
+      "targets": [
+        "gainsay",
+        "concede",
+        "espouse"
+      ],
+      "hint": "Cấu trúc 'there is no …'.",
+      "explanation": "Không thể phủ nhận: no gainsaying, no denying. Conceding là thừa nhận, ngược nghĩa trong cấu trúc này."
+    },
+    {
+      "id": "sr08",
+      "type": "se",
+      "sentence": "Later research has largely {0} the hypothesis, showing that the original correlation disappears once income is controlled for.",
+      "options": [
+        "undercut",
+        "undermined",
+        "corroborated",
+        "borne out",
+        "espoused",
+        "championed"
+      ],
+      "answers": [
+        "undercut",
+        "undermined"
+      ],
+      "targets": [
+        "undercut",
+        "undermine",
+        "corroborate",
+        "bear-out"
+      ],
+      "hint": "Tương quan biến mất nghĩa là gì?",
+      "explanation": "Tương quan biến mất khi kiểm soát thu nhập: giả thuyết bị làm suy yếu, undercut và undermined. Corroborated và borne out là cặp sai hướng."
+    }
+  ]
+}

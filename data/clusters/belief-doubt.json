@@ -1,0 +1,654 @@
+{
+  "schemaVersion": 1,
+  "id": "belief-doubt",
+  "title": "Tin & Ngờ",
+  "order": 10,
+  "description": "Mức độ tin vào một người, một ý tưởng, một bằng chứng: cả tin, hoài nghi, đáng tin, phỏng đoán.",
+  "groups": [
+    {
+      "id": "credulous",
+      "title": "Cả tin",
+      "direction": "negative",
+      "scale": false,
+      "note": "Credulous (cả tin) khác credible (đáng tin): một bên nói về người tin, một bên nói về điều được tin."
+    },
+    {
+      "id": "skeptical",
+      "title": "Hoài nghi",
+      "direction": "neutral",
+      "scale": false,
+      "note": "Skeptical: nghi ngờ cần bằng chứng. Cynical: nghi ngờ động cơ của người khác. Incredulous: không thể tin nổi (phản ứng tức thời)."
+    },
+    {
+      "id": "credible",
+      "title": "Đáng tin, thuyết phục",
+      "direction": "positive",
+      "scale": false,
+      "note": "Tenable: đứng vững được trước phản biện. Cogent: thuyết phục nhờ logic chặt."
+    },
+    {
+      "id": "doubtful",
+      "title": "Đáng ngờ, thiếu cơ sở",
+      "direction": "negative",
+      "scale": false,
+      "note": ""
+    },
+    {
+      "id": "tentative",
+      "title": "Phỏng đoán, tạm thời",
+      "direction": "neutral",
+      "scale": false,
+      "note": ""
+    }
+  ],
+  "words": [
+    {
+      "id": "credulous",
+      "word": "credulous",
+      "pos": "adj",
+      "group": "credulous",
+      "priority": 3,
+      "meaning": "cả tin, dễ tin",
+      "nuance": "Tin quá dễ, không đòi bằng chứng.",
+      "example": "*Credulous* investors poured money into the scheme.",
+      "collocations": [],
+      "root": "cred- (tin)",
+      "confusables": [
+        "credible",
+        "gullible",
+        "ingenuous"
+      ]
+    },
+    {
+      "id": "gullible",
+      "word": "gullible",
+      "pos": "adj",
+      "group": "credulous",
+      "priority": 2,
+      "meaning": "dễ bị lừa",
+      "nuance": "",
+      "example": "*Gullible* customers believed the promise of guaranteed returns.",
+      "collocations": [],
+      "confusables": [
+        "credulous"
+      ]
+    },
+    {
+      "id": "naive",
+      "word": "naive",
+      "pos": "adj",
+      "group": "credulous",
+      "priority": 2,
+      "meaning": "ngây thơ",
+      "nuance": "Có thể chê (thiếu hiểu biết) hoặc trung tính.",
+      "example": "It would be *naive* to expect the reform to work overnight.",
+      "collocations": [],
+      "confusables": [
+        "ingenuous"
+      ]
+    },
+    {
+      "id": "skeptical",
+      "word": "skeptical",
+      "pos": "adj",
+      "group": "skeptical",
+      "priority": 2,
+      "meaning": "hoài nghi",
+      "nuance": "",
+      "example": "Referees were **skeptical of** the paper's exclusion restriction.",
+      "collocations": [
+        "skeptical of X",
+        "skeptical about X"
+      ],
+      "confusables": [
+        "cynical",
+        "incredulous"
+      ]
+    },
+    {
+      "id": "incredulous",
+      "word": "incredulous",
+      "pos": "adj",
+      "group": "skeptical",
+      "priority": 3,
+      "meaning": "không thể tin nổi, ngờ vực",
+      "nuance": "Thường là phản ứng tức thời trước điều khó tin.",
+      "example": "Reporters were *incredulous* when the minister claimed the deficit had vanished.",
+      "collocations": [],
+      "root": "in- + cred- (tin)",
+      "confusables": [
+        "credulous",
+        "skeptical"
+      ]
+    },
+    {
+      "id": "cynical",
+      "word": "cynical",
+      "pos": "adj",
+      "group": "skeptical",
+      "priority": 2,
+      "meaning": "yếm thế, nghi ngờ động cơ người khác",
+      "nuance": "Cho rằng ai cũng hành động vì lợi ích riêng.",
+      "example": "Voters have grown *cynical* about campaign promises.",
+      "collocations": [
+        "cynical about X"
+      ],
+      "confusables": [
+        "skeptical"
+      ]
+    },
+    {
+      "id": "dubious",
+      "word": "dubious",
+      "pos": "adj",
+      "group": "skeptical",
+      "priority": 3,
+      "meaning": "ngờ vực (người); đáng ngờ (sự việc)",
+      "nuance": "Bẫy hai nghĩa: I am dubious about X (tôi nghi ngờ) và a dubious claim (đáng ngờ).",
+      "example": "The claim rests on *dubious* data.",
+      "collocations": [
+        "dubious about X",
+        "of dubious value"
+      ],
+      "confusables": [
+        "skeptical",
+        "specious"
+      ]
+    },
+    {
+      "id": "agnostic",
+      "word": "agnostic",
+      "pos": "adj",
+      "group": "skeptical",
+      "priority": 2,
+      "meaning": "không ngả về bên nào, trung lập về quan điểm",
+      "nuance": "Nghĩa học thuật: không giả định trước điều gì.",
+      "example": "The method is *agnostic* about the functional form.",
+      "collocations": [
+        "agnostic about X"
+      ],
+      "confusables": [
+        "skeptical"
+      ]
+    },
+    {
+      "id": "credible",
+      "word": "credible",
+      "pos": "adj",
+      "group": "credible",
+      "priority": 2,
+      "meaning": "đáng tin",
+      "nuance": "",
+      "example": "A *credible* commitment to low inflation anchors expectations.",
+      "collocations": [
+        "a credible threat"
+      ],
+      "root": "cred- (tin)",
+      "confusables": [
+        "credulous",
+        "plausible"
+      ]
+    },
+    {
+      "id": "plausible",
+      "word": "plausible",
+      "pos": "adj",
+      "group": "credible",
+      "priority": 2,
+      "meaning": "có vẻ hợp lý",
+      "nuance": "Hợp lý nhưng chưa chắc đúng.",
+      "example": "A *plausible* explanation is that firms anticipated the tax.",
+      "collocations": [],
+      "confusables": [
+        "credible",
+        "specious"
+      ]
+    },
+    {
+      "id": "tenable",
+      "word": "tenable",
+      "pos": "adj",
+      "group": "credible",
+      "priority": 3,
+      "meaning": "đứng vững được, bảo vệ được",
+      "nuance": "Một quan điểm còn giữ được trước phản biện.",
+      "example": "After the new evidence, his position is no longer *tenable*.",
+      "collocations": [
+        "no longer tenable"
+      ],
+      "root": "ten- (giữ)",
+      "confusables": [
+        "untenable",
+        "cogent"
+      ]
+    },
+    {
+      "id": "untenable",
+      "word": "untenable",
+      "pos": "adj",
+      "group": "credible",
+      "priority": 3,
+      "meaning": "không thể bảo vệ được",
+      "nuance": "",
+      "example": "The government's position became *untenable* after the leak.",
+      "collocations": [],
+      "confusables": [
+        "tenable"
+      ]
+    },
+    {
+      "id": "cogent",
+      "word": "cogent",
+      "pos": "adj",
+      "group": "credible",
+      "priority": 3,
+      "meaning": "thuyết phục, chặt chẽ",
+      "nuance": "Thuyết phục nhờ lập luận rõ ràng, logic.",
+      "example": "She made a *cogent* case for reforming the pension system.",
+      "collocations": [
+        "a cogent argument"
+      ],
+      "confusables": [
+        "compelling",
+        "tenable"
+      ]
+    },
+    {
+      "id": "compelling",
+      "word": "compelling",
+      "pos": "adj",
+      "group": "credible",
+      "priority": 2,
+      "meaning": "thuyết phục, hấp dẫn",
+      "nuance": "",
+      "example": "The evidence is *compelling*.",
+      "collocations": [],
+      "confusables": [
+        "cogent"
+      ]
+    },
+    {
+      "id": "incontrovertible",
+      "word": "incontrovertible",
+      "pos": "adj",
+      "group": "credible",
+      "priority": 3,
+      "meaning": "không thể chối cãi",
+      "nuance": "",
+      "example": "DNA evidence provided *incontrovertible* proof.",
+      "collocations": [
+        "incontrovertible evidence"
+      ],
+      "root": "in- + controvert (tranh cãi)",
+      "confusables": [
+        "cogent"
+      ]
+    },
+    {
+      "id": "unfounded",
+      "word": "unfounded",
+      "pos": "adj",
+      "group": "doubtful",
+      "priority": 3,
+      "meaning": "vô căn cứ",
+      "nuance": "",
+      "example": "Fears of a bank run proved *unfounded*.",
+      "collocations": [
+        "unfounded fears"
+      ],
+      "confusables": [
+        "groundless"
+      ]
+    },
+    {
+      "id": "groundless",
+      "word": "groundless",
+      "pos": "adj",
+      "group": "doubtful",
+      "priority": 2,
+      "meaning": "không có cơ sở",
+      "nuance": "",
+      "example": "The accusation proved *groundless*.",
+      "collocations": [],
+      "confusables": [
+        "unfounded"
+      ]
+    },
+    {
+      "id": "tendentious",
+      "word": "tendentious",
+      "pos": "adj",
+      "group": "doubtful",
+      "priority": 3,
+      "meaning": "có tính thiên vị, phiến diện",
+      "nuance": "Viết để thúc đẩy một quan điểm, thiếu khách quan.",
+      "example": "The report's *tendentious* framing ignored inconvenient evidence.",
+      "collocations": [],
+      "root": "tendency",
+      "confusables": [
+        "specious"
+      ]
+    },
+    {
+      "id": "questionable",
+      "word": "questionable",
+      "pos": "adj",
+      "group": "doubtful",
+      "priority": 1,
+      "meaning": "đáng ngờ",
+      "nuance": "",
+      "example": "The sample's representativeness is *questionable*.",
+      "collocations": [],
+      "confusables": [
+        "dubious"
+      ]
+    },
+    {
+      "id": "conjecture",
+      "word": "conjecture",
+      "pos": "n/v",
+      "group": "tentative",
+      "priority": 3,
+      "meaning": "sự phỏng đoán",
+      "nuance": "Kết luận chưa có đủ bằng chứng.",
+      "example": "Without data, any claim about the cause remains **mere conjecture**.",
+      "collocations": [
+        "mere conjecture"
+      ],
+      "confusables": [
+        "speculative",
+        "hypothesis"
+      ]
+    },
+    {
+      "id": "speculative",
+      "word": "speculative",
+      "pos": "adj",
+      "group": "tentative",
+      "priority": 3,
+      "meaning": "có tính suy đoán",
+      "nuance": "",
+      "example": "The link between the two events is *speculative*.",
+      "collocations": [],
+      "confusables": [
+        "conjecture"
+      ]
+    },
+    {
+      "id": "tentative",
+      "word": "tentative",
+      "pos": "adj",
+      "group": "tentative",
+      "priority": 3,
+      "meaning": "dè dặt, tạm thời, chưa chắc chắn",
+      "nuance": "",
+      "example": "The authors offer only *tentative* conclusions.",
+      "collocations": [
+        "tentative conclusions"
+      ],
+      "confusables": [
+        "provisional"
+      ]
+    },
+    {
+      "id": "provisional",
+      "word": "provisional",
+      "pos": "adj",
+      "group": "tentative",
+      "priority": 3,
+      "meaning": "tạm thời, chờ xác nhận",
+      "nuance": "Áp dụng cho đến khi có quyết định chính thức.",
+      "example": "The figures are *provisional* and may be revised.",
+      "collocations": [
+        "provisional estimates"
+      ],
+      "confusables": [
+        "tentative"
+      ]
+    },
+    {
+      "id": "hypothesis",
+      "word": "hypothesis",
+      "pos": "n",
+      "group": "tentative",
+      "priority": 1,
+      "meaning": "giả thuyết",
+      "nuance": "",
+      "example": "The data reject the *hypothesis* of constant returns.",
+      "collocations": [],
+      "confusables": [
+        "conjecture"
+      ]
+    },
+    {
+      "id": "surmise",
+      "word": "surmise",
+      "pos": "v/n",
+      "group": "tentative",
+      "priority": 2,
+      "meaning": "phỏng đoán, ước đoán",
+      "nuance": "",
+      "example": "From her silence, we *surmised* that the talks had failed.",
+      "collocations": [],
+      "confusables": [
+        "conjecture"
+      ]
+    },
+    {
+      "id": "presuppose",
+      "word": "presuppose",
+      "pos": "v",
+      "group": "tentative",
+      "priority": 2,
+      "meaning": "giả định trước",
+      "nuance": "",
+      "example": "The model *presupposes* rational expectations.",
+      "collocations": [],
+      "confusables": [
+        "conjecture"
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "id": "bd01",
+      "type": "tc",
+      "sentence": "The scheme succeeded only because its victims were so {0}: they accepted promises of 40 percent monthly returns without asking a single question.",
+      "blanks": [
+        {
+          "options": [
+            "credulous",
+            "credible",
+            "incredulous",
+            "cynical",
+            "agnostic"
+          ],
+          "answer": "credulous"
+        }
+      ],
+      "targets": [
+        "credulous",
+        "credible",
+        "incredulous"
+      ],
+      "hint": "Ba từ có gốc cred-: phân biệt cẩn thận.",
+      "explanation": "Tin ngay lời hứa phi lý mà không hỏi gì: credulous. Credible (đáng tin) là bẫy hình thức; incredulous là ngược nghĩa."
+    },
+    {
+      "id": "bd02",
+      "type": "tc",
+      "sentence": "Once the leaked emails showed that the agency had known about the defect for years, its claim of ignorance became {0}.",
+      "blanks": [
+        {
+          "options": [
+            "untenable",
+            "tentative",
+            "provisional",
+            "speculative",
+            "agnostic"
+          ],
+          "answer": "untenable"
+        }
+      ],
+      "targets": [
+        "untenable",
+        "tentative",
+        "provisional"
+      ],
+      "hint": "'Became …' sau bằng chứng rò rỉ.",
+      "explanation": "Lời biện hộ không còn đứng vững trước bằng chứng: untenable. Tentative và provisional là tạm thời; speculative là suy đoán."
+    },
+    {
+      "id": "bd03",
+      "type": "tc",
+      "sentence": "The authors are careful to present their estimates as {0}: the census data on which they rely will not be finalized until next year.",
+      "blanks": [
+        {
+          "options": [
+            "provisional",
+            "incontrovertible",
+            "cogent",
+            "tendentious",
+            "unfounded"
+          ],
+          "answer": "provisional"
+        }
+      ],
+      "targets": [
+        "provisional",
+        "incontrovertible"
+      ],
+      "hint": "Lý do được nêu sau dấu hai chấm.",
+      "explanation": "Số liệu chưa chốt nên ước tính chỉ là tạm thời: provisional. Incontrovertible và cogent sai hướng; unfounded là vô căn cứ, quá nặng."
+    },
+    {
+      "id": "bd04",
+      "type": "tc",
+      "sentence": "Critics charged that the report was {0}, selecting only the evidence that supported its sponsors' preferred policy.",
+      "blanks": [
+        {
+          "options": [
+            "tendentious",
+            "speculative",
+            "dubious",
+            "tentative",
+            "agnostic"
+          ],
+          "answer": "tendentious"
+        }
+      ],
+      "targets": [
+        "tendentious",
+        "speculative",
+        "dubious"
+      ],
+      "hint": "Vấn đề là thiên vị hay thiếu chắc chắn?",
+      "explanation": "Chỉ chọn bằng chứng có lợi cho quan điểm của nhà tài trợ: tendentious (thiên vị). Speculative là suy đoán; dubious là đáng ngờ nói chung, không chỉ rõ thiên vị."
+    },
+    {
+      "id": "bd05",
+      "type": "tc",
+      "sentence": "Although the link between the reform and the fall in crime is {0}, it is not yet {1}: several alternative explanations remain to be ruled out.",
+      "blanks": [
+        {
+          "options": [
+            "plausible",
+            "untenable",
+            "unfounded"
+          ],
+          "answer": "plausible"
+        },
+        {
+          "options": [
+            "incontrovertible",
+            "tentative",
+            "conjectural"
+          ],
+          "answer": "incontrovertible"
+        }
+      ],
+      "targets": [
+        "plausible",
+        "incontrovertible",
+        "tentative"
+      ],
+      "hint": "Cấu trúc 'Although X, not yet Y'.",
+      "explanation": "(i) 'Although… not yet': có vẻ hợp lý (plausible). (ii) Còn phải loại trừ cách giải thích khác: chưa phải không thể chối cãi, incontrovertible."
+    },
+    {
+      "id": "bd06",
+      "type": "se",
+      "sentence": "The panel found the defense's argument {0}: each step followed logically from the evidence, and the prosecution could find no weak point.",
+      "options": [
+        "cogent",
+        "compelling",
+        "plausible",
+        "tentative",
+        "specious",
+        "tendentious"
+      ],
+      "answers": [
+        "cogent",
+        "compelling"
+      ],
+      "targets": [
+        "cogent",
+        "compelling",
+        "plausible"
+      ],
+      "hint": "Mạnh đến mức nào?",
+      "explanation": "Lập luận chặt, không tìm được điểm yếu: cogent, compelling. Plausible chỉ là có vẻ hợp lý, quá yếu; specious là bẫy nghe có vẻ đúng nhưng sai."
+    },
+    {
+      "id": "bd07",
+      "type": "se",
+      "sentence": "When the minister announced that inflation had fallen to zero, reporters were openly {0}; the government's own price index showed it rising.",
+      "options": [
+        "incredulous",
+        "skeptical",
+        "credulous",
+        "gullible",
+        "cynical",
+        "agnostic"
+      ],
+      "answers": [
+        "incredulous",
+        "skeptical"
+      ],
+      "targets": [
+        "incredulous",
+        "skeptical",
+        "credulous",
+        "gullible",
+        "cynical"
+      ],
+      "hint": "Phản ứng trước điều khó tin.",
+      "explanation": "Không tin trước tuyên bố trái với số liệu: incredulous, skeptical. Credulous và gullible là cặp sai hướng; cynical là nghi ngờ động cơ, cần thêm thông tin."
+    },
+    {
+      "id": "bd08",
+      "type": "se",
+      "sentence": "With no records surviving from the period, any account of how the treaty was negotiated remains largely {0}.",
+      "options": [
+        "conjectural",
+        "speculative",
+        "incontrovertible",
+        "cogent",
+        "tendentious",
+        "credulous"
+      ],
+      "answers": [
+        "conjectural",
+        "speculative"
+      ],
+      "targets": [
+        "conjecture",
+        "speculative",
+        "incontrovertible",
+        "cogent"
+      ],
+      "hint": "Không có tài liệu nào còn lại.",
+      "explanation": "Không còn tài liệu nên chỉ là phỏng đoán: conjectural, speculative. Incontrovertible và cogent là cặp sai hướng."
+    }
+  ]
+}

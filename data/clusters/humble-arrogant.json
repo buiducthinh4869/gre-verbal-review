@@ -1,0 +1,700 @@
+{
+  "schemaVersion": 1,
+  "id": "humble-arrogant",
+  "title": "Khiêm tốn & Kiêu ngạo",
+  "order": 9,
+  "description": "Thái độ với bản thân và người khác: khiêm nhường, rụt rè, kiêu căng, hống hách, xấc xược.",
+  "groups": [
+    {
+      "id": "humble",
+      "title": "Khiêm tốn, rụt rè",
+      "direction": "positive",
+      "scale": false,
+      "note": "Diffident là rụt rè vì thiếu tự tin; self-effacing là chủ động lùi lại, không phô mình."
+    },
+    {
+      "id": "haughty",
+      "title": "Kiêu căng, khinh người",
+      "direction": "negative",
+      "scale": false,
+      "note": "Supercilious/condescending/patronizing: coi thường người khác. Haughty: tự cho mình cao hơn."
+    },
+    {
+      "id": "domineering",
+      "title": "Hống hách, áp đặt",
+      "direction": "negative",
+      "scale": false,
+      "note": ""
+    },
+    {
+      "id": "brazen",
+      "title": "Trơ tráo, xấc xược",
+      "direction": "negative",
+      "scale": false,
+      "note": "Temerity/effrontery/audacity: sự cả gan, trơ trẽn. Audacious có thể khen (táo bạo)."
+    },
+    {
+      "id": "selfsatisfied",
+      "title": "Tự mãn",
+      "direction": "negative",
+      "scale": false,
+      "note": "Bẫy: complacent (tự mãn) khác complaisant (chiều lòng)."
+    }
+  ],
+  "words": [
+    {
+      "id": "unassuming",
+      "word": "unassuming",
+      "pos": "adj",
+      "group": "humble",
+      "priority": 3,
+      "meaning": "khiêm tốn, không phô trương",
+      "nuance": "",
+      "example": "Despite her fame, she remained *unassuming*.",
+      "collocations": [],
+      "confusables": [
+        "self-effacing",
+        "unpretentious"
+      ]
+    },
+    {
+      "id": "self-effacing",
+      "word": "self-effacing",
+      "pos": "adj",
+      "group": "humble",
+      "priority": 3,
+      "meaning": "khiêm nhường, tự lùi lại phía sau",
+      "nuance": "Chủ động không nhận công, không tự đề cao.",
+      "example": "The *self-effacing* team leader credited her junior colleagues.",
+      "collocations": [],
+      "confusables": [
+        "unassuming",
+        "diffident"
+      ]
+    },
+    {
+      "id": "unpretentious",
+      "word": "unpretentious",
+      "pos": "adj",
+      "group": "humble",
+      "priority": 2,
+      "meaning": "giản dị, không màu mè",
+      "nuance": "",
+      "example": "The restaurant is *unpretentious* but excellent.",
+      "collocations": [],
+      "confusables": [
+        "unassuming"
+      ]
+    },
+    {
+      "id": "diffident",
+      "word": "diffident",
+      "pos": "adj",
+      "group": "humble",
+      "priority": 3,
+      "meaning": "rụt rè, thiếu tự tin",
+      "nuance": "Khác self-effacing: diffident là do thiếu tự tin.",
+      "example": "A *diffident* speaker, he rarely raised objections in seminars.",
+      "collocations": [
+        "diffident about X"
+      ],
+      "confusables": [
+        "self-effacing",
+        "timorous"
+      ]
+    },
+    {
+      "id": "demure",
+      "word": "demure",
+      "pos": "adj",
+      "group": "humble",
+      "priority": 2,
+      "meaning": "nhũn nhặn, kín đáo",
+      "nuance": "",
+      "example": "The *demure* new intern rarely spoke in meetings.",
+      "collocations": [],
+      "confusables": [
+        "diffident"
+      ]
+    },
+    {
+      "id": "timorous",
+      "word": "timorous",
+      "pos": "adj",
+      "group": "humble",
+      "priority": 2,
+      "meaning": "nhút nhát, rụt rè",
+      "nuance": "Nhấn vào sự sợ hãi.",
+      "example": "*Timorous* investors pulled out at the first sign of trouble.",
+      "collocations": [],
+      "root": "timor (sợ hãi), như timid",
+      "confusables": [
+        "diffident"
+      ]
+    },
+    {
+      "id": "deference",
+      "word": "deference",
+      "pos": "n",
+      "group": "humble",
+      "priority": 2,
+      "meaning": "sự tôn trọng, nhường nhịn",
+      "nuance": "in deference to X: vì tôn trọng X.",
+      "example": "The meeting was postponed **in deference to** the mourning period.",
+      "collocations": [
+        "in deference to X"
+      ],
+      "confusables": [
+        "deferential"
+      ]
+    },
+    {
+      "id": "haughty",
+      "word": "haughty",
+      "pos": "adj",
+      "group": "haughty",
+      "priority": 3,
+      "meaning": "kiêu căng, ngạo mạn",
+      "nuance": "",
+      "example": "The *haughty* official refused to meet the villagers.",
+      "collocations": [],
+      "confusables": [
+        "supercilious",
+        "arrogant"
+      ]
+    },
+    {
+      "id": "supercilious",
+      "word": "supercilious",
+      "pos": "adj",
+      "group": "haughty",
+      "priority": 3,
+      "meaning": "khinh khỉnh, trịch thượng",
+      "nuance": "Coi người khác là thấp kém, thường kèm vẻ mặt khinh bỉ.",
+      "example": "He gave the young researcher's question a *supercilious* smile.",
+      "collocations": [],
+      "root": "super- + cilium (lông mày): nhướng mày",
+      "confusables": [
+        "condescending",
+        "haughty"
+      ]
+    },
+    {
+      "id": "condescending",
+      "word": "condescending",
+      "pos": "adj",
+      "group": "haughty",
+      "priority": 3,
+      "meaning": "hạ cố, trịch thượng",
+      "nuance": "Tỏ ra tốt bụng nhưng ngầm coi thường.",
+      "example": "Her *condescending* tone alienated the audience.",
+      "collocations": [
+        "condescending toward X"
+      ],
+      "confusables": [
+        "patronizing",
+        "supercilious"
+      ]
+    },
+    {
+      "id": "patronizing",
+      "word": "patronizing",
+      "pos": "adj",
+      "group": "haughty",
+      "priority": 2,
+      "meaning": "kẻ cả, coi người khác như trẻ con",
+      "nuance": "",
+      "example": "Explaining such basics to experts seemed *patronizing*.",
+      "collocations": [],
+      "confusables": [
+        "condescending"
+      ]
+    },
+    {
+      "id": "arrogant",
+      "word": "arrogant",
+      "pos": "adj",
+      "group": "haughty",
+      "priority": 1,
+      "meaning": "kiêu ngạo",
+      "nuance": "",
+      "example": "The *arrogant* consultant dismissed local knowledge.",
+      "collocations": [],
+      "confusables": [
+        "haughty"
+      ]
+    },
+    {
+      "id": "conceited",
+      "word": "conceited",
+      "pos": "adj",
+      "group": "haughty",
+      "priority": 2,
+      "meaning": "tự phụ, kiêu căng",
+      "nuance": "Tự đánh giá mình quá cao.",
+      "example": "The *conceited* author quoted himself in every chapter.",
+      "collocations": [],
+      "confusables": []
+    },
+    {
+      "id": "vainglorious",
+      "word": "vainglorious",
+      "pos": "adj",
+      "group": "haughty",
+      "priority": 2,
+      "meaning": "khoe khoang, hư vinh",
+      "nuance": "",
+      "example": "The *vainglorious* general commissioned statues of himself.",
+      "collocations": [],
+      "confusables": [
+        "conceited"
+      ]
+    },
+    {
+      "id": "hubris",
+      "word": "hubris",
+      "pos": "n",
+      "group": "haughty",
+      "priority": 3,
+      "meaning": "sự ngạo mạn quá mức (dẫn đến thất bại)",
+      "nuance": "Thường gắn với sự sụp đổ: kiêu ngạo nên chuốc họa.",
+      "example": "The firm's collapse was a story of *hubris*: it expanded as if growth would never end.",
+      "collocations": [],
+      "root": "Hy Lạp: hybris",
+      "confusables": [
+        "arrogant"
+      ]
+    },
+    {
+      "id": "imperious",
+      "word": "imperious",
+      "pos": "adj",
+      "group": "domineering",
+      "priority": 3,
+      "meaning": "hống hách, ra lệnh như vua chúa",
+      "nuance": "Mong người khác phục tùng ngay.",
+      "example": "The *imperious* director expected instant obedience.",
+      "collocations": [
+        "an imperious manner"
+      ],
+      "root": "imperi- (quyền lực), như imperial",
+      "confusables": [
+        "peremptory",
+        "domineering"
+      ]
+    },
+    {
+      "id": "peremptory",
+      "word": "peremptory",
+      "pos": "adj",
+      "group": "domineering",
+      "priority": 3,
+      "meaning": "độc đoán, không cho phép phản đối",
+      "nuance": "Ra lệnh dứt khoát, cộc lốc.",
+      "example": "She dismissed the objection with a *peremptory* wave.",
+      "collocations": [
+        "a peremptory tone"
+      ],
+      "confusables": [
+        "imperious",
+        "curt"
+      ]
+    },
+    {
+      "id": "domineering",
+      "word": "domineering",
+      "pos": "adj",
+      "group": "domineering",
+      "priority": 2,
+      "meaning": "độc đoán, áp đặt",
+      "nuance": "",
+      "example": "A *domineering* supervisor can stifle a lab's creativity.",
+      "collocations": [],
+      "confusables": [
+        "overbearing"
+      ]
+    },
+    {
+      "id": "overbearing",
+      "word": "overbearing",
+      "pos": "adj",
+      "group": "domineering",
+      "priority": 2,
+      "meaning": "hống hách, áp đảo người khác",
+      "nuance": "",
+      "example": "An *overbearing* supervisor can silence junior researchers.",
+      "collocations": [],
+      "confusables": [
+        "domineering"
+      ]
+    },
+    {
+      "id": "high-handed",
+      "word": "high-handed",
+      "pos": "adj",
+      "group": "domineering",
+      "priority": 2,
+      "meaning": "độc đoán, không hỏi ý ai",
+      "nuance": "",
+      "example": "The ministry's *high-handed* decision ignored local opinion.",
+      "collocations": [],
+      "confusables": [
+        "imperious"
+      ]
+    },
+    {
+      "id": "brazen",
+      "word": "brazen",
+      "pos": "adj",
+      "group": "brazen",
+      "priority": 3,
+      "meaning": "trơ tráo, trắng trợn",
+      "nuance": "Không xấu hổ khi làm sai.",
+      "example": "It was a *brazen* attempt to rewrite history.",
+      "collocations": [
+        "a brazen lie"
+      ],
+      "confusables": [
+        "impudent"
+      ]
+    },
+    {
+      "id": "impudent",
+      "word": "impudent",
+      "pos": "adj",
+      "group": "brazen",
+      "priority": 3,
+      "meaning": "hỗn láo, xấc xược",
+      "nuance": "Thiếu tôn trọng người trên.",
+      "example": "The *impudent* reply earned him a reprimand.",
+      "collocations": [],
+      "confusables": [
+        "insolent",
+        "brazen"
+      ]
+    },
+    {
+      "id": "insolent",
+      "word": "insolent",
+      "pos": "adj",
+      "group": "brazen",
+      "priority": 3,
+      "meaning": "láo xược, ngạo mạn",
+      "nuance": "Gần nghĩa impudent, thường mạnh hơn.",
+      "example": "The *insolent* reply to the auditor's request made matters worse.",
+      "collocations": [],
+      "confusables": [
+        "impudent"
+      ]
+    },
+    {
+      "id": "temerity",
+      "word": "temerity",
+      "pos": "n",
+      "group": "brazen",
+      "priority": 3,
+      "meaning": "sự cả gan, liều lĩnh",
+      "nuance": "Thường đi với 'have the temerity to'.",
+      "example": "She **had the temerity to** question the Nobel laureate's data.",
+      "collocations": [
+        "have the temerity to do X"
+      ],
+      "confusables": [
+        "effrontery"
+      ]
+    },
+    {
+      "id": "effrontery",
+      "word": "effrontery",
+      "pos": "n",
+      "group": "brazen",
+      "priority": 3,
+      "meaning": "sự trơ trẽn",
+      "nuance": "Mạnh hơn temerity, hàm ý trơ tráo đáng ghét.",
+      "example": "He had the *effrontery* to blame his staff for his own mistake.",
+      "collocations": [
+        "have the effrontery to"
+      ],
+      "confusables": [
+        "temerity"
+      ]
+    },
+    {
+      "id": "audacious",
+      "word": "audacious",
+      "pos": "adj",
+      "group": "brazen",
+      "priority": 3,
+      "meaning": "táo bạo; liều lĩnh",
+      "nuance": "Bẫy: có thể khen (táo bạo) hoặc chê (cả gan).",
+      "example": "The *audacious* reform plan surprised even supporters.",
+      "collocations": [
+        "an audacious plan"
+      ],
+      "root": "audac- (dám)",
+      "confusables": [
+        "temerity"
+      ]
+    },
+    {
+      "id": "brash",
+      "word": "brash",
+      "pos": "adj",
+      "group": "brazen",
+      "priority": 2,
+      "meaning": "hỗn hào, xốc nổi, phô trương",
+      "nuance": "",
+      "example": "The *brash* young CEO promised to 'disrupt' banking.",
+      "collocations": [],
+      "confusables": [
+        "brazen"
+      ]
+    },
+    {
+      "id": "presumptuous",
+      "word": "presumptuous",
+      "pos": "adj",
+      "group": "brazen",
+      "priority": 2,
+      "meaning": "tự tiện, quá trớn",
+      "nuance": "Làm điều không có quyền làm.",
+      "example": "It would be *presumptuous* to speak for the committee.",
+      "collocations": [],
+      "confusables": [
+        "impudent"
+      ]
+    },
+    {
+      "id": "complacent",
+      "word": "complacent",
+      "pos": "adj",
+      "group": "selfsatisfied",
+      "priority": 3,
+      "meaning": "tự mãn, chủ quan",
+      "nuance": "Hài lòng đến mức không còn cảnh giác.",
+      "example": "Years of growth made regulators *complacent* about risk.",
+      "collocations": [
+        "complacent about X"
+      ],
+      "confusables": [
+        "complaisant",
+        "smug"
+      ]
+    },
+    {
+      "id": "smug",
+      "word": "smug",
+      "pos": "adj",
+      "group": "selfsatisfied",
+      "priority": 2,
+      "meaning": "tự mãn, đắc ý",
+      "nuance": "Tự hài lòng một cách khó chịu.",
+      "example": "The incumbent's *smug* confidence evaporated on election night.",
+      "collocations": [],
+      "confusables": [
+        "complacent"
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "id": "ha01",
+      "type": "tc",
+      "sentence": "Although she had transformed the field, the professor remained strikingly {0}, always crediting her students and deflecting praise.",
+      "blanks": [
+        {
+          "options": [
+            "self-effacing",
+            "diffident",
+            "timorous",
+            "demure",
+            "supercilious"
+          ],
+          "answer": "self-effacing"
+        }
+      ],
+      "targets": [
+        "self-effacing",
+        "diffident",
+        "timorous"
+      ],
+      "hint": "Lùi lại vì khiêm tốn hay vì thiếu tự tin?",
+      "explanation": "Chủ động nhường công cho học trò: self-effacing. Diffident và timorous là rụt rè vì thiếu tự tin, không hợp với một người đã thay đổi cả ngành."
+    },
+    {
+      "id": "ha02",
+      "type": "tc",
+      "sentence": "Years of uninterrupted growth had made the bank's managers dangerously {0}; they stopped stress-testing their loan portfolio.",
+      "blanks": [
+        {
+          "options": [
+            "complacent",
+            "complaisant",
+            "smug",
+            "diffident",
+            "haughty"
+          ],
+          "answer": "complacent"
+        }
+      ],
+      "targets": [
+        "complacent",
+        "complaisant",
+        "smug"
+      ],
+      "hint": "Bẫy chính tả kinh điển.",
+      "explanation": "Chủ quan đến mức ngừng kiểm tra rủi ro: complacent. Complaisant là chiều lòng; smug nhấn vào vẻ đắc ý, không nhấn vào sự lơ là cảnh giác."
+    },
+    {
+      "id": "ha03",
+      "type": "tc",
+      "sentence": "The junior analyst had the {0} to question the chief economist's forecast in front of the board; to everyone's surprise, the chief economist thanked her.",
+      "blanks": [
+        {
+          "options": [
+            "temerity",
+            "deference",
+            "hubris",
+            "diffidence",
+            "complacency"
+          ],
+          "answer": "temerity"
+        }
+      ],
+      "targets": [
+        "temerity",
+        "deference",
+        "hubris"
+      ],
+      "hint": "Cấu trúc 'had the … to'.",
+      "explanation": "Cả gan chất vấn trước hội đồng: temerity. Hubris là ngạo mạn dẫn tới thất bại, không đi với cấu trúc 'have the … to'."
+    },
+    {
+      "id": "ha04",
+      "type": "tc",
+      "sentence": "Critics saw the merger as an act of corporate {0}: the firm's leaders, convinced they could not fail, ignored every warning, and the company collapsed within two years.",
+      "blanks": [
+        {
+          "options": [
+            "hubris",
+            "temerity",
+            "effrontery",
+            "deference",
+            "diffidence"
+          ],
+          "answer": "hubris"
+        }
+      ],
+      "targets": [
+        "hubris",
+        "temerity",
+        "effrontery"
+      ],
+      "hint": "Kiêu ngạo dẫn tới kết cục gì?",
+      "explanation": "Tin rằng mình không thể thất bại rồi sụp đổ: hubris. Temerity và effrontery là cả gan, trơ tráo trong một hành động, không có hàm ý kiêu ngạo dẫn tới sụp đổ."
+    },
+    {
+      "id": "ha05",
+      "type": "tc",
+      "sentence": "Far from being {0}, the new director proved {1}, dismissing objections with a single curt sentence and expecting her instructions to be followed without discussion.",
+      "blanks": [
+        {
+          "options": [
+            "diffident",
+            "brazen",
+            "supercilious"
+          ],
+          "answer": "diffident"
+        },
+        {
+          "options": [
+            "peremptory",
+            "self-effacing",
+            "unassuming"
+          ],
+          "answer": "peremptory"
+        }
+      ],
+      "targets": [
+        "diffident",
+        "peremptory"
+      ],
+      "hint": "Bắt đầu từ chỗ (ii).",
+      "explanation": "(ii) Gạt phản đối bằng một câu cộc lốc, muốn được làm theo ngay: peremptory. (i) 'Far from' đổi chiều: rụt rè, diffident."
+    },
+    {
+      "id": "ha06",
+      "type": "se",
+      "sentence": "The senior partner's {0} manner, he treated every junior associate's question as evidence of stupidity, made him deeply unpopular.",
+      "options": [
+        "supercilious",
+        "condescending",
+        "imperious",
+        "peremptory",
+        "unassuming",
+        "self-effacing"
+      ],
+      "answers": [
+        "supercilious",
+        "condescending"
+      ],
+      "targets": [
+        "supercilious",
+        "condescending",
+        "imperious",
+        "peremptory"
+      ],
+      "hint": "Coi thường hay ra lệnh?",
+      "explanation": "Coi câu hỏi của cấp dưới là dấu hiệu ngu ngốc: khinh khỉnh, trịch thượng, supercilious và condescending. Imperious và peremptory là cặp ra lệnh hống hách, không phải coi thường trí tuệ."
+    },
+    {
+      "id": "ha07",
+      "type": "se",
+      "sentence": "It was a {0} lie: the minister denied ever meeting the lobbyist even though photographs of their dinner had been published that morning.",
+      "options": [
+        "brazen",
+        "barefaced",
+        "timorous",
+        "diffident",
+        "apocryphal",
+        "specious"
+      ],
+      "answers": [
+        "brazen",
+        "barefaced"
+      ],
+      "targets": [
+        "brazen",
+        "timorous",
+        "diffident"
+      ],
+      "hint": "Nói dối trước bằng chứng rõ ràng.",
+      "explanation": "Lời nói dối trắng trợn dù có ảnh: brazen, barefaced. Timorous và diffident là cặp rụt rè; specious là nghe có vẻ đúng."
+    },
+    {
+      "id": "ha08",
+      "type": "se",
+      "sentence": "The {0} young executive announced to the press that his start-up would make the entire banking industry obsolete within five years.",
+      "options": [
+        "brash",
+        "audacious",
+        "demure",
+        "unassuming",
+        "imperious",
+        "peremptory"
+      ],
+      "answers": [
+        "brash",
+        "audacious"
+      ],
+      "targets": [
+        "brash",
+        "audacious",
+        "demure",
+        "unassuming"
+      ],
+      "hint": "Phô trương táo bạo hay hống hách?",
+      "explanation": "Tuyên bố ồn ào, táo bạo: brash, audacious. Imperious và peremptory là cặp ra lệnh hống hách, không phải tuyên bố khoa trương."
+    }
+  ]
+}

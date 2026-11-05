@@ -1,0 +1,729 @@
+{
+  "schemaVersion": 1,
+  "id": "careful-careless",
+  "title": "Cẩn trọng & Hời hợt",
+  "order": 14,
+  "description": "Mức độ cẩn thận khi làm việc và ra quyết định: thận trọng, tỉ mỉ, qua loa, cẩu thả, liều lĩnh.",
+  "groups": [
+    {
+      "id": "prudent",
+      "title": "Thận trọng, khôn ngoan",
+      "direction": "positive",
+      "scale": false,
+      "note": "Circumspect/chary/wary: dè chừng rủi ro. Judicious/prudent: khôn ngoan, cân nhắc đúng mực."
+    },
+    {
+      "id": "meticulous",
+      "title": "Tỉ mỉ, kỹ lưỡng",
+      "direction": "positive",
+      "scale": false,
+      "note": "Fastidious có thể chê: khó tính, quá cầu kỳ. Exacting: đòi hỏi khắt khe."
+    },
+    {
+      "id": "perfunctory",
+      "title": "Qua loa, hời hợt",
+      "direction": "negative",
+      "scale": false,
+      "note": "Cursory: lướt qua vội vàng. Perfunctory: làm cho có, chiếu lệ. Desultory: rời rạc, thiếu kế hoạch."
+    },
+    {
+      "id": "negligent",
+      "title": "Cẩu thả, lơ là",
+      "direction": "negative",
+      "scale": false,
+      "note": ""
+    },
+    {
+      "id": "rash",
+      "title": "Hấp tấp, liều lĩnh",
+      "direction": "negative",
+      "scale": false,
+      "note": "Precipitate là bẫy: tính từ nghĩa là hấp tấp; động từ nghĩa là gây ra đột ngột."
+    }
+  ],
+  "words": [
+    {
+      "id": "prudent",
+      "word": "prudent",
+      "pos": "adj",
+      "group": "prudent",
+      "priority": 2,
+      "meaning": "thận trọng, khôn ngoan",
+      "nuance": "",
+      "example": "It would be *prudent* to wait for revised data.",
+      "collocations": [],
+      "confusables": [
+        "judicious"
+      ]
+    },
+    {
+      "id": "judicious",
+      "word": "judicious",
+      "pos": "adj",
+      "group": "prudent",
+      "priority": 3,
+      "meaning": "sáng suốt, có óc phán đoán tốt",
+      "nuance": "Cân nhắc kỹ và quyết định đúng.",
+      "example": "A *judicious* use of subsidies can correct the market failure.",
+      "collocations": [
+        "judicious use of X"
+      ],
+      "root": "judic- (phán xét)",
+      "confusables": [
+        "prudent",
+        "circumspect"
+      ]
+    },
+    {
+      "id": "circumspect",
+      "word": "circumspect",
+      "pos": "adj",
+      "group": "prudent",
+      "priority": 3,
+      "meaning": "thận trọng, cân nhắc mọi mặt",
+      "nuance": "Nhìn quanh trước khi hành động.",
+      "example": "Central bankers are *circumspect* in their public statements.",
+      "collocations": [],
+      "root": "circum- (xung quanh) + spect- (nhìn)",
+      "confusables": [
+        "chary",
+        "wary"
+      ]
+    },
+    {
+      "id": "wary",
+      "word": "wary",
+      "pos": "adj",
+      "group": "prudent",
+      "priority": 3,
+      "meaning": "cảnh giác, dè chừng",
+      "nuance": "",
+      "example": "Investors are **wary of** emerging-market debt.",
+      "collocations": [
+        "wary of X"
+      ],
+      "confusables": [
+        "chary",
+        "circumspect"
+      ]
+    },
+    {
+      "id": "chary",
+      "word": "chary",
+      "pos": "adj",
+      "group": "prudent",
+      "priority": 3,
+      "meaning": "dè dặt, ngại làm điều gì",
+      "nuance": "Thường đi với of: chary of doing X.",
+      "example": "Banks became **chary of** lending to small firms.",
+      "collocations": [
+        "chary of X"
+      ],
+      "confusables": [
+        "wary"
+      ]
+    },
+    {
+      "id": "discreet",
+      "word": "discreet",
+      "pos": "adj",
+      "group": "prudent",
+      "priority": 3,
+      "meaning": "kín đáo, thận trọng trong lời nói",
+      "nuance": "Bẫy: khác discrete (riêng biệt, rời rạc).",
+      "example": "She was *discreet* about the negotiations.",
+      "collocations": [],
+      "confusables": [
+        "reticent"
+      ]
+    },
+    {
+      "id": "meticulous",
+      "word": "meticulous",
+      "pos": "adj",
+      "group": "meticulous",
+      "priority": 3,
+      "meaning": "tỉ mỉ, kỹ càng",
+      "nuance": "",
+      "example": "*Meticulous* record-keeping made the audit easy.",
+      "collocations": [
+        "meticulous attention to detail"
+      ],
+      "confusables": [
+        "scrupulous",
+        "painstaking"
+      ]
+    },
+    {
+      "id": "scrupulous",
+      "word": "scrupulous",
+      "pos": "adj",
+      "group": "meticulous",
+      "priority": 3,
+      "meaning": "cẩn thận; ngay thẳng, có lương tâm",
+      "nuance": "Bẫy hai nghĩa: tỉ mỉ, và có đạo đức (trái nghĩa unscrupulous).",
+      "example": "The replication shows *scrupulous* attention to the original protocol.",
+      "collocations": [
+        "scrupulous honesty"
+      ],
+      "confusables": [
+        "meticulous",
+        "punctilious"
+      ]
+    },
+    {
+      "id": "punctilious",
+      "word": "punctilious",
+      "pos": "adj",
+      "group": "meticulous",
+      "priority": 3,
+      "meaning": "rất chú trọng chi tiết, nghi thức",
+      "nuance": "Rất cẩn thận về quy tắc, lễ nghi.",
+      "example": "The *punctilious* clerk rejected forms with a single missing initial.",
+      "collocations": [],
+      "confusables": [
+        "scrupulous",
+        "fastidious"
+      ]
+    },
+    {
+      "id": "fastidious",
+      "word": "fastidious",
+      "pos": "adj",
+      "group": "meticulous",
+      "priority": 3,
+      "meaning": "tỉ mỉ; khó tính, cầu kỳ",
+      "nuance": "Có thể khen hoặc chê.",
+      "example": "He is *fastidious* about citation formats.",
+      "collocations": [
+        "fastidious about X"
+      ],
+      "confusables": [
+        "punctilious"
+      ]
+    },
+    {
+      "id": "painstaking",
+      "word": "painstaking",
+      "pos": "adj",
+      "group": "meticulous",
+      "priority": 3,
+      "meaning": "cần cù, chăm chút từng chi tiết",
+      "nuance": "Tốn nhiều công sức để làm cẩn thận.",
+      "example": "The dataset is the result of years of *painstaking* fieldwork.",
+      "collocations": [
+        "painstaking research"
+      ],
+      "confusables": [
+        "meticulous",
+        "cursory"
+      ]
+    },
+    {
+      "id": "exacting",
+      "word": "exacting",
+      "pos": "adj",
+      "group": "meticulous",
+      "priority": 3,
+      "meaning": "đòi hỏi khắt khe",
+      "nuance": "",
+      "example": "The journal's *exacting* standards reject most submissions.",
+      "collocations": [
+        "exacting standards"
+      ],
+      "confusables": [
+        "fastidious"
+      ]
+    },
+    {
+      "id": "conscientious",
+      "word": "conscientious",
+      "pos": "adj",
+      "group": "meticulous",
+      "priority": 2,
+      "meaning": "tận tâm, chu đáo",
+      "nuance": "",
+      "example": "*Conscientious* enumerators double-checked every questionnaire.",
+      "collocations": [],
+      "confusables": [
+        "scrupulous"
+      ]
+    },
+    {
+      "id": "cursory",
+      "word": "cursory",
+      "pos": "adj",
+      "group": "perfunctory",
+      "priority": 3,
+      "meaning": "vội vàng, lướt qua",
+      "nuance": "",
+      "example": "Even a *cursory* glance at the data reveals the outlier.",
+      "collocations": [
+        "a cursory glance",
+        "cursory examination"
+      ],
+      "confusables": [
+        "perfunctory",
+        "painstaking"
+      ]
+    },
+    {
+      "id": "perfunctory",
+      "word": "perfunctory",
+      "pos": "adj",
+      "group": "perfunctory",
+      "priority": 3,
+      "meaning": "chiếu lệ, làm cho có",
+      "nuance": "Làm như nghĩa vụ, không thật lòng.",
+      "example": "The minister gave a *perfunctory* apology and changed the subject.",
+      "collocations": [
+        "a perfunctory apology"
+      ],
+      "confusables": [
+        "cursory"
+      ]
+    },
+    {
+      "id": "desultory",
+      "word": "desultory",
+      "pos": "adj",
+      "group": "perfunctory",
+      "priority": 3,
+      "meaning": "rời rạc, thiếu mục đích",
+      "nuance": "Làm lúc này lúc khác, không có kế hoạch.",
+      "example": "After *desultory* negotiations, the talks collapsed.",
+      "collocations": [
+        "desultory conversation"
+      ],
+      "confusables": [
+        "perfunctory"
+      ]
+    },
+    {
+      "id": "superficial",
+      "word": "superficial",
+      "pos": "adj",
+      "group": "perfunctory",
+      "priority": 2,
+      "meaning": "hời hợt, bề ngoài",
+      "nuance": "",
+      "example": "The review offered only a *superficial* reading of the evidence.",
+      "collocations": [],
+      "confusables": [
+        "cursory"
+      ]
+    },
+    {
+      "id": "slipshod",
+      "word": "slipshod",
+      "pos": "adj",
+      "group": "negligent",
+      "priority": 3,
+      "meaning": "cẩu thả, luộm thuộm",
+      "nuance": "",
+      "example": "*Slipshod* accounting hid the losses for months.",
+      "collocations": [],
+      "confusables": [
+        "negligent"
+      ]
+    },
+    {
+      "id": "negligent",
+      "word": "negligent",
+      "pos": "adj",
+      "group": "negligent",
+      "priority": 2,
+      "meaning": "lơ là, cẩu thả (trách nhiệm)",
+      "nuance": "",
+      "example": "The court found the builder *negligent*.",
+      "collocations": [],
+      "confusables": [
+        "remiss"
+      ]
+    },
+    {
+      "id": "remiss",
+      "word": "remiss",
+      "pos": "adj",
+      "group": "negligent",
+      "priority": 3,
+      "meaning": "lơ là bổn phận",
+      "nuance": "Thường: it would be remiss of me not to…",
+      "example": "**It would be remiss of me not to** thank the reviewers.",
+      "collocations": [
+        "it would be remiss of X not to"
+      ],
+      "confusables": [
+        "negligent",
+        "lax"
+      ]
+    },
+    {
+      "id": "lax",
+      "word": "lax",
+      "pos": "adj",
+      "group": "negligent",
+      "priority": 3,
+      "meaning": "lỏng lẻo, không nghiêm",
+      "nuance": "Dùng cho quy định, giám sát.",
+      "example": "*Lax* supervision allowed risky lending to grow.",
+      "collocations": [
+        "lax regulation"
+      ],
+      "confusables": [
+        "remiss",
+        "stringent"
+      ]
+    },
+    {
+      "id": "cavalier",
+      "word": "cavalier",
+      "pos": "adj",
+      "group": "negligent",
+      "priority": 3,
+      "meaning": "coi nhẹ, xem thường",
+      "nuance": "Thái độ vô tư lự trước điều nghiêm trọng.",
+      "example": "His *cavalier* attitude **toward** data privacy worried regulators.",
+      "collocations": [
+        "a cavalier attitude toward X"
+      ],
+      "confusables": [
+        "negligent"
+      ]
+    },
+    {
+      "id": "indiscriminate",
+      "word": "indiscriminate",
+      "pos": "adj",
+      "group": "negligent",
+      "priority": 3,
+      "meaning": "bừa bãi, không phân biệt",
+      "nuance": "",
+      "example": "*Indiscriminate* use of antibiotics breeds resistance.",
+      "collocations": [],
+      "root": "in- + discriminate (phân biệt)",
+      "confusables": [
+        "cavalier"
+      ]
+    },
+    {
+      "id": "stringent",
+      "word": "stringent",
+      "pos": "adj",
+      "group": "negligent",
+      "priority": 2,
+      "meaning": "nghiêm ngặt",
+      "nuance": "Trái nghĩa lax.",
+      "example": "*Stringent* capital requirements reduce bank risk.",
+      "collocations": [
+        "stringent rules"
+      ],
+      "confusables": [
+        "lax",
+        "exacting"
+      ]
+    },
+    {
+      "id": "rash",
+      "word": "rash",
+      "pos": "adj",
+      "group": "rash",
+      "priority": 2,
+      "meaning": "hấp tấp, liều lĩnh",
+      "nuance": "",
+      "example": "It would be *rash* to draw conclusions from one quarter.",
+      "collocations": [],
+      "confusables": [
+        "impetuous"
+      ]
+    },
+    {
+      "id": "impetuous",
+      "word": "impetuous",
+      "pos": "adj",
+      "group": "rash",
+      "priority": 3,
+      "meaning": "bốc đồng, hành động theo cảm xúc",
+      "nuance": "",
+      "example": "The *impetuous* decision to float the currency triggered a crisis.",
+      "collocations": [],
+      "confusables": [
+        "rash",
+        "precipitate"
+      ]
+    },
+    {
+      "id": "precipitate",
+      "word": "precipitate",
+      "pos": "adj/v",
+      "group": "rash",
+      "priority": 3,
+      "meaning": "hấp tấp (adj); gây ra đột ngột (v)",
+      "nuance": "Bẫy hai nghĩa: precipitate a crisis là gây ra khủng hoảng.",
+      "example": "The bank run **precipitated** the collapse. / A *precipitate* withdrawal of troops.",
+      "collocations": [
+        "precipitate a crisis"
+      ],
+      "confusables": [
+        "impetuous",
+        "rash"
+      ]
+    },
+    {
+      "id": "reckless",
+      "word": "reckless",
+      "pos": "adj",
+      "group": "rash",
+      "priority": 2,
+      "meaning": "liều lĩnh, không lo hậu quả",
+      "nuance": "",
+      "example": "*Reckless* lending fueled the housing bubble.",
+      "collocations": [],
+      "confusables": [
+        "rash"
+      ]
+    },
+    {
+      "id": "foolhardy",
+      "word": "foolhardy",
+      "pos": "adj",
+      "group": "rash",
+      "priority": 2,
+      "meaning": "liều mạng, dại dột",
+      "nuance": "",
+      "example": "Investing your savings in a single stock is *foolhardy*.",
+      "collocations": [],
+      "confusables": [
+        "reckless"
+      ]
+    },
+    {
+      "id": "heedless",
+      "word": "heedless",
+      "pos": "adj",
+      "group": "rash",
+      "priority": 2,
+      "meaning": "không để ý, bất chấp",
+      "nuance": "heedless of X.",
+      "example": "**Heedless of** the warnings, they pressed ahead.",
+      "collocations": [
+        "heedless of X"
+      ],
+      "confusables": [
+        "reckless"
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "id": "cc01",
+      "type": "tc",
+      "sentence": "The inspector's review was so {0} that it failed to notice that half the safety logs were blank.",
+      "blanks": [
+        {
+          "options": [
+            "cursory",
+            "fastidious",
+            "punctilious",
+            "exacting",
+            "scrupulous"
+          ],
+          "answer": "cursory"
+        }
+      ],
+      "targets": [
+        "cursory",
+        "fastidious",
+        "punctilious"
+      ],
+      "hint": "Kết quả: bỏ sót điều hiển nhiên.",
+      "explanation": "Không thấy cả nửa sổ trống: kiểm tra lướt qua, cursory."
+    },
+    {
+      "id": "cc02",
+      "type": "tc",
+      "sentence": "Unlike his {0} predecessor, who checked every figure twice, the new auditor was notoriously {1}, signing off on accounts he had barely read.",
+      "blanks": [
+        {
+          "options": [
+            "meticulous",
+            "remiss",
+            "impetuous"
+          ],
+          "answer": "meticulous"
+        },
+        {
+          "options": [
+            "slipshod",
+            "painstaking",
+            "circumspect"
+          ],
+          "answer": "slipshod"
+        }
+      ],
+      "targets": [
+        "meticulous",
+        "slipshod",
+        "painstaking"
+      ],
+      "hint": "'Unlike' đổi chiều giữa hai người.",
+      "explanation": "(i) Kiểm tra mọi số liệu hai lần: meticulous. (ii) 'Unlike… notoriously': ký duyệt khi chưa đọc kỹ, slipshod."
+    },
+    {
+      "id": "cc03",
+      "type": "tc",
+      "sentence": "Having been burned by the last crisis, banks became {0} of lending to small firms, demanding collateral worth twice the loan.",
+      "blanks": [
+        {
+          "options": [
+            "chary",
+            "cavalier",
+            "indiscriminate",
+            "remiss",
+            "heedless"
+          ],
+          "answer": "chary"
+        }
+      ],
+      "targets": [
+        "chary",
+        "cavalier",
+        "indiscriminate"
+      ],
+      "hint": "Cấu trúc 'became … of lending'.",
+      "explanation": "Đòi tài sản thế chấp gấp đôi: dè dặt khi cho vay, chary of. Cavalier và heedless là ngược nghĩa."
+    },
+    {
+      "id": "cc04",
+      "type": "tc",
+      "sentence": "The minister offered only a {0} apology, reading a two-line statement before moving briskly on to other business.",
+      "blanks": [
+        {
+          "options": [
+            "perfunctory",
+            "painstaking",
+            "scrupulous",
+            "judicious",
+            "exacting"
+          ],
+          "answer": "perfunctory"
+        }
+      ],
+      "targets": [
+        "perfunctory",
+        "painstaking"
+      ],
+      "hint": "Xin lỗi cho có.",
+      "explanation": "Lời xin lỗi hai dòng rồi chuyển chủ đề ngay: chiếu lệ, perfunctory."
+    },
+    {
+      "id": "cc05",
+      "type": "tc",
+      "sentence": "The panic itself did not cause the collapse; rather, it {0} a failure that years of {1} supervision had made all but inevitable.",
+      "blanks": [
+        {
+          "options": [
+            "precipitated",
+            "forestalled",
+            "averted"
+          ],
+          "answer": "precipitated"
+        },
+        {
+          "options": [
+            "lax",
+            "stringent",
+            "exacting"
+          ],
+          "answer": "lax"
+        }
+      ],
+      "targets": [
+        "precipitate",
+        "lax",
+        "stringent"
+      ],
+      "hint": "'Rather' tách nguyên nhân sâu xa và nguyên nhân trực tiếp.",
+      "explanation": "(i) Hoảng loạn không phải nguyên nhân gốc mà chỉ làm sự sụp đổ xảy ra sớm: precipitated. (ii) Giám sát lỏng lẻo nhiều năm: lax."
+    },
+    {
+      "id": "cc06",
+      "type": "se",
+      "sentence": "Given how little is known about the drug's long-term effects, regulators were right to be {0} before approving it for children.",
+      "options": [
+        "circumspect",
+        "wary",
+        "cavalier",
+        "heedless",
+        "fastidious",
+        "punctilious"
+      ],
+      "answers": [
+        "circumspect",
+        "wary"
+      ],
+      "targets": [
+        "circumspect",
+        "wary",
+        "cavalier",
+        "heedless",
+        "fastidious",
+        "punctilious"
+      ],
+      "hint": "Dè chừng rủi ro hay tỉ mỉ chi tiết?",
+      "explanation": "Thận trọng vì chưa biết tác dụng lâu dài: circumspect, wary. Cavalier và heedless là cặp sai hướng; fastidious và punctilious là cặp tỉ mỉ về chi tiết, không phải dè chừng rủi ro."
+    },
+    {
+      "id": "cc07",
+      "type": "se",
+      "sentence": "The archive is the product of decades of {0} work: every letter has been transcribed, dated and cross-referenced.",
+      "options": [
+        "painstaking",
+        "meticulous",
+        "desultory",
+        "perfunctory",
+        "impetuous",
+        "rash"
+      ],
+      "answers": [
+        "painstaking",
+        "meticulous"
+      ],
+      "targets": [
+        "painstaking",
+        "meticulous",
+        "desultory",
+        "perfunctory",
+        "impetuous",
+        "rash"
+      ],
+      "hint": "Mức độ công phu.",
+      "explanation": "Mọi lá thư được chép, ghi ngày và đối chiếu: painstaking, meticulous. Desultory và perfunctory là cặp sai hướng."
+    },
+    {
+      "id": "cc08",
+      "type": "se",
+      "sentence": "It would be {0} of us not to mention the generous support of the survey team.",
+      "options": [
+        "remiss",
+        "negligent",
+        "prudent",
+        "judicious",
+        "discreet",
+        "circumspect"
+      ],
+      "answers": [
+        "remiss",
+        "negligent"
+      ],
+      "targets": [
+        "remiss",
+        "negligent",
+        "prudent",
+        "judicious"
+      ],
+      "hint": "Cấu trúc cố định.",
+      "explanation": "Cấu trúc 'it would be … not to': nếu không cảm ơn thì là thiếu sót, remiss và negligent. Prudent và judicious là cặp sai hướng."
+    }
+  ]
+}

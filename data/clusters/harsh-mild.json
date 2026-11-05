@@ -1,0 +1,776 @@
+{
+  "schemaVersion": 1,
+  "id": "harsh-mild",
+  "title": "Gay gắt & Ôn hòa",
+  "order": 13,
+  "description": "Giọng điệu và thái độ với người khác: cay độc, hiếu chiến, thù địch, hòa nhã, xoa dịu, vô hại.",
+  "groups": [
+    {
+      "id": "biting",
+      "title": "Châm chọc, cay độc",
+      "direction": "negative",
+      "scale": false,
+      "note": "Bẫy: caustic trong GRE là cay độc, không phải chất ăn mòn. Incisive và trenchant thường là KHEN: sắc sảo, đi thẳng vào vấn đề."
+    },
+    {
+      "id": "hostile",
+      "title": "Hiếu chiến, gây gổ",
+      "direction": "negative",
+      "scale": false,
+      "note": "Belligerent/bellicose: hiếu chiến. Truculent: hung hăng, sẵn sàng gây sự. Irascible/cantankerous: dễ nổi cáu, khó chịu."
+    },
+    {
+      "id": "enmity",
+      "title": "Thù hằn, ác cảm",
+      "direction": "negative",
+      "scale": false,
+      "note": ""
+    },
+    {
+      "id": "amiable",
+      "title": "Hòa nhã, thân thiện",
+      "direction": "positive",
+      "scale": false,
+      "note": ""
+    },
+    {
+      "id": "soothe",
+      "title": "Hòa giải, vô hại",
+      "direction": "positive",
+      "scale": false,
+      "note": "Conciliatory: nhằm hòa giải. Appease: xoa dịu bằng cách nhượng bộ (có thể chê). Innocuous/benign: vô hại."
+    }
+  ],
+  "words": [
+    {
+      "id": "caustic",
+      "word": "caustic",
+      "pos": "adj",
+      "group": "biting",
+      "priority": 3,
+      "meaning": "cay độc, châm chọc",
+      "nuance": "Nghĩa đen là ăn mòn; GRE dùng nghĩa bóng.",
+      "example": "Her *caustic* review called the book 'a triumph of length over substance'.",
+      "collocations": [
+        "caustic remarks",
+        "caustic wit"
+      ],
+      "confusables": [
+        "sardonic",
+        "acerbic"
+      ]
+    },
+    {
+      "id": "sardonic",
+      "word": "sardonic",
+      "pos": "adj",
+      "group": "biting",
+      "priority": 3,
+      "meaning": "mỉa mai, nhạo báng",
+      "nuance": "Cười cợt khinh bỉ, chua chát.",
+      "example": "He greeted the forecast with a *sardonic* smile.",
+      "collocations": [
+        "a sardonic smile"
+      ],
+      "confusables": [
+        "caustic",
+        "sarcastic"
+      ]
+    },
+    {
+      "id": "acerbic",
+      "word": "acerbic",
+      "pos": "adj",
+      "group": "biting",
+      "priority": 3,
+      "meaning": "chua cay, gay gắt",
+      "nuance": "",
+      "example": "The columnist was famous for her *acerbic* wit.",
+      "collocations": [
+        "acerbic wit"
+      ],
+      "root": "acerb- (chua)",
+      "confusables": [
+        "caustic",
+        "acrimonious"
+      ]
+    },
+    {
+      "id": "mordant",
+      "word": "mordant",
+      "pos": "adj",
+      "group": "biting",
+      "priority": 2,
+      "meaning": "cay độc, châm chích",
+      "nuance": "",
+      "example": "The play is a *mordant* satire of academic life.",
+      "collocations": [
+        "mordant humor"
+      ],
+      "root": "mord- (cắn)",
+      "confusables": [
+        "caustic"
+      ]
+    },
+    {
+      "id": "vitriolic",
+      "word": "vitriolic",
+      "pos": "adj",
+      "group": "biting",
+      "priority": 3,
+      "meaning": "cay nghiệt, đầy hằn học",
+      "nuance": "Rất mạnh: lời lẽ như axit.",
+      "example": "The minister faced a *vitriolic* campaign in the tabloids.",
+      "collocations": [
+        "vitriolic attacks"
+      ],
+      "root": "vitriol (axit sunfuric)",
+      "confusables": [
+        "caustic",
+        "acrimonious"
+      ]
+    },
+    {
+      "id": "scathing",
+      "word": "scathing",
+      "pos": "adj",
+      "group": "biting",
+      "priority": 2,
+      "meaning": "gay gắt, tàn nhẫn (phê bình)",
+      "nuance": "",
+      "example": "The audit was a *scathing* indictment of the agency.",
+      "collocations": [
+        "a scathing review"
+      ],
+      "confusables": [
+        "vitriolic"
+      ]
+    },
+    {
+      "id": "sarcastic",
+      "word": "sarcastic",
+      "pos": "adj",
+      "group": "biting",
+      "priority": 1,
+      "meaning": "mỉa mai",
+      "nuance": "",
+      "example": "His *sarcastic* reply ended the discussion.",
+      "collocations": [],
+      "confusables": [
+        "sardonic"
+      ]
+    },
+    {
+      "id": "incisive",
+      "word": "incisive",
+      "pos": "adj",
+      "group": "biting",
+      "priority": 3,
+      "meaning": "sắc sảo, đi thẳng vào vấn đề",
+      "nuance": "Bẫy: thường là KHEN, dù nghĩa gốc là cắt.",
+      "example": "Her *incisive* comments exposed the flaw in the identification strategy.",
+      "collocations": [
+        "incisive analysis"
+      ],
+      "root": "in- + cis- (cắt)",
+      "confusables": [
+        "trenchant",
+        "caustic"
+      ]
+    },
+    {
+      "id": "trenchant",
+      "word": "trenchant",
+      "pos": "adj",
+      "group": "biting",
+      "priority": 3,
+      "meaning": "sắc bén, mạnh mẽ (phê bình)",
+      "nuance": "Thường khen: phê bình sắc bén, có sức nặng.",
+      "example": "He was a *trenchant* critic of import substitution.",
+      "collocations": [
+        "a trenchant critique"
+      ],
+      "confusables": [
+        "incisive"
+      ]
+    },
+    {
+      "id": "belligerent",
+      "word": "belligerent",
+      "pos": "adj",
+      "group": "hostile",
+      "priority": 3,
+      "meaning": "hiếu chiến, hung hăng",
+      "nuance": "",
+      "example": "The *belligerent* tone of the speech alarmed neighbors.",
+      "collocations": [],
+      "root": "bell- (chiến tranh)",
+      "confusables": [
+        "bellicose",
+        "truculent"
+      ]
+    },
+    {
+      "id": "bellicose",
+      "word": "bellicose",
+      "pos": "adj",
+      "group": "hostile",
+      "priority": 3,
+      "meaning": "hiếu chiến",
+      "nuance": "Thường dùng cho quốc gia, lời lẽ chính trị.",
+      "example": "*Bellicose* rhetoric pushed oil prices higher.",
+      "collocations": [
+        "bellicose rhetoric"
+      ],
+      "root": "bell- (chiến tranh)",
+      "confusables": [
+        "belligerent"
+      ]
+    },
+    {
+      "id": "pugnacious",
+      "word": "pugnacious",
+      "pos": "adj",
+      "group": "hostile",
+      "priority": 3,
+      "meaning": "thích gây gổ, hay đánh nhau",
+      "nuance": "",
+      "example": "A *pugnacious* debater, he relished every confrontation.",
+      "collocations": [],
+      "root": "pugn- (đánh)",
+      "confusables": [
+        "truculent"
+      ]
+    },
+    {
+      "id": "truculent",
+      "word": "truculent",
+      "pos": "adj",
+      "group": "hostile",
+      "priority": 3,
+      "meaning": "hung hăng, sẵn sàng gây sự",
+      "nuance": "",
+      "example": "The *truculent* union leader rejected every offer.",
+      "collocations": [],
+      "confusables": [
+        "pugnacious",
+        "belligerent"
+      ]
+    },
+    {
+      "id": "contentious",
+      "word": "contentious",
+      "pos": "adj",
+      "group": "hostile",
+      "priority": 3,
+      "meaning": "gây tranh cãi; hay cãi",
+      "nuance": "Bẫy hai nghĩa: a contentious issue (vấn đề gây tranh cãi).",
+      "example": "Minimum wage policy remains highly *contentious*.",
+      "collocations": [
+        "a contentious issue"
+      ],
+      "confusables": []
+    },
+    {
+      "id": "irascible",
+      "word": "irascible",
+      "pos": "adj",
+      "group": "hostile",
+      "priority": 3,
+      "meaning": "dễ nổi cáu",
+      "nuance": "",
+      "example": "The *irascible* professor shouted at latecomers.",
+      "collocations": [],
+      "root": "ira (cơn giận)",
+      "confusables": [
+        "cantankerous",
+        "petulant"
+      ]
+    },
+    {
+      "id": "cantankerous",
+      "word": "cantankerous",
+      "pos": "adj",
+      "group": "hostile",
+      "priority": 2,
+      "meaning": "khó tính, cáu kỉnh",
+      "nuance": "",
+      "example": "The *cantankerous* landlord complained about everything.",
+      "collocations": [],
+      "confusables": [
+        "irascible"
+      ]
+    },
+    {
+      "id": "petulant",
+      "word": "petulant",
+      "pos": "adj",
+      "group": "hostile",
+      "priority": 2,
+      "meaning": "hờn dỗi, cáu kỉnh như trẻ con",
+      "nuance": "",
+      "example": "The minister's *petulant* walkout embarrassed his party.",
+      "collocations": [],
+      "confusables": [
+        "irascible"
+      ]
+    },
+    {
+      "id": "acrimonious",
+      "word": "acrimonious",
+      "pos": "adj",
+      "group": "enmity",
+      "priority": 3,
+      "meaning": "gay gắt, đầy cay đắng (tranh cãi)",
+      "nuance": "Thường dùng cho cuộc chia tay, tranh luận.",
+      "example": "The merger ended in an *acrimonious* legal battle.",
+      "collocations": [
+        "an acrimonious dispute"
+      ],
+      "confusables": [
+        "rancor",
+        "vitriolic"
+      ]
+    },
+    {
+      "id": "rancor",
+      "word": "rancor",
+      "pos": "n",
+      "group": "enmity",
+      "priority": 3,
+      "meaning": "mối hận thù, ác cảm sâu",
+      "nuance": "",
+      "example": "The election left deep *rancor* between the two factions.",
+      "collocations": [],
+      "confusables": [
+        "animosity"
+      ]
+    },
+    {
+      "id": "animosity",
+      "word": "animosity",
+      "pos": "n",
+      "group": "enmity",
+      "priority": 2,
+      "meaning": "sự thù oán",
+      "nuance": "",
+      "example": "There was open *animosity* **between** the two ministers.",
+      "collocations": [
+        "animosity toward X"
+      ],
+      "confusables": [
+        "rancor",
+        "antipathy"
+      ]
+    },
+    {
+      "id": "antipathy",
+      "word": "antipathy",
+      "pos": "n",
+      "group": "enmity",
+      "priority": 3,
+      "meaning": "ác cảm",
+      "nuance": "Ghét theo kiểu bản năng, sâu sắc.",
+      "example": "His *antipathy* **to** regulation was well known.",
+      "collocations": [
+        "antipathy to X"
+      ],
+      "root": "anti- + path- (cảm xúc)",
+      "confusables": [
+        "animosity"
+      ]
+    },
+    {
+      "id": "enmity",
+      "word": "enmity",
+      "pos": "n",
+      "group": "enmity",
+      "priority": 2,
+      "meaning": "sự thù địch",
+      "nuance": "",
+      "example": "Decades of *enmity* divided the neighboring villages.",
+      "collocations": [],
+      "confusables": [
+        "animosity"
+      ]
+    },
+    {
+      "id": "callous",
+      "word": "callous",
+      "pos": "adj",
+      "group": "enmity",
+      "priority": 3,
+      "meaning": "nhẫn tâm, chai sạn",
+      "nuance": "Không quan tâm đến nỗi khổ của người khác.",
+      "example": "The firm's *callous* treatment of injured workers sparked protests.",
+      "collocations": [
+        "callous disregard"
+      ],
+      "confusables": []
+    },
+    {
+      "id": "amiable",
+      "word": "amiable",
+      "pos": "adj",
+      "group": "amiable",
+      "priority": 2,
+      "meaning": "hòa nhã, dễ mến",
+      "nuance": "",
+      "example": "The *amiable* host made every guest feel welcome.",
+      "collocations": [],
+      "confusables": [
+        "affable"
+      ]
+    },
+    {
+      "id": "affable",
+      "word": "affable",
+      "pos": "adj",
+      "group": "amiable",
+      "priority": 3,
+      "meaning": "niềm nở, dễ gần",
+      "nuance": "",
+      "example": "The *affable* ambassador put everyone at ease.",
+      "collocations": [],
+      "confusables": [
+        "genial",
+        "amiable"
+      ]
+    },
+    {
+      "id": "genial",
+      "word": "genial",
+      "pos": "adj",
+      "group": "amiable",
+      "priority": 2,
+      "meaning": "thân thiện, vui vẻ",
+      "nuance": "",
+      "example": "The *genial* chair kept the seminar relaxed.",
+      "collocations": [],
+      "confusables": [
+        "affable"
+      ]
+    },
+    {
+      "id": "cordial",
+      "word": "cordial",
+      "pos": "adj",
+      "group": "amiable",
+      "priority": 2,
+      "meaning": "thân mật, chân thành (thường lịch sự)",
+      "nuance": "",
+      "example": "Relations between the two banks remained *cordial*.",
+      "collocations": [
+        "cordial relations"
+      ],
+      "confusables": [
+        "amicable"
+      ]
+    },
+    {
+      "id": "amicable",
+      "word": "amicable",
+      "pos": "adj",
+      "group": "amiable",
+      "priority": 3,
+      "meaning": "thân thiện, hòa thuận (dàn xếp)",
+      "nuance": "Thường đi với settlement, divorce.",
+      "example": "The partners reached an *amicable* settlement.",
+      "collocations": [
+        "an amicable settlement"
+      ],
+      "confusables": [
+        "cordial",
+        "acrimonious"
+      ]
+    },
+    {
+      "id": "personable",
+      "word": "personable",
+      "pos": "adj",
+      "group": "amiable",
+      "priority": 2,
+      "meaning": "dễ mến, có ngoại hình và phong thái dễ chịu",
+      "nuance": "",
+      "example": "The *personable* candidate charmed voters.",
+      "collocations": [],
+      "confusables": [
+        "affable"
+      ]
+    },
+    {
+      "id": "conciliatory",
+      "word": "conciliatory",
+      "pos": "adj",
+      "group": "soothe",
+      "priority": 3,
+      "meaning": "có tính hòa giải",
+      "nuance": "Nhằm làm dịu căng thẳng, thường bằng nhượng bộ nhỏ.",
+      "example": "The minister struck a *conciliatory* tone toward the strikers.",
+      "collocations": [
+        "a conciliatory tone",
+        "conciliatory gesture"
+      ],
+      "confusables": [
+        "appease",
+        "placate"
+      ]
+    },
+    {
+      "id": "appease",
+      "word": "appease",
+      "pos": "v",
+      "group": "soothe",
+      "priority": 3,
+      "meaning": "xoa dịu (thường bằng nhượng bộ)",
+      "nuance": "Có thể chê: nhượng bộ trước kẻ gây hấn.",
+      "example": "The concession failed to *appease* the protesters.",
+      "collocations": [],
+      "confusables": [
+        "placate",
+        "conciliatory"
+      ]
+    },
+    {
+      "id": "innocuous",
+      "word": "innocuous",
+      "pos": "adj",
+      "group": "soothe",
+      "priority": 3,
+      "meaning": "vô hại, không gây phản cảm",
+      "nuance": "",
+      "example": "What seemed an *innocuous* remark caused a diplomatic row.",
+      "collocations": [
+        "an innocuous remark"
+      ],
+      "confusables": [
+        "benign",
+        "pernicious"
+      ]
+    },
+    {
+      "id": "benign",
+      "word": "benign",
+      "pos": "adj",
+      "group": "soothe",
+      "priority": 3,
+      "meaning": "lành tính, nhân từ, vô hại",
+      "nuance": "",
+      "example": "The side effects are mostly *benign*.",
+      "collocations": [
+        "a benign tumor"
+      ],
+      "root": "bene- (tốt)",
+      "confusables": [
+        "innocuous",
+        "malign"
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "id": "hm01",
+      "type": "tc",
+      "sentence": "The reviewer's {0} wit spared no one: she described the novel's hero as 'a man of no qualities, rendered at enormous length'.",
+      "blanks": [
+        {
+          "options": [
+            "caustic",
+            "incisive",
+            "trenchant",
+            "conciliatory",
+            "amicable"
+          ],
+          "answer": "caustic"
+        }
+      ],
+      "targets": [
+        "caustic",
+        "incisive",
+        "trenchant"
+      ],
+      "hint": "Khen sự sắc sảo hay tả sự cay độc?",
+      "explanation": "Lời chế giễu cay độc: caustic. Incisive và trenchant là sắc sảo, thường mang nghĩa khen, không nhấn vào sự chế nhạo."
+    },
+    {
+      "id": "hm02",
+      "type": "tc",
+      "sentence": "Her {0} analysis went straight to the weakness everyone else had missed: the instrument was correlated with the outcome through a second channel.",
+      "blanks": [
+        {
+          "options": [
+            "incisive",
+            "sardonic",
+            "acerbic",
+            "vitriolic",
+            "truculent"
+          ],
+          "answer": "incisive"
+        }
+      ],
+      "targets": [
+        "incisive",
+        "sardonic",
+        "acerbic"
+      ],
+      "hint": "Khen hay chê?",
+      "explanation": "Đi thẳng vào điểm yếu mà người khác bỏ qua: incisive (sắc sảo). Sardonic và acerbic là chế giễu, chua cay."
+    },
+    {
+      "id": "hm03",
+      "type": "tc",
+      "sentence": "What began as an {0} disagreement between the co-founders over strategy grew so {1} that the board eventually had to intervene.",
+      "blanks": [
+        {
+          "options": [
+            "amicable",
+            "acrimonious",
+            "truculent"
+          ],
+          "answer": "amicable"
+        },
+        {
+          "options": [
+            "acrimonious",
+            "cordial",
+            "innocuous"
+          ],
+          "answer": "acrimonious"
+        }
+      ],
+      "targets": [
+        "amicable",
+        "acrimonious"
+      ],
+      "hint": "Diễn biến từ đầu đến cuối.",
+      "explanation": "'Began as… grew so… that the board had to intervene': từ thân thiện (amicable) thành gay gắt (acrimonious)."
+    },
+    {
+      "id": "hm04",
+      "type": "tc",
+      "sentence": "Hoping to end the strike without further concessions, the minister adopted a {0} tone, praising the workers' dedication while making no new offer.",
+      "blanks": [
+        {
+          "options": [
+            "conciliatory",
+            "belligerent",
+            "bellicose",
+            "pugnacious",
+            "callous"
+          ],
+          "answer": "conciliatory"
+        }
+      ],
+      "targets": [
+        "conciliatory",
+        "belligerent",
+        "bellicose"
+      ],
+      "hint": "Mục tiêu: chấm dứt đình công.",
+      "explanation": "Khen ngợi để làm dịu mà không nhượng bộ: giọng hòa giải, conciliatory."
+    },
+    {
+      "id": "hm05",
+      "type": "tc",
+      "sentence": "The remark seemed {0} at the time, but in the tense atmosphere of the negotiations it was taken as a deliberate insult.",
+      "blanks": [
+        {
+          "options": [
+            "innocuous",
+            "vitriolic",
+            "scathing",
+            "contentious",
+            "caustic"
+          ],
+          "answer": "innocuous"
+        }
+      ],
+      "targets": [
+        "innocuous",
+        "vitriolic"
+      ],
+      "hint": "'Seemed… but'.",
+      "explanation": "'Seemed… but… taken as a deliberate insult' đổi chiều: lúc đầu có vẻ vô hại, innocuous."
+    },
+    {
+      "id": "hm06",
+      "type": "se",
+      "sentence": "The general's {0} speeches, full of threats against neighboring states, alarmed foreign investors.",
+      "options": [
+        "bellicose",
+        "belligerent",
+        "conciliatory",
+        "amicable",
+        "sardonic",
+        "mordant"
+      ],
+      "answers": [
+        "bellicose",
+        "belligerent"
+      ],
+      "targets": [
+        "bellicose",
+        "belligerent",
+        "conciliatory",
+        "amicable",
+        "sardonic",
+        "mordant"
+      ],
+      "hint": "Đe dọa nước láng giềng.",
+      "explanation": "Đầy lời đe dọa: hiếu chiến, bellicose và belligerent. Conciliatory và amicable là cặp sai hướng; sardonic và mordant là cặp mỉa mai."
+    },
+    {
+      "id": "hm07",
+      "type": "se",
+      "sentence": "The {0} old editor was known for shouting at reporters over the smallest error.",
+      "options": [
+        "irascible",
+        "cantankerous",
+        "affable",
+        "genial",
+        "trenchant",
+        "incisive"
+      ],
+      "answers": [
+        "irascible",
+        "cantankerous"
+      ],
+      "targets": [
+        "irascible",
+        "cantankerous",
+        "affable",
+        "genial",
+        "trenchant",
+        "incisive"
+      ],
+      "hint": "Tính khí dễ nổi nóng.",
+      "explanation": "Hay quát tháo vì lỗi nhỏ: dễ nổi cáu, irascible và cantankerous. Trenchant và incisive là cặp sắc sảo."
+    },
+    {
+      "id": "hm08",
+      "type": "se",
+      "sentence": "The company's {0} response to the injured workers, offering no apology and no compensation, provoked a consumer boycott.",
+      "options": [
+        "callous",
+        "heartless",
+        "benign",
+        "innocuous",
+        "acerbic",
+        "sardonic"
+      ],
+      "answers": [
+        "callous",
+        "heartless"
+      ],
+      "targets": [
+        "callous",
+        "benign",
+        "innocuous",
+        "acerbic",
+        "sardonic"
+      ],
+      "hint": "Thái độ trước nỗi đau của người khác.",
+      "explanation": "Không xin lỗi, không bồi thường: nhẫn tâm, callous và heartless. Acerbic và sardonic là cặp lời lẽ chua cay, không mô tả sự vô cảm trong hành động."
+    }
+  ]
+}

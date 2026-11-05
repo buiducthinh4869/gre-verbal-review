@@ -1,0 +1,693 @@
+{
+  "schemaVersion": 1,
+  "id": "honesty-deception",
+  "title": "Trung thực & Lừa dối",
+  "order": 8,
+  "description": "Sự thẳng thắn, ngây thơ, lừa dối và lập luận giả tạo. Rất hay gặp trong cả TC/SE lẫn Reading.",
+  "groups": [
+    {
+      "id": "candid",
+      "title": "Thẳng thắn, chân thật",
+      "direction": "positive",
+      "scale": false,
+      "note": "Bẫy lớn: ingenuous là ngây thơ, chân thật; disingenuous là giả vờ ngây thơ, không thành thật."
+    },
+    {
+      "id": "deceitful",
+      "title": "Gian dối, xảo trá",
+      "direction": "negative",
+      "scale": false,
+      "note": ""
+    },
+    {
+      "id": "false",
+      "title": "Sai lệch, ngụy biện",
+      "direction": "negative",
+      "scale": false,
+      "note": "Specious: nghe có vẻ đúng nhưng sai. Spurious: giả, không có cơ sở. Fallacious: dựa trên lập luận sai."
+    },
+    {
+      "id": "evade",
+      "title": "Lẩn tránh, che giấu",
+      "direction": "negative",
+      "scale": false,
+      "note": "Prevaricate/equivocate: nói vòng vo để né sự thật. Dissemble/feign: giả vờ."
+    }
+  ],
+  "words": [
+    {
+      "id": "candid",
+      "word": "candid",
+      "pos": "adj",
+      "group": "candid",
+      "priority": 3,
+      "meaning": "thẳng thắn, bộc trực",
+      "nuance": "Nói thật dù điều đó có thể khó nghe.",
+      "example": "In a *candid* interview, the governor **admitted** the forecasts had been too optimistic.",
+      "collocations": [
+        "a candid admission",
+        "candid about X"
+      ],
+      "confusables": [
+        "forthright",
+        "frank"
+      ]
+    },
+    {
+      "id": "forthright",
+      "word": "forthright",
+      "pos": "adj",
+      "group": "candid",
+      "priority": 3,
+      "meaning": "thẳng thắn, nói thẳng",
+      "nuance": "Nói rõ ràng, trực tiếp, không vòng vo.",
+      "example": "She was *forthright* **about** the study's limitations.",
+      "collocations": [
+        "forthright about X"
+      ],
+      "confusables": [
+        "candid"
+      ]
+    },
+    {
+      "id": "frank",
+      "word": "frank",
+      "pos": "adj",
+      "group": "candid",
+      "priority": 2,
+      "meaning": "thẳng thắn",
+      "nuance": "",
+      "example": "We had a *frank* discussion of the budget gap.",
+      "collocations": [
+        "a frank exchange"
+      ],
+      "confusables": [
+        "candid"
+      ]
+    },
+    {
+      "id": "guileless",
+      "word": "guileless",
+      "pos": "adj",
+      "group": "candid",
+      "priority": 3,
+      "meaning": "ngây thơ, không mưu mô",
+      "nuance": "Không có ý định lừa ai; trái nghĩa guile (mưu mẹo).",
+      "example": "His *guileless* manner made people trust him instantly.",
+      "collocations": [],
+      "root": "guile (mưu mẹo) + -less",
+      "confusables": [
+        "ingenuous",
+        "artless"
+      ]
+    },
+    {
+      "id": "ingenuous",
+      "word": "ingenuous",
+      "pos": "adj",
+      "group": "candid",
+      "priority": 3,
+      "meaning": "ngây thơ, chân thật, cả tin",
+      "nuance": "Bẫy: khác ingenious (khéo léo) và disingenuous (giả dối).",
+      "example": "It was *ingenuous* of him to believe the official figures without question.",
+      "collocations": [],
+      "confusables": [
+        "disingenuous",
+        "guileless",
+        "credulous"
+      ]
+    },
+    {
+      "id": "artless",
+      "word": "artless",
+      "pos": "adj",
+      "group": "candid",
+      "priority": 2,
+      "meaning": "chân chất, tự nhiên, không giả tạo",
+      "nuance": "Không màu mè; có thể khen hoặc ngụ ý vụng về.",
+      "example": "The child's *artless* questions embarrassed the minister.",
+      "collocations": [],
+      "confusables": [
+        "guileless"
+      ]
+    },
+    {
+      "id": "veracity",
+      "word": "veracity",
+      "pos": "n",
+      "group": "candid",
+      "priority": 3,
+      "meaning": "tính xác thực, sự trung thực",
+      "nuance": "Thường đi với nghi ngờ: question the veracity of.",
+      "example": "Reporters **questioned the veracity of** the minister's account.",
+      "collocations": [
+        "the veracity of X"
+      ],
+      "root": "ver- (thật), như verify",
+      "confusables": [
+        "probity"
+      ]
+    },
+    {
+      "id": "probity",
+      "word": "probity",
+      "pos": "n",
+      "group": "candid",
+      "priority": 3,
+      "meaning": "sự liêm chính, chính trực",
+      "nuance": "Nhấn vào đạo đức, sự ngay thẳng.",
+      "example": "Her reputation for *probity* made her the obvious choice to lead the inquiry.",
+      "collocations": [],
+      "confusables": [
+        "veracity"
+      ]
+    },
+    {
+      "id": "disingenuous",
+      "word": "disingenuous",
+      "pos": "adj",
+      "group": "deceitful",
+      "priority": 3,
+      "meaning": "không thành thật, giả vờ ngây thơ",
+      "nuance": "Giả vờ không biết hoặc giả vờ chân thành.",
+      "example": "It is *disingenuous* to claim the tariff hurts no one.",
+      "collocations": [
+        "it is disingenuous to"
+      ],
+      "root": "dis- + ingenuous",
+      "confusables": [
+        "ingenuous",
+        "duplicitous"
+      ]
+    },
+    {
+      "id": "duplicitous",
+      "word": "duplicitous",
+      "pos": "adj",
+      "group": "deceitful",
+      "priority": 3,
+      "meaning": "hai mặt, lừa lọc",
+      "nuance": "Nói một đằng làm một nẻo.",
+      "example": "The *duplicitous* negotiator promised each side something different.",
+      "collocations": [],
+      "root": "duplicity (tính hai mặt)",
+      "confusables": [
+        "disingenuous",
+        "perfidious"
+      ]
+    },
+    {
+      "id": "mendacious",
+      "word": "mendacious",
+      "pos": "adj",
+      "group": "deceitful",
+      "priority": 3,
+      "meaning": "dối trá, hay nói dối",
+      "nuance": "Mạnh hơn disingenuous: nói dối trực tiếp.",
+      "example": "The report exposed the company's *mendacious* claims about safety.",
+      "collocations": [
+        "mendacious claims"
+      ],
+      "root": "mendac- (dối)",
+      "confusables": [
+        "duplicitous"
+      ]
+    },
+    {
+      "id": "perfidious",
+      "word": "perfidious",
+      "pos": "adj",
+      "group": "deceitful",
+      "priority": 2,
+      "meaning": "bội bạc, phản trắc",
+      "nuance": "Phản bội lòng tin.",
+      "example": "The *perfidious* ally switched sides on the eve of battle.",
+      "collocations": [],
+      "confusables": [
+        "duplicitous"
+      ]
+    },
+    {
+      "id": "guile",
+      "word": "guile",
+      "pos": "n",
+      "group": "deceitful",
+      "priority": 2,
+      "meaning": "mưu mẹo, xảo quyệt",
+      "nuance": "",
+      "example": "He relied on *guile* rather than force.",
+      "collocations": [],
+      "confusables": [
+        "guileless"
+      ]
+    },
+    {
+      "id": "chicanery",
+      "word": "chicanery",
+      "pos": "n",
+      "group": "deceitful",
+      "priority": 2,
+      "meaning": "thủ đoạn gian xảo, mánh khóe",
+      "nuance": "Thường trong pháp lý, chính trị.",
+      "example": "Accounting *chicanery* hid the losses for years.",
+      "collocations": [
+        "accounting chicanery"
+      ],
+      "confusables": [
+        "subterfuge"
+      ]
+    },
+    {
+      "id": "subterfuge",
+      "word": "subterfuge",
+      "pos": "n",
+      "group": "deceitful",
+      "priority": 2,
+      "meaning": "mưu kế, thủ đoạn che giấu",
+      "nuance": "",
+      "example": "They obtained the documents **by subterfuge**.",
+      "collocations": [
+        "by subterfuge"
+      ],
+      "confusables": [
+        "ruse",
+        "chicanery"
+      ]
+    },
+    {
+      "id": "ruse",
+      "word": "ruse",
+      "pos": "n",
+      "group": "deceitful",
+      "priority": 2,
+      "meaning": "mưu mẹo, kế đánh lừa",
+      "nuance": "",
+      "example": "The 'technical delay' was a *ruse* to buy time.",
+      "collocations": [],
+      "confusables": [
+        "subterfuge"
+      ]
+    },
+    {
+      "id": "dupe",
+      "word": "dupe",
+      "pos": "v/n",
+      "group": "deceitful",
+      "priority": 2,
+      "meaning": "lừa bịp (v); người bị lừa (n)",
+      "nuance": "",
+      "example": "Investors were **duped into** buying worthless bonds.",
+      "collocations": [
+        "dupe X into Y"
+      ],
+      "confusables": [
+        "credulous"
+      ]
+    },
+    {
+      "id": "specious",
+      "word": "specious",
+      "pos": "adj",
+      "group": "false",
+      "priority": 3,
+      "meaning": "nghe có vẻ đúng nhưng sai",
+      "nuance": "Bẫy: không phải 'đặc biệt'. Rất hay gặp trong Reading.",
+      "example": "The argument is *specious*: it confuses correlation with causation.",
+      "collocations": [
+        "a specious argument"
+      ],
+      "confusables": [
+        "spurious",
+        "fallacious"
+      ]
+    },
+    {
+      "id": "spurious",
+      "word": "spurious",
+      "pos": "adj",
+      "group": "false",
+      "priority": 3,
+      "meaning": "giả mạo; không có cơ sở",
+      "nuance": "Trong thống kê: spurious correlation (tương quan giả).",
+      "example": "The study found a *spurious* correlation between ice cream sales and drowning.",
+      "collocations": [
+        "spurious correlation"
+      ],
+      "confusables": [
+        "specious"
+      ]
+    },
+    {
+      "id": "fallacious",
+      "word": "fallacious",
+      "pos": "adj",
+      "group": "false",
+      "priority": 3,
+      "meaning": "sai lầm, dựa trên lập luận sai",
+      "nuance": "fallacy: ngụy biện.",
+      "example": "The conclusion rests on a *fallacious* assumption.",
+      "collocations": [],
+      "root": "fallacy",
+      "confusables": [
+        "specious"
+      ]
+    },
+    {
+      "id": "sophistry",
+      "word": "sophistry",
+      "pos": "n",
+      "group": "false",
+      "priority": 3,
+      "meaning": "lối ngụy biện",
+      "nuance": "Lập luận khéo léo nhưng cố ý đánh lừa.",
+      "example": "His defense was pure *sophistry*, clever but dishonest.",
+      "collocations": [],
+      "root": "sophist",
+      "confusables": [
+        "specious"
+      ]
+    },
+    {
+      "id": "apocryphal",
+      "word": "apocryphal",
+      "pos": "adj",
+      "group": "false",
+      "priority": 3,
+      "meaning": "không xác thực, có lẽ là bịa",
+      "nuance": "Câu chuyện lưu truyền rộng nhưng khó kiểm chứng.",
+      "example": "The story of Newton's apple is probably *apocryphal*.",
+      "collocations": [
+        "an apocryphal story"
+      ],
+      "confusables": [
+        "spurious"
+      ]
+    },
+    {
+      "id": "bogus",
+      "word": "bogus",
+      "pos": "adj",
+      "group": "false",
+      "priority": 1,
+      "meaning": "giả, rởm",
+      "nuance": "",
+      "example": "The firm submitted *bogus* invoices to claim the subsidy.",
+      "collocations": [],
+      "confusables": [
+        "spurious"
+      ]
+    },
+    {
+      "id": "prevaricate",
+      "word": "prevaricate",
+      "pos": "v",
+      "group": "evade",
+      "priority": 3,
+      "meaning": "nói vòng vo, nói tránh sự thật",
+      "nuance": "Tránh nói thẳng hoặc nói dối một phần.",
+      "example": "When asked about the losses, the CFO *prevaricated*.",
+      "collocations": [],
+      "confusables": [
+        "equivocate",
+        "dissemble"
+      ]
+    },
+    {
+      "id": "equivocate",
+      "word": "equivocate",
+      "pos": "v",
+      "group": "evade",
+      "priority": 3,
+      "meaning": "nói nước đôi để lảng tránh",
+      "nuance": "Động từ của equivocal; nhấn vào sự cố ý mập mờ.",
+      "example": "The minister continued to *equivocate* on whether taxes would rise.",
+      "collocations": [
+        "equivocate on X"
+      ],
+      "root": "equi- (bằng) + voc- (giọng)",
+      "confusables": [
+        "prevaricate",
+        "equivocal"
+      ]
+    },
+    {
+      "id": "dissemble",
+      "word": "dissemble",
+      "pos": "v",
+      "group": "evade",
+      "priority": 3,
+      "meaning": "che giấu, giả vờ (cảm xúc, ý định)",
+      "nuance": "Giấu động cơ thật bằng vẻ bề ngoài.",
+      "example": "She *dissembled* her disappointment behind a polite smile.",
+      "collocations": [],
+      "confusables": [
+        "feign",
+        "belie"
+      ]
+    },
+    {
+      "id": "feign",
+      "word": "feign",
+      "pos": "v",
+      "group": "evade",
+      "priority": 3,
+      "meaning": "giả vờ",
+      "nuance": "",
+      "example": "He *feigned* surprise at the announcement.",
+      "collocations": [
+        "feign surprise",
+        "feign interest"
+      ],
+      "confusables": [
+        "dissemble"
+      ]
+    },
+    {
+      "id": "evasive",
+      "word": "evasive",
+      "pos": "adj",
+      "group": "evade",
+      "priority": 2,
+      "meaning": "lẩn tránh, né tránh",
+      "nuance": "",
+      "example": "Her answers were deliberately *evasive*.",
+      "collocations": [],
+      "confusables": [
+        "prevaricate"
+      ]
+    },
+    {
+      "id": "dissimulate",
+      "word": "dissimulate",
+      "pos": "v",
+      "group": "evade",
+      "priority": 1,
+      "meaning": "giả vờ, che giấu",
+      "nuance": "Gần nghĩa dissemble.",
+      "example": "He learned to *dissimulate*, hiding his doubts behind a confident manner.",
+      "collocations": [],
+      "confusables": [
+        "dissemble"
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "id": "hd01",
+      "type": "tc",
+      "sentence": "Far from being {0}, the witness's apparently naive answers were carefully calculated to create sympathy with the jury.",
+      "blanks": [
+        {
+          "options": [
+            "ingenuous",
+            "disingenuous",
+            "duplicitous",
+            "mendacious",
+            "perfidious"
+          ],
+          "answer": "ingenuous"
+        }
+      ],
+      "targets": [
+        "ingenuous",
+        "disingenuous"
+      ],
+      "hint": "'Far from' + 'apparently naive… carefully calculated'.",
+      "explanation": "'Far from' đổi chiều với 'carefully calculated': vẻ ngây thơ thật sự là ingenuous. Disingenuous là bẫy: chính là điều câu đang nói, nên không thể đứng sau 'far from'."
+    },
+    {
+      "id": "hd02",
+      "type": "tc",
+      "sentence": "The argument is {0}: it sounds persuasive at first, but it rests on a confusion between correlation and causation.",
+      "blanks": [
+        {
+          "options": [
+            "specious",
+            "apocryphal",
+            "mendacious",
+            "duplicitous",
+            "perfidious"
+          ],
+          "answer": "specious"
+        }
+      ],
+      "targets": [
+        "specious",
+        "apocryphal"
+      ],
+      "hint": "'Sounds persuasive… but'.",
+      "explanation": "Nghe thuyết phục nhưng sai: specious. Apocryphal là câu chuyện không xác thực; mendacious là cố ý nói dối."
+    },
+    {
+      "id": "hd03",
+      "type": "tc",
+      "sentence": "Pressed repeatedly on whether the bank had known of the fraud, the chairman continued to {0}, offering long answers that never quite addressed the question.",
+      "blanks": [
+        {
+          "options": [
+            "prevaricate",
+            "feign",
+            "dupe",
+            "dissemble",
+            "recant"
+          ],
+          "answer": "prevaricate"
+        }
+      ],
+      "targets": [
+        "prevaricate",
+        "feign",
+        "dissemble"
+      ],
+      "hint": "Nói nhiều mà không trả lời.",
+      "explanation": "Trả lời dài mà không vào thẳng câu hỏi: prevaricate. Feign và dissemble là giả vờ hoặc giấu cảm xúc, không phải nói vòng vo."
+    },
+    {
+      "id": "hd04",
+      "type": "tc",
+      "sentence": "Although the anecdote about the economist predicting the crash at a dinner party is widely repeated, historians consider it {0}: no contemporary source mentions it.",
+      "blanks": [
+        {
+          "options": [
+            "apocryphal",
+            "specious",
+            "fallacious",
+            "disingenuous",
+            "evasive"
+          ],
+          "answer": "apocryphal"
+        }
+      ],
+      "targets": [
+        "apocryphal",
+        "specious"
+      ],
+      "hint": "'Widely repeated… no contemporary source'.",
+      "explanation": "Câu chuyện lưu truyền nhưng không có nguồn: apocryphal. Specious và fallacious nói về lập luận, không phải giai thoại."
+    },
+    {
+      "id": "hd05",
+      "type": "tc",
+      "sentence": "Her reputation for {0} was such that even political opponents accepted her figures without question; it was therefore all the more shocking when the audit revealed her office's {1} accounting.",
+      "blanks": [
+        {
+          "options": [
+            "probity",
+            "guile",
+            "sophistry"
+          ],
+          "answer": "probity"
+        },
+        {
+          "options": [
+            "mendacious",
+            "candid",
+            "guileless"
+          ],
+          "answer": "mendacious"
+        }
+      ],
+      "targets": [
+        "probity",
+        "mendacious"
+      ],
+      "hint": "'All the more shocking' đổi chiều.",
+      "explanation": "(i) Đối thủ cũng tin số liệu: tiếng liêm chính, probity. (ii) 'All the more shocking': sổ sách gian dối, mendacious."
+    },
+    {
+      "id": "hd06",
+      "type": "se",
+      "sentence": "Investigators concluded that the reported link between the vaccine and the disorder was {0}, an artifact of flawed sampling.",
+      "options": [
+        "spurious",
+        "bogus",
+        "candid",
+        "forthright",
+        "apocryphal",
+        "evasive"
+      ],
+      "answers": [
+        "spurious",
+        "bogus"
+      ],
+      "targets": [
+        "spurious",
+        "bogus",
+        "candid",
+        "forthright"
+      ],
+      "hint": "Kết quả giả do phương pháp sai.",
+      "explanation": "Mối liên hệ giả do lấy mẫu sai: spurious, bogus. Candid và forthright là cặp sai hướng; apocryphal dùng cho giai thoại."
+    },
+    {
+      "id": "hd07",
+      "type": "se",
+      "sentence": "The memoir is remarkably {0}: the author describes her own failures and errors of judgment without any attempt at self-justification.",
+      "options": [
+        "candid",
+        "forthright",
+        "evasive",
+        "disingenuous",
+        "guileless",
+        "artless"
+      ],
+      "answers": [
+        "candid",
+        "forthright"
+      ],
+      "targets": [
+        "candid",
+        "forthright",
+        "guileless",
+        "artless"
+      ],
+      "hint": "Thẳng thắn hay ngây thơ?",
+      "explanation": "Thẳng thắn nói về thất bại của mình: candid, forthright. Guileless và artless là cặp ngây thơ, chân chất, thiếu ý tự nguyện nói thật về bản thân."
+    },
+    {
+      "id": "hd08",
+      "type": "se",
+      "sentence": "Though he {0} enthusiasm for the merger in public, his private emails reveal deep reservations.",
+      "options": [
+        "feigned",
+        "dissembled",
+        "prevaricated",
+        "equivocated",
+        "duped",
+        "forthright"
+      ],
+      "answers": [
+        "feigned",
+        "dissembled"
+      ],
+      "targets": [
+        "feign",
+        "dissemble",
+        "prevaricate",
+        "equivocate"
+      ],
+      "hint": "Đối tượng là cảm xúc 'enthusiasm'.",
+      "explanation": "Giả vờ nhiệt tình: feigned, dissembled. Prevaricated và equivocated là cặp nói vòng vo, không đi với 'enthusiasm' làm tân ngữ."
+    }
+  ]
+}
