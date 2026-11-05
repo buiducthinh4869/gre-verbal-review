@@ -26,6 +26,8 @@ var ACTIONS = {
   addCustomWord:     { fn: function (ss, ctx, p) { return saveEvents_(ss, ctx.user.userId, [customEvent_('custom_upsert', p && p.word)]); } },
   updateCustomWord:  { fn: function (ss, ctx, p) { return saveEvents_(ss, ctx.user.userId, [customEvent_('custom_upsert', p && p.word)]); } },
   deleteCustomWord:  { fn: function (ss, ctx, p) { return saveEvents_(ss, ctx.user.userId, [customEvent_('custom_delete', { id: p && p.id })]); } },
+  saveMock:          { fn: function (ss, ctx, p) { return saveMock_(ss, ctx.user.userId, p); } },
+  getMocks:          { fn: function (ss, ctx, p) { return getMocks_(ss, ctx.user.userId, p); } },
   adminListUsers:    { admin: true, fn: function (ss, ctx) { return adminListUsers_(ss); } },
   adminSetActive:    { admin: true, fn: function (ss, ctx, p) { return adminSetActive_(ss, ctx, p); } },
   adminResetPassword:{ admin: true, fn: function (ss, ctx, p) { return adminResetPassword_(ss, ctx, p); } },
@@ -175,7 +177,8 @@ function saveEvents_(ss, userId, events) {
   };
   var daily = setVal('_daily') || {};
   var exLast = setVal('_exLast') || {};
-  var dailyChanged = false, exChanged = false, settingPatch = {};
+  var exRes = setVal('_exRes') || {};
+  var dailyChanged = false, exChanged = false, resChanged = false, settingPatch = {};
 
   var ct = null, custIdx = null, custChanged = [], custNew = [];
   function loadCustom() {
@@ -207,6 +210,11 @@ function saveEvents_(ss, userId, events) {
         var iso = new Date(tsMs).toISOString();
         var exId = clip_(ev.exerciseId, 40);
         if (!exLast[exId] || exLast[exId] < iso) { exLast[exId] = iso; exChanged = true; }
+        // kết quả gần nhất của từng bài GRE (để Thi thử ưu tiên câu chưa làm / làm sai): [ngày, 1 đúng | 0 sai]
+        if ((ev.result === 'good' || ev.result === 'again') && !/^scale:/.test(exId)) {
+          var prevRes = exRes[exId];
+          if (!prevRes || !(prevRes[0] > day)) { exRes[exId] = [day, ev.result === 'good' ? 1 : 0]; resChanged = true; }
+        }
       }
       if (ev.state && wordId && /^[A-Za-z0-9_.-]{1,80}$/.test(wordId)) {
         loadProgress();
@@ -273,6 +281,7 @@ function saveEvents_(ss, userId, events) {
   }
   if (dailyChanged) settingPatch._daily = pruneDaily_(daily, serverToday);
   if (exChanged) settingPatch._exLast = exLast;
+  if (resChanged) settingPatch._exRes = exRes;
   var setChanged = [], setNew = [];
   Object.keys(settingPatch).forEach(function (key) {
     var v = JSON.stringify(settingPatch[key]);
@@ -330,4 +339,84 @@ function pruneDaily_(daily, today) {
   var out = {};
   Object.keys(daily).forEach(function (d) { if (d >= cutoff) out[d] = daily[d]; });
   return out;
+}
+
+/* ---------------- Thi thử ---------------- */
+
+var MOCK_MODES = ['s1', 's2', 'full'];
+
+/** "dd/MM/yyyy HH:mm:ss" (giờ VN) → ms; không đọc được thì 0. */
+function parseVnStamp_(s) {
+  var m = String(s || '').match(/^(\d{2})\/(\d{2})\/(\d{4}) (\d{2}):(\d{2}):(\d{2})$/);
+  if (!m) return 0;
+  return Date.UTC(+m[3], +m[2] - 1, +m[1], +m[4], +m[5], +m[6]) - 7 * 3600 * 1000;
+}
+
+/** Thời điểm client gửi lên: không tin giờ thiết bị chạy trước server; sai định dạng thì lấy giờ server. */
+function clampMs_(v, now) {
+  var n = Number(v);
+  if (!isFinite(n) || n <= 0 || n > now + 5 * 60000 || n < now - 400 * 86400000) return now;
+  return n;
+}
+
+/**
+ * Lưu kết quả một bài thi thử: mỗi section một dòng trong tab mocks (chỉ THÊM dòng, không sửa dòng nào).
+ * p: {mockId, mode, startedAt (ms), finishedAt (ms), sections: [{section, score, total, durationSec, items: [{i, c, ok, t}]}]}
+ * Gửi lại cùng mockId + section (mất mạng rồi thử lại) thì bỏ qua, không ghi trùng.
+ */
+function saveMock_(ss, userId, p) {
+  var mockId = String(p.mockId || '');
+  if (!/^[A-Za-z0-9_-]{6,60}$/.test(mockId)) fail_('bad_request', 'mockId không hợp lệ.');
+  var mode = MOCK_MODES.indexOf(p.mode) >= 0 ? p.mode : '';
+  if (!mode) fail_('bad_request', 'Loại bài thi thử không hợp lệ.');
+  if (!Array.isArray(p.sections) || !p.sections.length || p.sections.length > 2) fail_('bad_request', 'sections không hợp lệ.');
+  if (!ss.getSheetByName('mocks')) fail_('not_ready', 'Chưa có tab mocks. Báo người quản lý.');
+  var t = table_(ss, 'mocks');
+  var have = {};
+  userRows_(t, userId).forEach(function (i) { have[cell_(t, t.rows[i], 'mockId') + '#' + cell_(t, t.rows[i], 'section')] = true; });
+  var now = Date.now();
+  var started = clampMs_(p.startedAt, now), finished = clampMs_(p.finishedAt, now);
+  var rows = [];
+  p.sections.forEach(function (sec) {
+    sec = sec || {};
+    var n = clampInt_(sec.section, 1, 2);
+    if (have[mockId + '#' + n]) return;
+    var items = Array.isArray(sec.items) ? sec.items.slice(0, 40).map(function (x) {
+      x = x || {};
+      return { i: clip_(x.i, 40), c: clip_(x.c, 200), ok: x.ok ? 1 : 0, t: clampInt_(x.t, 0, 7200) };
+    }) : [];
+    var json = JSON.stringify(items);
+    if (json.length > 45000) json = JSON.stringify(items.map(function (x) { return { i: x.i, ok: x.ok, t: x.t }; }));
+    rows.push({
+      userId: userId, mockId: mockId, startedAt: vnStamp_(started), finishedAt: vnStamp_(finished), mode: mode, section: n,
+      score: clampInt_(sec.score, 0, 40), total: clampInt_(sec.total, 0, 40), durationSec: clampInt_(sec.durationSec, 0, 7200), items: json
+    });
+    have[mockId + '#' + n] = true;
+  });
+  appendObjs_(t, rows);
+  return { saved: rows.length, mockId: mockId };
+}
+
+/** Các bài thi thử của chính người đang đăng nhập (lọc theo userId của phiên), mới nhất trước, gộp section theo mockId. */
+function getMocks_(ss, userId, p) {
+  if (!ss.getSheetByName('mocks')) return { mocks: [] };
+  var t = table_(ss, 'mocks');
+  var by = {}, order = [];
+  userRows_(t, userId).forEach(function (i) {
+    var o = rowObj_(t, t.rows[i]);
+    var id = String(o.mockId || '');
+    if (!id) return;
+    var m = by[id];
+    if (!m) {
+      m = by[id] = { mockId: id, mode: String(o.mode || ''), startedAt: String(o.startedAt || ''), finishedAt: String(o.finishedAt || ''), startedMs: parseVnStamp_(o.startedAt), sections: [] };
+      order.push(m);
+    }
+    var items = [];
+    try { items = JSON.parse(o.items || '[]'); } catch (e) { items = []; }
+    m.sections.push({ section: clampInt_(o.section, 1, 2), score: clampInt_(o.score, 0, 99), total: clampInt_(o.total, 0, 99), durationSec: clampInt_(o.durationSec, 0, 99999), items: items });
+  });
+  order.forEach(function (m) { m.sections.sort(function (a, b) { return a.section - b.section; }); });
+  order.sort(function (a, b) { return b.startedMs - a.startedMs; });
+  var limit = (p && p.limit) ? clampInt_(p.limit, 1, 50) : 20;
+  return { mocks: order.slice(0, limit) };
 }

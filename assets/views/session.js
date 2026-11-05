@@ -10,7 +10,7 @@ import { wordDetail, resultLine } from './common.js';
 
 const shuffle = (a) => S.shuffle(a);
 const ROMAN = ['i', 'ii', 'iii'];
-const FROM_LABEL = { today: 'Hôm nay', practice: 'Luyện tập', book: 'Sổ từ hay quên' };
+const FROM_LABEL = { today: 'Hôm nay', practice: 'Luyện tập', mock: 'Thi thử', book: 'Sổ từ hay quên' };
 
 /* ---------------- Bắt đầu phiên ---------------- */
 

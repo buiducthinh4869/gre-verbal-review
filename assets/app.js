@@ -1,12 +1,13 @@
 /**
  * app.js: khởi động, tải dữ liệu từ vựng, định tuyến bằng hash (#today, #vocab, ...), sự kiện chung.
  */
-import { App, views, actions, go, render, rebuildIndex, ROUTES } from './state.js';
+import { App, views, actions, go, render, rebuildIndex, ROUTES, parseHash, lastHash, setLastHash } from './state.js';
 import { boot, refresh } from './auth.js';
 import { openMenu, closeMenu, closeSettings } from './views/settings.js';
 import './views/today.js';
 import './views/vocab.js';
 import './views/practice.js';
+import './views/mock.js';
 import './views/session.js';
 import './views/notebook.js';
 import './views/addword.js';
@@ -26,11 +27,21 @@ async function loadVocab() {
   return { clusters };
 }
 
+/** Nút Quay lại / Tiến của trình duyệt, hoặc bấm link #...: dựng lại đúng trang và cấp đang xem. */
 function routeFromHash() {
-  const h = (location.hash || '').slice(1);
   if (!App.token || !App.idx) return;
   if (App.view === 'login' || App.view === 'setpw') return;
-  if (ROUTES.includes(h) && h !== App.view) { App.session = null; App.view = h; render(); window.scrollTo(0, 0); }
+  if (location.hash === lastHash) return; // popstate và hashchange cùng bắn cho một lần đổi
+  setLastHash(location.hash);
+  const { view, sub } = parseHash(location.hash);
+  if (!ROUTES.includes(view)) return;
+  const v = views[view];
+  if (view === App.view && !(v && v.enter)) return;
+  App.session = null;
+  App.view = view;
+  if (v && v.enter) v.enter(sub);
+  render();
+  window.scrollTo(0, 0);
 }
 
 /* ---------------- Sự kiện chung ---------------- */

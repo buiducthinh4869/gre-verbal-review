@@ -20,6 +20,8 @@ var TABS = {
   custom_words: ['userId', 'id', 'word', 'pos', 'priority', 'meaning', 'nuance', 'example', 'collocations', 'root', 'createdAt', 'updatedAt', 'deletedAt'],
   settings: ['userId', 'key', 'value']
 };
+// Tab mocks (cập nhật 02) tạo riêng bằng ensureMocksTab_ (cli.ensureMocks), không qua migrate.
+var MOCK_HEADERS = ['userId', 'mockId', 'startedAt', 'finishedAt', 'mode', 'section', 'score', 'total', 'durationSec', 'items'];
 var USER_TABS = ['progress', 'log', 'custom_words', 'settings'];
 
 /* ---------------- Mở Sheet ---------------- */
@@ -222,8 +224,10 @@ function readState_(ss, userId) {
   var settings = readSettings_(ss, userId);
   var daily = settings._daily || {};
   var exLast = settings._exLast || {};
+  var exRes = settings._exRes || {};
   delete settings._daily;
   delete settings._exLast;
+  delete settings._exRes;
   var now = Date.now();
   return {
     progress: readProgress_(ss, userId),
@@ -231,6 +235,7 @@ function readState_(ss, userId) {
     settings: settings,
     daily: daily,
     exLast: exLast,
+    exRes: exRes,
     nowMs: now,
     today: vnDate_(now)
   };

@@ -21,11 +21,13 @@ export const App = {
   customWords: [],
   daily: {},
   exLast: {},
+  exRes: {},              // {exId: [ngày, 1 đúng | 0 sai]} kết quả gần nhất của từng bài GRE
+  mocks: null,            // lịch sử thi thử (getMocks), null = chưa tải
   idx: null,
   view: 'today',
   session: null,
-  vocab: { cluster: null, q: '', prio: 'all', group: 'all', status: 'all', open: null },
-  practice: { cluster: 'all', group: 'all', p3: false, mode: 'w2m', count: '20' },
+  vocab: { c: null, g: null, all: false, open: null, q: '', prio: 'all', status: 'all' },
+  practice: { clusters: [], group: 'all', p3: false, leech: false, mode: 'w2m', count: '20' },
   editId: null,
   keyHandler: null,
   timer: null,
@@ -56,7 +58,7 @@ export function saveCache() {
   clearTimeout(cacheTimer);
   cacheTimer = setTimeout(() => {
     if (!App.user) return;
-    LS.set(cacheKey(), { progress: App.progress, customWords: App.customWords, settings: App.settings, daily: App.daily, exLast: App.exLast, clockOffset: App.clockOffset });
+    LS.set(cacheKey(), { progress: App.progress, customWords: App.customWords, settings: App.settings, daily: App.daily, exLast: App.exLast, exRes: App.exRes, mocks: App.mocks, clockOffset: App.clockOffset });
   }, 300);
 }
 export function loadCache() {
@@ -75,6 +77,8 @@ export function applyState(st, opts = {}) {
   App.settings = Object.assign({}, DEFAULT_SETTINGS, st.settings || {});
   App.daily = Object.assign({}, st.daily || {});
   App.exLast = Object.assign({}, st.exLast || {});
+  App.exRes = Object.assign({}, st.exRes || {});
+  if (opts.fromCache && st.mocks) App.mocks = st.mocks;
   applyPending(!opts.fromCache);
   rebuildIndex();
   if (!opts.fromCache) saveCache();
@@ -86,6 +90,7 @@ function applyPending(countDaily) {
       if (ev.state && ev.wordId) App.progress[ev.wordId] = S.newer(App.progress[ev.wordId], S.normalizeState(ev.state));
       if (countDaily) bumpDaily(ev.day, ev.isNew);
       if (ev.exerciseId && (!App.exLast[ev.exerciseId] || App.exLast[ev.exerciseId] < ev.ts)) App.exLast[ev.exerciseId] = ev.ts;
+      noteExResult(ev.exerciseId, ev.result, ev.day);
     } else if (ev.type === 'custom_upsert') {
       upsertCustomLocal(ev.word);
     } else if (ev.type === 'custom_delete') {
@@ -121,10 +126,17 @@ export function pushEvent(ev) {
   saveCache();
 }
 
+/** Kết quả gần nhất của một bài GRE (giống server): [ngày, 1 | 0]. */
+function noteExResult(exId, result, day) {
+  if (!exId || /^scale:/.test(exId) || (result !== 'good' && result !== 'again')) return;
+  const prev = App.exRes[exId];
+  if (!prev || !(prev[0] > day)) App.exRes[exId] = [day, result === 'good' ? 1 : 0];
+}
+
 export function pushReview(wordId, state, info, isNew) {
   const t = today();
   bumpDaily(t, isNew);
-  if (info.exerciseId) App.exLast[info.exerciseId] = nowIso();
+  if (info.exerciseId) { App.exLast[info.exerciseId] = nowIso(); noteExResult(info.exerciseId, info.result, t); }
   pushEvent({
     id: evId(), type: 'review', ts: state ? state.updatedAt : nowIso(), day: t, wordId: wordId || '',
     mode: info.mode, result: info.result, exerciseId: info.exerciseId || '', chosen: info.chosen || '',
@@ -199,6 +211,7 @@ export const actions = {}; // data-act -> fn(target, event)
 const ICONS = {
   today: '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M4 6.5h16M4 6.5V19a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V6.5M4 6.5 5 4h14l1 2.5M8 11h3v3H8z"/></svg>',
   vocab: '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M5 4.5h10.5a3 3 0 0 1 3 3V20H8a3 3 0 0 1-3-3V4.5Zm0 12.5a3 3 0 0 1 3-3h10.5M9 8.5h5.5"/></svg>',
+  mock: '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M12 21a7.5 7.5 0 1 0 0-15 7.5 7.5 0 0 0 0 15Zm0-11v3.8l2.4 1.6M10 2.8h4M18.4 6.6l1.3-1.3"/></svg>',
   practice: '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M9 4.5h6M10 4.5v4.2L5.2 17a2 2 0 0 0 1.7 3h10.2a2 2 0 0 0 1.7-3L14 8.7V4.5M7.5 14h9"/></svg>',
   book: '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Zm0-13v5m0 3.2v.3"/></svg>',
   add: '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M12 5v14M5 12h14"/></svg>'
@@ -207,10 +220,11 @@ const TABS = [
   { id: 'today', long: 'Hôm nay', short: 'Hôm nay' },
   { id: 'vocab', long: 'Từ vựng', short: 'Từ vựng' },
   { id: 'practice', long: 'Luyện tập', short: 'Luyện tập' },
+  { id: 'mock', long: 'Thi thử', short: 'Thi thử' },
   { id: 'book', long: 'Sổ từ hay quên', short: 'Hay quên' },
   { id: 'add', long: 'Thêm từ', short: 'Thêm từ' }
 ];
-export const ROUTES = ['today', 'vocab', 'practice', 'book', 'add', 'account', 'admin'];
+export const ROUTES = ['today', 'vocab', 'practice', 'mock', 'book', 'add', 'account', 'admin'];
 
 function renderChrome() {
   const authView = !!(views[App.view] && views[App.view].auth);
@@ -218,6 +232,7 @@ function renderChrome() {
   const tabs = document.getElementById('tabs');
   if (authView || !App.idx) { tabs.innerHTML = ''; return; }
   const current = App.view === 'session' ? (App.session && App.session.from) || 'today' : App.view;
+  document.body.classList.toggle('exam-mode', !!(views[App.view] && views[App.view].immersive && views[App.view].immersive()));
   const nLeech = leechWords().length;
   tabs.innerHTML = TABS.map((t) => {
     const badge = t.id === 'book' && nLeech ? '<span class="badge" aria-label="' + nLeech + ' từ">' + nLeech + '</span>' : '';
@@ -236,19 +251,47 @@ export function render() {
   renderChrome();
   const v = views[App.view] || views.today;
   const el = document.getElementById('view');
+  el.classList.toggle('wide', !!(v.wide && v.wide()));
   el.innerHTML = v.render();
   if (v.after) v.after();
   document.title = (v.title ? v.title + ' · ' : '') + 'Ôn GRE Verbal';
 }
 
-/** Chuyển trang. Trang chính đi qua hash (#today, #vocab, ...) để nút Quay lại hoạt động. */
-export function go(view) {
+/** Tách hash thành {view, sub}: "#vocab/praise-criticism/praise-verbs" → {view: 'vocab', sub: ['praise-criticism', 'praise-verbs']}. */
+export function parseHash(h) {
+  const parts = String(h || '').replace(/^#/, '').split('/').filter(Boolean).map((x) => { try { return decodeURIComponent(x); } catch (e) { return x; } });
+  return { view: parts[0] || '', sub: parts.slice(1) };
+}
+
+/** Hash của trang hiện tại (trang có đường dẫn con, vd Từ vựng, tự khai báo qua views[x].path()). */
+export function hashFor(view) {
+  const v = views[view];
+  const sub = v && v.path ? v.path() : [];
+  return '#' + [view].concat(sub).map(encodeURIComponent).join('/');
+}
+
+/** Ghi hash của trạng thái hiện tại. replace = true: không tạo mục lịch sử mới (vd mở / đóng chi tiết một từ). */
+export function syncHash(replace) {
+  if (!ROUTES.includes(App.view)) return;
+  const h = hashFor(App.view);
+  if (location.hash === h) return;
+  if (replace) history.replaceState(null, '', h); else history.pushState(null, '', h);
+  lastHash = h;
+}
+export let lastHash = '';
+export function setLastHash(h) { lastHash = h; }
+
+/**
+ * Chuyển trang. Trang chính đi qua hash (#today, #vocab/..., ...) để nút Quay lại hoạt động.
+ * sub: đường dẫn con (mảng) nếu có; không truyền thì trang tự khôi phục chỗ xem gần nhất (views[x].restore).
+ */
+export function go(view, sub) {
   stopTimer();
   if (view !== 'session') App.session = null;
   App.view = view;
-  if (ROUTES.includes(view) && location.hash !== '#' + view) {
-    history.pushState(null, '', '#' + view);
-  }
+  const v = views[view];
+  if (v && v.enter) { if (sub) v.enter(sub); else if (v.restore) v.restore(); else v.enter([]); }
+  syncHash(false);
   render();
   window.scrollTo(0, 0);
 }

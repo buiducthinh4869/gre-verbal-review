@@ -1,6 +1,7 @@
 // Trang Hôm nay (mặc định sau khi đăng nhập).
 import { App, S, esc, EXAM_DATE, views, actions, today, weekday, fmtDate, newToday, activeDays, leechWords, dailyQueue, isTyping } from '../state.js';
 import { startDaily, startSession, cardsForDaily } from './session.js';
+import { lastMockLine } from './mock.js';
 
 function stat(n, suffix, label, alert) {
   return '<div class="stat' + (alert ? ' alert' : '') + '"><div class="stat-num">' + n + (suffix ? '<small>' + suffix + '</small>' : '') + '</div><div class="stat-label">' + label + '</div></div>';
@@ -33,6 +34,7 @@ views.today = {
         (more ? '<button class="btn" data-act="more-new">Học thêm 5 từ mới</button>' : '') +
         '<button class="btn" data-act="quick-gre">Làm 10 câu GRE</button></div></div>';
     }
+    h += lastMockLine();
     h += '<div class="countdown" style="margin-top:22px"><b>' + Math.max(0, left) + '</b><span>ngày đến kỳ thi GRE (' + fmtDate(EXAM_DATE) + ')</span></div>';
     h += '<h2 class="section">Tiến độ theo cụm</h2>';
     App.idx.clusters.forEach((c) => {

@@ -40,6 +40,7 @@ loadServer(env);
 const c = env.ctx;
 const report = c.migrate_(env.ss);
 c.createAccounts_(env.ss);
+c.ensureMocksTab_(env.ss);
 const ut = c.table_(env.ss, 'users');
 ut.rows.forEach((r, i) => { c.setPasswordRow_(ut, i, 'thu-' + c.cell_(ut, r, 'username'), true); });
 c.writeRows_(ut, ut.rows.map((r, i) => i));

@@ -308,3 +308,72 @@ test('doGet chỉ trả trạng thái sống', () => {
   const t = setup();
   assert.deepEqual(JSON.parse(t.env.ctx.doGet().getContent()), { ok: true, service: 'gre-verbal-api' });
 });
+
+/* ---------------- Cập nhật 02: Thi thử ---------------- */
+
+function mockPayload(id, mode, sections) {
+  return { mockId: id, mode, startedAt: Date.now() - 600000, finishedAt: Date.now(), sections };
+}
+
+test('thi thử: tab mocks tạo bằng cli.ensureMocks (chạy lại vô hại); không đụng tab cũ', () => {
+  const t = ready();
+  const before = t.env.store.sheets.map((s) => s.name + ':' + s.getLastRow()).join(',');
+  const r = t.cli('ensureMocks');
+  assert.equal(r.ok, true);
+  const again = t.cli('ensureMocks');
+  assert.equal(again.data.created, false);
+  const after = t.env.store.sheets.filter((s) => s.name !== 'mocks').map((s) => s.name + ':' + s.getLastRow()).join(',');
+  assert.equal(after, before.split(',').filter((x) => !x.startsWith('mocks:')).join(','));
+  assert.deepEqual(t.sheet('mocks').data[0], ['userId', 'mockId', 'startedAt', 'finishedAt', 'mode', 'section', 'score', 'total', 'durationSec', 'items']);
+});
+
+test('thi thử: saveMock ghi mỗi section một dòng, không ghi trùng; getMocks chỉ trả bài của chính mình', () => {
+  const t = ready();
+  t.cli('ensureMocks');
+  const a = t.loginReady('user01');
+  t.cli('setUser', { userId: 'u02', active: true });
+  const b = t.loginReady('user02');
+  const items = [{ i: 'tc01', c: 'laud', ok: 1, t: 40 }, { i: 'se01', c: 'a|b', ok: 0, t: 70 }];
+  const p = mockPayload('mock-abc123', 'full', [
+    { section: 1, score: 9, total: 12, durationSec: 900, items },
+    { section: 2, score: 10, total: 15, durationSec: 1300, items }
+  ]);
+  p.userId = 'u02';
+  const r = t.call('saveMock', p, a);
+  assert.equal(r.ok, true, JSON.stringify(r));
+  assert.equal(r.data.saved, 2);
+  assert.equal(t.call('saveMock', p, a).data.saved, 0, 'gửi lại không ghi trùng');
+  const rows = t.sheet('mocks').data.slice(1).filter((x) => x.some(Boolean));
+  assert.equal(rows.length, 2);
+  assert.ok(rows.every((x) => x[0] === 'u01'), 'userId lấy từ phiên, không từ payload');
+  assert.match(rows[0][2], /^\d{2}\/\d{2}\/\d{4} \d{2}:\d{2}:\d{2}$/);
+  const mine = t.call('getMocks', {}, a).data.mocks;
+  assert.equal(mine.length, 1);
+  assert.equal(mine[0].sections.length, 2);
+  assert.equal(mine[0].sections[0].score, 9);
+  assert.deepEqual(mine[0].sections[1].items[1], { i: 'se01', c: 'a|b', ok: 0, t: 70 });
+  assert.deepEqual(t.call('getMocks', {}, b).data.mocks, [], 'user02 không thấy bài của user01');
+  assert.equal(t.call('saveMock', mockPayload('x', 's1', []), a).ok, false);
+  assert.equal(t.call('saveMock', mockPayload('mock-abcdef', 'zz', [{ section: 1 }]), a).ok, false);
+  assert.equal(t.call('getMocks', {}).error.code, 'unauthorized');
+});
+
+test('thi thử: chưa có tab mocks thì getMocks trả rỗng, saveMock báo chưa sẵn sàng', () => {
+  const t = ready();
+  const a = t.loginReady('user01');
+  assert.deepEqual(t.call('getMocks', {}, a).data.mocks, []);
+  const r = t.call('saveMock', mockPayload('mock-abc123', 's1', [{ section: 1, score: 1, total: 12, durationSec: 60, items: [] }]), a);
+  assert.equal(r.error.code, 'not_ready');
+});
+
+test('kết quả gần nhất của từng bài GRE (_exRes) được lưu và trả về trong getState', () => {
+  const t = ready();
+  const a = t.loginReady('user01');
+  const ts = new Date().toISOString();
+  const day = t.call('getState', {}, a).data.today;
+  const ev = (id, ex, result) => ({ id, type: 'review', ts, day, wordId: 'laud', mode: 'gre', result, exerciseId: ex, state: null });
+  assert.equal(t.call('saveEvents', { events: [ev('r1', 'tc01', 'good'), ev('r2', 'se01', 'again'), ev('r3', 'tc02', 'seen'), ev('r4', 'scale:x', 'good')] }, a).ok, true);
+  const st = t.call('getState', {}, a).data;
+  assert.deepEqual(st.exRes, { tc01: [day, 1], se01: [day, 0] });
+  assert.ok(!('_exRes' in st.settings));
+});

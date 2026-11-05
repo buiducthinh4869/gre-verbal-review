@@ -75,6 +75,7 @@ function cliRoute_(action, body) {
     case 'cli.createAccounts': return withLock_(function () { return createAccounts_(openSs_()); });
     case 'cli.setUser': return withLock_(function () { return cliSetUser_(openSs_(), p); });
     case 'cli.purgeTestUser': return withLock_(function () { return cliPurgeTestUser_(openSs_(), p); });
+    case 'cli.ensureMocks': return withLock_(function () { return ensureMocksTab_(openSs_()); });
   }
   fail_('bad_request', 'Lệnh không hợp lệ.');
 }
@@ -90,9 +91,21 @@ function cliStatus_() {
   return { sheetId: ss.getId(), sheetUrl: ss.getUrl(), schema: PropertiesService.getScriptProperties().getProperty('SCHEMA') || '', tabs: tabs, now: vnStamp_(Date.now()) };
 }
 
+/** Tạo tab mocks nếu chưa có (cập nhật 02). Chạy lại vô hại; không đụng tab nào khác. */
+function ensureMocksTab_(ss) {
+  if (ss.getSheetByName('mocks')) return { created: false };
+  var want = MOCK_HEADERS;
+  var sh = ss.insertSheet('mocks');
+  if (sh.getMaxColumns() < want.length) sh.insertColumnsAfter(sh.getMaxColumns(), want.length - sh.getMaxColumns());
+  sh.getRange(1, 1, sh.getMaxRows(), want.length).setNumberFormat('@');
+  sh.getRange(1, 1, 1, want.length).setValues([want]).setFontWeight('bold');
+  sh.setFrozenRows(1);
+  return { created: true };
+}
+
 /** Đọc nguyên một tab (để so sánh với bản sao lưu). Không đọc được users/sessions. Chỉ đọc. */
 function cliDump_(tab) {
-  if (USER_TABS.indexOf(tab) < 0) fail_('bad_request', 'Chỉ đọc được: ' + USER_TABS.join(', '));
+  if (USER_TABS.indexOf(tab) < 0 && tab !== 'mocks') fail_('bad_request', 'Chỉ đọc được: ' + USER_TABS.join(', '));
   var sh = openSs_().getSheetByName(tab);
   if (!sh) fail_('bad_request', 'Không có tab ' + tab);
   var lastRow = sh.getLastRow(), lastCol = Math.max(sh.getLastColumn(), 1);
@@ -133,6 +146,12 @@ function cliPurgeTestUser_(ss, p) {
     rows.forEach(function (r) { t.sh.deleteRow(r); });
     removed[name] = rows.length;
   });
+  if (ss.getSheetByName('mocks')) {
+    var mt = table_(ss, 'mocks');
+    var mr = userRows_(mt, p.userId).map(function (i) { return i + 2; }).sort(function (a, b) { return b - a; });
+    mr.forEach(function (r) { mt.sh.deleteRow(r); });
+    removed.mocks = mr.length;
+  }
   removed.sessions = deleteUserSessions_(ss, p.userId);
   return { userId: p.userId, removed: removed };
 }

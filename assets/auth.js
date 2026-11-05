@@ -3,7 +3,7 @@
  * Token lưu trong localStorage (mỗi thiết bị đăng nhập một lần, hạn 180 ngày kể từ lần dùng gần nhất).
  */
 import { call, isAuthError, LS, SyncQueue } from './api.js';
-import { App, applyState, loadCache, mergeServerStates, setServerClock, saveCache, render, go, toast, ROUTES, DEFAULT_SETTINGS } from './state.js';
+import { App, applyState, loadCache, mergeServerStates, setServerClock, saveCache, render, go, toast, ROUTES, DEFAULT_SETTINGS, parseHash, views } from './state.js';
 
 const TOKEN_KEY = 'gre.token';
 const USER_KEY = 'gre.user';
@@ -38,7 +38,7 @@ function startUser(user, token) {
 }
 
 function resetData() {
-  App.progress = {}; App.customWords = []; App.daily = {}; App.exLast = {};
+  App.progress = {}; App.customWords = []; App.daily = {}; App.exLast = {}; App.exRes = {}; App.mocks = null;
   App.settings = Object.assign({}, DEFAULT_SETTINGS);
 }
 
@@ -70,15 +70,34 @@ export async function login(username, password) {
 /** Sau khi có phiên hợp lệ và không cần đổi mật khẩu: nạp đệm, hiện trang, làm mới ở nền. */
 export async function enterApp(opts = {}) {
   const hadCache = loadCache();
-  const target = ROUTES.includes((location.hash || '').slice(1)) ? location.hash.slice(1) : 'today';
-  if (hadCache) go(opts.view || target);
+  const ph = parseHash(location.hash);
+  const target = ROUTES.includes(ph.view) ? ph.view : 'today';
+  const sub = ROUTES.includes(ph.view) && ph.sub.length ? ph.sub : undefined;
+  const open = () => (opts.view ? go(opts.view) : go(target, sub));
+  if (hadCache) open();
   else document.getElementById('view').innerHTML = '<div class="loading">Đang tải tiến độ của bạn…</div>';
   App.sync.resume();
   const ok = await refresh();
-  if (ok && !hadCache) go(opts.view || target);
+  if (ok && !hadCache) open();
+  if (ok) loadMocks();
   if (ok && App.view === 'today' && App.settings.autoStart && opts.autoStart !== false) {
     const { startDaily } = await import('./views/session.js');
     startDaily();
+  }
+}
+
+/** Lịch sử thi thử (tab mocks) ở nền; gửi lại các bài thi thử chưa lưu được. Lỗi thì bỏ qua (không chặn trang khác). */
+export async function loadMocks() {
+  if (!App.token) return;
+  try {
+    const { flushMockQueue } = await import('./views/mock.js');
+    await flushMockQueue();
+    const data = await call('getMocks', { limit: 20 }, App.token);
+    App.mocks = data.mocks || [];
+    saveCache();
+    if (App.view === 'today' || (App.view === 'mock' && !(views.mock && views.mock.immersive && views.mock.immersive()))) render();
+  } catch (err) {
+    if (isAuthError(err)) sessionLost(err);
   }
 }
 

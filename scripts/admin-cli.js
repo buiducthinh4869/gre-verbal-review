@@ -7,6 +7,8 @@
  *   node scripts/admin-cli.js migrate           chuyển dữ liệu cũ sang u01 (chạy lại an toàn)
  *   node scripts/admin-cli.js verify <csv-dir>  so sánh Sheet với bản sao lưu CSV (số dòng, 10 dòng progress ngẫu nhiên)
  *   node scripts/admin-cli.js create-accounts   tạo 10 tài khoản, in mật khẩu ban đầu MỘT lần và ghi initial-passwords.txt
+ *   node scripts/admin-cli.js ensure-mocks      tạo tab mocks (thi thử) nếu chưa có; không đụng tab nào khác
+ *   node scripts/admin-cli.js counts            số dòng dữ liệu từng tab (đối chiếu trước / sau khi triển khai)
  *
  * URL API lấy từ .deployment-id. Khóa quản trị không bao giờ được commit.
  */
@@ -106,6 +108,11 @@ async function main() {
     const s = await cli('status');
     console.log(`Sheet ${s.sheetId} · cấu trúc v${s.schema || '1 (chưa chuyển)'} · ${s.now}`);
     s.tabs.forEach((t) => console.log(`  ${t.name.padEnd(13)} ${String(t.dataRows).padStart(4)} dòng | ${t.headers.join(', ')}`));
+  } else if (cmd === 'ensure-mocks') {
+    console.log(JSON.stringify(await cli('ensureMocks')));
+  } else if (cmd === 'counts') {
+    const s = await cli('status');
+    console.log(JSON.stringify(Object.fromEntries(s.tabs.map((t) => [t.name, t.dataRows]))));
   } else if (cmd === 'migrate') {
     console.log(JSON.stringify(await cli('migrate'), null, 2));
   } else if (cmd === 'verify') {
@@ -120,7 +127,7 @@ async function main() {
     console.log(text);
     console.log('✓ Đã ghi ' + file);
   } else {
-    console.log(fs.readFileSync(fileURLToPath(import.meta.url), 'utf8').split('\n').slice(2, 12).join('\n'));
+    console.log(fs.readFileSync(fileURLToPath(import.meta.url), 'utf8').split('\n').slice(2, 14).join('\n'));
   }
 }
 
