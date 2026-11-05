@@ -10,5 +10,5 @@
     "deploy-api": "node scripts/deploy-api.js",
     "dev": "node scripts/dev-server.js"
   },
-  "engines": { "node": ">=18" }
+  "engines": { "node": ">=22" }
 }
