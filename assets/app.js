@@ -13,6 +13,7 @@ import './views/notebook.js';
 import './views/addword.js';
 import './views/account.js';
 import './views/admin.js';
+import './views/content.js';
 import './views/login.js';
 
 /** Tải data/index.json rồi từng cụm trong data/clusters/ (thứ tự theo index). */

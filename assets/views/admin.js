@@ -3,6 +3,7 @@ import { App, esc, views, actions, toast } from '../state.js';
 import { call } from '../api.js';
 import { sessionLost } from '../auth.js';
 import { isAuthError } from '../api.js';
+import { adminContentHtml, reloadQueue } from './content.js';
 
 const A = { users: null, loading: false, error: '', reveal: null, renaming: null };
 
@@ -59,10 +60,10 @@ views.admin = {
   title: 'Quản lý',
   render() {
     if (!App.user || App.user.role !== 'admin') return '<div class="empty">Chỉ người quản lý mới xem được trang này.</div>';
-    return '<div class="page-head"><h1>Quản lý tài khoản</h1><p>Mở tài khoản khi giao cho bạn bè, đặt lại mật khẩu khi họ quên. Tiến độ gắn với mã người dùng (u01…u10), không đổi khi đổi tên.</p></div>' +
-      '<div id="adminList">' + list() + '</div>';
+    return '<div class="page-head"><h1>Quản lý</h1><p>Duyệt đề xuất sửa nội dung; mở tài khoản khi giao cho bạn bè, đặt lại mật khẩu khi họ quên. Tiến độ gắn với mã người dùng (u01…u10), không đổi khi đổi tên.</p></div>' +
+      '<div id="ceAdmin">' + adminContentHtml() + '</div><h2 class="section">Tài khoản</h2><div id="adminList">' + list() + '</div>';
   },
-  after() { if (App.user && App.user.role === 'admin' && !A.loading) load(); }
+  after() { if (App.user && App.user.role === 'admin') { if (!A.loading) load(); reloadQueue(); } }
 };
 
 async function act(fn, okMsg) {

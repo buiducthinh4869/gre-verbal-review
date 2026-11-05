@@ -76,6 +76,8 @@ function cliRoute_(action, body) {
     case 'cli.setUser': return withLock_(function () { return cliSetUser_(openSs_(), p); });
     case 'cli.purgeTestUser': return withLock_(function () { return cliPurgeTestUser_(openSs_(), p); });
     case 'cli.ensureMocks': return withLock_(function () { return ensureMocksTab_(openSs_()); });
+    case 'cli.ensureContent': return withLock_(function () { return ensureContentTabs_(openSs_()); });
+    case 'cli.userInfo': return cliUserInfo_(openSs_(), p);
   }
   fail_('bad_request', 'Lệnh không hợp lệ.');
 }
@@ -103,9 +105,22 @@ function ensureMocksTab_(ss) {
   return { created: true };
 }
 
+/** Trạng thái một tài khoản và số dòng dữ liệu của người đó (không có mật khẩu, không có phiên). Chỉ đọc. */
+function cliUserInfo_(ss, p) {
+  var ut = table_(ss, 'users');
+  var i = adminFindUser_(ut, p.userId);
+  var u = userFromRow_(ut, ut.rows[i]);
+  var rows = {};
+  USER_TABS.concat(['mocks', 'suggestions']).forEach(function (name) {
+    if (!ss.getSheetByName(name)) return;
+    rows[name] = userRows_(table_(ss, name), u.userId).length;
+  });
+  return { userId: u.userId, username: u.username, role: u.role, active: u.active, lastLoginAt: u.lastLoginAt, rows: rows };
+}
+
 /** Đọc nguyên một tab (để so sánh với bản sao lưu). Không đọc được users/sessions. Chỉ đọc. */
 function cliDump_(tab) {
-  if (USER_TABS.indexOf(tab) < 0 && tab !== 'mocks') fail_('bad_request', 'Chỉ đọc được: ' + USER_TABS.join(', '));
+  if (USER_TABS.indexOf(tab) < 0 && ['mocks', 'content_overrides', 'content_history', 'suggestions'].indexOf(tab) < 0) fail_('bad_request', 'Chỉ đọc được: ' + USER_TABS.join(', ') + ', mocks và các tab nội dung');
   var sh = openSs_().getSheetByName(tab);
   if (!sh) fail_('bad_request', 'Không có tab ' + tab);
   var lastRow = sh.getLastRow(), lastCol = Math.max(sh.getLastColumn(), 1);
@@ -139,6 +154,16 @@ function cliSetUser_(ss, p) {
 /** Xóa dữ liệu thử của một tài khoản thử (KHÔNG BAO GIỜ u01). Xóa dòng progress/log/custom_words/settings và phiên. */
 function cliPurgeTestUser_(ss, p) {
   if (!p.userId || p.userId === 'u01' || !/^u\d{2}$/.test(p.userId)) fail_('forbidden', 'Không xóa dữ liệu của tài khoản này.');
+  // Chốt an toàn: chỉ xóa dữ liệu sinh ra SAU thời điểm bắt đầu kiểm thử (p.since, ms). Có tiến độ cũ hơn
+  // nghĩa là tài khoản đang có người thật dùng: từ chối, không xóa gì.
+  var since = Number(p.since);
+  if (!isFinite(since) || since <= 0) fail_('bad_request', 'Thiếu thời điểm bắt đầu kiểm thử (since).');
+  var pt0 = table_(ss, 'progress');
+  var older = userRows_(pt0, p.userId).filter(function (i) {
+    var u = Date.parse(cell_(pt0, pt0.rows[i], 'updatedAt'));
+    return !isNaN(u) && u < since - 60000;
+  });
+  if (older.length) fail_('forbidden', 'Tài khoản ' + p.userId + ' có tiến độ từ trước khi kiểm thử (' + older.length + ' dòng): KHÔNG xóa.');
   var removed = {};
   USER_TABS.forEach(function (name) {
     var t = table_(ss, name);
@@ -151,6 +176,13 @@ function cliPurgeTestUser_(ss, p) {
     var mr = userRows_(mt, p.userId).map(function (i) { return i + 2; }).sort(function (a, b) { return b - a; });
     mr.forEach(function (r) { mt.sh.deleteRow(r); });
     removed.mocks = mr.length;
+  }
+  // đề xuất của tài khoản thử (tab suggestions không phải lịch sử, được xóa); content_history thì KHÔNG BAO GIỜ xóa
+  if (ss.getSheetByName('suggestions')) {
+    var sg = table_(ss, 'suggestions');
+    var sr = userRows_(sg, p.userId).map(function (i) { return i + 2; }).sort(function (a, b) { return b - a; });
+    sr.forEach(function (r) { sg.sh.deleteRow(r); });
+    removed.suggestions = sr.length;
   }
   removed.sessions = deleteUserSessions_(ss, p.userId);
   return { userId: p.userId, removed: removed };

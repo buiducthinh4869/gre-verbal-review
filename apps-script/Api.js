@@ -19,7 +19,7 @@ var ACTIONS = {
   logout:            { allowMustChange: true, fn: function (ss, ctx) { return logout_(ss, ctx); } },
   me:                { allowMustChange: true, fn: function (ss, ctx) { return { user: publicUser_(ctx.user) }; } },
   setPassword:       { allowMustChange: true, fn: function (ss, ctx, p) { return setPassword_(ss, ctx, p); } },
-  getState:          { fn: function (ss, ctx) { var st = readState_(ss, ctx.user.userId); st.user = publicUser_(ctx.user); return st; } },
+  getState:          { fn: function (ss, ctx) { var st = readState_(ss, ctx.user.userId); st.user = publicUser_(ctx.user); st.content = safeContentForState_(ss, ctx.user); return st; } },
   saveEvents:        { fn: function (ss, ctx, p) { return saveEvents_(ss, ctx.user.userId, p && p.events); } },
   updateProfile:     { fn: function (ss, ctx, p) { return updateProfile_(ss, ctx, p); } },
   saveSettings:      { fn: function (ss, ctx, p) { return saveEvents_(ss, ctx.user.userId, settingEvents_(p && p.settings)); } },
@@ -28,6 +28,16 @@ var ACTIONS = {
   deleteCustomWord:  { fn: function (ss, ctx, p) { return saveEvents_(ss, ctx.user.userId, [customEvent_('custom_delete', { id: p && p.id })]); } },
   saveMock:          { fn: function (ss, ctx, p) { return saveMock_(ss, ctx.user.userId, p); } },
   getMocks:          { fn: function (ss, ctx, p) { return getMocks_(ss, ctx.user.userId, p); } },
+  submitSuggestion:  { fn: function (ss, ctx, p) { return submitSuggestion_(ss, ctx, p); } },
+  listMySuggestions: { fn: function (ss, ctx) { return listMySuggestions_(ss, ctx); } },
+  adminSaveOverride: { admin: true, fn: function (ss, ctx, p) { return adminSaveOverride_(ss, ctx, p); } },
+  adminRevertChange: { admin: true, fn: function (ss, ctx, p) { return adminRevertChange_(ss, ctx, p); } },
+  adminHideExercise: { admin: true, fn: function (ss, ctx, p) { return adminHideExercise_(ss, ctx, p); } },
+  adminListHistory:  { admin: true, fn: function (ss, ctx, p) { return adminListHistory_(ss, ctx, p); } },
+  adminListSuggestions: { admin: true, fn: function (ss) { return adminListSuggestions_(ss); } },
+  adminReviewSuggestion: { admin: true, fn: function (ss, ctx, p) { return adminReviewSuggestion_(ss, ctx, p); } },
+  adminExportOverrides: { admin: true, fn: function (ss) { return adminExportOverrides_(ss); } },
+  adminMarkOverridesBaked: { admin: true, fn: function (ss, ctx, p) { return adminMarkOverridesBaked_(ss, ctx, p); } },
   adminListUsers:    { admin: true, fn: function (ss, ctx) { return adminListUsers_(ss); } },
   adminSetActive:    { admin: true, fn: function (ss, ctx, p) { return adminSetActive_(ss, ctx, p); } },
   adminResetPassword:{ admin: true, fn: function (ss, ctx, p) { return adminResetPassword_(ss, ctx, p); } },
@@ -69,6 +79,11 @@ function route_(action, body) {
     var payload = body.payload && typeof body.payload === 'object' ? body.payload : {};
     return def.fn(ss, ctx, payload);
   });
+}
+
+/** Nội dung sửa cho getState; lỗi đọc (vd tab chưa có) không được làm hỏng getState. */
+function safeContentForState_(ss, user) {
+  try { return contentForState_(ss, user); } catch (e) { console.error(e && e.stack ? e.stack : e); return { overrides: [], corrected: [], pending: 0 }; }
 }
 
 /* ---------------- Tiện ích chung ---------------- */

@@ -1,4 +1,5 @@
 // Phiên ôn: thẻ giới thiệu, Từ → Nghĩa, Nghĩa → Từ, GRE (TC/SE), Xếp thang, tổng kết.
+import { exTools } from './content.js';
 import {
   App, S, esc, views, actions, word, stateOf, posLabel, stars, record, touch, pushReview,
   dailyQueue, toast, isTyping, render, go, stopTimer, now
@@ -319,7 +320,7 @@ function cardGRE(c) {
   } else {
     const answerText = isSE ? ex.answers.join(', ') : ex.blanks.map((b) => b.answer).join(' · ');
     h += resultLine(c.correct, c.correct ? 'Chính xác' : 'Chưa đúng. Đáp án: ' + esc(answerText));
-    h += '<div class="explain">' + esc(ex.explanation || '') + '</div>';
+    h += '<div class="explain">' + esc(ex.explanation || '') + '</div>' + exTools(ex);
     h += '<div class="card-actions"><button class="btn primary" data-act="next">Câu tiếp <kbd>Enter</kbd></button></div>';
     App.keyHandler = (e) => { if (e.key === 'Enter' && !isTyping(e)) { e.preventDefault(); nextCard(); } };
   }
@@ -474,7 +475,7 @@ function summary() {
       return '<li><div class="row"><b>Câu ' + (k + 1) + '</b>' + (x.correct ? '<span class="tag known">✓ Đúng</span>' : '<span class="tag leech">✗ Sai</span>') + '</div>' +
         '<p class="example" style="margin:6px 0">' + sent + '</p>' +
         '<div class="small">Bạn chọn: <b>' + esc(x.choice.filter(Boolean).join(', ') || '(bỏ trống)') + '</b> · Đáp án: <b>' + esc(ans) + '</b></div>' +
-        '<div class="explain small">' + esc(ex.explanation || '') + '</div></li>';
+        '<div class="explain small">' + esc(ex.explanation || '') + '</div>' + exTools(ex) + '</li>';
     }).join('') + '</ul>';
   }
   if (wrongIds.length) {

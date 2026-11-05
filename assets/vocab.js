@@ -53,7 +53,8 @@ export function buildIndex(vocab, customWords) {
     exercises: []
   };
   const all = clusters.concat([custom]);
-  const idx = { clusters: all, clusterById: {}, words: [], byId: {}, groupById: {}, exercises: [], exById: {}, formMap: {}, reverseConf: {} };
+  // exercises: bài đang dùng (bỏ bài bị ẩn); allExercises: kể cả bài ẩn (để quản trị viên hiện lại, xem kết quả cũ)
+  const idx = { clusters: all, clusterById: {}, words: [], byId: {}, groupById: {}, exercises: [], allExercises: [], exById: {}, formMap: {}, reverseConf: {} };
   all.forEach((c) => {
     idx.clusterById[c.id] = c;
     (c.groups || []).forEach((g) => {
@@ -73,7 +74,8 @@ export function buildIndex(vocab, customWords) {
     });
     (c.exercises || []).forEach((ex) => {
       const e = Object.assign({}, ex, { clusterId: c.id });
-      idx.exercises.push(e);
+      idx.allExercises.push(e);
+      if (!e.hidden) idx.exercises.push(e);
       idx.exById[e.id] = e;
     });
   });
@@ -81,7 +83,7 @@ export function buildIndex(vocab, customWords) {
     w.forms.forEach((f) => { (idx.formMap[f] = idx.formMap[f] || []).push(w.id); });
     w.confusables.forEach((cid) => { (idx.reverseConf[cid] = idx.reverseConf[cid] || []).push(w.id); });
   });
-  idx.exercises.forEach((ex) => { ex.answerIds = exerciseAnswerIds(ex, idx); });
+  idx.allExercises.forEach((ex) => { ex.answerIds = exerciseAnswerIds(ex, idx); });
   return idx;
 }
 

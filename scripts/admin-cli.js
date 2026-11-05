@@ -8,6 +8,7 @@
  *   node scripts/admin-cli.js verify <csv-dir>  so sánh Sheet với bản sao lưu CSV (số dòng, 10 dòng progress ngẫu nhiên)
  *   node scripts/admin-cli.js create-accounts   tạo 10 tài khoản, in mật khẩu ban đầu MỘT lần và ghi initial-passwords.txt
  *   node scripts/admin-cli.js ensure-mocks      tạo tab mocks (thi thử) nếu chưa có; không đụng tab nào khác
+ *   node scripts/admin-cli.js ensure-content    tạo 3 tab content_overrides, content_history, suggestions nếu chưa có (ở cuối)
  *   node scripts/admin-cli.js counts            số dòng dữ liệu từng tab (đối chiếu trước / sau khi triển khai)
  *
  * URL API lấy từ .deployment-id. Khóa quản trị không bao giờ được commit.
@@ -110,6 +111,8 @@ async function main() {
     s.tabs.forEach((t) => console.log(`  ${t.name.padEnd(13)} ${String(t.dataRows).padStart(4)} dòng | ${t.headers.join(', ')}`));
   } else if (cmd === 'ensure-mocks') {
     console.log(JSON.stringify(await cli('ensureMocks')));
+  } else if (cmd === 'ensure-content') {
+    console.log(JSON.stringify(await cli('ensureContent')));
   } else if (cmd === 'counts') {
     const s = await cli('status');
     console.log(JSON.stringify(Object.fromEntries(s.tabs.map((t) => [t.name, t.dataRows]))));

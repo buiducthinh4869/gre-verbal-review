@@ -3,6 +3,7 @@
 //   #vocab/<cụm>                   lưới thẻ nhóm của cụm, nút "Xem tất cả từ của cụm" (#vocab/<cụm>/all)
 //   #vocab/<cụm>/<nhóm>[/<từ>]     danh sách từ của nhóm (giao diện danh sách như cũ), mở sẵn chi tiết <từ>
 // Ô tìm kiếm ở mọi cấp: có chữ thì thay lưới bằng kết quả phẳng trên toàn bộ các cụm, kèm nhãn Cụm › Nhóm.
+import { correctedTag } from './content.js';
 import { App, S, esc, views, actions, word, statusTag, stars, render, syncHash, go } from '../state.js';
 import { fold } from '../render.js';
 import { LS } from '../api.js';
@@ -273,7 +274,7 @@ function wordRow(w, where) {
   }
   return '<button class="wrow" id="w-' + w.id + '" data-act="v-open" data-id="' + w.id + '" aria-expanded="' + open + '">' +
     '<span class="w-main"><span class="w-word">' + esc(w.word) + '</span><span class="pos">' + esc(w.pos) + '</span></span>' +
-    '<span class="w-side">' + statusTag(w.id) + stars(w.priority) + '</span>' +
+    '<span class="w-side">' + (w.custom ? '' : correctedTag('word', w.id)) + statusTag(w.id) + stars(w.priority) + '</span>' +
     '<span class="w-meaning">' + esc(w.meaning) + '</span>' + label + '</button>' +
     (open ? '<div class="wdetail">' + wordDetail(w, true) +
       (where ? '<p class="small" style="margin:10px 0 0"><button class="linkish" data-act="v-jump" data-id="' + w.id + '">Mở trong nhóm “' + esc(App.idx.groupById[w.group].title) + '”</button></p>' : '') +

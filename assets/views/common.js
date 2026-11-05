@@ -1,11 +1,17 @@
 // Thành phần hiển thị dùng chung giữa các trang.
 import { App, esc, word, stateOf, fmtDate, fmtIsoDate } from '../state.js';
 import { renderMarkup } from '../render.js';
+import { contentBar, editableRows, wordExercises } from './content.js';
+import { isAdmin } from '../state.js';
 
 /** Chi tiết một từ: sắc thái, mức, ví dụ, collocation, gốc từ, từ dễ nhầm; withStatus: kèm trạng thái của tôi. */
 export function wordDetail(w, withStatus) {
   const g = App.idx.groupById[w.group];
-  let h = '<dl class="dl">';
+  const content = withStatus && !w.custom; // từ trong dữ liệu chung: có đề xuất sửa / chế độ sửa
+  const editing = content && App.editMode && isAdmin();
+  let h = (content ? contentBar(w) : '') + '<dl class="dl">';
+  if (editing) h += editableRows(w);
+  else {
   if (w.nuance) h += '<dt>Sắc thái</dt><dd>' + esc(w.nuance) + '</dd>';
   if (w.level) h += '<dt>Mức</dt><dd>' + w.level + '/4 trên “' + esc(g ? g.title : '') + '”</dd>';
   if (w.example) h += '<dt>Ví dụ</dt><dd class="example">' + renderMarkup(w.example) + '</dd>';
@@ -17,6 +23,7 @@ export function wordDetail(w, withStatus) {
       ? '<button class="linkish" data-act="v-jump" data-id="' + id + '">' + esc(word(id).word) + '</button>'
       : '<b>' + esc(word(id).word) + '</b>')).join(', ') + '</dd>';
   }
+  }
   if (withStatus) {
     const s = stateOf(w.id);
     h += '<dt>Của tôi</dt><dd>' + (s && s.box
@@ -26,7 +33,9 @@ export function wordDetail(w, withStatus) {
         '</div>'
       : '<span class="muted">Chưa học</span>') + '</dd>';
   }
-  return h + '</dl>';
+  h += '</dl>';
+  if (content) h += wordExercises(w);
+  return h;
 }
 
 export function resultLine(ok, text) {

@@ -3,6 +3,7 @@
  */
 import * as S from './srs.js';
 import { buildIndex } from './vocab.js';
+import { applyOverrides } from './overrides.js';
 import { escapeHtml as esc } from './render.js';
 import { LS } from './api.js';
 import { EXAM_DATE } from '../config.js';
@@ -23,6 +24,8 @@ export const App = {
   exLast: {},
   exRes: {},              // {exId: [ngày, 1 đúng | 0 sai]} kết quả gần nhất của từng bài GRE
   mocks: null,            // lịch sử thi thử (getMocks), null = chưa tải
+  content: { overrides: [], corrected: [], pending: 0 }, // bản sửa nội dung (getState): ghép đè lên vocabData
+  editMode: false,        // Chế độ sửa của quản trị viên
   idx: null,
   view: 'today',
   session: null,
@@ -58,7 +61,7 @@ export function saveCache() {
   clearTimeout(cacheTimer);
   cacheTimer = setTimeout(() => {
     if (!App.user) return;
-    LS.set(cacheKey(), { progress: App.progress, customWords: App.customWords, settings: App.settings, daily: App.daily, exLast: App.exLast, exRes: App.exRes, mocks: App.mocks, clockOffset: App.clockOffset });
+    LS.set(cacheKey(), { progress: App.progress, customWords: App.customWords, settings: App.settings, daily: App.daily, exLast: App.exLast, exRes: App.exRes, mocks: App.mocks, content: App.content, clockOffset: App.clockOffset });
   }, 300);
 }
 export function loadCache() {
@@ -79,6 +82,7 @@ export function applyState(st, opts = {}) {
   App.exLast = Object.assign({}, st.exLast || {});
   App.exRes = Object.assign({}, st.exRes || {});
   if (opts.fromCache && st.mocks) App.mocks = st.mocks;
+  if (st.content) setContent(st.content, { noRebuild: true });
   applyPending(!opts.fromCache);
   rebuildIndex();
   if (!opts.fromCache) saveCache();
@@ -106,7 +110,20 @@ export function mergeServerStates(states) {
   saveCache();
 }
 
-export function rebuildIndex() { if (App.vocabData) App.idx = buildIndex(App.vocabData, App.customWords); }
+export function rebuildIndex() { if (App.vocabData) App.idx = buildIndex(applyOverrides(App.vocabData, App.content.overrides), App.customWords); }
+
+/** Nạp bản sửa nội dung ({overrides, corrected, pending}) từ server hoặc bộ nhớ đệm. */
+export function setContent(c, opts = {}) {
+  App.content = {
+    overrides: Array.isArray(c && c.overrides) ? c.overrides : [],
+    corrected: Array.isArray(c && c.corrected) ? c.corrected : [],
+    pending: Number(c && c.pending) || 0
+  };
+  if (!opts.noRebuild) { rebuildIndex(); saveCache(); }
+}
+/** Từ / câu đã được đính chính (mọi người đều thấy nhãn). */
+export const isCorrected = (t, id) => App.content.corrected.includes(t + ':' + id);
+export const isAdmin = () => !!(App.user && App.user.role === 'admin');
 
 export function upsertCustomLocal(w) {
   const i = App.customWords.findIndex((x) => x.id === w.id);
@@ -224,12 +241,19 @@ const TABS = [
   { id: 'book', long: 'Sổ từ hay quên', short: 'Hay quên' },
   { id: 'add', long: 'Thêm từ', short: 'Thêm từ' }
 ];
-export const ROUTES = ['today', 'vocab', 'practice', 'mock', 'book', 'add', 'account', 'admin'];
+export const ROUTES = ['today', 'vocab', 'practice', 'mock', 'book', 'add', 'account', 'admin', 'mysugg'];
 
 function renderChrome() {
   const authView = !!(views[App.view] && views[App.view].auth);
   document.body.classList.toggle('is-auth', authView);
   const tabs = document.getElementById('tabs');
+  const edit = document.getElementById('editToggle');
+  if (edit) {
+    edit.hidden = authView || !App.idx || !isAdmin();
+    edit.setAttribute('aria-pressed', String(!!App.editMode));
+  }
+  const me = document.getElementById('meBtn');
+  if (me) me.classList.toggle('has-badge', !authView && isAdmin() && App.content.pending > 0);
   if (authView || !App.idx) { tabs.innerHTML = ''; return; }
   const current = App.view === 'session' ? (App.session && App.session.from) || 'today' : App.view;
   document.body.classList.toggle('exam-mode', !!(views[App.view] && views[App.view].immersive && views[App.view].immersive()));

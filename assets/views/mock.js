@@ -1,6 +1,7 @@
 // Trang Thi thử section Verbal: màn bắt đầu + lịch sử, làm bài như thật (đồng hồ, Trước/Tiếp, Đánh dấu,
 // Xem lại), màn chuyển section, màn kết quả. Bài đang làm lưu tạm trong localStorage để tải lại trang vẫn làm
 // tiếp, đồng hồ chạy theo thời gian thực. Kết quả lưu vào tab mocks (saveMock), gửi lại nếu mất mạng.
+import { exTools } from './content.js';
 import { App, S, esc, views, actions, word, record, touch, render, go, toast, isTyping, now, stopTimer } from '../state.js';
 import { call, LS, isAuthError } from '../api.js';
 import {
@@ -454,7 +455,7 @@ function resultScreen() {
       '<p class="example" style="margin:6px 0">' + sent + '</p>' +
       '<div class="small">Bạn chọn: <b>' + esc(isTouched(choice) ? mine : '(bỏ trống)') + '</b> · Đáp án: <b>' + esc(ans) + '</b></div>' +
       '<div class="explain small">' + esc(e.explanation || '') + '</div>' +
-      (rel.length ? '<div class="small rel-words">Từ liên quan: ' + rel.map((id) => '<button class="linkish" data-act="v-jump" data-id="' + id + '">' + esc(word(id).word) + '</button>').join(', ') + '</div>' : '') + '</li>';
+      (rel.length ? '<div class="small rel-words">Từ liên quan: ' + rel.map((id) => '<button class="linkish" data-act="v-jump" data-id="' + id + '">' + esc(word(id).word) + '</button>').join(', ') + '</div>' : '') + exTools(e) + '</li>';
   }).join('') + '</ol>';
   h += '<div class="form-grid" style="margin-top:20px"><button class="btn big" data-act="mk-new">Về trang Thi thử</button></div>';
   return h;

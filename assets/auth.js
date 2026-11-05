@@ -39,6 +39,7 @@ function startUser(user, token) {
 
 function resetData() {
   App.progress = {}; App.customWords = []; App.daily = {}; App.exLast = {}; App.exRes = {}; App.mocks = null;
+  App.content = { overrides: [], corrected: [], pending: 0 }; App.editMode = false;
   App.settings = Object.assign({}, DEFAULT_SETTINGS);
 }
 
@@ -69,6 +70,7 @@ export async function login(username, password) {
 
 /** Sau khi có phiên hợp lệ và không cần đổi mật khẩu: nạp đệm, hiện trang, làm mới ở nền. */
 export async function enterApp(opts = {}) {
+  App.editMode = !!(App.user && App.user.role === 'admin' && LS.get('gre.editMode', false) === true);
   const hadCache = loadCache();
   const ph = parseHash(location.hash);
   const target = ROUTES.includes(ph.view) ? ph.view : 'today';
