@@ -87,6 +87,21 @@ async function run() {
   await ok(call('getState', {}, c2));
   step('Đổi tên đăng nhập: tên cũ hết dùng, tên mới đăng nhập được');
 
+  // Cập nhật 02: Thi thử
+  const mockId = 'e2e-mock-' + t0;
+  const mk = { mockId, mode: 's1', startedAt: Date.now() - 900000, finishedAt: Date.now(), userId: 'u01',
+    sections: [{ section: 1, score: 9, total: 12, durationSec: 880, items: [{ i: 'tc01', c: 'laud', ok: 1, t: 50 }] }] };
+  assert.equal((await ok(call('saveMock', mk, a))).saved, 1);
+  assert.equal((await ok(call('saveMock', mk, a))).saved, 0);
+  const mine = (await ok(call('getMocks', {}, a))).mocks;
+  assert.equal(mine.length, 1);
+  assert.equal(mine[0].sections[0].score, 9);
+  assert.deepEqual((await ok(call('getMocks', {}, c2))).mocks, [], 'user03 không thấy bài thi thử của user02');
+  const mrows = (await cli('dump', { tab: 'mocks' })).values;
+  const mu = mrows[0].indexOf('userId');
+  assert.deepEqual(mrows.slice(1).filter((r) => r[mrows[0].indexOf('mockId')] === mockId).map((r) => r[mu]), ['u02'], 'userId lấy từ phiên, không từ payload');
+  step('Thi thử: saveMock ghi một dòng vào tab mocks (gửi lại không trùng), getMocks chỉ trả bài của chính mình');
+
   const reset = await ok(call('adminResetPassword', { userId: 'u03' }, a));
   assert.match(reset.password, /^\w{3}-\w{3}-\w{3}$/);
   assert.equal(await errCode(call('getState', {}, c2)), 'unauthorized');
