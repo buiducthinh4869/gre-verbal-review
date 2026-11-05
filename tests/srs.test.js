@@ -195,13 +195,17 @@ test('ánh xạ luôn ưu tiên targets của bài', () => {
   // "obscure" chỉ có một id (obscure-v); "qualified"/"unqualified" là hai id khác nhau và không bị nhập làm một
   assert.equal(Srs.mapOptionToId('obscure', idx, ['obscure-v']), 'obscure-v');
   assert.equal(Srs.mapOptionToId('unqualified', idx, ['unqualified', 'qualified']), 'unqualified');
+  // "self-effacing" là một từ có sẵn: thử nguyên dạng trước khi bỏ self-; "conjectural" → conjecture
+  assert.equal(Srs.mapOptionToId('self-effacing', idx, []), 'self-effacing');
+  assert.equal(Srs.mapOptionToId('conjectural', idx, []), 'conjecture');
   const fake = { formMap: { abc: ['x1', 'x2'], abcs: [] } };
   assert.equal(Srs.mapOptionToId('abc', fake, ['x2']), 'x2');
   assert.equal(Srs.mapOptionToId('abc', fake, []), 'x1');
 });
 
 test('mọi đáp án GRE trong dữ liệu đều ánh xạ được về id (trừ từ ngoài dữ liệu)', () => {
-  const outside = { se02: ['question'] }; // "question" không phải một từ trong dữ liệu
+  // đáp án không phải một từ trong dữ liệu
+  const outside = { se02: ['question'], ha07: ['barefaced'], sr07: ['denying'], hm08: ['heartless'] };
   idx.exercises.forEach((ex) => {
     const answers = ex.type === 'se' ? ex.answers : ex.blanks.map((b) => b.answer);
     const n = answers.filter((a) => !(outside[ex.id] || []).includes(a)).length;

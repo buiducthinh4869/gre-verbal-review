@@ -114,6 +114,8 @@ function stemCandidates(w) {
   if ((m = w.match(/^(.*)ity$/))) { add(m[1]); add(m[1] + 'e'); add(m[1] + 'ous'); add(m[1] + 'al'); }
   if ((m = w.match(/^(.*)iness$/))) add(m[1] + 'y');
   if ((m = w.match(/^(.*)ness$/))) add(m[1]);
+  // tính từ đuôi -ural: conjectural → conjecture
+  if ((m = w.match(/^(.*ur)al$/))) add(m[1] + 'e');
   // danh từ chỉ người → tính từ: iconoclast → iconoclastic
   if (/(ast|ist)$/.test(w)) add(w + 'ic');
   return out;
@@ -121,16 +123,19 @@ function stemCandidates(w) {
 
 /**
  * Ánh xạ một phương án ("lauded", "scoffed at", "frugally", "obstinacy", "gloss over", "shore up",
- * "a backhanded compliment") về id từ: khớp chính xác, bỏ mạo từ đầu, bỏ tiền tố self-, bỏ đuôi chia / đuôi
+ * "a backhanded compliment") về id từ: khớp chính xác, bỏ mạo từ đầu, bỏ tiền tố self- (sau khi đã thử nguyên
+ * dạng: "self-effacing" là một từ, "self-deprecating" → deprecate), bỏ đuôi chia / đuôi
  * trạng từ / đuôi danh từ, thử cả cụm có giới từ lẫn từ đầu của cụm. Gom mọi id ứng viên rồi LUÔN ưu tiên id
  * nằm trong targets của bài; không có thì lấy ứng viên khớp sớm nhất. Không khớp gì thì trả về null.
  */
 export function mapOptionToId(option, idx, targets) {
-  const base = lc(option).replace(/^(a|an|the)\s+/, '').replace(/^self-/, '');
+  const full = lc(option).replace(/^(a|an|the)\s+/, '');
+  const base = full.replace(/^self-/, '');
   if (!base) return null;
   const tokens = base.split(/\s+/);
   const tries = [];
   const push = (t) => { if (t && !tries.includes(t)) tries.push(t); };
+  if (full !== base) stemCandidates(full).forEach(push);
   stemCandidates(tokens[0]).forEach((st) => { if (tokens.length > 1) push([st].concat(tokens.slice(1)).join(' ')); });
   stemCandidates(base).forEach(push);
   if (tokens.length > 1) {
