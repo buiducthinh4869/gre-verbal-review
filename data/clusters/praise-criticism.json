@@ -315,7 +315,7 @@
       "group": "praise-nouns",
       "priority": 3,
       "meaning": "lời tán dương",
-      "nuance": "Luôn ở số nhiều.",
+      "nuance": "Thường dùng ở số nhiều.",
       "example": "The central bank **won** *plaudits* **for** its swift response to the crisis.",
       "collocations": [
         "win plaudits for X"
@@ -329,8 +329,8 @@
       "pos": "n",
       "group": "praise-nouns",
       "priority": 3,
-      "meaning": "lời ca tụng trang trọng",
-      "nuance": "Trang trọng, thường bằng văn bản hoặc diễn văn.",
+      "meaning": "lời khen ngợi nồng nhiệt, trang trọng",
+      "nuance": "Nhấn vào sự nhiệt thành, ấm áp của lời khen. Gần như đồng nghĩa với panegyric.",
       "example": "The obituary was an *encomium* **to** her decades of public service.",
       "collocations": [
         "an encomium to X"
@@ -345,10 +345,11 @@
       "pos": "n",
       "group": "praise-nouns",
       "priority": 3,
-      "meaning": "bài ca tụng dài, trang trọng",
-      "nuance": "Dài hơn encomium; hay dùng mỉa mai khi lời khen thiếu khách quan.",
-      "example": "His speech was less an analysis than a *panegyric* **on** the ruling party.",
+      "meaning": "bài ca tụng trang trọng, công phu",
+      "nuance": "Nhấn vào sự cầu kỳ, giàu chất văn chương, có khi như thơ. Gần như đồng nghĩa với encomium, nhưng encomium nhấn vào sự nhiệt thành hơn.",
+      "example": "The court poet composed a two-hundred-line *panegyric* **to** the emperor.",
       "collocations": [
+        "a panegyric to X",
         "a panegyric on X"
       ],
       "confusables": [
@@ -536,7 +537,7 @@
       "priority": 3,
       "level": 3,
       "meaning": "quở trách thẳng thừng",
-      "nuance": "Mạnh hơn reprove, thường công khai.",
+      "nuance": "Gay gắt, nghiêm khắc hơn reprove.",
       "example": "The minister **publicly** *rebuked* the agency **for** its slow response.",
       "collocations": [
         "rebuke X for Y"
@@ -568,7 +569,7 @@
       "priority": 3,
       "level": 3,
       "meaning": "khiển trách chính thức",
-      "nuance": "Nhấn vào TÍNH CHÍNH THỨC: một cơ quan, tổ chức khiển trách thành viên.",
+      "nuance": "Thường mang tính chính thức: một cơ quan, tổ chức khiển trách thành viên. Cũng có nghĩa chung là chỉ trích nghiêm khắc.",
       "example": "The senate **voted to** *censure* the member **for** misconduct.",
       "collocations": [
         "vote to censure X"
@@ -602,7 +603,7 @@
       "priority": 3,
       "level": 4,
       "meaning": "trách phạt nghiêm khắc",
-      "nuance": "Hàm ý muốn sửa sai người bị trách.",
+      "nuance": "Chỉ trích hoặc trừng phạt nghiêm khắc.",
       "example": "The IMF *chastised* the government **for** its fiscal indiscipline.",
       "collocations": [
         "chastise X for Y"
@@ -689,7 +690,7 @@
       "group": "denounce",
       "priority": 3,
       "meaning": "đả kích cực mạnh",
-      "nuance": "Mức mạnh nhất cả cụm chê.",
+      "nuance": "Thuộc mức mạnh nhất của thang chê, ngang lambaste.",
       "example": "The review *excoriated* the authors **for** cherry-picking their data.",
       "collocations": [
         "excoriate X for Y"
@@ -991,8 +992,8 @@
       "pos": "adj",
       "group": "excess",
       "priority": 3,
-      "meaning": "khen thái quá, giả tạo",
-      "nuance": "Nghĩa gốc là thái quá đến mức thiếu chân thành; GRE thường dùng nghĩa này, không phải 'đầy đủ'.",
+      "meaning": "khen quá mức, thiếu chân thành; (cũng) dồi dào, đầy đủ",
+      "nuance": "Có hai nghĩa đang dùng: (1) khen quá mức, xu nịnh; (2) dồi dào, đầy đủ. Nghĩa (2) mới là nghĩa gốc từ thế kỷ 14 và nay phổ biến trở lại. Sách luyện GRE thường kiểm tra nghĩa (1); luôn dựa vào ngữ cảnh để chọn nghĩa.",
       "example": "The CEO's *fulsome* praise of the regulator struck many as insincere.",
       "collocations": [
         "fulsome praise",
@@ -1155,7 +1156,7 @@
         {
           "options": [
             "effusive",
-            "fulsome",
+            "equivocal",
             "grudging"
           ],
           "answer": "effusive"
@@ -1174,7 +1175,7 @@
         "tepid"
       ],
       "hint": "Bắt đầu từ chỗ (ii).",
-      "explanation": "Chỗ (ii): 'noting its many weaknesses' là khen nhạt: tepid; unstinting là khen hết mức. Chỗ (i): 'expected… instead' đổi chiều: effusive. Fulsome là khen giả tạo, khán giả không mong đợi điều đó."
+      "explanation": "Chỗ (ii): 'noting its many weaknesses' là khen nhạt: tepid; unstinting là khen hết mức. Chỗ (i): 'expected… instead' đổi chiều: effusive. Equivocal và grudging đều là khen dè dặt, không hợp với sự kỳ vọng."
     },
     {
       "id": "tc06",
@@ -1241,7 +1242,7 @@
         "fulsome"
       ],
       "hint": "Bẫy fulsome.",
-      "explanation": "'Plainly insincere' là nghĩa gốc của fulsome. Unstinting là khen hết lời nhưng chân thành; laudatory chỉ là mang tính khen; grudging và muted là khen ít."
+      "explanation": "'Plainly insincere' cho thấy lời khen thái quá, xu nịnh: đây là nghĩa (1) của fulsome. Unstinting là khen hết lời nhưng chân thành; laudatory chỉ là mang tính khen; grudging và muted là khen ít."
     },
     {
       "id": "tc09",
@@ -1254,7 +1255,7 @@
             "unqualified",
             "tepid",
             "equivocal",
-            "fulsome"
+            "muted"
           ],
           "answer": "unqualified"
         }
@@ -1511,7 +1512,7 @@
           "options": [
             "laudatory",
             "laudable",
-            "fulsome",
+            "obsequious",
             "equivocal",
             "grudging"
           ],
@@ -1522,7 +1523,7 @@
         "laudatory"
       ],
       "hint": "Mô tả bài review hay cuốn sách?",
-      "explanation": "Bài review mang lời lẽ khen: laudatory. Laudable mô tả đối tượng; fulsome hàm ý giả tạo, câu không có dấu hiệu đó; equivocal và grudging trái với việc khen cả ba điểm."
+      "explanation": "Bài review mang lời lẽ khen: laudatory. Laudable mô tả đối tượng; obsequious là khúm núm với người có quyền; equivocal và grudging trái với việc khen cả ba điểm."
     },
     {
       "id": "tc21",
