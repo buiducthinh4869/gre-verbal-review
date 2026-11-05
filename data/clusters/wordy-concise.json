@@ -1,0 +1,714 @@
+{
+  "schemaVersion": 1,
+  "id": "wordy-concise",
+  "title": "Dài dòng & Súc tích",
+  "order": 4,
+  "description": "Cách nói và viết: dài dòng, khoa trương, súc tích, kiệm lời.",
+  "groups": [
+    {
+      "id": "wordy",
+      "title": "Dài dòng, nói nhiều",
+      "direction": "negative",
+      "scale": false,
+      "note": "Verbose/prolix: văn dài. Loquacious/garrulous/voluble: người nói nhiều. Garrulous thường chê nặng hơn loquacious."
+    },
+    {
+      "id": "grandiose",
+      "title": "Khoa trương, sáo rỗng",
+      "direction": "negative",
+      "scale": false,
+      "note": "Nhấn vào sự phô trương của lời lẽ, không phải độ dài."
+    },
+    {
+      "id": "concise",
+      "title": "Ngắn gọn, súc tích",
+      "direction": "neutral",
+      "scale": false,
+      "note": "Succinct/pithy/aphoristic là khen. Curt/brusque là ngắn đến mức cộc lốc, thô."
+    },
+    {
+      "id": "silent",
+      "title": "Kiệm lời, ít nói",
+      "direction": "neutral",
+      "scale": false,
+      "note": ""
+    }
+  ],
+  "words": [
+    {
+      "id": "verbose",
+      "word": "verbose",
+      "pos": "adj",
+      "group": "wordy",
+      "priority": 3,
+      "meaning": "dài dòng, nhiều chữ thừa",
+      "nuance": "Dùng chủ yếu cho văn bản hoặc người viết.",
+      "example": "The first draft was *verbose*; the referee asked for half the length.",
+      "collocations": [
+        "a verbose draft"
+      ],
+      "root": "verb- (từ ngữ)",
+      "confusables": [
+        "prolix",
+        "loquacious"
+      ]
+    },
+    {
+      "id": "prolix",
+      "word": "prolix",
+      "pos": "adj",
+      "group": "wordy",
+      "priority": 3,
+      "meaning": "dài dòng, lê thê đến mức chán",
+      "nuance": "Nặng hơn verbose, gần nghĩa tedious.",
+      "example": "The *prolix* report buried its key finding on page ninety.",
+      "collocations": [],
+      "confusables": [
+        "verbose",
+        "discursive"
+      ]
+    },
+    {
+      "id": "loquacious",
+      "word": "loquacious",
+      "pos": "adj",
+      "group": "wordy",
+      "priority": 3,
+      "meaning": "nói nhiều, ba hoa",
+      "nuance": "Mô tả người; chê nhẹ hơn garrulous.",
+      "example": "The usually *loquacious* minister said little at the press conference.",
+      "collocations": [],
+      "root": "loqu- (nói), như eloquent",
+      "confusables": [
+        "garrulous",
+        "voluble"
+      ]
+    },
+    {
+      "id": "garrulous",
+      "word": "garrulous",
+      "pos": "adj",
+      "group": "wordy",
+      "priority": 3,
+      "meaning": "nói nhiều, lắm lời về chuyện vặt",
+      "nuance": "Chê rõ hơn loquacious.",
+      "example": "A *garrulous* taxi driver narrated the entire history of the city.",
+      "collocations": [],
+      "confusables": [
+        "loquacious"
+      ]
+    },
+    {
+      "id": "voluble",
+      "word": "voluble",
+      "pos": "adj",
+      "group": "wordy",
+      "priority": 2,
+      "meaning": "nói liến thoắng, trôi chảy",
+      "nuance": "Nhấn vào sự trôi chảy, dồn dập.",
+      "example": "She became *voluble* when the topic turned to trade policy.",
+      "collocations": [],
+      "confusables": [
+        "loquacious",
+        "taciturn"
+      ]
+    },
+    {
+      "id": "circumlocution",
+      "word": "circumlocution",
+      "pos": "n",
+      "group": "wordy",
+      "priority": 2,
+      "meaning": "lối nói vòng vo",
+      "nuance": "Dùng nhiều từ để tránh nói thẳng.",
+      "example": "The memo was a masterpiece of *circumlocution*, never quite admitting the error.",
+      "collocations": [],
+      "root": "circum- (vòng quanh) + locu- (nói)",
+      "confusables": [
+        "verbose"
+      ]
+    },
+    {
+      "id": "digressive",
+      "word": "digressive",
+      "pos": "adj",
+      "group": "wordy",
+      "priority": 2,
+      "meaning": "lạc đề, hay đi lan man",
+      "nuance": "",
+      "example": "The *digressive* second chapter could be cut entirely.",
+      "collocations": [],
+      "root": "digress (lạc đề)",
+      "confusables": [
+        "discursive"
+      ]
+    },
+    {
+      "id": "discursive",
+      "word": "discursive",
+      "pos": "adj",
+      "group": "wordy",
+      "priority": 2,
+      "meaning": "lan man, đi từ chủ đề này sang chủ đề khác",
+      "nuance": "Bẫy: không hẳn chê; có thể là phong cách bàn luận rộng, thú vị.",
+      "example": "His lectures were *discursive* but never dull.",
+      "collocations": [],
+      "confusables": [
+        "digressive",
+        "prolix"
+      ]
+    },
+    {
+      "id": "long-winded",
+      "word": "long-winded",
+      "pos": "adj",
+      "group": "wordy",
+      "priority": 1,
+      "meaning": "dài dòng, nói lê thê",
+      "nuance": "Thân mật.",
+      "example": "Spare us the *long-winded* introduction.",
+      "collocations": [],
+      "confusables": [
+        "verbose"
+      ]
+    },
+    {
+      "id": "bombastic",
+      "word": "bombastic",
+      "pos": "adj",
+      "group": "grandiose",
+      "priority": 3,
+      "meaning": "khoa trương, lời to tát nhưng rỗng",
+      "nuance": "Nhấn vào giọng điệu phô trương, kêu.",
+      "example": "The senator's *bombastic* speech promised a 'new golden age'.",
+      "collocations": [
+        "bombastic rhetoric"
+      ],
+      "confusables": [
+        "grandiloquent",
+        "turgid"
+      ]
+    },
+    {
+      "id": "grandiloquent",
+      "word": "grandiloquent",
+      "pos": "adj",
+      "group": "grandiose",
+      "priority": 3,
+      "meaning": "văn hoa, khoa trương",
+      "nuance": "Dùng từ ngữ hoa mỹ để gây ấn tượng.",
+      "example": "The CEO's *grandiloquent* letter to shareholders irritated analysts.",
+      "collocations": [],
+      "root": "grand- + loqu- (nói)",
+      "confusables": [
+        "bombastic",
+        "magniloquent"
+      ]
+    },
+    {
+      "id": "magniloquent",
+      "word": "magniloquent",
+      "pos": "adj",
+      "group": "grandiose",
+      "priority": 1,
+      "meaning": "khoa trương, kênh kiệu trong lời nói",
+      "nuance": "Gần nghĩa grandiloquent.",
+      "example": "The ambassador's *magniloquent* toast went on for twenty minutes.",
+      "collocations": [],
+      "root": "magni- (lớn) + loqu- (nói)",
+      "confusables": [
+        "grandiloquent"
+      ]
+    },
+    {
+      "id": "pompous",
+      "word": "pompous",
+      "pos": "adj",
+      "group": "grandiose",
+      "priority": 2,
+      "meaning": "vênh vang, khoa trương",
+      "nuance": "Nói về người hoặc lời lẽ tự cho mình quan trọng.",
+      "example": "His *pompous* tone alienated the younger staff.",
+      "collocations": [],
+      "confusables": [
+        "bombastic"
+      ]
+    },
+    {
+      "id": "turgid",
+      "word": "turgid",
+      "pos": "adj",
+      "group": "grandiose",
+      "priority": 3,
+      "meaning": "văn phong nặng nề, khoa trương",
+      "nuance": "Bẫy: nghĩa đen là sưng phồng. Nghĩa bóng là văn khó đọc vì phô trương, nặng nề.",
+      "example": "The translation is *turgid* where the original was light.",
+      "collocations": [
+        "turgid prose"
+      ],
+      "confusables": [
+        "bombastic",
+        "lucid"
+      ]
+    },
+    {
+      "id": "florid",
+      "word": "florid",
+      "pos": "adj",
+      "group": "grandiose",
+      "priority": 2,
+      "meaning": "hoa mỹ, quá nhiều trang trí",
+      "nuance": "Nhấn vào sự cầu kỳ của văn phong.",
+      "example": "Victorian prose can feel *florid* to modern readers.",
+      "collocations": [
+        "florid prose"
+      ],
+      "root": "flor- (hoa)",
+      "confusables": [
+        "grandiloquent"
+      ]
+    },
+    {
+      "id": "laconic",
+      "word": "laconic",
+      "pos": "adj",
+      "group": "concise",
+      "priority": 3,
+      "meaning": "kiệm lời, ngắn gọn",
+      "nuance": "Dùng ít từ, thường điềm tĩnh, có thể dí dỏm.",
+      "example": "Her *laconic* reply, 'Noted', ended the debate.",
+      "collocations": [
+        "a laconic reply"
+      ],
+      "root": "Laconia (xứ Sparta nổi tiếng ít nói)",
+      "confusables": [
+        "terse",
+        "taciturn"
+      ]
+    },
+    {
+      "id": "terse",
+      "word": "terse",
+      "pos": "adj",
+      "group": "concise",
+      "priority": 3,
+      "meaning": "cụt ngủn, ngắn gọn",
+      "nuance": "Ngắn đến mức có thể hơi lạnh lùng.",
+      "example": "The ministry issued a *terse* statement: 'No comment.'",
+      "collocations": [
+        "a terse statement"
+      ],
+      "confusables": [
+        "laconic",
+        "curt"
+      ]
+    },
+    {
+      "id": "succinct",
+      "word": "succinct",
+      "pos": "adj",
+      "group": "concise",
+      "priority": 3,
+      "meaning": "ngắn gọn, súc tích",
+      "nuance": "Nghĩa khen: ngắn mà đủ ý.",
+      "example": "Give a *succinct* summary of your contribution in the first paragraph.",
+      "collocations": [
+        "a succinct summary"
+      ],
+      "confusables": [
+        "concise",
+        "pithy"
+      ]
+    },
+    {
+      "id": "pithy",
+      "word": "pithy",
+      "pos": "adj",
+      "group": "concise",
+      "priority": 3,
+      "meaning": "súc tích, đắt giá",
+      "nuance": "Ngắn mà sâu sắc, gây ấn tượng.",
+      "example": "Her *pithy* remark became the conference's unofficial motto.",
+      "collocations": [
+        "a pithy remark"
+      ],
+      "confusables": [
+        "succinct",
+        "aphoristic"
+      ]
+    },
+    {
+      "id": "concise",
+      "word": "concise",
+      "pos": "adj",
+      "group": "concise",
+      "priority": 2,
+      "meaning": "ngắn gọn, súc tích",
+      "nuance": "Từ trung tính, thông dụng.",
+      "example": "Keep the abstract *concise*.",
+      "collocations": [],
+      "confusables": [
+        "succinct"
+      ]
+    },
+    {
+      "id": "aphoristic",
+      "word": "aphoristic",
+      "pos": "adj",
+      "group": "concise",
+      "priority": 2,
+      "meaning": "dưới dạng cách ngôn",
+      "nuance": "Câu ngắn chứa chân lý chung.",
+      "example": "His *aphoristic* style makes him easy to quote.",
+      "collocations": [],
+      "root": "aphorism (cách ngôn)",
+      "confusables": [
+        "pithy",
+        "epigrammatic"
+      ]
+    },
+    {
+      "id": "epigrammatic",
+      "word": "epigrammatic",
+      "pos": "adj",
+      "group": "concise",
+      "priority": 2,
+      "meaning": "ngắn gọn, dí dỏm như châm ngôn",
+      "nuance": "Nhấn vào sự sắc sảo, hóm hỉnh.",
+      "example": "Wilde's *epigrammatic* wit is endlessly quotable.",
+      "collocations": [],
+      "root": "epigram",
+      "confusables": [
+        "aphoristic"
+      ]
+    },
+    {
+      "id": "curt",
+      "word": "curt",
+      "pos": "adj",
+      "group": "concise",
+      "priority": 2,
+      "meaning": "cộc lốc, ngắn đến mức thô lỗ",
+      "nuance": "Nghĩa chê: thiếu lịch sự.",
+      "example": "A *curt* email rejected the proposal without explanation.",
+      "collocations": [
+        "a curt reply"
+      ],
+      "confusables": [
+        "terse",
+        "brusque"
+      ]
+    },
+    {
+      "id": "brusque",
+      "word": "brusque",
+      "pos": "adj",
+      "group": "concise",
+      "priority": 2,
+      "meaning": "lỗ mãng, cộc cằn",
+      "nuance": "Thái độ thô và vội, không chỉ lời nói.",
+      "example": "The officer's *brusque* manner upset the applicants.",
+      "collocations": [
+        "a brusque manner"
+      ],
+      "confusables": [
+        "curt"
+      ]
+    },
+    {
+      "id": "taciturn",
+      "word": "taciturn",
+      "pos": "adj",
+      "group": "silent",
+      "priority": 3,
+      "meaning": "lầm lì, ít nói",
+      "nuance": "Bản tính ít nói, không thích chuyện trò.",
+      "example": "The *taciturn* engineer rarely spoke in meetings.",
+      "collocations": [],
+      "root": "tac- (im lặng), như tacit",
+      "confusables": [
+        "reticent",
+        "laconic"
+      ]
+    },
+    {
+      "id": "reticent",
+      "word": "reticent",
+      "pos": "adj",
+      "group": "silent",
+      "priority": 3,
+      "meaning": "kín đáo, ngại nói (về một chủ đề)",
+      "nuance": "Thường đi với about: ngại nói về điều gì.",
+      "example": "He was **reticent about** his role in the negotiations.",
+      "collocations": [
+        "reticent about X"
+      ],
+      "root": "tac-/tic- (im lặng)",
+      "confusables": [
+        "taciturn",
+        "reserved"
+      ]
+    },
+    {
+      "id": "reserved",
+      "word": "reserved",
+      "pos": "adj",
+      "group": "silent",
+      "priority": 1,
+      "meaning": "dè dặt, kín đáo",
+      "nuance": "",
+      "example": "A *reserved* person by nature, she rarely discussed her own achievements.",
+      "collocations": [],
+      "confusables": [
+        "reticent"
+      ]
+    },
+    {
+      "id": "tight-lipped",
+      "word": "tight-lipped",
+      "pos": "adj",
+      "group": "silent",
+      "priority": 1,
+      "meaning": "kín miệng, không tiết lộ",
+      "nuance": "",
+      "example": "Officials remained *tight-lipped* about the investigation.",
+      "collocations": [],
+      "confusables": [
+        "reticent"
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "id": "wc01",
+      "type": "tc",
+      "sentence": "The memo was admirably {0}: in three sentences it conveyed what the previous report had needed thirty pages to say.",
+      "blanks": [
+        {
+          "options": [
+            "succinct",
+            "curt",
+            "brusque",
+            "taciturn",
+            "reticent"
+          ],
+          "answer": "succinct"
+        }
+      ],
+      "targets": [
+        "succinct",
+        "curt"
+      ],
+      "hint": "Khen hay chê sự ngắn gọn?",
+      "explanation": "'Admirably' là khen sự ngắn gọn đủ ý: succinct. Curt và brusque là ngắn đến mức thô; taciturn và reticent mô tả người ít nói, không phải văn bản."
+    },
+    {
+      "id": "wc02",
+      "type": "tc",
+      "sentence": "Though famously {0} in private, rarely offering more than a word or two, the economist became surprisingly {1} at the podium, speaking for hours without notes.",
+      "blanks": [
+        {
+          "options": [
+            "taciturn",
+            "prolix",
+            "bombastic"
+          ],
+          "answer": "taciturn"
+        },
+        {
+          "options": [
+            "voluble",
+            "laconic",
+            "reticent"
+          ],
+          "answer": "voluble"
+        }
+      ],
+      "targets": [
+        "taciturn",
+        "voluble"
+      ],
+      "hint": "'Though… surprisingly' đổi chiều.",
+      "explanation": "(i) Hiếm khi nói quá một hai từ: taciturn. (ii) 'Surprisingly' đổi chiều, nói hàng giờ trôi chảy: voluble. Prolix dùng cho văn bản lê thê, không phải tính ít nói."
+    },
+    {
+      "id": "wc03",
+      "type": "tc",
+      "sentence": "The senator's speech was more {0} than substantive: grand phrases and lofty appeals concealed the absence of any concrete proposal.",
+      "blanks": [
+        {
+          "options": [
+            "bombastic",
+            "prolix",
+            "discursive",
+            "laconic",
+            "pithy"
+          ],
+          "answer": "bombastic"
+        }
+      ],
+      "targets": [
+        "bombastic",
+        "prolix"
+      ],
+      "hint": "Vấn đề là sự phô trương hay độ dài?",
+      "explanation": "Lời lẽ to tát, rỗng: bombastic. Prolix là dài dòng nhưng không nhất thiết khoa trương; discursive là lan man."
+    },
+    {
+      "id": "wc04",
+      "type": "tc",
+      "sentence": "Reviewers found the first edition {0}, padded with tangents and repetitions; the revised edition, by contrast, is {1}, though some readers complain that its brevity occasionally becomes {2}, omitting explanations a novice would need.",
+      "blanks": [
+        {
+          "options": [
+            "prolix",
+            "pithy",
+            "reticent"
+          ],
+          "answer": "prolix"
+        },
+        {
+          "options": [
+            "concise",
+            "turgid",
+            "garrulous"
+          ],
+          "answer": "concise"
+        },
+        {
+          "options": [
+            "cryptic",
+            "florid",
+            "voluble"
+          ],
+          "answer": "cryptic"
+        }
+      ],
+      "targets": [
+        "prolix",
+        "concise",
+        "cryptic"
+      ],
+      "hint": "Làm từng chỗ trống theo manh mối ngay sau nó.",
+      "explanation": "(i) Nhồi nhét lan man và lặp lại: prolix. (ii) 'By contrast': concise. (iii) Ngắn đến mức thiếu giải thích, khó hiểu với người mới: cryptic."
+    },
+    {
+      "id": "wc05",
+      "type": "tc",
+      "sentence": "Rather than answering the question directly, the spokesperson resorted to elaborate {0}, speaking for ten minutes without ever confirming or denying the report.",
+      "blanks": [
+        {
+          "options": [
+            "circumlocution",
+            "bombast",
+            "aphorism",
+            "brusqueness",
+            "reticence"
+          ],
+          "answer": "circumlocution"
+        }
+      ],
+      "targets": [
+        "circumlocution"
+      ],
+      "hint": "Nói nhiều nhưng tránh trả lời thẳng.",
+      "explanation": "Nói vòng vo để tránh trả lời thẳng: circumlocution. Bombast là khoa trương; reticence là ngại nói, trái với việc nói mười phút."
+    },
+    {
+      "id": "wc06",
+      "type": "tc",
+      "sentence": "Some readers find her lectures {0}, wandering from topic to topic, yet many students find the detours more illuminating than the syllabus itself.",
+      "blanks": [
+        {
+          "options": [
+            "discursive",
+            "turgid",
+            "terse",
+            "florid",
+            "pithy"
+          ],
+          "answer": "discursive"
+        }
+      ],
+      "targets": [
+        "discursive",
+        "turgid"
+      ],
+      "hint": "'Wandering from topic to topic'.",
+      "explanation": "Đi từ chủ đề này sang chủ đề khác: discursive. Turgid là nặng nề, khoa trương; florid là hoa mỹ."
+    },
+    {
+      "id": "wc07",
+      "type": "se",
+      "sentence": "Her {0} remarks, each compressing a complex idea into a single memorable line, were widely quoted.",
+      "options": [
+        "pithy",
+        "aphoristic",
+        "curt",
+        "brusque",
+        "verbose",
+        "prolix"
+      ],
+      "answers": [
+        "pithy",
+        "aphoristic"
+      ],
+      "targets": [
+        "pithy",
+        "aphoristic",
+        "curt",
+        "brusque"
+      ],
+      "hint": "Khen sự ngắn gọn sâu sắc.",
+      "explanation": "Ngắn, đắt giá, dễ trích dẫn: pithy, aphoristic. Curt và brusque là cặp đồng nghĩa nhưng mang nghĩa thô lỗ."
+    },
+    {
+      "id": "wc08",
+      "type": "se",
+      "sentence": "The witness was {0}, volunteering nothing beyond what the lawyers directly asked.",
+      "options": [
+        "reticent",
+        "taciturn",
+        "garrulous",
+        "loquacious",
+        "bombastic",
+        "florid"
+      ],
+      "answers": [
+        "reticent",
+        "taciturn"
+      ],
+      "targets": [
+        "reticent",
+        "taciturn"
+      ],
+      "hint": "Không tự nói thêm.",
+      "explanation": "Không nói thêm gì: reticent, taciturn. Garrulous và loquacious là cặp sai hướng; bombastic và florid là khoa trương."
+    },
+    {
+      "id": "wc09",
+      "type": "se",
+      "sentence": "Visitors found the guide exhausting: he was so {0} that the tour ran an hour over schedule.",
+      "options": [
+        "loquacious",
+        "garrulous",
+        "laconic",
+        "terse",
+        "turgid",
+        "bombastic"
+      ],
+      "answers": [
+        "loquacious",
+        "garrulous"
+      ],
+      "targets": [
+        "loquacious",
+        "garrulous",
+        "turgid",
+        "bombastic"
+      ],
+      "hint": "Người nói nhiều, không phải văn phong.",
+      "explanation": "Nói quá nhiều: loquacious, garrulous. Turgid và bombastic là cặp về giọng văn khoa trương, không phải nói nhiều; laconic và terse sai hướng."
+    }
+  ]
+}

@@ -1,0 +1,732 @@
+{
+  "schemaVersion": 1,
+  "id": "ordinary-novel",
+  "title": "Tầm thường & Mới lạ",
+  "order": 7,
+  "description": "Đánh giá ý tưởng, tác phẩm, con người: sáo mòn, tẻ nhạt, đột phá, phá cách, bảo thủ.",
+  "groups": [
+    {
+      "id": "trite",
+      "title": "Sáo mòn, nhạt nhẽo",
+      "direction": "negative",
+      "scale": false,
+      "note": "Banal/trite/hackneyed: dùng nhiều quá thành nhàm. Derivative: bắt chước người khác. Insipid/vapid: nhạt, rỗng."
+    },
+    {
+      "id": "mundane",
+      "title": "Bình thường, đời thường",
+      "direction": "neutral",
+      "scale": false,
+      "note": "Pedestrian là bẫy nghĩa phụ: tầm thường, thiếu cảm hứng (không phải người đi bộ)."
+    },
+    {
+      "id": "novel",
+      "title": "Mới mẻ, đột phá",
+      "direction": "positive",
+      "scale": false,
+      "note": ""
+    },
+    {
+      "id": "unconventional",
+      "title": "Phá cách, khác thường",
+      "direction": "neutral",
+      "scale": false,
+      "note": "Iconoclastic: đả phá niềm tin được tôn sùng. Heterodox: khác quan điểm chính thống. Idiosyncratic: riêng biệt, đặc trưng của một người."
+    },
+    {
+      "id": "conventional",
+      "title": "Chính thống, bảo thủ",
+      "direction": "neutral",
+      "scale": false,
+      "note": ""
+    }
+  ],
+  "words": [
+    {
+      "id": "banal",
+      "word": "banal",
+      "pos": "adj",
+      "group": "trite",
+      "priority": 3,
+      "meaning": "tầm thường, sáo rỗng",
+      "nuance": "Quá quen thuộc nên không còn gì thú vị.",
+      "example": "The interview yielded only *banal* observations about 'hard work'.",
+      "collocations": [
+        "banal remarks"
+      ],
+      "confusables": [
+        "trite",
+        "hackneyed"
+      ]
+    },
+    {
+      "id": "hackneyed",
+      "word": "hackneyed",
+      "pos": "adj",
+      "group": "trite",
+      "priority": 3,
+      "meaning": "cũ rích, nhàm vì dùng quá nhiều",
+      "nuance": "Thường dùng cho cụm từ, cốt truyện, hình ảnh.",
+      "example": "The film relies on a *hackneyed* plot twist.",
+      "collocations": [
+        "a hackneyed phrase"
+      ],
+      "confusables": [
+        "trite",
+        "derivative"
+      ]
+    },
+    {
+      "id": "trite",
+      "word": "trite",
+      "pos": "adj",
+      "group": "trite",
+      "priority": 3,
+      "meaning": "sáo mòn, nhàm chán",
+      "nuance": "",
+      "example": "Avoid *trite* openings like 'Since the dawn of time'.",
+      "collocations": [
+        "a trite expression"
+      ],
+      "confusables": [
+        "banal",
+        "platitudinous"
+      ]
+    },
+    {
+      "id": "platitudinous",
+      "word": "platitudinous",
+      "pos": "adj",
+      "group": "trite",
+      "priority": 2,
+      "meaning": "đầy những lời sáo rỗng",
+      "nuance": "platitude: câu nói nhạt nhẽo, ai cũng biết.",
+      "example": "The report's conclusions were *platitudinous*: 'lessons will be learned'.",
+      "collocations": [],
+      "root": "platitude",
+      "confusables": [
+        "trite"
+      ]
+    },
+    {
+      "id": "cliched",
+      "word": "clichéd",
+      "pos": "adj",
+      "group": "trite",
+      "priority": 1,
+      "meaning": "sáo rỗng, rập khuôn",
+      "nuance": "",
+      "example": "The ad's *clichéd* imagery of happy families failed to move viewers.",
+      "collocations": [],
+      "root": "cliché",
+      "confusables": [
+        "hackneyed"
+      ]
+    },
+    {
+      "id": "derivative",
+      "word": "derivative",
+      "pos": "adj",
+      "group": "trite",
+      "priority": 3,
+      "meaning": "thiếu sáng tạo, bắt chước",
+      "nuance": "Bẫy: không phải đạo hàm. Tác phẩm vay mượn nhiều từ cái có trước.",
+      "example": "Critics dismissed the album as *derivative* of 1970s soul.",
+      "collocations": [
+        "derivative of X"
+      ],
+      "confusables": [
+        "hackneyed",
+        "seminal"
+      ]
+    },
+    {
+      "id": "insipid",
+      "word": "insipid",
+      "pos": "adj",
+      "group": "trite",
+      "priority": 3,
+      "meaning": "nhạt nhẽo, vô vị",
+      "nuance": "Nghĩa đen: thức ăn nhạt. Nghĩa bóng: thiếu sức sống.",
+      "example": "The sequel's *insipid* dialogue disappointed fans.",
+      "collocations": [],
+      "confusables": [
+        "vapid"
+      ]
+    },
+    {
+      "id": "vapid",
+      "word": "vapid",
+      "pos": "adj",
+      "group": "trite",
+      "priority": 3,
+      "meaning": "rỗng tuếch, không có nội dung",
+      "nuance": "Nhấn vào sự trống rỗng về ý.",
+      "example": "The candidate's *vapid* slogans contained no actual policy.",
+      "collocations": [
+        "vapid slogans"
+      ],
+      "confusables": [
+        "insipid",
+        "banal"
+      ]
+    },
+    {
+      "id": "jejune",
+      "word": "jejune",
+      "pos": "adj",
+      "group": "trite",
+      "priority": 2,
+      "meaning": "nhạt nhẽo; non nớt, ngây ngô",
+      "nuance": "Bẫy hai nghĩa: vừa khô khan vừa ấu trĩ.",
+      "example": "His *jejune* analysis ignored decades of research.",
+      "collocations": [],
+      "confusables": [
+        "vapid",
+        "insipid"
+      ]
+    },
+    {
+      "id": "prosaic",
+      "word": "prosaic",
+      "pos": "adj",
+      "group": "mundane",
+      "priority": 3,
+      "meaning": "tầm thường, thiếu chất thơ",
+      "nuance": "Bình thường, thực dụng, không có gì đặc biệt.",
+      "example": "The explanation turned out to be *prosaic*: a typo in the code.",
+      "collocations": [
+        "a prosaic explanation"
+      ],
+      "root": "prose (văn xuôi)",
+      "confusables": [
+        "pedestrian",
+        "mundane"
+      ]
+    },
+    {
+      "id": "pedestrian",
+      "word": "pedestrian",
+      "pos": "adj",
+      "group": "mundane",
+      "priority": 3,
+      "meaning": "tầm thường, thiếu cảm hứng",
+      "nuance": "Bẫy nghĩa phụ: không phải người đi bộ.",
+      "example": "The novel's prose is competent but *pedestrian*.",
+      "collocations": [],
+      "confusables": [
+        "prosaic"
+      ]
+    },
+    {
+      "id": "mundane",
+      "word": "mundane",
+      "pos": "adj",
+      "group": "mundane",
+      "priority": 2,
+      "meaning": "đời thường, tẻ nhạt",
+      "nuance": "Thuộc về chuyện hằng ngày.",
+      "example": "Much of research is *mundane* data cleaning.",
+      "collocations": [
+        "mundane tasks"
+      ],
+      "confusables": [
+        "quotidian"
+      ]
+    },
+    {
+      "id": "quotidian",
+      "word": "quotidian",
+      "pos": "adj",
+      "group": "mundane",
+      "priority": 2,
+      "meaning": "hằng ngày, thường nhật",
+      "nuance": "Trang trọng hơn mundane.",
+      "example": "The diary records the *quotidian* details of village life.",
+      "collocations": [],
+      "root": "quot- (mỗi) + dian (ngày)",
+      "confusables": [
+        "mundane"
+      ]
+    },
+    {
+      "id": "novel",
+      "word": "novel",
+      "pos": "adj",
+      "group": "novel",
+      "priority": 2,
+      "meaning": "mới lạ, chưa từng có",
+      "nuance": "Bẫy: không phải tiểu thuyết.",
+      "example": "The paper proposes a *novel* instrument for schooling.",
+      "collocations": [
+        "a novel approach"
+      ],
+      "confusables": [
+        "seminal"
+      ]
+    },
+    {
+      "id": "seminal",
+      "word": "seminal",
+      "pos": "adj",
+      "group": "novel",
+      "priority": 3,
+      "meaning": "có tính khai phá, đặt nền móng",
+      "nuance": "Ảnh hưởng mạnh tới sự phát triển về sau.",
+      "example": "Solow's 1956 paper was *seminal* for growth theory.",
+      "collocations": [
+        "a seminal paper",
+        "a seminal work"
+      ],
+      "root": "semin- (hạt giống)",
+      "confusables": [
+        "novel",
+        "derivative"
+      ]
+    },
+    {
+      "id": "avant-garde",
+      "word": "avant-garde",
+      "pos": "adj/n",
+      "group": "novel",
+      "priority": 1,
+      "meaning": "tiên phong (nghệ thuật)",
+      "nuance": "",
+      "example": "The gallery specializes in *avant-garde* installations.",
+      "collocations": [],
+      "confusables": [
+        "iconoclastic"
+      ]
+    },
+    {
+      "id": "iconoclastic",
+      "word": "iconoclastic",
+      "pos": "adj",
+      "group": "unconventional",
+      "priority": 3,
+      "meaning": "đả phá thần tượng, phá bỏ niềm tin cũ",
+      "nuance": "Iconoclast (n): người thách thức những niềm tin được tôn sùng.",
+      "example": "Her *iconoclastic* critique of randomized trials provoked fierce debate.",
+      "collocations": [
+        "an iconoclastic thinker"
+      ],
+      "root": "icon + clast- (đập vỡ)",
+      "confusables": [
+        "heterodox",
+        "maverick"
+      ]
+    },
+    {
+      "id": "idiosyncratic",
+      "word": "idiosyncratic",
+      "pos": "adj",
+      "group": "unconventional",
+      "priority": 3,
+      "meaning": "riêng biệt, đặc thù của cá nhân",
+      "nuance": "Nghĩa trung tính: rất riêng, khác người.",
+      "example": "His *idiosyncratic* teaching style divides students.",
+      "collocations": [
+        "idiosyncratic shocks"
+      ],
+      "root": "idio- (riêng)",
+      "confusables": [
+        "eccentric",
+        "heterodox"
+      ]
+    },
+    {
+      "id": "unorthodox",
+      "word": "unorthodox",
+      "pos": "adj",
+      "group": "unconventional",
+      "priority": 2,
+      "meaning": "không theo lối thông thường",
+      "nuance": "",
+      "example": "The central bank's *unorthodox* policies drew criticism.",
+      "collocations": [
+        "unorthodox methods"
+      ],
+      "confusables": [
+        "heterodox"
+      ]
+    },
+    {
+      "id": "heterodox",
+      "word": "heterodox",
+      "pos": "adj",
+      "group": "unconventional",
+      "priority": 3,
+      "meaning": "không chính thống, dị giáo (quan điểm)",
+      "nuance": "Trái với orthodox; thường dùng cho trường phái học thuật.",
+      "example": "*Heterodox* economists reject the rational-agent model.",
+      "collocations": [
+        "heterodox economics"
+      ],
+      "root": "hetero- (khác) + dox- (quan điểm)",
+      "confusables": [
+        "orthodox",
+        "iconoclastic"
+      ]
+    },
+    {
+      "id": "maverick",
+      "word": "maverick",
+      "pos": "n/adj",
+      "group": "unconventional",
+      "priority": 2,
+      "meaning": "người độc lập, không theo số đông",
+      "nuance": "",
+      "example": "A *maverick* senator, she often voted against her party.",
+      "collocations": [],
+      "confusables": [
+        "iconoclastic"
+      ]
+    },
+    {
+      "id": "eccentric",
+      "word": "eccentric",
+      "pos": "adj/n",
+      "group": "unconventional",
+      "priority": 1,
+      "meaning": "lập dị, kỳ quặc",
+      "nuance": "",
+      "example": "The *eccentric* professor lectured in a different hat every week.",
+      "collocations": [],
+      "confusables": [
+        "idiosyncratic"
+      ]
+    },
+    {
+      "id": "heretical",
+      "word": "heretical",
+      "pos": "adj",
+      "group": "unconventional",
+      "priority": 2,
+      "meaning": "dị giáo; trái với quan điểm được chấp nhận",
+      "nuance": "",
+      "example": "Questioning the model was once considered *heretical*.",
+      "collocations": [],
+      "confusables": [
+        "heterodox"
+      ]
+    },
+    {
+      "id": "anomalous",
+      "word": "anomalous",
+      "pos": "adj",
+      "group": "unconventional",
+      "priority": 2,
+      "meaning": "bất thường, dị biệt",
+      "nuance": "Dùng cho kết quả, dữ liệu lệch khỏi quy luật.",
+      "example": "The *anomalous* readings turned out to be a sensor fault.",
+      "collocations": [
+        "anomalous results"
+      ],
+      "root": "anomaly",
+      "confusables": [
+        "idiosyncratic"
+      ]
+    },
+    {
+      "id": "orthodox",
+      "word": "orthodox",
+      "pos": "adj",
+      "group": "conventional",
+      "priority": 2,
+      "meaning": "chính thống, được thừa nhận rộng rãi",
+      "nuance": "",
+      "example": "*Orthodox* theory predicts that the tariff will reduce welfare.",
+      "collocations": [
+        "orthodox view"
+      ],
+      "root": "ortho- (đúng) + dox- (quan điểm)",
+      "confusables": [
+        "heterodox",
+        "doctrinaire"
+      ]
+    },
+    {
+      "id": "conformist",
+      "word": "conformist",
+      "pos": "n/adj",
+      "group": "conventional",
+      "priority": 2,
+      "meaning": "người tuân theo khuôn phép số đông",
+      "nuance": "",
+      "example": "In a *conformist* workplace, few dared to question the director.",
+      "collocations": [],
+      "confusables": [
+        "orthodox"
+      ]
+    },
+    {
+      "id": "doctrinaire",
+      "word": "doctrinaire",
+      "pos": "adj",
+      "group": "conventional",
+      "priority": 3,
+      "meaning": "giáo điều, áp dụng lý thuyết cứng nhắc",
+      "nuance": "Bám vào học thuyết bất chấp thực tế.",
+      "example": "A *doctrinaire* free-marketeer, he dismissed every case for regulation.",
+      "collocations": [],
+      "root": "doctrine (học thuyết)",
+      "confusables": [
+        "dogmatic",
+        "orthodox"
+      ]
+    },
+    {
+      "id": "dogmatic",
+      "word": "dogmatic",
+      "pos": "adj",
+      "group": "conventional",
+      "priority": 2,
+      "meaning": "giáo điều, độc đoán (quan điểm)",
+      "nuance": "Khẳng định quan điểm như chân lý không cần bằng chứng.",
+      "example": "Science advances when researchers are not *dogmatic*.",
+      "collocations": [],
+      "root": "dogma",
+      "confusables": [
+        "doctrinaire"
+      ]
+    },
+    {
+      "id": "hidebound",
+      "word": "hidebound",
+      "pos": "adj",
+      "group": "conventional",
+      "priority": 2,
+      "meaning": "bảo thủ, cổ hủ",
+      "nuance": "Không chịu thay đổi cách nghĩ.",
+      "example": "*Hidebound* bureaucrats resisted digital filing.",
+      "collocations": [],
+      "confusables": [
+        "doctrinaire"
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "id": "on01",
+      "type": "tc",
+      "sentence": "Critics dismissed the novel as {0}, noting that its plot, characters and even several scenes were lifted almost directly from earlier thrillers.",
+      "blanks": [
+        {
+          "options": [
+            "derivative",
+            "insipid",
+            "prosaic",
+            "pedestrian",
+            "vapid"
+          ],
+          "answer": "derivative"
+        }
+      ],
+      "targets": [
+        "derivative",
+        "insipid",
+        "prosaic",
+        "pedestrian",
+        "vapid"
+      ],
+      "hint": "Manh mối là 'lifted from earlier thrillers'.",
+      "explanation": "Lấy gần như nguyên từ các tác phẩm trước: derivative. Insipid, prosaic, pedestrian, vapid đều là chê nhạt nhẽo, nhưng không nói đến việc bắt chước."
+    },
+    {
+      "id": "on02",
+      "type": "tc",
+      "sentence": "Published in 1956, the {0} paper laid the foundations for an entire field of growth economics and is still cited thousands of times a year.",
+      "blanks": [
+        {
+          "options": [
+            "seminal",
+            "novel",
+            "iconoclastic",
+            "heterodox",
+            "idiosyncratic"
+          ],
+          "answer": "seminal"
+        }
+      ],
+      "targets": [
+        "seminal",
+        "novel"
+      ],
+      "hint": "'Laid the foundations'.",
+      "explanation": "Đặt nền móng cho cả một lĩnh vực: seminal. Novel chỉ là mới; iconoclastic là đả phá; heterodox là trái chính thống."
+    },
+    {
+      "id": "on03",
+      "type": "tc",
+      "sentence": "Once regarded as an {0} who challenged the profession's most cherished assumptions, she has seen so many of her ideas absorbed into the mainstream that younger economists now consider her views thoroughly {1}.",
+      "blanks": [
+        {
+          "options": [
+            "iconoclast",
+            "doctrinaire",
+            "conformist"
+          ],
+          "answer": "iconoclast"
+        },
+        {
+          "options": [
+            "orthodox",
+            "heterodox",
+            "anomalous"
+          ],
+          "answer": "orthodox"
+        }
+      ],
+      "targets": [
+        "iconoclastic",
+        "orthodox",
+        "heterodox"
+      ],
+      "hint": "'Once… now' đổi chiều.",
+      "explanation": "(i) Thách thức những giả định được tôn sùng: iconoclast. (ii) Ý tưởng đã vào dòng chính: orthodox."
+    },
+    {
+      "id": "on04",
+      "type": "tc",
+      "sentence": "The candidate's speech was so {0}, a string of empty slogans with no ideas behind them, that even supporters struggled to stay awake.",
+      "blanks": [
+        {
+          "options": [
+            "vapid",
+            "derivative",
+            "doctrinaire",
+            "hidebound",
+            "idiosyncratic"
+          ],
+          "answer": "vapid"
+        }
+      ],
+      "targets": [
+        "vapid",
+        "derivative"
+      ],
+      "hint": "'Empty slogans with no ideas'.",
+      "explanation": "Chuỗi khẩu hiệu rỗng: vapid. Derivative là bắt chước; doctrinaire là giáo điều; hidebound là bảo thủ."
+    },
+    {
+      "id": "on05",
+      "type": "tc",
+      "sentence": "A {0} believer in market efficiency, he refused to consider even overwhelming evidence that prices had diverged from fundamentals.",
+      "blanks": [
+        {
+          "options": [
+            "doctrinaire",
+            "orthodox",
+            "conformist",
+            "heterodox",
+            "idiosyncratic"
+          ],
+          "answer": "doctrinaire"
+        }
+      ],
+      "targets": [
+        "doctrinaire",
+        "orthodox"
+      ],
+      "hint": "Nhấn vào việc từ chối bằng chứng.",
+      "explanation": "Từ chối xem xét cả bằng chứng áp đảo: giáo điều, doctrinaire. Orthodox chỉ là theo quan điểm chính thống, không hàm ý bác bỏ bằng chứng."
+    },
+    {
+      "id": "on06",
+      "type": "tc",
+      "sentence": "The source of the error proved disappointingly {0}: not sabotage or fraud, as rumors had suggested, but a single misplaced decimal point.",
+      "blanks": [
+        {
+          "options": [
+            "prosaic",
+            "anomalous",
+            "heretical",
+            "seminal",
+            "idiosyncratic"
+          ],
+          "answer": "prosaic"
+        }
+      ],
+      "targets": [
+        "prosaic",
+        "anomalous"
+      ],
+      "hint": "'Disappointingly' và 'not sabotage or fraud'.",
+      "explanation": "Nguyên nhân bình thường, không có gì gây sốc: prosaic. Anomalous là bất thường, ngược nghĩa."
+    },
+    {
+      "id": "on07",
+      "type": "se",
+      "sentence": "Her writing is unmistakably {0}: no one else could have produced those odd, intensely personal sentences.",
+      "options": [
+        "idiosyncratic",
+        "eccentric",
+        "derivative",
+        "hackneyed",
+        "orthodox",
+        "conformist"
+      ],
+      "answers": [
+        "idiosyncratic",
+        "eccentric"
+      ],
+      "targets": [
+        "idiosyncratic",
+        "eccentric",
+        "derivative",
+        "hackneyed"
+      ],
+      "hint": "'No one else could have produced'.",
+      "explanation": "Riêng biệt, không ai khác viết được: idiosyncratic, eccentric. Derivative và hackneyed sai hướng; orthodox và conformist là cặp theo khuôn phép."
+    },
+    {
+      "id": "on08",
+      "type": "se",
+      "sentence": "The committee's report was {0}, filled with phrases such as 'going forward' and 'lessons will be learned'.",
+      "options": [
+        "platitudinous",
+        "trite",
+        "jejune",
+        "anomalous",
+        "heterodox",
+        "idiosyncratic"
+      ],
+      "answers": [
+        "platitudinous",
+        "trite"
+      ],
+      "targets": [
+        "platitudinous",
+        "trite",
+        "jejune"
+      ],
+      "hint": "Những cụm từ kia có gì chung?",
+      "explanation": "Đầy câu sáo rỗng: platitudinous, trite. Jejune là non nớt hoặc khô khan, không nhấn vào câu sáo."
+    },
+    {
+      "id": "on09",
+      "type": "se",
+      "sentence": "Life in the village was {0}: the same chores, the same faces, the same conversations every day.",
+      "options": [
+        "mundane",
+        "quotidian",
+        "derivative",
+        "hackneyed",
+        "iconoclastic",
+        "anomalous"
+      ],
+      "answers": [
+        "mundane",
+        "quotidian"
+      ],
+      "targets": [
+        "mundane",
+        "quotidian",
+        "derivative",
+        "hackneyed"
+      ],
+      "hint": "Mô tả cuộc sống hằng ngày.",
+      "explanation": "Đời thường, lặp lại hằng ngày: mundane, quotidian. Derivative và hackneyed dùng cho tác phẩm, ý tưởng, không cho cuộc sống."
+    }
+  ]
+}

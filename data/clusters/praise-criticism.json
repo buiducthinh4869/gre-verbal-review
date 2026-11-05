@@ -9,73 +9,85 @@
       "id": "praise-verbs",
       "title": "Thang khen ngợi",
       "scale": true,
-      "note": "Động từ khen, xếp từ nhẹ (1) đến mạnh (4)."
+      "note": "Động từ khen, xếp từ nhẹ (1) đến mạnh (4).",
+      "direction": "positive"
     },
     {
       "id": "praise-special",
       "title": "Khen có điều kiện riêng",
       "scale": false,
-      "note": "Eulogize dành cho người đã mất; tout mang hàm ý thổi phồng."
+      "note": "Eulogize dành cho người đã mất; tout mang hàm ý thổi phồng.",
+      "direction": "positive"
     },
     {
       "id": "praise-nouns",
       "title": "Danh từ khen ngợi",
       "scale": false,
-      "note": ""
+      "note": "",
+      "direction": "positive"
     },
     {
       "id": "praise-adj",
       "title": "Tính từ khen ngợi",
       "scale": false,
-      "note": "Phân biệt laudatory (lời lẽ) và laudable (đối tượng)."
+      "note": "Phân biệt laudatory (lời lẽ) và laudable (đối tượng).",
+      "direction": "positive"
     },
     {
       "id": "belittle",
       "title": "Coi thường, hạ thấp",
       "scale": true,
-      "note": "Từ nhẹ (1) đến mạnh (4)."
+      "note": "Từ nhẹ (1) đến mạnh (4).",
+      "direction": "negative"
     },
     {
       "id": "reprove",
       "title": "Khiển trách",
       "scale": true,
-      "note": "Từ nhẹ (1) đến mạnh (4)."
+      "note": "Từ nhẹ (1) đến mạnh (4).",
+      "direction": "negative"
     },
     {
       "id": "denounce",
       "title": "Đả kích, lên án công khai",
       "scale": false,
-      "note": "Impugn nhắm vào động cơ, sự trung thực."
+      "note": "Impugn nhắm vào động cơ, sự trung thực.",
+      "direction": "negative"
     },
     {
       "id": "ridicule",
       "title": "Chế giễu",
       "scale": false,
-      "note": ""
+      "note": "",
+      "direction": "negative"
     },
     {
       "id": "quibble",
       "title": "Bắt bẻ vặt",
       "scale": false,
-      "note": "Dùng khi câu nhấn vào chuyện nhỏ: minor, trivial, apart from a few."
+      "note": "Dùng khi câu nhấn vào chuyện nhỏ: minor, trivial, apart from a few.",
+      "direction": "negative"
     },
     {
       "id": "lukewarm",
       "title": "Khen nửa vời",
       "scale": false,
-      "note": "Vùng GRE hay đặt bẫy ở câu khó."
+      "note": "Vùng GRE hay đặt bẫy ở câu khó.",
+      "direction": "positive"
     },
     {
       "id": "excess",
       "title": "Khen quá đà",
       "scale": false,
-      "note": ""
+      "note": "",
+      "direction": "positive"
     },
     {
       "id": "flattery",
       "title": "Nịnh bợ",
       "scale": false,
-      "note": ""
+      "note": "",
+      "direction": "positive"
     }
   ],
   "words": [

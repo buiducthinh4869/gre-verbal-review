@@ -4,7 +4,7 @@
  * Thuần JavaScript, test bằng node (tests/distractors.test.js).
  */
 import { shuffle } from './srs.js';
-import { groupDirection } from './vocab.js';
+import { groupDirection, directionsMatch } from './vocab.js';
 
 const lc = (s) => String(s || '').toLowerCase().trim();
 const normMeaning = (s) => lc(s).replace(/[.,;:!?()]/g, '').replace(/\s+/g, ' ');
@@ -30,11 +30,12 @@ const posCompatible = (a, b) => { const sb = posSet(b.pos); return posSet(a.pos)
 
 /**
  * Chọn n phương án nhiễu theo thứ tự:
- *  1. confusables của từ đúng (rồi các từ coi từ đúng là confusable)
+ *  1. confusables của từ đúng (rồi các từ coi từ đúng là confusable), kể cả từ ở cụm khác
  *  2. cùng nhóm, level gần nhất
- *  3. cùng cụm, cùng hướng nghĩa (không rõ hướng: cùng cụm)
- *  4. phần còn lại (cùng hướng trước)
- * Ở bậc 2–4 ưu tiên từ cùng loại từ. Loại trừ: nghĩa giống hệt từ đúng; cùng dòng từ
+ *  3. cùng cụm, cùng hướng nghĩa ("direction" của nhóm; nhóm neutral hợp với mọi hướng)
+ *  4. cùng hướng nghĩa ở cụm khác
+ *  5. còn thiếu mới lấy từ khác hướng
+ * Ở bậc 2–5 ưu tiên từ cùng loại từ. Loại trừ: nghĩa giống hệt từ đúng; cùng dòng từ
  * (trừ khi dữ liệu ghi rõ là confusable). Không lặp phương án.
  */
 export function pickDistractors(word, idx, n = 3, rng = Math.random) {
@@ -42,6 +43,8 @@ export function pickDistractors(word, idx, n = 3, rng = Math.random) {
   const used = new Set([word.id]);
   const wm = normMeaning(word.meaning);
   const wDir = groupDirection(idx.groupById[word.group]);
+  const dirOf = (c) => groupDirection(idx.groupById[c.group]);
+  const sameDir = (c) => directionsMatch(wDir, dirOf(c));
 
   const accept = (c, allowFamily) => {
     if (!c || used.has(c.id) || out.length >= n) return;
@@ -59,28 +62,26 @@ export function pickDistractors(word, idx, n = 3, rng = Math.random) {
     list.forEach((x) => accept(x.c, false));
   };
   const posKey = (c) => (posCompatible(word, c) ? 0 : 1);
+  const others = idx.words.filter((c) => c.id !== word.id);
 
-  // 1. confusables
+  // 1. confusables (được phép trỏ sang cụm khác)
   word.confusables.forEach((id) => accept(idx.byId[id], true));
   (idx.reverseConf[word.id] || []).forEach((id) => accept(idx.byId[id], true));
 
   // 2. cùng nhóm, level gần nhất
-  tier(idx.words.filter((c) => c.group === word.group && c.id !== word.id), (c) => {
+  tier(others.filter((c) => c.group === word.group), (c) => {
     const d = word.level && c.level ? Math.abs(word.level - c.level) : 9;
     return [d, posKey(c)];
   });
 
-  // 3. cùng cụm, cùng hướng (không rõ hướng: cùng cụm)
-  tier(idx.words.filter((c) => {
-    if (c.clusterId !== word.clusterId || c.id === word.id) return false;
-    return !wDir || groupDirection(idx.groupById[c.group]) === wDir;
-  }), (c) => [posKey(c)]);
+  // 3. cùng cụm, cùng hướng (từ chưa rõ hướng, vd Từ tự thêm: cùng cụm)
+  tier(others.filter((c) => c.clusterId === word.clusterId && (!wDir || sameDir(c))), (c) => [posKey(c)]);
 
-  // 4. phần còn lại: cùng hướng trước, rồi cùng cụm, rồi cùng loại từ
-  tier(idx.words.filter((c) => c.id !== word.id), (c) => {
-    const dir = groupDirection(idx.groupById[c.group]);
-    return [wDir && dir === wDir ? 0 : 1, c.clusterId === word.clusterId ? 0 : 1, posKey(c)];
-  });
+  // 4. cùng hướng ở cụm khác
+  if (wDir) tier(others.filter((c) => c.clusterId !== word.clusterId && sameDir(c)), (c) => [dirOf(c) === wDir ? 0 : 1, posKey(c)]);
+
+  // 5. còn thiếu: phần còn lại, cùng cụm trước
+  tier(others, (c) => [c.clusterId === word.clusterId ? 0 : 1, posKey(c)]);
 
   // Bất đắc dĩ: nới điều kiện cùng dòng từ
   if (out.length < n) idx.words.forEach((c) => accept(c, true));

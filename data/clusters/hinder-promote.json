@@ -1,0 +1,979 @@
+{
+  "schemaVersion": 1,
+  "id": "hinder-promote",
+  "title": "Cản trở & Thúc đẩy",
+  "order": 6,
+  "description": "Động từ tác động: cản trở, ngăn chặn trước, giảm nhẹ, làm trầm trọng, kích động, củng cố. Cụm cực kỳ hay gặp trong cả TC/SE lẫn Reading.",
+  "groups": [
+    {
+      "id": "hinder",
+      "title": "Cản trở, làm chậm",
+      "direction": "negative",
+      "scale": false,
+      "note": "Nhiều từ ở đây là nghĩa phụ: check, arrest, stem, retard, frustrate."
+    },
+    {
+      "id": "prevent",
+      "title": "Ngăn chặn từ trước",
+      "direction": "negative",
+      "scale": false,
+      "note": "Preclude: làm cho không thể xảy ra. Forestall: chặn trước bằng hành động sớm. Obviate: làm cho không còn cần thiết (obviate the need)."
+    },
+    {
+      "id": "relieve",
+      "title": "Giảm nhẹ, xoa dịu",
+      "direction": "positive",
+      "scale": false,
+      "note": "Mitigate/alleviate: giảm mức độ tác hại. Assuage/allay: xoa dịu nỗi sợ, lo âu. Mollify/placate: làm nguôi một người đang giận."
+    },
+    {
+      "id": "worsen",
+      "title": "Làm trầm trọng, kích động",
+      "direction": "negative",
+      "scale": false,
+      "note": ""
+    },
+    {
+      "id": "promote",
+      "title": "Củng cố, thúc đẩy",
+      "direction": "positive",
+      "scale": false,
+      "note": "Abet là bẫy: tiếp tay, thường cho việc xấu."
+    }
+  ],
+  "words": [
+    {
+      "id": "impede",
+      "word": "impede",
+      "pos": "v",
+      "group": "hinder",
+      "priority": 3,
+      "meaning": "cản trở, làm chậm",
+      "nuance": "Từ trang trọng, rất hay dùng trong kinh tế: impede growth.",
+      "example": "Poor roads *impede* the movement of goods to market.",
+      "collocations": [
+        "impede growth",
+        "impede progress"
+      ],
+      "root": "im- + ped- (chân): vướng chân",
+      "confusables": [
+        "hamper",
+        "stymie"
+      ]
+    },
+    {
+      "id": "hinder",
+      "word": "hinder",
+      "pos": "v",
+      "group": "hinder",
+      "priority": 2,
+      "meaning": "cản trở",
+      "nuance": "",
+      "example": "Language barriers *hinder* access to public services.",
+      "collocations": [],
+      "confusables": [
+        "impede"
+      ]
+    },
+    {
+      "id": "hamper",
+      "word": "hamper",
+      "pos": "v",
+      "group": "hinder",
+      "priority": 2,
+      "meaning": "gây trở ngại, cản trở",
+      "nuance": "",
+      "example": "Fieldwork was **hampered by** heavy flooding.",
+      "collocations": [
+        "hampered by X"
+      ],
+      "confusables": [
+        "impede"
+      ]
+    },
+    {
+      "id": "thwart",
+      "word": "thwart",
+      "pos": "v",
+      "group": "hinder",
+      "priority": 3,
+      "meaning": "làm thất bại (kế hoạch, ý đồ)",
+      "nuance": "Nhấn vào việc chặn đứng một ý đồ.",
+      "example": "Quick action by regulators *thwarted* the takeover attempt.",
+      "collocations": [
+        "thwart a plan"
+      ],
+      "confusables": [
+        "foil",
+        "stymie"
+      ]
+    },
+    {
+      "id": "stymie",
+      "word": "stymie",
+      "pos": "v",
+      "group": "hinder",
+      "priority": 3,
+      "meaning": "cản trở, làm bế tắc",
+      "nuance": "Làm cho không tiến lên được.",
+      "example": "Red tape *stymied* the project for years.",
+      "collocations": [],
+      "confusables": [
+        "thwart",
+        "impede"
+      ]
+    },
+    {
+      "id": "foil",
+      "word": "foil",
+      "pos": "v/n",
+      "group": "hinder",
+      "priority": 2,
+      "meaning": "làm hỏng (kế hoạch); người làm nền tương phản (n)",
+      "nuance": "Bẫy nghĩa phụ: a foil là nhân vật làm nổi bật nhân vật khác.",
+      "example": "Police *foiled* the robbery. / Watson serves as a *foil* to Holmes.",
+      "collocations": [
+        "serve as a foil to X"
+      ],
+      "confusables": [
+        "thwart"
+      ]
+    },
+    {
+      "id": "frustrate",
+      "word": "frustrate",
+      "pos": "v",
+      "group": "hinder",
+      "priority": 2,
+      "meaning": "làm thất bại, cản trở (nghĩa phụ)",
+      "nuance": "Ngoài nghĩa làm bực bội, còn nghĩa ngăn kế hoạch thành công.",
+      "example": "The opposition *frustrated* every attempt at reform.",
+      "collocations": [
+        "frustrate an attempt"
+      ],
+      "confusables": [
+        "thwart"
+      ]
+    },
+    {
+      "id": "stifle",
+      "word": "stifle",
+      "pos": "v",
+      "group": "hinder",
+      "priority": 2,
+      "meaning": "bóp nghẹt, kìm nén",
+      "nuance": "Dùng cho sáng tạo, cạnh tranh, bất đồng.",
+      "example": "Excessive regulation can *stifle* innovation.",
+      "collocations": [
+        "stifle innovation",
+        "stifle dissent"
+      ],
+      "confusables": [
+        "curb"
+      ]
+    },
+    {
+      "id": "curb",
+      "word": "curb",
+      "pos": "v/n",
+      "group": "hinder",
+      "priority": 2,
+      "meaning": "kiềm chế, hạn chế",
+      "nuance": "Thường dùng cho chi tiêu, quyền lực, lạm phát.",
+      "example": "The reforms aim to *curb* executive power.",
+      "collocations": [
+        "curb inflation",
+        "curb spending"
+      ],
+      "confusables": [
+        "check",
+        "stem"
+      ]
+    },
+    {
+      "id": "stem",
+      "word": "stem",
+      "pos": "v",
+      "group": "hinder",
+      "priority": 3,
+      "meaning": "chặn, ngăn dòng",
+      "nuance": "Bẫy: stem from là bắt nguồn từ; stem X là chặn X.",
+      "example": "Capital controls were introduced to **stem the outflow** of funds.",
+      "collocations": [
+        "stem the tide",
+        "stem the flow",
+        "stem from X"
+      ],
+      "confusables": [
+        "curb"
+      ]
+    },
+    {
+      "id": "check",
+      "word": "check",
+      "pos": "v/n",
+      "group": "hinder",
+      "priority": 3,
+      "meaning": "kìm hãm, ngăn chặn (nghĩa phụ)",
+      "nuance": "Checks and balances: cơ chế kiểm soát và đối trọng.",
+      "example": "Independent courts **check the power** of the executive.",
+      "collocations": [
+        "check the growth of X",
+        "keep X in check"
+      ],
+      "confusables": [
+        "curb"
+      ]
+    },
+    {
+      "id": "arrest",
+      "word": "arrest",
+      "pos": "v",
+      "group": "hinder",
+      "priority": 2,
+      "meaning": "chặn lại, làm ngừng (nghĩa phụ)",
+      "nuance": "Không chỉ là bắt giữ: arrest the decline.",
+      "example": "The new policy helped *arrest* the decline in enrollment.",
+      "collocations": [
+        "arrest the decline"
+      ],
+      "confusables": [
+        "stem",
+        "retard"
+      ]
+    },
+    {
+      "id": "retard",
+      "word": "retard",
+      "pos": "v",
+      "group": "hinder",
+      "priority": 2,
+      "meaning": "làm chậm lại",
+      "nuance": "Nghĩa trang trọng trong khoa học, kinh tế.",
+      "example": "High tariffs *retard* the adoption of new technology.",
+      "collocations": [],
+      "confusables": [
+        "impede"
+      ]
+    },
+    {
+      "id": "preclude",
+      "word": "preclude",
+      "pos": "v",
+      "group": "prevent",
+      "priority": 3,
+      "meaning": "loại trừ khả năng, ngăn không cho xảy ra",
+      "nuance": "Làm cho điều gì đó không thể xảy ra.",
+      "example": "The small sample size **precludes** any firm conclusions.",
+      "collocations": [
+        "preclude X from doing Y"
+      ],
+      "root": "pre- (trước) + clud- (đóng)",
+      "confusables": [
+        "forestall",
+        "obviate"
+      ]
+    },
+    {
+      "id": "forestall",
+      "word": "forestall",
+      "pos": "v",
+      "group": "prevent",
+      "priority": 3,
+      "meaning": "chặn trước, đón đầu",
+      "nuance": "Hành động sớm để ngăn điều gì đó.",
+      "example": "The central bank cut rates to *forestall* a recession.",
+      "collocations": [],
+      "root": "fore- (trước)",
+      "confusables": [
+        "preclude"
+      ]
+    },
+    {
+      "id": "obviate",
+      "word": "obviate",
+      "pos": "v",
+      "group": "prevent",
+      "priority": 3,
+      "meaning": "làm cho không cần thiết; loại bỏ",
+      "nuance": "Collocation gần như cố định: obviate the need for X.",
+      "example": "Automatic enrollment **obviates the need for** lengthy forms.",
+      "collocations": [
+        "obviate the need for X"
+      ],
+      "confusables": [
+        "preclude"
+      ]
+    },
+    {
+      "id": "avert",
+      "word": "avert",
+      "pos": "v",
+      "group": "prevent",
+      "priority": 2,
+      "meaning": "ngăn chặn, tránh được (thảm họa)",
+      "nuance": "Cũng có nghĩa quay đi: avert one's eyes.",
+      "example": "Last-minute talks *averted* a strike.",
+      "collocations": [
+        "avert a crisis"
+      ],
+      "confusables": [
+        "forestall"
+      ]
+    },
+    {
+      "id": "mitigate",
+      "word": "mitigate",
+      "pos": "v",
+      "group": "relieve",
+      "priority": 3,
+      "meaning": "giảm nhẹ, làm dịu bớt (tác hại)",
+      "nuance": "Rất hay dùng: mitigate the effects of X.",
+      "example": "Cash transfers **mitigate the effects** of the drought.",
+      "collocations": [
+        "mitigate the effects of X",
+        "mitigating factors"
+      ],
+      "confusables": [
+        "alleviate",
+        "exacerbate"
+      ]
+    },
+    {
+      "id": "alleviate",
+      "word": "alleviate",
+      "pos": "v",
+      "group": "relieve",
+      "priority": 3,
+      "meaning": "làm giảm bớt (đau khổ, khó khăn)",
+      "nuance": "",
+      "example": "Microcredit alone cannot *alleviate* poverty.",
+      "collocations": [
+        "alleviate poverty"
+      ],
+      "confusables": [
+        "mitigate"
+      ]
+    },
+    {
+      "id": "assuage",
+      "word": "assuage",
+      "pos": "v",
+      "group": "relieve",
+      "priority": 3,
+      "meaning": "xoa dịu (cảm xúc, nỗi sợ)",
+      "nuance": "Dùng cho cảm xúc, cơn đói khát.",
+      "example": "The statement did little to *assuage* investors' fears.",
+      "collocations": [
+        "assuage fears",
+        "assuage guilt"
+      ],
+      "confusables": [
+        "allay",
+        "mollify"
+      ]
+    },
+    {
+      "id": "allay",
+      "word": "allay",
+      "pos": "v",
+      "group": "relieve",
+      "priority": 3,
+      "meaning": "làm dịu, làm giảm (lo âu, nghi ngờ)",
+      "nuance": "Collocation: allay fears, allay concerns.",
+      "example": "The minister tried to **allay concerns** about job losses.",
+      "collocations": [
+        "allay fears",
+        "allay concerns"
+      ],
+      "confusables": [
+        "assuage"
+      ]
+    },
+    {
+      "id": "palliate",
+      "word": "palliate",
+      "pos": "v",
+      "group": "relieve",
+      "priority": 2,
+      "meaning": "xoa dịu tạm thời; che đậy bớt",
+      "nuance": "Giảm triệu chứng mà không chữa tận gốc.",
+      "example": "Subsidies *palliate* but do not cure the housing shortage.",
+      "collocations": [],
+      "root": "palliative care (chăm sóc giảm nhẹ)",
+      "confusables": [
+        "mitigate"
+      ]
+    },
+    {
+      "id": "mollify",
+      "word": "mollify",
+      "pos": "v",
+      "group": "relieve",
+      "priority": 2,
+      "meaning": "làm nguôi giận, xoa dịu (người)",
+      "nuance": "Đối tượng là người đang giận.",
+      "example": "The company offered refunds to *mollify* angry customers.",
+      "collocations": [],
+      "root": "moll- (mềm)",
+      "confusables": [
+        "placate",
+        "assuage"
+      ]
+    },
+    {
+      "id": "placate",
+      "word": "placate",
+      "pos": "v",
+      "group": "relieve",
+      "priority": 2,
+      "meaning": "xoa dịu, làm nguôi (người, nhóm)",
+      "nuance": "Thường để tránh xung đột, có thể mang nghĩa nhượng bộ.",
+      "example": "The concession was meant to *placate* the unions.",
+      "collocations": [],
+      "root": "plac- (làm nguôi), như implacable",
+      "confusables": [
+        "mollify"
+      ]
+    },
+    {
+      "id": "temper",
+      "word": "temper",
+      "pos": "v",
+      "group": "relieve",
+      "priority": 3,
+      "meaning": "làm dịu bớt, giảm cường độ",
+      "nuance": "Bẫy nghĩa phụ: temper X with Y (làm dịu X bằng Y).",
+      "example": "She **tempered her criticism with** praise for the data work.",
+      "collocations": [
+        "temper X with Y",
+        "temper expectations"
+      ],
+      "confusables": [
+        "mitigate"
+      ]
+    },
+    {
+      "id": "exacerbate",
+      "word": "exacerbate",
+      "pos": "v",
+      "group": "worsen",
+      "priority": 3,
+      "meaning": "làm trầm trọng thêm",
+      "nuance": "Từ học thuật rất hay gặp.",
+      "example": "The drought **exacerbated** existing food shortages.",
+      "collocations": [
+        "exacerbate inequality"
+      ],
+      "confusables": [
+        "aggravate",
+        "mitigate"
+      ]
+    },
+    {
+      "id": "aggravate",
+      "word": "aggravate",
+      "pos": "v",
+      "group": "worsen",
+      "priority": 2,
+      "meaning": "làm nặng thêm; (thân mật) làm bực",
+      "nuance": "",
+      "example": "Poor sanitation *aggravated* the outbreak.",
+      "collocations": [],
+      "confusables": [
+        "exacerbate"
+      ]
+    },
+    {
+      "id": "compound",
+      "word": "compound",
+      "pos": "v",
+      "group": "worsen",
+      "priority": 3,
+      "meaning": "làm phức tạp, trầm trọng thêm (nghĩa phụ)",
+      "nuance": "Bẫy nghĩa phụ: compound a problem.",
+      "example": "Delays **compounded** the project's financial problems.",
+      "collocations": [
+        "compound the problem"
+      ],
+      "confusables": [
+        "exacerbate"
+      ]
+    },
+    {
+      "id": "foment",
+      "word": "foment",
+      "pos": "v",
+      "group": "worsen",
+      "priority": 3,
+      "meaning": "xúi giục, kích động (bất ổn)",
+      "nuance": "Dùng cho bất ổn, nổi loạn, bất mãn.",
+      "example": "The regime accused foreign media of *fomenting* unrest.",
+      "collocations": [
+        "foment unrest",
+        "foment rebellion"
+      ],
+      "confusables": [
+        "instigate",
+        "incite"
+      ]
+    },
+    {
+      "id": "instigate",
+      "word": "instigate",
+      "pos": "v",
+      "group": "worsen",
+      "priority": 2,
+      "meaning": "xúi giục; khởi xướng",
+      "nuance": "Có thể trung tính: instigate an inquiry.",
+      "example": "Who *instigated* the attack remains unclear.",
+      "collocations": [
+        "instigate an inquiry"
+      ],
+      "confusables": [
+        "foment"
+      ]
+    },
+    {
+      "id": "incite",
+      "word": "incite",
+      "pos": "v",
+      "group": "worsen",
+      "priority": 2,
+      "meaning": "kích động (bạo lực, thù hận)",
+      "nuance": "",
+      "example": "The speech was condemned for *inciting* violence.",
+      "collocations": [
+        "incite violence"
+      ],
+      "confusables": [
+        "foment"
+      ]
+    },
+    {
+      "id": "bolster",
+      "word": "bolster",
+      "pos": "v",
+      "group": "promote",
+      "priority": 3,
+      "meaning": "củng cố, tăng cường",
+      "nuance": "Rất hay dùng: bolster confidence, bolster an argument.",
+      "example": "New evidence **bolsters the case for** cash transfers.",
+      "collocations": [
+        "bolster confidence",
+        "bolster the case for X"
+      ],
+      "confusables": [
+        "buttress",
+        "shore-up"
+      ]
+    },
+    {
+      "id": "buttress",
+      "word": "buttress",
+      "pos": "v/n",
+      "group": "promote",
+      "priority": 3,
+      "meaning": "chống đỡ, củng cố (lập luận)",
+      "nuance": "Nghĩa đen là trụ chống tường.",
+      "example": "The authors *buttress* their argument with data from 40 countries.",
+      "collocations": [
+        "buttress an argument"
+      ],
+      "confusables": [
+        "bolster"
+      ]
+    },
+    {
+      "id": "shore-up",
+      "word": "shore up",
+      "pos": "v",
+      "group": "promote",
+      "priority": 2,
+      "meaning": "chống đỡ, gia cố",
+      "nuance": "",
+      "example": "The government stepped in to *shore up* the banking system.",
+      "collocations": [
+        "shore up X"
+      ],
+      "confusables": [
+        "bolster"
+      ]
+    },
+    {
+      "id": "abet",
+      "word": "abet",
+      "pos": "v",
+      "group": "promote",
+      "priority": 2,
+      "meaning": "tiếp tay, xúi giục (việc xấu)",
+      "nuance": "Bẫy: không phải giúp đỡ nói chung. Cụm: aid and abet.",
+      "example": "He was charged with **aiding and abetting** fraud.",
+      "collocations": [
+        "aid and abet"
+      ],
+      "confusables": [
+        "bolster",
+        "facilitate"
+      ]
+    },
+    {
+      "id": "facilitate",
+      "word": "facilitate",
+      "pos": "v",
+      "group": "promote",
+      "priority": 2,
+      "meaning": "tạo điều kiện, làm cho dễ dàng",
+      "nuance": "",
+      "example": "Mobile money *facilitates* transfers to rural households.",
+      "collocations": [],
+      "root": "facil- (dễ)",
+      "confusables": [
+        "expedite"
+      ]
+    },
+    {
+      "id": "expedite",
+      "word": "expedite",
+      "pos": "v",
+      "group": "promote",
+      "priority": 2,
+      "meaning": "xúc tiến, đẩy nhanh",
+      "nuance": "",
+      "example": "The new portal *expedites* visa processing.",
+      "collocations": [],
+      "root": "ex- + ped- (chân): gỡ chân ra",
+      "confusables": [
+        "facilitate"
+      ]
+    },
+    {
+      "id": "galvanize",
+      "word": "galvanize",
+      "pos": "v",
+      "group": "promote",
+      "priority": 3,
+      "meaning": "khích động, thúc đẩy hành động",
+      "nuance": "Làm cho ai đó bừng tỉnh và hành động.",
+      "example": "The scandal **galvanized** voters into action.",
+      "collocations": [
+        "galvanize X into action"
+      ],
+      "root": "Galvani (nhà khoa học điện)",
+      "confusables": [
+        "spur",
+        "catalyze"
+      ]
+    },
+    {
+      "id": "catalyze",
+      "word": "catalyze",
+      "pos": "v",
+      "group": "promote",
+      "priority": 2,
+      "meaning": "xúc tác, thúc đẩy nhanh",
+      "nuance": "",
+      "example": "The crisis *catalyzed* long-delayed reforms.",
+      "collocations": [],
+      "confusables": [
+        "galvanize"
+      ]
+    },
+    {
+      "id": "spur",
+      "word": "spur",
+      "pos": "v/n",
+      "group": "promote",
+      "priority": 2,
+      "meaning": "thúc đẩy, khuyến khích",
+      "nuance": "Thường dùng: spur growth, spur investment.",
+      "example": "Tax credits are intended to *spur* investment.",
+      "collocations": [
+        "spur growth"
+      ],
+      "confusables": [
+        "galvanize"
+      ]
+    },
+    {
+      "id": "engender",
+      "word": "engender",
+      "pos": "v",
+      "group": "promote",
+      "priority": 3,
+      "meaning": "gây ra, làm nảy sinh",
+      "nuance": "Thường dùng cho cảm xúc, thái độ: engender trust.",
+      "example": "Transparent rules *engender* trust in institutions.",
+      "collocations": [
+        "engender trust"
+      ],
+      "confusables": [
+        "foster"
+      ]
+    },
+    {
+      "id": "foster",
+      "word": "foster",
+      "pos": "v",
+      "group": "promote",
+      "priority": 2,
+      "meaning": "nuôi dưỡng, thúc đẩy (phát triển)",
+      "nuance": "",
+      "example": "Schools should *foster* curiosity.",
+      "collocations": [
+        "foster growth"
+      ],
+      "confusables": [
+        "engender"
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "id": "hp01",
+      "type": "tc",
+      "sentence": "The new vaccine did not merely {0} the epidemic's spread; within months it {1} it almost entirely.",
+      "blanks": [
+        {
+          "options": [
+            "retard",
+            "exacerbate",
+            "foment"
+          ],
+          "answer": "retard"
+        },
+        {
+          "options": [
+            "arrested",
+            "abetted",
+            "compounded"
+          ],
+          "answer": "arrested"
+        }
+      ],
+      "targets": [
+        "retard",
+        "arrest",
+        "exacerbate",
+        "compound"
+      ],
+      "hint": "'Did not merely… almost entirely'.",
+      "explanation": "'Not merely X; Y' đòi Y mạnh hơn X: làm chậm (retard) rồi chặn đứng hẳn (arrested). Hai từ dùng nghĩa phụ."
+    },
+    {
+      "id": "hp02",
+      "type": "tc",
+      "sentence": "Automatic enrollment {0} the need for workers to fill out lengthy forms, since everyone is signed up by default.",
+      "blanks": [
+        {
+          "options": [
+            "obviated",
+            "precluded",
+            "forestalled",
+            "thwarted",
+            "stymied"
+          ],
+          "answer": "obviated"
+        }
+      ],
+      "targets": [
+        "obviate",
+        "preclude",
+        "forestall"
+      ],
+      "hint": "Collocation với 'the need for'.",
+      "explanation": "Làm cho việc điền mẫu không còn cần thiết: obviated (collocation obviate the need for). Precluded là làm cho không thể xảy ra; forestalled là chặn trước một sự kiện."
+    },
+    {
+      "id": "hp03",
+      "type": "tc",
+      "sentence": "Rather than {0} the crisis, the hasty tax increase {1} it, deepening the very recession it was meant to ease.",
+      "blanks": [
+        {
+          "options": [
+            "mitigating",
+            "fomenting",
+            "galvanizing"
+          ],
+          "answer": "mitigating"
+        },
+        {
+          "options": [
+            "exacerbated",
+            "assuaged",
+            "buttressed"
+          ],
+          "answer": "exacerbated"
+        }
+      ],
+      "targets": [
+        "mitigate",
+        "exacerbate"
+      ],
+      "hint": "'Deepening the very recession'.",
+      "explanation": "'Rather than' đổi chiều: lẽ ra giảm nhẹ (mitigating) thì lại làm trầm trọng (exacerbated). Fomenting dùng cho bất ổn xã hội; assuaged dùng cho cảm xúc."
+    },
+    {
+      "id": "hp04",
+      "type": "tc",
+      "sentence": "Officials introduced capital controls in an effort to {0} the outflow of funds that had followed the election.",
+      "blanks": [
+        {
+          "options": [
+            "stem",
+            "temper",
+            "palliate",
+            "mollify",
+            "placate"
+          ],
+          "answer": "stem"
+        }
+      ],
+      "targets": [
+        "stem",
+        "temper",
+        "mollify",
+        "placate"
+      ],
+      "hint": "Đối tượng là một 'dòng chảy'.",
+      "explanation": "Chặn dòng tiền chảy ra: stem the outflow. Mollify và placate dùng cho người; palliate là giảm triệu chứng; temper là làm dịu cường độ."
+    },
+    {
+      "id": "hp05",
+      "type": "tc",
+      "sentence": "The reform was meant to {0} small businesses, but its paperwork requirements {1} the very firms it aimed to help, and critics argue that it has {2} rather than reduced concentration in the industry.",
+      "blanks": [
+        {
+          "options": [
+            "bolster",
+            "stymie",
+            "placate"
+          ],
+          "answer": "bolster"
+        },
+        {
+          "options": [
+            "hampered",
+            "galvanized",
+            "expedited"
+          ],
+          "answer": "hampered"
+        },
+        {
+          "options": [
+            "compounded",
+            "mitigated",
+            "allayed"
+          ],
+          "answer": "compounded"
+        }
+      ],
+      "targets": [
+        "bolster",
+        "hamper",
+        "compound",
+        "mitigate"
+      ],
+      "hint": "Đi theo mạch: mục tiêu → kết quả ngược → hệ quả.",
+      "explanation": "(i) Mục tiêu là củng cố: bolster. (ii) 'But' đổi chiều: thủ tục cản trở họ, hampered. (iii) 'Rather than reduced': làm trầm trọng thêm, compounded."
+    },
+    {
+      "id": "hp06",
+      "type": "tc",
+      "sentence": "Far from discouraging protest, the government's crackdown {0} the opposition, drawing thousands of previously apathetic citizens into the streets.",
+      "blanks": [
+        {
+          "options": [
+            "galvanized",
+            "bolstered",
+            "buttressed",
+            "fomented",
+            "abetted"
+          ],
+          "answer": "galvanized"
+        }
+      ],
+      "targets": [
+        "galvanize",
+        "bolster",
+        "foment"
+      ],
+      "hint": "Từ 'apathetic' đến 'into the streets'.",
+      "explanation": "Làm cho những người thờ ơ bừng tỉnh và hành động: galvanized. Fomented là xúi giục bất ổn (đối tượng là unrest, không phải the opposition); bolstered/buttressed là củng cố, thiếu ý thúc đẩy hành động."
+    },
+    {
+      "id": "hp07",
+      "type": "se",
+      "sentence": "The minister's statement did little to {0} public anxiety about the stability of the banking system.",
+      "options": [
+        "allay",
+        "assuage",
+        "exacerbate",
+        "compound",
+        "foment",
+        "galvanize"
+      ],
+      "answers": [
+        "allay",
+        "assuage"
+      ],
+      "targets": [
+        "allay",
+        "assuage",
+        "exacerbate",
+        "compound"
+      ],
+      "hint": "Đối tượng là cảm xúc.",
+      "explanation": "Làm dịu lo âu: allay, assuage. Exacerbate và compound là cặp sai hướng."
+    },
+    {
+      "id": "hp08",
+      "type": "se",
+      "sentence": "The opposition accused the minister of trying to {0} unrest in order to justify emergency powers.",
+      "options": [
+        "foment",
+        "instigate",
+        "assuage",
+        "allay",
+        "temper",
+        "check"
+      ],
+      "answers": [
+        "foment",
+        "instigate"
+      ],
+      "targets": [
+        "foment",
+        "instigate",
+        "temper",
+        "check"
+      ],
+      "hint": "Muốn có bất ổn để làm gì?",
+      "explanation": "Kích động bất ổn: foment, instigate. Assuage và allay là cặp sai hướng; temper và check là kìm bớt."
+    },
+    {
+      "id": "hp09",
+      "type": "se",
+      "sentence": "Independent courts and a free press serve to {0} the power of the executive.",
+      "options": [
+        "check",
+        "curb",
+        "abet",
+        "facilitate",
+        "exacerbate",
+        "compound"
+      ],
+      "answers": [
+        "check",
+        "curb"
+      ],
+      "targets": [
+        "check",
+        "curb",
+        "abet"
+      ],
+      "hint": "Checks and balances.",
+      "explanation": "Kìm hãm quyền lực: check, curb. Abet là tiếp tay; exacerbate và compound là cặp làm trầm trọng, dùng cho vấn đề chứ không phải quyền lực."
+    }
+  ]
+}

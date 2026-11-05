@@ -1,0 +1,826 @@
+{
+  "schemaVersion": 1,
+  "id": "stubborn-yielding",
+  "title": "Cứng đầu & Dễ bảo",
+  "order": 3,
+  "description": "Thái độ trước áp lực, lời khuyên, thay đổi: cứng đầu, kiên trì, dễ bảo, thất thường.",
+  "groups": [
+    {
+      "id": "stubborn",
+      "title": "Cứng đầu, ngoan cố",
+      "direction": "negative",
+      "scale": false,
+      "note": "GRE hay phân biệt: intransigent (không chịu thỏa hiệp), recalcitrant (chống lại quyền lực), obdurate (cứng lòng), implacable (không nguôi giận)."
+    },
+    {
+      "id": "persistent",
+      "title": "Kiên trì (nghĩa tốt)",
+      "direction": "positive",
+      "scale": false,
+      "note": "Cùng là không bỏ cuộc nhưng mang nghĩa khen, khác nhóm cứng đầu."
+    },
+    {
+      "id": "yielding",
+      "title": "Dễ bảo, mềm mỏng",
+      "direction": "neutral",
+      "scale": false,
+      "note": "Bẫy: complaisant (chiều lòng) khác complacent (tự mãn)."
+    },
+    {
+      "id": "fickle",
+      "title": "Thất thường, dao động",
+      "direction": "negative",
+      "scale": false,
+      "note": ""
+    }
+  ],
+  "words": [
+    {
+      "id": "obstinate",
+      "word": "obstinate",
+      "pos": "adj",
+      "group": "stubborn",
+      "priority": 3,
+      "meaning": "bướng bỉnh, ngoan cố",
+      "nuance": "Từ chung nhất cho cứng đầu, thường mang nghĩa chê.",
+      "example": "Despite the evidence, he remained **obstinate in his refusal** to revise the model.",
+      "collocations": [
+        "obstinate refusal"
+      ],
+      "confusables": [
+        "tenacious",
+        "resolute"
+      ]
+    },
+    {
+      "id": "intransigent",
+      "word": "intransigent",
+      "pos": "adj",
+      "group": "stubborn",
+      "priority": 3,
+      "meaning": "không chịu thỏa hiệp",
+      "nuance": "Rất hay dùng trong đàm phán, chính trị.",
+      "example": "Talks collapsed because both sides remained *intransigent* on wages.",
+      "collocations": [
+        "remain intransigent",
+        "intransigent on X"
+      ],
+      "root": "in- (không) + transig- (thỏa thuận)",
+      "confusables": [
+        "recalcitrant",
+        "adamant"
+      ]
+    },
+    {
+      "id": "recalcitrant",
+      "word": "recalcitrant",
+      "pos": "adj",
+      "group": "stubborn",
+      "priority": 3,
+      "meaning": "cứng đầu, chống đối (quyền lực, quy định)",
+      "nuance": "Nhấn vào việc chống lại sự quản lý, kiểm soát.",
+      "example": "The ministry struggled to discipline *recalcitrant* provincial officials.",
+      "collocations": [
+        "recalcitrant officials"
+      ],
+      "root": "re- + calc- (gót chân: đá lại)",
+      "confusables": [
+        "refractory",
+        "intransigent"
+      ]
+    },
+    {
+      "id": "obdurate",
+      "word": "obdurate",
+      "pos": "adj",
+      "group": "stubborn",
+      "priority": 3,
+      "meaning": "cứng lòng, sắt đá",
+      "nuance": "Không lay chuyển kể cả trước lời cầu xin, cảm xúc.",
+      "example": "The judge remained *obdurate* despite the defendant's pleas.",
+      "collocations": [],
+      "root": "dur- (cứng), như durable",
+      "confusables": [
+        "implacable",
+        "obstinate"
+      ]
+    },
+    {
+      "id": "intractable",
+      "word": "intractable",
+      "pos": "adj",
+      "group": "stubborn",
+      "priority": 3,
+      "meaning": "khó trị, khó giải quyết; khó bảo",
+      "nuance": "Dùng cho cả người lẫn vấn đề (an intractable problem).",
+      "example": "Youth unemployment has proved an *intractable* problem.",
+      "collocations": [
+        "an intractable problem",
+        "intractable conflict"
+      ],
+      "root": "in- + tract- (kéo, dắt)",
+      "confusables": [
+        "tractable"
+      ]
+    },
+    {
+      "id": "refractory",
+      "word": "refractory",
+      "pos": "adj",
+      "group": "stubborn",
+      "priority": 2,
+      "meaning": "bướng bỉnh, khó điều khiển; kháng trị",
+      "nuance": "Dùng cho người, bệnh, vật liệu chịu nhiệt.",
+      "example": "The disease proved *refractory* to every standard treatment.",
+      "collocations": [
+        "refractory to treatment"
+      ],
+      "confusables": [
+        "recalcitrant"
+      ]
+    },
+    {
+      "id": "adamant",
+      "word": "adamant",
+      "pos": "adj",
+      "group": "stubborn",
+      "priority": 2,
+      "meaning": "kiên quyết, nhất quyết",
+      "nuance": "Trung tính hơn obstinate; hay đi với that hoặc about.",
+      "example": "She was **adamant that** the survey be redesigned.",
+      "collocations": [
+        "adamant that",
+        "adamant about X"
+      ],
+      "confusables": [
+        "intransigent",
+        "resolute"
+      ]
+    },
+    {
+      "id": "implacable",
+      "word": "implacable",
+      "pos": "adj",
+      "group": "stubborn",
+      "priority": 3,
+      "meaning": "không thể nguôi, không khoan nhượng",
+      "nuance": "Thường dùng cho kẻ thù, cơn giận, sự thù địch.",
+      "example": "He made an *implacable* enemy of the former minister.",
+      "collocations": [
+        "an implacable enemy",
+        "implacable hostility"
+      ],
+      "root": "im- + plac- (làm nguôi), như placate",
+      "confusables": [
+        "obdurate",
+        "inexorable"
+      ]
+    },
+    {
+      "id": "inexorable",
+      "word": "inexorable",
+      "pos": "adj",
+      "group": "stubborn",
+      "priority": 2,
+      "meaning": "không thể lay chuyển, không thể ngăn",
+      "nuance": "Thường dùng cho quá trình, xu hướng: the inexorable rise.",
+      "example": "The *inexorable* rise in housing costs has pushed young families to the suburbs.",
+      "collocations": [
+        "inexorable rise",
+        "inexorable logic"
+      ],
+      "confusables": [
+        "implacable"
+      ]
+    },
+    {
+      "id": "pertinacious",
+      "word": "pertinacious",
+      "pos": "adj",
+      "group": "stubborn",
+      "priority": 2,
+      "meaning": "bền bỉ, dai dẳng (đôi khi phiền)",
+      "nuance": "Có thể khen hoặc chê; nhấn vào sự dai dẳng.",
+      "example": "A *pertinacious* reporter, she called the ministry every day for a month.",
+      "collocations": [],
+      "confusables": [
+        "tenacious",
+        "obstinate"
+      ]
+    },
+    {
+      "id": "tenacious",
+      "word": "tenacious",
+      "pos": "adj",
+      "group": "persistent",
+      "priority": 3,
+      "meaning": "bền bỉ, kiên trì",
+      "nuance": "Nghĩa khen: không buông bỏ mục tiêu.",
+      "example": "Her *tenacious* pursuit of the data finally paid off.",
+      "collocations": [
+        "tenacious pursuit"
+      ],
+      "root": "ten- (giữ)",
+      "confusables": [
+        "obstinate",
+        "pertinacious"
+      ]
+    },
+    {
+      "id": "dogged",
+      "word": "dogged",
+      "pos": "adj",
+      "group": "persistent",
+      "priority": 2,
+      "meaning": "bền bỉ, lì lợm (theo nghĩa tốt)",
+      "nuance": "Kiên trì vượt khó, thường đi với determination, persistence.",
+      "example": "Years of **dogged persistence** eventually produced a breakthrough.",
+      "collocations": [
+        "dogged determination",
+        "dogged persistence"
+      ],
+      "confusables": [
+        "tenacious"
+      ]
+    },
+    {
+      "id": "steadfast",
+      "word": "steadfast",
+      "pos": "adj",
+      "group": "persistent",
+      "priority": 3,
+      "meaning": "kiên định, trung thành",
+      "nuance": "Nhấn vào sự trung thành, không dao động.",
+      "example": "She remained a *steadfast* supporter of open trade.",
+      "collocations": [
+        "steadfast support",
+        "steadfast in X"
+      ],
+      "confusables": [
+        "resolute",
+        "capricious"
+      ]
+    },
+    {
+      "id": "resolute",
+      "word": "resolute",
+      "pos": "adj",
+      "group": "persistent",
+      "priority": 3,
+      "meaning": "cương quyết, quả quyết",
+      "nuance": "Nghĩa khen: quyết tâm vì mục tiêu đúng.",
+      "example": "The central bank was *resolute* in its fight against inflation.",
+      "collocations": [
+        "resolute in X"
+      ],
+      "confusables": [
+        "obstinate",
+        "adamant"
+      ]
+    },
+    {
+      "id": "indefatigable",
+      "word": "indefatigable",
+      "pos": "adj",
+      "group": "persistent",
+      "priority": 2,
+      "meaning": "không biết mệt mỏi",
+      "nuance": "",
+      "example": "An *indefatigable* fieldworker, he interviewed over two thousand households.",
+      "collocations": [],
+      "root": "in- + de- + fatig- (mệt)",
+      "confusables": [
+        "assiduous"
+      ]
+    },
+    {
+      "id": "assiduous",
+      "word": "assiduous",
+      "pos": "adj",
+      "group": "persistent",
+      "priority": 3,
+      "meaning": "cần mẫn, chăm chỉ, tỉ mỉ",
+      "nuance": "Nhấn vào sự chăm chú, cẩn thận đều đặn.",
+      "example": "*Assiduous* record-keeping made the audit straightforward.",
+      "collocations": [
+        "assiduous attention"
+      ],
+      "confusables": [
+        "sedulous",
+        "indefatigable"
+      ]
+    },
+    {
+      "id": "sedulous",
+      "word": "sedulous",
+      "pos": "adj",
+      "group": "persistent",
+      "priority": 2,
+      "meaning": "cần cù, siêng năng",
+      "nuance": "Gần nghĩa assiduous.",
+      "example": "The paper reflects *sedulous* attention to detail.",
+      "collocations": [],
+      "confusables": [
+        "assiduous"
+      ]
+    },
+    {
+      "id": "docile",
+      "word": "docile",
+      "pos": "adj",
+      "group": "yielding",
+      "priority": 3,
+      "meaning": "dễ bảo, ngoan ngoãn",
+      "nuance": "Dễ điều khiển, ít khi chống đối.",
+      "example": "Managers mistakenly assumed that a *docile* workforce would never strike.",
+      "collocations": [
+        "a docile workforce"
+      ],
+      "root": "doc- (dạy), như doctor",
+      "confusables": [
+        "tractable",
+        "malleable"
+      ]
+    },
+    {
+      "id": "tractable",
+      "word": "tractable",
+      "pos": "adj",
+      "group": "yielding",
+      "priority": 3,
+      "meaning": "dễ bảo, dễ xử lý",
+      "nuance": "Trái nghĩa intractable; cũng dùng cho vấn đề dễ giải quyết.",
+      "example": "The model becomes *tractable* once we assume constant returns.",
+      "collocations": [
+        "a tractable problem"
+      ],
+      "root": "tract- (dắt, kéo)",
+      "confusables": [
+        "docile",
+        "intractable"
+      ]
+    },
+    {
+      "id": "pliant",
+      "word": "pliant",
+      "pos": "adj",
+      "group": "yielding",
+      "priority": 2,
+      "meaning": "dễ uốn; dễ bị ảnh hưởng",
+      "nuance": "Có thể mang nghĩa chê: dễ bị lèo lái.",
+      "example": "The regime installed a *pliant* parliament.",
+      "collocations": [
+        "a pliant legislature"
+      ],
+      "confusables": [
+        "malleable",
+        "compliant"
+      ]
+    },
+    {
+      "id": "malleable",
+      "word": "malleable",
+      "pos": "adj",
+      "group": "yielding",
+      "priority": 3,
+      "meaning": "dễ uốn nắn, dễ thay đổi",
+      "nuance": "Nghĩa đen là kim loại dễ dát mỏng; nghĩa bóng là ý kiến, tính cách dễ nhào nặn.",
+      "example": "Preferences may be more *malleable* than standard models assume.",
+      "collocations": [
+        "malleable preferences"
+      ],
+      "confusables": [
+        "pliant",
+        "docile"
+      ]
+    },
+    {
+      "id": "amenable",
+      "word": "amenable",
+      "pos": "adj",
+      "group": "yielding",
+      "priority": 3,
+      "meaning": "sẵn sàng chấp nhận, dễ nghe theo",
+      "nuance": "Hay đi với to: amenable to suggestion.",
+      "example": "The board seemed **amenable to** a compromise.",
+      "collocations": [
+        "amenable to X"
+      ],
+      "confusables": [
+        "acquiescent",
+        "compliant"
+      ]
+    },
+    {
+      "id": "compliant",
+      "word": "compliant",
+      "pos": "adj",
+      "group": "yielding",
+      "priority": 2,
+      "meaning": "tuân thủ, chiều theo",
+      "nuance": "Trung tính trong quy định (GDPR-compliant), có thể chê khi nói về người.",
+      "example": "Banks must remain **compliant with** capital rules.",
+      "collocations": [
+        "compliant with X"
+      ],
+      "confusables": [
+        "amenable",
+        "pliant"
+      ]
+    },
+    {
+      "id": "acquiescent",
+      "word": "acquiescent",
+      "pos": "adj",
+      "group": "yielding",
+      "priority": 3,
+      "meaning": "bằng lòng, ưng thuận (một cách thụ động)",
+      "nuance": "Động từ acquiesce in/to: miễn cưỡng chấp nhận mà không phản đối.",
+      "example": "Shareholders were largely *acquiescent*, and the merger passed without debate.",
+      "collocations": [
+        "acquiesce in X"
+      ],
+      "confusables": [
+        "amenable",
+        "deferential"
+      ]
+    },
+    {
+      "id": "deferential",
+      "word": "deferential",
+      "pos": "adj",
+      "group": "yielding",
+      "priority": 3,
+      "meaning": "tôn trọng, nhún nhường",
+      "nuance": "Thể hiện sự kính trọng với cấp trên, người lớn tuổi.",
+      "example": "Junior staff were expected to be *deferential* toward senior researchers.",
+      "collocations": [
+        "deferential to X"
+      ],
+      "root": "defer (nhường)",
+      "confusables": [
+        "acquiescent",
+        "obsequious"
+      ]
+    },
+    {
+      "id": "complaisant",
+      "word": "complaisant",
+      "pos": "adj",
+      "group": "yielding",
+      "priority": 2,
+      "meaning": "chiều lòng, dễ dãi để làm vừa lòng",
+      "nuance": "Bẫy: khác complacent (tự mãn).",
+      "example": "The *complaisant* deputy approved every request his superiors made.",
+      "collocations": [],
+      "confusables": [
+        "acquiescent"
+      ]
+    },
+    {
+      "id": "capricious",
+      "word": "capricious",
+      "pos": "adj",
+      "group": "fickle",
+      "priority": 3,
+      "meaning": "thất thường, tùy hứng",
+      "nuance": "Thay đổi đột ngột không có lý do.",
+      "example": "Investors fled because the regulator's decisions seemed *capricious*.",
+      "collocations": [
+        "capricious decisions"
+      ],
+      "confusables": [
+        "mercurial",
+        "steadfast"
+      ]
+    },
+    {
+      "id": "mercurial",
+      "word": "mercurial",
+      "pos": "adj",
+      "group": "fickle",
+      "priority": 3,
+      "meaning": "tính khí thất thường, thay đổi nhanh",
+      "nuance": "Thường nói về tâm trạng, tính cách con người.",
+      "example": "The *mercurial* founder could swing from charm to fury in minutes.",
+      "collocations": [
+        "a mercurial temperament"
+      ],
+      "root": "Mercury (thủy ngân, thần Mercury)",
+      "confusables": [
+        "capricious",
+        "volatile"
+      ]
+    },
+    {
+      "id": "fickle",
+      "word": "fickle",
+      "pos": "adj",
+      "group": "fickle",
+      "priority": 2,
+      "meaning": "hay thay đổi, không chung thủy",
+      "nuance": "Thường nói về tình cảm, sự ủng hộ.",
+      "example": "Voters can be *fickle*.",
+      "collocations": [
+        "fickle voters"
+      ],
+      "confusables": [
+        "capricious"
+      ]
+    },
+    {
+      "id": "vacillate",
+      "word": "vacillate",
+      "pos": "v",
+      "group": "fickle",
+      "priority": 3,
+      "meaning": "do dự, dao động giữa các lựa chọn",
+      "nuance": "Lưỡng lự, không quyết được.",
+      "example": "The committee **vacillated between** raising rates and holding them steady.",
+      "collocations": [
+        "vacillate between X and Y"
+      ],
+      "confusables": [
+        "waver"
+      ]
+    },
+    {
+      "id": "waver",
+      "word": "waver",
+      "pos": "v",
+      "group": "fickle",
+      "priority": 2,
+      "meaning": "dao động, lung lay",
+      "nuance": "Bắt đầu mất sự kiên định.",
+      "example": "Her support for the plan never *wavered*.",
+      "collocations": [
+        "never waver"
+      ],
+      "confusables": [
+        "vacillate"
+      ]
+    },
+    {
+      "id": "volatile",
+      "word": "volatile",
+      "pos": "adj",
+      "group": "fickle",
+      "priority": 2,
+      "meaning": "biến động mạnh; dễ bùng nổ",
+      "nuance": "Dùng cho giá cả, thị trường, tính khí.",
+      "example": "Food prices remain highly *volatile*.",
+      "collocations": [
+        "volatile prices",
+        "a volatile situation"
+      ],
+      "confusables": [
+        "mercurial"
+      ]
+    },
+    {
+      "id": "whimsical",
+      "word": "whimsical",
+      "pos": "adj",
+      "group": "fickle",
+      "priority": 1,
+      "meaning": "kỳ quặc, tùy hứng (thường đáng yêu)",
+      "nuance": "",
+      "example": "The café's *whimsical* decor charmed visitors.",
+      "collocations": [],
+      "root": "whim (ý thích bất chợt)",
+      "confusables": [
+        "capricious"
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "id": "sy01",
+      "type": "tc",
+      "sentence": "Negotiators had hoped that the union would prove {0}, but its leaders remained {1}, rejecting every compromise; only when members themselves began to {2} did the leadership finally yield.",
+      "blanks": [
+        {
+          "options": [
+            "amenable",
+            "adamant",
+            "mercurial"
+          ],
+          "answer": "amenable"
+        },
+        {
+          "options": [
+            "intransigent",
+            "tractable",
+            "capricious"
+          ],
+          "answer": "intransigent"
+        },
+        {
+          "options": [
+            "waver",
+            "persist",
+            "acquiesce"
+          ],
+          "answer": "waver"
+        }
+      ],
+      "targets": [
+        "amenable",
+        "intransigent",
+        "waver"
+      ],
+      "hint": "Bắt đầu từ chỗ (ii): 'rejecting every compromise'.",
+      "explanation": "(i) 'had hoped… but' đổi chiều: hy vọng họ dễ thỏa hiệp (amenable). (ii) bác mọi thỏa hiệp: intransigent. (iii) lãnh đạo nhượng bộ khi chính thành viên bắt đầu dao động: waver. Acquiesce là bẫy: chấp nhận thụ động, nhưng ở đây cần sự lung lay."
+    },
+    {
+      "id": "sy02",
+      "type": "tc",
+      "sentence": "Unlike her {0} predecessor, whose positions shifted with every opinion poll, the new minister was admired for her consistency.",
+      "blanks": [
+        {
+          "options": [
+            "capricious",
+            "obdurate",
+            "recalcitrant",
+            "steadfast",
+            "pertinacious"
+          ],
+          "answer": "capricious"
+        }
+      ],
+      "targets": [
+        "capricious"
+      ],
+      "hint": "'Unlike' đổi chiều với 'consistency'.",
+      "explanation": "Lập trường thay đổi theo mỗi cuộc thăm dò: capricious. Obdurate, recalcitrant, pertinacious đều là cứng đầu; steadfast là kiên định."
+    },
+    {
+      "id": "sy03",
+      "type": "tc",
+      "sentence": "Her refusal to abandon the project despite years of rejection was not mere {0}; it reflected a {1} belief, grounded in careful evidence, that the idea would eventually succeed.",
+      "blanks": [
+        {
+          "options": [
+            "obstinacy",
+            "docility",
+            "caprice"
+          ],
+          "answer": "obstinacy"
+        },
+        {
+          "options": [
+            "resolute",
+            "mercurial",
+            "pliant"
+          ],
+          "answer": "resolute"
+        }
+      ],
+      "targets": [
+        "obstinate",
+        "resolute"
+      ],
+      "hint": "Cấu trúc 'not mere X; it reflected Y'.",
+      "explanation": "'Not mere X; it reflected Y' tách cái xấu khỏi cái tốt: không phải ngoan cố (obstinacy) mà là niềm tin cương quyết có cơ sở (resolute)."
+    },
+    {
+      "id": "sy04",
+      "type": "tc",
+      "sentence": "Eager to please his superiors, the {0} deputy approved every request without question.",
+      "blanks": [
+        {
+          "options": [
+            "complaisant",
+            "complacent",
+            "intransigent",
+            "refractory",
+            "resolute"
+          ],
+          "answer": "complaisant"
+        }
+      ],
+      "targets": [
+        "complaisant"
+      ],
+      "hint": "Bẫy chính tả kinh điển.",
+      "explanation": "Muốn làm vừa lòng cấp trên: complaisant. Complacent là bẫy chính tả: tự mãn. Intransigent, refractory sai hướng."
+    },
+    {
+      "id": "sy05",
+      "type": "tc",
+      "sentence": "Years after the dispute, the former partner remained {0}; no apology or concession could soften his hostility.",
+      "blanks": [
+        {
+          "options": [
+            "implacable",
+            "recalcitrant",
+            "refractory",
+            "dogged",
+            "tenacious"
+          ],
+          "answer": "implacable"
+        }
+      ],
+      "targets": [
+        "implacable"
+      ],
+      "hint": "Không thể làm nguôi cơn giận.",
+      "explanation": "Sự thù địch không thể nguôi: implacable. Recalcitrant là chống quyền lực; refractory là khó điều khiển; dogged và tenacious là kiên trì theo nghĩa tốt."
+    },
+    {
+      "id": "sy06",
+      "type": "tc",
+      "sentence": "Economists once treated preferences as fixed, but a growing body of evidence suggests they are surprisingly {0}, shifting with framing, social context and even the weather.",
+      "blanks": [
+        {
+          "options": [
+            "malleable",
+            "docile",
+            "acquiescent",
+            "deferential",
+            "compliant"
+          ],
+          "answer": "malleable"
+        }
+      ],
+      "targets": [
+        "malleable"
+      ],
+      "hint": "Từ nào mô tả được 'preferences'?",
+      "explanation": "Sở thích dễ thay đổi, dễ nhào nặn: malleable. Docile, acquiescent, deferential, compliant đều mô tả thái độ của người, không phải tính chất của sở thích."
+    },
+    {
+      "id": "sy07",
+      "type": "se",
+      "sentence": "The child proved remarkably {0}, following every instruction without complaint.",
+      "options": [
+        "docile",
+        "tractable",
+        "recalcitrant",
+        "refractory",
+        "capricious",
+        "mercurial"
+      ],
+      "answers": [
+        "docile",
+        "tractable"
+      ],
+      "targets": [
+        "docile",
+        "tractable",
+        "recalcitrant",
+        "refractory"
+      ],
+      "hint": "Nghe theo mọi chỉ dẫn.",
+      "explanation": "Ngoan ngoãn, dễ bảo: docile, tractable. Recalcitrant và refractory là cặp đồng nghĩa nhưng sai hướng; capricious và mercurial là cặp thất thường."
+    },
+    {
+      "id": "sy08",
+      "type": "se",
+      "sentence": "Despite repeated setbacks, the researchers remained {0} in their pursuit of a vaccine.",
+      "options": [
+        "tenacious",
+        "dogged",
+        "obstinate",
+        "obdurate",
+        "vacillating",
+        "fickle"
+      ],
+      "answers": [
+        "tenacious",
+        "dogged"
+      ],
+      "targets": [
+        "tenacious",
+        "dogged",
+        "obstinate",
+        "obdurate"
+      ],
+      "hint": "Khen hay chê?",
+      "explanation": "Kiên trì theo nghĩa tốt: tenacious, dogged. Obstinate và obdurate là cặp đồng nghĩa nhưng mang nghĩa chê, sai sắc thái với việc theo đuổi vaccine."
+    },
+    {
+      "id": "sy09",
+      "type": "se",
+      "sentence": "The central bank's policy appeared {0}: rates rose one month and fell the next, with no clear rationale.",
+      "options": [
+        "capricious",
+        "mercurial",
+        "inexorable",
+        "intractable",
+        "steadfast",
+        "resolute"
+      ],
+      "answers": [
+        "capricious",
+        "mercurial"
+      ],
+      "targets": [
+        "capricious",
+        "mercurial"
+      ],
+      "hint": "'No clear rationale'.",
+      "explanation": "Thay đổi thất thường không lý do: capricious, mercurial. Steadfast và resolute là cặp sai hướng."
+    }
+  ]
+}

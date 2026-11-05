@@ -1,0 +1,754 @@
+{
+  "schemaVersion": 1,
+  "id": "money-attitudes",
+  "title": "Keo kiệt & Hào phóng",
+  "order": 5,
+  "description": "Thái độ với tiền bạc và của cải: tiết kiệm, keo kiệt, tham lam, hoang phí, hào phóng.",
+  "groups": [
+    {
+      "id": "frugal",
+      "title": "Tiết kiệm (nghĩa tốt)",
+      "direction": "positive",
+      "scale": false,
+      "note": "Bẫy lớn: frugal/thrifty là khen; parsimonious/miserly là chê."
+    },
+    {
+      "id": "stingy",
+      "title": "Keo kiệt",
+      "direction": "negative",
+      "scale": false,
+      "note": ""
+    },
+    {
+      "id": "greedy",
+      "title": "Tham lam, vụ lợi",
+      "direction": "negative",
+      "scale": false,
+      "note": "Venal là bẫy riêng: tham đến mức có thể bị mua chuộc."
+    },
+    {
+      "id": "wasteful",
+      "title": "Hoang phí",
+      "direction": "negative",
+      "scale": false,
+      "note": ""
+    },
+    {
+      "id": "generous",
+      "title": "Hào phóng, vị tha",
+      "direction": "positive",
+      "scale": false,
+      "note": "Munificent: hào phóng về tiền của. Magnanimous: rộng lượng, độ lượng (tha thứ). Altruistic: vị tha (động cơ)."
+    }
+  ],
+  "words": [
+    {
+      "id": "frugal",
+      "word": "frugal",
+      "pos": "adj",
+      "group": "frugal",
+      "priority": 3,
+      "meaning": "tiết kiệm, giản dị",
+      "nuance": "Khen: chi tiêu hợp lý, không lãng phí.",
+      "example": "Despite her wealth, she lived a *frugal* life.",
+      "collocations": [
+        "a frugal lifestyle"
+      ],
+      "confusables": [
+        "parsimonious",
+        "thrifty"
+      ]
+    },
+    {
+      "id": "thrifty",
+      "word": "thrifty",
+      "pos": "adj",
+      "group": "frugal",
+      "priority": 2,
+      "meaning": "tiết kiệm, biết chi tiêu",
+      "nuance": "Gần nghĩa frugal.",
+      "example": "*Thrifty* households cut back on meat when prices rose.",
+      "collocations": [],
+      "confusables": [
+        "frugal"
+      ]
+    },
+    {
+      "id": "provident",
+      "word": "provident",
+      "pos": "adj",
+      "group": "frugal",
+      "priority": 2,
+      "meaning": "biết lo xa, dành dụm cho tương lai",
+      "nuance": "Nhấn vào việc chuẩn bị trước.",
+      "example": "A *provident* government saves during booms.",
+      "collocations": [
+        "provident fund"
+      ],
+      "root": "pro- (trước) + vid- (nhìn)",
+      "confusables": [
+        "frugal",
+        "prodigal"
+      ]
+    },
+    {
+      "id": "abstemious",
+      "word": "abstemious",
+      "pos": "adj",
+      "group": "frugal",
+      "priority": 2,
+      "meaning": "điều độ, kiêng khem (ăn uống)",
+      "nuance": "Bẫy: nói về ăn uống, không phải tiền bạc.",
+      "example": "An *abstemious* man, he never drank at receptions.",
+      "collocations": [],
+      "confusables": [
+        "frugal"
+      ]
+    },
+    {
+      "id": "parsimonious",
+      "word": "parsimonious",
+      "pos": "adj",
+      "group": "stingy",
+      "priority": 3,
+      "meaning": "keo kiệt, bủn xỉn",
+      "nuance": "Chê: tiết kiệm đến mức keo kiệt. Trong thống kê, parsimonious model là mô hình ít tham số (nghĩa trung tính).",
+      "example": "The *parsimonious* landlord refused to repair the heating even in winter.",
+      "collocations": [
+        "a parsimonious model"
+      ],
+      "confusables": [
+        "frugal",
+        "miserly"
+      ]
+    },
+    {
+      "id": "penurious",
+      "word": "penurious",
+      "pos": "adj",
+      "group": "stingy",
+      "priority": 2,
+      "meaning": "keo kiệt; nghèo túng",
+      "nuance": "Bẫy hai nghĩa: vừa là bủn xỉn vừa là nghèo khổ.",
+      "example": "The *penurious* conditions of the camp shocked visitors.",
+      "collocations": [],
+      "root": "penury (cảnh nghèo túng)",
+      "confusables": [
+        "parsimonious"
+      ]
+    },
+    {
+      "id": "miserly",
+      "word": "miserly",
+      "pos": "adj",
+      "group": "stingy",
+      "priority": 2,
+      "meaning": "hà tiện, keo kiệt",
+      "nuance": "miser: kẻ hà tiện.",
+      "example": "He was too *miserly* to tip the waiter.",
+      "collocations": [],
+      "confusables": [
+        "parsimonious"
+      ]
+    },
+    {
+      "id": "stingy",
+      "word": "stingy",
+      "pos": "adj",
+      "group": "stingy",
+      "priority": 1,
+      "meaning": "keo kiệt",
+      "nuance": "Thông dụng.",
+      "example": "The *stingy* sponsor refused to cover the speakers' travel.",
+      "collocations": [],
+      "confusables": [
+        "miserly"
+      ]
+    },
+    {
+      "id": "tightfisted",
+      "word": "tightfisted",
+      "pos": "adj",
+      "group": "stingy",
+      "priority": 1,
+      "meaning": "chặt chẽ, keo kiệt",
+      "nuance": "Thân mật.",
+      "example": "Even in good years, the *tightfisted* board froze salaries.",
+      "collocations": [],
+      "confusables": [
+        "stingy"
+      ]
+    },
+    {
+      "id": "avaricious",
+      "word": "avaricious",
+      "pos": "adj",
+      "group": "greedy",
+      "priority": 3,
+      "meaning": "tham lam (của cải)",
+      "nuance": "Lòng tham tiền bạc mãnh liệt.",
+      "example": "*Avaricious* landlords exploited the housing shortage.",
+      "collocations": [],
+      "root": "avarice (lòng tham)",
+      "confusables": [
+        "rapacious",
+        "covetous"
+      ]
+    },
+    {
+      "id": "rapacious",
+      "word": "rapacious",
+      "pos": "adj",
+      "group": "greedy",
+      "priority": 3,
+      "meaning": "tham lam, cướp bóc",
+      "nuance": "Tham đến mức tàn nhẫn, vơ vét.",
+      "example": "Colonial rule was marked by *rapacious* extraction of resources.",
+      "collocations": [
+        "rapacious lenders"
+      ],
+      "root": "rap- (cướp), như rapt",
+      "confusables": [
+        "avaricious"
+      ]
+    },
+    {
+      "id": "covetous",
+      "word": "covetous",
+      "pos": "adj",
+      "group": "greedy",
+      "priority": 2,
+      "meaning": "thèm muốn (của người khác)",
+      "nuance": "Nhấn vào sự thèm muốn thứ thuộc về người khác.",
+      "example": "Neighbors cast *covetous* glances at his new car.",
+      "collocations": [
+        "covetous of X"
+      ],
+      "root": "covet (thèm muốn)",
+      "confusables": [
+        "avaricious"
+      ]
+    },
+    {
+      "id": "acquisitive",
+      "word": "acquisitive",
+      "pos": "adj",
+      "group": "greedy",
+      "priority": 2,
+      "meaning": "hám của, thích tích lũy",
+      "nuance": "Có thể trung tính trong kinh doanh: an acquisitive firm (thích thâu tóm).",
+      "example": "The *acquisitive* conglomerate bought three rivals in a year.",
+      "collocations": [],
+      "confusables": [
+        "avaricious"
+      ]
+    },
+    {
+      "id": "mercenary",
+      "word": "mercenary",
+      "pos": "adj/n",
+      "group": "greedy",
+      "priority": 2,
+      "meaning": "vụ lợi, hám tiền; lính đánh thuê (n)",
+      "nuance": "Chỉ làm vì tiền.",
+      "example": "Critics questioned the *mercenary* motives behind the sudden donation.",
+      "collocations": [
+        "mercenary motives"
+      ],
+      "confusables": [
+        "venal"
+      ]
+    },
+    {
+      "id": "venal",
+      "word": "venal",
+      "pos": "adj",
+      "group": "greedy",
+      "priority": 3,
+      "meaning": "dễ bị mua chuộc, tham nhũng",
+      "nuance": "Bẫy: khác venial (tội nhẹ, đáng tha thứ).",
+      "example": "*Venal* officials approved permits in exchange for bribes.",
+      "collocations": [
+        "venal officials"
+      ],
+      "confusables": [
+        "mercenary",
+        "avaricious"
+      ]
+    },
+    {
+      "id": "grasping",
+      "word": "grasping",
+      "pos": "adj",
+      "group": "greedy",
+      "priority": 1,
+      "meaning": "tham lam, hám lợi",
+      "nuance": "",
+      "example": "The *grasping* middlemen took most of the farmers' profits.",
+      "collocations": [],
+      "confusables": [
+        "avaricious"
+      ]
+    },
+    {
+      "id": "prodigal",
+      "word": "prodigal",
+      "pos": "adj/n",
+      "group": "wasteful",
+      "priority": 3,
+      "meaning": "hoang phí, phá của",
+      "nuance": "Thành ngữ: the prodigal son (đứa con hoang đàng trở về).",
+      "example": "The *prodigal* heir spent his inheritance within three years.",
+      "collocations": [
+        "the prodigal son"
+      ],
+      "confusables": [
+        "profligate",
+        "provident"
+      ]
+    },
+    {
+      "id": "profligate",
+      "word": "profligate",
+      "pos": "adj",
+      "group": "wasteful",
+      "priority": 3,
+      "meaning": "hoang phí; trác táng",
+      "nuance": "Nặng hơn prodigal, có thể kèm sa đọa.",
+      "example": "Markets punished the government's *profligate* spending.",
+      "collocations": [
+        "profligate spending"
+      ],
+      "confusables": [
+        "prodigal"
+      ]
+    },
+    {
+      "id": "spendthrift",
+      "word": "spendthrift",
+      "pos": "n/adj",
+      "group": "wasteful",
+      "priority": 2,
+      "meaning": "kẻ tiêu hoang",
+      "nuance": "Bẫy: có 'thrift' nhưng nghĩa ngược.",
+      "example": "A notorious *spendthrift*, he was always borrowing from friends.",
+      "collocations": [],
+      "confusables": [
+        "thrifty",
+        "prodigal"
+      ]
+    },
+    {
+      "id": "extravagant",
+      "word": "extravagant",
+      "pos": "adj",
+      "group": "wasteful",
+      "priority": 1,
+      "meaning": "phung phí; quá mức",
+      "nuance": "",
+      "example": "The *extravagant* opening ceremony cost more than the stadium.",
+      "collocations": [],
+      "confusables": [
+        "lavish"
+      ]
+    },
+    {
+      "id": "lavish",
+      "word": "lavish",
+      "pos": "adj/v",
+      "group": "wasteful",
+      "priority": 2,
+      "meaning": "xa hoa; hào phóng quá mức (v: lavish X on Y)",
+      "nuance": "Có thể khen (lavish praise) hoặc chê (lavish spending).",
+      "example": "The ministry **lavished funds on** a stadium no one used.",
+      "collocations": [
+        "lavish X on Y",
+        "lavish praise"
+      ],
+      "confusables": [
+        "extravagant",
+        "munificent"
+      ]
+    },
+    {
+      "id": "squander",
+      "word": "squander",
+      "pos": "v",
+      "group": "wasteful",
+      "priority": 2,
+      "meaning": "phung phí, lãng phí (cơ hội, tiền)",
+      "nuance": "",
+      "example": "The country **squandered its oil windfall**.",
+      "collocations": [
+        "squander an opportunity"
+      ],
+      "confusables": [
+        "dissipate"
+      ]
+    },
+    {
+      "id": "dissipate",
+      "word": "dissipate",
+      "pos": "v",
+      "group": "wasteful",
+      "priority": 2,
+      "meaning": "tiêu tan; phung phí",
+      "nuance": "Cũng có nghĩa tan biến: the fog dissipated.",
+      "example": "He *dissipated* his fortune on horses.",
+      "collocations": [],
+      "confusables": [
+        "squander"
+      ]
+    },
+    {
+      "id": "munificent",
+      "word": "munificent",
+      "pos": "adj",
+      "group": "generous",
+      "priority": 3,
+      "meaning": "rất hào phóng (về tiền của)",
+      "nuance": "Thường dùng cho món quà, nhà tài trợ lớn.",
+      "example": "A *munificent* gift from an alumnus funded the new library.",
+      "collocations": [
+        "a munificent gift"
+      ],
+      "root": "muni- (món quà)",
+      "confusables": [
+        "magnanimous",
+        "lavish"
+      ]
+    },
+    {
+      "id": "magnanimous",
+      "word": "magnanimous",
+      "pos": "adj",
+      "group": "generous",
+      "priority": 3,
+      "meaning": "rộng lượng, độ lượng",
+      "nuance": "Bẫy: rộng lượng với đối thủ, kẻ thua, chứ không chỉ là cho tiền.",
+      "example": "She was *magnanimous* in victory, praising her opponent's campaign.",
+      "collocations": [
+        "magnanimous in victory"
+      ],
+      "root": "magn- (lớn) + anim- (tâm hồn)",
+      "confusables": [
+        "munificent",
+        "altruistic"
+      ]
+    },
+    {
+      "id": "largesse",
+      "word": "largesse",
+      "pos": "n",
+      "group": "generous",
+      "priority": 2,
+      "meaning": "sự hào phóng; quà tặng hậu hĩnh",
+      "nuance": "Thường hàm ý ban phát từ trên xuống, có thể mỉa mai.",
+      "example": "Rural voters had grown dependent on the governor's *largesse*.",
+      "collocations": [],
+      "confusables": [
+        "munificent"
+      ]
+    },
+    {
+      "id": "liberal",
+      "word": "liberal",
+      "pos": "adj",
+      "group": "generous",
+      "priority": 2,
+      "meaning": "hào phóng, rộng rãi (nghĩa phụ)",
+      "nuance": "Bẫy nghĩa phụ: a liberal helping là một phần ăn đầy đặn.",
+      "example": "He was *liberal* with his time, mentoring dozens of students.",
+      "collocations": [
+        "liberal with X"
+      ],
+      "confusables": [
+        "munificent"
+      ]
+    },
+    {
+      "id": "bountiful",
+      "word": "bountiful",
+      "pos": "adj",
+      "group": "generous",
+      "priority": 1,
+      "meaning": "dồi dào; hào phóng",
+      "nuance": "",
+      "example": "A *bountiful* harvest pushed rice prices down.",
+      "collocations": [],
+      "confusables": [
+        "munificent"
+      ]
+    },
+    {
+      "id": "philanthropic",
+      "word": "philanthropic",
+      "pos": "adj",
+      "group": "generous",
+      "priority": 2,
+      "meaning": "nhân đức, làm từ thiện",
+      "nuance": "",
+      "example": "Her *philanthropic* foundation funds malaria research.",
+      "collocations": [],
+      "root": "phil- (yêu) + anthrop- (con người)",
+      "confusables": [
+        "altruistic",
+        "benevolent"
+      ]
+    },
+    {
+      "id": "altruistic",
+      "word": "altruistic",
+      "pos": "adj",
+      "group": "generous",
+      "priority": 2,
+      "meaning": "vị tha",
+      "nuance": "Nhấn vào động cơ vì người khác.",
+      "example": "Economists debate whether blood donation is purely *altruistic*.",
+      "collocations": [
+        "altruistic motives"
+      ],
+      "confusables": [
+        "magnanimous",
+        "philanthropic"
+      ]
+    },
+    {
+      "id": "benevolent",
+      "word": "benevolent",
+      "pos": "adj",
+      "group": "generous",
+      "priority": 2,
+      "meaning": "nhân từ, có thiện ý",
+      "nuance": "",
+      "example": "A *benevolent* dictator is still a dictator.",
+      "collocations": [],
+      "root": "bene- (tốt) + vol- (muốn)",
+      "confusables": [
+        "beneficent"
+      ]
+    },
+    {
+      "id": "beneficent",
+      "word": "beneficent",
+      "pos": "adj",
+      "group": "generous",
+      "priority": 1,
+      "meaning": "làm điều tốt, ban ơn",
+      "nuance": "Khác benevolent: beneficent là hành động tốt, benevolent là ý muốn tốt.",
+      "example": "The *beneficent* effects of the program reached far beyond its target group.",
+      "collocations": [],
+      "root": "bene- (tốt) + fic- (làm)",
+      "confusables": [
+        "benevolent"
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "id": "ma01",
+      "type": "tc",
+      "sentence": "Although she lived {0}, wearing the same coat for a decade, she was remarkably {1} toward others, quietly funding scholarships for dozens of students.",
+      "blanks": [
+        {
+          "options": [
+            "frugally",
+            "lavishly",
+            "rapaciously"
+          ],
+          "answer": "frugally"
+        },
+        {
+          "options": [
+            "munificent",
+            "parsimonious",
+            "mercenary"
+          ],
+          "answer": "munificent"
+        }
+      ],
+      "targets": [
+        "frugal",
+        "munificent",
+        "parsimonious"
+      ],
+      "hint": "Bắt đầu từ manh mối 'wearing the same coat'.",
+      "explanation": "(i) Mặc một chiếc áo suốt mười năm: sống tiết kiệm (frugally). (ii) 'Although' đổi chiều, tài trợ học bổng cho hàng chục sinh viên: munificent."
+    },
+    {
+      "id": "ma02",
+      "type": "tc",
+      "sentence": "Frugality may be a virtue, but the landlord's refusal to repair the heating even in midwinter was simply {0}.",
+      "blanks": [
+        {
+          "options": [
+            "parsimonious",
+            "provident",
+            "thrifty",
+            "abstemious",
+            "prodigal"
+          ],
+          "answer": "parsimonious"
+        }
+      ],
+      "targets": [
+        "parsimonious",
+        "frugal",
+        "thrifty"
+      ],
+      "hint": "'May be a virtue, but' cho thấy đây là mặt xấu.",
+      "explanation": "Tiết kiệm đến mức làm hại người khác là keo kiệt: parsimonious. Provident, thrifty mang nghĩa khen; abstemious nói về ăn uống."
+    },
+    {
+      "id": "ma03",
+      "type": "tc",
+      "sentence": "The inquiry found that the inspectors were thoroughly {0}: for a modest payment, any factory could obtain a certificate of compliance.",
+      "blanks": [
+        {
+          "options": [
+            "venal",
+            "covetous",
+            "profligate",
+            "penurious",
+            "acquisitive"
+          ],
+          "answer": "venal"
+        }
+      ],
+      "targets": [
+        "venal"
+      ],
+      "hint": "Bán sự chấp thuận lấy tiền.",
+      "explanation": "Có thể mua chứng nhận bằng tiền: inspectors dễ bị mua chuộc, venal. Covetous là thèm muốn của người khác; acquisitive là thích tích lũy; penurious là keo kiệt hoặc nghèo."
+    },
+    {
+      "id": "ma04",
+      "type": "tc",
+      "sentence": "The heir {0} his inheritance within a few years, and his {1} habits soon became a cautionary tale for the family.",
+      "blanks": [
+        {
+          "options": [
+            "squandered",
+            "hoarded",
+            "amassed"
+          ],
+          "answer": "squandered"
+        },
+        {
+          "options": [
+            "profligate",
+            "parsimonious",
+            "provident"
+          ],
+          "answer": "profligate"
+        }
+      ],
+      "targets": [
+        "squander",
+        "profligate",
+        "parsimonious",
+        "provident"
+      ],
+      "hint": "Câu chuyện cảnh tỉnh về điều gì?",
+      "explanation": "'Cautionary tale' (bài học cảnh tỉnh) cho thấy anh ta phá của: squandered và profligate."
+    },
+    {
+      "id": "ma05",
+      "type": "tc",
+      "sentence": "Gracious in defeat and {0} in victory, the new prime minister invited several of her harshest critics to join the cabinet.",
+      "blanks": [
+        {
+          "options": [
+            "magnanimous",
+            "munificent",
+            "altruistic",
+            "philanthropic",
+            "beneficent"
+          ],
+          "answer": "magnanimous"
+        }
+      ],
+      "targets": [
+        "magnanimous",
+        "munificent"
+      ],
+      "hint": "Rộng lượng với đối thủ, không phải cho tiền.",
+      "explanation": "Rộng lượng với đối thủ khi thắng: magnanimous. Munificent là hào phóng về tiền của; altruistic, philanthropic nói về việc giúp người khác nói chung."
+    },
+    {
+      "id": "ma06",
+      "type": "se",
+      "sentence": "Critics described the bank's executives as {0}, interested only in maximizing their own bonuses.",
+      "options": [
+        "mercenary",
+        "avaricious",
+        "munificent",
+        "magnanimous",
+        "prodigal",
+        "profligate"
+      ],
+      "answers": [
+        "mercenary",
+        "avaricious"
+      ],
+      "targets": [
+        "mercenary",
+        "avaricious",
+        "prodigal",
+        "profligate"
+      ],
+      "hint": "Tham hay phung phí?",
+      "explanation": "Chỉ quan tâm tiền thưởng của mình: mercenary, avaricious. Prodigal và profligate là cặp hoang phí, sai nghĩa."
+    },
+    {
+      "id": "ma07",
+      "type": "se",
+      "sentence": "The foundation's {0} gift allowed the university to build an entire new library.",
+      "options": [
+        "munificent",
+        "bountiful",
+        "magnanimous",
+        "altruistic",
+        "parsimonious",
+        "penurious"
+      ],
+      "answers": [
+        "munificent",
+        "bountiful"
+      ],
+      "targets": [
+        "munificent",
+        "bountiful",
+        "magnanimous",
+        "altruistic"
+      ],
+      "hint": "Từ nào mô tả được món quà?",
+      "explanation": "Món quà rất hào phóng: munificent, bountiful. Magnanimous là độ lượng; altruistic là vị tha về động cơ, không mô tả món quà."
+    },
+    {
+      "id": "ma08",
+      "type": "se",
+      "sentence": "Despite his wealth, the collector was notoriously {0}, haggling over every restaurant bill.",
+      "options": [
+        "parsimonious",
+        "miserly",
+        "frugal",
+        "thrifty",
+        "prodigal",
+        "profligate"
+      ],
+      "answers": [
+        "parsimonious",
+        "miserly"
+      ],
+      "targets": [
+        "parsimonious",
+        "miserly",
+        "frugal",
+        "thrifty"
+      ],
+      "hint": "'Notoriously' báo hiệu điều gì?",
+      "explanation": "'Notoriously' là chê: parsimonious, miserly. Frugal và thrifty là cặp đồng nghĩa nhưng mang nghĩa khen."
+    }
+  ]
+}

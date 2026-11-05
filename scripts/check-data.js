@@ -51,9 +51,12 @@ function validate(index, clusters) {
   if (errors.length) return errors;
 
   const groupIds = new Map();
+  const DIRECTIONS = ['positive', 'negative', 'neutral'];
   clusters.forEach((c) => c.groups.forEach((g) => {
     if (groupIds.has(g.id)) err(c.__file, `trùng id nhóm "${g.id}" (đã có ở ${groupIds.get(g.id)})`);
     groupIds.set(g.id, c.__file);
+    if (!g.title) err(`${c.__file} nhóm ${g.id}`, 'thiếu "title"');
+    if (!DIRECTIONS.includes(g.direction)) err(`${c.__file} nhóm ${g.id}`, `"direction" phải là positive, negative hoặc neutral (đang là ${JSON.stringify(g.direction)})`);
   }));
 
   clusters.forEach((c) => {

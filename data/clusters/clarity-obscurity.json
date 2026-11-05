@@ -1,0 +1,803 @@
+{
+  "schemaVersion": 1,
+  "id": "clarity-obscurity",
+  "title": "Rõ ràng & Khó hiểu",
+  "order": 2,
+  "description": "Cụm mô tả độ rõ ràng của ý tưởng, văn bản, lập luận; và hành động làm sáng tỏ hoặc làm rối.",
+  "groups": [
+    {
+      "id": "clear",
+      "title": "Rõ ràng, dễ hiểu",
+      "direction": "positive",
+      "scale": false,
+      "note": "Phân biệt: lucid/perspicuous là diễn đạt rõ; manifest/patent là hiển nhiên ai cũng thấy; unequivocal là không nước đôi."
+    },
+    {
+      "id": "obscure",
+      "title": "Khó hiểu, uyên thâm",
+      "direction": "negative",
+      "scale": false,
+      "note": "Recondite/arcane/esoteric: khó vì ít người biết. Convoluted/byzantine: khó vì cấu trúc rối. Nebulous/murky: khó vì mơ hồ. Cryptic/enigmatic/inscrutable: khó vì bí ẩn."
+    },
+    {
+      "id": "clarify",
+      "title": "Làm sáng tỏ",
+      "direction": "positive",
+      "scale": false,
+      "note": ""
+    },
+    {
+      "id": "muddle",
+      "title": "Làm rối, che giấu",
+      "direction": "negative",
+      "scale": false,
+      "note": "Belie là bẫy lớn: tạo ấn tượng sai, che đi sự thật, hoặc cho thấy điều gì đó là sai."
+    }
+  ],
+  "words": [
+    {
+      "id": "lucid",
+      "word": "lucid",
+      "pos": "adj",
+      "group": "clear",
+      "priority": 3,
+      "meaning": "sáng sủa, rõ ràng, dễ hiểu",
+      "nuance": "Nói về cách diễn đạt hoặc tư duy mạch lạc.",
+      "example": "Her **lucid account of** the identification strategy made a technical paper accessible to policymakers.",
+      "collocations": [
+        "a lucid explanation",
+        "lucid prose"
+      ],
+      "root": "luc- (ánh sáng), như lucent",
+      "confusables": [
+        "perspicuous",
+        "manifest"
+      ]
+    },
+    {
+      "id": "perspicuous",
+      "word": "perspicuous",
+      "pos": "adj",
+      "group": "clear",
+      "priority": 3,
+      "meaning": "diễn đạt rõ ràng, dễ hiểu",
+      "nuance": "Rất trang trọng; gần nghĩa lucid. Đừng nhầm với perspicacious (sắc sảo, tinh ý).",
+      "example": "The textbook is admired for its *perspicuous* treatment of difficult proofs.",
+      "collocations": [
+        "a perspicuous style"
+      ],
+      "root": "per- (xuyên qua) + spic- (nhìn)",
+      "confusables": [
+        "lucid"
+      ]
+    },
+    {
+      "id": "pellucid",
+      "word": "pellucid",
+      "pos": "adj",
+      "group": "clear",
+      "priority": 2,
+      "meaning": "trong suốt; rất dễ hiểu",
+      "nuance": "Nghĩa đen là nước trong vắt; nghĩa bóng là văn phong trong sáng.",
+      "example": "Orwell's *pellucid* prose remains a model for policy writers.",
+      "collocations": [
+        "pellucid prose"
+      ],
+      "root": "luc- (ánh sáng)",
+      "confusables": [
+        "lucid",
+        "limpid"
+      ]
+    },
+    {
+      "id": "limpid",
+      "word": "limpid",
+      "pos": "adj",
+      "group": "clear",
+      "priority": 2,
+      "meaning": "trong veo; giản dị, dễ hiểu",
+      "nuance": "Thường dùng cho nước, mắt, hoặc văn phong đơn giản, thanh thoát.",
+      "example": "The poem's *limpid* language conceals considerable emotional depth.",
+      "collocations": [
+        "limpid prose"
+      ],
+      "confusables": [
+        "pellucid"
+      ]
+    },
+    {
+      "id": "explicit",
+      "word": "explicit",
+      "pos": "adj",
+      "group": "clear",
+      "priority": 2,
+      "meaning": "rõ ràng, nói thẳng ra",
+      "nuance": "Đối lập với implicit (ngầm hiểu). Nhấn vào việc được nói thẳng, không phải dễ hiểu.",
+      "example": "The contract makes the penalty **explicit**, leaving no room for interpretation.",
+      "collocations": [
+        "make X explicit",
+        "explicit instructions"
+      ],
+      "confusables": [
+        "unequivocal"
+      ]
+    },
+    {
+      "id": "unequivocal",
+      "word": "unequivocal",
+      "pos": "adj",
+      "group": "clear",
+      "priority": 3,
+      "meaning": "rõ ràng, dứt khoát, không nước đôi",
+      "nuance": "Trái nghĩa trực tiếp với equivocal.",
+      "example": "The court issued an *unequivocal* ruling in favor of the plaintiffs.",
+      "collocations": [
+        "an unequivocal answer",
+        "unequivocal support"
+      ],
+      "root": "un- + equivocal",
+      "confusables": [
+        "equivocal",
+        "explicit"
+      ]
+    },
+    {
+      "id": "manifest",
+      "word": "manifest",
+      "pos": "adj/v",
+      "group": "clear",
+      "priority": 3,
+      "meaning": "hiển nhiên, rõ ràng (adj); biểu lộ ra (v)",
+      "nuance": "Hiển nhiên ai cũng thấy được, không cần giải thích.",
+      "example": "The policy's failure became **manifest** within a year.",
+      "collocations": [
+        "become manifest",
+        "manifest itself in X"
+      ],
+      "confusables": [
+        "patent",
+        "lucid"
+      ]
+    },
+    {
+      "id": "patent",
+      "word": "patent",
+      "pos": "adj",
+      "group": "clear",
+      "priority": 3,
+      "meaning": "hiển nhiên, rành rành",
+      "nuance": "Bẫy nghĩa phụ: không phải bằng sáng chế. Hay đi với thứ sai trái hiển nhiên: a patent lie.",
+      "example": "The claim was a **patent falsehood**, contradicted by the ministry's own data.",
+      "collocations": [
+        "a patent lie",
+        "patently false"
+      ],
+      "confusables": [
+        "manifest"
+      ]
+    },
+    {
+      "id": "abstruse",
+      "word": "abstruse",
+      "pos": "adj",
+      "group": "obscure",
+      "priority": 3,
+      "meaning": "khó hiểu, trừu tượng sâu xa",
+      "nuance": "Khó vì nội dung trừu tượng, phức tạp về ý.",
+      "example": "Measure theory strikes many first-year students as hopelessly *abstruse*.",
+      "collocations": [
+        "abstruse theory"
+      ],
+      "confusables": [
+        "recondite",
+        "esoteric"
+      ]
+    },
+    {
+      "id": "recondite",
+      "word": "recondite",
+      "pos": "adj",
+      "group": "obscure",
+      "priority": 3,
+      "meaning": "uyên thâm, ít người biết",
+      "nuance": "Khó vì kiến thức hiếm, chỉ chuyên gia biết.",
+      "example": "The essay is full of *recondite* allusions to medieval law.",
+      "collocations": [
+        "recondite knowledge",
+        "recondite allusions"
+      ],
+      "confusables": [
+        "arcane",
+        "esoteric",
+        "abstruse"
+      ]
+    },
+    {
+      "id": "arcane",
+      "word": "arcane",
+      "pos": "adj",
+      "group": "obscure",
+      "priority": 3,
+      "meaning": "bí ẩn, chỉ người trong cuộc hiểu",
+      "nuance": "Thường dùng cho quy tắc, thủ tục phức tạp, cổ xưa.",
+      "example": "Few outside the bank understood the *arcane* rules governing the reserve requirement.",
+      "collocations": [
+        "arcane rules",
+        "arcane procedures"
+      ],
+      "confusables": [
+        "recondite",
+        "esoteric"
+      ]
+    },
+    {
+      "id": "esoteric",
+      "word": "esoteric",
+      "pos": "adj",
+      "group": "obscure",
+      "priority": 3,
+      "meaning": "chỉ dành cho một nhóm nhỏ hiểu",
+      "nuance": "Nhấn vào đối tượng hẹp: dành cho người trong giới.",
+      "example": "The conference featured several *esoteric* debates about estimator efficiency.",
+      "collocations": [
+        "esoteric debates",
+        "esoteric interest"
+      ],
+      "confusables": [
+        "recondite",
+        "arcane"
+      ]
+    },
+    {
+      "id": "opaque",
+      "word": "opaque",
+      "pos": "adj",
+      "group": "obscure",
+      "priority": 3,
+      "meaning": "mờ đục; khó hiểu, thiếu minh bạch",
+      "nuance": "Nghĩa bóng: không minh bạch, khó nhìn thấu (quy trình, văn bản).",
+      "example": "The fund's fee structure was deliberately *opaque*.",
+      "collocations": [
+        "opaque process",
+        "opaque to outsiders"
+      ],
+      "confusables": [
+        "lucid"
+      ]
+    },
+    {
+      "id": "cryptic",
+      "word": "cryptic",
+      "pos": "adj",
+      "group": "obscure",
+      "priority": 2,
+      "meaning": "bí ẩn, khó hiểu (thường cố ý)",
+      "nuance": "Ngắn và bí ẩn, như mật mã.",
+      "example": "She left a *cryptic* note saying only that the data 'was not what it seemed'.",
+      "collocations": [
+        "a cryptic remark",
+        "a cryptic message"
+      ],
+      "root": "crypt- (giấu kín)",
+      "confusables": [
+        "enigmatic"
+      ]
+    },
+    {
+      "id": "enigmatic",
+      "word": "enigmatic",
+      "pos": "adj",
+      "group": "obscure",
+      "priority": 2,
+      "meaning": "bí ẩn, khó đoán",
+      "nuance": "Nói về con người, nụ cười, lời nói gây tò mò.",
+      "example": "The governor's *enigmatic* smile gave reporters no clue about the decision.",
+      "collocations": [
+        "an enigmatic figure"
+      ],
+      "root": "enigma (câu đố)",
+      "confusables": [
+        "cryptic",
+        "inscrutable"
+      ]
+    },
+    {
+      "id": "inscrutable",
+      "word": "inscrutable",
+      "pos": "adj",
+      "group": "obscure",
+      "priority": 3,
+      "meaning": "không thể hiểu thấu",
+      "nuance": "Thường nói về nét mặt, động cơ của con người.",
+      "example": "His motives remained *inscrutable* even to close colleagues.",
+      "collocations": [
+        "an inscrutable expression"
+      ],
+      "confusables": [
+        "enigmatic"
+      ]
+    },
+    {
+      "id": "impenetrable",
+      "word": "impenetrable",
+      "pos": "adj",
+      "group": "obscure",
+      "priority": 2,
+      "meaning": "không thể xuyên qua; không thể hiểu",
+      "nuance": "Nghĩa bóng: văn bản dày đặc đến mức không hiểu được.",
+      "example": "The legal disclaimer was written in *impenetrable* jargon.",
+      "collocations": [
+        "impenetrable jargon"
+      ],
+      "confusables": [
+        "opaque"
+      ]
+    },
+    {
+      "id": "convoluted",
+      "word": "convoluted",
+      "pos": "adj",
+      "group": "obscure",
+      "priority": 3,
+      "meaning": "phức tạp, rối rắm",
+      "nuance": "Khó vì cấu trúc quanh co, chồng chéo.",
+      "example": "The tax code's *convoluted* structure creates endless opportunities for avoidance.",
+      "collocations": [
+        "a convoluted argument",
+        "convoluted rules"
+      ],
+      "root": "con- + volut- (cuộn)",
+      "confusables": [
+        "byzantine",
+        "labyrinthine"
+      ]
+    },
+    {
+      "id": "byzantine",
+      "word": "byzantine",
+      "pos": "adj",
+      "group": "obscure",
+      "priority": 2,
+      "meaning": "rối rắm, phức tạp đến mức khó nắm",
+      "nuance": "Thường dùng cho bộ máy, thủ tục hành chính chằng chịt.",
+      "example": "Investors complained about the *byzantine* approval process.",
+      "collocations": [
+        "byzantine bureaucracy"
+      ],
+      "confusables": [
+        "convoluted"
+      ]
+    },
+    {
+      "id": "labyrinthine",
+      "word": "labyrinthine",
+      "pos": "adj",
+      "group": "obscure",
+      "priority": 1,
+      "meaning": "như mê cung, rối rắm",
+      "nuance": "",
+      "example": "The novel's *labyrinthine* plot rewards a second reading.",
+      "collocations": [],
+      "root": "labyrinth (mê cung)",
+      "confusables": [
+        "convoluted"
+      ]
+    },
+    {
+      "id": "nebulous",
+      "word": "nebulous",
+      "pos": "adj",
+      "group": "obscure",
+      "priority": 3,
+      "meaning": "mơ hồ, không rõ ràng",
+      "nuance": "Khó vì thiếu hình hài cụ thể, không phải vì phức tạp.",
+      "example": "The plan's goals remained *nebulous*, so no one could judge whether it had succeeded.",
+      "collocations": [
+        "nebulous concept",
+        "nebulous goals"
+      ],
+      "root": "nebula (đám mây)",
+      "confusables": [
+        "ambiguous"
+      ]
+    },
+    {
+      "id": "murky",
+      "word": "murky",
+      "pos": "adj",
+      "group": "obscure",
+      "priority": 1,
+      "meaning": "đục ngầu; mập mờ",
+      "nuance": "Thường gợi ý sự mờ ám.",
+      "example": "The *murky* origins of the funding raised questions.",
+      "collocations": [
+        "murky origins"
+      ],
+      "confusables": [
+        "opaque"
+      ]
+    },
+    {
+      "id": "ambiguous",
+      "word": "ambiguous",
+      "pos": "adj",
+      "group": "obscure",
+      "priority": 2,
+      "meaning": "có thể hiểu theo nhiều nghĩa",
+      "nuance": "Khác equivocal: ambiguous có thể vô tình; equivocal thường cố ý né tránh.",
+      "example": "The clause was *ambiguous*: it could apply to either party.",
+      "collocations": [
+        "an ambiguous clause"
+      ],
+      "root": "ambi- (cả hai)",
+      "confusables": [
+        "equivocal",
+        "nebulous"
+      ]
+    },
+    {
+      "id": "elucidate",
+      "word": "elucidate",
+      "pos": "v",
+      "group": "clarify",
+      "priority": 3,
+      "meaning": "làm sáng tỏ, giải thích rõ",
+      "nuance": "Rất hay gặp trong viết học thuật.",
+      "example": "This section **elucidates the mechanism** through which credit constraints bind.",
+      "collocations": [
+        "elucidate the mechanism"
+      ],
+      "root": "e- + luc- (ánh sáng)",
+      "confusables": [
+        "explicate",
+        "illuminate"
+      ]
+    },
+    {
+      "id": "explicate",
+      "word": "explicate",
+      "pos": "v",
+      "group": "clarify",
+      "priority": 2,
+      "meaning": "giải thích chi tiết, phân tích",
+      "nuance": "Thường cho một văn bản, lý thuyết.",
+      "example": "The lecturer spent an hour *explicating* a single paragraph of Keynes.",
+      "collocations": [
+        "explicate a text"
+      ],
+      "confusables": [
+        "elucidate"
+      ]
+    },
+    {
+      "id": "illuminate",
+      "word": "illuminate",
+      "pos": "v",
+      "group": "clarify",
+      "priority": 2,
+      "meaning": "soi sáng, làm rõ",
+      "nuance": "",
+      "example": "The case studies *illuminate* how informal lenders price risk.",
+      "collocations": [],
+      "root": "lumin- (ánh sáng)",
+      "confusables": [
+        "elucidate"
+      ]
+    },
+    {
+      "id": "expound",
+      "word": "expound",
+      "pos": "v",
+      "group": "clarify",
+      "priority": 2,
+      "meaning": "trình bày chi tiết (một quan điểm)",
+      "nuance": "Thường đi với on hoặc upon.",
+      "example": "He loved to **expound on** the virtues of the gold standard.",
+      "collocations": [
+        "expound on X"
+      ],
+      "confusables": [
+        "explicate"
+      ]
+    },
+    {
+      "id": "demystify",
+      "word": "demystify",
+      "pos": "v",
+      "group": "clarify",
+      "priority": 1,
+      "meaning": "làm cho bớt bí ẩn, dễ hiểu",
+      "nuance": "",
+      "example": "The guide aims to *demystify* the visa process.",
+      "collocations": [],
+      "root": "de- + mystify",
+      "confusables": []
+    },
+    {
+      "id": "gloss",
+      "word": "gloss",
+      "pos": "n/v",
+      "group": "clarify",
+      "priority": 3,
+      "meaning": "lời chú giải (n); gloss over = lờ đi, che lấp",
+      "nuance": "Bẫy kép: gloss là chú giải, nhưng gloss over là cố ý bỏ qua điều khó chịu.",
+      "example": "The report **glossed over** the program's high dropout rate.",
+      "collocations": [
+        "gloss over X",
+        "a gloss on a text"
+      ],
+      "confusables": [
+        "elucidate"
+      ]
+    },
+    {
+      "id": "obfuscate",
+      "word": "obfuscate",
+      "pos": "v",
+      "group": "muddle",
+      "priority": 3,
+      "meaning": "làm rối, cố ý làm khó hiểu",
+      "nuance": "Cố ý dùng ngôn từ để che giấu.",
+      "example": "The spokesman used technical jargon to *obfuscate* the scale of the losses.",
+      "collocations": [
+        "obfuscate the issue"
+      ],
+      "confusables": [
+        "obscure-v",
+        "belie"
+      ]
+    },
+    {
+      "id": "obscure-v",
+      "word": "obscure (v)",
+      "pos": "v",
+      "group": "muddle",
+      "priority": 2,
+      "meaning": "che khuất, làm mờ đi",
+      "nuance": "Có thể vô tình; obfuscate thường cố ý.",
+      "example": "Averages can *obscure* large differences between regions.",
+      "collocations": [
+        "obscure the fact that"
+      ],
+      "confusables": [
+        "obfuscate"
+      ]
+    },
+    {
+      "id": "belie",
+      "word": "belie",
+      "pos": "v",
+      "group": "muddle",
+      "priority": 3,
+      "meaning": "che giấu; tạo ấn tượng sai; cho thấy là sai",
+      "nuance": "Bẫy lớn: bề ngoài trái ngược với thực chất.",
+      "example": "His calm manner **belied** the panic he felt.",
+      "collocations": [
+        "belie the fact that"
+      ],
+      "confusables": [
+        "obfuscate",
+        "manifest"
+      ]
+    },
+    {
+      "id": "muddy",
+      "word": "muddy",
+      "pos": "v",
+      "group": "muddle",
+      "priority": 1,
+      "meaning": "làm vẩn đục, làm rối",
+      "nuance": "Thân mật: muddy the waters.",
+      "example": "New exceptions only **muddied the waters**.",
+      "collocations": [
+        "muddy the waters"
+      ],
+      "confusables": [
+        "obfuscate"
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "id": "co01",
+      "type": "tc",
+      "sentence": "Although the theorem's proof is notoriously {0}, the textbook's author manages to {1} it in a few {2} pages.",
+      "blanks": [
+        {
+          "options": [
+            "abstruse",
+            "lucid",
+            "patent"
+          ],
+          "answer": "abstruse"
+        },
+        {
+          "options": [
+            "elucidate",
+            "obfuscate",
+            "gloss over"
+          ],
+          "answer": "elucidate"
+        },
+        {
+          "options": [
+            "lucid",
+            "recondite",
+            "convoluted"
+          ],
+          "answer": "lucid"
+        }
+      ],
+      "targets": [
+        "abstruse",
+        "elucidate",
+        "lucid",
+        "gloss"
+      ],
+      "hint": "Bắt đầu từ chỗ (i): 'notoriously' đi với tính chất xấu.",
+      "explanation": "'Although' đổi chiều: chứng minh vốn khó hiểu (abstruse), nhưng tác giả làm sáng tỏ (elucidate) trong vài trang rõ ràng (lucid). Gloss over là lờ đi, không phải giải thích."
+    },
+    {
+      "id": "co02",
+      "type": "tc",
+      "sentence": "The regulation's {0} structure, with exceptions nested within exceptions, baffled even the lawyers who had drafted it.",
+      "blanks": [
+        {
+          "options": [
+            "convoluted",
+            "esoteric",
+            "nebulous",
+            "recondite",
+            "cryptic"
+          ],
+          "answer": "convoluted"
+        }
+      ],
+      "targets": [
+        "convoluted"
+      ],
+      "hint": "Cái gì làm nó khó hiểu: nội dung hiếm hay cấu trúc rối?",
+      "explanation": "Khó vì cấu trúc chồng chéo (exceptions nested within exceptions): convoluted. Esoteric, recondite là khó vì ít người biết; nebulous là mơ hồ; cryptic là bí ẩn cố ý."
+    },
+    {
+      "id": "co03",
+      "type": "tc",
+      "sentence": "Critics complained that the report did not clarify the agency's methods but rather {0} them, burying a simple calculation beneath pages of jargon.",
+      "blanks": [
+        {
+          "options": [
+            "obfuscated",
+            "belied",
+            "glossed",
+            "expounded",
+            "demystified"
+          ],
+          "answer": "obfuscated"
+        }
+      ],
+      "targets": [
+        "obfuscate",
+        "belie"
+      ],
+      "hint": "'Burying… beneath pages of jargon'.",
+      "explanation": "Chôn phép tính đơn giản dưới jargon là cố ý làm rối: obfuscated. Belied là tạo ấn tượng sai, không phải làm khó hiểu."
+    },
+    {
+      "id": "co04",
+      "type": "tc",
+      "sentence": "Her calm, almost cheerful demeanor during the hearing {0} the turmoil she later described in her memoir.",
+      "blanks": [
+        {
+          "options": [
+            "belied",
+            "manifested",
+            "obfuscated",
+            "elucidated",
+            "muddied"
+          ],
+          "answer": "belied"
+        }
+      ],
+      "targets": [
+        "belie"
+      ],
+      "hint": "Bề ngoài và bên trong trái ngược nhau.",
+      "explanation": "Vẻ ngoài bình tĩnh trái ngược với sự hỗn loạn bên trong: belied. Manifested là biểu lộ ra, ngược nghĩa; obfuscated nói về ngôn từ cố ý làm rối."
+    },
+    {
+      "id": "co05",
+      "type": "tc",
+      "sentence": "The minister insisted that her position had been {0} all along; reporters, however, could point to at least three interviews in which she had pointedly declined to commit to either side.",
+      "blanks": [
+        {
+          "options": [
+            "unequivocal",
+            "explicit",
+            "manifest",
+            "pellucid",
+            "lucid"
+          ],
+          "answer": "unequivocal"
+        }
+      ],
+      "targets": [
+        "unequivocal",
+        "explicit"
+      ],
+      "hint": "Phóng viên phản bác điều gì: sự dễ hiểu, hay sự dứt khoát?",
+      "explanation": "Điều phóng viên bác bỏ là việc bà ấy đã dứt khoát chọn phe (declined to commit to either side): unequivocal. Explicit chỉ là nói thẳng ra; lucid, pellucid là diễn đạt dễ hiểu; manifest là hiển nhiên."
+    },
+    {
+      "id": "co06",
+      "type": "se",
+      "sentence": "Because the poem's allusions are so {0}, most readers need an annotated edition to grasp them.",
+      "options": [
+        "recondite",
+        "arcane",
+        "nebulous",
+        "convoluted",
+        "lucid",
+        "pellucid"
+      ],
+      "answers": [
+        "recondite",
+        "arcane"
+      ],
+      "targets": [
+        "recondite",
+        "arcane"
+      ],
+      "hint": "Vì sao cần chú giải?",
+      "explanation": "Cần bản chú giải vì các điển tích ít người biết: recondite, arcane. Lucid và pellucid là cặp đồng nghĩa nhưng sai hướng. Nebulous (mơ hồ) và convoluted (rối) khớp phần nào nhưng không đồng nghĩa với nhau."
+    },
+    {
+      "id": "co07",
+      "type": "se",
+      "sentence": "The professor's lectures were admired for being {0}: complex ideas emerged from them simple and clear.",
+      "options": [
+        "lucid",
+        "perspicuous",
+        "esoteric",
+        "recondite",
+        "manifest",
+        "patent"
+      ],
+      "answers": [
+        "lucid",
+        "perspicuous"
+      ],
+      "targets": [
+        "lucid",
+        "perspicuous",
+        "manifest",
+        "patent"
+      ],
+      "hint": "Khen cách giảng giải, không phải sự hiển nhiên.",
+      "explanation": "Diễn đạt rõ ràng, dễ hiểu: lucid, perspicuous. Manifest và patent là cặp đồng nghĩa nhưng nghĩa là hiển nhiên, không phải giải thích hay. Esoteric và recondite sai hướng."
+    },
+    {
+      "id": "co08",
+      "type": "se",
+      "sentence": "Rather than {0} the confusing rule, the manual's authors merely restated it in longer sentences.",
+      "options": [
+        "elucidate",
+        "explicate",
+        "obfuscate",
+        "obscure",
+        "gloss over",
+        "belie"
+      ],
+      "answers": [
+        "elucidate",
+        "explicate"
+      ],
+      "targets": [
+        "elucidate",
+        "explicate",
+        "gloss"
+      ],
+      "hint": "'Rather than' đổi chiều với việc chỉ nhắc lại dài hơn.",
+      "explanation": "Lẽ ra phải giải thích rõ: elucidate, explicate. Obfuscate và obscure là cặp sai hướng. Gloss over là lờ đi; belie là tạo ấn tượng sai."
+    }
+  ]
+}

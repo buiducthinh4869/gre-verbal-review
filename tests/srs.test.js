@@ -158,7 +158,7 @@ test('phiên hôm nay: sổ hay quên trước, hộp thấp trước, từ mớ
   idx.words.forEach((w) => { many[w.id] = Object.assign(Srs.newState(w.id), { box: 1, dueDate: T0 }); });
   const q3 = Srs.buildDailyQueue(idx, many, { today: T0, newLimit: 10, newDoneToday: 0 });
   assert.equal(q3.items.length, 40);
-  assert.equal(q3.total, 62);
+  assert.equal(q3.total, idx.words.length);
 });
 
 test('chuỗi ngày ôn', () => {
@@ -181,11 +181,23 @@ test('ánh xạ phương án GRE về id từ', () => {
     qualified: 'qualified', idolized: 'idolize', revered: 'revere', venerated: 'venerate', muted: 'muted',
     admonished: 'admonish', reproved: 'reprove', lambasted: 'lambaste', excoriated: 'excoriate',
     derided: 'deride', ridiculed: 'ridicule', commended: 'commend', applauded: 'applaud',
+    // cập nhật 02: trạng từ -ly, danh từ -acy/-ity/-ness, id có hậu tố, cụm có giới từ, bỏ dấu
+    frugally: 'frugal', obstinacy: 'obstinate', 'gloss over': 'gloss', 'shore up': 'shore-up', obscured: 'obscure-v',
+    'clichéd': 'cliched', iconoclast: 'iconoclastic',
   };
   Object.entries(cases).forEach(([opt, id]) => assert.equal(Srs.mapOptionToId(opt, idx, []), id, opt));
   ['question', 'gushing', 'derisive', 'venerable', 'a eulogy'].forEach((opt) => {
     assert.equal(Srs.mapOptionToId(opt, idx, []), null, opt);
   });
+});
+
+test('ánh xạ luôn ưu tiên targets của bài', () => {
+  // "obscure" chỉ có một id (obscure-v); "qualified"/"unqualified" là hai id khác nhau và không bị nhập làm một
+  assert.equal(Srs.mapOptionToId('obscure', idx, ['obscure-v']), 'obscure-v');
+  assert.equal(Srs.mapOptionToId('unqualified', idx, ['unqualified', 'qualified']), 'unqualified');
+  const fake = { formMap: { abc: ['x1', 'x2'], abcs: [] } };
+  assert.equal(Srs.mapOptionToId('abc', fake, ['x2']), 'x2');
+  assert.equal(Srs.mapOptionToId('abc', fake, []), 'x1');
 });
 
 test('mọi đáp án GRE trong dữ liệu đều ánh xạ được về id (trừ từ ngoài dữ liệu)', () => {

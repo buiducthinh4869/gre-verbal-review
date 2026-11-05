@@ -23,8 +23,8 @@ test('venerate: không bao giờ có revere (nghĩa giống hệt)', () => {
   }
 });
 
-test('phương án nhiễu cùng hướng nghĩa, không trùng, không cùng dòng từ', () => {
-  const praise = new Set(['praise-verbs', 'praise-special', 'praise-nouns', 'praise-adj', 'lukewarm', 'excess', 'flattery']);
+test('phương án nhiễu cùng hướng nghĩa (theo direction của nhóm), không trùng, không cùng dòng từ', () => {
+  const dir = (w) => Srs.groupDirection(idx.groupById[w.group]);
   idx.words.forEach((w) => {
     for (let seed = 1; seed <= 5; seed++) {
       const d = Srs.pickDistractors(w, idx, 3, seq(seed));
@@ -33,8 +33,9 @@ test('phương án nhiễu cùng hướng nghĩa, không trùng, không cùng d�
       d.forEach((id) => {
         const c = idx.byId[id];
         assert.notEqual(c.meaning, w.meaning, `${w.id} vs ${id}`);
-        assert.equal(praise.has(c.group), praise.has(w.group), `${w.id} lấy từ khác hướng: ${id}`);
-        if (!w.confusables.includes(id) && !c.confusables.includes(w.id)) {
+        const conf = w.confusables.includes(id) || c.confusables.includes(w.id);
+        if (!conf) assert.ok(Srs.directionsMatch(dir(w), dir(c)), `${w.id} (${dir(w)}) lấy từ khác hướng: ${id} (${dir(c)})`);
+        if (!conf) {
           assert.ok(!Srs.sameFamily(w, c), `${w.id} cùng dòng từ với ${id}`);
         }
       });
@@ -63,5 +64,29 @@ test('mọi từ đều có đủ 3 phương án nhiễu khác nhau, không trù
   idx.words.forEach((w) => {
     const d = Srs.pickDistractors(w, idx, 3, seq(7));
     assert.equal(new Set([w.id, ...d]).size, 4, w.id);
+  });
+});
+
+test('parsimonious: ưu tiên frugal, miserly (confusables, cùng nhóm); revere không có venerate', () => {
+  for (let seed = 1; seed <= 30; seed++) {
+    const d = Srs.pickDistractors(idx.byId.parsimonious, idx, 3, seq(seed));
+    const pref = idx.byId.parsimonious.confusables.concat(idx.reverseConf.parsimonious || []);
+    assert.ok(d.includes('frugal') && d.includes('miserly'), `seed ${seed}: ${d}`);
+    assert.ok(d.every((id) => pref.includes(id) || idx.byId[id].group === idx.byId.parsimonious.group), `seed ${seed}: ${d}`);
+    const r = Srs.pickDistractors(idx.byId.revere, idx, 3, seq(seed));
+    assert.ok(!r.includes('venerate'), `seed ${seed}: ${r}`);
+  }
+});
+
+test('neutral hợp với mọi hướng; nhóm không rõ hướng không khớp', () => {
+  assert.ok(Srs.directionsMatch('positive', 'neutral') && Srs.directionsMatch('neutral', 'negative'));
+  assert.ok(!Srs.directionsMatch('positive', 'negative'));
+  assert.ok(!Srs.directionsMatch('', 'positive'));
+  assert.equal(Srs.groupDirection({ id: 'praise-verbs' }), '', 'không còn đoán theo tên nhóm');
+});
+
+test('mọi nhóm trong dữ liệu có direction hợp lệ', () => {
+  Object.values(idx.groupById).filter((g) => g.clusterId !== 'custom').forEach((g) => {
+    assert.ok(['positive', 'negative', 'neutral'].includes(g.direction), g.id);
   });
 });

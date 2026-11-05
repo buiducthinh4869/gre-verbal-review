@@ -4,32 +4,40 @@
  */
 
 export const CUSTOM_CLUSTER_ID = 'custom';
-const PRAISE_GROUPS = ['lukewarm', 'excess', 'flattery'];
-const CRITICISM_GROUPS = ['belittle', 'reprove', 'denounce', 'ridicule', 'quibble'];
+export const DIRECTIONS = ['positive', 'negative', 'neutral'];
 
-const lc = (s) => String(s || '').toLowerCase().trim();
+/** Bỏ dấu (clichéd → cliched), chữ thường, gọn khoảng trắng. */
+const lc = (s) => String(s || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/\s+/g, ' ').trim();
 
-/** Hướng nghĩa của nhóm: 'praise' | 'criticism' | '' (không xác định). Nhóm có thể tự khai "direction". */
+/** Hướng nghĩa của nhóm theo trường "direction" trong dữ liệu: 'positive' | 'negative' | 'neutral' | '' (không rõ, vd Từ tự thêm). */
 export function groupDirection(group) {
-  if (!group) return '';
-  if (group.direction) return group.direction;
-  const id = group.id;
-  if (/^praise-/.test(id) || PRAISE_GROUPS.includes(id)) return 'praise';
-  if (CRITICISM_GROUPS.includes(id)) return 'criticism';
-  return '';
+  return group && DIRECTIONS.includes(group.direction) ? group.direction : '';
+}
+
+/** Hai hướng nghĩa có hợp nhau không (neutral hợp với mọi hướng; không rõ hướng thì coi như không hợp). */
+export function directionsMatch(a, b) {
+  if (!a || !b) return false;
+  return a === b || a === 'neutral' || b === 'neutral';
 }
 
 function wordForms(w) {
   const forms = [];
+  const add = (f) => { f = lc(f); if (f && !forms.includes(f)) forms.push(f); };
   String(w.word || '').split('/').forEach((alt) => {
-    const f = lc(alt);
+    const f = lc(alt).replace(/\s*\([^)]*\)\s*/g, ' ').trim(); // "obscure (v)" → "obscure"
     if (!f) return;
-    forms.push(f);
+    add(f);
     const first = f.split(/\s+/)[0];
-    if (first !== f) forms.push(first);
+    if (first !== f) add(first);
   });
-  forms.push(lc(w.id));
-  return forms.filter((f, i) => forms.indexOf(f) === i);
+  const id = lc(w.id);
+  add(id);
+  if (id.includes('-')) {
+    add(id.replace(/-/g, ' '));                       // shore-up → "shore up"
+    const m = id.match(/^(.+)-(v|n|adj|adv)$/);       // obscure-v → "obscure"
+    if (m) add(m[1]);
+  }
+  return forms;
 }
 
 /** Dựng chỉ mục từ {clusters:[...]} (dữ liệu JSON) và danh sách từ tự thêm của người dùng. */
@@ -96,29 +104,44 @@ function stemCandidates(w) {
   if ((m = w.match(/^(.*)ies$/))) add(m[1] + 'y');
   if ((m = w.match(/^(.*)es$/))) add(m[1]);
   if ((m = w.match(/^(.*)s$/))) add(m[1]);
+  // trạng từ: frugally → frugal, hastily → hasty, cryptically → cryptic, ably → able
+  if ((m = w.match(/^(.*)ily$/))) add(m[1] + 'y');
+  if ((m = w.match(/^(.*ic)ally$/))) add(m[1]);
+  if ((m = w.match(/^(.*)bly$/))) add(m[1] + 'ble');
+  if ((m = w.match(/^(.*)ly$/))) add(m[1]);
+  // danh từ: obstinacy → obstinate, lucidity → lucid, perspicuity → perspicuous, terseness → terse
+  if ((m = w.match(/^(.*)acy$/))) add(m[1] + 'ate');
+  if ((m = w.match(/^(.*)ity$/))) { add(m[1]); add(m[1] + 'e'); add(m[1] + 'ous'); add(m[1] + 'al'); }
+  if ((m = w.match(/^(.*)iness$/))) add(m[1] + 'y');
+  if ((m = w.match(/^(.*)ness$/))) add(m[1]);
+  // danh từ chỉ người → tính từ: iconoclast → iconoclastic
+  if (/(ast|ist)$/.test(w)) add(w + 'ic');
   return out;
 }
 
 /**
- * Ánh xạ một phương án ("lauded", "scoffed at", "self-deprecating", "a backhanded compliment") về id từ:
- * khớp chính xác, bỏ mạo từ đầu, bỏ tiền tố self-, bỏ đuôi chia, bỏ giới từ đuôi; ưu tiên id trong targets.
- * Không khớp thì trả về null.
+ * Ánh xạ một phương án ("lauded", "scoffed at", "frugally", "obstinacy", "gloss over", "shore up",
+ * "a backhanded compliment") về id từ: khớp chính xác, bỏ mạo từ đầu, bỏ tiền tố self-, bỏ đuôi chia / đuôi
+ * trạng từ / đuôi danh từ, thử cả cụm có giới từ lẫn từ đầu của cụm. Gom mọi id ứng viên rồi LUÔN ưu tiên id
+ * nằm trong targets của bài; không có thì lấy ứng viên khớp sớm nhất. Không khớp gì thì trả về null.
  */
 export function mapOptionToId(option, idx, targets) {
   const base = lc(option).replace(/^(a|an|the)\s+/, '').replace(/^self-/, '');
   if (!base) return null;
   const tokens = base.split(/\s+/);
   const tries = [];
-  stemCandidates(tokens[0]).forEach((st) => { if (tokens.length > 1) tries.push([st].concat(tokens.slice(1)).join(' ')); });
-  stemCandidates(base).forEach((st) => tries.push(st));
-  if (tokens.length > 1) stemCandidates(tokens[0]).forEach((st) => tries.push(st));
-  targets = targets || [];
-  for (const t of tries) {
-    const ids = idx.formMap[t];
-    if (!ids || !ids.length) continue;
-    return ids.find((id) => targets.includes(id)) || ids[0];
+  const push = (t) => { if (t && !tries.includes(t)) tries.push(t); };
+  stemCandidates(tokens[0]).forEach((st) => { if (tokens.length > 1) push([st].concat(tokens.slice(1)).join(' ')); });
+  stemCandidates(base).forEach(push);
+  if (tokens.length > 1) {
+    push(tokens.join('-'));                                  // "avant garde" → avant-garde
+    stemCandidates(tokens[0]).forEach(push);                 // "gloss over" → gloss
   }
-  return null;
+  targets = targets || [];
+  const cands = [];
+  tries.forEach((t) => (idx.formMap[t] || []).forEach((id) => { if (!cands.includes(id)) cands.push(id); }));
+  if (!cands.length) return null;
+  return cands.find((id) => targets.includes(id)) || cands[0];
 }
 
 export function exerciseAnswerIds(ex, idx) {

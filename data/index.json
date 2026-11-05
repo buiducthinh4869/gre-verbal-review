@@ -1,5 +1,11 @@
 {
   "clusters": [
-    "praise-criticism"
+    "praise-criticism",
+    "clarity-obscurity",
+    "stubborn-yielding",
+    "wordy-concise",
+    "money-attitudes",
+    "hinder-promote",
+    "ordinary-novel"
   ]
 }
