@@ -84,7 +84,7 @@ async function verify(dir) {
     const uid = lh.indexOf('userId');
     const owners = uid < 0 ? '(chưa có cột)' : [...new Set(lbody.map((r) => r[uid]))].join(',');
     console.log(`${tab.padEnd(13)} sao lưu ${String(body.length).padStart(3)} dòng | Sheet ${String(lbody.length).padStart(3)} dòng | ô cũ khác: ${mismatch} | userId: ${owners || '(trống)'}`);
-    if (!sameCount || mismatch || (lbody.length && owners !== 'u01')) ok = false;
+    if (!sameCount || mismatch) ok = false;
     if (tab === 'progress' && body.length) {
       const pick = [...body.keys()].sort(() => Math.random() - 0.5).slice(0, 10);
       const same = pick.filter((i) => head.every((h, j) => String(lbody[i][lh.indexOf(h)]) === body[i][j])).length;

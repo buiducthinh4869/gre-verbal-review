@@ -274,7 +274,7 @@ function wordRow(w, where) {
   }
   return '<button class="wrow" id="w-' + w.id + '" data-act="v-open" data-id="' + w.id + '" aria-expanded="' + open + '">' +
     '<span class="w-main"><span class="w-word">' + esc(w.word) + '</span><span class="pos">' + esc(w.pos) + '</span></span>' +
-    '<span class="w-side">' + (w.custom ? '' : correctedTag('word', w.id)) + statusTag(w.id) + stars(w.priority) + '</span>' +
+    '<span class="w-side">' + (w.custom || open ? '' : correctedTag('word', w.id)) + statusTag(w.id) + stars(w.priority) + '</span>' +
     '<span class="w-meaning">' + esc(w.meaning) + '</span>' + label + '</button>' +
     (open ? '<div class="wdetail">' + wordDetail(w, true) +
       (where ? '<p class="small" style="margin:10px 0 0"><button class="linkish" data-act="v-jump" data-id="' + w.id + '">Mở trong nhóm “' + esc(App.idx.groupById[w.group].title) + '”</button></p>' : '') +

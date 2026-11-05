@@ -674,6 +674,7 @@ a.btn { text-decoration: none; }
 .edit-toggle:hover { color: var(--ink); background: var(--accent-soft); }
 .edit-toggle[aria-pressed="true"] { background: var(--warn-soft); color: var(--warn); border-color: currentColor; }
 .edit-toggle .tab-short { display: none; }
+body.exam-mode .edit-toggle { display: none; }
 @media (max-width: 859px) { .edit-toggle .tab-long { display: none; } .edit-toggle .tab-short { display: inline; } .edit-toggle { padding: 6px 8px; } }
 .me-btn { position: relative; }
 .me-btn.has-badge::after {
@@ -711,6 +712,7 @@ button.tag.fix:hover { text-decoration: underline; }
 .ce-err { color: var(--bad); background: var(--bad-soft); border-radius: 8px; padding: 8px 10px; font-size: 14px; display: grid; gap: 4px; }
 .ce-actions { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
 .ce-actions kbd { font-size: 11px; }
+@media (max-width: 600px), (pointer: coarse) { .ce-actions kbd { display: none; } }
 .ce-extools { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; margin-top: 8px; }
 .ce-exlist { margin-top: 14px; border-top: 1px solid var(--rule); padding-top: 10px; }
 .ce-exlist summary { cursor: pointer; font-weight: 600; font-size: 14.5px; color: var(--ink-2); padding: 6px 0; }

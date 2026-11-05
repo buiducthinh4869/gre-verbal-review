@@ -10,14 +10,17 @@ import { fileURLToPath } from 'node:url';
 import { cli } from './admin-cli.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const day = new Date(Date.now() + 7 * 3600e3).toISOString().slice(0, 10);
-const dir = path.join(ROOT, 'backups', day);
+const vn = new Date(Date.now() + 7 * 3600e3).toISOString();
+const day = vn.slice(0, 10);
+// không bao giờ ghi đè bản sao lưu cũ: thư mục ngày đã có thì thêm giờ phút
+let dir = path.join(ROOT, 'backups', day);
+if (fs.existsSync(dir)) dir = path.join(ROOT, 'backups', day + '_' + vn.slice(11, 16).replace(':', ''));
 fs.mkdirSync(dir, { recursive: true });
 
 const csvCell = (v) => { const s = String(v == null ? '' : v); return /[",\n\r]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s; };
 const status = await cli('status');
 const counts = Object.fromEntries(status.tabs.map((t) => [t.name, t.dataRows]));
-for (const tab of ['progress', 'log', 'custom_words', 'settings', 'mocks']) {
+for (const tab of ['progress', 'log', 'custom_words', 'settings', 'mocks', 'content_overrides', 'content_history', 'suggestions']) {
   if (!(tab in counts)) continue;
   const { values } = await cli('dump', { tab });
   fs.writeFileSync(path.join(dir, tab + '.csv'), '﻿' + values.map((r) => r.map(csvCell).join(',')).join('\n') + '\n');

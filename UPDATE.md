@@ -53,3 +53,16 @@ Phương án trong câu GRE được ánh xạ về `id` từ để cập nhật
 - Chữ có dấu: `clichéd` → `cliched`.
 
 Khi có nhiều ứng viên, luôn ưu tiên `id` nằm trong `targets` của bài.
+
+## Sửa nội dung trên web và đưa bản sửa vào dữ liệu gốc
+
+Sửa nghĩa, sắc thái, ví dụ, bài tập: dùng **Chế độ sửa** ngay trên web (tài khoản quản lý). Mọi người thấy nội dung mới ở lần tải trang tiếp theo, không cần chạy lại code. Bản sửa nằm trong Sheet (tab `content_overrides`), file JSON không đổi.
+
+Thỉnh thoảng (không bắt buộc) đưa các bản sửa vào file JSON cho gọn:
+
+1. Trang **Quản lý** → **Xuất các bản sửa**: tải file `overrides-YYYY-MM-DD.json`.
+2. Trên máy: `node scripts/apply-overrides.js overrides-YYYY-MM-DD.json --dry-run` để xem trước, rồi chạy lại không có `--dry-run`. Script chỉ đổi đúng trường được sửa, giữ định dạng file, tự chạy `npm run check` và trả lại file cũ nếu có lỗi. Chạy lại lần hai thì báo "đã giống dữ liệu gốc".
+3. Commit, push, chờ GitHub Pages cập nhật.
+4. Trang **Quản lý** → **Đánh dấu đã đưa vào dữ liệu gốc**: tắt (`active = FALSE`) các bản sửa đã trùng dữ liệu gốc. Nút này chỉ bật khi web đã tải được dữ liệu gốc mới; chỉ tắt đúng phiên bản đã xuất (bản sửa mới hơn vẫn giữ). Giao diện không thay đổi; lịch sử vẫn còn.
+
+Không bao giờ xóa dòng trong `content_history`.

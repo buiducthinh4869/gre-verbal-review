@@ -104,7 +104,8 @@ async function run() {
   assert.equal(await errCode(call('adminListUsers', {}, c)), 'forbidden');
   step('Trang Quản lý: 10 tài khoản; mở khóa user09 thì đăng nhập được; người thường bị chặn action quản trị');
 
-  assert.equal(await errCode(call('adminRenameUser', { userId: 'u09', username: 'user01' }, a)), 'conflict');
+  const u01name = (await cli('userInfo', { userId: 'u01' })).username; // tên đăng nhập thật của u01 (có thể đã đổi)
+  assert.equal(await errCode(call('adminRenameUser', { userId: 'u09', username: u01name }, a)), 'conflict');
   await ok(call('adminRenameUser', { userId: 'u09', username: 'e2e.ban' }, a));
   assert.equal(await errCode(call('login', { username: 'user09', password: 'e2e-user09' })), 'bad_login');
   const c2 = (await ok(call('login', { username: 'e2e.ban', password: 'e2e-user09' }))).token;
