@@ -530,7 +530,12 @@
         "vapid"
       ],
       "hint": "Manh mối là 'lifted from earlier thrillers'.",
-      "explanation": "Lấy gần như nguyên từ các tác phẩm trước: derivative. Insipid, prosaic, pedestrian, vapid đều là chê nhạt nhẽo, nhưng không nói đến việc bắt chước."
+      "explanation": "Lấy gần như nguyên từ các tác phẩm trước: derivative. Insipid, prosaic, pedestrian, vapid đều là chê nhạt nhẽo, nhưng không nói đến việc bắt chước.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "on02",
@@ -553,7 +558,12 @@
         "novel"
       ],
       "hint": "'Laid the foundations'.",
-      "explanation": "Đặt nền móng cho cả một lĩnh vực: seminal. Novel chỉ là mới; iconoclastic là đả phá; heterodox là trái chính thống."
+      "explanation": "Đặt nền móng cho cả một lĩnh vực: seminal. Novel chỉ là mới; iconoclastic là đả phá; heterodox là trái chính thống.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "on03",
@@ -583,7 +593,12 @@
         "heterodox"
       ],
       "hint": "'Once… now' đổi chiều.",
-      "explanation": "(i) Thách thức những giả định được tôn sùng: iconoclast. (ii) Ý tưởng đã vào dòng chính: orthodox."
+      "explanation": "(i) Thách thức những giả định được tôn sùng: iconoclast. (ii) Ý tưởng đã vào dòng chính: orthodox.",
+      "difficulty": 3,
+      "skills": [
+        "contrast"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "on04",
@@ -606,7 +621,12 @@
         "derivative"
       ],
       "hint": "'Empty slogans with no ideas'.",
-      "explanation": "Chuỗi khẩu hiệu rỗng: vapid. Derivative là bắt chước; doctrinaire là giáo điều; hidebound là bảo thủ."
+      "explanation": "Chuỗi khẩu hiệu rỗng: vapid. Derivative là bắt chước; doctrinaire là giáo điều; hidebound là bảo thủ.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "on05",
@@ -629,7 +649,12 @@
         "orthodox"
       ],
       "hint": "Nhấn vào việc từ chối bằng chứng.",
-      "explanation": "Từ chối xem xét cả bằng chứng áp đảo: giáo điều, doctrinaire. Orthodox chỉ là theo quan điểm chính thống, không hàm ý bác bỏ bằng chứng."
+      "explanation": "Từ chối xem xét cả bằng chứng áp đảo: giáo điều, doctrinaire. Orthodox chỉ là theo quan điểm chính thống, không hàm ý bác bỏ bằng chứng.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "on06",
@@ -652,7 +677,12 @@
         "anomalous"
       ],
       "hint": "'Disappointingly' và 'not sabotage or fraud'.",
-      "explanation": "Nguyên nhân bình thường, không có gì gây sốc: prosaic. Anomalous là bất thường, ngược nghĩa."
+      "explanation": "Nguyên nhân bình thường, không có gì gây sốc: prosaic. Anomalous là bất thường, ngược nghĩa.",
+      "difficulty": 2,
+      "skills": [
+        "contrast"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "on07",
@@ -677,7 +707,12 @@
         "hackneyed"
       ],
       "hint": "'No one else could have produced'.",
-      "explanation": "Riêng biệt, không ai khác viết được: idiosyncratic, eccentric. Derivative và hackneyed sai hướng; orthodox và conformist là cặp theo khuôn phép."
+      "explanation": "Riêng biệt, không ai khác viết được: idiosyncratic, eccentric. Derivative và hackneyed sai hướng; orthodox và conformist là cặp theo khuôn phép.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "on08",
@@ -701,7 +736,12 @@
         "jejune"
       ],
       "hint": "Những cụm từ kia có gì chung?",
-      "explanation": "Đầy câu sáo rỗng: platitudinous, trite. Jejune là non nớt hoặc khô khan, không nhấn vào câu sáo."
+      "explanation": "Đầy câu sáo rỗng: platitudinous, trite. Jejune là non nớt hoặc khô khan, không nhấn vào câu sáo.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "on09",
@@ -726,7 +766,12 @@
         "hackneyed"
       ],
       "hint": "Mô tả cuộc sống hằng ngày.",
-      "explanation": "Đời thường, lặp lại hằng ngày: mundane, quotidian. Derivative và hackneyed dùng cho tác phẩm, ý tưởng, không cho cuộc sống."
+      "explanation": "Đời thường, lặp lại hằng ngày: mundane, quotidian. Derivative và hackneyed dùng cho tác phẩm, ý tưởng, không cho cuộc sống.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "base"
     }
   ]
 }

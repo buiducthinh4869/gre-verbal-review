@@ -3,6 +3,7 @@
  */
 import * as S from './srs.js';
 import { buildIndex } from './vocab.js';
+import { doneFixedIds, heldExerciseIds } from './bank.js';
 import { applyOverrides } from './overrides.js';
 import { escapeHtml as esc } from './render.js';
 import { LS } from './api.js';
@@ -10,10 +11,11 @@ import { EXAM_DATE } from '../config.js';
 
 export { S, esc, EXAM_DATE };
 export const SESSION_MAX = 40;
-export const DEFAULT_SETTINGS = { newPerDay: 10, autoStart: false, thinkFirst: true, examMode: false };
+export const DEFAULT_SETTINGS = { newPerDay: 10, autoStart: false, thinkFirst: true, examMode: false, skipVocabIntro: false };
 
 export const App = {
   vocabData: null,        // {clusters: [...]} tải từ data/
+  fixedMocks: [],         // đề thi thử cố định (data/mocks/*.json), theo thứ tự trong data/mocks/index.json
   token: null,
   user: null,             // {userId, username, displayName, role, mustChangePassword}
   sync: null,             // SyncQueue
@@ -30,7 +32,7 @@ export const App = {
   view: 'today',
   session: null,
   vocab: { c: null, g: null, all: false, open: null, q: '', prio: 'all', status: 'all' },
-  practice: { clusters: [], group: 'all', p3: false, leech: false, mode: 'w2m', count: '20' },
+  practice: { clusters: [], group: 'all', p3: false, leech: false, mode: 'w2m', count: '20', kinds: [], diffs: [], skills: [], onlyNew: false, useGroup: 'all' },
   editId: null,
   keyHandler: null,
   timer: null,
@@ -124,6 +126,11 @@ export function setContent(c, opts = {}) {
 /** Từ / câu đã được đính chính (mọi người đều thấy nhãn). */
 export const isCorrected = (t, id) => App.content.corrected.includes(t + ':' + id);
 export const isAdmin = () => !!(App.user && App.user.role === 'admin');
+
+/** Câu đang được giữ cho đề thi thử cố định mà người đang đăng nhập chưa làm (không xuất hiện ở luyện tập, thi thử ngẫu nhiên, ôn hôm nay). */
+export const heldIds = () => heldExerciseIds(App.fixedMocks, doneFixedIds(App.mocks));
+/** Câu GRE đang dùng được cho luyện tập (bỏ câu ẩn và câu đang giữ). */
+export const practiceExercises = () => { const h = heldIds(); return App.idx.exercises.filter((e) => !h.has(e.id)); };
 
 export function upsertCustomLocal(w) {
   const i = App.customWords.findIndex((x) => x.id === w.id);

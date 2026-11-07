@@ -573,7 +573,12 @@
         "parsimonious"
       ],
       "hint": "Bắt đầu từ manh mối 'wearing the same coat'.",
-      "explanation": "(i) Mặc một chiếc áo suốt mười năm: sống tiết kiệm (frugally). (ii) 'Although' đổi chiều, tài trợ học bổng cho hàng chục sinh viên: munificent."
+      "explanation": "(i) Mặc một chiếc áo suốt mười năm: sống tiết kiệm (frugally). (ii) 'Although' đổi chiều, tài trợ học bổng cho hàng chục sinh viên: munificent.",
+      "difficulty": 2,
+      "skills": [
+        "contrast"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "ma02",
@@ -597,7 +602,13 @@
         "thrifty"
       ],
       "hint": "'May be a virtue, but' cho thấy đây là mặt xấu.",
-      "explanation": "Tiết kiệm đến mức làm hại người khác là keo kiệt: parsimonious. Provident, thrifty mang nghĩa khen; abstemious nói về ăn uống."
+      "explanation": "Tiết kiệm đến mức làm hại người khác là keo kiệt: parsimonious. Provident, thrifty mang nghĩa khen; abstemious nói về ăn uống.",
+      "difficulty": 2,
+      "skills": [
+        "contrast",
+        "degree"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "ma03",
@@ -619,7 +630,12 @@
         "venal"
       ],
       "hint": "Bán sự chấp thuận lấy tiền.",
-      "explanation": "Có thể mua chứng nhận bằng tiền: inspectors dễ bị mua chuộc, venal. Covetous là thèm muốn của người khác; acquisitive là thích tích lũy; penurious là keo kiệt hoặc nghèo."
+      "explanation": "Có thể mua chứng nhận bằng tiền: inspectors dễ bị mua chuộc, venal. Covetous là thèm muốn của người khác; acquisitive là thích tích lũy; penurious là keo kiệt hoặc nghèo.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "ma04",
@@ -650,7 +666,12 @@
         "provident"
       ],
       "hint": "Câu chuyện cảnh tỉnh về điều gì?",
-      "explanation": "'Cautionary tale' (bài học cảnh tỉnh) cho thấy anh ta phá của: squandered và profligate."
+      "explanation": "'Cautionary tale' (bài học cảnh tỉnh) cho thấy anh ta phá của: squandered và profligate.",
+      "difficulty": 3,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "ma05",
@@ -673,7 +694,12 @@
         "munificent"
       ],
       "hint": "Rộng lượng với đối thủ, không phải cho tiền.",
-      "explanation": "Rộng lượng với đối thủ khi thắng: magnanimous. Munificent là hào phóng về tiền của; altruistic, philanthropic nói về việc giúp người khác nói chung."
+      "explanation": "Rộng lượng với đối thủ khi thắng: magnanimous. Munificent là hào phóng về tiền của; altruistic, philanthropic nói về việc giúp người khác nói chung.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "ma06",
@@ -698,7 +724,12 @@
         "profligate"
       ],
       "hint": "Tham hay phung phí?",
-      "explanation": "Chỉ quan tâm tiền thưởng của mình: mercenary, avaricious. Prodigal và profligate là cặp hoang phí, sai nghĩa."
+      "explanation": "Chỉ quan tâm tiền thưởng của mình: mercenary, avaricious. Prodigal và profligate là cặp hoang phí, sai nghĩa.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "ma07",
@@ -723,7 +754,12 @@
         "altruistic"
       ],
       "hint": "Từ nào mô tả được món quà?",
-      "explanation": "Món quà rất hào phóng: munificent, bountiful. Magnanimous là độ lượng; altruistic là vị tha về động cơ, không mô tả món quà."
+      "explanation": "Món quà rất hào phóng: munificent, bountiful. Magnanimous là độ lượng; altruistic là vị tha về động cơ, không mô tả món quà.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "ma08",
@@ -748,7 +784,12 @@
         "thrifty"
       ],
       "hint": "'Notoriously' báo hiệu điều gì?",
-      "explanation": "'Notoriously' là chê: parsimonious, miserly. Frugal và thrifty là cặp đồng nghĩa nhưng mang nghĩa khen."
+      "explanation": "'Notoriously' là chê: parsimonious, miserly. Frugal và thrifty là cặp đồng nghĩa nhưng mang nghĩa khen.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "base"
     }
   ]
 }

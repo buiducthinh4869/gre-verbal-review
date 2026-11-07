@@ -1078,7 +1078,12 @@
         "laud"
       ],
       "hint": "Bắt đầu từ manh mối 'as derivative'.",
-      "explanation": "Chỗ (i): chê giá trị tác phẩm là disparage; admonish cần một người để nhắc nhở, impugn nhắm vào động cơ. Chỗ (ii): khen chân thành là laud; tout hàm ý thổi phồng, eulogize dành cho người đã mất."
+      "explanation": "Chỗ (i): chê giá trị tác phẩm là disparage; admonish cần một người để nhắc nhở, impugn nhắm vào động cơ. Chỗ (ii): khen chân thành là laud; tout hàm ý thổi phồng, eulogize dành cho người đã mất.",
+      "difficulty": 2,
+      "skills": [
+        "contrast"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "tc02",
@@ -1101,7 +1106,12 @@
         "deprecate"
       ],
       "hint": "Tín hiệu nhấn mức độ: did more than X.",
-      "explanation": "'Did more than criticize' và 'scathing' đòi đỉnh thang chê: excoriated. Deprecated, admonished, reproved quá nhẹ; censured nhấn vào tính chính thức chứ không phải độ gay gắt."
+      "explanation": "'Did more than criticize' và 'scathing' đòi đỉnh thang chê: excoriated. Deprecated, admonished, reproved quá nhẹ; censured nhấn vào tính chính thức chứ không phải độ gay gắt.",
+      "difficulty": 2,
+      "skills": [
+        "degree"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "tc03",
@@ -1123,7 +1133,13 @@
         "deride"
       ],
       "hint": "'Once… now' là tín hiệu đổi chiều.",
-      "explanation": "Ý tưởng từng bị coi là kỳ quặc: derided (chế giễu). Impugned nhắm vào động cơ, censured là khiển trách chính thức, deprecated quá nhẹ."
+      "explanation": "Ý tưởng từng bị coi là kỳ quặc: derided (chế giễu). Impugned nhắm vào động cơ, censured là khiển trách chính thức, deprecated quá nhẹ.",
+      "difficulty": 2,
+      "skills": [
+        "contrast",
+        "degree"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "tc04",
@@ -1146,7 +1162,12 @@
         "rebuke"
       ],
       "hint": "Phải là thứ nhỏ nhặt.",
-      "explanation": "Chuyện formatting là nhỏ nhặt: cavils. Rebukes, censures, reproaches đều là khiển trách nghiêm túc, trái với 'hardly a rejection'."
+      "explanation": "Chuyện formatting là nhỏ nhặt: cavils. Rebukes, censures, reproaches đều là khiển trách nghiêm túc, trái với 'hardly a rejection'.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "tc05",
@@ -1175,7 +1196,13 @@
         "tepid"
       ],
       "hint": "Bắt đầu từ chỗ (ii).",
-      "explanation": "Chỗ (ii): 'noting its many weaknesses' là khen nhạt: tepid; unstinting là khen hết mức. Chỗ (i): 'expected… instead' đổi chiều: effusive. Equivocal và grudging đều là khen dè dặt, không hợp với sự kỳ vọng."
+      "explanation": "Chỗ (ii): 'noting its many weaknesses' là khen nhạt: tepid; unstinting là khen hết mức. Chỗ (i): 'expected… instead' đổi chiều: effusive. Equivocal và grudging đều là khen dè dặt, không hợp với sự kỳ vọng.",
+      "difficulty": 2,
+      "skills": [
+        "contrast",
+        "degree"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "tc06",
@@ -1197,7 +1224,12 @@
         "tout"
       ],
       "hint": "Từ nào mang nghĩa quảng bá, thổi phồng?",
-      "explanation": "Nhà sản xuất quảng bá, thử nghiệm phủ nhận: touted, mang sẵn hàm ý thổi phồng. Venerated dùng cho người được tôn kính lâu dài; eulogized dành cho người đã mất."
+      "explanation": "Nhà sản xuất quảng bá, thử nghiệm phủ nhận: touted, mang sẵn hàm ý thổi phồng. Venerated dùng cho người được tôn kính lâu dài; eulogized dành cho người đã mất.",
+      "difficulty": 2,
+      "skills": [
+        "contrast"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "tc07",
@@ -1220,7 +1252,12 @@
         "berate"
       ],
       "hint": "Chú ý chữ gently.",
-      "explanation": "'Rather than berating' và 'gently… explaining' cần từ nhẹ nhất nhóm khiển trách, kèm lời khuyên."
+      "explanation": "'Rather than berating' và 'gently… explaining' cần từ nhẹ nhất nhóm khiển trách, kèm lời khuyên.",
+      "difficulty": 2,
+      "skills": [
+        "contrast"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "tc08",
@@ -1242,7 +1279,12 @@
         "fulsome"
       ],
       "hint": "Bẫy fulsome.",
-      "explanation": "'Plainly insincere' cho thấy lời khen thái quá, xu nịnh: đây là nghĩa (1) của fulsome. Unstinting là khen hết lời nhưng chân thành; laudatory chỉ là mang tính khen; grudging và muted là khen ít."
+      "explanation": "'Plainly insincere' cho thấy lời khen thái quá, xu nịnh: đây là nghĩa (1) của fulsome. Unstinting là khen hết lời nhưng chân thành; laudatory chỉ là mang tính khen; grudging và muted là khen ít.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "tc09",
@@ -1265,7 +1307,12 @@
         "qualified"
       ],
       "hint": "Nhớ: unqualified là trọn vẹn.",
-      "explanation": "'Far from' đổi chiều với 'hedged with caveats': chỗ trống là ủng hộ trọn vẹn."
+      "explanation": "'Far from' đổi chiều với 'hedged with caveats': chỗ trống là ủng hộ trọn vẹn.",
+      "difficulty": 2,
+      "skills": [
+        "contrast"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "tc10",
@@ -1287,7 +1334,12 @@
         "backhanded"
       ],
       "hint": "Chú ý từ ostensibly.",
-      "explanation": "'Surprisingly competent' ngầm nói không ai kỳ vọng cô làm tốt: khen mà thực chất là chê."
+      "explanation": "'Surprisingly competent' ngầm nói không ai kỳ vọng cô làm tốt: khen mà thực chất là chê.",
+      "difficulty": 2,
+      "skills": [
+        "contrast"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "tc11",
@@ -1309,7 +1361,12 @@
         "lampoon"
       ],
       "hint": "Manh mối: comedies, absurd.",
-      "explanation": "Hài kịch phóng đại để chế giễu là châm biếm: lampooned. Decried là lên án công khai, không phải dùng hài kịch; impugned nhắm vào động cơ."
+      "explanation": "Hài kịch phóng đại để chế giễu là châm biếm: lampooned. Decried là lên án công khai, không phải dùng hài kịch; impugned nhắm vào động cơ.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "tc12",
@@ -1331,7 +1388,12 @@
         "quibble"
       ],
       "hint": "Chú ý chữ trivial.",
-      "explanation": "'Trivial errors' cần từ bắt bẻ vặt: quibble. Rebuke, censure, decry đều là chỉ trích nghiêm túc."
+      "explanation": "'Trivial errors' cần từ bắt bẻ vặt: quibble. Rebuke, censure, decry đều là chỉ trích nghiêm túc.",
+      "difficulty": 2,
+      "skills": [
+        "contrast"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "tc13",
@@ -1354,7 +1416,12 @@
         "laudatory"
       ],
       "hint": "Mục tiêu tự nó đáng khen, hay đang khen ai?",
-      "explanation": "Mục tiêu là đối tượng đáng khen: laudable. Laudatory, effusive, fulsome mô tả lời khen; venerable là đáng kính vì lâu đời."
+      "explanation": "Mục tiêu là đối tượng đáng khen: laudable. Laudatory, effusive, fulsome mô tả lời khen; venerable là đáng kính vì lâu đời.",
+      "difficulty": 2,
+      "skills": [
+        "contrast"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "tc14",
@@ -1377,7 +1444,12 @@
         "berate"
       ],
       "hint": "Chú ý chữ formally.",
-      "explanation": "Quốc hội bỏ phiếu khiển trách chính thức: censure. Berate và upbraid là mắng mỏ; chastise nhấn vào sự nghiêm khắc, không phải thủ tục chính thức."
+      "explanation": "Quốc hội bỏ phiếu khiển trách chính thức: censure. Berate và upbraid là mắng mỏ; chastise nhấn vào sự nghiêm khắc, không phải thủ tục chính thức.",
+      "difficulty": 2,
+      "skills": [
+        "contrast"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "tc15",
@@ -1406,7 +1478,12 @@
         "venerate"
       ],
       "hint": "Bắt đầu từ manh mối 'a crank'.",
-      "explanation": "Chỗ (i): bị coi là gàn dở: scoffed at. Chỗ (ii): được chính các tổ chức từng gạt bỏ tôn kính lâu dài: venerated. Touted hàm ý thổi phồng; lionized là sự tung hô ồn ào của báo chí, không phải của các tổ chức học thuật."
+      "explanation": "Chỗ (i): bị coi là gàn dở: scoffed at. Chỗ (ii): được chính các tổ chức từng gạt bỏ tôn kính lâu dài: venerated. Touted hàm ý thổi phồng; lionized là sự tung hô ồn ào của báo chí, không phải của các tổ chức học thuật.",
+      "difficulty": 3,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "tc16",
@@ -1428,7 +1505,12 @@
         "deprecate"
       ],
       "hint": "About her own failed experiments.",
-      "explanation": "Đùa về thất bại của chính mình: self-deprecating. Disparaging và derisive là chê người khác; sycophantic, obsequious là nịnh bợ."
+      "explanation": "Đùa về thất bại của chính mình: self-deprecating. Disparaging và derisive là chê người khác; sycophantic, obsequious là nịnh bợ.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "tc17",
@@ -1450,7 +1532,12 @@
         "tout"
       ],
       "hint": "Ai đang khen?",
-      "explanation": "Một sản phẩm được nhà sản xuất quảng bá: touted. Lionize, venerate, revere, eulogize đều dùng cho con người."
+      "explanation": "Một sản phẩm được nhà sản xuất quảng bá: touted. Lionize, venerate, revere, eulogize đều dùng cho con người.",
+      "difficulty": 2,
+      "skills": [
+        "contrast"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "tc18",
@@ -1472,7 +1559,12 @@
         "venerate"
       ],
       "hint": "'Long after his death'.",
-      "explanation": "Tôn kính lâu dài sau khi mất, thể hiện qua chân dung ở mọi văn phòng: venerated. Lionized gắn với sự chú ý ồn ào lúc sinh thời; acclaimed, extolled là khen chứ không phải tôn kính."
+      "explanation": "Tôn kính lâu dài sau khi mất, thể hiện qua chân dung ở mọi văn phòng: venerated. Lionized gắn với sự chú ý ồn ào lúc sinh thời; acclaimed, extolled là khen chứ không phải tôn kính.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "tc19",
@@ -1501,7 +1593,12 @@
         "eulogize"
       ],
       "hint": "Bắt đầu từ chỗ (ii).",
-      "explanation": "Chỗ (i): được chụp ảnh, phỏng vấn, mời khắp nơi: lionized; venerated là tôn kính lâu dài, không phải sự ồn ào. Chỗ (ii): 'by the time of her death': eulogize."
+      "explanation": "Chỗ (i): được chụp ảnh, phỏng vấn, mời khắp nơi: lionized; venerated là tôn kính lâu dài, không phải sự ồn ào. Chỗ (ii): 'by the time of her death': eulogize.",
+      "difficulty": 3,
+      "skills": [
+        "contrast"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "tc20",
@@ -1523,7 +1620,12 @@
         "laudatory"
       ],
       "hint": "Mô tả bài review hay cuốn sách?",
-      "explanation": "Bài review mang lời lẽ khen: laudatory. Laudable mô tả đối tượng; obsequious là khúm núm với người có quyền; equivocal và grudging trái với việc khen cả ba điểm."
+      "explanation": "Bài review mang lời lẽ khen: laudatory. Laudable mô tả đối tượng; obsequious là khúm núm với người có quyền; equivocal và grudging trái với việc khen cả ba điểm.",
+      "difficulty": 2,
+      "skills": [
+        "contrast"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "tc21",
@@ -1545,7 +1647,12 @@
         "impugn"
       ],
       "hint": "Nhắm vào integrity.",
-      "explanation": "Công kích integrity thay vì phản bác kết quả: impugned. Quibbled with và carped about là bắt bẻ chuyện vặt; decried là lên án công khai một hiện tượng, không nhắm vào sự trung thực."
+      "explanation": "Công kích integrity thay vì phản bác kết quả: impugned. Quibbled with và carped about là bắt bẻ chuyện vặt; decried là lên án công khai một hiện tượng, không nhắm vào sự trung thực.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "tc22",
@@ -1567,7 +1674,12 @@
         "equivocal"
       ],
       "hint": "Từ nào dùng được cho evidence?",
-      "explanation": "Bằng chứng chưa ngã ngũ: equivocal. Tepid, grudging, muted mô tả thái độ con người, không dùng cho bằng chứng."
+      "explanation": "Bằng chứng chưa ngã ngũ: equivocal. Tepid, grudging, muted mô tả thái độ con người, không dùng cho bằng chứng.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "tc23",
@@ -1589,7 +1701,12 @@
         "qualified"
       ],
       "hint": "Cặp qualified / unqualified.",
-      "explanation": "'Only… subject to several conditions' là ủng hộ có giới hạn."
+      "explanation": "'Only… subject to several conditions' là ủng hộ có giới hạn.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "se01",
@@ -1613,7 +1730,12 @@
         "eulogize"
       ],
       "hint": "Tín hiệu Far from.",
-      "explanation": "'Far from' đổi chiều với critique nên chỗ trống là khen chân thành: lauding, extolling. Touting khớp câu nhưng hàm ý thổi phồng, không có cặp; eulogizing sai điều kiện; censuring và castigating là cặp đồng nghĩa nhưng sai hướng."
+      "explanation": "'Far from' đổi chiều với critique nên chỗ trống là khen chân thành: lauding, extolling. Touting khớp câu nhưng hàm ý thổi phồng, không có cặp; eulogizing sai điều kiện; censuring và castigating là cặp đồng nghĩa nhưng sai hướng.",
+      "difficulty": 2,
+      "skills": [
+        "contrast"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "se02",
@@ -1635,7 +1757,12 @@
         "impugn"
       ],
       "hint": "Chỗ trống đi với motives.",
-      "explanation": "Nhắm vào motives: impugn và question. Carp at và quibble with là cặp đồng nghĩa nhưng nói về chuyện vặt; decry là lên án công khai, không có cặp."
+      "explanation": "Nhắm vào motives: impugn và question. Carp at và quibble with là cặp đồng nghĩa nhưng nói về chuyện vặt; decry là lên án công khai, không có cặp.",
+      "difficulty": 2,
+      "skills": [
+        "contrast"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "se03",
@@ -1659,7 +1786,12 @@
         "admonish"
       ],
       "hint": "Cần từ mạnh nhất.",
-      "explanation": "'Did more than merely disagree' và 'scathing': lambasted, excoriated. Admonished và reproved là cặp đồng nghĩa nhưng quá nhẹ; censured nhấn vào tính chính thức, không có cặp."
+      "explanation": "'Did more than merely disagree' và 'scathing': lambasted, excoriated. Admonished và reproved là cặp đồng nghĩa nhưng quá nhẹ; censured nhấn vào tính chính thức, không có cặp.",
+      "difficulty": 2,
+      "skills": [
+        "degree"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "se04",
@@ -1682,7 +1814,12 @@
         "pillory"
       ],
       "hint": "'Once… now pilloried'.",
-      "explanation": "Ngày trước tung hô cô là người có tầm nhìn: lionized, idolized. Derided và ridiculed là cặp đồng nghĩa nhưng sai hướng; eulogized sai vì cô còn sống; touted không có cặp."
+      "explanation": "Ngày trước tung hô cô là người có tầm nhìn: lionized, idolized. Derided và ridiculed là cặp đồng nghĩa nhưng sai hướng; eulogized sai vì cô còn sống; touted không có cặp.",
+      "difficulty": 2,
+      "skills": [
+        "contrast"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "se05",
@@ -1705,7 +1842,12 @@
         "sycophantic"
       ],
       "hint": "Agreeing with every remark.",
-      "explanation": "Gật đầu với mọi lời cấp trên: obsequious, sycophantic. Effusive và gushing là cặp đồng nghĩa nhưng chỉ là khen tuôn trào, không hàm ý bợ đỡ."
+      "explanation": "Gật đầu với mọi lời cấp trên: obsequious, sycophantic. Effusive và gushing là cặp đồng nghĩa nhưng chỉ là khen tuôn trào, không hàm ý bợ đỡ.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "se06",
@@ -1728,7 +1870,12 @@
         "applaud"
       ],
       "hint": "Mức độ vừa phải.",
-      "explanation": "Trao giấy khen là biểu dương mức vừa: commended, applauded. Lionized và idolized là cặp đồng nghĩa nhưng quá mạnh."
+      "explanation": "Trao giấy khen là biểu dương mức vừa: commended, applauded. Lionized và idolized là cặp đồng nghĩa nhưng quá mạnh.",
+      "difficulty": 2,
+      "skills": [
+        "degree"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "se07",
@@ -1752,7 +1899,12 @@
         "tout"
       ],
       "hint": "Khen mạnh và chân thành.",
-      "explanation": "Khen rất mạnh, chân thành: extolled, lauded. Touted hàm ý thổi phồng; commended quá nhẹ; censured và decried sai hướng."
+      "explanation": "Khen rất mạnh, chân thành: extolled, lauded. Touted hàm ý thổi phồng; commended quá nhẹ; censured và decried sai hướng.",
+      "difficulty": 2,
+      "skills": [
+        "degree"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "se08",
@@ -1776,7 +1928,1010 @@
         "lionize"
       ],
       "hint": "Phân biệt lionize và venerate.",
-      "explanation": "Học giả thời xưa nay được coi là tiên phong: tôn kính lâu dài, revered và venerated. Lionized gắn với sự ồn ào của công chúng; eulogized là lời ca ngợi tại tang lễ."
+      "explanation": "Học giả thời xưa nay được coi là tiên phong: tôn kính lâu dài, revered và venerated. Lionized gắn với sự ồn ào của công chúng; eulogized là lời ca ngợi tại tang lễ.",
+      "difficulty": 2,
+      "skills": [
+        "contrast"
+      ],
+      "addedIn": "base"
+    },
+    {
+      "id": "pc101",
+      "type": "tc",
+      "sentence": "At the memorial service, former students rose one after another to {0} the professor, recalling the evenings she had spent reading their drafts.",
+      "blanks": [
+        {
+          "options": [
+            "eulogize",
+            "tout",
+            "lionize",
+            "commend",
+            "admonish"
+          ],
+          "answer": "eulogize"
+        }
+      ],
+      "targets": [
+        "eulogize",
+        "tout",
+        "lionize"
+      ],
+      "hint": "Bối cảnh: một lễ tưởng niệm.",
+      "explanation": "Lễ tưởng niệm, ca ngợi người đã mất: eulogize. Tout hàm ý thổi phồng; lionize là tung hô người đang nổi tiếng; commend quá nhẹ và mang tính biểu dương chính thức; admonish sai hướng.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "batch-01"
+    },
+    {
+      "id": "pc102",
+      "type": "se",
+      "sentence": "Marketers {0} the supplement as a cure for fatigue, though no clinical trial has ever supported the claim.",
+      "options": [
+        "touted",
+        "promoted",
+        "eulogized",
+        "venerated",
+        "censured",
+        "decried"
+      ],
+      "answers": [
+        "touted",
+        "promoted"
+      ],
+      "targets": [
+        "tout",
+        "eulogize",
+        "venerate"
+      ],
+      "hint": "Đối tượng là một sản phẩm.",
+      "explanation": "Quảng bá một sản phẩm mà không có bằng chứng: touted, promoted. Eulogized và venerated dùng cho người; censured và decried là cặp sai hướng.",
+      "difficulty": 2,
+      "skills": [
+        "nuance",
+        "contrast"
+      ],
+      "addedIn": "batch-01"
+    },
+    {
+      "id": "pc103",
+      "type": "tc",
+      "sentence": "The novel won nearly every major literary {0} of the year, including two prizes rarely awarded to a first book.",
+      "blanks": [
+        {
+          "options": [
+            "accolade",
+            "encomium",
+            "panegyric",
+            "homage",
+            "cavil"
+          ],
+          "answer": "accolade"
+        }
+      ],
+      "targets": [
+        "accolade",
+        "encomium",
+        "panegyric"
+      ],
+      "hint": "Thứ có thể 'giành được', như một giải thưởng.",
+      "explanation": "'Major literary … including two prizes': sự vinh danh dưới dạng giải thưởng, accolade. Encomium và panegyric là lời hoặc bài ca tụng, không phải giải thưởng để 'win'.",
+      "difficulty": 2,
+      "skills": [
+        "nuance",
+        "collocation"
+      ],
+      "addedIn": "batch-01"
+    },
+    {
+      "id": "pc104",
+      "type": "se",
+      "sentence": "The ambassador's farewell address was less a speech than a sustained {0} to the city, praising its people, its rivers and its bridges at great length.",
+      "options": [
+        "panegyric",
+        "encomium",
+        "eulogy",
+        "cavil",
+        "censure",
+        "quibble"
+      ],
+      "answers": [
+        "panegyric",
+        "encomium"
+      ],
+      "targets": [
+        "panegyric",
+        "encomium",
+        "eulogize"
+      ],
+      "hint": "Thành phố không 'qua đời'.",
+      "explanation": "Lời ca tụng dài, trang trọng: panegyric, encomium. Eulogy là điếu văn, dành cho người đã mất, không dùng cho một thành phố đang sống động.",
+      "difficulty": 3,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "batch-01"
+    },
+    {
+      "id": "pc105",
+      "type": "tc",
+      "sentence": "Although the central bank was initially criticized for moving too slowly, it eventually won {0} from economists across the spectrum for its handling of the crisis.",
+      "blanks": [
+        {
+          "options": [
+            "plaudits",
+            "censure",
+            "cavils",
+            "reproaches",
+            "rebukes"
+          ],
+          "answer": "plaudits"
+        }
+      ],
+      "targets": [
+        "plaudits"
+      ],
+      "hint": "'Although… eventually'.",
+      "explanation": "'Although… initially criticized… eventually' đổi chiều: được khen ngợi, win plaudits.",
+      "difficulty": 1,
+      "skills": [
+        "contrast",
+        "collocation"
+      ],
+      "addedIn": "batch-01"
+    },
+    {
+      "id": "pc106",
+      "type": "tc",
+      "sentence": "{0} by the press during his lifetime, the composer was nevertheless forgotten within a decade of his death, and the {1} once written about him now read less as criticism than as overblown flattery.",
+      "blanks": [
+        {
+          "options": [
+            "Lionized",
+            "Disparaged",
+            "Admonished"
+          ],
+          "answer": "Lionized"
+        },
+        {
+          "options": [
+            "encomiums",
+            "cavils",
+            "rebukes"
+          ],
+          "answer": "encomiums"
+        }
+      ],
+      "targets": [
+        "lionize",
+        "encomium"
+      ],
+      "hint": "'Nevertheless' và 'less as criticism than as overblown flattery'.",
+      "explanation": "(i) 'Nevertheless forgotten' đòi chỗ (i) là được tung hô: lionized. (ii) Những gì viết về ông nay đọc như lời tâng bốc thái quá chứ không phải phê bình: encomiums.",
+      "difficulty": 2,
+      "skills": [
+        "contrast"
+      ],
+      "addedIn": "batch-01"
+    },
+    {
+      "id": "pc107",
+      "type": "tc",
+      "sentence": "The film's opening scene pays {0} to the silent comedies of the 1920s, imitating their camera angles and hand-lettered title cards.",
+      "blanks": [
+        {
+          "options": [
+            "homage",
+            "panegyric",
+            "accolade",
+            "plaudits",
+            "encomium"
+          ],
+          "answer": "homage"
+        }
+      ],
+      "targets": [
+        "homage",
+        "panegyric",
+        "accolade"
+      ],
+      "hint": "Cụm cố định với 'pays … to'.",
+      "explanation": "Collocation cố định: pay homage to (bày tỏ lòng kính trọng). Các danh từ khen ngợi khác không đi với 'pay … to' và không mô tả việc bắt chước để tưởng nhớ.",
+      "difficulty": 2,
+      "skills": [
+        "collocation"
+      ],
+      "addedIn": "batch-01"
+    },
+    {
+      "id": "pc108",
+      "type": "tc",
+      "sentence": "Though her motives were {0}, the campaign's methods, which included misleading advertisements, drew sharp criticism.",
+      "blanks": [
+        {
+          "options": [
+            "laudable",
+            "laudatory",
+            "effusive",
+            "fulsome",
+            "obsequious"
+          ],
+          "answer": "laudable"
+        }
+      ],
+      "targets": [
+        "laudable",
+        "laudatory"
+      ],
+      "hint": "Động cơ tự nó đáng khen, hay đang khen ai?",
+      "explanation": "Động cơ là đối tượng đáng khen: laudable. Laudatory mô tả lời lẽ khen; effusive và fulsome mô tả lời khen; obsequious là khúm núm.",
+      "difficulty": 2,
+      "skills": [
+        "nuance",
+        "lookalike"
+      ],
+      "addedIn": "batch-01"
+    },
+    {
+      "id": "pc109",
+      "type": "se",
+      "sentence": "The obituary was uniformly {0}, describing the late minister as a model of integrity and courage.",
+      "options": [
+        "laudatory",
+        "complimentary",
+        "laudable",
+        "commendable",
+        "grudging",
+        "tepid"
+      ],
+      "answers": [
+        "laudatory",
+        "complimentary"
+      ],
+      "targets": [
+        "laudatory",
+        "laudable"
+      ],
+      "hint": "Mô tả văn bản hay đối tượng?",
+      "explanation": "Bài cáo phó mang lời lẽ khen: laudatory, complimentary. Laudable và commendable là cặp đồng nghĩa nhưng mô tả đối tượng đáng khen, không mô tả văn bản.",
+      "difficulty": 3,
+      "skills": [
+        "nuance",
+        "lookalike"
+      ],
+      "addedIn": "batch-01"
+    },
+    {
+      "id": "pc110",
+      "type": "tc",
+      "sentence": "It is tempting to {0} the program's achievements because they were modest, but even a two-point gain in literacy affects millions of children.",
+      "blanks": [
+        {
+          "options": [
+            "belittle",
+            "vilify",
+            "lambaste",
+            "castigate",
+            "impugn"
+          ],
+          "answer": "belittle"
+        }
+      ],
+      "targets": [
+        "belittle",
+        "vilify"
+      ],
+      "hint": "Vấn đề là thành tựu 'nhỏ'.",
+      "explanation": "Coi nhẹ thành tựu vì chúng khiêm tốn: belittle. Vilify, lambaste, castigate quá nặng; impugn nhắm vào động cơ.",
+      "difficulty": 2,
+      "skills": [
+        "degree",
+        "contrast"
+      ],
+      "addedIn": "batch-01"
+    },
+    {
+      "id": "pc111",
+      "type": "tc",
+      "sentence": "In the tabloid press the economist was not merely criticized but {0}, portrayed as a heartless villain who cared nothing for the unemployed.",
+      "blanks": [
+        {
+          "options": [
+            "vilified",
+            "deprecated",
+            "belittled",
+            "reproved",
+            "admonished"
+          ],
+          "answer": "vilified"
+        }
+      ],
+      "targets": [
+        "vilify",
+        "deprecate",
+        "belittle"
+      ],
+      "hint": "Gốc 'vil-' như vile.",
+      "explanation": "'Not merely criticized but' đòi từ mạnh hơn, và 'portrayed as a villain' là biến thành kẻ xấu: vilified.",
+      "difficulty": 2,
+      "skills": [
+        "degree",
+        "continuation"
+      ],
+      "addedIn": "batch-01"
+    },
+    {
+      "id": "pc112",
+      "type": "tc",
+      "sentence": "With characteristic {0} humor, the Nobel laureate opened her lecture by listing every prediction she had ever gotten wrong.",
+      "blanks": [
+        {
+          "options": [
+            "self-deprecating",
+            "disparaging",
+            "vitriolic",
+            "obsequious",
+            "fulsome"
+          ],
+          "answer": "self-deprecating"
+        }
+      ],
+      "targets": [
+        "deprecate"
+      ],
+      "hint": "Đùa về chính mình.",
+      "explanation": "Tự kể ra những dự báo sai của mình: tự trào, self-deprecating. Disparaging và vitriolic là chê người khác.",
+      "difficulty": 1,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "batch-01"
+    },
+    {
+      "id": "pc113",
+      "type": "se",
+      "sentence": "Rather than engage with the rival school's arguments, the textbook simply {0} its members as cranks and amateurs.",
+      "options": [
+        "denigrates",
+        "disparages",
+        "eulogizes",
+        "extols",
+        "quibbles with",
+        "carps at"
+      ],
+      "answers": [
+        "denigrates",
+        "disparages"
+      ],
+      "targets": [
+        "denigrate",
+        "disparage",
+        "quibble",
+        "carp"
+      ],
+      "hint": "Gọi họ là 'cranks and amateurs'.",
+      "explanation": "Hạ thấp, bôi nhọ đối thủ: denigrates, disparages. Quibbles with và carps at là cặp bắt bẻ chuyện vặt, quá nhẹ so với việc gọi đối thủ là kẻ gàn dở.",
+      "difficulty": 2,
+      "skills": [
+        "degree"
+      ],
+      "addedIn": "batch-01"
+    },
+    {
+      "id": "pc114",
+      "type": "tc",
+      "sentence": "Critics who once {0} the director's early films as amateurish now {1} them as masterpieces, but the director herself remains {2}, insisting that the films were neither as bad nor as good as people claim.",
+      "blanks": [
+        {
+          "options": [
+            "disparaged",
+            "extolled",
+            "eulogized"
+          ],
+          "answer": "disparaged"
+        },
+        {
+          "options": [
+            "extol",
+            "belittle",
+            "reprove"
+          ],
+          "answer": "extol"
+        },
+        {
+          "options": [
+            "unmoved",
+            "effusive",
+            "sycophantic"
+          ],
+          "answer": "unmoved"
+        }
+      ],
+      "targets": [
+        "disparage",
+        "extol"
+      ],
+      "hint": "Đi theo mạch: trước, nay, và thái độ của chính đạo diễn.",
+      "explanation": "(i) 'As amateurish': chê, disparaged. (ii) 'Now… as masterpieces': ca tụng, extol. (iii) Bà cho rằng phim không tệ cũng không hay như người ta nói: không bị lay động bởi cả hai luồng ý kiến, unmoved.",
+      "difficulty": 3,
+      "skills": [
+        "contrast"
+      ],
+      "addedIn": "batch-01"
+    },
+    {
+      "id": "pc115",
+      "type": "tc",
+      "sentence": "The teacher {0} the boy for talking during the exam, but her tone was mild, and she let him finish the test.",
+      "blanks": [
+        {
+          "options": [
+            "reproved",
+            "castigated",
+            "excoriated",
+            "vilified",
+            "lambasted"
+          ],
+          "answer": "reproved"
+        }
+      ],
+      "targets": [
+        "reprove",
+        "castigate",
+        "excoriate"
+      ],
+      "hint": "Chú ý 'mild'.",
+      "explanation": "'Her tone was mild': trách ở mức vừa phải, reproved. Các phương án còn lại đều là chỉ trích dữ dội.",
+      "difficulty": 2,
+      "skills": [
+        "degree"
+      ],
+      "addedIn": "batch-01"
+    },
+    {
+      "id": "pc116",
+      "type": "se",
+      "sentence": "The minister issued a sharp public {0} to the agency, which had ignored repeated warnings about the dam.",
+      "options": [
+        "rebuke",
+        "reprimand",
+        "plaudit",
+        "accolade",
+        "cavil",
+        "quibble"
+      ],
+      "answers": [
+        "rebuke",
+        "reprimand"
+      ],
+      "targets": [
+        "rebuke",
+        "reprimand",
+        "cavil",
+        "quibble"
+      ],
+      "hint": "Mức độ của lỗi.",
+      "explanation": "Lời quở trách gay gắt: rebuke, reprimand. Cavil và quibble là cặp bắt bẻ chuyện vặt, không hợp với 'sharp' và lỗi nghiêm trọng.",
+      "difficulty": 2,
+      "skills": [
+        "degree"
+      ],
+      "addedIn": "batch-01"
+    },
+    {
+      "id": "pc117",
+      "type": "tc",
+      "sentence": "For twenty minutes the coach {0} his players in the locker room, shouting so loudly that reporters in the corridor could hear every word.",
+      "blanks": [
+        {
+          "options": [
+            "berated",
+            "admonished",
+            "reproved",
+            "censured",
+            "cavilled at"
+          ],
+          "answer": "berated"
+        }
+      ],
+      "targets": [
+        "berate",
+        "admonish",
+        "censure"
+      ],
+      "hint": "Hai mươi phút, la to.",
+      "explanation": "Mắng kéo dài, to tiếng: berated. Admonished và reproved quá nhẹ; censured nhấn vào tính chính thức, không phải la hét.",
+      "difficulty": 2,
+      "skills": [
+        "degree",
+        "nuance"
+      ],
+      "addedIn": "batch-01"
+    },
+    {
+      "id": "pc118",
+      "type": "tc",
+      "sentence": "The audit {0} the ministry for its careless bookkeeping; chastened, officials promised reforms that were, if anything, more {1} than the auditors had demanded.",
+      "blanks": [
+        {
+          "options": [
+            "castigated",
+            "commended",
+            "eulogized"
+          ],
+          "answer": "castigated"
+        },
+        {
+          "options": [
+            "stringent",
+            "lax",
+            "perfunctory"
+          ],
+          "answer": "stringent"
+        }
+      ],
+      "targets": [
+        "castigate",
+        "stringent"
+      ],
+      "hint": "'If anything, more … than demanded'.",
+      "explanation": "(i) Sổ sách cẩu thả bị chỉ trích nghiêm khắc: castigated. (ii) 'Chastened' (biết lỗi), hứa cải cách còn nghiêm ngặt hơn yêu cầu: stringent.",
+      "difficulty": 2,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-01"
+    },
+    {
+      "id": "pc119",
+      "type": "se",
+      "sentence": "Former colleagues {0} the senator for abandoning the reforms she had once championed.",
+      "options": [
+        "chastised",
+        "castigated",
+        "commended",
+        "lauded",
+        "quibbled with",
+        "cavilled at"
+      ],
+      "answers": [
+        "chastised",
+        "castigated"
+      ],
+      "targets": [
+        "chastise",
+        "castigate",
+        "quibble"
+      ],
+      "hint": "Bỏ rơi điều từng bảo vệ là chuyện nhỏ hay lớn?",
+      "explanation": "Chỉ trích nghiêm khắc vì từ bỏ cải cách: chastised, castigated. Commended và lauded sai hướng; quibbled with và cavilled at quá nhẹ.",
+      "difficulty": 2,
+      "skills": [
+        "degree"
+      ],
+      "addedIn": "batch-01"
+    },
+    {
+      "id": "pc120",
+      "type": "tc",
+      "sentence": "Human rights groups {0} the new law as an assault on free expression, organizing protests in a dozen cities.",
+      "blanks": [
+        {
+          "options": [
+            "decried",
+            "belittled",
+            "quibbled with",
+            "deprecated",
+            "cavilled at"
+          ],
+          "answer": "decried"
+        }
+      ],
+      "targets": [
+        "decry",
+        "belittle",
+        "deprecate"
+      ],
+      "hint": "Phản ứng mạnh và công khai.",
+      "explanation": "Lên án công khai, kèm biểu tình: decried … as. Belittled là coi nhẹ; deprecated quá nhẹ; quibbled with và cavilled at là bắt bẻ vặt.",
+      "difficulty": 2,
+      "skills": [
+        "degree",
+        "collocation"
+      ],
+      "addedIn": "batch-01"
+    },
+    {
+      "id": "pc121",
+      "type": "se",
+      "sentence": "Early critics {0} the theory of continental drift, dismissing it as the fantasy of a meteorologist with no training in geology.",
+      "options": [
+        "derided",
+        "ridiculed",
+        "venerated",
+        "extolled",
+        "admonished",
+        "reproached"
+      ],
+      "answers": [
+        "derided",
+        "ridiculed"
+      ],
+      "targets": [
+        "deride",
+        "ridicule"
+      ],
+      "hint": "'Dismissing it as the fantasy'.",
+      "explanation": "Coi là ảo tưởng, chế giễu: derided, ridiculed. Admonished và reproached là khiển trách một người, không dùng cho một lý thuyết.",
+      "difficulty": 1,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "batch-01"
+    },
+    {
+      "id": "pc122",
+      "type": "tc",
+      "sentence": "Many bankers {0} at the idea that farmers would repay loans without collateral; the microfinance boom proved them wrong.",
+      "blanks": [
+        {
+          "options": [
+            "scoffed",
+            "carped",
+            "quibbled",
+            "cavilled",
+            "marveled"
+          ],
+          "answer": "scoffed"
+        }
+      ],
+      "targets": [
+        "scoff",
+        "carp",
+        "quibble"
+      ],
+      "hint": "Coi cả ý tưởng là vô lý.",
+      "explanation": "Cười khẩy, coi ý tưởng là vô lý: scoffed at. Carp, quibble, cavil là bắt bẻ chi tiết nhỏ, không phải bác bỏ cả ý tưởng; marveled ngược nghĩa.",
+      "difficulty": 2,
+      "skills": [
+        "collocation"
+      ],
+      "addedIn": "batch-01"
+    },
+    {
+      "id": "pc123",
+      "type": "tc",
+      "sentence": "Even after the project succeeded, a few critics continued to {0} about minor delays in its first month.",
+      "blanks": [
+        {
+          "options": [
+            "carp",
+            "decry",
+            "vilify",
+            "excoriate",
+            "castigate"
+          ],
+          "answer": "carp"
+        }
+      ],
+      "targets": [
+        "carp",
+        "decry"
+      ],
+      "hint": "'Minor delays'.",
+      "explanation": "Cằn nhằn chuyện nhỏ: carp about. Các phương án còn lại quá nặng so với 'minor delays'.",
+      "difficulty": 1,
+      "skills": [
+        "degree"
+      ],
+      "addedIn": "batch-01"
+    },
+    {
+      "id": "pc124",
+      "type": "se",
+      "sentence": "The referee's objections were mere {0}: complaints about formatting and word choice that left the paper's argument untouched.",
+      "options": [
+        "cavils",
+        "quibbles",
+        "rebukes",
+        "censures",
+        "encomiums",
+        "plaudits"
+      ],
+      "answers": [
+        "cavils",
+        "quibbles"
+      ],
+      "targets": [
+        "cavil",
+        "quibble",
+        "rebuke",
+        "censure"
+      ],
+      "hint": "'Mere'.",
+      "explanation": "Bắt bẻ chuyện nhỏ: cavils, quibbles. Rebukes và censures là cặp khiển trách nghiêm túc; encomiums và plaudits sai hướng.",
+      "difficulty": 1,
+      "skills": [
+        "degree"
+      ],
+      "addedIn": "batch-01"
+    },
+    {
+      "id": "pc125",
+      "type": "tc",
+      "sentence": "One may {0} with the author's choice of sources, but it would be unfair to {1} the book as a whole, which is the most careful study of the subject yet written.",
+      "blanks": [
+        {
+          "options": [
+            "quibble",
+            "concur",
+            "rejoice"
+          ],
+          "answer": "quibble"
+        },
+        {
+          "options": [
+            "disparage",
+            "laud",
+            "commend"
+          ],
+          "answer": "disparage"
+        }
+      ],
+      "targets": [
+        "quibble",
+        "disparage"
+      ],
+      "hint": "Mẫu câu 'One may … with X, but'.",
+      "explanation": "(i) Mẫu câu học thuật 'one may quibble with X, but': thừa nhận một điểm yếu nhỏ. (ii) 'Unfair to … the book, which is the most careful study': chê bai, disparage.",
+      "difficulty": 2,
+      "skills": [
+        "contrast",
+        "collocation"
+      ],
+      "addedIn": "batch-01"
+    },
+    {
+      "id": "pc126",
+      "type": "tc",
+      "sentence": "Even his fiercest rivals expressed a {0} admiration for his discipline, though they never stopped attacking his policies.",
+      "blanks": [
+        {
+          "options": [
+            "grudging",
+            "effusive",
+            "unstinting",
+            "obsequious",
+            "unqualified"
+          ],
+          "answer": "grudging"
+        }
+      ],
+      "targets": [
+        "grudging",
+        "effusive"
+      ],
+      "hint": "Đối thủ ngưỡng mộ kiểu gì?",
+      "explanation": "Đối thủ gay gắt nhất vẫn ngưỡng mộ nhưng không muốn: grudging. Effusive, unstinting và unqualified là ngưỡng mộ hết lòng, trái với 'never stopped attacking'.",
+      "difficulty": 2,
+      "skills": [
+        "contrast",
+        "nuance"
+      ],
+      "addedIn": "batch-01"
+    },
+    {
+      "id": "pc127",
+      "type": "se",
+      "sentence": "The board's endorsement was {0}: it supported the plan in principle but attached so many conditions that its approval was hard to take seriously.",
+      "options": [
+        "qualified",
+        "guarded",
+        "unqualified",
+        "unstinting",
+        "effusive",
+        "gushing"
+      ],
+      "answers": [
+        "qualified",
+        "guarded"
+      ],
+      "targets": [
+        "qualified",
+        "unqualified",
+        "effusive"
+      ],
+      "hint": "'Attached so many conditions'.",
+      "explanation": "Ủng hộ có điều kiện, dè dặt: qualified, guarded. Unqualified và unstinting là cặp ngược nghĩa; effusive và gushing là cặp khen tuôn trào.",
+      "difficulty": 2,
+      "skills": [
+        "secondary-meaning"
+      ],
+      "addedIn": "batch-01"
+    },
+    {
+      "id": "pc128",
+      "type": "tc",
+      "sentence": "Claims that the reform would 'end poverty forever' were plainly {0}; even its designers expected only modest gains.",
+      "blanks": [
+        {
+          "options": [
+            "hyperbolic",
+            "equivocal",
+            "tepid",
+            "grudging",
+            "qualified"
+          ],
+          "answer": "hyperbolic"
+        }
+      ],
+      "targets": [
+        "hyperbolic",
+        "equivocal"
+      ],
+      "hint": "So 'forever' với 'modest gains'.",
+      "explanation": "Tuyên bố phóng đại so với kỳ vọng thực tế: hyperbolic. Equivocal là nước đôi, trái với một tuyên bố dứt khoát như 'end poverty forever'.",
+      "difficulty": 1,
+      "skills": [
+        "contrast"
+      ],
+      "addedIn": "batch-01"
+    },
+    {
+      "id": "pc129",
+      "type": "se",
+      "sentence": "The host was {0} in her thanks, praising each guest at length and insisting that the evening could not have happened without them.",
+      "options": [
+        "effusive",
+        "gushing",
+        "grudging",
+        "tepid",
+        "curt",
+        "terse"
+      ],
+      "answers": [
+        "effusive",
+        "gushing"
+      ],
+      "targets": [
+        "effusive",
+        "grudging",
+        "tepid"
+      ],
+      "hint": "'At length'.",
+      "explanation": "Cảm ơn tuôn trào, dài: effusive, gushing. Curt và terse là cặp ngắn gọn cộc lốc.",
+      "difficulty": 1,
+      "skills": [
+        "degree"
+      ],
+      "addedIn": "batch-01"
+    },
+    {
+      "id": "pc130",
+      "type": "tc",
+      "sentence": "The courtier's praise of the king was so {0} that even the king grew suspicious; such {1} flattery, he reasoned, must conceal some request.",
+      "blanks": [
+        {
+          "options": [
+            "fulsome",
+            "grudging",
+            "equivocal"
+          ],
+          "answer": "fulsome"
+        },
+        {
+          "options": [
+            "obsequious",
+            "candid",
+            "laconic"
+          ],
+          "answer": "obsequious"
+        }
+      ],
+      "targets": [
+        "fulsome",
+        "obsequious"
+      ],
+      "hint": "'Even the king grew suspicious'.",
+      "explanation": "(i) Lời khen thái quá đến mức vua nghi ngờ: fulsome theo nghĩa xu nịnh (ngữ cảnh 'grew suspicious' loại nghĩa 'dồi dào' thuần túy). (ii) Sự xu nịnh khúm núm: obsequious.",
+      "difficulty": 3,
+      "skills": [
+        "secondary-meaning",
+        "continuation"
+      ],
+      "addedIn": "batch-01"
+    },
+    {
+      "id": "pc131",
+      "type": "tc",
+      "sentence": "Surrounded by {0} advisers who told him only what he wanted to hear, the president was the last to learn that the policy had failed.",
+      "blanks": [
+        {
+          "options": [
+            "sycophantic",
+            "candid",
+            "forthright",
+            "reticent",
+            "laconic"
+          ],
+          "answer": "sycophantic"
+        }
+      ],
+      "targets": [
+        "sycophantic",
+        "candid"
+      ],
+      "hint": "'Only what he wanted to hear'.",
+      "explanation": "Chỉ nói điều sếp muốn nghe: nịnh bợ, sycophantic. Candid và forthright ngược nghĩa; reticent và laconic là ít nói, không hàm ý nịnh.",
+      "difficulty": 1,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "batch-01"
+    },
+    {
+      "id": "pc132",
+      "type": "se",
+      "sentence": "The interviewer was so {0} toward the celebrity that the piece read less like journalism than like an advertisement.",
+      "options": [
+        "fawning",
+        "obsequious",
+        "candid",
+        "skeptical",
+        "curt",
+        "laconic"
+      ],
+      "answers": [
+        "fawning",
+        "obsequious"
+      ],
+      "targets": [
+        "fawning",
+        "obsequious",
+        "candid"
+      ],
+      "hint": "'Like an advertisement'.",
+      "explanation": "Xun xoe, khúm núm đến mức như quảng cáo: fawning, obsequious. Curt và laconic là cặp ngắn gọn, không liên quan.",
+      "difficulty": 1,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "batch-01"
+    },
+    {
+      "id": "pc133",
+      "type": "tc",
+      "sentence": "There is a difference between being {0} to senior colleagues, which is simply good manners, and being {1}, which means flattering them in the hope of advancement.",
+      "blanks": [
+        {
+          "options": [
+            "deferential",
+            "insolent",
+            "curt"
+          ],
+          "answer": "deferential"
+        },
+        {
+          "options": [
+            "sycophantic",
+            "reticent",
+            "candid"
+          ],
+          "answer": "sycophantic"
+        }
+      ],
+      "targets": [
+        "deferential",
+        "sycophantic"
+      ],
+      "hint": "Hai thái độ: một tốt, một xấu.",
+      "explanation": "(i) Tôn trọng cấp trên, là phép lịch sự: deferential. (ii) Nịnh để được thăng tiến: sycophantic. Câu này kiểm tra đúng ranh giới giữa hai từ.",
+      "difficulty": 3,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "batch-01"
     }
   ],
   "difficultyNote": "Phương án sai ưu tiên cùng hướng nghĩa nhưng sai sắc thái hoặc sai mức độ."

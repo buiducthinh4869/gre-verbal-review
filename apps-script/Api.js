@@ -10,7 +10,7 @@
  */
 
 var LOCK_WAIT_MS = 10000;
-var SETTING_KEYS = ['newPerDay', 'autoStart', 'thinkFirst', 'examMode'];
+var SETTING_KEYS = ['newPerDay', 'autoStart', 'thinkFirst', 'examMode', 'skipVocabIntro'];
 var MAX_EVENTS = 100;
 var MAX_CELL = 2000;
 
@@ -358,7 +358,15 @@ function pruneDaily_(daily, today) {
 
 /* ---------------- Thi thử ---------------- */
 
-var MOCK_MODES = ['s1', 's2', 'full'];
+var MOCK_MODES = ['s1', 's2', 'full', 'fixed'];
+
+/**
+ * Khóa của MỘT lần làm. Đề ngẫu nhiên: mockId là mã riêng của lần làm. Đề cố định (mode = 'fixed'): mockId là id đề
+ * (vd 'mock-01'), làm lại nhiều lần cùng mockId, nên thêm thời điểm bắt đầu để phân biệt các lần làm.
+ */
+function mockAttemptKey_(mockId, mode, startedStamp) {
+  return mode === 'fixed' ? mockId + '@' + startedStamp : mockId;
+}
 
 /** "dd/MM/yyyy HH:mm:ss" (giờ VN) → ms; không đọc được thì 0. */
 function parseVnStamp_(s) {
@@ -388,14 +396,18 @@ function saveMock_(ss, userId, p) {
   if (!ss.getSheetByName('mocks')) fail_('not_ready', 'Chưa có tab mocks. Báo người quản lý.');
   var t = table_(ss, 'mocks');
   var have = {};
-  userRows_(t, userId).forEach(function (i) { have[cell_(t, t.rows[i], 'mockId') + '#' + cell_(t, t.rows[i], 'section')] = true; });
+  userRows_(t, userId).forEach(function (i) {
+    var r = t.rows[i];
+    have[mockAttemptKey_(String(cell_(t, r, 'mockId')), String(cell_(t, r, 'mode')), String(cell_(t, r, 'startedAt'))) + '#' + cell_(t, r, 'section')] = true;
+  });
   var now = Date.now();
   var started = clampMs_(p.startedAt, now), finished = clampMs_(p.finishedAt, now);
+  var attempt = mockAttemptKey_(mockId, mode, vnStamp_(started));
   var rows = [];
   p.sections.forEach(function (sec) {
     sec = sec || {};
     var n = clampInt_(sec.section, 1, 2);
-    if (have[mockId + '#' + n]) return;
+    if (have[attempt + '#' + n]) return;
     var items = Array.isArray(sec.items) ? sec.items.slice(0, 40).map(function (x) {
       x = x || {};
       return { i: clip_(x.i, 40), c: clip_(x.c, 200), ok: x.ok ? 1 : 0, t: clampInt_(x.t, 0, 7200) };
@@ -406,7 +418,7 @@ function saveMock_(ss, userId, p) {
       userId: userId, mockId: mockId, startedAt: vnStamp_(started), finishedAt: vnStamp_(finished), mode: mode, section: n,
       score: clampInt_(sec.score, 0, 40), total: clampInt_(sec.total, 0, 40), durationSec: clampInt_(sec.durationSec, 0, 7200), items: json
     });
-    have[mockId + '#' + n] = true;
+    have[attempt + '#' + n] = true;
   });
   appendObjs_(t, rows);
   return { saved: rows.length, mockId: mockId };
@@ -421,9 +433,10 @@ function getMocks_(ss, userId, p) {
     var o = rowObj_(t, t.rows[i]);
     var id = String(o.mockId || '');
     if (!id) return;
-    var m = by[id];
+    var key = mockAttemptKey_(id, String(o.mode || ''), String(o.startedAt || ''));
+    var m = by[key];
     if (!m) {
-      m = by[id] = { mockId: id, mode: String(o.mode || ''), startedAt: String(o.startedAt || ''), finishedAt: String(o.finishedAt || ''), startedMs: parseVnStamp_(o.startedAt), sections: [] };
+      m = by[key] = { mockId: id, mode: String(o.mode || ''), startedAt: String(o.startedAt || ''), finishedAt: String(o.finishedAt || ''), startedMs: parseVnStamp_(o.startedAt), sections: [] };
       order.push(m);
     }
     var items = [];
@@ -433,5 +446,7 @@ function getMocks_(ss, userId, p) {
   order.forEach(function (m) { m.sections.sort(function (a, b) { return a.section - b.section; }); });
   order.sort(function (a, b) { return b.startedMs - a.startedMs; });
   var limit = (p && p.limit) ? clampInt_(p.limit, 1, 50) : 20;
-  return { mocks: order.slice(0, limit) };
+  // giới hạn chỉ áp dụng cho đề ngẫu nhiên; mọi lần làm đề cố định luôn được trả về (web dùng để biết đề nào đã làm)
+  var n = 0;
+  return { mocks: order.filter(function (m) { return m.mode === 'fixed' || n++ < limit; }) };
 }

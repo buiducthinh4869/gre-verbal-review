@@ -521,7 +521,12 @@
         "abiding"
       ],
       "hint": "'Returned to its earlier trend'.",
-      "explanation": "Quay về xu hướng cũ sau hai quý: tác động tạm thời, transitory."
+      "explanation": "Quay về xu hướng cũ sau hai quý: tác động tạm thời, transitory.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "lf02",
@@ -545,7 +550,12 @@
         "dormant"
       ],
       "hint": "Thói quen đang thể hiện hay đang ngủ yên?",
-      "explanation": "Thói quen vẫn chi phối hành vi hằng ngày: ăn sâu, ingrained. Latent và dormant là tiềm ẩn, đang ngủ yên, trái với việc vẫn đang thể hiện ra."
+      "explanation": "Thói quen vẫn chi phối hành vi hằng ngày: ăn sâu, ingrained. Latent và dormant là tiềm ẩn, đang ngủ yên, trái với việc vẫn đang thể hiện ra.",
+      "difficulty": 2,
+      "skills": [
+        "contrast"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "lf03",
@@ -569,7 +579,12 @@
         "ossified"
       ],
       "hint": "'Producing no symptoms'.",
-      "explanation": "Có trong người nhưng chưa có triệu chứng: latent. Moribund là sắp chết; ossified là xơ cứng."
+      "explanation": "Có trong người nhưng chưa có triệu chứng: latent. Moribund là sắp chết; ossified là xơ cứng.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "lf04",
@@ -599,7 +614,12 @@
         "flux"
       ],
       "hint": "'Once dismissed… has undergone'.",
-      "explanation": "(i) Chỉ sống nhờ trợ cấp: suy tàn, moribund. (ii) Thành ngành có lãi nhất: biến đổi hoàn toàn, metamorphosis. Flux là thay đổi liên tục, không có điểm đến."
+      "explanation": "(i) Chỉ sống nhờ trợ cấp: suy tàn, moribund. (ii) Thành ngành có lãi nhất: biến đổi hoàn toàn, metamorphosis. Flux là thay đổi liên tục, không có điểm đến.",
+      "difficulty": 3,
+      "skills": [
+        "contrast"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "lf05",
@@ -622,7 +642,12 @@
         "protean"
       ],
       "hint": "'Has not changed in thirty years'.",
-      "explanation": "Ba mươi năm không đổi, mọi đề xuất cải cách bị bác: xơ cứng, ossified."
+      "explanation": "Ba mươi năm không đổi, mọi đề xuất cải cách bị bác: xơ cứng, ossified.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "lf06",
@@ -649,7 +674,12 @@
         "dormant"
       ],
       "hint": "Mùa này hợp mốt, mùa sau lỗi thời.",
-      "explanation": "Chóng lỗi thời: ephemeral, evanescent. Perennial và abiding là cặp sai hướng; latent và dormant là cặp tiềm ẩn."
+      "explanation": "Chóng lỗi thời: ephemeral, evanescent. Perennial và abiding là cặp sai hướng; latent và dormant là cặp tiềm ẩn.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "lf07",
@@ -674,7 +704,12 @@
         "transitory"
       ],
       "hint": "'Returning every dry season'.",
-      "explanation": "Lặp lại mỗi mùa khô: perennial, perpetual. Transient và transitory là cặp sai hướng."
+      "explanation": "Lặp lại mỗi mùa khô: perennial, perpetual. Transient và transitory là cặp sai hướng.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "lf08",
@@ -699,7 +734,12 @@
         "ossified"
       ],
       "hint": "'Rather than extinct'.",
-      "explanation": "Đang ngủ yên nhưng có thể hoạt động lại: dormant, quiescent. Moribund và ossified là cặp suy tàn, xơ cứng."
+      "explanation": "Đang ngủ yên nhưng có thể hoạt động lại: dormant, quiescent. Moribund và ossified là cặp suy tàn, xơ cứng.",
+      "difficulty": 2,
+      "skills": [
+        "contrast"
+      ],
+      "addedIn": "base"
     }
   ]
 }

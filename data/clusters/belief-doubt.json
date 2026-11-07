@@ -472,7 +472,12 @@
         "incredulous"
       ],
       "hint": "Ba từ có gốc cred-: phân biệt cẩn thận.",
-      "explanation": "Tin ngay lời hứa phi lý mà không hỏi gì: credulous. Credible (đáng tin) là bẫy hình thức; incredulous là ngược nghĩa."
+      "explanation": "Tin ngay lời hứa phi lý mà không hỏi gì: credulous. Credible (đáng tin) là bẫy hình thức; incredulous là ngược nghĩa.",
+      "difficulty": 3,
+      "skills": [
+        "lookalike"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "bd02",
@@ -496,7 +501,12 @@
         "provisional"
       ],
       "hint": "'Became …' sau bằng chứng rò rỉ.",
-      "explanation": "Lời biện hộ không còn đứng vững trước bằng chứng: untenable. Tentative và provisional là tạm thời; speculative là suy đoán."
+      "explanation": "Lời biện hộ không còn đứng vững trước bằng chứng: untenable. Tentative và provisional là tạm thời; speculative là suy đoán.",
+      "difficulty": 2,
+      "skills": [
+        "contrast"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "bd03",
@@ -519,7 +529,13 @@
         "incontrovertible"
       ],
       "hint": "Lý do được nêu sau dấu hai chấm.",
-      "explanation": "Số liệu chưa chốt nên ước tính chỉ là tạm thời: provisional. Incontrovertible và cogent sai hướng; unfounded là vô căn cứ, quá nặng."
+      "explanation": "Số liệu chưa chốt nên ước tính chỉ là tạm thời: provisional. Incontrovertible và cogent sai hướng; unfounded là vô căn cứ, quá nặng.",
+      "difficulty": 2,
+      "skills": [
+        "continuation",
+        "degree"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "bd04",
@@ -543,7 +559,12 @@
         "dubious"
       ],
       "hint": "Vấn đề là thiên vị hay thiếu chắc chắn?",
-      "explanation": "Chỉ chọn bằng chứng có lợi cho quan điểm của nhà tài trợ: tendentious (thiên vị). Speculative là suy đoán; dubious là đáng ngờ nói chung, không chỉ rõ thiên vị."
+      "explanation": "Chỉ chọn bằng chứng có lợi cho quan điểm của nhà tài trợ: tendentious (thiên vị). Speculative là suy đoán; dubious là đáng ngờ nói chung, không chỉ rõ thiên vị.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "bd05",
@@ -573,7 +594,13 @@
         "tentative"
       ],
       "hint": "Cấu trúc 'Although X, not yet Y'.",
-      "explanation": "(i) 'Although… not yet': có vẻ hợp lý (plausible). (ii) Còn phải loại trừ cách giải thích khác: chưa phải không thể chối cãi, incontrovertible."
+      "explanation": "(i) 'Although… not yet': có vẻ hợp lý (plausible). (ii) Còn phải loại trừ cách giải thích khác: chưa phải không thể chối cãi, incontrovertible.",
+      "difficulty": 3,
+      "skills": [
+        "contrast",
+        "collocation"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "bd06",
@@ -597,7 +624,12 @@
         "plausible"
       ],
       "hint": "Mạnh đến mức nào?",
-      "explanation": "Lập luận chặt, không tìm được điểm yếu: cogent, compelling. Plausible chỉ là có vẻ hợp lý, quá yếu; specious là bẫy nghe có vẻ đúng nhưng sai."
+      "explanation": "Lập luận chặt, không tìm được điểm yếu: cogent, compelling. Plausible chỉ là có vẻ hợp lý, quá yếu; specious là bẫy nghe có vẻ đúng nhưng sai.",
+      "difficulty": 2,
+      "skills": [
+        "degree"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "bd07",
@@ -623,7 +655,12 @@
         "cynical"
       ],
       "hint": "Phản ứng trước điều khó tin.",
-      "explanation": "Không tin trước tuyên bố trái với số liệu: incredulous, skeptical. Credulous và gullible là cặp sai hướng; cynical là nghi ngờ động cơ, cần thêm thông tin."
+      "explanation": "Không tin trước tuyên bố trái với số liệu: incredulous, skeptical. Credulous và gullible là cặp sai hướng; cynical là nghi ngờ động cơ, cần thêm thông tin.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "bd08",
@@ -648,7 +685,12 @@
         "cogent"
       ],
       "hint": "Không có tài liệu nào còn lại.",
-      "explanation": "Không còn tài liệu nên chỉ là phỏng đoán: conjectural, speculative. Incontrovertible và cogent là cặp sai hướng."
+      "explanation": "Không còn tài liệu nên chỉ là phỏng đoán: conjectural, speculative. Incontrovertible và cogent là cặp sai hướng.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "base"
     }
   ]
 }

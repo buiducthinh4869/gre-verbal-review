@@ -537,7 +537,12 @@
         "punctilious"
       ],
       "hint": "Kết quả: bỏ sót điều hiển nhiên.",
-      "explanation": "Không thấy cả nửa sổ trống: kiểm tra lướt qua, cursory."
+      "explanation": "Không thấy cả nửa sổ trống: kiểm tra lướt qua, cursory.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "cc02",
@@ -567,7 +572,12 @@
         "painstaking"
       ],
       "hint": "'Unlike' đổi chiều giữa hai người.",
-      "explanation": "(i) Kiểm tra mọi số liệu hai lần: meticulous. (ii) 'Unlike… notoriously': ký duyệt khi chưa đọc kỹ, slipshod."
+      "explanation": "(i) Kiểm tra mọi số liệu hai lần: meticulous. (ii) 'Unlike… notoriously': ký duyệt khi chưa đọc kỹ, slipshod.",
+      "difficulty": 2,
+      "skills": [
+        "contrast"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "cc03",
@@ -591,7 +601,12 @@
         "indiscriminate"
       ],
       "hint": "Cấu trúc 'became … of lending'.",
-      "explanation": "Đòi tài sản thế chấp gấp đôi: dè dặt khi cho vay, chary of. Cavalier và heedless là ngược nghĩa."
+      "explanation": "Đòi tài sản thế chấp gấp đôi: dè dặt khi cho vay, chary of. Cavalier và heedless là ngược nghĩa.",
+      "difficulty": 2,
+      "skills": [
+        "collocation"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "cc04",
@@ -614,7 +629,12 @@
         "painstaking"
       ],
       "hint": "Xin lỗi cho có.",
-      "explanation": "Lời xin lỗi hai dòng rồi chuyển chủ đề ngay: chiếu lệ, perfunctory."
+      "explanation": "Lời xin lỗi hai dòng rồi chuyển chủ đề ngay: chiếu lệ, perfunctory.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "cc05",
@@ -644,7 +664,12 @@
         "stringent"
       ],
       "hint": "'Rather' tách nguyên nhân sâu xa và nguyên nhân trực tiếp.",
-      "explanation": "(i) Hoảng loạn không phải nguyên nhân gốc mà chỉ làm sự sụp đổ xảy ra sớm: precipitated. (ii) Giám sát lỏng lẻo nhiều năm: lax."
+      "explanation": "(i) Hoảng loạn không phải nguyên nhân gốc mà chỉ làm sự sụp đổ xảy ra sớm: precipitated. (ii) Giám sát lỏng lẻo nhiều năm: lax.",
+      "difficulty": 3,
+      "skills": [
+        "contrast"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "cc06",
@@ -671,7 +696,12 @@
         "punctilious"
       ],
       "hint": "Dè chừng rủi ro hay tỉ mỉ chi tiết?",
-      "explanation": "Thận trọng vì chưa biết tác dụng lâu dài: circumspect, wary. Cavalier và heedless là cặp sai hướng; fastidious và punctilious là cặp tỉ mỉ về chi tiết, không phải dè chừng rủi ro."
+      "explanation": "Thận trọng vì chưa biết tác dụng lâu dài: circumspect, wary. Cavalier và heedless là cặp sai hướng; fastidious và punctilious là cặp tỉ mỉ về chi tiết, không phải dè chừng rủi ro.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "cc07",
@@ -698,7 +728,12 @@
         "rash"
       ],
       "hint": "Mức độ công phu.",
-      "explanation": "Mọi lá thư được chép, ghi ngày và đối chiếu: painstaking, meticulous. Desultory và perfunctory là cặp sai hướng."
+      "explanation": "Mọi lá thư được chép, ghi ngày và đối chiếu: painstaking, meticulous. Desultory và perfunctory là cặp sai hướng.",
+      "difficulty": 2,
+      "skills": [
+        "degree"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "cc08",
@@ -723,7 +758,12 @@
         "judicious"
       ],
       "hint": "Cấu trúc cố định.",
-      "explanation": "Cấu trúc 'it would be … not to': nếu không cảm ơn thì là thiếu sót, remiss và negligent. Prudent và judicious là cặp sai hướng."
+      "explanation": "Cấu trúc 'it would be … not to': nếu không cảm ơn thì là thiếu sót, remiss và negligent. Prudent và judicious là cặp sai hướng.",
+      "difficulty": 2,
+      "skills": [
+        "collocation"
+      ],
+      "addedIn": "base"
     }
   ]
 }

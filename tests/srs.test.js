@@ -205,7 +205,12 @@ test('ánh xạ luôn ưu tiên targets của bài', () => {
 
 test('mọi đáp án GRE trong dữ liệu đều ánh xạ được về id (trừ từ ngoài dữ liệu)', () => {
   // đáp án không phải một từ trong dữ liệu
-  const outside = { se02: ['question'], ha07: ['barefaced'], sr07: ['denying'], hm08: ['heartless'] };
+  const outside = {
+    se02: ['question'], ha07: ['barefaced'], sr07: ['denying'], hm08: ['heartless'],
+    // đợt bài tập 01: đáp án là từ thông dụng chưa có trên web (hiện "Chưa có trên web" + link Merriam-Webster)
+    pc102: ['promoted'], pc109: ['complimentary'], pc114: ['unmoved'], pc127: ['guarded'], pc129: ['gushing'],
+    sy103: ['unyielding'], sy107: ['tireless'], sy109: ['respectful'], wc107: ['brief'], wc110: ['uncommunicative']
+  };
   idx.exercises.forEach((ex) => {
     const answers = ex.type === 'se' ? ex.answers : ex.blanks.map((b) => b.answer);
     const n = answers.filter((a) => !(outside[ex.id] || []).includes(a)).length;
@@ -239,7 +244,7 @@ test('chọn bài GRE cho từ: ưu tiên bài từ là đáp án, làm ít gầ
   const ex = Srs.pickExerciseForWord('tout', idx, { tc06: '2026-11-04T01:00:00Z' });
   assert.equal(ex.id, 'tc17');
   assert.equal(Srs.pickExerciseForWord('pillory', idx, {}).id, 'se04', 'chỉ có trong targets');
-  assert.equal(Srs.pickExerciseForWord('homage', idx, {}), null);
+  assert.equal(Srs.pickExerciseForWord('nitpick', idx, {}), null, 'từ chưa có câu nào');
 });
 
 /* ---------------- Render ---------------- */

@@ -5,11 +5,11 @@
  * Bản sửa lưu ở server (tab content_overrides); web ghép đè lên file JSON gốc (assets/overrides.js).
  * Mọi kiểm tra hợp lệ dùng chung assets/validate.js; server kiểm tra lại.
  */
-import { App, esc, views, actions, render, toast, isAdmin, isCorrected, setContent, word, posLabel } from '../state.js';
+import { App, esc, views, actions, render, toast, isAdmin, isCorrected, setContent, word, posLabel, heldIds } from '../state.js';
 import { call, isAuthError, LS } from '../api.js';
 import { sessionLost } from '../auth.js';
 import { renderMarkup } from '../render.js';
-import { EDITABLE, FIELD_LABEL, validateWord, validateExercise } from '../validate.js';
+import { EDITABLE, FIELD_LABEL, validateWord, validateExercise, DIFFICULTY, SKILLS } from '../validate.js';
 import { applyOverrides, findBase, currentValue, bakedOverrides, sameValue } from '../overrides.js';
 
 const ROMAN = ['i', 'ii', 'iii'];
@@ -53,6 +53,8 @@ export function valueText(field, v) {
   if (field === 'priority') return '★★★'.slice(0, v) + ' (' + v + '/3)';
   if (field === 'level') return v + '/4';
   if (field === 'hidden') return v ? 'Ẩn câu' : 'Hiện câu';
+  if (field === 'difficulty') return (DIFFICULTY[v] || v) + ' (' + v + '/3)';
+  if (field === 'skills') return v.map((k) => (SKILLS[k] ? SKILLS[k].label : k)).join(', ');
   return String(v);
 }
 
@@ -300,7 +302,7 @@ function confirmDiscard() {
 /* ---------------- Hộp thoại dùng chung ---------------- */
 
 let M = null; // {title, body: () => html, opener, onPaint?}
-function openModal(title, body, onPaint) {
+export function openModal(title, body, onPaint) {
   M = { title, body, opener: M ? M.opener : document.activeElement, onPaint };
   paintModal();
   const first = document.querySelector('#ceModal .ce-dbody input:not([type=hidden]), #ceModal .ce-dbody textarea, #ceModal .ce-dbody select, #ceModal .ce-dbody button');
@@ -318,7 +320,7 @@ function paintModal() {
   document.body.classList.add('modal-open');
   if (M.onPaint) M.onPaint();
 }
-function closeModal() {
+export function closeModal() {
   const el = document.getElementById('ceModal');
   if (el) { el.hidden = true; el.innerHTML = ''; }
   document.body.classList.remove('modal-open');
@@ -384,9 +386,14 @@ export function exTools(ex) {
 
 /** Câu GRE có từ này (trong chi tiết từ): xem nhanh, kèm nút sửa / báo lỗi. */
 export function wordExercises(w) {
-  const list = (isAdmin() ? App.idx.allExercises : App.idx.exercises).filter((e) => (e.targets || []).includes(w.id) || (e.answerIds || []).includes(w.id));
-  if (!list.length) return '';
-  return '<details class="ce-exlist"' + (EX_OPEN.has(w.id) ? ' open' : '') + ' data-wid="' + esc(w.id) + '"><summary>Câu GRE có từ này (' + list.length + ')</summary><ul class="review-list">' + list.map((e) => {
+  const all = (isAdmin() ? App.idx.allExercises : App.idx.exercises).filter((e) => (e.targets || []).includes(w.id) || (e.answerIds || []).includes(w.id));
+  // câu đang giữ cho đề thi thử chưa làm: không lộ đáp án (trừ khi quản trị viên bật Chế độ sửa)
+  const held = App.editMode && isAdmin() ? new Set() : heldIds();
+  const list = all.filter((e) => !held.has(e.id));
+  const nHeld = all.length - list.length;
+  if (!all.length) return '';
+  if (!list.length) return '<p class="muted small">' + nHeld + ' câu GRE có từ này đang được giữ cho đề thi thử bạn chưa làm.</p>';
+  return '<details class="ce-exlist"' + (EX_OPEN.has(w.id) ? ' open' : '') + ' data-wid="' + esc(w.id) + '"><summary>Câu GRE có từ này (' + list.length + ')' + (nHeld ? ' <span class="muted small">· ' + nHeld + ' câu đang giữ cho đề thi thử</span>' : '') + '</summary><ul class="review-list">' + list.map((e) => {
     const ans = e.type === 'se' ? e.answers.join(', ') : e.blanks.map((b) => b.answer).join(' · ');
     return '<li><div class="small muted">' + (e.type === 'se' ? 'Sentence Equivalence' : 'Text Completion' + (e.blanks.length > 1 ? ' · ' + e.blanks.length + ' chỗ trống' : '')) + ' · ' + esc(e.id) + '</div>' +
       '<p class="example" style="margin:4px 0">' + gapSentence(e) + '</p><div class="small">Đáp án: <b>' + esc(ans) + '</b></div>' + exTools(e) + '</li>';
@@ -405,7 +412,8 @@ function gapSentence(e) {
 let EX = null; // {id, draft, note, errors, suggestion?}
 
 function exDraftFrom(it) {
-  const d = { type: it.type, sentence: it.sentence || '', targets: (it.targets || []).slice(), hint: it.hint || '', explanation: it.explanation || '' };
+  const d = { type: it.type, sentence: it.sentence || '', targets: (it.targets || []).slice(), hint: it.hint || '', explanation: it.explanation || '',
+    difficulty: it.difficulty == null ? null : it.difficulty, skills: it.skills == null ? null : it.skills.slice() };
   if (it.type === 'se') { d.options = it.options.slice(); d.answers = it.answers.slice(); }
   else d.blanks = it.blanks.map((b) => ({ options: b.options.slice(), answer: b.answer }));
   return d;
@@ -437,6 +445,10 @@ function exFormHtml() {
   h += '<div class="field"><span class="label">Từ đích (tính tiến độ cho các từ này)</span><div class="ce-chips">' + d.targets.map((id, k) =>
     '<span class="ce-chip">' + esc(word(id) ? word(id).word : id) + '<button type="button" data-act="ce-x-tdel" data-k="' + k + '" aria-label="Bỏ ' + esc(word(id) ? word(id).word : id) + '">×</button></span>').join('') + '</div>' +
     '<div class="ce-add"><input class="input" id="ce-x-tadd" list="ce-words" placeholder="Gõ tên từ rồi Enter" aria-label="Thêm từ đích"><button type="button" class="btn" data-act="ce-x-tadd">Thêm</button></div>' + wordsDatalist() + '</div>';
+  h += '<div class="field"><label for="ce-x-diff">Độ khó</label><select class="input" id="ce-x-diff"><option value="">(chưa phân loại)</option>' +
+    [1, 2, 3].map((n) => '<option value="' + n + '"' + (d.difficulty === n ? ' selected' : '') + '>' + n + ' · ' + DIFFICULTY[n] + '</option>').join('') + '</select></div>';
+  h += '<fieldset class="ce-fs"><legend>Kỹ năng (chọn một hoặc nhiều; bỏ hết = chưa phân loại)</legend><div class="ce-skills">' + Object.keys(SKILLS).map((k) =>
+    '<label class="check-row"><input type="checkbox" class="ce-x-skill" value="' + k + '"' + ((d.skills || []).includes(k) ? ' checked' : '') + '><span>' + esc(SKILLS[k].label) + ' <span class="muted small">' + esc(SKILLS[k].desc) + '</span></span></label>').join('') + '</div></fieldset>';
   h += '<div class="field"><label for="ce-x-hint">Gợi ý</label><textarea class="input" id="ce-x-hint" rows="2">' + esc(d.hint) + '</textarea></div>';
   h += '<div class="field"><label for="ce-x-expl">Giải thích</label><textarea class="input" id="ce-x-expl" rows="4">' + esc(d.explanation) + '</textarea></div>';
   h += '<div class="field"><label for="ce-x-note">Ghi chú (tùy chọn)</label><input class="input" id="ce-x-note" maxlength="300" value="' + esc(EX.note) + '" placeholder="Ví dụ: theo Merriam-Webster"></div>';
@@ -478,6 +490,10 @@ function readExDraft() {
   d.hint = v('ce-x-hint').trim();
   d.explanation = v('ce-x-expl').trim();
   EX.note = v('ce-x-note');
+  const df = v('ce-x-diff');
+  d.difficulty = df ? Number(df) : null;
+  const sk = [...document.querySelectorAll('.ce-x-skill')].filter((el) => el.checked).map((el) => el.value);
+  d.skills = sk.length ? sk : null;
   if (d.type === 'se') {
     document.querySelectorAll('.ce-x-seopt').forEach((el) => { d.options[Number(el.dataset.k)] = el.value.trim(); });
     d.answers = [...document.querySelectorAll('.ce-x-seans')].filter((el) => el.checked).map((el) => d.options[Number(el.dataset.k)]);
@@ -523,7 +539,7 @@ function paintExLive() {
 function exChanges() {
   const now = itemNow('exercise', EX.id);
   const d = EX.draft, ch = {};
-  const fields = ['sentence', 'targets', 'hint', 'explanation'].concat(d.type === 'se' ? ['options', 'answers'] : ['blanks']);
+  const fields = ['sentence', 'targets', 'hint', 'explanation', 'difficulty', 'skills'].concat(d.type === 'se' ? ['options', 'answers'] : ['blanks']);
   fields.forEach((f) => {
     const before = now[f] == null ? (f === 'hint' || f === 'explanation' ? '' : now[f]) : now[f];
     if (!sameValue(before, d[f])) ch[f] = d[f];

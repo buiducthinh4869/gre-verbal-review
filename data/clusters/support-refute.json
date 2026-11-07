@@ -531,7 +531,12 @@
         "substantiate"
       ],
       "hint": "Đối tượng là một người từng bị nghi ngờ.",
-      "explanation": "Từng bị coi là gàn dở, nay được chứng minh là đúng: vindicated. Corroborated và substantiated dùng cho một nhận định, không dùng cho người."
+      "explanation": "Từng bị coi là gàn dở, nay được chứng minh là đúng: vindicated. Corroborated và substantiated dùng cho một nhận định, không dùng cho người.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "sr02",
@@ -560,7 +565,12 @@
         "refute"
       ],
       "hint": "Hai từ gần nghĩa, mức độ khác nhau.",
-      "explanation": "'Did more than merely X; Y' đòi Y mạnh hơn X: phản bác (rebut) rồi chứng minh sai hẳn (refuted)."
+      "explanation": "'Did more than merely X; Y' đòi Y mạnh hơn X: phản bác (rebut) rồi chứng minh sai hẳn (refuted).",
+      "difficulty": 2,
+      "skills": [
+        "degree"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "sr03",
@@ -589,7 +599,12 @@
         "repudiate"
       ],
       "hint": "Bắt đầu từ chỗ (ii): 'the great error of his career'.",
-      "explanation": "(i) Nhiệt thành theo: espoused. (ii) 'Although… by the 1990s' đổi chiều, gọi đó là sai lầm lớn: repudiated."
+      "explanation": "(i) Nhiệt thành theo: espoused. (ii) 'Although… by the 1990s' đổi chiều, gọi đó là sai lầm lớn: repudiated.",
+      "difficulty": 2,
+      "skills": [
+        "contrast"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "sr04",
@@ -613,7 +628,12 @@
         "qualify-v"
       ],
       "hint": "'None of the main results survived'.",
-      "explanation": "Một lỗi làm vô hiệu toàn bộ phân tích: vitiated. Undercut chỉ là làm suy yếu; qualified là thêm điều kiện."
+      "explanation": "Một lỗi làm vô hiệu toàn bộ phân tích: vitiated. Undercut chỉ là làm suy yếu; qualified là thêm điều kiện.",
+      "difficulty": 2,
+      "skills": [
+        "contrast"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "sr05",
@@ -636,7 +656,12 @@
         "gainsay"
       ],
       "hint": "'Their objection is… not its effectiveness'.",
-      "explanation": "Ngay cả người phê phán gay gắt nhất cũng thừa nhận: concede. Gainsay là phủ nhận, ngược nghĩa."
+      "explanation": "Ngay cả người phê phán gay gắt nhất cũng thừa nhận: concede. Gainsay là phủ nhận, ngược nghĩa.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "sr06",
@@ -662,7 +687,12 @@
         "refute"
       ],
       "hint": "Đối tượng là một tuyên bố.",
-      "explanation": "Kiểm toán độc lập xác nhận tuyên bố: corroborated, substantiated. Vindicated dùng cho người; debunked và refuted là cặp sai hướng."
+      "explanation": "Kiểm toán độc lập xác nhận tuyên bố: corroborated, substantiated. Vindicated dùng cho người; debunked và refuted là cặp sai hướng.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "sr07",
@@ -686,7 +716,12 @@
         "espouse"
       ],
       "hint": "Cấu trúc 'there is no …'.",
-      "explanation": "Không thể phủ nhận: no gainsaying, no denying. Conceding là thừa nhận, ngược nghĩa trong cấu trúc này."
+      "explanation": "Không thể phủ nhận: no gainsaying, no denying. Conceding là thừa nhận, ngược nghĩa trong cấu trúc này.",
+      "difficulty": 2,
+      "skills": [
+        "collocation"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "sr08",
@@ -711,7 +746,12 @@
         "bear-out"
       ],
       "hint": "Tương quan biến mất nghĩa là gì?",
-      "explanation": "Tương quan biến mất khi kiểm soát thu nhập: giả thuyết bị làm suy yếu, undercut và undermined. Corroborated và borne out là cặp sai hướng."
+      "explanation": "Tương quan biến mất khi kiểm soát thu nhập: giả thuyết bị làm suy yếu, undercut và undermined. Corroborated và borne out là cặp sai hướng.",
+      "difficulty": 2,
+      "skills": [
+        "contrast"
+      ],
+      "addedIn": "base"
     }
   ]
 }

@@ -28,6 +28,17 @@ async function loadVocab() {
   return { clusters };
 }
 
+/** Đề thi thử cố định (data/mocks/). Lỗi thì bỏ qua: web vẫn chạy, chỉ không có đề cố định. */
+async function loadFixedMocks() {
+  try {
+    const r = await fetch('data/mocks/index.json', { cache: 'no-cache' });
+    if (!r.ok) return [];
+    const ids = (await r.json()).mocks || [];
+    const all = await Promise.all(ids.map((id) => fetch('data/mocks/' + id + '.json', { cache: 'no-cache' }).then((x) => (x.ok ? x.json() : null)).catch(() => null)));
+    return all.filter((m) => m && m.id && Array.isArray(m.sections));
+  } catch (e) { return []; }
+}
+
 /** Nút Quay lại / Tiến của trình duyệt, hoặc bấm link #...: dựng lại đúng trang và cấp đang xem. */
 function routeFromHash() {
   if (!App.token || !App.idx) return;
@@ -98,7 +109,9 @@ window.addEventListener('online', () => { if (App.sync && App.sync.queue.length)
 /* ---------------- Khởi động ---------------- */
 (async function start() {
   try {
-    App.vocabData = await loadVocab();
+    const [vocab, fixed] = await Promise.all([loadVocab(), loadFixedMocks()]);
+    App.vocabData = vocab;
+    App.fixedMocks = fixed;
   } catch (err) {
     document.getElementById('view').innerHTML = '<div class="empty">Không tải được dữ liệu từ vựng (' + String(err.message || err) + '). Tải lại trang để thử lại.</div>';
     return;

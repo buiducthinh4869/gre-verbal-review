@@ -519,7 +519,12 @@
         "timorous"
       ],
       "hint": "Lùi lại vì khiêm tốn hay vì thiếu tự tin?",
-      "explanation": "Chủ động nhường công cho học trò: self-effacing. Diffident và timorous là rụt rè vì thiếu tự tin, không hợp với một người đã thay đổi cả ngành."
+      "explanation": "Chủ động nhường công cho học trò: self-effacing. Diffident và timorous là rụt rè vì thiếu tự tin, không hợp với một người đã thay đổi cả ngành.",
+      "difficulty": 2,
+      "skills": [
+        "contrast"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "ha02",
@@ -543,7 +548,13 @@
         "smug"
       ],
       "hint": "Bẫy chính tả kinh điển.",
-      "explanation": "Chủ quan đến mức ngừng kiểm tra rủi ro: complacent. Complaisant là chiều lòng; smug nhấn vào vẻ đắc ý, không nhấn vào sự lơ là cảnh giác."
+      "explanation": "Chủ quan đến mức ngừng kiểm tra rủi ro: complacent. Complaisant là chiều lòng; smug nhấn vào vẻ đắc ý, không nhấn vào sự lơ là cảnh giác.",
+      "difficulty": 3,
+      "skills": [
+        "degree",
+        "lookalike"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "ha03",
@@ -567,7 +578,12 @@
         "hubris"
       ],
       "hint": "Cấu trúc 'had the … to'.",
-      "explanation": "Cả gan chất vấn trước hội đồng: temerity. Hubris là ngạo mạn dẫn tới thất bại, không đi với cấu trúc 'have the … to'."
+      "explanation": "Cả gan chất vấn trước hội đồng: temerity. Hubris là ngạo mạn dẫn tới thất bại, không đi với cấu trúc 'have the … to'.",
+      "difficulty": 2,
+      "skills": [
+        "collocation"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "ha04",
@@ -591,7 +607,12 @@
         "effrontery"
       ],
       "hint": "Kiêu ngạo dẫn tới kết cục gì?",
-      "explanation": "Tin rằng mình không thể thất bại rồi sụp đổ: hubris. Temerity và effrontery là cả gan, trơ tráo trong một hành động, không có hàm ý kiêu ngạo dẫn tới sụp đổ."
+      "explanation": "Tin rằng mình không thể thất bại rồi sụp đổ: hubris. Temerity và effrontery là cả gan, trơ tráo trong một hành động, không có hàm ý kiêu ngạo dẫn tới sụp đổ.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "ha05",
@@ -620,7 +641,12 @@
         "peremptory"
       ],
       "hint": "Bắt đầu từ chỗ (ii).",
-      "explanation": "(ii) Gạt phản đối bằng một câu cộc lốc, muốn được làm theo ngay: peremptory. (i) 'Far from' đổi chiều: rụt rè, diffident."
+      "explanation": "(ii) Gạt phản đối bằng một câu cộc lốc, muốn được làm theo ngay: peremptory. (i) 'Far from' đổi chiều: rụt rè, diffident.",
+      "difficulty": 2,
+      "skills": [
+        "contrast"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "ha06",
@@ -645,7 +671,12 @@
         "peremptory"
       ],
       "hint": "Coi thường hay ra lệnh?",
-      "explanation": "Coi câu hỏi của cấp dưới là dấu hiệu ngu ngốc: khinh khỉnh, trịch thượng, supercilious và condescending. Imperious và peremptory là cặp ra lệnh hống hách, không phải coi thường trí tuệ."
+      "explanation": "Coi câu hỏi của cấp dưới là dấu hiệu ngu ngốc: khinh khỉnh, trịch thượng, supercilious và condescending. Imperious và peremptory là cặp ra lệnh hống hách, không phải coi thường trí tuệ.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "ha07",
@@ -669,7 +700,12 @@
         "diffident"
       ],
       "hint": "Nói dối trước bằng chứng rõ ràng.",
-      "explanation": "Lời nói dối trắng trợn dù có ảnh: brazen, barefaced. Timorous và diffident là cặp rụt rè; specious là nghe có vẻ đúng."
+      "explanation": "Lời nói dối trắng trợn dù có ảnh: brazen, barefaced. Timorous và diffident là cặp rụt rè; specious là nghe có vẻ đúng.",
+      "difficulty": 2,
+      "skills": [
+        "contrast"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "ha08",
@@ -694,7 +730,12 @@
         "unassuming"
       ],
       "hint": "Phô trương táo bạo hay hống hách?",
-      "explanation": "Tuyên bố ồn ào, táo bạo: brash, audacious. Imperious và peremptory là cặp ra lệnh hống hách, không phải tuyên bố khoa trương."
+      "explanation": "Tuyên bố ồn ào, táo bạo: brash, audacious. Imperious và peremptory là cặp ra lệnh hống hách, không phải tuyên bố khoa trương.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "base"
     }
   ]
 }

@@ -38,6 +38,8 @@ export function openSettings() {
     row('autoStart', 'Tự bắt đầu ôn khi mở web', 'Mở web là vào phiên ôn hôm nay luôn') +
     row('thinkFirst', 'Tự nghĩ trước', 'Ẩn phương án cho tới khi bấm Hiện lựa chọn') +
     row('examMode', 'Chế độ thi', 'Không gợi ý, ~1 phút mỗi câu GRE, giải thích ở cuối phiên') +
+    '<div class="switch-row"><div class="t"><b>Màn “Từ vựng cần biết”</b><span>Hiện các nhóm từ liên quan trước bộ bài GRE và trước khi thi thử</span></div>' +
+    '<span class="switch"><input type="checkbox" data-setting-inv="skipVocabIntro"' + (st.skipVocabIntro ? '' : ' checked') + ' role="switch" aria-label="Hiện màn Từ vựng cần biết"><span class="track"></span></span></div>' +
     '<p class="muted small" style="margin-top:16px">Cài đặt và tiến độ được lưu theo tài khoản, dùng được trên mọi thiết bị.</p>';
   el.hidden = false;
   document.getElementById('settingsBackdrop').hidden = false;
@@ -64,4 +66,5 @@ Object.assign(actions, {
 
 document.addEventListener('change', (e) => {
   if (e.target.dataset && e.target.dataset.setting) setSetting(e.target.dataset.setting, e.target.checked);
+  else if (e.target.dataset && e.target.dataset.settingInv) setSetting(e.target.dataset.settingInv, !e.target.checked);
 });

@@ -122,6 +122,21 @@ async function run() {
   assert.equal(await rowsOf('mocks', 'u10'), 1, 'userId lấy từ phiên, không từ payload');
   step('Thi thử: saveMock ghi một dòng (gửi lại không trùng), getMocks chỉ trả bài của chính mình');
 
+  // Đề cố định (đợt bài tập 01): mockId là id đề, mode fixed; làm lại là lần mới; gửi lại cùng lần thì bỏ qua
+  const fx = (t0, sc) => ({ mockId: 'mock-01', mode: 'fixed', startedAt: t0, finishedAt: t0 + 60000,
+    sections: [{ section: 1, score: sc, total: 12, durationSec: 60, items: [{ i: 'wc101', c: 'x', ok: 1, t: 5 }] }] });
+  const f1 = Math.floor((Date.now() - 1800000) / 1000) * 1000, f2 = f1 + 600000;
+  assert.equal((await ok(call('saveMock', fx(f1, 3), a))).saved, 1);
+  assert.equal((await ok(call('saveMock', fx(f1, 3), a))).saved, 0);
+  assert.equal((await ok(call('saveMock', fx(f2, 8), a))).saved, 1);
+  const fms = (await ok(call('getMocks', {}, a))).mocks.filter((m) => m.mode === 'fixed');
+  assert.deepEqual(fms.map((m) => [m.mockId, m.startedMs, m.sections[0].score]), [['mock-01', f2, 8], ['mock-01', f1, 3]]);
+  assert.equal(await rowsOf('mocks', 'u10'), 3);
+  step('Đề cố định: lưu mode fixed, mockId mock-01; làm lại là lần mới; gửi lại không trùng; getMocks tách từng lần');
+  await ok(call('saveEvents', { events: [{ id: 'e2e-set-' + T0, type: 'setting', ts: new Date().toISOString(), key: 'skipVocabIntro', value: true }] }, a));
+  assert.equal((await ok(call('getState', {}, a))).settings.skipVocabIntro, true);
+  step('Cài đặt skipVocabIntro (Không hiện lại màn Từ vựng cần biết) được lưu');
+
   // Sửa nội dung: chỉ thử quyền và kiểm tra hợp lệ (không tạo bản sửa thật)
   const ovBefore = (await cli('dump', { tab: 'content_overrides' })).values.length;
   const hiBefore = (await cli('dump', { tab: 'content_history' })).values.length;
