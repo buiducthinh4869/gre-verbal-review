@@ -630,7 +630,12 @@
         "waver"
       ],
       "hint": "Bắt đầu từ chỗ (ii): 'rejecting every compromise'.",
-      "explanation": "(i) 'had hoped… but' đổi chiều: hy vọng họ dễ thỏa hiệp (amenable). (ii) bác mọi thỏa hiệp: intransigent. (iii) lãnh đạo nhượng bộ khi chính thành viên bắt đầu dao động: waver. Acquiesce là bẫy: chấp nhận thụ động, nhưng ở đây cần sự lung lay."
+      "explanation": "(i) 'had hoped… but' đổi chiều: hy vọng họ dễ thỏa hiệp (amenable). (ii) bác mọi thỏa hiệp: intransigent. (iii) lãnh đạo nhượng bộ khi chính thành viên bắt đầu dao động: waver. Acquiesce là bẫy: chấp nhận thụ động, nhưng ở đây cần sự lung lay.",
+      "difficulty": 3,
+      "skills": [
+        "contrast"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "sy02",
@@ -652,7 +657,12 @@
         "capricious"
       ],
       "hint": "'Unlike' đổi chiều với 'consistency'.",
-      "explanation": "Lập trường thay đổi theo mỗi cuộc thăm dò: capricious. Obdurate, recalcitrant, pertinacious đều là cứng đầu; steadfast là kiên định."
+      "explanation": "Lập trường thay đổi theo mỗi cuộc thăm dò: capricious. Obdurate, recalcitrant, pertinacious đều là cứng đầu; steadfast là kiên định.",
+      "difficulty": 2,
+      "skills": [
+        "contrast"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "sy03",
@@ -681,7 +691,12 @@
         "resolute"
       ],
       "hint": "Cấu trúc 'not mere X; it reflected Y'.",
-      "explanation": "'Not mere X; it reflected Y' tách cái xấu khỏi cái tốt: không phải ngoan cố (obstinacy) mà là niềm tin cương quyết có cơ sở (resolute)."
+      "explanation": "'Not mere X; it reflected Y' tách cái xấu khỏi cái tốt: không phải ngoan cố (obstinacy) mà là niềm tin cương quyết có cơ sở (resolute).",
+      "difficulty": 2,
+      "skills": [
+        "collocation"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "sy04",
@@ -703,7 +718,12 @@
         "complaisant"
       ],
       "hint": "Bẫy chính tả kinh điển.",
-      "explanation": "Muốn làm vừa lòng cấp trên: complaisant. Complacent là bẫy chính tả: tự mãn. Intransigent, refractory sai hướng."
+      "explanation": "Muốn làm vừa lòng cấp trên: complaisant. Complacent là bẫy chính tả: tự mãn. Intransigent, refractory sai hướng.",
+      "difficulty": 3,
+      "skills": [
+        "lookalike"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "sy05",
@@ -725,7 +745,12 @@
         "implacable"
       ],
       "hint": "Không thể làm nguôi cơn giận.",
-      "explanation": "Sự thù địch không thể nguôi: implacable. Recalcitrant là chống quyền lực; refractory là khó điều khiển; dogged và tenacious là kiên trì theo nghĩa tốt."
+      "explanation": "Sự thù địch không thể nguôi: implacable. Recalcitrant là chống quyền lực; refractory là khó điều khiển; dogged và tenacious là kiên trì theo nghĩa tốt.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "sy06",
@@ -747,7 +772,12 @@
         "malleable"
       ],
       "hint": "Từ nào mô tả được 'preferences'?",
-      "explanation": "Sở thích dễ thay đổi, dễ nhào nặn: malleable. Docile, acquiescent, deferential, compliant đều mô tả thái độ của người, không phải tính chất của sở thích."
+      "explanation": "Sở thích dễ thay đổi, dễ nhào nặn: malleable. Docile, acquiescent, deferential, compliant đều mô tả thái độ của người, không phải tính chất của sở thích.",
+      "difficulty": 2,
+      "skills": [
+        "contrast"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "sy07",
@@ -772,7 +802,12 @@
         "refractory"
       ],
       "hint": "Nghe theo mọi chỉ dẫn.",
-      "explanation": "Ngoan ngoãn, dễ bảo: docile, tractable. Recalcitrant và refractory là cặp đồng nghĩa nhưng sai hướng; capricious và mercurial là cặp thất thường."
+      "explanation": "Ngoan ngoãn, dễ bảo: docile, tractable. Recalcitrant và refractory là cặp đồng nghĩa nhưng sai hướng; capricious và mercurial là cặp thất thường.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "sy08",
@@ -797,7 +832,12 @@
         "obdurate"
       ],
       "hint": "Khen hay chê?",
-      "explanation": "Kiên trì theo nghĩa tốt: tenacious, dogged. Obstinate và obdurate là cặp đồng nghĩa nhưng mang nghĩa chê, sai sắc thái với việc theo đuổi vaccine."
+      "explanation": "Kiên trì theo nghĩa tốt: tenacious, dogged. Obstinate và obdurate là cặp đồng nghĩa nhưng mang nghĩa chê, sai sắc thái với việc theo đuổi vaccine.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "sy09",
@@ -820,7 +860,341 @@
         "mercurial"
       ],
       "hint": "'No clear rationale'.",
-      "explanation": "Thay đổi thất thường không lý do: capricious, mercurial. Steadfast và resolute là cặp sai hướng."
+      "explanation": "Thay đổi thất thường không lý do: capricious, mercurial. Steadfast và resolute là cặp sai hướng.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "base"
+    },
+    {
+      "id": "sy101",
+      "type": "tc",
+      "sentence": "The ministry struggled to discipline {0} provincial officials who ignored every directive from the capital.",
+      "blanks": [
+        {
+          "options": [
+            "recalcitrant",
+            "docile",
+            "tractable",
+            "deferential",
+            "acquiescent"
+          ],
+          "answer": "recalcitrant"
+        }
+      ],
+      "targets": [
+        "recalcitrant",
+        "docile",
+        "tractable"
+      ],
+      "hint": "'Ignored every directive'.",
+      "explanation": "Phớt lờ mọi chỉ thị, chống đối cấp trên: recalcitrant.",
+      "difficulty": 1,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "batch-01"
+    },
+    {
+      "id": "sy102",
+      "type": "tc",
+      "sentence": "Decades of failed reforms suggest that rural poverty in the region is not a simple problem awaiting the right policy but a genuinely {0} one.",
+      "blanks": [
+        {
+          "options": [
+            "intractable",
+            "tractable",
+            "mercurial",
+            "capricious",
+            "malleable"
+          ],
+          "answer": "intractable"
+        }
+      ],
+      "targets": [
+        "intractable",
+        "tractable",
+        "malleable"
+      ],
+      "hint": "'Not… but'.",
+      "explanation": "'Not a simple problem… but': vấn đề khó giải quyết, intractable. Tractable và malleable ngược nghĩa; mercurial và capricious là thất thường.",
+      "difficulty": 2,
+      "skills": [
+        "contrast"
+      ],
+      "addedIn": "batch-01"
+    },
+    {
+      "id": "sy103",
+      "type": "se",
+      "sentence": "The judge remained {0}, unmoved by the defendant's tearful plea for leniency.",
+      "options": [
+        "obdurate",
+        "unyielding",
+        "docile",
+        "compliant",
+        "mercurial",
+        "capricious"
+      ],
+      "answers": [
+        "obdurate",
+        "unyielding"
+      ],
+      "targets": [
+        "obdurate",
+        "docile",
+        "compliant"
+      ],
+      "hint": "'Unmoved by… plea'.",
+      "explanation": "Không lay chuyển trước lời cầu xin: obdurate, unyielding. Docile và compliant là cặp sai hướng; mercurial và capricious là cặp thất thường.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "batch-01"
+    },
+    {
+      "id": "sy104",
+      "type": "tc",
+      "sentence": "The negotiators had expected the union to be {0}, but its leaders proved surprisingly {1}, accepting the first offer with barely a counterproposal.",
+      "blanks": [
+        {
+          "options": [
+            "intransigent",
+            "amenable",
+            "docile"
+          ],
+          "answer": "intransigent"
+        },
+        {
+          "options": [
+            "tractable",
+            "obstinate",
+            "recalcitrant"
+          ],
+          "answer": "tractable"
+        }
+      ],
+      "targets": [
+        "intransigent",
+        "tractable"
+      ],
+      "hint": "Bắt đầu từ chỗ (ii).",
+      "explanation": "(ii) Nhận ngay đề nghị đầu tiên: dễ bảo, tractable. (i) 'Had expected… but surprisingly' đổi chiều: không chịu thỏa hiệp, intransigent.",
+      "difficulty": 2,
+      "skills": [
+        "contrast"
+      ],
+      "addedIn": "batch-01"
+    },
+    {
+      "id": "sy105",
+      "type": "tc",
+      "sentence": "Through three changes of government, she remained a {0} advocate of open trade, never wavering even when the policy grew unpopular.",
+      "blanks": [
+        {
+          "options": [
+            "steadfast",
+            "capricious",
+            "mercurial",
+            "fickle",
+            "vacillating"
+          ],
+          "answer": "steadfast"
+        }
+      ],
+      "targets": [
+        "steadfast",
+        "capricious"
+      ],
+      "hint": "'Never wavering'.",
+      "explanation": "'Never wavering': kiên định, steadfast.",
+      "difficulty": 1,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-01"
+    },
+    {
+      "id": "sy106",
+      "type": "tc",
+      "sentence": "The audit was straightforward thanks to the clerk's {0} record-keeping: every receipt had been filed, dated and cross-checked.",
+      "blanks": [
+        {
+          "options": [
+            "assiduous",
+            "desultory",
+            "perfunctory",
+            "cursory",
+            "capricious"
+          ],
+          "answer": "assiduous"
+        }
+      ],
+      "targets": [
+        "assiduous",
+        "desultory",
+        "perfunctory",
+        "cursory"
+      ],
+      "hint": "Mô tả sau dấu hai chấm.",
+      "explanation": "Mọi biên lai đều được lưu, ghi ngày, đối chiếu: cần mẫn, assiduous. Desultory, perfunctory, cursory là qua loa.",
+      "difficulty": 2,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-01"
+    },
+    {
+      "id": "sy107",
+      "type": "se",
+      "sentence": "An {0} fieldworker, she interviewed more than two thousand households in a single year.",
+      "options": [
+        "indefatigable",
+        "tireless",
+        "docile",
+        "pliant",
+        "capricious",
+        "mercurial"
+      ],
+      "answers": [
+        "indefatigable",
+        "tireless"
+      ],
+      "targets": [
+        "indefatigable",
+        "docile",
+        "pliant"
+      ],
+      "hint": "Khối lượng công việc.",
+      "explanation": "Phỏng vấn hơn hai nghìn hộ trong một năm: không biết mệt, indefatigable, tireless.",
+      "difficulty": 1,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-01"
+    },
+    {
+      "id": "sy108",
+      "type": "tc",
+      "sentence": "Shareholders, long {0}, approved the merger without a single question, even though it doubled the company's debt.",
+      "blanks": [
+        {
+          "options": [
+            "acquiescent",
+            "refractory",
+            "recalcitrant",
+            "intransigent",
+            "obdurate"
+          ],
+          "answer": "acquiescent"
+        }
+      ],
+      "targets": [
+        "acquiescent",
+        "refractory",
+        "recalcitrant"
+      ],
+      "hint": "'Without a single question'.",
+      "explanation": "Chấp nhận thụ động, không hỏi gì: acquiescent. Các phương án còn lại là cứng đầu, chống đối.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "batch-01"
+    },
+    {
+      "id": "sy109",
+      "type": "se",
+      "sentence": "Junior staff were expected to be {0} toward senior researchers, never questioning their judgment in public.",
+      "options": [
+        "deferential",
+        "respectful",
+        "insolent",
+        "impudent",
+        "mercurial",
+        "capricious"
+      ],
+      "answers": [
+        "deferential",
+        "respectful"
+      ],
+      "targets": [
+        "deferential",
+        "insolent",
+        "impudent"
+      ],
+      "hint": "Thái độ với cấp trên.",
+      "explanation": "Tôn trọng, nhún nhường với cấp trên: deferential, respectful. Insolent và impudent là cặp sai hướng.",
+      "difficulty": 1,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "batch-01"
+    },
+    {
+      "id": "sy110",
+      "type": "tc",
+      "sentence": "For months the committee {0} between raising rates and holding them steady, issuing statements that seemed to change with every new data release.",
+      "blanks": [
+        {
+          "options": [
+            "vacillated",
+            "persevered",
+            "deferred",
+            "acquiesced",
+            "insisted"
+          ],
+          "answer": "vacillated"
+        }
+      ],
+      "targets": [
+        "vacillate",
+        "acquiescent"
+      ],
+      "hint": "Cấu trúc 'between X and Y'.",
+      "explanation": "Do dự giữa hai lựa chọn: vacillated between X and Y. Các động từ còn lại không đi với 'between … and'.",
+      "difficulty": 2,
+      "skills": [
+        "collocation"
+      ],
+      "addedIn": "batch-01"
+    },
+    {
+      "id": "sy111",
+      "type": "tc",
+      "sentence": "Voters are notoriously {0}: the same electorate that gave the party a landslide victory three years ago is now {1} in its rejection of it.",
+      "blanks": [
+        {
+          "options": [
+            "fickle",
+            "steadfast",
+            "docile"
+          ],
+          "answer": "fickle"
+        },
+        {
+          "options": [
+            "adamant",
+            "capricious",
+            "tractable"
+          ],
+          "answer": "adamant"
+        }
+      ],
+      "targets": [
+        "fickle",
+        "adamant",
+        "steadfast"
+      ],
+      "hint": "Ví dụ sau dấu hai chấm minh họa cho chỗ (i).",
+      "explanation": "(i) Từ thắng lớn sang quay lưng: hay thay đổi, fickle. (ii) Nay kiên quyết bác bỏ: adamant in its rejection.",
+      "difficulty": 2,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-01"
     }
   ]
 }

@@ -83,7 +83,10 @@ export function buildIndex(vocab, customWords) {
     w.forms.forEach((f) => { (idx.formMap[f] = idx.formMap[f] || []).push(w.id); });
     w.confusables.forEach((cid) => { (idx.reverseConf[cid] = idx.reverseConf[cid] || []).push(w.id); });
   });
-  idx.allExercises.forEach((ex) => { ex.answerIds = exerciseAnswerIds(ex, idx); });
+  idx.allExercises.forEach((ex) => {
+    ex.answerIds = exerciseAnswerIds(ex, idx);
+    Object.assign(ex, exerciseVocab(ex, idx));
+  });
   return idx;
 }
 
@@ -94,6 +97,7 @@ function stemCandidates(w) {
   const add = (x) => { if (x && x.length >= 3 && !out.includes(x)) out.push(x); };
   let m;
   if ((m = w.match(/^(.*)ied$/))) add(m[1] + 'y');
+  if ((m = w.match(/^(.*)ying$/))) add(m[1] + 'ie');                // belying → belie
   if ((m = w.match(/^(.*)ing$/))) {
     add(m[1]); add(m[1] + 'e');
     if (/(.)\1$/.test(m[1])) add(m[1].slice(0, -1));
@@ -120,6 +124,8 @@ function stemCandidates(w) {
   if ((m = w.match(/^(.*ur)al$/))) add(m[1] + 'e');
   // danh từ chỉ người → tính từ: iconoclast → iconoclastic
   if (/(ast|ist)$/.test(w)) add(w + 'ic');
+  // từ có dạng gốc là số nhiều: plaudit → plaudits
+  if (!/s$/.test(w)) add(w + 's');
   return out;
 }
 
@@ -161,6 +167,45 @@ export function exerciseAnswerIds(ex, idx) {
   return ids;
 }
 
+/** Mọi phương án của một câu (TC: theo từng chỗ trống; SE: 6 phương án), giữ thứ tự trong dữ liệu. */
+export function exerciseOptions(ex) {
+  return ex.type === 'se' ? (ex.options || []).slice() : (ex.blanks || []).flatMap((b) => b.options || []);
+}
+
+/**
+ * Từ vựng của một câu: ánh xạ MỌI phương án (không chỉ đáp án) về id từ.
+ *  - optionMap: {phương án: id | null}
+ *  - optionWordIds: các id ánh xạ được (không trùng, theo thứ tự phương án)
+ *  - outsideWords: phương án không ánh xạ được (từ chưa có trên web)
+ *  - relatedGroups: nhóm (group) của các từ đó, theo thứ tự gặp; cụm của nhóm xem ở idx.groupById[g].clusterId
+ */
+export function exerciseVocab(ex, idx) {
+  const optionMap = {}, optionWordIds = [], outsideWords = [], relatedGroups = [];
+  exerciseOptions(ex).forEach((o) => {
+    if (o in optionMap) return;
+    const id = mapOptionToId(o, idx, ex.targets);
+    optionMap[o] = id;
+    if (!id) { if (!outsideWords.includes(o)) outsideWords.push(o); return; }
+    if (!optionWordIds.includes(id)) optionWordIds.push(id);
+    const g = idx.byId[id] && idx.byId[id].group;
+    if (g && idx.groupById[g] && !relatedGroups.includes(g)) relatedGroups.push(g);
+  });
+  return { optionMap, optionWordIds, outsideWords, relatedGroups };
+}
+
+/**
+ * Id các từ đáp án mà người làm bị sai: TC: đáp án của những chỗ trống chọn sai (hoặc bỏ trống);
+ * SE: đáp án không được chọn. Câu đúng hoàn toàn thì rỗng.
+ */
+export function wrongAnswerIds(ex, choice, idx) {
+  const missed = ex.type === 'se'
+    ? (ex.answers || []).filter((a) => !(choice || []).includes(a))
+    : (ex.blanks || []).filter((b, i) => !choice || choice[i] !== b.answer).map((b) => b.answer);
+  const out = [];
+  missed.forEach((a) => { const id = mapOptionToId(a, idx, ex.targets); if (id && !out.includes(id)) out.push(id); });
+  return out;
+}
+
 /**
  * Chấm bài GRE. choice: TC -> mảng chuỗi theo từng chỗ trống; SE -> mảng 2 chuỗi đã chọn.
  * Trả về {correct, answerIds, otherTargetIds, confusions: [{wordId, confusedWith}]}.
@@ -190,15 +235,16 @@ export function gradeExercise(ex, choice, idx) {
   return { correct, answerIds, otherTargetIds, confusions };
 }
 
-/** Bài GRE cho một từ: ưu tiên bài mà từ là đáp án, rồi bài có từ trong targets; mỗi loại chọn bài làm ít gần đây nhất. */
-export function pickExerciseForWord(wordId, idx, exLast) {
+/** Bài GRE cho một từ: ưu tiên bài mà từ là đáp án, rồi bài có từ trong targets; mỗi loại chọn bài làm ít gần đây nhất. skip: Set id bài không được chọn (vd đang giữ cho đề thi thử). */
+export function pickExerciseForWord(wordId, idx, exLast, skip) {
   exLast = exLast || {};
+  const ok = (e) => !skip || !skip.has(e.id);
   const byOldest = (a, b) => {
     const ta = exLast[a.id] || '', tb = exLast[b.id] || '';
     return ta < tb ? -1 : ta > tb ? 1 : 0;
   };
-  const asAnswer = idx.exercises.filter((e) => e.answerIds.includes(wordId)).sort(byOldest);
+  const asAnswer = idx.exercises.filter((e) => ok(e) && e.answerIds.includes(wordId)).sort(byOldest);
   if (asAnswer.length) return asAnswer[0];
-  const asTarget = idx.exercises.filter((e) => (e.targets || []).includes(wordId)).sort(byOldest);
+  const asTarget = idx.exercises.filter((e) => ok(e) && (e.targets || []).includes(wordId)).sort(byOldest);
   return asTarget[0] || null;
 }

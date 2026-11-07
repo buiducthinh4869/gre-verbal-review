@@ -9,6 +9,54 @@ Khi có file JSON mới cùng schema (vd. `X.json`), yêu cầu: *"Thêm cụm t
 
 Tiến độ của mọi người trong Sheet không bị ảnh hưởng; từ mới bắt đầu ở hộp 0 và được giới thiệu dần theo số từ mới mỗi ngày.
 
+## Đợt bài tập mới (thêm câu GRE, đề thi thử cố định)
+
+Mỗi đợt gồm file cụm đã cập nhật (`data/clusters/*.json`, có thể cả `data/index.json`) và/hoặc file đề mới (`data/mocks/*.json` + `data/mocks/index.json`). Quy trình:
+
+1. Tạo nhánh mới, chép đè các file vào `data/` (giữ nguyên tên file). **Không đổi `id` từ, `id` bài cũ** (tiến độ, lịch sử, bản sửa gắn với id).
+2. Chạy `npm run check` (in số câu theo dạng và độ khó, các đề cố định) và `npm test`. Có lỗi dữ liệu thì báo lại, **không tự sửa nội dung**. Test "mọi đáp án GRE ánh xạ được" liệt kê các đáp án là từ chưa có trên web; đáp án mới kiểu này là hợp lệ, chỉ cần thêm vào danh sách `outside` trong `tests/srs.test.js` sau khi xác nhận.
+3. Commit, push lên `main`. GitHub Pages tự cập nhật; **không cần triển khai lại Apps Script**.
+4. Mở web: bảng Ngân hàng câu hỏi (mục Luyện tập) có tổng số câu mới; đề mới hiện trong Thi thử › Đề cố định.
+
+Câu của một đề cố định mới sẽ tự được giữ (không xuất hiện ở luyện tập) cho tới khi mỗi người làm đề đó lần đầu.
+
+### Trường phân loại của câu GRE
+
+```json
+{ "id": "pc114", "type": "tc", "...": "...", "difficulty": 3, "skills": ["contrast", "lookalike"], "addedIn": "batch-01" }
+```
+
+- `difficulty` (tùy chọn): 1 = dễ, 2 = vừa, 3 = khó. Hiện trước khi làm.
+- `skills` (tùy chọn): danh sách không rỗng, không trùng, gồm các mã (hiện sau khi chấm):
+
+  | Mã | Nhãn | Ý nghĩa |
+  |---|---|---|
+  | `contrast` | Tín hiệu đổi chiều | although, far from, rather than, once… now |
+  | `continuation` | Tín hiệu cùng chiều | dấu hai chấm, ví dụ minh họa, cùng hướng |
+  | `degree` | Mức độ của từ | chọn đúng mức mạnh/nhẹ |
+  | `secondary-meaning` | Nghĩa phụ | patent, check, gloss over, qualified… |
+  | `lookalike` | Bẫy hình thức | laudable/laudatory, complaisant/complacent… |
+  | `collocation` | Kết hợp từ | pay homage to, scoff at, expound on… |
+  | `nuance` | Phân biệt sắc thái | các từ gần nghĩa khác nhau tinh tế |
+
+  Thêm mã mới: sửa `SKILLS` trong `assets/validate.js` **và** `SKILL_CODES` trong `apps-script/Content.js` (cần triển khai lại Apps Script).
+- `addedIn` (tùy chọn, chuỗi): `"base"` cho bộ câu gốc, `"batch-NN"` cho câu thêm trong đợt NN. Bộ lọc "Chỉ câu mới" lấy câu có `addedIn` khác `"base"`.
+
+### Định dạng đề thi thử cố định
+
+`data/mocks/index.json` liệt kê các đề theo thứ tự hiển thị; mỗi đề một file `data/mocks/<id>.json`:
+
+```json
+{ "schemaVersion": 1, "id": "mock-01", "title": "Đề thi thử 1",
+  "clusters": ["praise-criticism", "clarity-obscurity"],
+  "description": "Mô tả ngắn hiện trên thẻ đề.",
+  "sections": [
+    { "title": "Section 1", "minutes": 18, "items": ["wc101", "wc107", "..."] },
+    { "title": "Section 2", "minutes": 23, "items": ["se06", "co01", "..."] } ] }
+```
+
+`npm run check` kiểm tra: mọi đề trong index có file và ngược lại; `id` đề khớp tên file (6–40 ký tự chữ, số, `-`, `_`); có `title`; `clusters` (nếu có) là id cụm có thật; 1–2 section (giới hạn của tab `mocks`), mỗi section có `title`, `minutes` > 0, danh sách câu không rỗng (tối đa 40); mọi `id` câu tồn tại; không câu nào lặp lại trong cùng một đề. Thứ tự câu khi làm bài đúng như file; thứ tự phương án xáo trộn.
+
 ## `npm run check` kiểm tra gì
 
 - Mọi file trong `data/clusters/` đều có trong `data/index.json` và ngược lại; `id` cụm trùng tên file; `schemaVersion` = 1.
@@ -18,6 +66,7 @@ Tiến độ của mọi người trong Sheet không bị ảnh hưởng; từ m
 - TC: số chỗ `{n}` bằng số `blanks`, đánh số liên tục từ `{0}`; 1 chỗ trống cần 5 phương án, 2–3 chỗ trống cần 3 phương án mỗi chỗ; `answer` nằm trong `options`.
 - SE: đúng 6 phương án, đúng 2 đáp án khác nhau, đáp án nằm trong `options`.
 - Không có phương án trùng nhau.
+- `difficulty`, `skills`, `addedIn` đúng định dạng (nếu có); đề cố định trong `data/mocks/` hợp lệ (xem trên).
 
 ## Schema của nhóm
 
@@ -52,7 +101,11 @@ Phương án trong câu GRE được ánh xạ về `id` từ để cập nhật
 - Cụm có giới từ: `gloss over` → `gloss`, `shore up` → `shore-up`.
 - Chữ có dấu: `clichéd` → `cliched`.
 
+- Đuôi `-ying` → `-ie`: `belying` → `belie`; dạng số ít của từ gốc số nhiều: `plaudit` → `plaudits`.
+
 Khi có nhiều ứng viên, luôn ưu tiên `id` nằm trong `targets` của bài.
+
+Mọi phương án (không chỉ đáp án) được ánh xạ khi tải dữ liệu: `optionWordIds` (id từ), `relatedGroups` (nhóm của các từ đó, dùng cho nhãn nhóm, màn Từ vựng cần biết và bộ lọc "Có dùng nhóm…"), `outsideWords` (phương án chưa có trên web).
 
 ## Sửa nội dung trên web và đưa bản sửa vào dữ liệu gốc
 

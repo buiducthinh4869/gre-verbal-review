@@ -260,3 +260,19 @@ test('purgeTestUser: từ chối nếu tài khoản có tiến độ từ trư�
   assert.equal(t.rows('progress').filter((x) => x[0] === 'u02').length, 1, 'không xóa gì');
   assert.equal(t.cli('purgeTestUser', { userId: 'u02' }).error.code, 'bad_request');
 });
+
+test('sửa độ khó và kỹ năng của câu GRE (đợt bài tập 01): hợp lệ thì lưu, sai thì từ chối', () => {
+  const t = ready();
+  const a = t.tokenOf('user01');
+  const id = pc.exercises.find((e) => e.addedIn === 'batch-01').id;
+  const ok = t.call('adminSaveOverride', { targetType: 'exercise', targetId: id, changes: { difficulty: 3, skills: ['contrast', 'nuance'] }, base: baseEx(id) }, a);
+  assert.equal(ok.ok, true, JSON.stringify(ok));
+  const ov = ok.data.content.overrides.filter((o) => o.id === id).map((o) => o.f).sort();
+  assert.deepEqual(ov, ['difficulty', 'skills']);
+  const bad1 = t.call('adminSaveOverride', { targetType: 'exercise', targetId: id, changes: { difficulty: 4 }, base: baseEx(id) }, a);
+  assert.equal(bad1.ok, false);
+  assert.match(bad1.error.message, /Độ khó/);
+  const bad2 = t.call('adminSaveOverride', { targetType: 'exercise', targetId: id, changes: { skills: ['foo'] }, base: baseEx(id) }, a);
+  assert.equal(bad2.ok, false);
+  assert.match(bad2.error.message, /Kỹ năng/);
+});

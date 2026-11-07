@@ -9,7 +9,21 @@
 /** Trường được phép sửa qua lớp đè (overrides). Không cho sửa id, group, cụm; không xóa (bài lỗi thì ẩn). */
 export const EDITABLE = {
   word: ['word', 'pos', 'meaning', 'nuance', 'example', 'collocations', 'root', 'confusables', 'priority', 'level'],
-  exercise: ['sentence', 'blanks', 'options', 'answers', 'targets', 'hint', 'explanation', 'hidden']
+  exercise: ['sentence', 'blanks', 'options', 'answers', 'targets', 'hint', 'explanation', 'hidden', 'difficulty', 'skills']
+};
+
+/** Độ khó của câu GRE (trường "difficulty"). */
+export const DIFFICULTY = { 1: 'Dễ', 2: 'Vừa', 3: 'Khó' };
+
+/** Kỹ năng của câu GRE (trường "skills"): mã → nhãn hiển thị và ý nghĩa. Thứ tự này là thứ tự hiển thị. */
+export const SKILLS = {
+  contrast: { label: 'Tín hiệu đổi chiều', desc: 'although, far from, rather than, once… now' },
+  continuation: { label: 'Tín hiệu cùng chiều', desc: 'dấu hai chấm, ví dụ minh họa, cùng hướng' },
+  degree: { label: 'Mức độ của từ', desc: 'chọn đúng mức mạnh/nhẹ' },
+  'secondary-meaning': { label: 'Nghĩa phụ', desc: 'patent, check, gloss over, qualified…' },
+  lookalike: { label: 'Bẫy hình thức', desc: 'laudable/laudatory, complaisant/complacent…' },
+  collocation: { label: 'Kết hợp từ', desc: 'pay homage to, scoff at, expound on…' },
+  nuance: { label: 'Phân biệt sắc thái', desc: 'các từ gần nghĩa khác nhau tinh tế' }
 };
 
 /** Tên tiếng Việt của từng trường (dùng trên giao diện và trong câu báo lỗi). */
@@ -17,7 +31,7 @@ export const FIELD_LABEL = {
   word: 'Từ', pos: 'Loại từ', meaning: 'Nghĩa', nuance: 'Sắc thái', example: 'Ví dụ', collocations: 'Collocation',
   root: 'Gốc từ', confusables: 'Từ dễ nhầm', priority: 'Mức ưu tiên', level: 'Mức trên thang',
   sentence: 'Câu', blanks: 'Chỗ trống và phương án', options: 'Phương án', answers: 'Đáp án', targets: 'Từ đích',
-  hint: 'Gợi ý', explanation: 'Giải thích', hidden: 'Ẩn câu'
+  hint: 'Gợi ý', explanation: 'Giải thích', hidden: 'Ẩn câu', difficulty: 'Độ khó', skills: 'Kỹ năng'
 };
 
 const LIMITS = { word: 120, pos: 20, meaning: 500, nuance: 2000, example: 2000, root: 300, coll: 120, sentence: 2000, hint: 2000, explanation: 3000, option: 120 };
@@ -102,6 +116,8 @@ export function validateExercise(ex, ctx = {}) {
     else if (ex[k].length > LIMITS[k]) errs.push(label + ' quá dài (tối đa ' + LIMITS[k] + ' ký tự)');
   });
   if (ex.hidden != null && typeof ex.hidden !== 'boolean') errs.push('Trạng thái ẩn phải là có hoặc không');
+  difficultySkillErrors(ex.difficulty, ex.skills).forEach((e) => errs.push(e));
+  if (ex.addedIn != null && (!isStr(ex.addedIn) || !ex.addedIn.trim())) errs.push('addedIn phải là chuỗi không rỗng');
   const ph = placeholders(ex.sentence);
 
   if (ex.type === 'tc') {
@@ -134,6 +150,58 @@ export function validateExercise(ex, ctx = {}) {
   return errs;
 }
 
+/** difficulty (tùy chọn): 1, 2 hoặc 3. skills (tùy chọn): danh sách không rỗng, không trùng, gồm các mã trong SKILLS. */
+export function difficultySkillErrors(difficulty, skills) {
+  const errs = [];
+  if (difficulty != null && ![1, 2, 3].includes(difficulty)) errs.push('Độ khó phải là 1 (dễ), 2 (vừa) hoặc 3 (khó)');
+  if (skills != null) {
+    if (!isStrArr(skills) || !skills.length) errs.push('Kỹ năng phải là danh sách không rỗng');
+    else {
+      skills.forEach((k) => { if (!SKILLS[k]) errs.push('Kỹ năng `' + k + '` không có trong bảng kỹ năng'); });
+      if (new Set(skills).size !== skills.length) errs.push('Kỹ năng bị trùng');
+    }
+  }
+  return errs;
+}
+
+/** Số section tối đa và số câu tối đa mỗi section của một đề cố định (giới hạn của tab mocks trên server). */
+export const MOCK_LIMITS = { sections: 2, items: 40 };
+
+/**
+ * Một đề thi thử cố định (data/mocks/<id>.json). ctx: {hasExercise(id) → bool, hasCluster(id) → bool, file: tên file}.
+ * Mọi id câu phải tồn tại; không câu nào lặp lại trong cùng một đề; mỗi section có title, minutes > 0, danh sách câu không rỗng.
+ */
+export function validateMock(m, ctx = {}) {
+  const errs = [];
+  if (!m || typeof m !== 'object') return ['Dữ liệu đề không hợp lệ'];
+  if (m.schemaVersion !== 1) errs.push('schemaVersion phải là 1 (đang là ' + JSON.stringify(m.schemaVersion) + ')');
+  if (!isStr(m.id) || !/^[A-Za-z0-9_-]{6,40}$/.test(m.id)) errs.push('id đề phải gồm 6–40 ký tự chữ, số, - hoặc _ (đang là ' + JSON.stringify(m.id) + ')');
+  else if (ctx.file && ctx.file !== m.id + '.json') errs.push('id đề "' + m.id + '" không khớp tên file ' + ctx.file);
+  if (!isStr(m.title) || !m.title.trim()) errs.push('Thiếu "title"');
+  if (m.description != null && !isStr(m.description)) errs.push('"description" phải là văn bản');
+  if (m.clusters != null) {
+    if (!isStrArr(m.clusters)) errs.push('"clusters" phải là danh sách id cụm');
+    else if (ctx.hasCluster) m.clusters.forEach((c) => { if (!ctx.hasCluster(c)) errs.push('Cụm `' + c + '` không tồn tại'); });
+  }
+  if (!Array.isArray(m.sections) || !m.sections.length) { errs.push('Cần ít nhất một section'); return errs; }
+  if (m.sections.length > MOCK_LIMITS.sections) errs.push('Tối đa ' + MOCK_LIMITS.sections + ' section mỗi đề');
+  const seen = new Map();
+  m.sections.forEach((s, k) => {
+    const where = 'Section ' + (k + 1);
+    if (!s || typeof s !== 'object') { errs.push(where + ': không hợp lệ'); return; }
+    if (!isStr(s.title) || !s.title.trim()) errs.push(where + ': thiếu "title"');
+    if (typeof s.minutes !== 'number' || !(s.minutes > 0)) errs.push(where + ': "minutes" phải là số > 0');
+    if (!isStrArr(s.items) || !s.items.length) { errs.push(where + ': danh sách câu ("items") rỗng'); return; }
+    if (s.items.length > MOCK_LIMITS.items) errs.push(where + ': tối đa ' + MOCK_LIMITS.items + ' câu');
+    s.items.forEach((id) => {
+      if (ctx.hasExercise && !ctx.hasExercise(id)) errs.push(where + ': câu `' + id + '` không tồn tại');
+      if (seen.has(id)) errs.push(where + ': câu `' + id + '` bị lặp (đã có ở ' + seen.get(id) + ')');
+      else seen.set(id, where);
+    });
+  });
+  return errs;
+}
+
 /** Kiểm tra hình dạng giá trị của MỘT trường (dùng cho đề xuất sửa, trước khi ghép vào cả từ / cả câu). */
 export function validateFieldValue(targetType, field, value) {
   if (!EDITABLE[targetType] || !EDITABLE[targetType].includes(field)) return ['Trường "' + field + '" không được phép sửa'];
@@ -145,5 +213,7 @@ export function validateFieldValue(targetType, field, value) {
   if (['options', 'answers', 'targets'].includes(field)) return isStrArr(value) ? [] : [FIELD_LABEL[field] + ' phải là danh sách'];
   if (field === 'blanks') return Array.isArray(value) && value.every((b) => b && isStrArr(b.options) && isStr(b.answer)) ? [] : ['Chỗ trống không hợp lệ'];
   if (field === 'hidden') return typeof value === 'boolean' ? [] : ['Trạng thái ẩn phải là có hoặc không'];
+  if (field === 'difficulty') return value == null ? [] : difficultySkillErrors(value, null);
+  if (field === 'skills') return value == null ? [] : difficultySkillErrors(null, value);
   return [];
 }

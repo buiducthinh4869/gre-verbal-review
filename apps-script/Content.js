@@ -18,8 +18,23 @@ var CONTENT_TABS = { content_overrides: OVERRIDE_HEADERS, content_history: HISTO
 
 var EDITABLE_FIELDS = {
   word: ['word', 'pos', 'meaning', 'nuance', 'example', 'collocations', 'root', 'confusables', 'priority', 'level'],
-  exercise: ['sentence', 'blanks', 'options', 'answers', 'targets', 'hint', 'explanation', 'hidden']
+  exercise: ['sentence', 'blanks', 'options', 'answers', 'targets', 'hint', 'explanation', 'hidden', 'difficulty', 'skills']
 };
+var SKILL_CODES = ['contrast', 'continuation', 'degree', 'secondary-meaning', 'lookalike', 'collocation', 'nuance'];
+
+/** difficulty (tùy chọn): 1, 2 hoặc 3; skills (tùy chọn): danh sách không rỗng các mã trong SKILL_CODES (khớp assets/validate.js). */
+function difficultySkillErrs_(difficulty, skills) {
+  var errs = [];
+  if (difficulty != null && [1, 2, 3].indexOf(difficulty) < 0) errs.push('Độ khó phải là 1 (dễ), 2 (vừa) hoặc 3 (khó)');
+  if (skills != null) {
+    if (!isStrArr_(skills) || !skills.length) errs.push('Kỹ năng phải là danh sách không rỗng');
+    else {
+      skills.forEach(function (k) { if (SKILL_CODES.indexOf(k) < 0) errs.push('Kỹ năng `' + k + '` không có trong bảng kỹ năng'); });
+      if (skills.some(function (k, i) { return skills.indexOf(k) !== i; })) errs.push('Kỹ năng bị trùng');
+    }
+  }
+  return errs;
+}
 var SOURCE_REQUIRED = ['meaning', 'nuance'];
 var REPORT_KINDS = ['two_correct', 'wrong_answer', 'wrong_explanation', 'other'];
 var SUGGESTIONS_PER_DAY = 20;
@@ -138,6 +153,7 @@ function validateExerciseServer_(ex) {
     else if (ex[x[0]].length > x[2]) errs.push(x[1] + ' quá dài (tối đa ' + x[2] + ' ký tự)');
   });
   if (ex.hidden != null && typeof ex.hidden !== 'boolean') errs.push('Trạng thái ẩn phải là có hoặc không');
+  difficultySkillErrs_(ex.difficulty, ex.skills).forEach(function (e) { errs.push(e); });
   var ph = placeholders_(ex.sentence);
   if (ex.type === 'tc') {
     var blanks = ex.blanks;

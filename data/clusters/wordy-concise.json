@@ -500,7 +500,12 @@
         "curt"
       ],
       "hint": "Khen hay chê sự ngắn gọn?",
-      "explanation": "'Admirably' là khen sự ngắn gọn đủ ý: succinct. Curt và brusque là ngắn đến mức thô; taciturn và reticent mô tả người ít nói, không phải văn bản."
+      "explanation": "'Admirably' là khen sự ngắn gọn đủ ý: succinct. Curt và brusque là ngắn đến mức thô; taciturn và reticent mô tả người ít nói, không phải văn bản.",
+      "difficulty": 2,
+      "skills": [
+        "degree"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "wc02",
@@ -529,7 +534,12 @@
         "voluble"
       ],
       "hint": "'Though… surprisingly' đổi chiều.",
-      "explanation": "(i) Hiếm khi nói quá một hai từ: taciturn. (ii) 'Surprisingly' đổi chiều, nói hàng giờ trôi chảy: voluble. Prolix dùng cho văn bản lê thê, không phải tính ít nói."
+      "explanation": "(i) Hiếm khi nói quá một hai từ: taciturn. (ii) 'Surprisingly' đổi chiều, nói hàng giờ trôi chảy: voluble. Prolix dùng cho văn bản lê thê, không phải tính ít nói.",
+      "difficulty": 3,
+      "skills": [
+        "contrast"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "wc03",
@@ -552,7 +562,12 @@
         "prolix"
       ],
       "hint": "Vấn đề là sự phô trương hay độ dài?",
-      "explanation": "Lời lẽ to tát, rỗng: bombastic. Prolix là dài dòng nhưng không nhất thiết khoa trương; discursive là lan man."
+      "explanation": "Lời lẽ to tát, rỗng: bombastic. Prolix là dài dòng nhưng không nhất thiết khoa trương; discursive là lan man.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "wc04",
@@ -590,7 +605,13 @@
         "cryptic"
       ],
       "hint": "Làm từng chỗ trống theo manh mối ngay sau nó.",
-      "explanation": "(i) Nhồi nhét lan man và lặp lại: prolix. (ii) 'By contrast': concise. (iii) Ngắn đến mức thiếu giải thích, khó hiểu với người mới: cryptic."
+      "explanation": "(i) Nhồi nhét lan man và lặp lại: prolix. (ii) 'By contrast': concise. (iii) Ngắn đến mức thiếu giải thích, khó hiểu với người mới: cryptic.",
+      "difficulty": 3,
+      "skills": [
+        "contrast",
+        "degree"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "wc05",
@@ -612,7 +633,12 @@
         "circumlocution"
       ],
       "hint": "Nói nhiều nhưng tránh trả lời thẳng.",
-      "explanation": "Nói vòng vo để tránh trả lời thẳng: circumlocution. Bombast là khoa trương; reticence là ngại nói, trái với việc nói mười phút."
+      "explanation": "Nói vòng vo để tránh trả lời thẳng: circumlocution. Bombast là khoa trương; reticence là ngại nói, trái với việc nói mười phút.",
+      "difficulty": 2,
+      "skills": [
+        "contrast"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "wc06",
@@ -635,7 +661,12 @@
         "turgid"
       ],
       "hint": "'Wandering from topic to topic'.",
-      "explanation": "Đi từ chủ đề này sang chủ đề khác: discursive. Turgid là nặng nề, khoa trương; florid là hoa mỹ."
+      "explanation": "Đi từ chủ đề này sang chủ đề khác: discursive. Turgid là nặng nề, khoa trương; florid là hoa mỹ.",
+      "difficulty": 2,
+      "skills": [
+        "contrast"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "wc07",
@@ -660,7 +691,12 @@
         "brusque"
       ],
       "hint": "Khen sự ngắn gọn sâu sắc.",
-      "explanation": "Ngắn, đắt giá, dễ trích dẫn: pithy, aphoristic. Curt và brusque là cặp đồng nghĩa nhưng mang nghĩa thô lỗ."
+      "explanation": "Ngắn, đắt giá, dễ trích dẫn: pithy, aphoristic. Curt và brusque là cặp đồng nghĩa nhưng mang nghĩa thô lỗ.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "wc08",
@@ -683,7 +719,12 @@
         "taciturn"
       ],
       "hint": "Không tự nói thêm.",
-      "explanation": "Không nói thêm gì: reticent, taciturn. Garrulous và loquacious là cặp sai hướng; bombastic và florid là khoa trương."
+      "explanation": "Không nói thêm gì: reticent, taciturn. Garrulous và loquacious là cặp sai hướng; bombastic và florid là khoa trương.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "wc09",
@@ -708,7 +749,307 @@
         "bombastic"
       ],
       "hint": "Người nói nhiều, không phải văn phong.",
-      "explanation": "Nói quá nhiều: loquacious, garrulous. Turgid và bombastic là cặp về giọng văn khoa trương, không phải nói nhiều; laconic và terse sai hướng."
+      "explanation": "Nói quá nhiều: loquacious, garrulous. Turgid và bombastic là cặp về giọng văn khoa trương, không phải nói nhiều; laconic và terse sai hướng.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "base"
+    },
+    {
+      "id": "wc101",
+      "type": "tc",
+      "sentence": "The first draft was so {0} that the editor asked the author to cut it by half without losing a single argument.",
+      "blanks": [
+        {
+          "options": [
+            "verbose",
+            "laconic",
+            "terse",
+            "pithy",
+            "succinct"
+          ],
+          "answer": "verbose"
+        }
+      ],
+      "targets": [
+        "verbose",
+        "laconic",
+        "terse"
+      ],
+      "hint": "Vì sao có thể cắt một nửa?",
+      "explanation": "Cắt một nửa mà không mất lập luận nào: bản nháp dài dòng, verbose.",
+      "difficulty": 1,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-01"
+    },
+    {
+      "id": "wc102",
+      "type": "tc",
+      "sentence": "The translation is accurate but {0}, weighing down the original's light, conversational prose with inflated phrases and endless subordinate clauses.",
+      "blanks": [
+        {
+          "options": [
+            "turgid",
+            "garrulous",
+            "loquacious",
+            "voluble",
+            "taciturn"
+          ],
+          "answer": "turgid"
+        }
+      ],
+      "targets": [
+        "turgid",
+        "garrulous",
+        "loquacious"
+      ],
+      "hint": "Mô tả văn phong hay con người?",
+      "explanation": "Văn nặng nề, khoa trương: turgid. Garrulous, loquacious, voluble mô tả người nói nhiều, không mô tả văn bản dịch.",
+      "difficulty": 3,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "batch-01"
+    },
+    {
+      "id": "wc103",
+      "type": "se",
+      "sentence": "The CEO's {0} letter to shareholders, full of talk of 'historic missions' and 'destiny', irritated analysts who wanted simple numbers.",
+      "options": [
+        "grandiloquent",
+        "bombastic",
+        "laconic",
+        "terse",
+        "garrulous",
+        "loquacious"
+      ],
+      "answers": [
+        "grandiloquent",
+        "bombastic"
+      ],
+      "targets": [
+        "grandiloquent",
+        "bombastic",
+        "garrulous",
+        "loquacious"
+      ],
+      "hint": "'Historic missions' và 'destiny'.",
+      "explanation": "Lời lẽ to tát, khoa trương: grandiloquent, bombastic. Garrulous và loquacious là cặp nói nhiều, không phải khoa trương.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "batch-01"
+    },
+    {
+      "id": "wc104",
+      "type": "tc",
+      "sentence": "Victorian obituaries, with their {0} tributes to 'noble spirits' and 'unblemished lives', strike many modern readers as almost comically ornate.",
+      "blanks": [
+        {
+          "options": [
+            "florid",
+            "laconic",
+            "terse",
+            "curt",
+            "brusque"
+          ],
+          "answer": "florid"
+        }
+      ],
+      "targets": [
+        "florid"
+      ],
+      "hint": "'Ornate'.",
+      "explanation": "'Comically ornate': hoa mỹ, florid.",
+      "difficulty": 1,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-01"
+    },
+    {
+      "id": "wc105",
+      "type": "tc",
+      "sentence": "Though his speeches were {0}, packed with grand phrases and lofty appeals, his written memos were surprisingly {1}, rarely running beyond a few lines.",
+      "blanks": [
+        {
+          "options": [
+            "bombastic",
+            "pithy",
+            "reticent"
+          ],
+          "answer": "bombastic"
+        },
+        {
+          "options": [
+            "terse",
+            "turgid",
+            "florid"
+          ],
+          "answer": "terse"
+        }
+      ],
+      "targets": [
+        "bombastic",
+        "terse"
+      ],
+      "hint": "'Though… surprisingly'.",
+      "explanation": "(i) Đầy lời to tát: bombastic. (ii) 'Though… surprisingly': ghi nhớ ngắn cụt, terse.",
+      "difficulty": 2,
+      "skills": [
+        "contrast"
+      ],
+      "addedIn": "batch-01"
+    },
+    {
+      "id": "wc106",
+      "type": "tc",
+      "sentence": "Asked whether the merger would go ahead, the famously {0} chairman replied with a single word: 'Perhaps.'",
+      "blanks": [
+        {
+          "options": [
+            "laconic",
+            "garrulous",
+            "voluble",
+            "loquacious",
+            "grandiloquent"
+          ],
+          "answer": "laconic"
+        }
+      ],
+      "targets": [
+        "laconic",
+        "garrulous"
+      ],
+      "hint": "'A single word'.",
+      "explanation": "Trả lời bằng một từ: kiệm lời, laconic.",
+      "difficulty": 1,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-01"
+    },
+    {
+      "id": "wc107",
+      "type": "se",
+      "sentence": "The ministry's response was {0}: a two-line statement confirming the resignation and declining to comment further.",
+      "options": [
+        "terse",
+        "brief",
+        "prolix",
+        "verbose",
+        "florid",
+        "grandiloquent"
+      ],
+      "answers": [
+        "terse",
+        "brief"
+      ],
+      "targets": [
+        "terse",
+        "prolix",
+        "verbose",
+        "florid"
+      ],
+      "hint": "'A two-line statement'.",
+      "explanation": "Tuyên bố hai dòng: terse, brief. Florid và grandiloquent là cặp hoa mỹ, khoa trương.",
+      "difficulty": 1,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-01"
+    },
+    {
+      "id": "wc108",
+      "type": "tc",
+      "sentence": "Her reply to the critic was {0} rather than rude: a single, perfectly chosen sentence that everyone at the conference was still quoting the next day.",
+      "blanks": [
+        {
+          "options": [
+            "pithy",
+            "curt",
+            "brusque",
+            "taciturn",
+            "reticent"
+          ],
+          "answer": "pithy"
+        }
+      ],
+      "targets": [
+        "pithy",
+        "curt",
+        "brusque"
+      ],
+      "hint": "'Rather than rude'.",
+      "explanation": "'Rather than rude' cùng câu trích dẫn được: súc tích, đắt giá, pithy. Curt và brusque chính là ngắn đến mức thô, điều câu vừa phủ nhận.",
+      "difficulty": 3,
+      "skills": [
+        "nuance",
+        "contrast"
+      ],
+      "addedIn": "batch-01"
+    },
+    {
+      "id": "wc109",
+      "type": "tc",
+      "sentence": "Usually forthcoming with reporters, the minister was unusually {0} about the negotiations, saying only that talks were 'continuing'.",
+      "blanks": [
+        {
+          "options": [
+            "reticent",
+            "voluble",
+            "loquacious",
+            "garrulous",
+            "grandiloquent"
+          ],
+          "answer": "reticent"
+        }
+      ],
+      "targets": [
+        "reticent",
+        "voluble"
+      ],
+      "hint": "'Usually… unusually'.",
+      "explanation": "'Usually forthcoming… unusually' đổi chiều: kín đáo, reticent about.",
+      "difficulty": 1,
+      "skills": [
+        "contrast",
+        "collocation"
+      ],
+      "addedIn": "batch-01"
+    },
+    {
+      "id": "wc110",
+      "type": "se",
+      "sentence": "A {0} man who could sit through an entire dinner without speaking, he was nevertheless a gifted and passionate lecturer.",
+      "options": [
+        "taciturn",
+        "uncommunicative",
+        "loquacious",
+        "garrulous",
+        "bombastic",
+        "florid"
+      ],
+      "answers": [
+        "taciturn",
+        "uncommunicative"
+      ],
+      "targets": [
+        "taciturn",
+        "loquacious",
+        "garrulous"
+      ],
+      "hint": "'Without speaking'.",
+      "explanation": "Cả bữa tối không nói câu nào: lầm lì, taciturn, uncommunicative.",
+      "difficulty": 1,
+      "skills": [
+        "contrast"
+      ],
+      "addedIn": "batch-01"
     }
   ]
 }

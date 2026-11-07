@@ -2,12 +2,14 @@
 import { exTools } from './content.js';
 import {
   App, S, esc, views, actions, word, stateOf, posLabel, stars, record, touch, pushReview,
-  dailyQueue, toast, isTyping, render, go, stopTimer, now
+  dailyQueue, toast, isTyping, render, go, stopTimer, now, heldIds, practiceExercises
 } from '../state.js';
 import { renderMarkup, maskForms } from '../render.js';
 import { pickDistractors } from '../distractors.js';
-import { gradeExercise, pickExerciseForWord } from '../vocab.js';
+import { gradeExercise, pickExerciseForWord, wrongAnswerIds } from '../vocab.js';
+import { insertQuickCards, otherExercisesFor } from '../bank.js';
 import { wordDetail, resultLine } from './common.js';
+import { difficultyHtml, skillsHtml, groupLabelsHtml, wordsInQuestionHtml, vocabIntroHtml } from './grevocab.js';
 
 const shuffle = (a) => S.shuffle(a);
 const ROMAN = ['i', 'ii', 'iii'];
@@ -19,7 +21,10 @@ export function startSession(kind, cards, opts = {}) {
   App.session = {
     kind, cards, i: 0, from: opts.from || App.view, title: opts.title || '',
     exam: !!App.settings.examMode, thinkFirst: !!App.settings.thinkFirst && !App.settings.examMode,
-    answered: 0, right: 0, wrong: {}, examLog: [], requeued: {}
+    answered: 0, right: 0, wrong: {}, examLog: [], requeued: {},
+    quickUsed: new Set(), greWrong: [],
+    // màn "Từ vựng cần biết" trước bộ bài GRE của Luyện tập (tắt được trong Cài đặt)
+    intro: kind === 'practice' && !App.settings.skipVocabIntro && cards.some((c) => c.type === 'gre')
   };
   go('session');
 }
@@ -29,12 +34,13 @@ const qType = (i) => (i % 2 ? 'm2w' : 'w2m');
 /** Từ mới và hộp 1–2: xen kẽ Từ → Nghĩa / Nghĩa → Từ; hộp ≥ 3: bài GRE có từ trong targets (làm ít gần đây nhất). */
 export function cardsForDaily(items) {
   const out = [], usedEx = {};
+  const held = heldIds(); // câu đang giữ cho đề thi thử chưa làm: không dùng trong ôn hôm nay
   let alt = 0;
   const news = items.filter((x) => x.isNew);
   items.filter((x) => !x.isNew).forEach((it) => {
     const s = stateOf(it.wordId);
     if (s && s.box >= 3) {
-      const ex = pickExerciseForWord(it.wordId, App.idx, Object.assign({}, App.exLast, usedEx));
+      const ex = pickExerciseForWord(it.wordId, App.idx, Object.assign({}, App.exLast, usedEx), held);
       if (ex && !usedEx[ex.id]) {
         usedEx[ex.id] = '9999';
         out.push({ type: 'gre', exId: ex.id, focus: it.wordId });
@@ -96,6 +102,7 @@ views.session = {
   render() {
     const se = App.session;
     if (!se) { setTimeout(() => go('today'), 0); return ''; }
+    if (se.intro) return introScreen();
     if (se.i >= se.cards.length) return summary();
     const c = card();
     const pct = Math.round(100 * se.i / se.cards.length);
@@ -107,7 +114,7 @@ views.session = {
   },
   after() {
     const se = App.session;
-    if (!se || se.i >= se.cards.length) return;
+    if (!se || se.intro || se.i >= se.cards.length) return;
     const c = card();
     if (c.type === 'w2m') { const ta = document.getElementById('typed'); if (ta) ta.value = c.typed || ''; }
     if (c.type === 'gre') startGreTimer(c);
@@ -124,6 +131,7 @@ function kindLine(c, label, extra) {
     if (S.isLeech(s)) bits.push('<span class="tag leech">! Hay quên</span>');
   }
   if (c.requeue) bits.push('<span class="dotsep">Ôn lại</span>');
+  if (c.quick) bits.push('<span class="tag quick">↺ Ôn lại từ vừa sai</span>');
   if (extra) bits.push(extra);
   return '<div class="card-kind">' + bits.join('') + '</div>';
 }
@@ -265,13 +273,15 @@ function cardGRE(c) {
   }
   const nBlanks = isSE ? 1 : ex.blanks.length;
   const label = isSE ? 'Sentence Equivalence' : 'Text Completion' + (nBlanks > 1 ? ' · ' + nBlanks + ' chỗ trống' : '');
-  let h = '<article class="card">' + kindLine(c, 'GRE · ' + label, se.exam && !c.checked ? '<span class="dotsep timer" id="timer"></span>' : '');
+  let h = '<article class="card">' + kindLine(c, 'GRE · ' + label, difficultyHtml(ex) + (se.exam && !c.checked ? '<span class="dotsep timer" id="timer"></span>' : ''));
   const sent = esc(ex.sentence).replace(/\{(\d+)\}/g, (_, n) => {
     n = +n;
     const filled = isSE ? (c.choice.length ? c.choice.join(' / ') : '') : c.choice[n];
     return '<span class="gap' + (filled ? ' filled' : '') + '">' + (filled ? esc(filled) : '&nbsp;') + (nBlanks > 1 ? '<small>(' + ROMAN[n] + ')</small>' : '') + '</span>';
   });
   h += '<p class="gre-sentence">' + sent + '</p>';
+  // nhãn nhóm liên quan: chỉ ở Luyện tập (không ở chế độ thi), không lộ tên từ
+  if (se.kind === 'practice' && !se.exam) h += groupLabelsHtml(ex);
   if (isSE && !c.checked) h += '<p class="muted small" style="margin:0">Chọn <b>đúng 2</b> từ cho câu cùng nghĩa.</p>';
   if (!(c.revealed || !se.thinkFirst)) {
     h += '<div class="think"><p>Đọc câu, tự đoán từ cho chỗ trống trước.</p><button class="btn primary" data-act="show-options">Hiện lựa chọn <kbd>Space</kbd></button></div>';
@@ -320,7 +330,11 @@ function cardGRE(c) {
   } else {
     const answerText = isSE ? ex.answers.join(', ') : ex.blanks.map((b) => b.answer).join(' · ');
     h += resultLine(c.correct, c.correct ? 'Chính xác' : 'Chưa đúng. Đáp án: ' + esc(answerText));
-    h += '<div class="explain">' + esc(ex.explanation || '') + '</div>' + exTools(ex);
+    h += '<div class="explain">' + esc(ex.explanation || '') + '</div>' + skillsHtml(ex);
+    if (c.quickAdded && c.quickAdded.length) {
+      h += '<p class="muted small quick-note">↺ Sẽ ôn lại ' + c.quickAdded.map((id) => '<b>' + esc(word(id).word) + '</b>').join(', ') + ' sau vài thẻ nữa.</p>';
+    }
+    h += wordsInQuestionHtml(ex) + exTools(ex);
     h += '<div class="card-actions"><button class="btn primary" data-act="next">Câu tiếp <kbd>Enter</kbd></button></div>';
     App.keyHandler = (e) => { if (e.key === 'Enter' && !isTyping(e)) { e.preventDefault(); nextCard(); } };
   }
@@ -352,6 +366,8 @@ function checkGRE(force) {
   c.checked = true;
   stopTimer();
   const g = gradeExercise(ex, c.choice, App.idx);
+  const boxBefore = {}; // hộp của từ TRƯỚC khi ghi kết quả câu này (để chọn dạng thẻ ôn nhanh)
+  ex.optionWordIds.concat(c.focus ? [c.focus] : []).forEach((id) => { const st = stateOf(id); boxBefore[id] = st ? st.box : 0; });
   c.correct = g.correct;
   const result = g.correct ? 'good' : 'again';
   const info = { mode: 'gre', exerciseId: ex.id, chosen: c.choice.filter(Boolean).join(' | ') };
@@ -364,6 +380,12 @@ function checkGRE(force) {
   g.otherTargetIds.forEach((id) => { if (!graded[id]) touch(id, info); });
   noteResult(g.correct, Object.keys(graded));
   if (!g.correct && se.kind !== 'practice' && c.focus) requeue(c.focus, 'gre');
+  // Luyện tập: sai thì mỗi từ đáp án bị sai được ôn lại bằng một thẻ nhanh sau 3–5 thẻ (tối đa một lần mỗi từ mỗi phiên)
+  if (!g.correct && se.kind === 'practice') {
+    const wrongIds = wrongAnswerIds(ex, c.choice, App.idx).filter((id) => word(id));
+    wrongIds.forEach((id) => { if (!se.greWrong.includes(id)) se.greWrong.push(id); });
+    c.quickAdded = insertQuickCards(se.cards, se.i, wrongIds, (id) => boxBefore[id] || 0, se.quickUsed).map((q) => q.wordId);
+  }
   if (se.exam) { se.examLog.push({ exId: ex.id, correct: g.correct, choice: c.choice.slice() }); nextCard(); } else render();
 }
 
@@ -475,7 +497,7 @@ function summary() {
       return '<li><div class="row"><b>Câu ' + (k + 1) + '</b>' + (x.correct ? '<span class="tag known">✓ Đúng</span>' : '<span class="tag leech">✗ Sai</span>') + '</div>' +
         '<p class="example" style="margin:6px 0">' + sent + '</p>' +
         '<div class="small">Bạn chọn: <b>' + esc(x.choice.filter(Boolean).join(', ') || '(bỏ trống)') + '</b> · Đáp án: <b>' + esc(ans) + '</b></div>' +
-        '<div class="explain small">' + esc(ex.explanation || '') + '</div>' + exTools(ex) + '</li>';
+        '<div class="explain small">' + esc(ex.explanation || '') + '</div>' + skillsHtml(ex) + wordsInQuestionHtml(ex, { collapsed: true }) + exTools(ex) + '</li>';
     }).join('') + '</ul>';
   }
   if (wrongIds.length) {
@@ -488,6 +510,11 @@ function summary() {
   }
   h += '<div class="form-grid" style="margin-top:20px">';
   if (wrongIds.length) h += '<button class="btn primary big" data-act="retry-wrong">Ôn lại các từ sai <kbd>Enter</kbd></button>';
+  if (se.greWrong.length) {
+    const others = otherQuestions();
+    h += '<button class="btn big" data-act="sess-other"' + (others.length ? '' : ' disabled aria-describedby="sess-other-none"') + '>Làm câu khác có cùng từ' + (others.length ? ' (' + Math.min(others.length, OTHER_MAX) + ' câu)' : '') + '</button>';
+    if (!others.length) h += '<p class="muted small" id="sess-other-none" style="margin:-4px 0 0">Chưa có câu khác cho các từ này (' + se.greWrong.map((id) => esc(word(id).word)).join(', ') + ').</p>';
+  }
   if (se.kind === 'daily') {
     const q = dailyQueue();
     if (q.total) h += '<button class="btn big' + (wrongIds.length ? '' : ' primary') + '" data-act="start-daily">Ôn tiếp (' + q.total + ' thẻ còn lại)</button>';
@@ -500,6 +527,32 @@ function summary() {
   };
   return h;
 }
+
+const OTHER_MAX = 10;
+/** Câu GRE khác có chứa các từ vừa sai (trong targets), chưa làm trong phiên này, không thuộc đề thi thử đang giữ. */
+function otherQuestions() {
+  const se = App.session;
+  const used = new Set(se.cards.filter((c) => c.type === 'gre').map((c) => c.exId));
+  return otherExercisesFor(se.greWrong, practiceExercises(), used);
+}
+function startOther() {
+  const se = App.session;
+  const list = otherQuestions().slice(0, OTHER_MAX);
+  if (!list.length) { toast('Chưa có câu khác cho các từ này.'); return; }
+  startSession('practice', S.shuffle(list).map((ex) => ({ type: 'gre', exId: ex.id })), { from: se.from, title: 'Câu khác có cùng từ' });
+}
+
+/* ---------------- Từ vựng cần biết (trước bộ bài GRE của Luyện tập) ---------------- */
+function introScreen() {
+  const se = App.session;
+  const exs = se.cards.filter((c) => c.type === 'gre').map((c) => App.idx.exById[c.exId]).filter(Boolean);
+  App.keyHandler = (e) => { if (e.key === 'Enter' && !isTyping(e)) { e.preventDefault(); beginAfterIntro(); } };
+  return vocabIntroHtml(exs, {
+    intro: exs.length + ' câu GRE' + (se.title ? ' · ' + esc(se.title) : '') + '. Các nhóm dưới đây có từ xuất hiện trong phương án của các câu; tên từ cụ thể chỉ hiện sau khi chấm.',
+    startAct: 'sess-begin', startLabel: 'Bắt đầu', backAct: 'end-session', backLabel: 'Quay lại'
+  });
+}
+function beginAfterIntro() { if (!App.session) return; App.session.intro = false; render(); window.scrollTo(0, 0); }
 
 function retryWrong() {
   const se = App.session;
@@ -527,6 +580,8 @@ Object.assign(actions, {
   },
   'sc-check': () => checkScale(),
   'retry-wrong': () => retryWrong(),
+  'sess-other': () => startOther(),
+  'sess-begin': () => beginAfterIntro(),
   'nav-from': () => go((App.session && App.session.from) || 'today')
 });
 

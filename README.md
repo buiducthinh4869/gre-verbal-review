@@ -29,12 +29,15 @@ assets/
   vocab.js              chỉ mục dữ liệu, ánh xạ phương án GRE, chấm bài (thuần)
   distractors.js        sinh phương án nhiễu theo "direction" của nhóm (thuần)
   mock.js               Thi thử: chọn câu, thích ứng theo section, chấm (thuần)
+  bank.js               ngân hàng câu: bộ lọc, bảng theo cụm/dạng, từ vựng cần biết, giữ câu cho đề cố định, thẻ ôn nhanh (thuần)
+  validate.js           quy tắc hợp lệ của từ, câu, đề cố định (dùng chung: npm run check, trình duyệt, chế độ sửa)
   render.js             render ví dụ *...* / **...** an toàn
-  views/                today, vocab, practice, mock, session, notebook, addword, account, admin, login, settings
+  views/                today, vocab, practice, mock, session, notebook, addword, account, admin, login, settings,
+                        content (chế độ sửa), grevocab (độ khó, kỹ năng, nhóm liên quan, các từ trong câu, từ vựng cần biết)
 apps-script/            rootDir của clasp: Api.js, Auth.js, Store.js, Admin.js, Migrate.js
-data/                   index.json + clusters/*.json
+data/                   index.json + clusters/*.json + mocks/ (đề thi thử cố định)
 scripts/                check-data, deploy-api, admin-cli, e2e-api, dev-server, backup-csv
-tests/                  srs, distractors, mock, api (server chạy trong giả lập Apps Script)
+tests/                  srs, distractors, mock, bank, content, api (server chạy trong giả lập Apps Script)
 ```
 
 ## Các trang
@@ -58,6 +61,14 @@ tests/                  srs, distractors, mock, api (server chạy trong giả l
   - Bài đang làm lưu trong `localStorage`, nên tải lại trang vẫn làm tiếp được, và đồng hồ chạy theo thời gian thực.
   - Kết quả cập nhật lịch ôn theo quy tắc cũ (câu bỏ trống không tính) và lưu vào tab `mocks` (action `saveMock`, `getMocks`, lọc theo `userId` của phiên). Trang Hôm nay hiện lần thi gần nhất.
 
+- **Đợt bài tập 01** (07/11/2026): 222 câu GRE (thêm 67 câu cho 4 cụm đầu), mỗi câu có độ khó, kỹ năng, đợt thêm.
+  - Luyện tập, dạng GRE chuẩn: lọc theo **dạng câu**, **độ khó**, **kỹ năng** (chọn nhiều, câu có ít nhất một kỹ năng đã chọn), **chỉ câu mới**, **có dùng nhóm…**; hiện số câu thỏa điều kiện; bảng **Ngân hàng câu hỏi** theo cụm và dạng (cụm in nghiêng có dưới 10 câu).
+  - Trên câu: độ khó (ba chấm + chữ Dễ/Vừa/Khó) hiện trước khi làm; nhãn kỹ năng chỉ hiện sau khi chấm; dòng **nhóm liên quan** (chỉ ở Luyện tập, không ở chế độ thi và thi thử; nhóm thuộc cụm khác có ký hiệu ↗ và chữ "cụm khác"); sau khi chấm có khung **Các từ trong câu này** (mỗi phương án: từ, nghĩa, nhóm, đã thuộc / đang học / chưa học; từ ngoài web có link Merriam-Webster; bấm từ mở chi tiết trong khung, không rời phiên).
+  - Màn **Từ vựng cần biết cho bộ bài này** trước bộ bài GRE của Luyện tập và trước khi thi thử: nhóm liên quan sắp theo số câu dùng tới, số từ đã học / tổng, nút **Ôn nhanh nhóm này**, danh sách từ ngoài web. Tắt bằng ô "Không hiện lại màn này", bật lại trong Cài đặt (khóa `skipVocabIntro`). Thi thử ngẫu nhiên đầy đủ: danh sách tính theo Section 1 (Section 2 chọn sau theo kết quả).
+  - **Luyện lại ngay khi sai** (Luyện tập): sai một câu GRE thì mỗi từ đáp án bị sai (TC: chỗ trống chọn sai; SE: đáp án không được chọn) có một thẻ **Ôn lại từ vừa sai** sau 3–5 thẻ thường: Nghĩa → Từ nếu từ đang ở hộp 0–2 *trước khi* trả lời câu đó, Từ → Nghĩa nếu ở hộp 3 trở lên; mỗi từ tối đa một lần mỗi phiên; kết quả tính lặp lại ngắt quãng như mọi thẻ. Cuối phiên: **Làm câu khác có cùng từ** (tối đa 10 câu khác có các từ đó trong `targets`, chưa làm trong phiên). Từ → Nghĩa / Nghĩa → Từ sai thì từ quay lại sau 3–5 thẻ (như ôn hôm nay).
+  - **Đề cố định** (Thi thử): đọc từ `data/mocks/`; mỗi đề hiện tên, mô tả, cụm, số câu, thời gian, trạng thái ("Chưa làm" / "Lần gần nhất: x/27, ngày…"), nút Làm đề / Làm lại, bảng các lần làm. Dùng đúng bộ máy thi thử; thứ tự câu theo file đề, phương án vẫn xáo trộn, không thích ứng. Lưu vào tab `mocks` với `mode = "fixed"`, `mockId` = id đề; màn kết quả so sánh với lần làm trước và có bảng **theo kỹ năng và độ khó**.
+  - **Giữ câu cho đề chưa làm**: với mỗi người, câu của đề cố định chưa làm lần nào không xuất hiện ở Luyện tập, thi thử ngẫu nhiên, ôn hôm nay và danh sách "Câu GRE có từ này" (trừ khi quản lý bật Chế độ sửa). Nộp đề xong thì các câu quay lại. Luyện tập hiện "x câu đang được giữ cho đề thi thử bạn chưa làm".
+  - Chế độ sửa: sửa được **Độ khó** (ô chọn) và **Kỹ năng** (danh sách tích chọn) của câu.
 - **Sửa nội dung** (cập nhật tổng hợp):
   - Quản lý bật **Chế độ sửa** (nút ở thanh trên cùng) rồi bấm biểu tượng bút cạnh từng trường trong chi tiết từ (nghĩa, sắc thái, ví dụ, collocation, từ dễ nhầm, mức ưu tiên, mức trên thang…). `Ctrl/Cmd + S` lưu, `Esc` hủy, có ô ghi chú và xem trước.
   - Mỗi câu GRE (trong chi tiết từ, màn kết quả luyện tập và thi thử) có **Sửa câu này** (biểu mẫu kèm xem trước) và **Ẩn câu này** (câu ẩn không còn trong luyện tập, thi thử).
@@ -101,6 +112,7 @@ Mỗi câu trả lời cập nhật giao diện ngay, rồi vào hàng đợi (g
 
 - Server đọc/ghi theo **tên cột**, chỉ sửa đúng các dòng của người dùng đó và thêm dòng mới ở cuối. Không `clear()`, không ghi lại cả bảng, không sắp xếp lại.
 - Từ tự thêm khi xóa chỉ được đánh dấu `deletedAt`, dòng vẫn còn.
+- Đề cố định (đợt bài tập 01) cũng lưu vào tab `mocks`, không thêm cột: `mode = "fixed"`, `mockId` = id đề (vd `mock-01`). Vì làm lại cùng `mockId`, server phân biệt từng lần làm bằng (`mockId`, `startedAt`) khi chống ghi trùng và khi gộp section trong `getMocks`; `getMocks` luôn trả mọi lần làm đề cố định (giới hạn `limit` chỉ áp cho đề ngẫu nhiên).
 - Tab `mocks` (cập nhật 02) được tạo riêng bằng `node scripts/admin-cli.js ensure-mocks` (chạy lại vô hại), mỗi section của một bài thi thử là một dòng: `userId, mockId, startedAt, finishedAt, mode, section, score, total, durationSec, items` (`items` là JSON gọn `[{i: id câu, c: đáp án, ok, t: giây}]`). Gửi lại cùng `mockId` + `section` thì bỏ qua.
 - Ba tab sửa nội dung, tạo bằng `ensure-content`:
   - `content_overrides`: targetType, targetId, field, value (JSON), version, active, editedBy, editedAt, note. Mỗi (mục, trường) một dòng.
@@ -115,4 +127,5 @@ Mỗi câu trả lời cập nhật giao diện ngay, rồi vào hàng đợi (g
 - Bản 1 (giao diện chạy trong Apps Script, một người dùng): code ở nhánh `v1-apps-script`. Deployment giao diện cũ `AKfycbxPyL9…` đã được gỡ ngày 04/11/2026 khi chuyển sang bản 2 (phiên bản 2 của project vẫn còn trong Apps Script).
 - Chuyển dữ liệu 04/11/2026: 12 dòng progress, 16 dòng log, 3 dòng settings của bản cũ → `u01`, khớp 100% với bản sao lưu "GRE Verbal - Tiến độ ôn tập (sao lưu 2026-11-04)".
 - Cập nhật 02 (05/11/2026): 7 cụm, 259 từ, 83 bài GRE; trường `direction` của nhóm; trang Từ vựng dạng thẻ; phạm vi Luyện tập mới; chế độ Thi thử và tab `mocks`. Trước khi triển khai đã sao lưu "GRE Verbal - Tiến độ ôn tập (sao lưu 2026-11-05)"; số dòng các tab cũ trước và sau bằng nhau.
-- Thêm cụm từ mới: xem [UPDATE.md](UPDATE.md).
+- Đợt bài tập 01 (07/11/2026): dữ liệu 222 câu (67 câu mới), trường `difficulty`, `skills`, `addedIn`, đề cố định `mock-01`; Apps Script sửa tối thiểu (mode `fixed` trong `saveMock`/`getMocks`, khóa cài đặt `skipVocabIntro`, cho sửa `difficulty`/`skills`). Trước khi triển khai đã xuất CSV mọi tab (`backups/2026-11-07*`); số dòng các tab và tiến độ `user01` trước và sau bằng nhau.
+- Thêm cụm từ mới, đợt bài tập mới: xem [UPDATE.md](UPDATE.md).

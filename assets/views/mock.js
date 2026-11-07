@@ -2,16 +2,18 @@
 // Xem lại), màn chuyển section, màn kết quả. Bài đang làm lưu tạm trong localStorage để tải lại trang vẫn làm
 // tiếp, đồng hồ chạy theo thời gian thực. Kết quả lưu vào tab mocks (saveMock), gửi lại nếu mất mạng.
 import { exTools } from './content.js';
-import { App, S, esc, views, actions, word, record, touch, render, go, toast, isTyping, now, stopTimer } from '../state.js';
+import { App, S, esc, views, actions, word, record, touch, render, go, toast, isTyping, now, stopTimer, heldIds } from '../state.js';
 import { call, LS, isAuthError } from '../api.js';
 import {
   MODES, SECTION_SPEC, KIND_LABEL, ADAPT_THRESHOLD, exKind, isAnswered, isTouched, planSections, pickSection, adaptFrom,
   gradeItem, encodeChoice, decodeChoice, summarize
 } from '../mock.js';
 import { startSession, startWordsSession } from './session.js';
+import { difficultyHtml, skillsHtml, wordsInQuestionHtml, vocabIntroHtml } from './grevocab.js';
+import { SKILLS, DIFFICULTY } from '../bank.js';
 
 const ROMAN = ['i', 'ii', 'iii'];
-const M = { screen: 'start', resultId: null, mode: 's1', clusters: [], confirm: false };
+const M = { screen: 'start', resultId: null, mode: 's1', clusters: [], confirm: false, prep: null };
 const runKey = () => 'gre.mockRun.' + App.user.userId;
 const queueKey = () => 'gre.mockQueue.' + App.user.userId;
 let run = null, runUser = null;
@@ -33,9 +35,20 @@ const mmss = (sec) => { sec = Math.max(0, Math.round(sec)); return Math.floor(se
 function vnStamp(ms) { const d = new Date(ms + 7 * 3600e3); return pad2(d.getUTCDate()) + '/' + pad2(d.getUTCMonth() + 1) + '/' + d.getUTCFullYear() + ' ' + pad2(d.getUTCHours()) + ':' + pad2(d.getUTCMinutes()) + ':' + pad2(d.getUTCSeconds()); }
 const shortDate = (stamp) => String(stamp || '').slice(0, 16);
 
+/** Câu cho thi thử ngẫu nhiên: bỏ câu đang giữ cho đề cố định chưa làm. */
 function poolFor(clusters) {
-  return App.idx.exercises.filter((e) => !clusters.length || clusters.includes(e.clusterId));
+  const held = heldIds();
+  return App.idx.exercises.filter((e) => !held.has(e.id) && (!clusters.length || clusters.includes(e.clusterId)));
 }
+
+/* ---------------- Đề cố định ---------------- */
+export const fixedById = (id) => (App.fixedMocks || []).find((m) => m.id === id) || null;
+/** Khóa riêng của MỘT lần làm: đề ngẫu nhiên dùng mockId; đề cố định (mockId = id đề) thêm thời điểm bắt đầu. */
+export const entryKey = (m) => (m.mode === 'fixed' ? m.mockId + '~' + m.startedMs : m.mockId);
+const modeLabel = (m) => (m.mode === 'fixed' ? (fixedById(m.mockId) || { title: m.mockId }).title : (MODES[m.mode] || { label: m.mode }).label);
+const attemptsOf = (id) => (App.mocks || []).filter((m) => m.mode === 'fixed' && m.mockId === id).sort((a, b) => b.startedMs - a.startedMs);
+const fixedItemIds = (fm) => fm.sections.flatMap((s) => s.items).filter((id) => ex(id));
+const sumOf = (m) => m.sections.reduce((a, s) => ({ sc: a.sc + s.score, t: a.t + s.total, d: a.d + s.durationSec }), { sc: 0, t: 0, d: 0 });
 
 /** Cộng thời gian đang xem câu hiện tại vào câu đó. */
 function leaveQ() {
@@ -65,18 +78,44 @@ function beginSection() {
   saveRun();
 }
 
-function startMock() {
+/** Chuẩn bị đề ngẫu nhiên: chọn câu Section đầu (Section sau chọn khi nộp Section trước, theo kết quả). */
+function prepRandom() {
   const pool = poolFor(M.clusters);
   const plan = planSections(M.mode, pool.length);
-  if (!plan.sections.every((s) => s.n > 0)) { toast('Phạm vi này chưa đủ câu để thi thử.'); return; }
+  if (!plan.sections.every((s) => s.n > 0)) { toast('Phạm vi này chưa đủ câu để thi thử.'); return null; }
   const first = plan.sections[0];
-  const ids = pickSection(pool, first.n, { exRes: App.exRes, today: S.vnDate(now()) });
+  return { kind: 'random', mode: M.mode, clusters: M.clusters.slice(), plan: plan.sections, ids: pickSection(pool, first.n, { exRes: App.exRes, today: S.vnDate(now()) }) };
+}
+/** Chuẩn bị đề cố định: thứ tự câu đúng như file đề; thứ tự phương án vẫn xáo trộn khi tạo section. */
+function prepFixed(id) {
+  const fm = fixedById(id);
+  if (!fm) { toast('Không tìm thấy đề này.'); return null; }
+  const plan = fm.sections.map((s, k) => ({ no: k + 1, title: s.title, min: s.minutes, ids: s.items.filter((x) => ex(x)), n: 0 }));
+  plan.forEach((p) => { p.n = p.ids.length; });
+  if (!plan.every((p) => p.n)) { toast('Đề này đang thiếu câu, báo người quản lý.'); return null; }
+  return { kind: 'fixed', mode: 'fixed', fixedId: fm.id, clusters: (fm.clusters || []).slice(), plan, ids: plan[0].ids };
+}
+/** Bấm Làm đề / Bắt đầu: hiện màn "Từ vựng cần biết" (nếu bật) rồi mới vào bài. */
+function requestStart(prep) {
+  if (!prep) return;
+  if (App.settings.skipVocabIntro) { launch(prep); return; }
+  M.prep = prep;
+  M.screen = 'intro';
+  render();
+  window.scrollTo(0, 0);
+}
+function launch(prep) {
+  M.prep = null;
+  const first = prep.plan[0];
+  const t0 = Math.floor(now() / 1000) * 1000; // làm tròn giây: khớp mốc giờ server lưu (dd/MM/yyyy HH:mm:ss)
   run = {
-    v: 1, id: 'mk' + now().toString(36) + Math.random().toString(36).slice(2, 6), mode: M.mode, clusters: M.clusters.slice(),
-    plan: plan.sections, startedAt: now(), sec: 0, cur: 0, phase: 'q', qEnter: now(), hideTimer: false, sections: [newSection(first.no, ids, first.min)]
+    v: 1, id: prep.kind === 'fixed' ? prep.fixedId : 'mk' + now().toString(36) + Math.random().toString(36).slice(2, 6),
+    fixedId: prep.fixedId || null, mode: prep.mode, clusters: prep.clusters,
+    plan: prep.plan, startedAt: t0, sec: 0, cur: 0, phase: 'q', qEnter: now(), hideTimer: false, sections: [newSection(first.no, prep.ids, first.min)]
   };
   runUser = App.user.userId;
   beginSection();
+  M.screen = 'start';
   go('mock', []);
 }
 
@@ -93,8 +132,12 @@ function submitSection() {
   const next = run.plan[run.sec + 1];
   if (next) {
     const used = new Set(run.sections.flatMap((x) => x.items.map((i) => i.ex)));
-    run.adapt = adaptFrom(score, s.items.length);
-    const ids = pickSection(poolFor(run.clusters), next.n, { exRes: App.exRes, today: S.vnDate(now()), prefer: run.adapt, exclude: used });
+    let ids;
+    if (run.fixedId) ids = next.ids; // đề cố định: đúng thứ tự trong file, không thích ứng
+    else {
+      run.adapt = adaptFrom(score, s.items.length);
+      ids = pickSection(poolFor(run.clusters), next.n, { exRes: App.exRes, today: S.vnDate(now()), prefer: run.adapt, exclude: used });
+    }
     run.sections.push(newSection(next.no, ids, next.min));
     run.sec++;
     run.phase = 'break';
@@ -110,7 +153,7 @@ function submitSection() {
 function finishMock() {
   const finishedAt = now();
   const result = {
-    mockId: run.id, mode: run.mode, startedAt: run.startedAt, finishedAt, adapt: run.adapt || null,
+    mockId: run.fixedId || run.id, mode: run.mode, startedAt: run.startedAt, finishedAt, adapt: run.adapt || null,
     sections: run.sections.map((s) => ({
       section: s.no, score: s.score, total: s.items.length,
       durationSec: Math.round(((s.endMs || finishedAt) - s.startMs) / 1000),
@@ -133,17 +176,27 @@ function finishMock() {
     });
     gr.g.otherTargetIds.forEach((id) => { if (!graded[id]) touch(id, info); });
   }));
+  const entry = entryFromResult(result);
+  result.key = entryKey(entry);
   const q = LS.get(queueKey(), []);
   q.push(result);
   LS.set(queueKey(), q);
-  const entry = { mockId: result.mockId, mode: result.mode, startedAt: vnStamp(result.startedAt), finishedAt: vnStamp(finishedAt), startedMs: result.startedAt, adapt: result.adapt, sections: result.sections, pending: true };
-  App.mocks = [entry].concat((App.mocks || []).filter((m) => m.mockId !== entry.mockId));
+  App.mocks = [entry].concat((App.mocks || []).filter((m) => entryKey(m) !== result.key));
   run = null;
   saveRun();
   M.screen = 'result';
-  M.resultId = entry.mockId;
-  go('mock', ['result', entry.mockId]);
+  M.resultId = result.key;
+  go('mock', ['result', result.key]);
   flushMockQueue();
+}
+
+function entryFromResult(r) {
+  return { mockId: r.mockId, mode: r.mode, startedAt: vnStamp(r.startedAt), finishedAt: vnStamp(r.finishedAt), startedMs: r.startedAt, adapt: r.adapt, sections: r.sections, pending: true };
+}
+/** Các bài đã làm nhưng chưa lưu được lên máy chủ (để lịch sử và việc giữ câu không bị mất khi tải lại từ server). */
+export function pendingEntries() {
+  if (!App.user) return [];
+  return LS.get(queueKey(), []).map(entryFromResult);
 }
 
 let flushing = false;
@@ -160,9 +213,10 @@ export async function flushMockQueue() {
       } catch (err) {
         if (isAuthError(err) || ['network', 'busy', 'server_error', 'not_ready'].includes(err.code)) break; // thử lại sau
       }
-      q = LS.get(queueKey(), []).filter((x) => x.mockId !== r.mockId);
+      const rk = r.key || r.mockId;
+      q = LS.get(queueKey(), []).filter((x) => (x.key || x.mockId) !== rk);
       LS.set(queueKey(), q);
-      const m = (App.mocks || []).find((x) => x.mockId === r.mockId);
+      const m = (App.mocks || []).find((x) => entryKey(x) === rk);
       if (m) delete m.pending;
     }
   } finally { flushing = false; }
@@ -174,6 +228,7 @@ views.mock = {
   title: 'Thi thử',
   enter(sub) {
     M.confirm = false;
+    M.prep = null;
     if (sub && sub[0] === 'result' && sub[1]) { M.screen = 'result'; M.resultId = sub[1]; } else { M.screen = 'start'; M.resultId = null; }
   },
   path() { return !activeRun() && M.screen === 'result' && M.resultId ? ['result', M.resultId] : []; },
@@ -181,6 +236,7 @@ views.mock = {
   render() {
     if (activeRun()) return runScreen();
     if (M.screen === 'result') return resultScreen();
+    if (M.screen === 'intro' && M.prep) return introScreen();
     return startScreen();
   },
   after() { if (activeRun() && run.phase !== 'break') startClock(); }
@@ -196,6 +252,8 @@ function startScreen() {
   const plan = planSections(M.mode, pool.length);
   let h = '<div class="page-head"><h1>Thi thử section Verbal</h1><p>Mô phỏng làm bài trên máy: đồng hồ đếm ngược, đi lại tự do trong section, đánh dấu, xem lại. Không gợi ý, không hiện đúng sai trong lúc làm.</p></div>';
   h += '<div class="notice">Đề thật có khoảng một nửa số câu là Reading Comprehension. Bản thi thử này hiện chỉ gồm Text Completion và Sentence Equivalence.</div>';
+  h += fixedList();
+  h += '<h2 class="section">Đề ngẫu nhiên</h2><p class="muted small" style="margin-top:0">Câu chọn ngẫu nhiên trong các cụm bạn chọn, ưu tiên câu chưa làm hoặc từng làm sai.</p>';
   h += '<div class="form-grid"><div class="field"><span class="label">Loại bài</span><div class="modes" role="radiogroup">' + Object.keys(MODES).map((m) => {
     const secs = MODES[m].secs.map((s) => SECTION_SPEC[s]);
     const n = secs.reduce((a, s) => a + s.n, 0), min = secs.reduce((a, s) => a + s.min, 0);
@@ -213,17 +271,68 @@ function startScreen() {
   }
   h += '<button class="btn primary big" data-act="mk-start"' + (total && plan.sections.every((s) => s.n) ? '' : ' disabled') + '>' +
     (plan.short ? 'Làm bài ngắn hơn (' + total + ' câu, ' + mins + ' phút)' : 'Bắt đầu ' + MODES[M.mode].label + ' (' + total + ' câu, ' + mins + ' phút)') + '</button></div>';
-  h += '<h2 class="section">Lịch sử thi thử</h2>' + historyTable();
+  const nHeld = heldIds().size;
+  if (nHeld) h += '<p class="muted small held-note">' + nHeld + ' câu đang được giữ cho đề cố định bạn chưa làm, nên không có trong đề ngẫu nhiên.</p>';
+  h += '<h2 class="section">Lịch sử đề ngẫu nhiên</h2>' + historyTable();
   return h;
+}
+
+/** Danh sách đề cố định: tên, mô tả, cụm, số câu, thời gian, trạng thái của tôi, nút Làm đề / Làm lại, lịch sử từng lần làm. */
+function fixedList() {
+  const list = App.fixedMocks || [];
+  if (!list.length) return '';
+  let h = '<h2 class="section">Đề cố định</h2><div class="fixed-list">';
+  list.forEach((fm) => {
+    const n = fm.sections.reduce((a, s) => a + s.items.length, 0);
+    const mins = fm.sections.reduce((a, s) => a + s.minutes, 0);
+    const cl = (fm.clusters || []).map((c) => (App.idx.clusterById[c] || { title: c }).title);
+    const tries = attemptsOf(fm.id);
+    const last = tries[0];
+    const status = App.mocks == null && !tries.length ? '<span class="muted">Đang tải…</span>'
+      : last ? (() => { const s = sumOf(last); return '<span class="fx-done">✓ Lần gần nhất: <b>' + s.sc + '/' + s.t + '</b>, ngày ' + esc(String(last.startedAt).slice(0, 10)) + (last.pending ? ' <span class="muted small">(chưa lưu)</span>' : '') + '</span>'; })()
+      : '<span class="fx-new">○ Chưa làm</span>';
+    h += '<article class="fixed-card"><div class="fx-head"><h3>' + esc(fm.title) + '</h3>' + status + '</div>' +
+      (fm.description ? '<p class="fx-desc">' + esc(fm.description) + '</p>' : '') +
+      '<div class="fx-meta"><span><b>' + n + '</b> câu</span><span><b>' + mins + '</b> phút</span><span>' + fm.sections.map((s) => esc(s.title) + ': ' + s.items.length + ' câu / ' + s.minutes + ' phút').join(' · ') + '</span></div>' +
+      (cl.length ? '<div class="fx-clusters"><span class="muted small">Cụm từ vựng:</span> ' + cl.map((t) => '<span class="gchip">' + esc(t) + '</span>').join('') + '</div>' : '') +
+      '<div class="fx-actions"><button class="btn ' + (last ? '' : 'primary') + '" data-act="mk-fixed" data-id="' + esc(fm.id) + '">' + (last ? 'Làm lại' : 'Làm đề') + '</button></div>';
+    if (tries.length) {
+      h += '<details class="fx-hist"' + (tries.length > 1 ? ' open' : '') + '><summary>Các lần làm (' + tries.length + ')</summary><div class="table-wrap"><table class="mock-table"><thead><tr><th>Ngày</th>' +
+        fm.sections.map((s) => '<th>' + esc(s.title) + '</th>').join('') + '<th>Tổng</th><th>Thời gian</th></tr></thead><tbody>' +
+        tries.map((m) => {
+          const s = sumOf(m);
+          return '<tr><td><a href="#mock/result/' + encodeURIComponent(entryKey(m)) + '">' + esc(shortDate(m.startedAt)) + '</a>' + (m.pending ? ' <span class="muted small">(chưa lưu)</span>' : '') + '</td>' +
+            fm.sections.map((_, k) => { const x = m.sections.find((y) => y.section === k + 1); return '<td class="num">' + (x ? x.score + '/' + x.total : '—') + '</td>'; }).join('') +
+            '<td class="num"><b>' + s.sc + '/' + s.t + '</b></td><td class="num">' + mmss(s.d) + '</td></tr>';
+        }).join('') + '</tbody></table></div></details>';
+    }
+    h += '</article>';
+  });
+  return h + '</div>';
+}
+
+function introScreen() {
+  const p = M.prep;
+  const ids = p.kind === 'fixed' ? p.plan.flatMap((s) => s.ids) : p.ids;
+  const exs = ids.map((id) => ex(id)).filter(Boolean);
+  const title = p.kind === 'fixed' ? fixedById(p.fixedId).title : 'Thi thử ' + MODES[p.mode].label;
+  const total = p.plan.reduce((a, s) => a + s.n, 0), mins = p.plan.reduce((a, s) => a + s.min, 0);
+  App.keyHandler = (e) => { if (e.key === 'Enter' && !isTyping(e)) { e.preventDefault(); launch(p); } };
+  return vocabIntroHtml(exs, {
+    intro: esc(title) + ' · ' + total + ' câu · ' + mins + ' phút. Ôn nhanh các nhóm từ có trong phương án trước khi bấm Bắt đầu; đồng hồ chỉ chạy sau khi bắt đầu.',
+    note: p.kind === 'random' && p.plan.length > 1 ? 'Danh sách dưới đây tính theo các câu của Section 1. Section 2 được chọn khi bạn nộp Section 1, theo kết quả Section 1.' : '',
+    startAct: 'mk-launch', startLabel: 'Bắt đầu làm bài', backAct: 'mk-new', backLabel: 'Quay lại'
+  });
 }
 
 function historyTable() {
   if (App.mocks == null) return '<p class="muted small">Đang tải lịch sử…</p>';
-  if (!App.mocks.length) return '<p class="muted small">Chưa có lần thi thử nào.</p>';
+  const list = App.mocks.filter((m) => m.mode !== 'fixed');
+  if (!list.length) return '<p class="muted small">Chưa có lần thi thử ngẫu nhiên nào.</p>';
   return '<div class="table-wrap"><table class="mock-table"><thead><tr><th>Ngày</th><th>Loại</th><th>Điểm</th><th>Thời gian</th></tr></thead><tbody>' +
-    App.mocks.map((m) => {
-      const sum = m.sections.reduce((a, s) => ({ sc: a.sc + s.score, t: a.t + s.total, d: a.d + s.durationSec }), { sc: 0, t: 0, d: 0 });
-      return '<tr><td><a href="#mock/result/' + encodeURIComponent(m.mockId) + '">' + esc(shortDate(m.startedAt)) + '</a>' + (m.pending ? ' <span class="muted small" title="Chưa lưu lên máy chủ, sẽ thử lại">(chưa lưu)</span>' : '') + '</td>' +
+    list.map((m) => {
+      const sum = sumOf(m);
+      return '<tr><td><a href="#mock/result/' + encodeURIComponent(entryKey(m)) + '">' + esc(shortDate(m.startedAt)) + '</a>' + (m.pending ? ' <span class="muted small" title="Chưa lưu lên máy chủ, sẽ thử lại">(chưa lưu)</span>' : '') + '</td>' +
         '<td>' + esc((MODES[m.mode] || { label: m.mode }).label) + '</td><td class="num">' + sum.sc + '/' + sum.t + '</td><td class="num">' + mmss(sum.d) + '</td></tr>';
     }).join('') + '</tbody></table></div>';
 }
@@ -374,7 +483,9 @@ Object.assign(actions, {
     if (M.clusters.length === App.idx.clusters.filter((c) => !c.custom).length) M.clusters = [];
     renderKeepFocus('[data-act="mk-cluster"][data-id="' + id + '"]');
   },
-  'mk-start': () => startMock(),
+  'mk-start': () => requestStart(prepRandom()),
+  'mk-fixed': (t) => requestStart(prepFixed(t.dataset.id)),
+  'mk-launch': () => { if (M.prep) launch(M.prep); },
   'mk-pick': (t) => pick(Number(t.dataset.b), t.dataset.o),
   'mk-next': () => nextQ(),
   'mk-prev': () => prevQ(),
@@ -397,7 +508,7 @@ Object.assign(actions, {
     const ids = t.dataset.ids.split(',').filter((id) => word(id));
     startWordsSession('retry', ids, 'Ôn các từ sai trong bài thi thử', 'mock');
   },
-  'mk-new': () => { M.screen = 'start'; M.resultId = null; go('mock', []); }
+  'mk-new': () => { M.screen = 'start'; M.resultId = null; M.prep = null; go('mock', []); }
 });
 
 document.addEventListener('change', (e) => {
@@ -407,24 +518,36 @@ document.addEventListener('change', (e) => {
 /* ---------------- Kết quả ---------------- */
 
 function resultScreen() {
-  const m = (App.mocks || []).find((x) => x.mockId === M.resultId);
+  const m = (App.mocks || []).find((x) => entryKey(x) === M.resultId) || (App.mocks || []).find((x) => x.mockId === M.resultId);
   if (!m) {
     return '<div class="page-head"><h1>Kết quả thi thử</h1></div>' + (App.mocks == null ? '<p class="muted">Đang tải…</p>' : '<p class="muted">Không tìm thấy bài thi thử này.</p>') +
       '<button class="btn" data-act="mk-new">Về trang Thi thử</button>';
   }
   const sum = summarize(m.sections, App.idx);
-  let h = '<div class="page-head"><h1>Kết quả thi thử</h1><p>' + esc((MODES[m.mode] || { label: m.mode }).label) + ' · ' + esc(shortDate(m.startedAt)) +
+  const fm = m.mode === 'fixed' ? fixedById(m.mockId) : null;
+  let h = '<div class="page-head"><h1>Kết quả thi thử</h1><p>' + esc(modeLabel(m)) + ' · ' + esc(shortDate(m.startedAt)) +
     (m.pending ? ' · <span title="Sẽ tự gửi lại khi có mạng">chưa lưu lên máy chủ</span>' : '') + '</p></div>';
   h += '<div class="summary-score">' + sum.score + '<small> / ' + sum.total + ' câu đúng</small></div>';
   h += '<div class="table-wrap"><table class="mock-table"><thead><tr><th>Section</th><th>Đúng</th><th>Thời gian đã dùng</th></tr></thead><tbody>' +
-    m.sections.map((s) => '<tr><td>Section ' + s.section + '</td><td class="num">' + s.score + '/' + s.total + '</td><td class="num">' + mmss(s.durationSec) +
-      ' <span class="muted small">/ ' + (SECTION_SPEC[s.section] && s.total === SECTION_SPEC[s.section].n ? SECTION_SPEC[s.section].min + ':00' : '—') + '</span></td></tr>').join('') +
+    m.sections.map((s) => {
+      const lim = fm && fm.sections[s.section - 1] ? fm.sections[s.section - 1].minutes : (SECTION_SPEC[s.section] && s.total === SECTION_SPEC[s.section].n ? SECTION_SPEC[s.section].min : null);
+      return '<tr><td>Section ' + s.section + '</td><td class="num">' + s.score + '/' + s.total + '</td><td class="num">' + mmss(s.durationSec) +
+        ' <span class="muted small">/ ' + (lim ? lim + ':00' : '—') + '</span></td></tr>';
+    }).join('') +
     (m.sections.length > 1 ? '<tr class="total"><td>Tổng</td><td class="num">' + sum.score + '/' + sum.total + '</td><td class="num">' + mmss(sum.durationSec) + '</td></tr>' : '') + '</tbody></table></div>';
+  if (fm) {
+    const prev = attemptsOf(fm.id).filter((x) => x.startedMs < m.startedMs)[0];
+    if (prev) {
+      const a = sumOf(m), b = sumOf(prev), d = a.sc - b.sc;
+      h += '<p class="notice">So với lần làm trước (' + esc(shortDate(prev.startedAt)) + ': ' + b.sc + '/' + b.t + '): ' + (d > 0 ? '<b>tăng ' + d + ' câu</b>' : d < 0 ? '<b>giảm ' + (-d) + ' câu</b>' : 'bằng nhau') + '.</p>';
+    }
+  }
   h += '<h2 class="section">Thời gian trung bình mỗi câu, theo dạng câu</h2><div class="table-wrap"><table class="mock-table"><thead><tr><th>Dạng câu</th><th>Số câu</th><th>Đúng</th><th>TB mỗi câu</th></tr></thead><tbody>' +
     ['tc1', 'tc2', 'tc3', 'se'].filter((k) => sum.byKind[k]).map((k) => {
       const b = sum.byKind[k];
       return '<tr><td>' + KIND_LABEL[k] + '</td><td class="num">' + b.n + '</td><td class="num">' + b.ok + '</td><td class="num">' + mmss(b.t / b.n) + '</td></tr>';
     }).join('') + '</tbody></table></div>';
+  h += skillTable(m);
   if (m.mode === 'full' && m.sections.length > 1) {
     const s1 = m.sections[0];
     const hard = s1.total && s1.score / s1.total >= ADAPT_THRESHOLD;
@@ -450,29 +573,49 @@ function resultScreen() {
     const mine = isSE ? choice.join(', ') : choice.map((x) => x || '—').join(' · ');
     const sent = esc(e.sentence).replace(/\{(\d+)\}/g, (_, n) => '<span class="gap">' + (e.blanks && e.blanks.length > 1 ? '(' + ROMAN[+n] + ')' : '&nbsp;') + '</span>');
     const rel = (e.targets || []).filter((id) => word(id));
-    return '<li><div class="row"><b>Câu ' + (k + 1) + '</b><span class="muted small">' + (m.sections.length > 1 ? 'Section ' + it.sec + ' · ' : '') + KIND_LABEL[exKind(e)] + ' · ' + mmss(it.t) + '</span>' +
+    return '<li><div class="row"><b>Câu ' + (k + 1) + '</b><span class="muted small">' + (m.sections.length > 1 ? 'Section ' + it.sec + ' · ' : '') + KIND_LABEL[exKind(e)] + ' · ' + mmss(it.t) + '</span>' + difficultyHtml(e) +
       (it.ok ? '<span class="tag known">✓ Đúng</span>' : (isTouched(choice) ? '<span class="tag leech">✗ Sai</span>' : '<span class="tag leech">○ Bỏ trống</span>')) + '</div>' +
       '<p class="example" style="margin:6px 0">' + sent + '</p>' +
       '<div class="small">Bạn chọn: <b>' + esc(isTouched(choice) ? mine : '(bỏ trống)') + '</b> · Đáp án: <b>' + esc(ans) + '</b></div>' +
-      '<div class="explain small">' + esc(e.explanation || '') + '</div>' +
+      '<div class="explain small">' + esc(e.explanation || '') + '</div>' + skillsHtml(e) + wordsInQuestionHtml(e, { collapsed: true }) +
       (rel.length ? '<div class="small rel-words">Từ liên quan: ' + rel.map((id) => '<button class="linkish" data-act="v-jump" data-id="' + id + '">' + esc(word(id).word) + '</button>').join(', ') + '</div>' : '') + exTools(e) + '</li>';
   }).join('') + '</ol>';
   h += '<div class="form-grid" style="margin-top:20px"><button class="btn big" data-act="mk-new">Về trang Thi thử</button></div>';
   return h;
 }
 
+/** Tỉ lệ đúng theo kỹ năng và theo độ khó: biết nên luyện thêm kỹ năng nào (lọc theo kỹ năng ở mục Luyện tập). */
+function skillTable(m) {
+  const by = {}, byD = {};
+  m.sections.forEach((s) => s.items.forEach((it) => {
+    const e = ex(it.i);
+    if (!e) return;
+    (e.skills || []).forEach((k) => { const b = by[k] || (by[k] = { n: 0, ok: 0 }); b.n++; b.ok += it.ok ? 1 : 0; });
+    if (e.difficulty) { const b = byD[e.difficulty] || (byD[e.difficulty] = { n: 0, ok: 0 }); b.n++; b.ok += it.ok ? 1 : 0; }
+  }));
+  const keys = Object.keys(SKILLS).filter((k) => by[k]);
+  if (!keys.length) return '';
+  const row = (label, b) => '<tr><td>' + label + '</td><td class="num">' + b.n + '</td><td class="num">' + b.ok + '</td><td class="num">' + Math.round(100 * b.ok / b.n) + '%</td></tr>';
+  keys.sort((a, b) => by[a].ok / by[a].n - by[b].ok / by[b].n || by[b].n - by[a].n);
+  return '<h2 class="section">Theo kỹ năng và độ khó</h2><p class="muted small" style="margin-top:0">Kỹ năng yếu nhất ở trên cùng. Mỗi câu có thể có nhiều kỹ năng. Luyện thêm bằng bộ lọc Kỹ năng ở mục <a href="#practice">Luyện tập</a>.</p>' +
+    '<div class="table-wrap"><table class="mock-table"><thead><tr><th>Kỹ năng</th><th>Số câu</th><th>Đúng</th><th>Tỉ lệ</th></tr></thead><tbody>' +
+    keys.map((k) => row(esc(SKILLS[k].label), by[k])).join('') +
+    [1, 2, 3].filter((d) => byD[d]).map((d, i) => (i === 0 ? '<tr class="total"><td colspan="4">Độ khó</td></tr>' : '') + row(DIFFICULTY[d], byD[d])).join('') +
+    '</tbody></table></div>';
+}
+
 /** Dòng tóm tắt lần thi thử gần nhất cho trang Hôm nay. */
 export function lastMockLine() {
   const r = activeRun();
   if (r) {
-    return '<div class="mock-last"><div><b>Bài thi thử đang làm dở</b><span class="muted small">' + esc((MODES[r.mode] || {}).label || '') + ', đồng hồ vẫn chạy</span></div>' +
+    return '<div class="mock-last"><div><b>Bài thi thử đang làm dở</b><span class="muted small">' + esc(r.fixedId ? (fixedById(r.fixedId) || { title: r.fixedId }).title : (MODES[r.mode] || {}).label || '') + ', đồng hồ vẫn chạy</span></div>' +
       '<button class="btn" data-act="mk-resume">Làm tiếp</button></div>';
   }
-  const m = (App.mocks || [])[0];
+  const m = (App.mocks || []).slice().sort((a, b) => b.startedMs - a.startedMs)[0];
   if (!m) return '';
   const sc = m.sections.reduce((a, s) => a + s.score, 0), tot = m.sections.reduce((a, s) => a + s.total, 0);
   const d = m.sections.reduce((a, s) => a + s.durationSec, 0);
-  return '<a class="mock-last" href="#mock/result/' + encodeURIComponent(m.mockId) + '"><div><b>Thi thử gần nhất: ' + sc + '/' + tot + '</b>' +
-    '<span class="muted small">' + esc((MODES[m.mode] || { label: m.mode }).label) + ' · ' + esc(shortDate(m.startedAt)) + ' · ' + mmss(d) + '</span></div><span aria-hidden="true">›</span></a>';
+  return '<a class="mock-last" href="#mock/result/' + encodeURIComponent(entryKey(m)) + '"><div><b>Thi thử gần nhất: ' + sc + '/' + tot + '</b>' +
+    '<span class="muted small">' + esc(modeLabel(m)) + ' · ' + esc(shortDate(m.startedAt)) + ' · ' + mmss(d) + '</span></div><span aria-hidden="true">›</span></a>';
 }
 

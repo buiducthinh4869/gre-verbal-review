@@ -377,3 +377,36 @@ test('kết quả gần nhất của từng bài GRE (_exRes) được lưu và 
   assert.deepEqual(st.exRes, { tc01: [day, 1], se01: [day, 0] });
   assert.ok(!('_exRes' in st.settings));
 });
+
+test('đề cố định (mode fixed): mockId là id đề; làm lại lưu thành lần mới; gửi lại cùng lần không ghi trùng; getMocks tách từng lần', () => {
+  const t = ready();
+  t.cli('ensureMocks');
+  const a = t.loginReady('user01');
+  const secs = (sc) => [{ section: 1, score: sc, total: 12, durationSec: 900, items: [{ i: 'wc101', c: 'x', ok: 1, t: 30 }] }, { section: 2, score: 5, total: 15, durationSec: 1200, items: [] }];
+  const t1 = Math.floor((Date.now() - 3 * 3600e3) / 1000) * 1000, t2 = Math.floor((Date.now() - 3600e3) / 1000) * 1000;
+  const p1 = { mockId: 'mock-01', mode: 'fixed', startedAt: t1, finishedAt: t1 + 2400e3, sections: secs(7) };
+  const p2 = { mockId: 'mock-01', mode: 'fixed', startedAt: t2, finishedAt: t2 + 2400e3, sections: secs(10) };
+  assert.equal(t.call('saveMock', p1, a).data.saved, 2);
+  assert.equal(t.call('saveMock', p1, a).data.saved, 0, 'gửi lại cùng lần làm: bỏ qua');
+  assert.equal(t.call('saveMock', p2, a).data.saved, 2, 'làm lại: lưu thành lần mới');
+  const rows = t.sheet('mocks').data.slice(1).filter((x) => x.some(Boolean));
+  assert.equal(rows.length, 4);
+  assert.ok(rows.every((x) => x[1] === 'mock-01' && x[4] === 'fixed'));
+  const ms = t.call('getMocks', {}, a).data.mocks;
+  assert.equal(ms.length, 2);
+  assert.deepEqual(ms.map((m) => m.sections[0].score), [10, 7], 'mới nhất trước, mỗi lần làm một mục');
+  assert.deepEqual(ms.map((m) => m.startedMs), [t2, t1], 'startedMs khớp mốc giờ client gửi (đã làm tròn giây)');
+  // giới hạn chỉ áp dụng cho đề ngẫu nhiên: lần làm đề cố định luôn được trả về
+  for (let k = 0; k < 3; k++) t.call('saveMock', mockPayload('mock-rand' + k, 's1', [{ section: 1, score: 1, total: 12, durationSec: 60, items: [] }]), a);
+  const lim = t.call('getMocks', { limit: 1 }, a).data.mocks;
+  assert.equal(lim.filter((m) => m.mode === 'fixed').length, 2);
+  assert.equal(lim.filter((m) => m.mode !== 'fixed').length, 1);
+});
+
+test('cài đặt skipVocabIntro được lưu (khóa cài đặt mới)', () => {
+  const t = ready();
+  const a = t.loginReady('user01');
+  const ev = { id: 'set-1', type: 'setting', ts: new Date().toISOString(), key: 'skipVocabIntro', value: true };
+  assert.equal(t.call('saveEvents', { events: [ev] }, a).ok, true);
+  assert.equal(t.call('getState', {}, a).data.settings.skipVocabIntro, true);
+});

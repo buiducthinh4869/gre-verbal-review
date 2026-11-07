@@ -513,7 +513,12 @@
         "disingenuous"
       ],
       "hint": "'Far from' + 'apparently naive… carefully calculated'.",
-      "explanation": "'Far from' đổi chiều với 'carefully calculated': vẻ ngây thơ thật sự là ingenuous. Disingenuous là bẫy: chính là điều câu đang nói, nên không thể đứng sau 'far from'."
+      "explanation": "'Far from' đổi chiều với 'carefully calculated': vẻ ngây thơ thật sự là ingenuous. Disingenuous là bẫy: chính là điều câu đang nói, nên không thể đứng sau 'far from'.",
+      "difficulty": 2,
+      "skills": [
+        "contrast"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "hd02",
@@ -536,7 +541,12 @@
         "apocryphal"
       ],
       "hint": "'Sounds persuasive… but'.",
-      "explanation": "Nghe thuyết phục nhưng sai: specious. Apocryphal là câu chuyện không xác thực; mendacious là cố ý nói dối."
+      "explanation": "Nghe thuyết phục nhưng sai: specious. Apocryphal là câu chuyện không xác thực; mendacious là cố ý nói dối.",
+      "difficulty": 2,
+      "skills": [
+        "contrast"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "hd03",
@@ -560,7 +570,12 @@
         "dissemble"
       ],
       "hint": "Nói nhiều mà không trả lời.",
-      "explanation": "Trả lời dài mà không vào thẳng câu hỏi: prevaricate. Feign và dissemble là giả vờ hoặc giấu cảm xúc, không phải nói vòng vo."
+      "explanation": "Trả lời dài mà không vào thẳng câu hỏi: prevaricate. Feign và dissemble là giả vờ hoặc giấu cảm xúc, không phải nói vòng vo.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "hd04",
@@ -583,7 +598,12 @@
         "specious"
       ],
       "hint": "'Widely repeated… no contemporary source'.",
-      "explanation": "Câu chuyện lưu truyền nhưng không có nguồn: apocryphal. Specious và fallacious nói về lập luận, không phải giai thoại."
+      "explanation": "Câu chuyện lưu truyền nhưng không có nguồn: apocryphal. Specious và fallacious nói về lập luận, không phải giai thoại.",
+      "difficulty": 2,
+      "skills": [
+        "contrast"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "hd05",
@@ -612,7 +632,12 @@
         "mendacious"
       ],
       "hint": "'All the more shocking' đổi chiều.",
-      "explanation": "(i) Đối thủ cũng tin số liệu: tiếng liêm chính, probity. (ii) 'All the more shocking': sổ sách gian dối, mendacious."
+      "explanation": "(i) Đối thủ cũng tin số liệu: tiếng liêm chính, probity. (ii) 'All the more shocking': sổ sách gian dối, mendacious.",
+      "difficulty": 2,
+      "skills": [
+        "contrast"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "hd06",
@@ -637,7 +662,12 @@
         "forthright"
       ],
       "hint": "Kết quả giả do phương pháp sai.",
-      "explanation": "Mối liên hệ giả do lấy mẫu sai: spurious, bogus. Candid và forthright là cặp sai hướng; apocryphal dùng cho giai thoại."
+      "explanation": "Mối liên hệ giả do lấy mẫu sai: spurious, bogus. Candid và forthright là cặp sai hướng; apocryphal dùng cho giai thoại.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "hd07",
@@ -662,7 +692,12 @@
         "artless"
       ],
       "hint": "Thẳng thắn hay ngây thơ?",
-      "explanation": "Thẳng thắn nói về thất bại của mình: candid, forthright. Guileless và artless là cặp ngây thơ, chân chất, thiếu ý tự nguyện nói thật về bản thân."
+      "explanation": "Thẳng thắn nói về thất bại của mình: candid, forthright. Guileless và artless là cặp ngây thơ, chân chất, thiếu ý tự nguyện nói thật về bản thân.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "hd08",
@@ -687,7 +722,12 @@
         "equivocate"
       ],
       "hint": "Đối tượng là cảm xúc 'enthusiasm'.",
-      "explanation": "Giả vờ nhiệt tình: feigned, dissembled. Prevaricated và equivocated là cặp nói vòng vo, không đi với 'enthusiasm' làm tân ngữ."
+      "explanation": "Giả vờ nhiệt tình: feigned, dissembled. Prevaricated và equivocated là cặp nói vòng vo, không đi với 'enthusiasm' làm tân ngữ.",
+      "difficulty": 2,
+      "skills": [
+        "contrast"
+      ],
+      "addedIn": "base"
     }
   ]
 }

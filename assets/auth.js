@@ -92,10 +92,13 @@ export async function enterApp(opts = {}) {
 export async function loadMocks() {
   if (!App.token) return;
   try {
-    const { flushMockQueue } = await import('./views/mock.js');
+    const { flushMockQueue, pendingEntries, entryKey } = await import('./views/mock.js');
     await flushMockQueue();
     const data = await call('getMocks', { limit: 20 }, App.token);
-    App.mocks = data.mocks || [];
+    // bài đã làm nhưng chưa lưu được (mất mạng) vẫn giữ trong lịch sử cho tới khi gửi được
+    const server = data.mocks || [];
+    const have = new Set(server.map(entryKey));
+    App.mocks = pendingEntries().filter((m) => !have.has(entryKey(m))).concat(server).sort((x, y) => (y.startedMs || 0) - (x.startedMs || 0));
     saveCache();
     if (App.view === 'today' || (App.view === 'mock' && !(views.mock && views.mock.immersive && views.mock.immersive()))) render();
   } catch (err) {

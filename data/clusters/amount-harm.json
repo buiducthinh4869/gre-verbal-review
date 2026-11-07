@@ -579,7 +579,12 @@
         "contravene"
       ],
       "hint": "'In full view of inspectors': công khai coi thường.",
-      "explanation": "Tiếp tục công khai bất chấp phán quyết: flout. Flaunt là khoe khoang. Contravene đi với luật, hợp đồng, nhưng không có ý 'công khai coi thường' mà câu nhấn mạnh."
+      "explanation": "Tiếp tục công khai bất chấp phán quyết: flout. Flaunt là khoe khoang. Contravene đi với luật, hợp đồng, nhưng không có ý 'công khai coi thường' mà câu nhấn mạnh.",
+      "difficulty": 2,
+      "skills": [
+        "contrast"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "ah02",
@@ -603,7 +608,12 @@
         "myriad"
       ],
       "hint": "Vấn đề nằm ở số lượng.",
-      "explanation": "Chỉ có mười một làng được khảo sát: thiếu dữ liệu, paucity. Plethora, myriad là ngược nghĩa."
+      "explanation": "Chỉ có mười một làng được khảo sát: thiếu dữ liệu, paucity. Plethora, myriad là ngược nghĩa.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "ah03",
@@ -628,7 +638,12 @@
         "negligible"
       ],
       "hint": "'So gradually… rarely notice'.",
-      "explanation": "Tác hại âm thầm, dần dần, không ai nhận ra: insidious. Flagrant và blatant là lộ liễu, ngược nghĩa; negligible là không đáng kể, trái với 'the damage'."
+      "explanation": "Tác hại âm thầm, dần dần, không ai nhận ra: insidious. Flagrant và blatant là lộ liễu, ngược nghĩa; negligible là không đáng kể, trái với 'the damage'.",
+      "difficulty": 2,
+      "skills": [
+        "contrast"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "ah04",
@@ -652,7 +667,12 @@
         "copious"
       ],
       "hint": "'Merely repeated'.",
-      "explanation": "Chỉ lặp lại điều đã nói: thừa, superfluous."
+      "explanation": "Chỉ lặp lại điều đã nói: thừa, superfluous.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "ah05",
@@ -676,7 +696,12 @@
         "scant"
       ],
       "hint": "'Every scene… serves the story'.",
-      "explanation": "Không có cảnh bạo lực vô cớ, mọi cảnh đều phục vụ câu chuyện: gratuitous."
+      "explanation": "Không có cảnh bạo lực vô cớ, mọi cảnh đều phục vụ câu chuyện: gratuitous.",
+      "difficulty": 2,
+      "skills": [
+        "contrast"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "ah06",
@@ -706,7 +731,12 @@
         "benign"
       ],
       "hint": "Cụm cố định 'much-…'.",
-      "explanation": "(i) Từng bị coi là có hại: pernicious. (ii) Cụm 'much-maligned': bị chỉ trích nhiều. Nghiên cứu mới thì cho thấy không có tác dụng gì."
+      "explanation": "(i) Từng bị coi là có hại: pernicious. (ii) Cụm 'much-maligned': bị chỉ trích nhiều. Nghiên cứu mới thì cho thấy không có tác dụng gì.",
+      "difficulty": 2,
+      "skills": [
+        "collocation"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "ah07",
@@ -733,7 +763,12 @@
         "prodigious"
       ],
       "hint": "'Well-documented … effects on cognitive development'.",
-      "explanation": "Tác động có hại: deleterious, detrimental. Negligible và nugatory là cặp không đáng kể, vô giá trị."
+      "explanation": "Tác động có hại: deleterious, detrimental. Negligible và nugatory là cặp không đáng kể, vô giá trị.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "ah08",
@@ -758,7 +793,12 @@
         "pernicious"
       ],
       "hint": "Lộ liễu hay âm thầm?",
-      "explanation": "Dối trá lộ liễu khi có chữ ký ở mọi trang: flagrant, blatant. Insidious và pernicious là cặp tác hại âm thầm, ngược với lộ liễu."
+      "explanation": "Dối trá lộ liễu khi có chữ ký ở mọi trang: flagrant, blatant. Insidious và pernicious là cặp tác hại âm thầm, ngược với lộ liễu.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "base"
     }
   ]
 }

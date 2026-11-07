@@ -6,11 +6,12 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { validateWord, validateExercise } from '../assets/validate.js';
+import { validateWord, validateExercise, validateMock } from '../assets/validate.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DATA_DIR = path.join(ROOT, 'data');
 const CLUSTER_DIR = path.join(DATA_DIR, 'clusters');
+const MOCK_DIR = path.join(DATA_DIR, 'mocks');
 function readJson(file) {
   const text = fs.readFileSync(file, 'utf8').replace(/^\uFEFF/, '');
   try {
@@ -93,6 +94,37 @@ function validate(index, clusters) {
   return errors;
 }
 
+/**
+ * Đề thi thử cố định: data/mocks/index.json {"mocks": [id, ...]} và data/mocks/<id>.json.
+ * Mọi đề trong index phải có file (và ngược lại); quy tắc từng đề ở assets/validate.js (validateMock).
+ * Trả về {errors, mocks}. Chưa có thư mục data/mocks thì bỏ qua.
+ */
+export function validateMocks(clusters) {
+  const errors = [];
+  const mocks = [];
+  if (!fs.existsSync(MOCK_DIR)) return { errors, mocks };
+  const err = (where, msg) => errors.push(`  - [mocks/${where}] ${msg}`);
+  const idxFile = path.join(MOCK_DIR, 'index.json');
+  if (!fs.existsSync(idxFile)) { err('index.json', 'thiếu data/mocks/index.json'); return { errors, mocks }; }
+  let index;
+  try { index = readJson(idxFile); } catch (e) { err('index.json', e.message); return { errors, mocks }; }
+  if (!index || !Array.isArray(index.mocks)) { err('index.json', 'phải có mảng "mocks"'); return { errors, mocks }; }
+  index.mocks.forEach((id, i) => { if (index.mocks.indexOf(id) !== i) err('index.json', `đề "${id}" bị liệt kê hai lần`); });
+  const files = fs.readdirSync(MOCK_DIR).filter((f) => f.endsWith('.json') && f !== 'index.json').map((f) => f.replace(/\.json$/, ''));
+  files.forEach((f) => { if (!index.mocks.includes(f)) err('index.json', `File data/mocks/${f}.json chưa có trong data/mocks/index.json`); });
+  const exIds = new Set(), clusterIds = new Set();
+  clusters.forEach((c) => { clusterIds.add(c.id); c.exercises.forEach((ex) => exIds.add(ex.id)); });
+  index.mocks.forEach((id) => {
+    const file = path.join(MOCK_DIR, `${id}.json`);
+    if (!fs.existsSync(file)) { err('index.json', `liệt kê đề "${id}" nhưng không có file data/mocks/${id}.json`); return; }
+    let m;
+    try { m = readJson(file); } catch (e) { err(`${id}.json`, e.message); return; }
+    validateMock(m, { file: `${id}.json`, hasExercise: (x) => exIds.has(x), hasCluster: (x) => clusterIds.has(x) }).forEach((msg) => err(`${id}.json`, msg));
+    mocks.push(m);
+  });
+  return { errors, mocks };
+}
+
 export function loadAll() {
   const index = readJson(path.join(DATA_DIR, 'index.json'));
   if (!Array.isArray(index.clusters)) throw new Error('data/index.json phải có mảng "clusters"');
@@ -111,6 +143,8 @@ function main() {
   const dup = index.clusters.filter((id, i) => index.clusters.indexOf(id) !== i);
   const errors = validate(index, clusters);
   dup.forEach((id) => errors.push(`  - [index.json] cụm "${id}" bị liệt kê hai lần`));
+  const mk = errors.length ? { errors: [], mocks: [] } : validateMocks(clusters);
+  mk.errors.forEach((e) => errors.push(e));
   if (errors.length) {
     console.error(`\n✗ Dữ liệu có ${errors.length} lỗi:\n${errors.join('\n')}\n`);
     process.exit(1);
@@ -119,6 +153,14 @@ function main() {
   const nEx = clusters.reduce((s, c) => s + c.exercises.length, 0);
   console.log(`✓ Dữ liệu hợp lệ: ${clusters.length} cụm, ${nWords} từ, ${nEx} bài GRE`);
   clusters.forEach((c) => console.log(`  · ${c.title} (${c.id}): ${c.words.length} từ, ${c.exercises.length} bài`));
+  const kinds = { tc1: 0, tc2: 0, tc3: 0, se: 0 }, diff = { 1: 0, 2: 0, 3: 0, '-': 0 };
+  clusters.forEach((c) => c.exercises.forEach((ex) => {
+    kinds[ex.type === 'se' ? 'se' : 'tc' + ex.blanks.length]++;
+    diff[ex.difficulty || '-']++;
+  }));
+  console.log(`  Dạng câu: ${kinds.tc1} TC một chỗ trống, ${kinds.tc2} TC hai chỗ trống, ${kinds.tc3} TC ba chỗ trống, ${kinds.se} SE`);
+  console.log(`  Độ khó: ${diff[1]} dễ, ${diff[2]} vừa, ${diff[3]} khó` + (diff['-'] ? `, ${diff['-']} chưa phân loại` : ''));
+  mk.mocks.forEach((m) => console.log(`  Đề cố định ${m.id} "${m.title}": ` + m.sections.map((s) => `${s.title} ${s.items.length} câu / ${s.minutes} phút`).join(', ')));
 }
 
 try {

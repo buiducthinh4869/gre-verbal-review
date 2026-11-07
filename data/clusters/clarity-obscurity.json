@@ -635,7 +635,12 @@
         "gloss"
       ],
       "hint": "Bắt đầu từ chỗ (i): 'notoriously' đi với tính chất xấu.",
-      "explanation": "'Although' đổi chiều: chứng minh vốn khó hiểu (abstruse), nhưng tác giả làm sáng tỏ (elucidate) trong vài trang rõ ràng (lucid). Gloss over là lờ đi, không phải giải thích."
+      "explanation": "'Although' đổi chiều: chứng minh vốn khó hiểu (abstruse), nhưng tác giả làm sáng tỏ (elucidate) trong vài trang rõ ràng (lucid). Gloss over là lờ đi, không phải giải thích.",
+      "difficulty": 3,
+      "skills": [
+        "contrast"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "co02",
@@ -657,7 +662,12 @@
         "convoluted"
       ],
       "hint": "Cái gì làm nó khó hiểu: nội dung hiếm hay cấu trúc rối?",
-      "explanation": "Khó vì cấu trúc chồng chéo (exceptions nested within exceptions): convoluted. Esoteric, recondite là khó vì ít người biết; nebulous là mơ hồ; cryptic là bí ẩn cố ý."
+      "explanation": "Khó vì cấu trúc chồng chéo (exceptions nested within exceptions): convoluted. Esoteric, recondite là khó vì ít người biết; nebulous là mơ hồ; cryptic là bí ẩn cố ý.",
+      "difficulty": 2,
+      "skills": [
+        "collocation"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "co03",
@@ -680,7 +690,12 @@
         "belie"
       ],
       "hint": "'Burying… beneath pages of jargon'.",
-      "explanation": "Chôn phép tính đơn giản dưới jargon là cố ý làm rối: obfuscated. Belied là tạo ấn tượng sai, không phải làm khó hiểu."
+      "explanation": "Chôn phép tính đơn giản dưới jargon là cố ý làm rối: obfuscated. Belied là tạo ấn tượng sai, không phải làm khó hiểu.",
+      "difficulty": 2,
+      "skills": [
+        "contrast"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "co04",
@@ -702,7 +717,12 @@
         "belie"
       ],
       "hint": "Bề ngoài và bên trong trái ngược nhau.",
-      "explanation": "Vẻ ngoài bình tĩnh trái ngược với sự hỗn loạn bên trong: belied. Manifested là biểu lộ ra, ngược nghĩa; obfuscated nói về ngôn từ cố ý làm rối."
+      "explanation": "Vẻ ngoài bình tĩnh trái ngược với sự hỗn loạn bên trong: belied. Manifested là biểu lộ ra, ngược nghĩa; obfuscated nói về ngôn từ cố ý làm rối.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "co05",
@@ -725,7 +745,12 @@
         "explicit"
       ],
       "hint": "Phóng viên phản bác điều gì: sự dễ hiểu, hay sự dứt khoát?",
-      "explanation": "Điều phóng viên bác bỏ là việc bà ấy đã dứt khoát chọn phe (declined to commit to either side): unequivocal. Explicit chỉ là nói thẳng ra; lucid, pellucid là diễn đạt dễ hiểu; manifest là hiển nhiên."
+      "explanation": "Điều phóng viên bác bỏ là việc bà ấy đã dứt khoát chọn phe (declined to commit to either side): unequivocal. Explicit chỉ là nói thẳng ra; lucid, pellucid là diễn đạt dễ hiểu; manifest là hiển nhiên.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "co06",
@@ -748,7 +773,12 @@
         "arcane"
       ],
       "hint": "Vì sao cần chú giải?",
-      "explanation": "Cần bản chú giải vì các điển tích ít người biết: recondite, arcane. Lucid và pellucid là cặp đồng nghĩa nhưng sai hướng. Nebulous (mơ hồ) và convoluted (rối) khớp phần nào nhưng không đồng nghĩa với nhau."
+      "explanation": "Cần bản chú giải vì các điển tích ít người biết: recondite, arcane. Lucid và pellucid là cặp đồng nghĩa nhưng sai hướng. Nebulous (mơ hồ) và convoluted (rối) khớp phần nào nhưng không đồng nghĩa với nhau.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "co07",
@@ -773,7 +803,12 @@
         "patent"
       ],
       "hint": "Khen cách giảng giải, không phải sự hiển nhiên.",
-      "explanation": "Diễn đạt rõ ràng, dễ hiểu: lucid, perspicuous. Manifest và patent là cặp đồng nghĩa nhưng nghĩa là hiển nhiên, không phải giải thích hay. Esoteric và recondite sai hướng."
+      "explanation": "Diễn đạt rõ ràng, dễ hiểu: lucid, perspicuous. Manifest và patent là cặp đồng nghĩa nhưng nghĩa là hiển nhiên, không phải giải thích hay. Esoteric và recondite sai hướng.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "co08",
@@ -797,7 +832,396 @@
         "gloss"
       ],
       "hint": "'Rather than' đổi chiều với việc chỉ nhắc lại dài hơn.",
-      "explanation": "Lẽ ra phải giải thích rõ: elucidate, explicate. Obfuscate và obscure là cặp sai hướng. Gloss over là lờ đi; belie là tạo ấn tượng sai."
+      "explanation": "Lẽ ra phải giải thích rõ: elucidate, explicate. Obfuscate và obscure là cặp sai hướng. Gloss over là lờ đi; belie là tạo ấn tượng sai.",
+      "difficulty": 2,
+      "skills": [
+        "contrast"
+      ],
+      "addedIn": "base"
+    },
+    {
+      "id": "co101",
+      "type": "tc",
+      "sentence": "The flaws in the plan, invisible on paper, became {0} within a month of its launch, when half the clinics ran out of supplies.",
+      "blanks": [
+        {
+          "options": [
+            "manifest",
+            "arcane",
+            "esoteric",
+            "recondite",
+            "cryptic"
+          ],
+          "answer": "manifest"
+        }
+      ],
+      "targets": [
+        "manifest"
+      ],
+      "hint": "Từ vô hình thành gì?",
+      "explanation": "'Invisible on paper' đổi chiều với việc lộ ra rõ ràng: manifest.",
+      "difficulty": 1,
+      "skills": [
+        "contrast"
+      ],
+      "addedIn": "batch-01"
+    },
+    {
+      "id": "co102",
+      "type": "tc",
+      "sentence": "The minister's claim that the deficit had been eliminated was a {0} falsehood, contradicted by his own ministry's published figures.",
+      "blanks": [
+        {
+          "options": [
+            "patent",
+            "recondite",
+            "esoteric",
+            "nebulous",
+            "abstruse"
+          ],
+          "answer": "patent"
+        }
+      ],
+      "targets": [
+        "patent"
+      ],
+      "hint": "Nghĩa phụ của 'patent'.",
+      "explanation": "Lời nói dối rành rành, bị chính số liệu của bộ bác bỏ: patent (nghĩa phụ: hiển nhiên). Collocation: a patent falsehood, patently false.",
+      "difficulty": 2,
+      "skills": [
+        "secondary-meaning",
+        "collocation"
+      ],
+      "addedIn": "batch-01"
+    },
+    {
+      "id": "co103",
+      "type": "se",
+      "sentence": "The contract made the penalty {0}: a fee of two percent for every day of delay, stated in the very first paragraph.",
+      "options": [
+        "explicit",
+        "unequivocal",
+        "nebulous",
+        "ambiguous",
+        "lucid",
+        "pellucid"
+      ],
+      "answers": [
+        "explicit",
+        "unequivocal"
+      ],
+      "targets": [
+        "explicit",
+        "unequivocal",
+        "lucid",
+        "pellucid"
+      ],
+      "hint": "Nói thẳng ra, hay viết dễ hiểu?",
+      "explanation": "Nêu thẳng, không nước đôi: explicit, unequivocal. Lucid và pellucid là cặp nói về văn phong dễ hiểu, không phải việc điều khoản được nêu rõ ràng dứt khoát.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "batch-01"
+    },
+    {
+      "id": "co104",
+      "type": "tc",
+      "sentence": "Investors complained that the fund's fee structure was deliberately {0}: no one could work out from the prospectus how much they were actually paying.",
+      "blanks": [
+        {
+          "options": [
+            "opaque",
+            "esoteric",
+            "recondite",
+            "pellucid",
+            "limpid"
+          ],
+          "answer": "opaque"
+        }
+      ],
+      "targets": [
+        "opaque",
+        "esoteric",
+        "recondite"
+      ],
+      "hint": "Vấn đề là thiếu minh bạch.",
+      "explanation": "Không minh bạch, không ai tính ra được mình trả bao nhiêu: opaque. Esoteric và recondite là khó vì kiến thức hiếm, không phải vì thiếu minh bạch; pellucid và limpid ngược nghĩa.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "batch-01"
+    },
+    {
+      "id": "co105",
+      "type": "tc",
+      "sentence": "The governor's expression remained {0} throughout the press conference, giving reporters no clue as to whether rates would rise.",
+      "blanks": [
+        {
+          "options": [
+            "inscrutable",
+            "convoluted",
+            "byzantine",
+            "abstruse",
+            "nebulous"
+          ],
+          "answer": "inscrutable"
+        }
+      ],
+      "targets": [
+        "inscrutable",
+        "convoluted"
+      ],
+      "hint": "Mô tả nét mặt.",
+      "explanation": "Nét mặt không thể đọc được: inscrutable. Convoluted và byzantine nói về cấu trúc rối; abstruse về nội dung trừu tượng.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "batch-01"
+    },
+    {
+      "id": "co106",
+      "type": "tc",
+      "sentence": "The program's goals were so {0}, 'improving well-being' and 'building resilience', that no one could say whether it had succeeded.",
+      "blanks": [
+        {
+          "options": [
+            "nebulous",
+            "recondite",
+            "arcane",
+            "convoluted",
+            "byzantine"
+          ],
+          "answer": "nebulous"
+        }
+      ],
+      "targets": [
+        "nebulous",
+        "recondite",
+        "convoluted"
+      ],
+      "hint": "Vì sao không đánh giá được?",
+      "explanation": "Mục tiêu mơ hồ, không cụ thể: nebulous. Recondite, arcane là khó vì ít người biết; convoluted, byzantine là rối về cấu trúc.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "batch-01"
+    },
+    {
+      "id": "co107",
+      "type": "se",
+      "sentence": "The debate, which concerned the asymptotic properties of a rarely used estimator, was too {0} to interest anyone outside a small circle of specialists.",
+      "options": [
+        "esoteric",
+        "recondite",
+        "nebulous",
+        "ambiguous",
+        "lucid",
+        "perspicuous"
+      ],
+      "answers": [
+        "esoteric",
+        "recondite"
+      ],
+      "targets": [
+        "esoteric",
+        "recondite",
+        "nebulous"
+      ],
+      "hint": "'Outside a small circle of specialists'.",
+      "explanation": "Chỉ giới chuyên gia hẹp quan tâm: esoteric, recondite. Nebulous và ambiguous là mơ hồ; lucid và perspicuous sai hướng.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "batch-01"
+    },
+    {
+      "id": "co108",
+      "type": "tc",
+      "sentence": "Written in {0} legal jargon, the regulation was all but {1} to the small business owners it was meant to protect.",
+      "blanks": [
+        {
+          "options": [
+            "impenetrable",
+            "pellucid",
+            "limpid"
+          ],
+          "answer": "impenetrable"
+        },
+        {
+          "options": [
+            "opaque",
+            "manifest",
+            "patent"
+          ],
+          "answer": "opaque"
+        }
+      ],
+      "targets": [
+        "impenetrable",
+        "opaque"
+      ],
+      "hint": "Hai chỗ trống cùng hướng.",
+      "explanation": "Cùng chiều: thuật ngữ pháp lý không thể hiểu nổi (impenetrable), nên quy định gần như mờ mịt (opaque) với chủ doanh nghiệp.",
+      "difficulty": 2,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-01"
+    },
+    {
+      "id": "co109",
+      "type": "tc",
+      "sentence": "The annual report {0} the factory closures in a single sentence, devoting ten pages instead to the company's charitable activities.",
+      "blanks": [
+        {
+          "options": [
+            "glossed over",
+            "elucidated",
+            "explicated",
+            "expounded on",
+            "illuminated"
+          ],
+          "answer": "glossed over"
+        }
+      ],
+      "targets": [
+        "gloss",
+        "elucidate",
+        "explicate"
+      ],
+      "hint": "Một câu so với mười trang.",
+      "explanation": "Chỉ một câu cho việc đóng cửa nhà máy, mười trang cho từ thiện: cố ý lướt qua, glossed over. Các phương án còn lại là giải thích kỹ, ngược nghĩa.",
+      "difficulty": 2,
+      "skills": [
+        "secondary-meaning"
+      ],
+      "addedIn": "batch-01"
+    },
+    {
+      "id": "co110",
+      "type": "tc",
+      "sentence": "Asked to {0} on his theory, the economist spoke for an hour; yet his explanation, far from {1} the idea, left the audience more confused than before.",
+      "blanks": [
+        {
+          "options": [
+            "expound",
+            "gloss",
+            "obfuscate"
+          ],
+          "answer": "expound"
+        },
+        {
+          "options": [
+            "illuminating",
+            "muddying",
+            "belying"
+          ],
+          "answer": "illuminating"
+        }
+      ],
+      "targets": [
+        "expound",
+        "illuminate",
+        "muddy"
+      ],
+      "hint": "'Far from' đổi chiều.",
+      "explanation": "(i) Collocation 'expound on': trình bày chi tiết. (ii) 'Far from … left the audience more confused': lẽ ra phải làm sáng tỏ, illuminating.",
+      "difficulty": 2,
+      "skills": [
+        "contrast",
+        "collocation"
+      ],
+      "addedIn": "batch-01"
+    },
+    {
+      "id": "co111",
+      "type": "tc",
+      "sentence": "National averages can {0} large differences between regions: a country where half the provinces are booming and half are in recession may show no growth at all.",
+      "blanks": [
+        {
+          "options": [
+            "obscure",
+            "elucidate",
+            "illuminate",
+            "explicate",
+            "manifest"
+          ],
+          "answer": "obscure"
+        }
+      ],
+      "targets": [
+        "obscure-v"
+      ],
+      "hint": "Ví dụ sau dấu hai chấm.",
+      "explanation": "Ví dụ sau dấu hai chấm cho thấy con số trung bình che khuất sự khác biệt: obscure.",
+      "difficulty": 1,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-01"
+    },
+    {
+      "id": "co112",
+      "type": "se",
+      "sentence": "The new exceptions did not clarify the rule; they only {0} it further.",
+      "options": [
+        "muddied",
+        "obscured",
+        "elucidated",
+        "illuminated",
+        "belied",
+        "glossed"
+      ],
+      "answers": [
+        "muddied",
+        "obscured"
+      ],
+      "targets": [
+        "muddy",
+        "obscure-v",
+        "belie"
+      ],
+      "hint": "'Did not clarify'.",
+      "explanation": "'Did not clarify… only … further': làm rối thêm, muddied, obscured. Belied là tạo ấn tượng sai; glossed là chú giải.",
+      "difficulty": 2,
+      "skills": [
+        "contrast"
+      ],
+      "addedIn": "batch-01"
+    },
+    {
+      "id": "co113",
+      "type": "tc",
+      "sentence": "The town's quaint, well-kept main street {0} its economic troubles: behind the fresh paint, a third of the shops stood empty.",
+      "blanks": [
+        {
+          "options": [
+            "belies",
+            "manifests",
+            "elucidates",
+            "illuminates",
+            "obfuscates"
+          ],
+          "answer": "belies"
+        }
+      ],
+      "targets": [
+        "belie",
+        "manifest",
+        "obfuscate"
+      ],
+      "hint": "Bề ngoài trái ngược bên trong.",
+      "explanation": "Vẻ ngoài chỉnh chu che giấu khó khăn bên trong: belies. Manifests ngược nghĩa; obfuscate là cố ý làm rối bằng ngôn từ, không dùng cho một con phố.",
+      "difficulty": 3,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "batch-01"
     }
   ]
 }

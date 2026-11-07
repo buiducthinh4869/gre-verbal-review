@@ -590,7 +590,12 @@
         "trenchant"
       ],
       "hint": "Khen sự sắc sảo hay tả sự cay độc?",
-      "explanation": "Lời chế giễu cay độc: caustic. Incisive và trenchant là sắc sảo, thường mang nghĩa khen, không nhấn vào sự chế nhạo."
+      "explanation": "Lời chế giễu cay độc: caustic. Incisive và trenchant là sắc sảo, thường mang nghĩa khen, không nhấn vào sự chế nhạo.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "hm02",
@@ -614,7 +619,12 @@
         "acerbic"
       ],
       "hint": "Khen hay chê?",
-      "explanation": "Đi thẳng vào điểm yếu mà người khác bỏ qua: incisive (sắc sảo). Sardonic và acerbic là chế giễu, chua cay."
+      "explanation": "Đi thẳng vào điểm yếu mà người khác bỏ qua: incisive (sắc sảo). Sardonic và acerbic là chế giễu, chua cay.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "hm03",
@@ -643,7 +653,12 @@
         "acrimonious"
       ],
       "hint": "Diễn biến từ đầu đến cuối.",
-      "explanation": "'Began as… grew so… that the board had to intervene': từ thân thiện (amicable) thành gay gắt (acrimonious)."
+      "explanation": "'Began as… grew so… that the board had to intervene': từ thân thiện (amicable) thành gay gắt (acrimonious).",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "hm04",
@@ -667,7 +682,12 @@
         "bellicose"
       ],
       "hint": "Mục tiêu: chấm dứt đình công.",
-      "explanation": "Khen ngợi để làm dịu mà không nhượng bộ: giọng hòa giải, conciliatory."
+      "explanation": "Khen ngợi để làm dịu mà không nhượng bộ: giọng hòa giải, conciliatory.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "hm05",
@@ -690,7 +710,12 @@
         "vitriolic"
       ],
       "hint": "'Seemed… but'.",
-      "explanation": "'Seemed… but… taken as a deliberate insult' đổi chiều: lúc đầu có vẻ vô hại, innocuous."
+      "explanation": "'Seemed… but… taken as a deliberate insult' đổi chiều: lúc đầu có vẻ vô hại, innocuous.",
+      "difficulty": 2,
+      "skills": [
+        "contrast"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "hm06",
@@ -717,7 +742,12 @@
         "mordant"
       ],
       "hint": "Đe dọa nước láng giềng.",
-      "explanation": "Đầy lời đe dọa: hiếu chiến, bellicose và belligerent. Conciliatory và amicable là cặp sai hướng; sardonic và mordant là cặp mỉa mai."
+      "explanation": "Đầy lời đe dọa: hiếu chiến, bellicose và belligerent. Conciliatory và amicable là cặp sai hướng; sardonic và mordant là cặp mỉa mai.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "hm07",
@@ -744,7 +774,12 @@
         "incisive"
       ],
       "hint": "Tính khí dễ nổi nóng.",
-      "explanation": "Hay quát tháo vì lỗi nhỏ: dễ nổi cáu, irascible và cantankerous. Trenchant và incisive là cặp sắc sảo."
+      "explanation": "Hay quát tháo vì lỗi nhỏ: dễ nổi cáu, irascible và cantankerous. Trenchant và incisive là cặp sắc sảo.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "base"
     },
     {
       "id": "hm08",
@@ -770,7 +805,12 @@
         "sardonic"
       ],
       "hint": "Thái độ trước nỗi đau của người khác.",
-      "explanation": "Không xin lỗi, không bồi thường: nhẫn tâm, callous và heartless. Acerbic và sardonic là cặp lời lẽ chua cay, không mô tả sự vô cảm trong hành động."
+      "explanation": "Không xin lỗi, không bồi thường: nhẫn tâm, callous và heartless. Acerbic và sardonic là cặp lời lẽ chua cay, không mô tả sự vô cảm trong hành động.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "base"
     }
   ]
 }
