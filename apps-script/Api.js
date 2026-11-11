@@ -11,6 +11,11 @@
 
 var LOCK_WAIT_MS = 10000;
 var SETTING_KEYS = ['newPerDay', 'autoStart', 'thinkFirst', 'examMode', 'skipVocabIntro'];
+// Danh sách hôm nay (đợt 02): todayNew:<YYYY-MM-DD> (từ mới cố định trong ngày), todayDue:<YYYY-MM-DD> (từ đến hạn đầu ngày).
+// Giá trị là mảng id từ. Mỗi ngày một dòng mới trong tab settings; dòng cũ giữ nguyên (client bỏ qua khóa cũ hơn 7 ngày).
+var DAY_LIST_KEY_RE = /^today(New|Due):\d{4}-\d{2}-\d{2}$/;
+var DAY_LIST_MAX = 80;
+function isSettingKey_(k) { return SETTING_KEYS.indexOf(k) >= 0 || DAY_LIST_KEY_RE.test(String(k || '')); }
 var MAX_EVENTS = 100;
 var MAX_CELL = 2000;
 
@@ -278,7 +283,7 @@ function saveEvents_(ss, userId, events) {
         custChanged.push(k);
       }
       custNew = custNew.filter(function (x) { return x.id !== String(ev.wordId); });
-    } else if (ev.type === 'setting' && SETTING_KEYS.indexOf(ev.key) >= 0) {
+    } else if (ev.type === 'setting' && isSettingKey_(ev.key)) {
       settingPatch[ev.key] = sanitizeSetting_(ev.key, ev.value);
     }
   });
@@ -342,6 +347,14 @@ function sanitizeCustom_(w) {
 }
 
 function sanitizeSetting_(key, v) {
+  if (DAY_LIST_KEY_RE.test(String(key))) {
+    var out = [];
+    (Array.isArray(v) ? v : []).forEach(function (id) {
+      if (typeof id !== 'string') return;
+      if (/^[a-z0-9][a-z0-9-]{0,79}$/.test(id) && out.indexOf(id) < 0 && out.length < DAY_LIST_MAX) out.push(id);
+    });
+    return out;
+  }
   if (key === 'newPerDay') {
     var n = parseInt(v, 10);
     return isNaN(n) ? 10 : Math.max(0, Math.min(50, n));

@@ -120,6 +120,7 @@ Mỗi câu trả lời cập nhật giao diện ngay, rồi vào hàng đợi (g
   - `suggestions`: suggestionId, userId, targetType, targetId, field, currentValue, proposedValue, reason, sourceUrl, status, reviewerNote, createdAt, reviewedAt, changeId.
 - Lệnh dọn dữ liệu thử `cli.purgeTestUser` từ chối nếu tài khoản có tiến độ từ trước lúc bắt đầu kiểm thử (tránh xóa nhầm dữ liệu người thật).
 - Kết quả gần nhất của từng bài GRE nằm trong dòng settings `_exRes` của mỗi người (dùng để chọn câu thi thử).
+- Danh sách hôm nay (đợt 02): dòng settings `todayNew:<YYYY-MM-DD>` (từ mới cố định của ngày) và `todayDue:<YYYY-MM-DD>` (từ đến hạn đầu ngày), giá trị là mảng id từ (tối đa 80). Mỗi ngày thêm tối đa 2 dòng cho mỗi người; dòng cũ giữ nguyên, web bỏ qua khóa cũ hơn 7 ngày. Xem UPDATE.md.
 - `apps-script/Migrate.js` chuyển dữ liệu bản cũ (một người dùng) sang `u01`: chèn cột `userId` vào đầu các tab cũ, điền `u01`, tạo tab `users`, `sessions`. Chạy lại vô hại.
 
 ## Lịch sử

@@ -9,14 +9,22 @@ Khi có file JSON mới cùng schema (vd. `X.json`), yêu cầu: *"Thêm cụm t
 
 Tiến độ của mọi người trong Sheet không bị ảnh hưởng; từ mới bắt đầu ở hộp 0 và được giới thiệu dần theo số từ mới mỗi ngày.
 
-## Đợt bài tập mới (thêm câu GRE, đề thi thử cố định)
+## Đợt bài tập mới (nối câu GRE, đề thi thử cố định)
 
-Mỗi đợt gồm file cụm đã cập nhật (`data/clusters/*.json`, có thể cả `data/index.json`) và/hoặc file đề mới (`data/mocks/*.json` + `data/mocks/index.json`). Quy trình:
+Từ đợt 02, câu mới được gửi dưới dạng **file đợt** `data/batches/<tên>.json` có dạng `{ "<clusterId>": [ ...câu hỏi ] }`, kèm đề mới (`data/mocks/<id>.json` + `data/mocks/index.json`) nếu có. **Không chép đè file cụm**: file cụm có thể đã có chỗ sửa tay hoặc bản sửa đã đưa vào dữ liệu gốc. Quy trình:
 
-1. Tạo nhánh mới, chép đè các file vào `data/` (giữ nguyên tên file). **Không đổi `id` từ, `id` bài cũ** (tiến độ, lịch sử, bản sửa gắn với id).
-2. Chạy `npm run check` (in số câu theo dạng và độ khó, các đề cố định) và `npm test`. Có lỗi dữ liệu thì báo lại, **không tự sửa nội dung**. Test "mọi đáp án GRE ánh xạ được" liệt kê các đáp án là từ chưa có trên web; đáp án mới kiểu này là hợp lệ, chỉ cần thêm vào danh sách `outside` trong `tests/srs.test.js` sau khi xác nhận.
-3. Commit, push lên `main`. GitHub Pages tự cập nhật; **không cần triển khai lại Apps Script**.
-4. Mở web: bảng Ngân hàng câu hỏi (mục Luyện tập) có tổng số câu mới; đề mới hiện trong Thi thử › Đề cố định.
+1. Tạo nhánh mới (`git checkout -b batch-NN`). Sao lưu Sheet (`node scripts/backup-csv.js`, chỉ đọc) và ghi lại tiến độ của `user01` (số từ đã học, đến hạn, hay quên, số lần thi thử) để đối chiếu ở bước cuối.
+2. Chép file đợt vào `data/batches/` (giữ lại trong repo làm lịch sử), rồi chạy:
+   ```
+   node scripts/merge-batch.js data/batches/batch-NN.json --dry-run   # chỉ kiểm tra, in bảng tóm tắt
+   node scripts/merge-batch.js data/batches/batch-NN.json             # nối thật
+   ```
+   Script **nối thêm** câu vào cuối mảng `exercises` của từng `data/clusters/<clusterId>.json`; không sửa, không sắp xếp lại, không xóa câu có sẵn. Nó **dừng và không ghi file nào** nếu: cụm không tồn tại; `id` câu mới trùng với câu đã có ở bất kỳ cụm nào (hoặc trùng nhau trong file đợt; chạy lại cùng đợt lần hai cũng bị chặn vì lý do này); câu không hợp lệ theo `assets/validate.js`; file cụm không ở định dạng chuẩn (JSON thụt 2 dấu cách) nên không thể chỉ thêm dòng. In bảng: số câu thêm cho từng cụm, tổng trước và sau.
+3. `git diff --stat`: các file cụm chỉ có dòng thêm (cột xóa bằng 0), các cụm khác không đổi.
+4. Chép file đề mới vào `data/mocks/`.
+5. Chạy `npm run check` (in số câu theo dạng và độ khó, các đề cố định) và `npm test`. Có lỗi dữ liệu thì báo lại, **không tự sửa nội dung**. Test "mọi đáp án GRE ánh xạ được" liệt kê các đáp án là từ chưa có trên web; đáp án mới kiểu này là hợp lệ, chỉ cần thêm vào danh sách `outside` trong `tests/srs.test.js` sau khi xác nhận. Các test có số câu cố định (`tests/bank.test.js`: tổng ngân hàng câu, số câu mới, số câu đang giữ cho đề chưa làm) cần cập nhật theo đợt mới.
+6. Chạy thử trên máy (`npm run dev`), rồi **hỏi chủ dự án trước khi merge vào `main` và push**. GitHub Pages tự cập nhật; không cần triển khai lại Apps Script nếu đợt không đổi mã server.
+7. Mở web: bảng Ngân hàng câu hỏi (mục Luyện tập) có tổng số câu mới; đề mới hiện trong Thi thử › Đề cố định. Đối chiếu tiến độ `user01` với số đã ghi ở bước 1.
 
 Câu của một đề cố định mới sẽ tự được giữ (không xuất hiện ở luyện tập) cho tới khi mỗi người làm đề đó lần đầu.
 
@@ -119,3 +127,19 @@ Thỉnh thoảng (không bắt buộc) đưa các bản sửa vào file JSON cho
 4. Trang **Quản lý** → **Đánh dấu đã đưa vào dữ liệu gốc**: tắt (`active = FALSE`) các bản sửa đã trùng dữ liệu gốc. Nút này chỉ bật khi web đã tải được dữ liệu gốc mới; chỉ tắt đúng phiên bản đã xuất (bản sửa mới hơn vẫn giữ). Giao diện không thay đổi; lịch sử vẫn còn.
 
 Không bao giờ xóa dòng trong `content_history`.
+
+## Danh sách hôm nay (trang Hôm nay ↔ Luyện tập)
+
+Khối "Danh sách hôm nay" nằm dưới nút Bắt đầu ôn, gồm ba thẻ (logic thuần ở `assets/todaylist.js`, test ở `tests/todaylist.test.js`):
+
+- **Đến hạn**: ảnh chụp các từ đến hạn (`dueDate ≤ hôm nay`, hộp ≥ 1) lúc mở web lần đầu trong ngày, cộng các từ trở thành đến hạn trong ngày (vd trả lời sai ở Luyện tập). Từ đã ôn xong vẫn ở lại danh sách với dấu ✓ thay vì biến mất. Từ mới hôm nay trả lời sai không lặp lại ở thẻ này.
+- **Từ mới**: đúng các từ mà phiên ôn hôm nay giới thiệu. Chọn **một lần mỗi ngày** (thứ tự cụm, mức ưu tiên như trước; số từ = số từ mới mỗi ngày trừ số từ mới đã học hôm nay trước khi chọn), lưu ở cài đặt người dùng. Phiên Bắt đầu ôn dùng chung danh sách này; đổi "số từ mới mỗi ngày" chỉ có tác dụng từ hôm sau. Nút "Học thêm 5 từ mới" lấy từ ngoài danh sách.
+- **Hay quên**: các từ đang trong sổ hay quên.
+
+Lưu trên server (tab `settings`, mỗi khóa một dòng): `todayNew:<YYYY-MM-DD>` và `todayDue:<YYYY-MM-DD>`, giá trị là mảng id từ. Server chỉ nhận khóa đúng mẫu này (ngoài 5 khóa cài đặt cũ), lọc id không hợp lệ, tối đa 80 id. Web chỉ ghi danh sách khi đã tải trạng thái từ server trong ngày (máy đang dùng bộ nhớ đệm cũ không ghi đè danh sách đã chọn ở máy khác). Khóa cũ hơn 7 ngày bị bỏ qua khi đọc; dòng trong Sheet không bị xóa.
+
+**KPI**: một từ là "đã ôn hôm nay" khi trạng thái của nó có `lastReviewed` trong hôm nay (giờ Việt Nam, theo đồng hồ server). Mọi câu trả lời đều ghi `lastReviewed`: phiên ôn, Luyện tập, bài GRE, thi thử. Với bài GRE, chỉ các từ ở **đáp án** được ghi (các từ đích khác chỉ được tính một lượt gặp, không đổi `lastReviewed`); ngoại lệ là từ đang được ôn trong phiên hôm nay bằng một câu GRE mà nó không phải đáp án (hiếm, khi từ không có câu nào làm đáp án): từ đó được chấm nên cũng tính. Ô số liệu hiện "đã ôn / tổng" từng thẻ; thanh "Hoàn thành hôm nay: x/y" đếm cả ba thẻ, không đếm trùng.
+
+**Liên kết sang Luyện tập**: mỗi thẻ có "Luyện tập GRE với các từ này" và "Ôn nghĩa các từ này" (Từ → Nghĩa), cuối khối có "Luyện tập toàn bộ danh sách hôm nay". Bấm vào mở Luyện tập với phạm vi **Danh sách hôm nay** (cả danh sách hoặc một thẻ; chọn lại được trong ô Phạm vi), bỏ các bộ lọc GRE cũ. Dạng GRE lấy các câu có ít nhất một từ của danh sách là đáp án (trừ câu đang giữ cho đề thi thử chưa làm), chọn để phủ được nhiều từ nhất trong giới hạn số câu; từ không có câu GRE nào được bổ sung một thẻ Nghĩa → Từ.
+
+Trên điện thoại (≤ 640px) khối thu gọn mặc định; mở ra là thẻ đầu tiên còn từ chưa ôn. Bấm một ô số liệu mở khối ở thẻ tương ứng (ô "ngày ôn liên tục" mở thẻ đầu tiên còn từ chưa ôn).

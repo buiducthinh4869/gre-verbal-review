@@ -772,6 +772,501 @@
         "nuance"
       ],
       "addedIn": "base"
+    },
+    {
+      "id": "on101",
+      "type": "tc",
+      "sentence": "The interview yielded only {0} observations ('hard work pays off', 'family comes first'), nothing a reader could not have guessed in advance.",
+      "blanks": [
+        {
+          "options": [
+            "banal",
+            "iconoclastic",
+            "idiosyncratic",
+            "heterodox",
+            "seminal"
+          ],
+          "answer": "banal"
+        }
+      ],
+      "targets": [
+        "banal",
+        "iconoclastic",
+        "idiosyncratic"
+      ],
+      "hint": "Ví dụ trong ngoặc.",
+      "explanation": "Những câu ai cũng đoán trước được: tầm thường, sáo rỗng, banal.",
+      "difficulty": 1,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-02"
+    },
+    {
+      "id": "on102",
+      "type": "se",
+      "sentence": "The film relies on a {0} plot twist: the detective, it turns out, was the killer all along.",
+      "options": [
+        "hackneyed",
+        "clichéd",
+        "heretical",
+        "anomalous",
+        "seminal",
+        "novel"
+      ],
+      "answers": [
+        "hackneyed",
+        "clichéd"
+      ],
+      "targets": [
+        "hackneyed",
+        "cliched",
+        "anomalous",
+        "seminal",
+        "novel"
+      ],
+      "hint": "Cú lật kiểu này đã gặp bao nhiêu lần?",
+      "explanation": "Cú lật quen thuộc đến nhàm: hackneyed, clichéd. Seminal và novel là cặp sai hướng.",
+      "difficulty": 1,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-02"
+    },
+    {
+      "id": "on103",
+      "type": "tc",
+      "sentence": "After the bold flavors of the original, the sequel's dialogue seemed {0}, competent but utterly without spice or wit.",
+      "blanks": [
+        {
+          "options": [
+            "insipid",
+            "heretical",
+            "doctrinaire",
+            "anomalous",
+            "heterodox"
+          ],
+          "answer": "insipid"
+        }
+      ],
+      "targets": [
+        "insipid",
+        "heretical",
+        "doctrinaire"
+      ],
+      "hint": "'Without spice'.",
+      "explanation": "Nhạt nhẽo, thiếu gia vị: insipid. Các phương án còn lại nói về quan điểm hoặc sự bất thường, không mô tả lời thoại nhạt.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "batch-02"
+    },
+    {
+      "id": "on104",
+      "type": "tc",
+      "sentence": "His {0} analysis of the trade war, which ignored half a century of research on tariffs, embarrassed the think tank that had published it.",
+      "blanks": [
+        {
+          "options": [
+            "jejune",
+            "seminal",
+            "novel",
+            "avant-garde",
+            "iconoclastic"
+          ],
+          "answer": "jejune"
+        }
+      ],
+      "targets": [
+        "jejune",
+        "seminal",
+        "novel"
+      ],
+      "hint": "Vì sao tổ chức thấy xấu hổ?",
+      "explanation": "Bỏ qua nửa thế kỷ nghiên cứu, khiến tổ chức xấu hổ: non nớt, ấu trĩ, jejune.",
+      "difficulty": 3,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "batch-02"
+    },
+    {
+      "id": "on105",
+      "type": "tc",
+      "sentence": "The novel's plot is gripping, but its prose is {0}: competent, clear and entirely without flair.",
+      "blanks": [
+        {
+          "options": [
+            "pedestrian",
+            "avant-garde",
+            "iconoclastic",
+            "idiosyncratic",
+            "florid"
+          ],
+          "answer": "pedestrian"
+        }
+      ],
+      "targets": [
+        "pedestrian",
+        "idiosyncratic",
+        "florid"
+      ],
+      "hint": "Nghĩa phụ, không phải 'người đi bộ'.",
+      "explanation": "Đúng, rõ, nhưng không có gì đặc sắc: tầm thường, pedestrian (nghĩa phụ). Florid là hoa mỹ, ngược với 'without flair'.",
+      "difficulty": 2,
+      "skills": [
+        "secondary-meaning",
+        "contrast"
+      ],
+      "addedIn": "batch-02"
+    },
+    {
+      "id": "on106",
+      "type": "se",
+      "sentence": "The explanation for the outage turned out to be thoroughly {0}: a technician had unplugged the wrong cable.",
+      "options": [
+        "prosaic",
+        "mundane",
+        "anomalous",
+        "heretical",
+        "seminal",
+        "iconoclastic"
+      ],
+      "answers": [
+        "prosaic",
+        "mundane"
+      ],
+      "targets": [
+        "prosaic",
+        "mundane",
+        "anomalous",
+        "heretical"
+      ],
+      "hint": "Rút nhầm dây cáp.",
+      "explanation": "Nguyên nhân rất bình thường: prosaic, mundane.",
+      "difficulty": 1,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-02"
+    },
+    {
+      "id": "on107",
+      "type": "tc",
+      "sentence": "The paper's contribution is a {0} instrument for schooling, one that no previous study had thought to use: distance to the nearest teacher-training college.",
+      "blanks": [
+        {
+          "options": [
+            "novel",
+            "hackneyed",
+            "banal",
+            "trite",
+            "derivative"
+          ],
+          "answer": "novel"
+        }
+      ],
+      "targets": [
+        "novel",
+        "hackneyed",
+        "derivative"
+      ],
+      "hint": "'No previous study'.",
+      "explanation": "Chưa nghiên cứu nào nghĩ tới: mới, novel (tính từ, không phải tiểu thuyết).",
+      "difficulty": 1,
+      "skills": [
+        "lookalike"
+      ],
+      "addedIn": "batch-02"
+    },
+    {
+      "id": "on108",
+      "type": "tc",
+      "sentence": "Although the 1956 article was {0}, inspiring an entire literature, many of the later papers it spawned were merely {1}, restating its insights with minor variations.",
+      "blanks": [
+        {
+          "options": [
+            "seminal",
+            "derivative",
+            "doctrinaire"
+          ],
+          "answer": "seminal"
+        },
+        {
+          "options": [
+            "derivative",
+            "seminal",
+            "heterodox"
+          ],
+          "answer": "derivative"
+        }
+      ],
+      "targets": [
+        "seminal",
+        "derivative"
+      ],
+      "hint": "'Although… merely'.",
+      "explanation": "(i) Khơi nguồn cả một dòng nghiên cứu: seminal. (ii) 'Although… merely': các bài sau chỉ lặp lại, derivative.",
+      "difficulty": 2,
+      "skills": [
+        "contrast"
+      ],
+      "addedIn": "batch-02"
+    },
+    {
+      "id": "on109",
+      "type": "tc",
+      "sentence": "{0} economists, who reject the assumption of rational, self-interested agents, have long complained that their work is ignored by the leading journals.",
+      "blanks": [
+        {
+          "options": [
+            "Heterodox",
+            "Orthodox",
+            "Doctrinaire",
+            "Hidebound",
+            "Conformist"
+          ],
+          "answer": "Heterodox"
+        }
+      ],
+      "targets": [
+        "heterodox",
+        "orthodox",
+        "doctrinaire"
+      ],
+      "hint": "Bác bỏ giả định của dòng chính.",
+      "explanation": "Bác bỏ giả định chủ đạo và bị tạp chí hàng đầu phớt lờ: không chính thống, heterodox.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "batch-02"
+    },
+    {
+      "id": "on110",
+      "type": "se",
+      "sentence": "A {0} senator who often voted against her own party, she was distrusted by its leadership but popular with independent voters.",
+      "options": [
+        "maverick",
+        "nonconformist",
+        "conformist",
+        "orthodox",
+        "doctrinaire",
+        "dogmatic"
+      ],
+      "answers": [
+        "maverick",
+        "nonconformist"
+      ],
+      "targets": [
+        "maverick",
+        "conformist",
+        "orthodox",
+        "doctrinaire",
+        "dogmatic"
+      ],
+      "hint": "Bỏ phiếu ngược đảng.",
+      "explanation": "Hay bỏ phiếu ngược đảng mình: độc lập, không theo số đông, maverick, nonconformist. Doctrinaire và dogmatic là cặp giáo điều.",
+      "difficulty": 1,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "batch-02"
+    },
+    {
+      "id": "on111",
+      "type": "tc",
+      "sentence": "The {0} readings from one weather station, wildly out of line with those of its neighbors, were eventually traced to a faulty sensor.",
+      "blanks": [
+        {
+          "options": [
+            "anomalous",
+            "quotidian",
+            "mundane",
+            "prosaic",
+            "orthodox"
+          ],
+          "answer": "anomalous"
+        }
+      ],
+      "targets": [
+        "anomalous",
+        "quotidian",
+        "mundane"
+      ],
+      "hint": "'Wildly out of line'.",
+      "explanation": "Lệch hẳn so với các trạm lân cận: bất thường, anomalous.",
+      "difficulty": 1,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-02"
+    },
+    {
+      "id": "on112",
+      "type": "tc",
+      "sentence": "Questioning the efficient-markets hypothesis was once considered almost {0} in finance departments; after 2008 it became commonplace.",
+      "blanks": [
+        {
+          "options": [
+            "heretical",
+            "orthodox",
+            "doctrinaire",
+            "conformist",
+            "hidebound"
+          ],
+          "answer": "heretical"
+        }
+      ],
+      "targets": [
+        "heretical",
+        "orthodox",
+        "doctrinaire"
+      ],
+      "hint": "'Once… became commonplace'.",
+      "explanation": "'Once… after 2008 commonplace' đổi chiều: trước kia bị coi như dị giáo, heretical.",
+      "difficulty": 2,
+      "skills": [
+        "contrast"
+      ],
+      "addedIn": "batch-02"
+    },
+    {
+      "id": "on113",
+      "type": "tc",
+      "sentence": "The ministry's {0} bureaucrats resisted digital filing for a decade, insisting that paper forms had always worked well enough.",
+      "blanks": [
+        {
+          "options": [
+            "hidebound",
+            "maverick",
+            "iconoclastic",
+            "heterodox",
+            "avant-garde"
+          ],
+          "answer": "hidebound"
+        }
+      ],
+      "targets": [
+        "hidebound",
+        "maverick",
+        "iconoclastic"
+      ],
+      "hint": "Mười năm chống đổi mới.",
+      "explanation": "Bám vào giấy tờ, chống số hóa: bảo thủ, hidebound.",
+      "difficulty": 1,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-02"
+    },
+    {
+      "id": "on114",
+      "type": "se",
+      "sentence": "Science advances when researchers are willing to abandon cherished theories; a {0} commitment to any single model can blind a field to contrary evidence.",
+      "options": [
+        "dogmatic",
+        "doctrinaire",
+        "heterodox",
+        "iconoclastic",
+        "prosaic",
+        "mundane"
+      ],
+      "answers": [
+        "dogmatic",
+        "doctrinaire"
+      ],
+      "targets": [
+        "dogmatic",
+        "doctrinaire",
+        "heterodox",
+        "iconoclastic"
+      ],
+      "hint": "Điều làm cả ngành 'mù'.",
+      "explanation": "Cam kết cứng nhắc, làm mù trước bằng chứng trái chiều: giáo điều, dogmatic, doctrinaire. Heterodox và iconoclastic là cặp phá cách, ngược hướng.",
+      "difficulty": 2,
+      "skills": [
+        "contrast"
+      ],
+      "addedIn": "batch-02"
+    },
+    {
+      "id": "on115",
+      "type": "tc",
+      "sentence": "In a {0} academic culture, where junior scholars are rewarded for extending established models, the {1} who challenges first principles risks never finding a job.",
+      "blanks": [
+        {
+          "options": [
+            "conformist",
+            "heterodox",
+            "avant-garde"
+          ],
+          "answer": "conformist"
+        },
+        {
+          "options": [
+            "iconoclast",
+            "conformist",
+            "doctrinaire"
+          ],
+          "answer": "iconoclast"
+        }
+      ],
+      "targets": [
+        "conformist",
+        "iconoclastic"
+      ],
+      "hint": "Ai bị thiệt trong văn hóa đó?",
+      "explanation": "(i) Thưởng cho người mở rộng mô hình có sẵn: văn hóa tuân thủ, conformist. (ii) Người thách thức nguyên lý nền tảng: iconoclast.",
+      "difficulty": 2,
+      "skills": [
+        "contrast"
+      ],
+      "addedIn": "batch-02"
+    },
+    {
+      "id": "on116",
+      "type": "tc",
+      "sentence": "Critics initially dismissed the director's first film as {0}, a mere imitation of the French New Wave; her second, however, was so {1} that some found it incomprehensible, and only with her third did she find a style both original and {2}.",
+      "blanks": [
+        {
+          "options": [
+            "derivative",
+            "seminal",
+            "anomalous"
+          ],
+          "answer": "derivative"
+        },
+        {
+          "options": [
+            "idiosyncratic",
+            "hackneyed",
+            "prosaic"
+          ],
+          "answer": "idiosyncratic"
+        },
+        {
+          "options": [
+            "lucid",
+            "abstruse",
+            "turgid"
+          ],
+          "answer": "lucid"
+        }
+      ],
+      "targets": [
+        "derivative",
+        "idiosyncratic",
+        "lucid"
+      ],
+      "hint": "Ba bộ phim, ba đánh giá.",
+      "explanation": "(i) 'A mere imitation': derivative. (ii) 'However… incomprehensible': quá riêng, quá lạ, idiosyncratic. (iii) Vừa độc đáo vừa dễ hiểu: lucid.",
+      "difficulty": 3,
+      "skills": [
+        "contrast"
+      ],
+      "addedIn": "batch-02"
     }
   ]
 }

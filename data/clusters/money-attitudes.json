@@ -790,6 +790,553 @@
         "nuance"
       ],
       "addedIn": "base"
+    },
+    {
+      "id": "ma101",
+      "type": "tc",
+      "sentence": "Raised by parents who had lived through famine, she remained {0} all her life, mending her own clothes and saving part of every paycheck, yet she was never mean with others.",
+      "blanks": [
+        {
+          "options": [
+            "frugal",
+            "parsimonious",
+            "miserly",
+            "penurious",
+            "prodigal"
+          ],
+          "answer": "frugal"
+        }
+      ],
+      "targets": [
+        "frugal",
+        "parsimonious",
+        "miserly"
+      ],
+      "hint": "'Yet she was never mean'.",
+      "explanation": "Tiết kiệm nhưng 'never mean with others': nghĩa khen, frugal. Parsimonious và miserly là keo kiệt, chính điều câu phủ nhận; penurious là keo kiệt hoặc nghèo túng.",
+      "difficulty": 2,
+      "skills": [
+        "nuance",
+        "contrast"
+      ],
+      "addedIn": "batch-02"
+    },
+    {
+      "id": "ma102",
+      "type": "tc",
+      "sentence": "A {0} government saves during booms so that it can spend during slumps without borrowing at punishing rates.",
+      "blanks": [
+        {
+          "options": [
+            "provident",
+            "prodigal",
+            "profligate",
+            "abstemious",
+            "covetous"
+          ],
+          "answer": "provident"
+        }
+      ],
+      "targets": [
+        "provident",
+        "prodigal",
+        "profligate",
+        "abstemious"
+      ],
+      "hint": "Lo cho tương lai.",
+      "explanation": "Dành dụm lúc thuận lợi để dùng lúc khó khăn: biết lo xa, provident. Abstemious là điều độ trong ăn uống, không nói về tài chính.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "batch-02"
+    },
+    {
+      "id": "ma103",
+      "type": "se",
+      "sentence": "Famously {0}, the senator drank only water at state banquets and ate little more than bread.",
+      "options": [
+        "abstemious",
+        "temperate",
+        "prodigal",
+        "profligate",
+        "parsimonious",
+        "miserly"
+      ],
+      "answers": [
+        "abstemious",
+        "temperate"
+      ],
+      "targets": [
+        "abstemious",
+        "parsimonious",
+        "miserly"
+      ],
+      "hint": "Ăn uống, không phải tiền bạc.",
+      "explanation": "Điều độ trong ăn uống: abstemious, temperate. Parsimonious và miserly là cặp keo kiệt về tiền bạc, không nói về ăn uống.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "batch-02"
+    },
+    {
+      "id": "ma104",
+      "type": "tc",
+      "sentence": "The {0} household saved a third of its income, while the family next door, headed by a notorious {1}, had borrowed against its house twice in a single year.",
+      "blanks": [
+        {
+          "options": [
+            "thrifty",
+            "prodigal",
+            "munificent"
+          ],
+          "answer": "thrifty"
+        },
+        {
+          "options": [
+            "spendthrift",
+            "miser",
+            "benefactor"
+          ],
+          "answer": "spendthrift"
+        }
+      ],
+      "targets": [
+        "thrifty",
+        "spendthrift"
+      ],
+      "hint": "Bẫy hình thức ở chỗ (ii).",
+      "explanation": "(i) Tiết kiệm một phần ba thu nhập: thrifty. (ii) 'While' đổi chiều, vay nợ liên tục: kẻ tiêu hoang, spendthrift. Bẫy: spendthrift có chữ 'thrift' nhưng nghĩa ngược.",
+      "difficulty": 2,
+      "skills": [
+        "lookalike",
+        "contrast"
+      ],
+      "addedIn": "batch-02"
+    },
+    {
+      "id": "ma105",
+      "type": "tc",
+      "sentence": "The {0} conditions of the settlement, with families sharing single rooms and children going without shoes, shocked the visiting officials.",
+      "blanks": [
+        {
+          "options": [
+            "penurious",
+            "munificent",
+            "opulent",
+            "lavish",
+            "prodigal"
+          ],
+          "answer": "penurious"
+        }
+      ],
+      "targets": [
+        "penurious",
+        "munificent",
+        "opulent"
+      ],
+      "hint": "Nghĩa thứ hai của từ.",
+      "explanation": "Cảnh sống thiếu thốn: penurious theo nghĩa nghèo túng (nghĩa thứ hai, bên cạnh nghĩa keo kiệt). Các phương án còn lại ngược nghĩa.",
+      "difficulty": 3,
+      "skills": [
+        "secondary-meaning"
+      ],
+      "addedIn": "batch-02"
+    },
+    {
+      "id": "ma106",
+      "type": "se",
+      "sentence": "Despite record profits, the company's {0} owners refused to raise wages for the fourth year in a row.",
+      "options": [
+        "miserly",
+        "stingy",
+        "munificent",
+        "magnanimous",
+        "provident",
+        "thrifty"
+      ],
+      "answers": [
+        "miserly",
+        "stingy"
+      ],
+      "targets": [
+        "miserly",
+        "stingy",
+        "provident",
+        "thrifty"
+      ],
+      "hint": "'Despite record profits'.",
+      "explanation": "Lãi kỷ lục mà vẫn không tăng lương: keo kiệt, miserly, stingy. Provident và thrifty là cặp tiết kiệm theo nghĩa khen.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "batch-02"
+    },
+    {
+      "id": "ma107",
+      "type": "tc",
+      "sentence": "Colonial administrators were notoriously {0}, stripping the region of timber and minerals with no thought for the people who lived there.",
+      "blanks": [
+        {
+          "options": [
+            "rapacious",
+            "parsimonious",
+            "miserly",
+            "provident",
+            "frugal"
+          ],
+          "answer": "rapacious"
+        }
+      ],
+      "targets": [
+        "rapacious",
+        "parsimonious",
+        "miserly"
+      ],
+      "hint": "'Stripping the region'.",
+      "explanation": "Vơ vét tài nguyên không thương tiếc: rapacious. Parsimonious và miserly là keo kiệt, không phải cướp đoạt; provident và frugal mang nghĩa khen.",
+      "difficulty": 1,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "batch-02"
+    },
+    {
+      "id": "ma108",
+      "type": "tc",
+      "sentence": "He cast {0} glances at his neighbor's new tractor, convinced that it should have been his.",
+      "blanks": [
+        {
+          "options": [
+            "covetous",
+            "rapacious",
+            "venal",
+            "mercenary",
+            "prodigal"
+          ],
+          "answer": "covetous"
+        }
+      ],
+      "targets": [
+        "covetous",
+        "rapacious",
+        "venal"
+      ],
+      "hint": "'Should have been his'.",
+      "explanation": "Thèm muốn thứ thuộc về người khác: covetous. Rapacious là vơ vét; venal là dễ bị mua chuộc.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "batch-02"
+    },
+    {
+      "id": "ma109",
+      "type": "tc",
+      "sentence": "Under its new chief executive the conglomerate became aggressively {0}, buying three rival firms in a single year.",
+      "blanks": [
+        {
+          "options": [
+            "acquisitive",
+            "venal",
+            "abstemious",
+            "profligate",
+            "parsimonious"
+          ],
+          "answer": "acquisitive"
+        }
+      ],
+      "targets": [
+        "acquisitive",
+        "venal",
+        "abstemious"
+      ],
+      "hint": "Mua lại ba công ty đối thủ.",
+      "explanation": "Ham thâu tóm, mua lại công ty: acquisitive (nghĩa trung tính trong kinh doanh). Venal là tham nhũng; abstemious là điều độ ăn uống.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "batch-02"
+    },
+    {
+      "id": "ma110",
+      "type": "tc",
+      "sentence": "The {0} son of a wealthy industrialist, he had spent his entire inheritance on racehorses within three years.",
+      "blanks": [
+        {
+          "options": [
+            "prodigal",
+            "provident",
+            "frugal",
+            "parsimonious",
+            "munificent"
+          ],
+          "answer": "prodigal"
+        }
+      ],
+      "targets": [
+        "prodigal",
+        "provident"
+      ],
+      "hint": "Thành ngữ quen thuộc.",
+      "explanation": "Tiêu hết gia tài: hoang phí, prodigal. Thành ngữ: the prodigal son.",
+      "difficulty": 1,
+      "skills": [
+        "collocation"
+      ],
+      "addedIn": "batch-02"
+    },
+    {
+      "id": "ma111",
+      "type": "se",
+      "sentence": "The ministry {0} public money on a stadium that has hosted only two events since it opened.",
+      "options": [
+        "squandered",
+        "wasted",
+        "hoarded",
+        "conserved",
+        "bestowed",
+        "amassed"
+      ],
+      "answers": [
+        "squandered",
+        "wasted"
+      ],
+      "targets": [
+        "squander"
+      ],
+      "hint": "Sân vận động chỉ dùng hai lần.",
+      "explanation": "Tiêu tiền vào sân vận động gần như bỏ không: squandered, wasted. Hoarded và conserved là cặp giữ gìn, ngược nghĩa.",
+      "difficulty": 1,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-02"
+    },
+    {
+      "id": "ma112",
+      "type": "tc",
+      "sentence": "Critics {0} praise on the debut novel, calling it the most accomplished first book in a generation.",
+      "blanks": [
+        {
+          "options": [
+            "lavished",
+            "squandered",
+            "dissipated",
+            "hoarded",
+            "stinted"
+          ],
+          "answer": "lavished"
+        }
+      ],
+      "targets": [
+        "lavish",
+        "squander",
+        "dissipate"
+      ],
+      "hint": "Cấu trúc 'lavish X on Y'.",
+      "explanation": "Collocation: lavish praise on X (khen hết lời). Squandered và dissipated là phung phí, không đi với 'praise on'.",
+      "difficulty": 2,
+      "skills": [
+        "collocation"
+      ],
+      "addedIn": "batch-02"
+    },
+    {
+      "id": "ma113",
+      "type": "tc",
+      "sentence": "The early lead that the firm built through innovation was quickly {0} by a series of {1} acquisitions, each more expensive and less useful than the last.",
+      "blanks": [
+        {
+          "options": [
+            "dissipated",
+            "consolidated",
+            "hoarded"
+          ],
+          "answer": "dissipated"
+        },
+        {
+          "options": [
+            "profligate",
+            "provident",
+            "judicious"
+          ],
+          "answer": "profligate"
+        }
+      ],
+      "targets": [
+        "dissipate",
+        "profligate"
+      ],
+      "hint": "Bắt đầu từ mô tả các thương vụ.",
+      "explanation": "(ii) Các thương vụ ngày càng đắt và vô dụng: hoang phí, profligate. (i) Nhờ vậy lợi thế ban đầu bị phung phí hết, dissipated.",
+      "difficulty": 2,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-02"
+    },
+    {
+      "id": "ma114",
+      "type": "tc",
+      "sentence": "Rural voters had grown dependent on the governor's {0}: new roads, cash handouts and free fertilizer appeared every election year.",
+      "blanks": [
+        {
+          "options": [
+            "largesse",
+            "parsimony",
+            "avarice",
+            "penury",
+            "frugality"
+          ],
+          "answer": "largesse"
+        }
+      ],
+      "targets": [
+        "largesse"
+      ],
+      "hint": "Ví dụ sau dấu hai chấm.",
+      "explanation": "Tiền ban phát vào mỗi mùa bầu cử: largesse.",
+      "difficulty": 2,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-02"
+    },
+    {
+      "id": "ma115",
+      "type": "se",
+      "sentence": "Economists still debate whether blood donation is genuinely {0} or whether donors expect some private reward, such as social recognition.",
+      "options": [
+        "altruistic",
+        "selfless",
+        "mercenary",
+        "venal",
+        "munificent",
+        "liberal"
+      ],
+      "answers": [
+        "altruistic",
+        "selfless"
+      ],
+      "targets": [
+        "altruistic",
+        "mercenary",
+        "venal",
+        "munificent",
+        "liberal"
+      ],
+      "hint": "Câu hỏi về động cơ.",
+      "explanation": "Đối lập với việc mong phần thưởng riêng: vị tha, altruistic, selfless. Munificent và liberal là cặp hào phóng về tiền của, không nói về động cơ.",
+      "difficulty": 2,
+      "skills": [
+        "nuance",
+        "contrast"
+      ],
+      "addedIn": "batch-02"
+    },
+    {
+      "id": "ma116",
+      "type": "tc",
+      "sentence": "Even a {0} dictator, one who sincerely wishes his people well, remains accountable to no one.",
+      "blanks": [
+        {
+          "options": [
+            "benevolent",
+            "rapacious",
+            "venal",
+            "mercenary",
+            "parsimonious"
+          ],
+          "answer": "benevolent"
+        }
+      ],
+      "targets": [
+        "benevolent"
+      ],
+      "hint": "Mô tả ngay sau dấu phẩy.",
+      "explanation": "'Sincerely wishes his people well': nhân từ, benevolent.",
+      "difficulty": 1,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-02"
+    },
+    {
+      "id": "ma117",
+      "type": "tc",
+      "sentence": "She was {0} with her time, mentoring dozens of junior researchers and reading every draft they sent her.",
+      "blanks": [
+        {
+          "options": [
+            "liberal",
+            "parsimonious",
+            "miserly",
+            "penurious",
+            "frugal"
+          ],
+          "answer": "liberal"
+        }
+      ],
+      "targets": [
+        "liberal",
+        "parsimonious",
+        "frugal"
+      ],
+      "hint": "Nghĩa phụ của 'liberal'.",
+      "explanation": "Hào phóng về thời gian: liberal with X (nghĩa phụ). Các phương án còn lại là keo kiệt hoặc tiết kiệm.",
+      "difficulty": 2,
+      "skills": [
+        "secondary-meaning"
+      ],
+      "addedIn": "batch-02"
+    },
+    {
+      "id": "ma118",
+      "type": "tc",
+      "sentence": "Though critics accused the foundation of {0} spending on lavish galas, its accounts show it to be remarkably {1}: overhead consumes less than five percent of its budget, and the rest goes to grants so {2} that recipients often call them life-changing.",
+      "blanks": [
+        {
+          "options": [
+            "profligate",
+            "parsimonious",
+            "penurious"
+          ],
+          "answer": "profligate"
+        },
+        {
+          "options": [
+            "frugal",
+            "prodigal",
+            "covetous"
+          ],
+          "answer": "frugal"
+        },
+        {
+          "options": [
+            "munificent",
+            "meager",
+            "venal"
+          ],
+          "answer": "munificent"
+        }
+      ],
+      "targets": [
+        "profligate",
+        "frugal",
+        "munificent"
+      ],
+      "hint": "Ba chỗ trống: cáo buộc, thực tế, các khoản tài trợ.",
+      "explanation": "(i) Bị cáo buộc tiêu xài vào tiệc xa hoa: profligate. (ii) 'Though… remarkably' đổi chiều, chi phí quản lý dưới 5%: frugal. (iii) Khoản tài trợ thay đổi cuộc đời: rất hào phóng, munificent.",
+      "difficulty": 3,
+      "skills": [
+        "contrast",
+        "continuation"
+      ],
+      "addedIn": "batch-02"
     }
   ]
 }
