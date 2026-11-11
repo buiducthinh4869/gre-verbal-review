@@ -203,6 +203,20 @@ test('ánh xạ luôn ưu tiên targets của bài', () => {
   assert.equal(Srs.mapOptionToId('abc', fake, []), 'x1');
 });
 
+test('ánh xạ dạng quá khứ bất quy tắc về động từ gốc; dạng nguyên văn vẫn được ưu tiên', () => {
+  assert.equal(Srs.mapOptionToId('bore out', idx, []), 'bear-out');
+  assert.equal(Srs.mapOptionToId('borne out', idx, []), 'bear-out');
+  assert.equal(Srs.mapOptionToId('upheld', idx, []), 'uphold');
+  assert.equal(Srs.mapOptionToId('gainsaid', idx, []), 'gainsay');
+  assert.equal(Srs.mapOptionToId('withdrew', idx, []), null); // withdraw chưa có trên web
+  assert.deepEqual(idx.exById.sr102.answerIds, ['bear-out']);
+  assert.deepEqual(idx.exById.sr105.answerIds, ['uphold']);
+  assert.ok(idx.exById.sr118.answerIds.includes('bear-out'));
+  const fake = { formMap: { bore: ['bore-n'], bear: ['bear-v'] } };
+  assert.equal(Srs.mapOptionToId('bore', fake, []), 'bore-n');
+  assert.equal(Srs.mapOptionToId('bore', fake, ['bear-v']), 'bear-v');
+});
+
 test('mọi đáp án GRE trong dữ liệu đều ánh xạ được về id (trừ từ ngoài dữ liệu)', () => {
   // đáp án không phải một từ trong dữ liệu
   const outside = {
@@ -215,9 +229,7 @@ test('mọi đáp án GRE trong dữ liệu đều ánh xạ được về id (t
     hd106: ['two-faced'], hd112: ['casuistry'],
     // đợt bài tập 03: từ chưa có trên web
     ha114: ['impertinent'], bd109: ['baseless'], bd114: ['speculation'], sr112: ['withdrew'], lf106: ['incorrigible'],
-    lf111: ['swung'], lf115: ['flat'],
-    // đợt bài tập 03: dạng quá khứ bất quy tắc của từ ĐÃ có trên web (bear out, uphold) nhưng chưa ánh xạ được
-    sr102: ['bore out'], sr105: ['upheld'], sr118: ['bore out']
+    lf111: ['swung'], lf115: ['flat']
   };
   idx.exercises.forEach((ex) => {
     const answers = ex.type === 'se' ? ex.answers : ex.blanks.map((b) => b.answer);

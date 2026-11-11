@@ -92,9 +92,49 @@ export function buildIndex(vocab, customWords) {
 
 /* ---------------- Ánh xạ phương án GRE về id ---------------- */
 
+/**
+ * Dạng quá khứ / phân từ bất quy tắc → động từ gốc ("bore out" → bear out, "upheld" → uphold). Chỉ là ứng viên
+ * thêm SAU dạng nguyên văn, nên một từ có sẵn trên web trùng chữ vẫn được ưu tiên. Bỏ các dạng dễ nhầm với từ
+ * khác nghĩa (rose, fell, left, found, lay, saw, ground, wound, bit, lied).
+ */
+const IRREGULAR = (() => {
+  const pairs = {
+    bear: 'bore borne', uphold: 'upheld', hold: 'held', withhold: 'withheld', behold: 'beheld',
+    withdraw: 'withdrew withdrawn', draw: 'drew drawn', overdraw: 'overdrew overdrawn',
+    swing: 'swung', cling: 'clung', fling: 'flung', sling: 'slung', sting: 'stung', wring: 'wrung', spin: 'spun', stick: 'stuck',
+    strike: 'struck stricken', strive: 'strove striven', drive: 'drove driven', ride: 'rode ridden', override: 'overrode overridden',
+    write: 'wrote written', underwrite: 'underwrote underwritten', rise: 'risen', arise: 'arose arisen',
+    take: 'took taken', undertake: 'undertook undertaken', overtake: 'overtook overtaken', mistake: 'mistook mistaken',
+    forsake: 'forsook forsaken', shake: 'shook shaken', partake: 'partook partaken',
+    break: 'broke broken', speak: 'spoke spoken', choose: 'chose chosen', freeze: 'froze frozen', steal: 'stole stolen',
+    weave: 'wove woven', tread: 'trod trodden', forget: 'forgot forgotten', beget: 'begot begotten',
+    give: 'gave given', forgive: 'forgave forgiven', forbid: 'forbade forbidden', bid: 'bade', hide: 'hid hidden',
+    see: 'seen', foresee: 'foresaw foreseen', oversee: 'oversaw overseen', go: 'went gone', undergo: 'underwent undergone', forgo: 'forwent forgone',
+    come: 'came', become: 'became', overcome: 'overcame',
+    know: 'knew known', grow: 'grew grown', outgrow: 'outgrew outgrown', throw: 'threw thrown', overthrow: 'overthrew overthrown',
+    blow: 'blew blown', fly: 'flew flown', show: 'shown', sow: 'sown', swell: 'swollen',
+    swear: 'swore sworn', forswear: 'forswore forsworn', tear: 'tore torn', wear: 'wore worn',
+    do: 'did done', undo: 'undid undone', outdo: 'outdid outdone', overdo: 'overdid overdone',
+    lead: 'led', mislead: 'misled', flee: 'fled', breed: 'bred', feed: 'fed', speed: 'sped', bleed: 'bled',
+    seek: 'sought', think: 'thought', bring: 'brought', buy: 'bought', fight: 'fought', teach: 'taught', catch: 'caught',
+    keep: 'kept', sweep: 'swept', weep: 'wept', creep: 'crept', sleep: 'slept', leap: 'leapt',
+    deal: 'dealt', mean: 'meant', feel: 'felt', lose: 'lost', send: 'sent', spend: 'spent', bend: 'bent', lend: 'lent',
+    build: 'built', dwell: 'dwelt', spill: 'spilt', spoil: 'spoilt', sell: 'sold', tell: 'told', foretell: 'foretold',
+    make: 'made', pay: 'paid', say: 'said', gainsay: 'gainsaid', inlay: 'inlaid', mislay: 'mislaid', sit: 'sat', meet: 'met',
+    stand: 'stood', understand: 'understood', withstand: 'withstood', win: 'won', shine: 'shone', slide: 'slid',
+    bite: 'bitten', fall: 'fallen', befall: 'befell befallen', eat: 'ate eaten', beat: 'beaten', sink: 'sank sunk', shrink: 'shrank shrunk',
+    begin: 'began begun', drink: 'drank drunk', ring: 'rang rung', sing: 'sang sung', spring: 'sprang sprung', swim: 'swam swum',
+    get: 'got gotten', beseech: 'besought', slay: 'slew slain', smite: 'smote smitten', strew: 'strewn', hew: 'hewn', mow: 'mown'
+  };
+  const map = {};
+  Object.keys(pairs).forEach((base) => pairs[base].split(' ').forEach((f) => { map[f] = base; }));
+  return map;
+})();
+
 function stemCandidates(w) {
   const out = [w];
   const add = (x) => { if (x && x.length >= 3 && !out.includes(x)) out.push(x); };
+  if (IRREGULAR[w]) out.push(IRREGULAR[w]);                        // bore → bear, upheld → uphold
   let m;
   if ((m = w.match(/^(.*)ied$/))) add(m[1] + 'y');
   if ((m = w.match(/^(.*)ying$/))) add(m[1] + 'ie');                // belying → belie
