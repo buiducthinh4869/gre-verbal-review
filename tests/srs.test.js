@@ -212,7 +212,12 @@ test('mọi đáp án GRE trong dữ liệu đều ánh xạ được về id (t
     sy103: ['unyielding'], sy107: ['tireless'], sy109: ['respectful'], wc107: ['brief'], wc110: ['uncommunicative'],
     // đợt bài tập 02
     ma103: ['temperate'], ma111: ['wasted'], ma115: ['selfless'], hp116: ['accelerate'], on110: ['nonconformist'],
-    hd106: ['two-faced'], hd112: ['casuistry']
+    hd106: ['two-faced'], hd112: ['casuistry'],
+    // đợt bài tập 03: từ chưa có trên web
+    ha114: ['impertinent'], bd109: ['baseless'], bd114: ['speculation'], sr112: ['withdrew'], lf106: ['incorrigible'],
+    lf111: ['swung'], lf115: ['flat'],
+    // đợt bài tập 03: dạng quá khứ bất quy tắc của từ ĐÃ có trên web (bear out, uphold) nhưng chưa ánh xạ được
+    sr102: ['bore out'], sr105: ['upheld'], sr118: ['bore out']
   };
   idx.exercises.forEach((ex) => {
     const answers = ex.type === 'se' ? ex.answers : ex.blanks.map((b) => b.answer);

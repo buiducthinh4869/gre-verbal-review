@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "id": "mock-03",
+  "title": "Đề thi thử 3",
+  "clusters": [
+    "humble-arrogant",
+    "belief-doubt",
+    "support-refute",
+    "lasting-fleeting"
+  ],
+  "description": "Đề cố định gồm 27 câu TC và SE lấy từ cụm 9–12. Section 2 khó hơn Section 1. Chưa có Reading.",
+  "sections": [
+    {
+      "title": "Section 1",
+      "minutes": 18,
+      "items": [
+        "sr108",
+        "bd109",
+        "lf107",
+        "bd115",
+        "sr116",
+        "ha05",
+        "ha107",
+        "lf08",
+        "bd111",
+        "sr07",
+        "bd08",
+        "ha105"
+      ]
+    },
+    {
+      "title": "Section 2",
+      "minutes": 23,
+      "items": [
+        "ha103",
+        "ha117",
+        "bd01",
+        "sr111",
+        "bd103",
+        "ha06",
+        "lf06",
+        "sr02",
+        "lf111",
+        "ha07",
+        "bd110",
+        "ha111",
+        "bd114",
+        "sr08",
+        "lf105"
+      ]
+    }
+  ]
+}

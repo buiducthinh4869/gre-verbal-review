@@ -691,6 +691,472 @@
         "nuance"
       ],
       "addedIn": "base"
+    },
+    {
+      "id": "bd101",
+      "type": "tc",
+      "sentence": "{0} tourists were easily persuaded that the 'ancient' coins on sale at the temple gate were genuine, though most had been minted the previous year.",
+      "blanks": [
+        {
+          "options": [
+            "Gullible",
+            "Skeptical",
+            "Cynical",
+            "Incredulous",
+            "Agnostic"
+          ],
+          "answer": "Gullible"
+        }
+      ],
+      "targets": [
+        "gullible",
+        "skeptical",
+        "cynical",
+        "incredulous"
+      ],
+      "hint": "'Easily persuaded'.",
+      "explanation": "Dễ bị thuyết phục rằng đồ giả là thật: cả tin, gullible.",
+      "difficulty": 1,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-03"
+    },
+    {
+      "id": "bd102",
+      "type": "tc",
+      "sentence": "It would be {0} to expect the new tax to raise much revenue in its first year, when collection systems are not yet in place.",
+      "blanks": [
+        {
+          "options": [
+            "naive",
+            "cogent",
+            "tenable",
+            "incontrovertible",
+            "credible"
+          ],
+          "answer": "naive"
+        }
+      ],
+      "targets": [
+        "naive",
+        "cogent",
+        "tenable"
+      ],
+      "hint": "Lý do sau dấu phẩy.",
+      "explanation": "Kỳ vọng thu nhiều thuế khi hệ thống chưa có: ngây thơ, naive.",
+      "difficulty": 1,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-03"
+    },
+    {
+      "id": "bd103",
+      "type": "se",
+      "sentence": "Fraudsters target the {0}: people who accept promises of easy wealth without asking for evidence.",
+      "options": [
+        "credulous",
+        "gullible",
+        "skeptical",
+        "incredulous",
+        "cynical",
+        "wary"
+      ],
+      "answers": [
+        "credulous",
+        "gullible"
+      ],
+      "targets": [
+        "credulous",
+        "gullible",
+        "skeptical",
+        "incredulous",
+        "cynical",
+        "wary"
+      ],
+      "hint": "Mô tả sau dấu hai chấm.",
+      "explanation": "Tin lời hứa mà không đòi bằng chứng: cả tin, credulous, gullible. Skeptical và incredulous là cặp ngược nghĩa.",
+      "difficulty": 1,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-03"
+    },
+    {
+      "id": "bd104",
+      "type": "tc",
+      "sentence": "Referees were {0} about the paper's main claim, noting that the instrument might affect the outcome through several other channels.",
+      "blanks": [
+        {
+          "options": [
+            "dubious",
+            "credulous",
+            "gullible",
+            "naive",
+            "cogent"
+          ],
+          "answer": "dubious"
+        }
+      ],
+      "targets": [
+        "dubious",
+        "credulous",
+        "gullible",
+        "cogent"
+      ],
+      "hint": "Nghĩa của dubious khi chủ ngữ là người.",
+      "explanation": "Người phản biện nghi ngờ nhận định chính: dubious about X (nghĩa 'ngờ vực' khi dùng cho người).",
+      "difficulty": 2,
+      "skills": [
+        "secondary-meaning"
+      ],
+      "addedIn": "batch-03"
+    },
+    {
+      "id": "bd105",
+      "type": "tc",
+      "sentence": "Years of broken campaign promises have made voters deeply {0}: many now assume that every politician is motivated purely by self-interest.",
+      "blanks": [
+        {
+          "options": [
+            "cynical",
+            "credulous",
+            "gullible",
+            "naive",
+            "agnostic"
+          ],
+          "answer": "cynical"
+        }
+      ],
+      "targets": [
+        "cynical",
+        "credulous",
+        "naive",
+        "agnostic"
+      ],
+      "hint": "Nghi ngờ động cơ của người khác.",
+      "explanation": "Cho rằng chính trị gia nào cũng chỉ vì lợi riêng: nghi ngờ động cơ, cynical. Agnostic là trung lập, không ngả về bên nào.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "batch-03"
+    },
+    {
+      "id": "bd106",
+      "type": "tc",
+      "sentence": "The method is {0} about the functional form of the relationship, imposing no assumption that the effect is linear.",
+      "blanks": [
+        {
+          "options": [
+            "agnostic",
+            "dogmatic",
+            "doctrinaire",
+            "cynical",
+            "credulous"
+          ],
+          "answer": "agnostic"
+        }
+      ],
+      "targets": [
+        "agnostic",
+        "dogmatic",
+        "doctrinaire",
+        "cynical"
+      ],
+      "hint": "Không áp đặt giả định nào.",
+      "explanation": "Không giả định trước dạng hàm: agnostic about X (nghĩa học thuật: không đặt giả định). Dogmatic và doctrinaire là ngược lại.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "batch-03"
+    },
+    {
+      "id": "bd107",
+      "type": "tc",
+      "sentence": "Once the leaked emails showed that the agency had known of the defect for years, its claim of ignorance was no longer {0}.",
+      "blanks": [
+        {
+          "options": [
+            "tenable",
+            "untenable",
+            "tentative",
+            "speculative",
+            "provisional"
+          ],
+          "answer": "tenable"
+        }
+      ],
+      "targets": [
+        "tenable",
+        "untenable",
+        "tentative",
+        "provisional"
+      ],
+      "hint": "Chú ý 'no longer'.",
+      "explanation": "Cụm 'no longer tenable': không còn đứng vững được. Untenable là bẫy: 'no longer untenable' ngược nghĩa câu.",
+      "difficulty": 2,
+      "skills": [
+        "lookalike",
+        "collocation"
+      ],
+      "addedIn": "batch-03"
+    },
+    {
+      "id": "bd108",
+      "type": "tc",
+      "sentence": "Fears that the new port would destroy local fishing proved {0}: catches actually rose in the years after it opened.",
+      "blanks": [
+        {
+          "options": [
+            "unfounded",
+            "cogent",
+            "compelling",
+            "incontrovertible",
+            "tenable"
+          ],
+          "answer": "unfounded"
+        }
+      ],
+      "targets": [
+        "unfounded",
+        "cogent",
+        "compelling"
+      ],
+      "hint": "Điều thực tế xảy ra.",
+      "explanation": "Sản lượng còn tăng: nỗi lo vô căn cứ, unfounded.",
+      "difficulty": 1,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-03"
+    },
+    {
+      "id": "bd109",
+      "type": "se",
+      "sentence": "The minister dismissed the accusations as {0}, pointing out that the auditors had found no irregularities at all.",
+      "options": [
+        "groundless",
+        "baseless",
+        "cogent",
+        "compelling",
+        "tentative",
+        "provisional"
+      ],
+      "answers": [
+        "groundless",
+        "baseless"
+      ],
+      "targets": [
+        "groundless",
+        "cogent",
+        "compelling",
+        "tentative",
+        "provisional"
+      ],
+      "hint": "Kiểm toán không thấy gì.",
+      "explanation": "Kiểm toán không thấy sai phạm: cáo buộc vô căn cứ, groundless, baseless. Tentative và provisional là cặp tạm thời.",
+      "difficulty": 1,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-03"
+    },
+    {
+      "id": "bd110",
+      "type": "tc",
+      "sentence": "The report's {0} framing, which presented only the studies that supported its sponsor's position, made its conclusions {1} at best.",
+      "blanks": [
+        {
+          "options": [
+            "tendentious",
+            "agnostic",
+            "cogent"
+          ],
+          "answer": "tendentious"
+        },
+        {
+          "options": [
+            "dubious",
+            "incontrovertible",
+            "compelling"
+          ],
+          "answer": "dubious"
+        }
+      ],
+      "targets": [
+        "tendentious",
+        "dubious",
+        "agnostic"
+      ],
+      "hint": "Hai chỗ trống cùng hướng.",
+      "explanation": "(i) Chỉ đưa nghiên cứu có lợi cho nhà tài trợ: thiên vị, tendentious. (ii) Nên kết luận đáng ngờ: dubious.",
+      "difficulty": 2,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-03"
+    },
+    {
+      "id": "bd111",
+      "type": "tc",
+      "sentence": "The authors offer only {0} conclusions, cautioning that their sample covers a single province over two years.",
+      "blanks": [
+        {
+          "options": [
+            "tentative",
+            "incontrovertible",
+            "cogent",
+            "compelling",
+            "dogmatic"
+          ],
+          "answer": "tentative"
+        }
+      ],
+      "targets": [
+        "tentative",
+        "incontrovertible",
+        "cogent"
+      ],
+      "hint": "'Cautioning'.",
+      "explanation": "Mẫu nhỏ nên kết luận dè dặt: tentative.",
+      "difficulty": 1,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-03"
+    },
+    {
+      "id": "bd112",
+      "type": "tc",
+      "sentence": "From the minister's silence at the press conference, reporters {0} that the negotiations had failed.",
+      "blanks": [
+        {
+          "options": [
+            "surmised",
+            "corroborated",
+            "substantiated",
+            "validated",
+            "refuted"
+          ],
+          "answer": "surmised"
+        }
+      ],
+      "targets": [
+        "surmise",
+        "corroborate",
+        "substantiate"
+      ],
+      "hint": "Chỉ dựa vào sự im lặng.",
+      "explanation": "Suy đoán từ sự im lặng: surmised. Corroborated và substantiated cần bằng chứng, không chỉ là sự im lặng.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "batch-03"
+    },
+    {
+      "id": "bd113",
+      "type": "tc",
+      "sentence": "The model {0} that consumers know the price of every product, an assumption that is plainly false for most rural markets.",
+      "blanks": [
+        {
+          "options": [
+            "presupposes",
+            "refutes",
+            "debunks",
+            "corroborates",
+            "gainsays"
+          ],
+          "answer": "presupposes"
+        }
+      ],
+      "targets": [
+        "presuppose",
+        "refute",
+        "debunk"
+      ],
+      "hint": "'An assumption that…'.",
+      "explanation": "'An assumption': mô hình giả định trước, presupposes.",
+      "difficulty": 2,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-03"
+    },
+    {
+      "id": "bd114",
+      "type": "se",
+      "sentence": "Without any surviving records, claims about why the treaty was signed remain mere {0}.",
+      "options": [
+        "conjecture",
+        "speculation",
+        "evidence",
+        "proof",
+        "sophistry",
+        "chicanery"
+      ],
+      "answers": [
+        "conjecture",
+        "speculation"
+      ],
+      "targets": [
+        "conjecture",
+        "sophistry",
+        "chicanery"
+      ],
+      "hint": "'Without any surviving records'.",
+      "explanation": "Không có tài liệu: chỉ là phỏng đoán, conjecture, speculation. Sophistry và chicanery là cặp lừa dối, không hợp.",
+      "difficulty": 1,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-03"
+    },
+    {
+      "id": "bd115",
+      "type": "tc",
+      "sentence": "The doctor's initial diagnosis was {0}, based on only a few symptoms; once the test results arrived they {1} it, proving her early {2} correct.",
+      "blanks": [
+        {
+          "options": [
+            "tentative",
+            "incontrovertible",
+            "dogmatic"
+          ],
+          "answer": "tentative"
+        },
+        {
+          "options": [
+            "corroborated",
+            "gainsaid",
+            "debunked"
+          ],
+          "answer": "corroborated"
+        },
+        {
+          "options": [
+            "surmise",
+            "sophistry",
+            "fallacy"
+          ],
+          "answer": "surmise"
+        }
+      ],
+      "targets": [
+        "tentative",
+        "corroborate",
+        "surmise"
+      ],
+      "hint": "Chẩn đoán, xét nghiệm, kết luận.",
+      "explanation": "(i) Chỉ dựa vào vài triệu chứng: tạm thời, tentative. (ii) Kết quả xét nghiệm xác nhận: corroborated. (iii) Phỏng đoán ban đầu đúng: surmise.",
+      "difficulty": 3,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-03"
     }
   ]
 }
