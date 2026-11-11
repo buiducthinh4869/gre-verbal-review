@@ -811,6 +811,563 @@
         "nuance"
       ],
       "addedIn": "base"
+    },
+    {
+      "id": "hm101",
+      "type": "tc",
+      "sentence": "Asked whether the government's growth forecast was credible, the economist gave a {0} smile and said only, 'As credible as last year's', a forecast that had missed by four percentage points.",
+      "blanks": [
+        {
+          "options": [
+            "sardonic",
+            "affable",
+            "genial",
+            "cordial",
+            "benign"
+          ],
+          "answer": "sardonic"
+        }
+      ],
+      "targets": [
+        "sardonic",
+        "affable",
+        "genial"
+      ],
+      "hint": "Câu trả lời đầy mỉa mai.",
+      "explanation": "Nhắc lại dự báo năm ngoái đã sai bốn điểm phần trăm: câu trả lời mỉa mai, nụ cười nhạo báng, sardonic.",
+      "difficulty": 1,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-04"
+    },
+    {
+      "id": "hm102",
+      "type": "se",
+      "sentence": "The columnist was famous for her {0} wit, which could reduce a pompous politician to ridicule in a single sentence.",
+      "options": [
+        "acerbic",
+        "mordant",
+        "genial",
+        "affable",
+        "contentious",
+        "pugnacious"
+      ],
+      "answers": [
+        "acerbic",
+        "mordant"
+      ],
+      "targets": [
+        "acerbic",
+        "mordant",
+        "genial",
+        "affable",
+        "contentious",
+        "pugnacious"
+      ],
+      "hint": "Mô tả kiểu dí dỏm.",
+      "explanation": "Sự dí dỏm chua cay: acerbic, mordant. Contentious và pugnacious là cặp hay gây gổ, không mô tả sự dí dỏm.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "batch-04"
+    },
+    {
+      "id": "hm103",
+      "type": "tc",
+      "sentence": "The tabloid's {0} campaign against the judge, which included personal insults and threats against her family, was condemned by journalists across the political spectrum.",
+      "blanks": [
+        {
+          "options": [
+            "vitriolic",
+            "incisive",
+            "trenchant",
+            "cordial",
+            "conciliatory"
+          ],
+          "answer": "vitriolic"
+        }
+      ],
+      "targets": [
+        "vitriolic",
+        "incisive",
+        "trenchant",
+        "cordial",
+        "conciliatory"
+      ],
+      "hint": "Lăng mạ, đe dọa.",
+      "explanation": "Lăng mạ và đe dọa: cay nghiệt, đầy hằn học, vitriolic. Incisive và trenchant là sắc sảo, thường mang nghĩa khen.",
+      "difficulty": 2,
+      "skills": [
+        "degree",
+        "nuance"
+      ],
+      "addedIn": "batch-04"
+    },
+    {
+      "id": "hm104",
+      "type": "tc",
+      "sentence": "Her {0} critique of import substitution, sharp, well argued and impossible to ignore, reshaped trade policy debates for a generation.",
+      "blanks": [
+        {
+          "options": [
+            "trenchant",
+            "vitriolic",
+            "petulant",
+            "genial",
+            "benign"
+          ],
+          "answer": "trenchant"
+        }
+      ],
+      "targets": [
+        "trenchant",
+        "vitriolic",
+        "petulant"
+      ],
+      "hint": "Khen hay chê lời phê bình?",
+      "explanation": "Phê bình sắc bén, lập luận chặt, định hình lại cả cuộc tranh luận: trenchant (thường là khen). Vitriolic là hằn học, không hợp với 'well argued'.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "batch-04"
+    },
+    {
+      "id": "hm105",
+      "type": "tc",
+      "sentence": "The audit was a {0} indictment of the agency, documenting failure after failure in unsparing detail.",
+      "blanks": [
+        {
+          "options": [
+            "scathing",
+            "benign",
+            "cordial",
+            "genial",
+            "amicable"
+          ],
+          "answer": "scathing"
+        }
+      ],
+      "targets": [
+        "scathing",
+        "benign",
+        "cordial"
+      ],
+      "hint": "'Unsparing detail'.",
+      "explanation": "Liệt kê thất bại không nương tay: gay gắt, scathing.",
+      "difficulty": 1,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-04"
+    },
+    {
+      "id": "hm106",
+      "type": "tc",
+      "sentence": "A {0} debater, he seemed to relish every confrontation and rarely let an opponent's remark pass unchallenged.",
+      "blanks": [
+        {
+          "options": [
+            "pugnacious",
+            "affable",
+            "conciliatory",
+            "genial",
+            "amicable"
+          ],
+          "answer": "pugnacious"
+        }
+      ],
+      "targets": [
+        "pugnacious",
+        "affable",
+        "conciliatory"
+      ],
+      "hint": "'Relish every confrontation'.",
+      "explanation": "Thích đối đầu: hay gây gổ, pugnacious.",
+      "difficulty": 1,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-04"
+    },
+    {
+      "id": "hm107",
+      "type": "se",
+      "sentence": "The {0} union leader rejected every offer and threatened a general strike before talks had even begun.",
+      "options": [
+        "truculent",
+        "belligerent",
+        "conciliatory",
+        "amicable",
+        "sardonic",
+        "mordant"
+      ],
+      "answers": [
+        "truculent",
+        "belligerent"
+      ],
+      "targets": [
+        "truculent",
+        "belligerent",
+        "conciliatory",
+        "amicable",
+        "sardonic",
+        "mordant"
+      ],
+      "hint": "Bác mọi đề nghị, đe dọa đình công.",
+      "explanation": "Hung hăng, đe dọa trước khi đàm phán: truculent, belligerent. Sardonic và mordant là cặp mỉa mai, không phải hung hăng.",
+      "difficulty": 1,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-04"
+    },
+    {
+      "id": "hm108",
+      "type": "tc",
+      "sentence": "Minimum wage policy remains highly {0}: economists still disagree sharply about its effects on employment.",
+      "blanks": [
+        {
+          "options": [
+            "contentious",
+            "benign",
+            "amicable",
+            "cordial",
+            "innocuous"
+          ],
+          "answer": "contentious"
+        }
+      ],
+      "targets": [
+        "contentious",
+        "benign",
+        "amicable"
+      ],
+      "hint": "Mô tả một vấn đề, không phải một người.",
+      "explanation": "Vấn đề gây tranh cãi: contentious (nghĩa dùng cho vấn đề, không phải cho người).",
+      "difficulty": 2,
+      "skills": [
+        "secondary-meaning"
+      ],
+      "addedIn": "batch-04"
+    },
+    {
+      "id": "hm109",
+      "type": "tc",
+      "sentence": "Upset at losing the vote, the minister staged a {0} walkout, slamming the door behind him like a child denied a treat.",
+      "blanks": [
+        {
+          "options": [
+            "petulant",
+            "affable",
+            "genial",
+            "conciliatory",
+            "cordial"
+          ],
+          "answer": "petulant"
+        }
+      ],
+      "targets": [
+        "petulant",
+        "affable",
+        "genial"
+      ],
+      "hint": "'Like a child'.",
+      "explanation": "Hờn dỗi như trẻ con: petulant.",
+      "difficulty": 1,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-04"
+    },
+    {
+      "id": "hm110",
+      "type": "tc",
+      "sentence": "The election left deep {0} between the two factions, and for years afterward their members refused to sit on the same committees.",
+      "blanks": [
+        {
+          "options": [
+            "rancor",
+            "cordiality",
+            "deference",
+            "affability",
+            "benignity"
+          ],
+          "answer": "rancor"
+        }
+      ],
+      "targets": [
+        "rancor",
+        "cordial",
+        "deference",
+        "affable",
+        "benign"
+      ],
+      "hint": "Hậu quả kéo dài nhiều năm.",
+      "explanation": "Không chịu ngồi chung hội đồng nhiều năm: hận thù sâu, rancor.",
+      "difficulty": 2,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-04"
+    },
+    {
+      "id": "hm111",
+      "type": "tc",
+      "sentence": "His {0} to regulation was so strong that he opposed even rules his own industry had requested.",
+      "blanks": [
+        {
+          "options": [
+            "antipathy",
+            "deference",
+            "cordiality",
+            "affability",
+            "temerity"
+          ],
+          "answer": "antipathy"
+        }
+      ],
+      "targets": [
+        "antipathy",
+        "deference",
+        "temerity"
+      ],
+      "hint": "Phản đối cả quy định ngành mình đề nghị.",
+      "explanation": "Ác cảm sâu với quy định: antipathy to X.",
+      "difficulty": 2,
+      "skills": [
+        "collocation"
+      ],
+      "addedIn": "batch-04"
+    },
+    {
+      "id": "hm112",
+      "type": "se",
+      "sentence": "Decades of {0} between the neighboring villages, rooted in a dispute over water rights, made cooperation on the new dam almost impossible.",
+      "options": [
+        "animosity",
+        "enmity",
+        "cordiality",
+        "affability",
+        "deference",
+        "benignity"
+      ],
+      "answers": [
+        "animosity",
+        "enmity"
+      ],
+      "targets": [
+        "animosity",
+        "enmity",
+        "cordial",
+        "affable",
+        "deference",
+        "benign"
+      ],
+      "hint": "Hợp tác gần như không thể.",
+      "explanation": "Thù oán kéo dài: animosity, enmity.",
+      "difficulty": 1,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-04"
+    },
+    {
+      "id": "hm113",
+      "type": "tc",
+      "sentence": "The {0} ambassador put everyone at ease, chatting with junior staff as warmly as with ministers.",
+      "blanks": [
+        {
+          "options": [
+            "affable",
+            "truculent",
+            "petulant",
+            "irascible",
+            "cantankerous"
+          ],
+          "answer": "affable"
+        }
+      ],
+      "targets": [
+        "affable",
+        "truculent",
+        "petulant",
+        "irascible"
+      ],
+      "hint": "'Put everyone at ease'.",
+      "explanation": "Niềm nở, dễ gần với mọi người: affable.",
+      "difficulty": 1,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-04"
+    },
+    {
+      "id": "hm114",
+      "type": "se",
+      "sentence": "Relations between the two central banks remained {0} despite their public disagreement over interest rates.",
+      "options": [
+        "cordial",
+        "friendly",
+        "acrimonious",
+        "contentious",
+        "truculent",
+        "belligerent"
+      ],
+      "answers": [
+        "cordial",
+        "friendly"
+      ],
+      "targets": [
+        "cordial",
+        "acrimonious",
+        "contentious",
+        "truculent",
+        "belligerent"
+      ],
+      "hint": "'Despite'.",
+      "explanation": "'Despite disagreement': quan hệ vẫn thân thiện, cordial, friendly. Truculent và belligerent là cặp hung hăng.",
+      "difficulty": 1,
+      "skills": [
+        "contrast"
+      ],
+      "addedIn": "batch-04"
+    },
+    {
+      "id": "hm115",
+      "type": "tc",
+      "sentence": "Interviewers found the candidate {0}, easy to talk to and quick to put others at ease, but doubted that she had the technical depth the job required.",
+      "blanks": [
+        {
+          "options": [
+            "personable",
+            "truculent",
+            "petulant",
+            "irascible",
+            "cantankerous"
+          ],
+          "answer": "personable"
+        }
+      ],
+      "targets": [
+        "personable",
+        "truculent",
+        "petulant"
+      ],
+      "hint": "Mô tả sau dấu phẩy.",
+      "explanation": "Dễ mến, dễ nói chuyện: personable. 'But' chuyển sang điểm yếu về chuyên môn.",
+      "difficulty": 1,
+      "skills": [
+        "contrast"
+      ],
+      "addedIn": "batch-04"
+    },
+    {
+      "id": "hm116",
+      "type": "tc",
+      "sentence": "The concession failed to {0} the protesters, who saw it as too little, too late.",
+      "blanks": [
+        {
+          "options": [
+            "appease",
+            "incite",
+            "foment",
+            "galvanize",
+            "provoke"
+          ],
+          "answer": "appease"
+        }
+      ],
+      "targets": [
+        "appease",
+        "incite",
+        "foment",
+        "galvanize"
+      ],
+      "hint": "Mục đích của sự nhượng bộ.",
+      "explanation": "Nhượng bộ mà không xoa dịu được: failed to appease.",
+      "difficulty": 1,
+      "skills": [
+        "contrast"
+      ],
+      "addedIn": "batch-04"
+    },
+    {
+      "id": "hm117",
+      "type": "tc",
+      "sentence": "The tumor turned out to be {0}, and the patient was sent home the same afternoon.",
+      "blanks": [
+        {
+          "options": [
+            "benign",
+            "malign",
+            "malevolent",
+            "noxious",
+            "pernicious"
+          ],
+          "answer": "benign"
+        }
+      ],
+      "targets": [
+        "benign",
+        "malign",
+        "malevolent",
+        "noxious",
+        "pernicious"
+      ],
+      "hint": "Bệnh nhân được về trong ngày.",
+      "explanation": "Được về nhà ngay: khối u lành tính, benign.",
+      "difficulty": 1,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-04"
+    },
+    {
+      "id": "hm118",
+      "type": "tc",
+      "sentence": "What began as a {0} exchange of letters between the two scholars grew steadily more {1}, and by the end of the decade the dispute had become so {2} that neither would attend a conference if the other was speaking.",
+      "blanks": [
+        {
+          "options": [
+            "cordial",
+            "vitriolic",
+            "truculent"
+          ],
+          "answer": "cordial"
+        },
+        {
+          "options": [
+            "acerbic",
+            "genial",
+            "benign"
+          ],
+          "answer": "acerbic"
+        },
+        {
+          "options": [
+            "acrimonious",
+            "amicable",
+            "innocuous"
+          ],
+          "answer": "acrimonious"
+        }
+      ],
+      "targets": [
+        "cordial",
+        "acerbic",
+        "acrimonious"
+      ],
+      "hint": "Diễn biến tăng dần.",
+      "explanation": "(i) Ban đầu thư từ thân thiện: cordial. (ii) Ngày càng chua cay: acerbic. (iii) Cuối cùng gay gắt đến mức không dự cùng hội thảo: acrimonious.",
+      "difficulty": 3,
+      "skills": [
+        "contrast",
+        "degree"
+      ],
+      "addedIn": "batch-04"
     }
   ]
 }

@@ -1,0 +1,2151 @@
+{
+ "harsh-mild": [
+  {
+   "id": "hm101",
+   "type": "tc",
+   "sentence": "Asked whether the government's growth forecast was credible, the economist gave a {0} smile and said only, 'As credible as last year's', a forecast that had missed by four percentage points.",
+   "blanks": [
+    {
+     "options": [
+      "sardonic",
+      "affable",
+      "genial",
+      "cordial",
+      "benign"
+     ],
+     "answer": "sardonic"
+    }
+   ],
+   "targets": [
+    "sardonic",
+    "affable",
+    "genial"
+   ],
+   "hint": "Câu trả lời đầy mỉa mai.",
+   "explanation": "Nhắc lại dự báo năm ngoái đã sai bốn điểm phần trăm: câu trả lời mỉa mai, nụ cười nhạo báng, sardonic.",
+   "difficulty": 1,
+   "skills": [
+    "continuation"
+   ],
+   "addedIn": "batch-04"
+  },
+  {
+   "id": "hm102",
+   "type": "se",
+   "sentence": "The columnist was famous for her {0} wit, which could reduce a pompous politician to ridicule in a single sentence.",
+   "options": [
+    "acerbic",
+    "mordant",
+    "genial",
+    "affable",
+    "contentious",
+    "pugnacious"
+   ],
+   "answers": [
+    "acerbic",
+    "mordant"
+   ],
+   "targets": [
+    "acerbic",
+    "mordant",
+    "genial",
+    "affable",
+    "contentious",
+    "pugnacious"
+   ],
+   "hint": "Mô tả kiểu dí dỏm.",
+   "explanation": "Sự dí dỏm chua cay: acerbic, mordant. Contentious và pugnacious là cặp hay gây gổ, không mô tả sự dí dỏm.",
+   "difficulty": 2,
+   "skills": [
+    "nuance"
+   ],
+   "addedIn": "batch-04"
+  },
+  {
+   "id": "hm103",
+   "type": "tc",
+   "sentence": "The tabloid's {0} campaign against the judge, which included personal insults and threats against her family, was condemned by journalists across the political spectrum.",
+   "blanks": [
+    {
+     "options": [
+      "vitriolic",
+      "incisive",
+      "trenchant",
+      "cordial",
+      "conciliatory"
+     ],
+     "answer": "vitriolic"
+    }
+   ],
+   "targets": [
+    "vitriolic",
+    "incisive",
+    "trenchant",
+    "cordial",
+    "conciliatory"
+   ],
+   "hint": "Lăng mạ, đe dọa.",
+   "explanation": "Lăng mạ và đe dọa: cay nghiệt, đầy hằn học, vitriolic. Incisive và trenchant là sắc sảo, thường mang nghĩa khen.",
+   "difficulty": 2,
+   "skills": [
+    "degree",
+    "nuance"
+   ],
+   "addedIn": "batch-04"
+  },
+  {
+   "id": "hm104",
+   "type": "tc",
+   "sentence": "Her {0} critique of import substitution, sharp, well argued and impossible to ignore, reshaped trade policy debates for a generation.",
+   "blanks": [
+    {
+     "options": [
+      "trenchant",
+      "vitriolic",
+      "petulant",
+      "genial",
+      "benign"
+     ],
+     "answer": "trenchant"
+    }
+   ],
+   "targets": [
+    "trenchant",
+    "vitriolic",
+    "petulant"
+   ],
+   "hint": "Khen hay chê lời phê bình?",
+   "explanation": "Phê bình sắc bén, lập luận chặt, định hình lại cả cuộc tranh luận: trenchant (thường là khen). Vitriolic là hằn học, không hợp với 'well argued'.",
+   "difficulty": 2,
+   "skills": [
+    "nuance"
+   ],
+   "addedIn": "batch-04"
+  },
+  {
+   "id": "hm105",
+   "type": "tc",
+   "sentence": "The audit was a {0} indictment of the agency, documenting failure after failure in unsparing detail.",
+   "blanks": [
+    {
+     "options": [
+      "scathing",
+      "benign",
+      "cordial",
+      "genial",
+      "amicable"
+     ],
+     "answer": "scathing"
+    }
+   ],
+   "targets": [
+    "scathing",
+    "benign",
+    "cordial"
+   ],
+   "hint": "'Unsparing detail'.",
+   "explanation": "Liệt kê thất bại không nương tay: gay gắt, scathing.",
+   "difficulty": 1,
+   "skills": [
+    "continuation"
+   ],
+   "addedIn": "batch-04"
+  },
+  {
+   "id": "hm106",
+   "type": "tc",
+   "sentence": "A {0} debater, he seemed to relish every confrontation and rarely let an opponent's remark pass unchallenged.",
+   "blanks": [
+    {
+     "options": [
+      "pugnacious",
+      "affable",
+      "conciliatory",
+      "genial",
+      "amicable"
+     ],
+     "answer": "pugnacious"
+    }
+   ],
+   "targets": [
+    "pugnacious",
+    "affable",
+    "conciliatory"
+   ],
+   "hint": "'Relish every confrontation'.",
+   "explanation": "Thích đối đầu: hay gây gổ, pugnacious.",
+   "difficulty": 1,
+   "skills": [
+    "continuation"
+   ],
+   "addedIn": "batch-04"
+  },
+  {
+   "id": "hm107",
+   "type": "se",
+   "sentence": "The {0} union leader rejected every offer and threatened a general strike before talks had even begun.",
+   "options": [
+    "truculent",
+    "belligerent",
+    "conciliatory",
+    "amicable",
+    "sardonic",
+    "mordant"
+   ],
+   "answers": [
+    "truculent",
+    "belligerent"
+   ],
+   "targets": [
+    "truculent",
+    "belligerent",
+    "conciliatory",
+    "amicable",
+    "sardonic",
+    "mordant"
+   ],
+   "hint": "Bác mọi đề nghị, đe dọa đình công.",
+   "explanation": "Hung hăng, đe dọa trước khi đàm phán: truculent, belligerent. Sardonic và mordant là cặp mỉa mai, không phải hung hăng.",
+   "difficulty": 1,
+   "skills": [
+    "continuation"
+   ],
+   "addedIn": "batch-04"
+  },
+  {
+   "id": "hm108",
+   "type": "tc",
+   "sentence": "Minimum wage policy remains highly {0}: economists still disagree sharply about its effects on employment.",
+   "blanks": [
+    {
+     "options": [
+      "contentious",
+      "benign",
+      "amicable",
+      "cordial",
+      "innocuous"
+     ],
+     "answer": "contentious"
+    }
+   ],
+   "targets": [
+    "contentious",
+    "benign",
+    "amicable"
+   ],
+   "hint": "Mô tả một vấn đề, không phải một người.",
+   "explanation": "Vấn đề gây tranh cãi: contentious (nghĩa dùng cho vấn đề, không phải cho người).",
+   "difficulty": 2,
+   "skills": [
+    "secondary-meaning"
+   ],
+   "addedIn": "batch-04"
+  },
+  {
+   "id": "hm109",
+   "type": "tc",
+   "sentence": "Upset at losing the vote, the minister staged a {0} walkout, slamming the door behind him like a child denied a treat.",
+   "blanks": [
+    {
+     "options": [
+      "petulant",
+      "affable",
+      "genial",
+      "conciliatory",
+      "cordial"
+     ],
+     "answer": "petulant"
+    }
+   ],
+   "targets": [
+    "petulant",
+    "affable",
+    "genial"
+   ],
+   "hint": "'Like a child'.",
+   "explanation": "Hờn dỗi như trẻ con: petulant.",
+   "difficulty": 1,
+   "skills": [
+    "continuation"
+   ],
+   "addedIn": "batch-04"
+  },
+  {
+   "id": "hm110",
+   "type": "tc",
+   "sentence": "The election left deep {0} between the two factions, and for years afterward their members refused to sit on the same committees.",
+   "blanks": [
+    {
+     "options": [
+      "rancor",
+      "cordiality",
+      "deference",
+      "affability",
+      "benignity"
+     ],
+     "answer": "rancor"
+    }
+   ],
+   "targets": [
+    "rancor",
+    "cordial",
+    "deference",
+    "affable",
+    "benign"
+   ],
+   "hint": "Hậu quả kéo dài nhiều năm.",
+   "explanation": "Không chịu ngồi chung hội đồng nhiều năm: hận thù sâu, rancor.",
+   "difficulty": 2,
+   "skills": [
+    "continuation"
+   ],
+   "addedIn": "batch-04"
+  },
+  {
+   "id": "hm111",
+   "type": "tc",
+   "sentence": "His {0} to regulation was so strong that he opposed even rules his own industry had requested.",
+   "blanks": [
+    {
+     "options": [
+      "antipathy",
+      "deference",
+      "cordiality",
+      "affability",
+      "temerity"
+     ],
+     "answer": "antipathy"
+    }
+   ],
+   "targets": [
+    "antipathy",
+    "deference",
+    "temerity"
+   ],
+   "hint": "Phản đối cả quy định ngành mình đề nghị.",
+   "explanation": "Ác cảm sâu với quy định: antipathy to X.",
+   "difficulty": 2,
+   "skills": [
+    "collocation"
+   ],
+   "addedIn": "batch-04"
+  },
+  {
+   "id": "hm112",
+   "type": "se",
+   "sentence": "Decades of {0} between the neighboring villages, rooted in a dispute over water rights, made cooperation on the new dam almost impossible.",
+   "options": [
+    "animosity",
+    "enmity",
+    "cordiality",
+    "affability",
+    "deference",
+    "benignity"
+   ],
+   "answers": [
+    "animosity",
+    "enmity"
+   ],
+   "targets": [
+    "animosity",
+    "enmity",
+    "cordial",
+    "affable",
+    "deference",
+    "benign"
+   ],
+   "hint": "Hợp tác gần như không thể.",
+   "explanation": "Thù oán kéo dài: animosity, enmity.",
+   "difficulty": 1,
+   "skills": [
+    "continuation"
+   ],
+   "addedIn": "batch-04"
+  },
+  {
+   "id": "hm113",
+   "type": "tc",
+   "sentence": "The {0} ambassador put everyone at ease, chatting with junior staff as warmly as with ministers.",
+   "blanks": [
+    {
+     "options": [
+      "affable",
+      "truculent",
+      "petulant",
+      "irascible",
+      "cantankerous"
+     ],
+     "answer": "affable"
+    }
+   ],
+   "targets": [
+    "affable",
+    "truculent",
+    "petulant",
+    "irascible"
+   ],
+   "hint": "'Put everyone at ease'.",
+   "explanation": "Niềm nở, dễ gần với mọi người: affable.",
+   "difficulty": 1,
+   "skills": [
+    "continuation"
+   ],
+   "addedIn": "batch-04"
+  },
+  {
+   "id": "hm114",
+   "type": "se",
+   "sentence": "Relations between the two central banks remained {0} despite their public disagreement over interest rates.",
+   "options": [
+    "cordial",
+    "friendly",
+    "acrimonious",
+    "contentious",
+    "truculent",
+    "belligerent"
+   ],
+   "answers": [
+    "cordial",
+    "friendly"
+   ],
+   "targets": [
+    "cordial",
+    "acrimonious",
+    "contentious",
+    "truculent",
+    "belligerent"
+   ],
+   "hint": "'Despite'.",
+   "explanation": "'Despite disagreement': quan hệ vẫn thân thiện, cordial, friendly. Truculent và belligerent là cặp hung hăng.",
+   "difficulty": 1,
+   "skills": [
+    "contrast"
+   ],
+   "addedIn": "batch-04"
+  },
+  {
+   "id": "hm115",
+   "type": "tc",
+   "sentence": "Interviewers found the candidate {0}, easy to talk to and quick to put others at ease, but doubted that she had the technical depth the job required.",
+   "blanks": [
+    {
+     "options": [
+      "personable",
+      "truculent",
+      "petulant",
+      "irascible",
+      "cantankerous"
+     ],
+     "answer": "personable"
+    }
+   ],
+   "targets": [
+    "personable",
+    "truculent",
+    "petulant"
+   ],
+   "hint": "Mô tả sau dấu phẩy.",
+   "explanation": "Dễ mến, dễ nói chuyện: personable. 'But' chuyển sang điểm yếu về chuyên môn.",
+   "difficulty": 1,
+   "skills": [
+    "contrast"
+   ],
+   "addedIn": "batch-04"
+  },
+  {
+   "id": "hm116",
+   "type": "tc",
+   "sentence": "The concession failed to {0} the protesters, who saw it as too little, too late.",
+   "blanks": [
+    {
+     "options": [
+      "appease",
+      "incite",
+      "foment",
+      "galvanize",
+      "provoke"
+     ],
+     "answer": "appease"
+    }
+   ],
+   "targets": [
+    "appease",
+    "incite",
+    "foment",
+    "galvanize"
+   ],
+   "hint": "Mục đích của sự nhượng bộ.",
+   "explanation": "Nhượng bộ mà không xoa dịu được: failed to appease.",
+   "difficulty": 1,
+   "skills": [
+    "contrast"
+   ],
+   "addedIn": "batch-04"
+  },
+  {
+   "id": "hm117",
+   "type": "tc",
+   "sentence": "The tumor turned out to be {0}, and the patient was sent home the same afternoon.",
+   "blanks": [
+    {
+     "options": [
+      "benign",
+      "malign",
+      "malevolent",
+      "noxious",
+      "pernicious"
+     ],
+     "answer": "benign"
+    }
+   ],
+   "targets": [
+    "benign",
+    "malign",
+    "malevolent",
+    "noxious",
+    "pernicious"
+   ],
+   "hint": "Bệnh nhân được về trong ngày.",
+   "explanation": "Được về nhà ngay: khối u lành tính, benign.",
+   "difficulty": 1,
+   "skills": [
+    "continuation"
+   ],
+   "addedIn": "batch-04"
+  },
+  {
+   "id": "hm118",
+   "type": "tc",
+   "sentence": "What began as a {0} exchange of letters between the two scholars grew steadily more {1}, and by the end of the decade the dispute had become so {2} that neither would attend a conference if the other was speaking.",
+   "blanks": [
+    {
+     "options": [
+      "cordial",
+      "vitriolic",
+      "truculent"
+     ],
+     "answer": "cordial"
+    },
+    {
+     "options": [
+      "acerbic",
+      "genial",
+      "benign"
+     ],
+     "answer": "acerbic"
+    },
+    {
+     "options": [
+      "acrimonious",
+      "amicable",
+      "innocuous"
+     ],
+     "answer": "acrimonious"
+    }
+   ],
+   "targets": [
+    "cordial",
+    "acerbic",
+    "acrimonious"
+   ],
+   "hint": "Diễn biến tăng dần.",
+   "explanation": "(i) Ban đầu thư từ thân thiện: cordial. (ii) Ngày càng chua cay: acerbic. (iii) Cuối cùng gay gắt đến mức không dự cùng hội thảo: acrimonious.",
+   "difficulty": 3,
+   "skills": [
+    "contrast",
+    "degree"
+   ],
+   "addedIn": "batch-04"
+  }
+ ],
+ "careful-careless": [
+  {
+   "id": "cc101",
+   "type": "tc",
+   "sentence": "A {0} use of subsidies, targeted at firms that would not otherwise invest, can correct the market failure without wasting public money.",
+   "blanks": [
+    {
+     "options": [
+      "judicious",
+      "indiscriminate",
+      "cavalier",
+      "impetuous",
+      "perfunctory"
+     ],
+     "answer": "judicious"
+    }
+   ],
+   "targets": [
+    "judicious",
+    "indiscriminate",
+    "cavalier"
+   ],
+   "hint": "'Targeted at…'.",
+   "explanation": "Dùng có chọn lọc, không lãng phí: sáng suốt, judicious.",
+   "difficulty": 1,
+   "skills": [
+    "continuation"
+   ],
+   "addedIn": "batch-04"
+  },
+  {
+   "id": "cc102",
+   "type": "tc",
+   "sentence": "The negotiators were careful to remain {0}, refusing to tell reporters even where the talks were being held.",
+   "blanks": [
+    {
+     "options": [
+      "discreet",
+      "discrete",
+      "overt",
+      "flamboyant",
+      "brash"
+     ],
+     "answer": "discreet"
+    }
+   ],
+   "targets": [
+    "discreet",
+    "overt",
+    "flamboyant",
+    "brash"
+   ],
+   "hint": "Bẫy chính tả kinh điển.",
+   "explanation": "Kín đáo trong lời nói: discreet. Discrete là bẫy chính tả: riêng biệt, rời rạc.",
+   "difficulty": 2,
+   "skills": [
+    "lookalike"
+   ],
+   "addedIn": "batch-04"
+  },
+  {
+   "id": "cc103",
+   "type": "se",
+   "sentence": "Given how little was known about the new market, it seemed {0} to begin with a small pilot rather than a national rollout.",
+   "options": [
+    "prudent",
+    "sensible",
+    "rash",
+    "impetuous",
+    "cursory",
+    "perfunctory"
+   ],
+   "answers": [
+    "prudent",
+    "sensible"
+   ],
+   "targets": [
+    "prudent",
+    "rash",
+    "impetuous",
+    "cursory",
+    "perfunctory"
+   ],
+   "hint": "Ít thông tin thì nên làm gì?",
+   "explanation": "Bắt đầu thí điểm nhỏ khi còn ít thông tin: thận trọng, prudent, sensible. Rash và impetuous là cặp hấp tấp.",
+   "difficulty": 1,
+   "skills": [
+    "continuation"
+   ],
+   "addedIn": "batch-04"
+  },
+  {
+   "id": "cc104",
+   "type": "tc",
+   "sentence": "The replication was conducted with {0} attention to the original protocol: the authors even used the same brand of survey tablets.",
+   "blanks": [
+    {
+     "options": [
+      "scrupulous",
+      "cursory",
+      "perfunctory",
+      "desultory",
+      "cavalier"
+     ],
+     "answer": "scrupulous"
+    }
+   ],
+   "targets": [
+    "scrupulous",
+    "cursory",
+    "perfunctory"
+   ],
+   "hint": "Ví dụ sau dấu hai chấm.",
+   "explanation": "Dùng cả cùng loại máy tính bảng: tỉ mỉ, scrupulous.",
+   "difficulty": 1,
+   "skills": [
+    "continuation"
+   ],
+   "addedIn": "batch-04"
+  },
+  {
+   "id": "cc105",
+   "type": "tc",
+   "sentence": "The {0} clerk rejected the application because a single box had been initialed in blue ink rather than black.",
+   "blanks": [
+    {
+     "options": [
+      "punctilious",
+      "cavalier",
+      "negligent",
+      "remiss",
+      "lax"
+     ],
+     "answer": "punctilious"
+    }
+   ],
+   "targets": [
+    "punctilious",
+    "cavalier",
+    "negligent",
+    "remiss",
+    "lax"
+   ],
+   "hint": "Lý do từ chối.",
+   "explanation": "Bắt lỗi màu mực: quá chú trọng chi tiết, quy tắc, punctilious.",
+   "difficulty": 1,
+   "skills": [
+    "continuation"
+   ],
+   "addedIn": "batch-04"
+  },
+  {
+   "id": "cc106",
+   "type": "tc",
+   "sentence": "He is so {0} about citation format that he once returned a student's thesis because of a misplaced comma in the bibliography.",
+   "blanks": [
+    {
+     "options": [
+      "fastidious",
+      "slipshod",
+      "cavalier",
+      "lax",
+      "negligent"
+     ],
+     "answer": "fastidious"
+    }
+   ],
+   "targets": [
+    "fastidious",
+    "slipshod",
+    "cavalier",
+    "lax"
+   ],
+   "hint": "Một dấu phẩy.",
+   "explanation": "Khó tính, cầu kỳ đến mức trả luận văn vì một dấu phẩy: fastidious about X.",
+   "difficulty": 1,
+   "skills": [
+    "collocation"
+   ],
+   "addedIn": "batch-04"
+  },
+  {
+   "id": "cc107",
+   "type": "se",
+   "sentence": "The journal's {0} standards mean that fewer than one submission in ten is accepted.",
+   "options": [
+    "exacting",
+    "rigorous",
+    "lax",
+    "cavalier",
+    "cursory",
+    "perfunctory"
+   ],
+   "answers": [
+    "exacting",
+    "rigorous"
+   ],
+   "targets": [
+    "exacting",
+    "lax",
+    "cavalier",
+    "cursory",
+    "perfunctory"
+   ],
+   "hint": "Ít hơn một phần mười bài được nhận.",
+   "explanation": "Tiêu chuẩn khắt khe: exacting, rigorous. Cursory và perfunctory là cặp qua loa.",
+   "difficulty": 1,
+   "skills": [
+    "continuation"
+   ],
+   "addedIn": "batch-04"
+  },
+  {
+   "id": "cc108",
+   "type": "tc",
+   "sentence": "{0} enumerators double-checked every questionnaire before leaving the household, so the dataset has almost no missing values.",
+   "blanks": [
+    {
+     "options": [
+      "Conscientious",
+      "Slipshod",
+      "Negligent",
+      "Remiss",
+      "Cavalier"
+     ],
+     "answer": "Conscientious"
+    }
+   ],
+   "targets": [
+    "conscientious",
+    "slipshod",
+    "negligent",
+    "remiss",
+    "cavalier"
+   ],
+   "hint": "Kết quả: gần như không thiếu dữ liệu.",
+   "explanation": "Kiểm tra lại mọi bảng hỏi: tận tâm, conscientious.",
+   "difficulty": 1,
+   "skills": [
+    "continuation"
+   ],
+   "addedIn": "batch-04"
+  },
+  {
+   "id": "cc109",
+   "type": "tc",
+   "sentence": "After months of {0} negotiations, held irregularly and with no clear agenda, the talks quietly collapsed.",
+   "blanks": [
+    {
+     "options": [
+      "desultory",
+      "painstaking",
+      "meticulous",
+      "scrupulous",
+      "exacting"
+     ],
+     "answer": "desultory"
+    }
+   ],
+   "targets": [
+    "desultory",
+    "painstaking",
+    "meticulous"
+   ],
+   "hint": "'Irregularly and with no clear agenda'.",
+   "explanation": "Họp thất thường, không chương trình: rời rạc, desultory.",
+   "difficulty": 1,
+   "skills": [
+    "continuation"
+   ],
+   "addedIn": "batch-04"
+  },
+  {
+   "id": "cc110",
+   "type": "se",
+   "sentence": "Even a {0} reading of the contract reveals that the penalty clause applies to both parties.",
+   "options": [
+    "cursory",
+    "superficial",
+    "painstaking",
+    "meticulous",
+    "punctilious",
+    "scrupulous"
+   ],
+   "answers": [
+    "cursory",
+    "superficial"
+   ],
+   "targets": [
+    "cursory",
+    "superficial",
+    "painstaking",
+    "meticulous",
+    "punctilious",
+    "scrupulous"
+   ],
+   "hint": "Chữ 'even'.",
+   "explanation": "Cấu trúc 'even a … reading reveals': chỉ đọc lướt cũng thấy, cursory, superficial.",
+   "difficulty": 2,
+   "skills": [
+    "collocation"
+   ],
+   "addedIn": "batch-04"
+  },
+  {
+   "id": "cc111",
+   "type": "tc",
+   "sentence": "Regulators criticized the bank's {0} attitude toward customer data, noting that passwords had been stored unencrypted for years.",
+   "blanks": [
+    {
+     "options": [
+      "cavalier",
+      "scrupulous",
+      "punctilious",
+      "fastidious",
+      "meticulous"
+     ],
+     "answer": "cavalier"
+    }
+   ],
+   "targets": [
+    "cavalier",
+    "scrupulous",
+    "punctilious",
+    "fastidious"
+   ],
+   "hint": "Mật khẩu không mã hóa nhiều năm.",
+   "explanation": "Coi nhẹ việc bảo mật: cavalier attitude.",
+   "difficulty": 1,
+   "skills": [
+    "continuation"
+   ],
+   "addedIn": "batch-04"
+  },
+  {
+   "id": "cc112",
+   "type": "tc",
+   "sentence": "The {0} use of antibiotics in livestock, given routinely whether or not the animals are sick, has accelerated the spread of resistant bacteria.",
+   "blanks": [
+    {
+     "options": [
+      "indiscriminate",
+      "judicious",
+      "scrupulous",
+      "punctilious",
+      "meticulous"
+     ],
+     "answer": "indiscriminate"
+    }
+   ],
+   "targets": [
+    "indiscriminate",
+    "judicious",
+    "scrupulous"
+   ],
+   "hint": "'Whether or not the animals are sick'.",
+   "explanation": "Dùng bất kể con vật có bệnh hay không: bừa bãi, indiscriminate.",
+   "difficulty": 1,
+   "skills": [
+    "continuation"
+   ],
+   "addedIn": "batch-04"
+  },
+  {
+   "id": "cc113",
+   "type": "tc",
+   "sentence": "Years of {0} supervision allowed risky lending to grow unchecked; the new rules, by contrast, are so {1} that some banks complain they can barely lend at all.",
+   "blanks": [
+    {
+     "options": [
+      "lax",
+      "stringent",
+      "exacting"
+     ],
+     "answer": "lax"
+    },
+    {
+     "options": [
+      "stringent",
+      "lax",
+      "cursory"
+     ],
+     "answer": "stringent"
+    }
+   ],
+   "targets": [
+    "lax",
+    "stringent",
+    "exacting"
+   ],
+   "hint": "'By contrast'.",
+   "explanation": "(i) Cho vay rủi ro không bị kiểm soát: giám sát lỏng lẻo, lax. (ii) 'By contrast', ngân hàng khó cho vay: nghiêm ngặt, stringent.",
+   "difficulty": 2,
+   "skills": [
+    "contrast"
+   ],
+   "addedIn": "batch-04"
+  },
+  {
+   "id": "cc114",
+   "type": "tc",
+   "sentence": "The {0} decision to float the currency overnight, taken without consulting the central bank, triggered a run on the banks.",
+   "blanks": [
+    {
+     "options": [
+      "impetuous",
+      "judicious",
+      "circumspect",
+      "prudent",
+      "scrupulous"
+     ],
+     "answer": "impetuous"
+    }
+   ],
+   "targets": [
+    "impetuous",
+    "judicious",
+    "circumspect",
+    "prudent"
+   ],
+   "hint": "'Overnight… without consulting'.",
+   "explanation": "Quyết định bốc đồng, không tham khảo ai: impetuous.",
+   "difficulty": 1,
+   "skills": [
+    "continuation"
+   ],
+   "addedIn": "batch-04"
+  },
+  {
+   "id": "cc115",
+   "type": "se",
+   "sentence": "It would be {0} to draw firm conclusions from a single quarter of data.",
+   "options": [
+    "rash",
+    "hasty",
+    "prudent",
+    "judicious",
+    "punctilious",
+    "fastidious"
+   ],
+   "answers": [
+    "rash",
+    "hasty"
+   ],
+   "targets": [
+    "rash",
+    "prudent",
+    "judicious",
+    "punctilious",
+    "fastidious"
+   ],
+   "hint": "Một quý dữ liệu là quá ít.",
+   "explanation": "Kết luận từ một quý dữ liệu: hấp tấp, rash, hasty. Prudent và judicious là cặp ngược nghĩa.",
+   "difficulty": 1,
+   "skills": [
+    "nuance"
+   ],
+   "addedIn": "batch-04"
+  },
+  {
+   "id": "cc116",
+   "type": "tc",
+   "sentence": "Investing one's entire savings in a single untested start-up is not bold but {0}.",
+   "blanks": [
+    {
+     "options": [
+      "foolhardy",
+      "judicious",
+      "prudent",
+      "circumspect",
+      "scrupulous"
+     ],
+     "answer": "foolhardy"
+    }
+   ],
+   "targets": [
+    "foolhardy",
+    "judicious",
+    "prudent",
+    "circumspect"
+   ],
+   "hint": "'Not bold but…'.",
+   "explanation": "'Not bold but': không phải táo bạo mà là liều mạng, dại dột, foolhardy.",
+   "difficulty": 2,
+   "skills": [
+    "contrast",
+    "degree"
+   ],
+   "addedIn": "batch-04"
+  },
+  {
+   "id": "cc117",
+   "type": "tc",
+   "sentence": "{0} of the warnings from their own engineers, the managers pressed ahead with the launch.",
+   "blanks": [
+    {
+     "options": [
+      "Heedless",
+      "Wary",
+      "Chary",
+      "Circumspect",
+      "Judicious"
+     ],
+     "answer": "Heedless"
+    }
+   ],
+   "targets": [
+    "heedless",
+    "wary",
+    "chary",
+    "circumspect",
+    "judicious"
+   ],
+   "hint": "Cấu trúc '… of the warnings'.",
+   "explanation": "Bất chấp cảnh báo, vẫn tiến hành: heedless of X.",
+   "difficulty": 2,
+   "skills": [
+    "collocation"
+   ],
+   "addedIn": "batch-04"
+  },
+  {
+   "id": "cc118",
+   "type": "tc",
+   "sentence": "The first inspection was so {0} that it missed half the faulty welds; the second, ordered after the accident, was {1}, examining every joint by hand; critics noted, however, that this {2} came too late to help the victims' families.",
+   "blanks": [
+    {
+     "options": [
+      "cursory",
+      "meticulous",
+      "punctilious"
+     ],
+     "answer": "cursory"
+    },
+    {
+     "options": [
+      "painstaking",
+      "perfunctory",
+      "desultory"
+     ],
+     "answer": "painstaking"
+    },
+    {
+     "options": [
+      "rigor",
+      "negligence",
+      "laxity"
+     ],
+     "answer": "rigor"
+    }
+   ],
+   "targets": [
+    "cursory",
+    "painstaking",
+    "perfunctory",
+    "lax"
+   ],
+   "hint": "Lần một, lần hai, và nhận xét cuối.",
+   "explanation": "(i) Bỏ sót một nửa: qua loa, cursory. (ii) Kiểm tra từng mối hàn: công phu, painstaking. (iii) Sự nghiêm ngặt ấy đến quá muộn: rigor.",
+   "difficulty": 3,
+   "skills": [
+    "contrast",
+    "continuation"
+   ],
+   "addedIn": "batch-04"
+  }
+ ],
+ "secret-showy": [
+  {
+   "id": "ss101",
+   "type": "tc",
+   "sentence": "Critics alleged that a small {0} of insiders, meeting privately before every board session, decided the company's policy in advance.",
+   "blanks": [
+    {
+     "options": [
+      "cabal",
+      "myriad",
+      "plethora",
+      "dearth",
+      "paucity"
+     ],
+     "answer": "cabal"
+    }
+   ],
+   "targets": [
+    "cabal",
+    "myriad",
+    "plethora"
+   ],
+   "hint": "Một nhóm nhỏ họp kín.",
+   "explanation": "Nhóm nhỏ họp kín, quyết định trước: nhóm âm mưu, cabal.",
+   "difficulty": 2,
+   "skills": [
+    "nuance"
+   ],
+   "addedIn": "batch-04"
+  },
+  {
+   "id": "ss102",
+   "type": "tc",
+   "sentence": "Rather than announce an increase, the company raised prices by {0}, quietly shrinking the size of each package.",
+   "blanks": [
+    {
+     "options": [
+      "stealth",
+      "consensus",
+      "decree",
+      "flamboyance",
+      "ostentation"
+     ],
+     "answer": "stealth"
+    }
+   ],
+   "targets": [
+    "stealth",
+    "flamboyant",
+    "ostentatious"
+   ],
+   "hint": "Cụm 'by …'.",
+   "explanation": "Tăng giá lén lút bằng cách giảm khối lượng: by stealth.",
+   "difficulty": 2,
+   "skills": [
+    "collocation"
+   ],
+   "addedIn": "batch-04"
+  },
+  {
+   "id": "ss103",
+   "type": "tc",
+   "sentence": "Listed firms are required to {0} any risk that might materially affect their earnings.",
+   "blanks": [
+    {
+     "options": [
+      "disclose",
+      "conceal",
+      "adorn",
+      "flaunt",
+      "dissemble"
+     ],
+     "answer": "disclose"
+    }
+   ],
+   "targets": [
+    "disclose",
+    "adorn",
+    "flaunt",
+    "dissemble"
+   ],
+   "hint": "Nghĩa vụ của công ty niêm yết.",
+   "explanation": "Công ty niêm yết phải công bố rủi ro: disclose.",
+   "difficulty": 1,
+   "skills": [
+    "continuation"
+   ],
+   "addedIn": "batch-04"
+  },
+  {
+   "id": "ss104",
+   "type": "tc",
+   "sentence": "Discrimination in hiring is rarely {0}; it shows up instead in small differences in how often equally qualified applicants are called back.",
+   "blanks": [
+    {
+     "options": [
+      "overt",
+      "covert",
+      "clandestine",
+      "surreptitious",
+      "furtive"
+     ],
+     "answer": "overt"
+    }
+   ],
+   "targets": [
+    "overt",
+    "covert",
+    "clandestine"
+   ],
+   "hint": "'Rarely… instead'.",
+   "explanation": "'Rarely …; it shows up instead in small differences': hiếm khi công khai, overt.",
+   "difficulty": 2,
+   "skills": [
+    "contrast"
+   ],
+   "addedIn": "batch-04"
+  },
+  {
+   "id": "ss105",
+   "type": "se",
+   "sentence": "Under oath, the witness refused to {0} the name of her source.",
+   "options": [
+    "divulge",
+    "reveal",
+    "flaunt",
+    "adorn",
+    "dissemble",
+    "feign"
+   ],
+   "answers": [
+    "divulge",
+    "reveal"
+   ],
+   "targets": [
+    "divulge",
+    "flaunt",
+    "adorn",
+    "dissemble",
+    "feign"
+   ],
+   "hint": "Đối tượng là một cái tên.",
+   "explanation": "Từ chối tiết lộ tên nguồn tin: divulge, reveal. Dissemble và feign là cặp giả vờ.",
+   "difficulty": 1,
+   "skills": [
+    "collocation"
+   ],
+   "addedIn": "batch-04"
+  },
+  {
+   "id": "ss106",
+   "type": "tc",
+   "sentence": "The {0} hotel lobby, with its marble floors and gold-leaf ceiling, stood in stark contrast to the shanty town visible from its windows.",
+   "blanks": [
+    {
+     "options": [
+      "opulent",
+      "austere",
+      "spartan",
+      "ascetic",
+      "unadorned"
+     ],
+     "answer": "opulent"
+    }
+   ],
+   "targets": [
+    "opulent",
+    "austere",
+    "spartan",
+    "ascetic"
+   ],
+   "hint": "Mô tả sảnh khách sạn.",
+   "explanation": "Sàn đá cẩm thạch, trần dát vàng: xa hoa, opulent.",
+   "difficulty": 1,
+   "skills": [
+    "continuation"
+   ],
+   "addedIn": "batch-04"
+  },
+  {
+   "id": "ss107",
+   "type": "tc",
+   "sentence": "The {0} chief executive, who arrived at shareholder meetings by helicopter and dressed in bright suits, was the opposite of his understated predecessor.",
+   "blanks": [
+    {
+     "options": [
+      "flamboyant",
+      "austere",
+      "ascetic",
+      "understated",
+      "unpretentious"
+     ],
+     "answer": "flamboyant"
+    }
+   ],
+   "targets": [
+    "flamboyant",
+    "austere",
+    "ascetic",
+    "understated"
+   ],
+   "hint": "'The opposite of his understated predecessor'.",
+   "explanation": "Đến họp bằng trực thăng, mặc vest sặc sỡ: phô trương, nổi bật, flamboyant.",
+   "difficulty": 1,
+   "skills": [
+    "contrast"
+   ],
+   "addedIn": "batch-04"
+  },
+  {
+   "id": "ss108",
+   "type": "se",
+   "sentence": "The {0} billboards, in clashing shades of pink and green, were removed after residents complained.",
+   "options": [
+    "garish",
+    "gaudy",
+    "understated",
+    "unadorned",
+    "austere",
+    "spartan"
+   ],
+   "answers": [
+    "garish",
+    "gaudy"
+   ],
+   "targets": [
+    "garish",
+    "gaudy",
+    "understated",
+    "unadorned",
+    "austere",
+    "spartan"
+   ],
+   "hint": "'Clashing shades'.",
+   "explanation": "Màu sắc chói, lòe loẹt: garish, gaudy. Austere và spartan là cặp giản dị.",
+   "difficulty": 1,
+   "skills": [
+    "continuation"
+   ],
+   "addedIn": "batch-04"
+  },
+  {
+   "id": "ss109",
+   "type": "tc",
+   "sentence": "The restaurant's {0} menu described a simple bowl of rice as 'a meditation on the grain's essential nature'.",
+   "blanks": [
+    {
+     "options": [
+      "pretentious",
+      "unpretentious",
+      "austere",
+      "spartan",
+      "understated"
+     ],
+     "answer": "pretentious"
+    }
+   ],
+   "targets": [
+    "pretentious",
+    "unpretentious",
+    "austere",
+    "understated"
+   ],
+   "hint": "Bẫy hình thức.",
+   "explanation": "Mô tả bát cơm như 'một sự chiêm nghiệm': làm ra vẻ, kiểu cách, pretentious. Unpretentious là bẫy hình thức, nghĩa ngược.",
+   "difficulty": 2,
+   "skills": [
+    "lookalike"
+   ],
+   "addedIn": "batch-04"
+  },
+  {
+   "id": "ss110",
+   "type": "tc",
+   "sentence": "He led an {0} life, owning almost nothing and eating one plain meal a day, in the belief that comfort dulled the mind.",
+   "blanks": [
+    {
+     "options": [
+      "ascetic",
+      "opulent",
+      "ostentatious",
+      "flamboyant",
+      "lavish"
+     ],
+     "answer": "ascetic"
+    }
+   ],
+   "targets": [
+    "ascetic",
+    "opulent",
+    "ostentatious",
+    "flamboyant",
+    "lavish"
+   ],
+   "hint": "'In the belief that comfort dulled the mind'.",
+   "explanation": "Tự từ chối tiện nghi vì niềm tin: khổ hạnh, ascetic.",
+   "difficulty": 1,
+   "skills": [
+    "continuation"
+   ],
+   "addedIn": "batch-04"
+  },
+  {
+   "id": "ss111",
+   "type": "tc",
+   "sentence": "Portraits of the company's founders {0} the walls of the boardroom.",
+   "blanks": [
+    {
+     "options": [
+      "adorn",
+      "flaunt",
+      "flout",
+      "divulge",
+      "disclose"
+     ],
+     "answer": "adorn"
+    }
+   ],
+   "targets": [
+    "adorn",
+    "flaunt",
+    "flout",
+    "divulge",
+    "disclose"
+   ],
+   "hint": "Chân dung trên tường.",
+   "explanation": "Chân dung trang trí tường: adorn.",
+   "difficulty": 1,
+   "skills": [
+    "nuance"
+   ],
+   "addedIn": "batch-04"
+  },
+  {
+   "id": "ss112",
+   "type": "se",
+   "sentence": "Her {0} elegance (plain dark clothes and no jewelry) contrasted sharply with her rivals' flamboyance.",
+   "options": [
+    "understated",
+    "restrained",
+    "garish",
+    "gaudy",
+    "ostentatious",
+    "opulent"
+   ],
+   "answers": [
+    "understated",
+    "restrained"
+   ],
+   "targets": [
+    "understated",
+    "garish",
+    "gaudy",
+    "ostentatious",
+    "opulent"
+   ],
+   "hint": "Đối lập với 'flamboyance'.",
+   "explanation": "Thanh lịch giản dị, kín đáo: understated, restrained. Ostentatious và opulent là cặp phô trương, xa hoa.",
+   "difficulty": 1,
+   "skills": [
+    "contrast"
+   ],
+   "addedIn": "batch-04"
+  },
+  {
+   "id": "ss113",
+   "type": "tc",
+   "sentence": "Visitors expecting the {0} style of the old regime's palaces were surprised by the new president's residence: its rooms were plain, its furniture {1}, and the only decoration on the walls was a single, {2} portrait of the country's founder.",
+   "blanks": [
+    {
+     "options": [
+      "opulent",
+      "austere",
+      "spartan"
+     ],
+     "answer": "opulent"
+    },
+    {
+     "options": [
+      "spartan",
+      "gaudy",
+      "garish"
+     ],
+     "answer": "spartan"
+    },
+    {
+     "options": [
+      "unadorned",
+      "ostentatious",
+      "flamboyant"
+     ],
+     "answer": "unadorned"
+    }
+   ],
+   "targets": [
+    "opulent",
+    "spartan",
+    "unadorned"
+   ],
+   "hint": "'Expecting… surprised'.",
+   "explanation": "(i) Cung điện chế độ cũ: xa hoa, opulent. (ii) 'Surprised', phòng giản dị: đồ đạc đơn sơ, spartan. (iii) Bức chân dung mộc mạc: unadorned.",
+   "difficulty": 3,
+   "skills": [
+    "contrast",
+    "continuation"
+   ],
+   "addedIn": "batch-04"
+  }
+ ],
+ "amount-harm": [
+  {
+   "id": "ah101",
+   "type": "tc",
+   "sentence": "She took {0} notes during the interviews, filling eleven notebooks in a single month.",
+   "blanks": [
+    {
+     "options": [
+      "copious",
+      "scant",
+      "meager",
+      "sparse",
+      "negligible"
+     ],
+     "answer": "copious"
+    }
+   ],
+   "targets": [
+    "copious",
+    "scant",
+    "meager",
+    "sparse"
+   ],
+   "hint": "Mười một cuốn sổ.",
+   "explanation": "Mười một cuốn sổ trong một tháng: dồi dào, copious.",
+   "difficulty": 1,
+   "skills": [
+    "continuation"
+   ],
+   "addedIn": "batch-04"
+  },
+  {
+   "id": "ah102",
+   "type": "tc",
+   "sentence": "Researchers now face a {0} of competing estimates, many of them mutually contradictory.",
+   "blanks": [
+    {
+     "options": [
+      "plethora",
+      "dearth",
+      "paucity",
+      "scarcity",
+      "lack"
+     ],
+     "answer": "plethora"
+    }
+   ],
+   "targets": [
+    "plethora",
+    "dearth",
+    "paucity"
+   ],
+   "hint": "'Competing… mutually contradictory'.",
+   "explanation": "Rất nhiều ước lượng cạnh tranh: a plethora of X.",
+   "difficulty": 1,
+   "skills": [
+    "collocation"
+   ],
+   "addedIn": "batch-04"
+  },
+  {
+   "id": "ah103",
+   "type": "tc",
+   "sentence": "A {0} memory for statistics allowed him to quote unemployment rates for every province without notes.",
+   "blanks": [
+    {
+     "options": [
+      "prodigious",
+      "meager",
+      "scant",
+      "negligible",
+      "sparse"
+     ],
+     "answer": "prodigious"
+    }
+   ],
+   "targets": [
+    "prodigious",
+    "meager",
+    "scant"
+   ],
+   "hint": "Không cần ghi chép.",
+   "explanation": "Nhớ tỷ lệ thất nghiệp mọi tỉnh không cần ghi chép: trí nhớ phi thường, prodigious.",
+   "difficulty": 1,
+   "skills": [
+    "continuation"
+   ],
+   "addedIn": "batch-04"
+  },
+  {
+   "id": "ah104",
+   "type": "tc",
+   "sentence": "The project took an {0} amount of time: three years for what had been planned as a six-month study.",
+   "blanks": [
+    {
+     "options": [
+      "inordinate",
+      "negligible",
+      "scant",
+      "meager",
+      "sparse"
+     ],
+     "answer": "inordinate"
+    }
+   ],
+   "targets": [
+    "inordinate",
+    "negligible",
+    "scant"
+   ],
+   "hint": "So ba năm với sáu tháng.",
+   "explanation": "Ba năm cho dự án sáu tháng: quá mức, inordinate.",
+   "difficulty": 1,
+   "skills": [
+    "continuation"
+   ],
+   "addedIn": "batch-04"
+  },
+  {
+   "id": "ah105",
+   "type": "se",
+   "sentence": "The reform has had {0} unintended effects, from rising rents to longer commutes.",
+   "options": [
+    "myriad",
+    "countless",
+    "negligible",
+    "scant",
+    "nugatory",
+    "futile"
+   ],
+   "answers": [
+    "myriad",
+    "countless"
+   ],
+   "targets": [
+    "myriad",
+    "negligible",
+    "scant",
+    "nugatory",
+    "futile"
+   ],
+   "hint": "Liệt kê 'from… to…'.",
+   "explanation": "Vô số tác động phụ: myriad, countless. Nugatory và futile là cặp vô ích.",
+   "difficulty": 1,
+   "skills": [
+    "continuation"
+   ],
+   "addedIn": "batch-04"
+  },
+  {
+   "id": "ah106",
+   "type": "tc",
+   "sentence": "There is {0} evidence that the policy worked: a dozen independent studies reach the same conclusion.",
+   "blanks": [
+    {
+     "options": [
+      "ample",
+      "scant",
+      "meager",
+      "negligible",
+      "sparse"
+     ],
+     "answer": "ample"
+    }
+   ],
+   "targets": [
+    "ample",
+    "scant",
+    "meager"
+   ],
+   "hint": "Một tá nghiên cứu.",
+   "explanation": "Mười hai nghiên cứu độc lập: bằng chứng dư dả, ample.",
+   "difficulty": 1,
+   "skills": [
+    "continuation"
+   ],
+   "addedIn": "batch-04"
+  },
+  {
+   "id": "ah107",
+   "type": "tc",
+   "sentence": "The minister offered {0} apologies, repeating his regret so often that some listeners began to doubt his sincerity.",
+   "blanks": [
+    {
+     "options": [
+      "profuse",
+      "scant",
+      "meager",
+      "curt",
+      "terse"
+     ],
+     "answer": "profuse"
+    }
+   ],
+   "targets": [
+    "profuse",
+    "scant",
+    "meager",
+    "curt",
+    "terse"
+   ],
+   "hint": "'Repeating so often'.",
+   "explanation": "Xin lỗi rối rít, lặp đi lặp lại: profuse apologies.",
+   "difficulty": 1,
+   "skills": [
+    "collocation"
+   ],
+   "addedIn": "batch-04"
+  },
+  {
+   "id": "ah108",
+   "type": "tc",
+   "sentence": "A {0} of qualified teachers in rural districts means that many classes are taught by volunteers with no training.",
+   "blanks": [
+    {
+     "options": [
+      "dearth",
+      "plethora",
+      "myriad",
+      "profusion",
+      "surplus"
+     ],
+     "answer": "dearth"
+    }
+   ],
+   "targets": [
+    "dearth",
+    "plethora",
+    "myriad",
+    "profuse"
+   ],
+   "hint": "Hậu quả là gì?",
+   "explanation": "Lớp do tình nguyện viên không qua đào tạo dạy: thiếu giáo viên, dearth.",
+   "difficulty": 1,
+   "skills": [
+    "continuation"
+   ],
+   "addedIn": "batch-04"
+  },
+  {
+   "id": "ah109",
+   "type": "tc",
+   "sentence": "The proposal pays {0} attention to costs, devoting a single paragraph to a budget of several billion dollars.",
+   "blanks": [
+    {
+     "options": [
+      "scant",
+      "inordinate",
+      "ample",
+      "copious",
+      "prodigious"
+     ],
+     "answer": "scant"
+    }
+   ],
+   "targets": [
+    "scant",
+    "inordinate",
+    "ample",
+    "copious"
+   ],
+   "hint": "Một đoạn văn.",
+   "explanation": "Một đoạn văn cho ngân sách hàng tỷ đô: ít ỏi, scant attention.",
+   "difficulty": 1,
+   "skills": [
+    "collocation"
+   ],
+   "addedIn": "batch-04"
+  },
+  {
+   "id": "ah110",
+   "type": "se",
+   "sentence": "Rice farmers in the uplands earn {0} incomes, barely enough to cover seed and fertilizer.",
+   "options": [
+    "meager",
+    "paltry",
+    "ample",
+    "copious",
+    "prodigious",
+    "inordinate"
+   ],
+   "answers": [
+    "meager",
+    "paltry"
+   ],
+   "targets": [
+    "meager",
+    "ample",
+    "copious",
+    "prodigious",
+    "inordinate"
+   ],
+   "hint": "'Barely enough'.",
+   "explanation": "Chỉ đủ tiền giống và phân: ít ỏi, meager, paltry.",
+   "difficulty": 1,
+   "skills": [
+    "continuation"
+   ],
+   "addedIn": "batch-04"
+  },
+  {
+   "id": "ah111",
+   "type": "tc",
+   "sentence": "Without any mechanism for enforcement, the new disclosure law is effectively {0}.",
+   "blanks": [
+    {
+     "options": [
+      "nugatory",
+      "stringent",
+      "exacting",
+      "prodigious",
+      "copious"
+     ],
+     "answer": "nugatory"
+    }
+   ],
+   "targets": [
+    "nugatory",
+    "stringent",
+    "exacting"
+   ],
+   "hint": "'Without any mechanism for enforcement'.",
+   "explanation": "Không có cơ chế thực thi: luật vô hiệu, nugatory.",
+   "difficulty": 2,
+   "skills": [
+    "continuation"
+   ],
+   "addedIn": "batch-04"
+  },
+  {
+   "id": "ah112",
+   "type": "se",
+   "sentence": "Further negotiations seemed {0}: both sides had restated their positions a dozen times without moving an inch.",
+   "options": [
+    "futile",
+    "pointless",
+    "copious",
+    "prodigious",
+    "malevolent",
+    "noxious"
+   ],
+   "answers": [
+    "futile",
+    "pointless"
+   ],
+   "targets": [
+    "futile",
+    "copious",
+    "prodigious",
+    "malevolent",
+    "noxious"
+   ],
+   "hint": "Mô tả sau dấu hai chấm.",
+   "explanation": "Nhắc lại lập trường cả chục lần không nhúc nhích: vô ích, futile, pointless.",
+   "difficulty": 1,
+   "skills": [
+    "continuation"
+   ],
+   "addedIn": "batch-04"
+  },
+  {
+   "id": "ah113",
+   "type": "tc",
+   "sentence": "The second robustness table is {0}: it repeats, with minor formatting changes, the results already reported in the first.",
+   "blanks": [
+    {
+     "options": [
+      "redundant",
+      "negligible",
+      "scant",
+      "inordinate",
+      "deleterious"
+     ],
+     "answer": "redundant"
+    }
+   ],
+   "targets": [
+    "redundant",
+    "negligible",
+    "scant"
+   ],
+   "hint": "'Repeats… already reported'.",
+   "explanation": "Lặp lại bảng trước: thừa, redundant.",
+   "difficulty": 1,
+   "skills": [
+    "continuation"
+   ],
+   "addedIn": "batch-04"
+  },
+  {
+   "id": "ah114",
+   "type": "tc",
+   "sentence": "The effect of the reform on employment was {0}, too small to distinguish from zero even with ten years of data.",
+   "blanks": [
+    {
+     "options": [
+      "negligible",
+      "deleterious",
+      "pernicious",
+      "prodigious",
+      "inordinate"
+     ],
+     "answer": "negligible"
+    }
+   ],
+   "targets": [
+    "negligible",
+    "deleterious",
+    "pernicious"
+   ],
+   "hint": "'Too small to distinguish from zero'.",
+   "explanation": "Không phân biệt được với số 0: không đáng kể, negligible.",
+   "difficulty": 1,
+   "skills": [
+    "continuation"
+   ],
+   "addedIn": "batch-04"
+  },
+  {
+   "id": "ah115",
+   "type": "tc",
+   "sentence": "The rumors attributed {0} motives to the regulator, though there was no evidence that she wished the firm any harm.",
+   "blanks": [
+    {
+     "options": [
+      "malevolent",
+      "benign",
+      "benevolent",
+      "innocuous",
+      "altruistic"
+     ],
+     "answer": "malevolent"
+    }
+   ],
+   "targets": [
+    "malevolent",
+    "benign",
+    "benevolent",
+    "innocuous",
+    "altruistic"
+   ],
+   "hint": "'Though…'.",
+   "explanation": "'Though no evidence that she wished harm': tin đồn gán cho bà động cơ ác ý, malevolent. Benevolent là bẫy hình thức, nghĩa ngược.",
+   "difficulty": 1,
+   "skills": [
+    "contrast"
+   ],
+   "addedIn": "batch-04"
+  },
+  {
+   "id": "ah116",
+   "type": "se",
+   "sentence": "{0} fumes from the smelter left nearby residents with chronic coughs.",
+   "options": [
+    "Noxious",
+    "Toxic",
+    "Benign",
+    "Innocuous",
+    "Copious",
+    "Ample"
+   ],
+   "answers": [
+    "Noxious",
+    "Toxic"
+   ],
+   "targets": [
+    "noxious",
+    "benign",
+    "innocuous",
+    "copious",
+    "ample"
+   ],
+   "hint": "Hậu quả: ho mãn tính.",
+   "explanation": "Khói gây ho mãn tính: độc hại, noxious, toxic. Copious và ample là cặp nhiều, không nói lên tính độc hại.",
+   "difficulty": 1,
+   "skills": [
+    "continuation"
+   ],
+   "addedIn": "batch-04"
+  },
+  {
+   "id": "ah117",
+   "type": "tc",
+   "sentence": "Lawyers argued that the merger would {0} competition law by giving a single firm control of 80 percent of the market.",
+   "blanks": [
+    {
+     "options": [
+      "contravene",
+      "uphold",
+      "endorse",
+      "corroborate",
+      "validate"
+     ],
+     "answer": "contravene"
+    }
+   ],
+   "targets": [
+    "contravene",
+    "uphold",
+    "endorse"
+   ],
+   "hint": "Hậu quả của việc sáp nhập.",
+   "explanation": "Một công ty nắm 80% thị trường: vi phạm luật cạnh tranh, contravene.",
+   "difficulty": 1,
+   "skills": [
+    "continuation"
+   ],
+   "addedIn": "batch-04"
+  },
+  {
+   "id": "ah118",
+   "type": "tc",
+   "sentence": "By publishing the leaked documents, the newspaper arguably {0} the very standards of privacy it had long championed.",
+   "blanks": [
+    {
+     "options": [
+      "transgressed",
+      "upheld",
+      "endorsed",
+      "espoused",
+      "championed"
+     ],
+     "answer": "transgressed"
+    }
+   ],
+   "targets": [
+    "transgress",
+    "uphold",
+    "endorse",
+    "espouse",
+    "champion"
+   ],
+   "hint": "'The very standards'.",
+   "explanation": "Vi phạm chính chuẩn mực mình từng bảo vệ: transgressed. Cấu trúc 'the very standards… it had long championed' tạo đối lập.",
+   "difficulty": 2,
+   "skills": [
+    "contrast"
+   ],
+   "addedIn": "batch-04"
+  },
+  {
+   "id": "ah119",
+   "type": "tc",
+   "sentence": "Thousands marched in {0} of the ban on public gatherings.",
+   "blanks": [
+    {
+     "options": [
+      "defiance",
+      "deference",
+      "compliance",
+      "observance",
+      "accordance"
+     ],
+     "answer": "defiance"
+    }
+   ],
+   "targets": [
+    "defiance",
+    "deference"
+   ],
+   "hint": "Giới từ 'of'.",
+   "explanation": "Cụm cố định 'in defiance of': bất chấp. 'In deference to' là vì tôn trọng; compliance và accordance đi với 'with'.",
+   "difficulty": 2,
+   "skills": [
+    "collocation",
+    "lookalike"
+   ],
+   "addedIn": "batch-04"
+  },
+  {
+   "id": "ah120",
+   "type": "tc",
+   "sentence": "Although the region's water supply is far from {0}, officials have long acted as if it were inexhaustible, and the resulting {1} use of groundwater has had {2} effects on farmland, which is now sinking by several centimeters a year.",
+   "blanks": [
+    {
+     "options": [
+      "copious",
+      "meager",
+      "scant"
+     ],
+     "answer": "copious"
+    },
+    {
+     "options": [
+      "indiscriminate",
+      "judicious",
+      "scrupulous"
+     ],
+     "answer": "indiscriminate"
+    },
+    {
+     "options": [
+      "deleterious",
+      "negligible",
+      "benign"
+     ],
+     "answer": "deleterious"
+    }
+   ],
+   "targets": [
+    "copious",
+    "indiscriminate",
+    "deleterious"
+   ],
+   "hint": "Chú ý 'far from'.",
+   "explanation": "(i) 'Far from …' đổi chiều với 'as if inexhaustible': nguồn nước không hề dồi dào, copious. (ii) Dùng nước ngầm bừa bãi: indiscriminate. (iii) Đất lún mỗi năm vài cm: tác hại, deleterious.",
+   "difficulty": 3,
+   "skills": [
+    "contrast",
+    "continuation"
+   ],
+   "addedIn": "batch-04"
+  }
+ ]
+}

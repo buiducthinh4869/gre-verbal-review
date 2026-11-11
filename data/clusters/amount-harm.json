@@ -799,6 +799,618 @@
         "nuance"
       ],
       "addedIn": "base"
+    },
+    {
+      "id": "ah101",
+      "type": "tc",
+      "sentence": "She took {0} notes during the interviews, filling eleven notebooks in a single month.",
+      "blanks": [
+        {
+          "options": [
+            "copious",
+            "scant",
+            "meager",
+            "sparse",
+            "negligible"
+          ],
+          "answer": "copious"
+        }
+      ],
+      "targets": [
+        "copious",
+        "scant",
+        "meager",
+        "sparse"
+      ],
+      "hint": "Mười một cuốn sổ.",
+      "explanation": "Mười một cuốn sổ trong một tháng: dồi dào, copious.",
+      "difficulty": 1,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-04"
+    },
+    {
+      "id": "ah102",
+      "type": "tc",
+      "sentence": "Researchers now face a {0} of competing estimates, many of them mutually contradictory.",
+      "blanks": [
+        {
+          "options": [
+            "plethora",
+            "dearth",
+            "paucity",
+            "scarcity",
+            "lack"
+          ],
+          "answer": "plethora"
+        }
+      ],
+      "targets": [
+        "plethora",
+        "dearth",
+        "paucity"
+      ],
+      "hint": "'Competing… mutually contradictory'.",
+      "explanation": "Rất nhiều ước lượng cạnh tranh: a plethora of X.",
+      "difficulty": 1,
+      "skills": [
+        "collocation"
+      ],
+      "addedIn": "batch-04"
+    },
+    {
+      "id": "ah103",
+      "type": "tc",
+      "sentence": "A {0} memory for statistics allowed him to quote unemployment rates for every province without notes.",
+      "blanks": [
+        {
+          "options": [
+            "prodigious",
+            "meager",
+            "scant",
+            "negligible",
+            "sparse"
+          ],
+          "answer": "prodigious"
+        }
+      ],
+      "targets": [
+        "prodigious",
+        "meager",
+        "scant"
+      ],
+      "hint": "Không cần ghi chép.",
+      "explanation": "Nhớ tỷ lệ thất nghiệp mọi tỉnh không cần ghi chép: trí nhớ phi thường, prodigious.",
+      "difficulty": 1,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-04"
+    },
+    {
+      "id": "ah104",
+      "type": "tc",
+      "sentence": "The project took an {0} amount of time: three years for what had been planned as a six-month study.",
+      "blanks": [
+        {
+          "options": [
+            "inordinate",
+            "negligible",
+            "scant",
+            "meager",
+            "sparse"
+          ],
+          "answer": "inordinate"
+        }
+      ],
+      "targets": [
+        "inordinate",
+        "negligible",
+        "scant"
+      ],
+      "hint": "So ba năm với sáu tháng.",
+      "explanation": "Ba năm cho dự án sáu tháng: quá mức, inordinate.",
+      "difficulty": 1,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-04"
+    },
+    {
+      "id": "ah105",
+      "type": "se",
+      "sentence": "The reform has had {0} unintended effects, from rising rents to longer commutes.",
+      "options": [
+        "myriad",
+        "countless",
+        "negligible",
+        "scant",
+        "nugatory",
+        "futile"
+      ],
+      "answers": [
+        "myriad",
+        "countless"
+      ],
+      "targets": [
+        "myriad",
+        "negligible",
+        "scant",
+        "nugatory",
+        "futile"
+      ],
+      "hint": "Liệt kê 'from… to…'.",
+      "explanation": "Vô số tác động phụ: myriad, countless. Nugatory và futile là cặp vô ích.",
+      "difficulty": 1,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-04"
+    },
+    {
+      "id": "ah106",
+      "type": "tc",
+      "sentence": "There is {0} evidence that the policy worked: a dozen independent studies reach the same conclusion.",
+      "blanks": [
+        {
+          "options": [
+            "ample",
+            "scant",
+            "meager",
+            "negligible",
+            "sparse"
+          ],
+          "answer": "ample"
+        }
+      ],
+      "targets": [
+        "ample",
+        "scant",
+        "meager"
+      ],
+      "hint": "Một tá nghiên cứu.",
+      "explanation": "Mười hai nghiên cứu độc lập: bằng chứng dư dả, ample.",
+      "difficulty": 1,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-04"
+    },
+    {
+      "id": "ah107",
+      "type": "tc",
+      "sentence": "The minister offered {0} apologies, repeating his regret so often that some listeners began to doubt his sincerity.",
+      "blanks": [
+        {
+          "options": [
+            "profuse",
+            "scant",
+            "meager",
+            "curt",
+            "terse"
+          ],
+          "answer": "profuse"
+        }
+      ],
+      "targets": [
+        "profuse",
+        "scant",
+        "meager",
+        "curt",
+        "terse"
+      ],
+      "hint": "'Repeating so often'.",
+      "explanation": "Xin lỗi rối rít, lặp đi lặp lại: profuse apologies.",
+      "difficulty": 1,
+      "skills": [
+        "collocation"
+      ],
+      "addedIn": "batch-04"
+    },
+    {
+      "id": "ah108",
+      "type": "tc",
+      "sentence": "A {0} of qualified teachers in rural districts means that many classes are taught by volunteers with no training.",
+      "blanks": [
+        {
+          "options": [
+            "dearth",
+            "plethora",
+            "myriad",
+            "profusion",
+            "surplus"
+          ],
+          "answer": "dearth"
+        }
+      ],
+      "targets": [
+        "dearth",
+        "plethora",
+        "myriad",
+        "profuse"
+      ],
+      "hint": "Hậu quả là gì?",
+      "explanation": "Lớp do tình nguyện viên không qua đào tạo dạy: thiếu giáo viên, dearth.",
+      "difficulty": 1,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-04"
+    },
+    {
+      "id": "ah109",
+      "type": "tc",
+      "sentence": "The proposal pays {0} attention to costs, devoting a single paragraph to a budget of several billion dollars.",
+      "blanks": [
+        {
+          "options": [
+            "scant",
+            "inordinate",
+            "ample",
+            "copious",
+            "prodigious"
+          ],
+          "answer": "scant"
+        }
+      ],
+      "targets": [
+        "scant",
+        "inordinate",
+        "ample",
+        "copious"
+      ],
+      "hint": "Một đoạn văn.",
+      "explanation": "Một đoạn văn cho ngân sách hàng tỷ đô: ít ỏi, scant attention.",
+      "difficulty": 1,
+      "skills": [
+        "collocation"
+      ],
+      "addedIn": "batch-04"
+    },
+    {
+      "id": "ah110",
+      "type": "se",
+      "sentence": "Rice farmers in the uplands earn {0} incomes, barely enough to cover seed and fertilizer.",
+      "options": [
+        "meager",
+        "paltry",
+        "ample",
+        "copious",
+        "prodigious",
+        "inordinate"
+      ],
+      "answers": [
+        "meager",
+        "paltry"
+      ],
+      "targets": [
+        "meager",
+        "ample",
+        "copious",
+        "prodigious",
+        "inordinate"
+      ],
+      "hint": "'Barely enough'.",
+      "explanation": "Chỉ đủ tiền giống và phân: ít ỏi, meager, paltry.",
+      "difficulty": 1,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-04"
+    },
+    {
+      "id": "ah111",
+      "type": "tc",
+      "sentence": "Without any mechanism for enforcement, the new disclosure law is effectively {0}.",
+      "blanks": [
+        {
+          "options": [
+            "nugatory",
+            "stringent",
+            "exacting",
+            "prodigious",
+            "copious"
+          ],
+          "answer": "nugatory"
+        }
+      ],
+      "targets": [
+        "nugatory",
+        "stringent",
+        "exacting"
+      ],
+      "hint": "'Without any mechanism for enforcement'.",
+      "explanation": "Không có cơ chế thực thi: luật vô hiệu, nugatory.",
+      "difficulty": 2,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-04"
+    },
+    {
+      "id": "ah112",
+      "type": "se",
+      "sentence": "Further negotiations seemed {0}: both sides had restated their positions a dozen times without moving an inch.",
+      "options": [
+        "futile",
+        "pointless",
+        "copious",
+        "prodigious",
+        "malevolent",
+        "noxious"
+      ],
+      "answers": [
+        "futile",
+        "pointless"
+      ],
+      "targets": [
+        "futile",
+        "copious",
+        "prodigious",
+        "malevolent",
+        "noxious"
+      ],
+      "hint": "Mô tả sau dấu hai chấm.",
+      "explanation": "Nhắc lại lập trường cả chục lần không nhúc nhích: vô ích, futile, pointless.",
+      "difficulty": 1,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-04"
+    },
+    {
+      "id": "ah113",
+      "type": "tc",
+      "sentence": "The second robustness table is {0}: it repeats, with minor formatting changes, the results already reported in the first.",
+      "blanks": [
+        {
+          "options": [
+            "redundant",
+            "negligible",
+            "scant",
+            "inordinate",
+            "deleterious"
+          ],
+          "answer": "redundant"
+        }
+      ],
+      "targets": [
+        "redundant",
+        "negligible",
+        "scant"
+      ],
+      "hint": "'Repeats… already reported'.",
+      "explanation": "Lặp lại bảng trước: thừa, redundant.",
+      "difficulty": 1,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-04"
+    },
+    {
+      "id": "ah114",
+      "type": "tc",
+      "sentence": "The effect of the reform on employment was {0}, too small to distinguish from zero even with ten years of data.",
+      "blanks": [
+        {
+          "options": [
+            "negligible",
+            "deleterious",
+            "pernicious",
+            "prodigious",
+            "inordinate"
+          ],
+          "answer": "negligible"
+        }
+      ],
+      "targets": [
+        "negligible",
+        "deleterious",
+        "pernicious"
+      ],
+      "hint": "'Too small to distinguish from zero'.",
+      "explanation": "Không phân biệt được với số 0: không đáng kể, negligible.",
+      "difficulty": 1,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-04"
+    },
+    {
+      "id": "ah115",
+      "type": "tc",
+      "sentence": "The rumors attributed {0} motives to the regulator, though there was no evidence that she wished the firm any harm.",
+      "blanks": [
+        {
+          "options": [
+            "malevolent",
+            "benign",
+            "benevolent",
+            "innocuous",
+            "altruistic"
+          ],
+          "answer": "malevolent"
+        }
+      ],
+      "targets": [
+        "malevolent",
+        "benign",
+        "benevolent",
+        "innocuous",
+        "altruistic"
+      ],
+      "hint": "'Though…'.",
+      "explanation": "'Though no evidence that she wished harm': tin đồn gán cho bà động cơ ác ý, malevolent. Benevolent là bẫy hình thức, nghĩa ngược.",
+      "difficulty": 1,
+      "skills": [
+        "contrast"
+      ],
+      "addedIn": "batch-04"
+    },
+    {
+      "id": "ah116",
+      "type": "se",
+      "sentence": "{0} fumes from the smelter left nearby residents with chronic coughs.",
+      "options": [
+        "Noxious",
+        "Toxic",
+        "Benign",
+        "Innocuous",
+        "Copious",
+        "Ample"
+      ],
+      "answers": [
+        "Noxious",
+        "Toxic"
+      ],
+      "targets": [
+        "noxious",
+        "benign",
+        "innocuous",
+        "copious",
+        "ample"
+      ],
+      "hint": "Hậu quả: ho mãn tính.",
+      "explanation": "Khói gây ho mãn tính: độc hại, noxious, toxic. Copious và ample là cặp nhiều, không nói lên tính độc hại.",
+      "difficulty": 1,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-04"
+    },
+    {
+      "id": "ah117",
+      "type": "tc",
+      "sentence": "Lawyers argued that the merger would {0} competition law by giving a single firm control of 80 percent of the market.",
+      "blanks": [
+        {
+          "options": [
+            "contravene",
+            "uphold",
+            "endorse",
+            "corroborate",
+            "validate"
+          ],
+          "answer": "contravene"
+        }
+      ],
+      "targets": [
+        "contravene",
+        "uphold",
+        "endorse"
+      ],
+      "hint": "Hậu quả của việc sáp nhập.",
+      "explanation": "Một công ty nắm 80% thị trường: vi phạm luật cạnh tranh, contravene.",
+      "difficulty": 1,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-04"
+    },
+    {
+      "id": "ah118",
+      "type": "tc",
+      "sentence": "By publishing the leaked documents, the newspaper arguably {0} the very standards of privacy it had long championed.",
+      "blanks": [
+        {
+          "options": [
+            "transgressed",
+            "upheld",
+            "endorsed",
+            "espoused",
+            "championed"
+          ],
+          "answer": "transgressed"
+        }
+      ],
+      "targets": [
+        "transgress",
+        "uphold",
+        "endorse",
+        "espouse",
+        "champion"
+      ],
+      "hint": "'The very standards'.",
+      "explanation": "Vi phạm chính chuẩn mực mình từng bảo vệ: transgressed. Cấu trúc 'the very standards… it had long championed' tạo đối lập.",
+      "difficulty": 2,
+      "skills": [
+        "contrast"
+      ],
+      "addedIn": "batch-04"
+    },
+    {
+      "id": "ah119",
+      "type": "tc",
+      "sentence": "Thousands marched in {0} of the ban on public gatherings.",
+      "blanks": [
+        {
+          "options": [
+            "defiance",
+            "deference",
+            "compliance",
+            "observance",
+            "accordance"
+          ],
+          "answer": "defiance"
+        }
+      ],
+      "targets": [
+        "defiance",
+        "deference"
+      ],
+      "hint": "Giới từ 'of'.",
+      "explanation": "Cụm cố định 'in defiance of': bất chấp. 'In deference to' là vì tôn trọng; compliance và accordance đi với 'with'.",
+      "difficulty": 2,
+      "skills": [
+        "collocation",
+        "lookalike"
+      ],
+      "addedIn": "batch-04"
+    },
+    {
+      "id": "ah120",
+      "type": "tc",
+      "sentence": "Although the region's water supply is far from {0}, officials have long acted as if it were inexhaustible, and the resulting {1} use of groundwater has had {2} effects on farmland, which is now sinking by several centimeters a year.",
+      "blanks": [
+        {
+          "options": [
+            "copious",
+            "meager",
+            "scant"
+          ],
+          "answer": "copious"
+        },
+        {
+          "options": [
+            "indiscriminate",
+            "judicious",
+            "scrupulous"
+          ],
+          "answer": "indiscriminate"
+        },
+        {
+          "options": [
+            "deleterious",
+            "negligible",
+            "benign"
+          ],
+          "answer": "deleterious"
+        }
+      ],
+      "targets": [
+        "copious",
+        "indiscriminate",
+        "deleterious"
+      ],
+      "hint": "Chú ý 'far from'.",
+      "explanation": "(i) 'Far from …' đổi chiều với 'as if inexhaustible': nguồn nước không hề dồi dào, copious. (ii) Dùng nước ngầm bừa bãi: indiscriminate. (iii) Đất lún mỗi năm vài cm: tác hại, deleterious.",
+      "difficulty": 3,
+      "skills": [
+        "contrast",
+        "continuation"
+      ],
+      "addedIn": "batch-04"
     }
   ]
 }

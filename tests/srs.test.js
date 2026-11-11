@@ -229,7 +229,10 @@ test('mọi đáp án GRE trong dữ liệu đều ánh xạ được về id (t
     hd106: ['two-faced'], hd112: ['casuistry'],
     // đợt bài tập 03: từ chưa có trên web
     ha114: ['impertinent'], bd109: ['baseless'], bd114: ['speculation'], sr112: ['withdrew'], lf106: ['incorrigible'],
-    lf111: ['swung'], lf115: ['flat']
+    lf111: ['swung'], lf115: ['flat'],
+    // đợt bài tập 04: từ chưa có trên web
+    hm114: ['friendly'], cc103: ['sensible'], cc107: ['rigorous'], cc115: ['hasty'], cc118: ['rigor'], ss105: ['reveal'],
+    ss112: ['restrained'], ah105: ['countless'], ah110: ['paltry'], ah112: ['pointless'], ah116: ['Toxic']
   };
   idx.exercises.forEach((ex) => {
     const answers = ex.type === 'se' ? ex.answers : ex.blanks.map((b) => b.answer);

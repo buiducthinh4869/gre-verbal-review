@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "id": "mock-04",
+  "title": "Đề thi thử 4",
+  "clusters": [
+    "harsh-mild",
+    "careful-careless",
+    "secret-showy",
+    "amount-harm"
+  ],
+  "description": "Đề cố định gồm 27 câu TC và SE lấy từ cụm 13–16. Section 2 khó hơn Section 1. Chưa có Reading.",
+  "sections": [
+    {
+      "title": "Section 1",
+      "minutes": 18,
+      "items": [
+        "ss111",
+        "ss07",
+        "ah101",
+        "cc113",
+        "ss113",
+        "hm112",
+        "ah110",
+        "hm108",
+        "ah06",
+        "cc107",
+        "cc03",
+        "cc110"
+      ]
+    },
+    {
+      "title": "Section 2",
+      "minutes": 23,
+      "items": [
+        "hm102",
+        "cc118",
+        "hm01",
+        "ah105",
+        "hm03",
+        "hm114",
+        "ss03",
+        "ah116",
+        "ah111",
+        "cc02",
+        "ss06",
+        "ss109",
+        "cc115",
+        "cc103",
+        "cc116"
+      ]
+    }
+  ]
+}
