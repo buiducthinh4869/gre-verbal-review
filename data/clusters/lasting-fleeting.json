@@ -740,6 +740,524 @@
         "contrast"
       ],
       "addedIn": "base"
+    },
+    {
+      "id": "lf101",
+      "type": "tc",
+      "sentence": "The effect of the subsidy proved {0}: enrollment jumped in the first year but returned to its earlier level by the third.",
+      "blanks": [
+        {
+          "options": [
+            "transient",
+            "indelible",
+            "immutable",
+            "entrenched",
+            "inveterate"
+          ],
+          "answer": "transient"
+        }
+      ],
+      "targets": [
+        "transient",
+        "indelible",
+        "immutable"
+      ],
+      "hint": "Diễn biến sau dấu hai chấm.",
+      "explanation": "Tăng rồi quay về mức cũ: tác động tạm thời, transient.",
+      "difficulty": 1,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-03"
+    },
+    {
+      "id": "lf102",
+      "type": "tc",
+      "sentence": "Commuters caught only a {0} glimpse of the minister's motorcade as it sped past.",
+      "blanks": [
+        {
+          "options": [
+            "fleeting",
+            "abiding",
+            "perennial",
+            "indelible",
+            "inveterate"
+          ],
+          "answer": "fleeting"
+        }
+      ],
+      "targets": [
+        "fleeting",
+        "abiding",
+        "perennial"
+      ],
+      "hint": "Đoàn xe chạy vụt qua.",
+      "explanation": "Cụm 'a fleeting glimpse': thoáng thấy.",
+      "difficulty": 1,
+      "skills": [
+        "collocation"
+      ],
+      "addedIn": "batch-03"
+    },
+    {
+      "id": "lf103",
+      "type": "tc",
+      "sentence": "The poet tried to capture the {0} impressions of early morning, images that vanished almost as soon as they appeared.",
+      "blanks": [
+        {
+          "options": [
+            "fugitive",
+            "entrenched",
+            "inveterate",
+            "immutable",
+            "perennial"
+          ],
+          "answer": "fugitive"
+        }
+      ],
+      "targets": [
+        "fugitive",
+        "entrenched",
+        "inveterate"
+      ],
+      "hint": "'Vanished almost as soon as they appeared'.",
+      "explanation": "Thoáng qua, khó nắm bắt: fugitive (nghĩa phụ, không phải kẻ đào tẩu).",
+      "difficulty": 3,
+      "skills": [
+        "secondary-meaning"
+      ],
+      "addedIn": "batch-03"
+    },
+    {
+      "id": "lf104",
+      "type": "tc",
+      "sentence": "Her {0} interest in rural credit, which began during fieldwork as a student, shaped four decades of research.",
+      "blanks": [
+        {
+          "options": [
+            "abiding",
+            "transient",
+            "ephemeral",
+            "evanescent",
+            "fleeting"
+          ],
+          "answer": "abiding"
+        }
+      ],
+      "targets": [
+        "abiding",
+        "transient",
+        "ephemeral"
+      ],
+      "hint": "'Four decades'.",
+      "explanation": "Mối quan tâm kéo dài bốn thập kỷ: abiding (an abiding interest).",
+      "difficulty": 1,
+      "skills": [
+        "collocation"
+      ],
+      "addedIn": "batch-03"
+    },
+    {
+      "id": "lf105",
+      "type": "tc",
+      "sentence": "Earlier economists treated preferences as {0}, fixed once and for all; behavioral research suggests that they are shaped by context and experience.",
+      "blanks": [
+        {
+          "options": [
+            "immutable",
+            "protean",
+            "mutable",
+            "malleable",
+            "volatile"
+          ],
+          "answer": "immutable"
+        }
+      ],
+      "targets": [
+        "immutable",
+        "protean",
+        "mutable",
+        "malleable"
+      ],
+      "hint": "'Fixed once and for all'.",
+      "explanation": "'Fixed once and for all', đối lập với nghiên cứu hành vi: không thay đổi, immutable.",
+      "difficulty": 2,
+      "skills": [
+        "contrast"
+      ],
+      "addedIn": "batch-03"
+    },
+    {
+      "id": "lf106",
+      "type": "se",
+      "sentence": "An {0} optimist, the finance minister never revised a growth forecast downward in eight years in office.",
+      "options": [
+        "inveterate",
+        "incorrigible",
+        "transient",
+        "ephemeral",
+        "protean",
+        "mutable"
+      ],
+      "answers": [
+        "inveterate",
+        "incorrigible"
+      ],
+      "targets": [
+        "inveterate",
+        "transient",
+        "ephemeral",
+        "protean",
+        "mutable"
+      ],
+      "hint": "Tám năm không đổi.",
+      "explanation": "Lạc quan thành tật, không sửa được: inveterate, incorrigible. Transient và ephemeral là cặp tạm thời.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "batch-03"
+    },
+    {
+      "id": "lf107",
+      "type": "tc",
+      "sentence": "{0} interests, from landowners to local officials, blocked land reform for three decades.",
+      "blanks": [
+        {
+          "options": [
+            "Entrenched",
+            "Ephemeral",
+            "Transient",
+            "Evanescent",
+            "Fugitive"
+          ],
+          "answer": "Entrenched"
+        }
+      ],
+      "targets": [
+        "entrenched",
+        "ephemeral",
+        "transient"
+      ],
+      "hint": "Chặn cải cách ba mươi năm.",
+      "explanation": "Cụm 'entrenched interests': các nhóm lợi ích cố thủ.",
+      "difficulty": 1,
+      "skills": [
+        "collocation"
+      ],
+      "addedIn": "batch-03"
+    },
+    {
+      "id": "lf108",
+      "type": "tc",
+      "sentence": "The famine of 1945 left an {0} mark on the region's collective memory, still visible in the way elderly residents store rice.",
+      "blanks": [
+        {
+          "options": [
+            "indelible",
+            "evanescent",
+            "ephemeral",
+            "transient",
+            "fleeting"
+          ],
+          "answer": "indelible"
+        }
+      ],
+      "targets": [
+        "indelible",
+        "evanescent",
+        "ephemeral"
+      ],
+      "hint": "'Still visible'.",
+      "explanation": "Dấu ấn không thể xóa nhòa: an indelible mark.",
+      "difficulty": 1,
+      "skills": [
+        "collocation"
+      ],
+      "addedIn": "batch-03"
+    },
+    {
+      "id": "lf109",
+      "type": "tc",
+      "sentence": "'Inequality' is a {0} concept: it can refer to income, wealth, opportunity or outcomes, and dozens of measures compete to capture each.",
+      "blanks": [
+        {
+          "options": [
+            "protean",
+            "immutable",
+            "ossified",
+            "stagnant",
+            "inert"
+          ],
+          "answer": "protean"
+        }
+      ],
+      "targets": [
+        "protean",
+        "immutable",
+        "ossified"
+      ],
+      "hint": "Nhiều nghĩa, nhiều thước đo.",
+      "explanation": "Khái niệm có nhiều hình thái: protean.",
+      "difficulty": 2,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-03"
+    },
+    {
+      "id": "lf110",
+      "type": "tc",
+      "sentence": "The family firm survived the {0} of a century, from war and hyperinflation to nationalization and its eventual reversal.",
+      "blanks": [
+        {
+          "options": [
+            "vicissitudes",
+            "stagnation",
+            "inertia",
+            "permanence",
+            "quiescence"
+          ],
+          "answer": "vicissitudes"
+        }
+      ],
+      "targets": [
+        "vicissitudes",
+        "stagnant",
+        "inert",
+        "quiescent"
+      ],
+      "hint": "Chiến tranh, siêu lạm phát, quốc hữu hóa.",
+      "explanation": "Những thăng trầm: the vicissitudes of X.",
+      "difficulty": 2,
+      "skills": [
+        "collocation"
+      ],
+      "addedIn": "batch-03"
+    },
+    {
+      "id": "lf111",
+      "type": "se",
+      "sentence": "Commodity prices {0} wildly over the decade, tripling in some years and collapsing in others.",
+      "options": [
+        "fluctuated",
+        "swung",
+        "stagnated",
+        "ossified",
+        "endured",
+        "abided"
+      ],
+      "answers": [
+        "fluctuated",
+        "swung"
+      ],
+      "targets": [
+        "fluctuate",
+        "stagnant",
+        "ossified",
+        "enduring",
+        "abiding"
+      ],
+      "hint": "Tăng gấp ba rồi sụp đổ.",
+      "explanation": "Lên xuống thất thường: fluctuated, swung. Stagnated và ossified là cặp trì trệ.",
+      "difficulty": 1,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-03"
+    },
+    {
+      "id": "lf112",
+      "type": "tc",
+      "sentence": "Policy {0} between austerity and stimulus, with each new government reversing the course set by the last.",
+      "blanks": [
+        {
+          "options": [
+            "oscillated",
+            "stagnated",
+            "ossified",
+            "endured",
+            "persisted"
+          ],
+          "answer": "oscillated"
+        }
+      ],
+      "targets": [
+        "oscillate",
+        "stagnant",
+        "ossified"
+      ],
+      "hint": "Cấu trúc 'between X and Y'.",
+      "explanation": "Dao động qua lại giữa hai trạng thái: oscillated between X and Y.",
+      "difficulty": 2,
+      "skills": [
+        "collocation"
+      ],
+      "addedIn": "batch-03"
+    },
+    {
+      "id": "lf113",
+      "type": "tc",
+      "sentence": "With the regulations still in {0}, few firms were willing to commit to long-term investments.",
+      "blanks": [
+        {
+          "options": [
+            "flux",
+            "quiescence",
+            "inertia",
+            "permanence",
+            "vicissitudes"
+          ],
+          "answer": "flux"
+        }
+      ],
+      "targets": [
+        "flux",
+        "quiescent",
+        "inert",
+        "vicissitudes"
+      ],
+      "hint": "Cụm 'in …'.",
+      "explanation": "Quy định còn đang thay đổi: in flux.",
+      "difficulty": 2,
+      "skills": [
+        "collocation"
+      ],
+      "addedIn": "batch-03"
+    },
+    {
+      "id": "lf114",
+      "type": "tc",
+      "sentence": "Unlike the constitution, which can be amended only with great difficulty, ordinary statutes are relatively {0}.",
+      "blanks": [
+        {
+          "options": [
+            "mutable",
+            "immutable",
+            "entrenched",
+            "indelible",
+            "inveterate"
+          ],
+          "answer": "mutable"
+        }
+      ],
+      "targets": [
+        "mutable",
+        "immutable",
+        "entrenched"
+      ],
+      "hint": "'Unlike'.",
+      "explanation": "'Unlike' đổi chiều với 'amended only with great difficulty': dễ thay đổi, mutable. Immutable là bẫy hình thức.",
+      "difficulty": 2,
+      "skills": [
+        "contrast",
+        "lookalike"
+      ],
+      "addedIn": "batch-03"
+    },
+    {
+      "id": "lf115",
+      "type": "se",
+      "sentence": "Real wages remained {0} for a decade, barely rising even as productivity grew.",
+      "options": [
+        "stagnant",
+        "flat",
+        "protean",
+        "mercurial",
+        "transient",
+        "fleeting"
+      ],
+      "answers": [
+        "stagnant",
+        "flat"
+      ],
+      "targets": [
+        "stagnant",
+        "protean",
+        "mercurial",
+        "transient",
+        "fleeting"
+      ],
+      "hint": "'Barely rising'.",
+      "explanation": "Gần như không tăng: stagnant, flat. Transient và fleeting là cặp ngắn ngủi.",
+      "difficulty": 1,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-03"
+    },
+    {
+      "id": "lf116",
+      "type": "tc",
+      "sentence": "The committee remained {0} while the crisis deepened, issuing no statements and taking no action for six weeks.",
+      "blanks": [
+        {
+          "options": [
+            "inert",
+            "protean",
+            "volatile",
+            "mercurial",
+            "capricious"
+          ],
+          "answer": "inert"
+        }
+      ],
+      "targets": [
+        "inert",
+        "protean",
+        "volatile"
+      ],
+      "hint": "'No action for six weeks'.",
+      "explanation": "Không hành động suốt sáu tuần: trơ, bất động, inert.",
+      "difficulty": 1,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-03"
+    },
+    {
+      "id": "lf117",
+      "type": "tc",
+      "sentence": "Once thought to be an {0} feature of the economy, the high saving rate turned out to be surprisingly {1}: it fell sharply within a decade, as {2} habits of thrift gave way to the spending patterns of a younger generation.",
+      "blanks": [
+        {
+          "options": [
+            "immutable",
+            "transient",
+            "evanescent"
+          ],
+          "answer": "immutable"
+        },
+        {
+          "options": [
+            "mutable",
+            "entrenched",
+            "indelible"
+          ],
+          "answer": "mutable"
+        },
+        {
+          "options": [
+            "ingrained",
+            "ephemeral",
+            "fugitive"
+          ],
+          "answer": "ingrained"
+        }
+      ],
+      "targets": [
+        "immutable",
+        "mutable",
+        "ingrained"
+      ],
+      "hint": "'Once thought… turned out'.",
+      "explanation": "(i) Từng được coi là đặc điểm không đổi: immutable. (ii) 'Surprisingly', giảm mạnh trong mười năm: dễ thay đổi, mutable. (iii) Thói quen tiết kiệm ăn sâu: ingrained.",
+      "difficulty": 3,
+      "skills": [
+        "contrast",
+        "lookalike"
+      ],
+      "addedIn": "batch-03"
     }
   ]
 }

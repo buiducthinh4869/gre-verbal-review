@@ -752,6 +752,561 @@
         "contrast"
       ],
       "addedIn": "base"
+    },
+    {
+      "id": "sr101",
+      "type": "tc",
+      "sentence": "Before using the model for forecasts, the team {0} it on ten years of data it had not been trained on.",
+      "blanks": [
+        {
+          "options": [
+            "validated",
+            "discredited",
+            "debunked",
+            "gainsaid",
+            "recanted"
+          ],
+          "answer": "validated"
+        }
+      ],
+      "targets": [
+        "validate",
+        "discredit",
+        "debunk"
+      ],
+      "hint": "Kiểm tra trước khi dùng.",
+      "explanation": "Kiểm tra mô hình trên dữ liệu ngoài mẫu: validated.",
+      "difficulty": 1,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-03"
+    },
+    {
+      "id": "sr102",
+      "type": "tc",
+      "sentence": "Later data {0} her prediction: inflation did indeed peak in the spring, exactly as she had forecast.",
+      "blanks": [
+        {
+          "options": [
+            "bore out",
+            "undercut",
+            "discredited",
+            "vitiated",
+            "repudiated"
+          ],
+          "answer": "bore out"
+        }
+      ],
+      "targets": [
+        "bear-out",
+        "undercut",
+        "discredit",
+        "vitiate"
+      ],
+      "hint": "'Exactly as she had forecast'.",
+      "explanation": "Dữ liệu sau xác nhận dự báo: bore out (bear out).",
+      "difficulty": 1,
+      "skills": [
+        "collocation"
+      ],
+      "addedIn": "batch-03"
+    },
+    {
+      "id": "sr103",
+      "type": "tc",
+      "sentence": "The board formally {0} the proposal, clearing the way for construction to begin.",
+      "blanks": [
+        {
+          "options": [
+            "endorsed",
+            "repudiated",
+            "disavowed",
+            "recanted",
+            "rebutted"
+          ],
+          "answer": "endorsed"
+        }
+      ],
+      "targets": [
+        "endorse",
+        "repudiate",
+        "disavow"
+      ],
+      "hint": "Kết quả: được khởi công.",
+      "explanation": "Mở đường cho xây dựng: thông qua, tán thành, endorsed.",
+      "difficulty": 1,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-03"
+    },
+    {
+      "id": "sr104",
+      "type": "se",
+      "sentence": "Long before it became fashionable, she {0} microfinance as a tool for empowering rural women.",
+      "options": [
+        "championed",
+        "advocated",
+        "repudiated",
+        "renounced",
+        "debunked",
+        "discredited"
+      ],
+      "answers": [
+        "championed",
+        "advocated"
+      ],
+      "targets": [
+        "champion",
+        "advocate",
+        "repudiate",
+        "renounce",
+        "debunk",
+        "discredit"
+      ],
+      "hint": "'Long before it became fashionable'.",
+      "explanation": "Ủng hộ từ trước khi thành trào lưu: championed, advocated. Repudiated và renounced là cặp từ bỏ, ngược nghĩa.",
+      "difficulty": 1,
+      "skills": [
+        "contrast"
+      ],
+      "addedIn": "batch-03"
+    },
+    {
+      "id": "sr105",
+      "type": "tc",
+      "sentence": "The appeals court {0} the lower court's ruling, leaving the fine in place.",
+      "blanks": [
+        {
+          "options": [
+            "upheld",
+            "recanted",
+            "controverted",
+            "retracted",
+            "eschewed"
+          ],
+          "answer": "upheld"
+        }
+      ],
+      "targets": [
+        "uphold",
+        "recant",
+        "retract"
+      ],
+      "hint": "'Leaving the fine in place'.",
+      "explanation": "Giữ nguyên phán quyết, tiền phạt vẫn áp dụng: upheld.",
+      "difficulty": 2,
+      "skills": [
+        "collocation"
+      ],
+      "addedIn": "batch-03"
+    },
+    {
+      "id": "sr106",
+      "type": "tc",
+      "sentence": "The revelation that he had fabricated data in two earlier papers {0} the economist so thoroughly that even his genuine findings were ignored.",
+      "blanks": [
+        {
+          "options": [
+            "discredited",
+            "vindicated",
+            "corroborated",
+            "endorsed",
+            "upheld"
+          ],
+          "answer": "discredited"
+        }
+      ],
+      "targets": [
+        "discredit",
+        "vindicate",
+        "corroborate"
+      ],
+      "hint": "Ngay cả kết quả thật cũng bị phớt lờ.",
+      "explanation": "Bịa dữ liệu, mất hết uy tín: discredited.",
+      "difficulty": 1,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-03"
+    },
+    {
+      "id": "sr107",
+      "type": "tc",
+      "sentence": "The study {0} the popular belief that the poor do not save, showing that low-income households set aside a larger share of irregular income than the rich.",
+      "blanks": [
+        {
+          "options": [
+            "debunks",
+            "espouses",
+            "champions",
+            "upholds",
+            "endorses"
+          ],
+          "answer": "debunks"
+        }
+      ],
+      "targets": [
+        "debunk",
+        "espouse",
+        "champion"
+      ],
+      "hint": "Kết quả nghiên cứu trái với quan niệm.",
+      "explanation": "Bác bỏ một quan niệm phổ biến bằng bằng chứng: debunks (debunk a myth/belief).",
+      "difficulty": 1,
+      "skills": [
+        "collocation"
+      ],
+      "addedIn": "batch-03"
+    },
+    {
+      "id": "sr108",
+      "type": "tc",
+      "sentence": "Her central finding has survived every attempt to {0} it; critics have instead {1} over minor details of the estimation.",
+      "blanks": [
+        {
+          "options": [
+            "controvert",
+            "corroborate",
+            "validate"
+          ],
+          "answer": "controvert"
+        },
+        {
+          "options": [
+            "quibbled",
+            "endorsed",
+            "espoused"
+          ],
+          "answer": "quibbled"
+        }
+      ],
+      "targets": [
+        "controvert",
+        "quibble"
+      ],
+      "hint": "'Survived every attempt to … it'.",
+      "explanation": "(i) Kết quả vượt qua mọi nỗ lực bác bỏ: controvert. Corroborate và validate không hợp với 'survived every attempt to … it'. (ii) 'Instead': chỉ bắt bẻ chi tiết nhỏ, quibbled.",
+      "difficulty": 2,
+      "skills": [
+        "contrast"
+      ],
+      "addedIn": "batch-03"
+    },
+    {
+      "id": "sr109",
+      "type": "tc",
+      "sentence": "Severe malnutrition in early childhood can permanently {0} cognitive development.",
+      "blanks": [
+        {
+          "options": [
+            "impair",
+            "validate",
+            "buttress",
+            "bolster",
+            "corroborate"
+          ],
+          "answer": "impair"
+        }
+      ],
+      "targets": [
+        "impair",
+        "buttress",
+        "bolster"
+      ],
+      "hint": "Tác hại của suy dinh dưỡng.",
+      "explanation": "Suy dinh dưỡng làm suy giảm phát triển nhận thức: impair.",
+      "difficulty": 1,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-03"
+    },
+    {
+      "id": "sr110",
+      "type": "tc",
+      "sentence": "Threatened with dismissal, the scientist publicly {0} his earlier claims, though in private letters he continued to defend them.",
+      "blanks": [
+        {
+          "options": [
+            "recanted",
+            "espoused",
+            "championed",
+            "upheld",
+            "corroborated"
+          ],
+          "answer": "recanted"
+        }
+      ],
+      "targets": [
+        "recant",
+        "espouse",
+        "champion",
+        "uphold"
+      ],
+      "hint": "'Publicly… though in private'.",
+      "explanation": "Công khai rút lại nhưng riêng tư vẫn bảo vệ: recanted.",
+      "difficulty": 2,
+      "skills": [
+        "contrast"
+      ],
+      "addedIn": "batch-03"
+    },
+    {
+      "id": "sr111",
+      "type": "tc",
+      "sentence": "The authors deliberately {0} strong structural assumptions, preferring a design that lets the data speak for themselves.",
+      "blanks": [
+        {
+          "options": [
+            "eschew",
+            "espouse",
+            "champion",
+            "advocate",
+            "endorse"
+          ],
+          "answer": "eschew"
+        }
+      ],
+      "targets": [
+        "eschew",
+        "espouse",
+        "champion",
+        "advocate"
+      ],
+      "hint": "'Preferring a design that…'.",
+      "explanation": "Cố ý tránh giả định mạnh: eschew.",
+      "difficulty": 2,
+      "skills": [
+        "contrast"
+      ],
+      "addedIn": "batch-03"
+    },
+    {
+      "id": "sr112",
+      "type": "se",
+      "sentence": "After independent researchers failed to reproduce its results, the journal {0} the article.",
+      "options": [
+        "retracted",
+        "withdrew",
+        "endorsed",
+        "upheld",
+        "espoused",
+        "championed"
+      ],
+      "answers": [
+        "retracted",
+        "withdrew"
+      ],
+      "targets": [
+        "retract",
+        "endorse",
+        "uphold",
+        "espouse",
+        "champion"
+      ],
+      "hint": "Hậu quả của việc không tái lập được.",
+      "explanation": "Không tái lập được kết quả: rút bài, retracted, withdrew.",
+      "difficulty": 1,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-03"
+    },
+    {
+      "id": "sr113",
+      "type": "tc",
+      "sentence": "The ministry quickly {0} the leaked memo, insisting that it reflected the personal views of a junior official rather than government policy.",
+      "blanks": [
+        {
+          "options": [
+            "disavowed",
+            "endorsed",
+            "upheld",
+            "espoused",
+            "corroborated"
+          ],
+          "answer": "disavowed"
+        }
+      ],
+      "targets": [
+        "disavow",
+        "endorse",
+        "uphold"
+      ],
+      "hint": "'Personal views… rather than government policy'.",
+      "explanation": "Chối bỏ liên quan đến bản ghi nhớ: disavowed.",
+      "difficulty": 1,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-03"
+    },
+    {
+      "id": "sr114",
+      "type": "tc",
+      "sentence": "To take up the post, he was required to {0} his foreign citizenship.",
+      "blanks": [
+        {
+          "options": [
+            "renounce",
+            "espouse",
+            "corroborate",
+            "validate",
+            "bear out"
+          ],
+          "answer": "renounce"
+        }
+      ],
+      "targets": [
+        "renounce",
+        "espouse",
+        "corroborate"
+      ],
+      "hint": "Điều kiện để nhận chức.",
+      "explanation": "Từ bỏ quốc tịch (chính thức): renounce citizenship.",
+      "difficulty": 1,
+      "skills": [
+        "collocation"
+      ],
+      "addedIn": "batch-03"
+    },
+    {
+      "id": "sr115",
+      "type": "tc",
+      "sentence": "In a later interview she {0} her earlier claim, noting that the effect holds only for firms with fewer than fifty employees.",
+      "blanks": [
+        {
+          "options": [
+            "qualified",
+            "recanted",
+            "corroborated",
+            "debunked",
+            "espoused"
+          ],
+          "answer": "qualified"
+        }
+      ],
+      "targets": [
+        "qualify-v",
+        "recant",
+        "corroborate"
+      ],
+      "hint": "Rút lại hoàn toàn hay chỉ giới hạn lại?",
+      "explanation": "Thêm điều kiện, giới hạn phạm vi: qualified. Recanted là rút lại hoàn toàn, nhưng câu cho thấy bà vẫn giữ nhận định với các công ty nhỏ.",
+      "difficulty": 3,
+      "skills": [
+        "secondary-meaning",
+        "nuance"
+      ],
+      "addedIn": "batch-03"
+    },
+    {
+      "id": "sr116",
+      "type": "tc",
+      "sentence": "It is difficult to {0} the authors' optimistic conclusion with the weak results reported in their own tables.",
+      "blanks": [
+        {
+          "options": [
+            "reconcile",
+            "concede",
+            "gainsay",
+            "rebut",
+            "espouse"
+          ],
+          "answer": "reconcile"
+        }
+      ],
+      "targets": [
+        "reconcile",
+        "concede",
+        "gainsay",
+        "rebut"
+      ],
+      "hint": "Cấu trúc '… X with Y'.",
+      "explanation": "Cấu trúc 'reconcile X with Y': làm cho hai điều mâu thuẫn khớp nhau.",
+      "difficulty": 2,
+      "skills": [
+        "collocation"
+      ],
+      "addedIn": "batch-03"
+    },
+    {
+      "id": "sr117",
+      "type": "se",
+      "sentence": "Even the program's critics {0} that it reduced child mortality; their objection is to its cost, not its effectiveness.",
+      "options": [
+        "concede",
+        "acknowledge",
+        "gainsay",
+        "controvert",
+        "espouse",
+        "champion"
+      ],
+      "answers": [
+        "concede",
+        "acknowledge"
+      ],
+      "targets": [
+        "concede",
+        "acknowledge",
+        "gainsay",
+        "controvert",
+        "espouse",
+        "champion"
+      ],
+      "hint": "'Even the critics'.",
+      "explanation": "Thừa nhận dù đang phê phán: concede, acknowledge. Gainsay và controvert là cặp phản bác, ngược nghĩa.",
+      "difficulty": 1,
+      "skills": [
+        "contrast"
+      ],
+      "addedIn": "batch-03"
+    },
+    {
+      "id": "sr118",
+      "type": "tc",
+      "sentence": "Dismissed for decades by the profession, the theory was finally {0} when new data {1} its central prediction; several former critics even {2} their earlier objections in print.",
+      "blanks": [
+        {
+          "options": [
+            "vindicated",
+            "discredited",
+            "impaired"
+          ],
+          "answer": "vindicated"
+        },
+        {
+          "options": [
+            "bore out",
+            "undercut",
+            "vitiated"
+          ],
+          "answer": "bore out"
+        },
+        {
+          "options": [
+            "retracted",
+            "espoused",
+            "upheld"
+          ],
+          "answer": "retracted"
+        }
+      ],
+      "targets": [
+        "vindicate",
+        "bear-out",
+        "retract"
+      ],
+      "hint": "Diễn biến từ bị gạt bỏ đến được công nhận.",
+      "explanation": "(i) Bị gạt bỏ nhiều năm rồi được chứng minh đúng: vindicated. (ii) Dữ liệu mới xác nhận dự đoán: bore out. (iii) Người phê phán rút lại phản đối: retracted.",
+      "difficulty": 3,
+      "skills": [
+        "contrast",
+        "continuation"
+      ],
+      "addedIn": "batch-03"
     }
   ]
 }

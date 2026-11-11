@@ -1,0 +1,2075 @@
+{
+ "humble-arrogant": [
+  {
+   "id": "ha101",
+   "type": "tc",
+   "sentence": "Despite having founded two of the country's largest companies, she remained remarkably {0}, taking the bus to work and introducing herself only by her first name.",
+   "blanks": [
+    {
+     "options": [
+      "unassuming",
+      "imperious",
+      "haughty",
+      "supercilious",
+      "vainglorious"
+     ],
+     "answer": "unassuming"
+    }
+   ],
+   "targets": [
+    "unassuming",
+    "imperious",
+    "haughty"
+   ],
+   "hint": "'Despite'.",
+   "explanation": "'Despite… remarkably': giàu có, thành đạt mà vẫn giản dị, khiêm tốn: unassuming.",
+   "difficulty": 1,
+   "skills": [
+    "contrast"
+   ],
+   "addedIn": "batch-03"
+  },
+  {
+   "id": "ha102",
+   "type": "tc",
+   "sentence": "{0} investors, frightened by the first rumor of trouble, withdrew their money days before the bank's position was revealed to be perfectly sound.",
+   "blanks": [
+    {
+     "options": [
+      "Timorous",
+      "Brash",
+      "Audacious",
+      "Brazen",
+      "Complacent"
+     ],
+     "answer": "Timorous"
+    }
+   ],
+   "targets": [
+    "timorous",
+    "brash",
+    "audacious",
+    "complacent"
+   ],
+   "hint": "'Frightened by the first rumor'.",
+   "explanation": "Sợ hãi ngay từ tin đồn đầu tiên: nhút nhát, timorous.",
+   "difficulty": 1,
+   "skills": [
+    "continuation"
+   ],
+   "addedIn": "batch-03"
+  },
+  {
+   "id": "ha103",
+   "type": "tc",
+   "sentence": "The hearing was postponed in {0} to the minister's period of mourning.",
+   "blanks": [
+    {
+     "options": [
+      "deference",
+      "defiance",
+      "effrontery",
+      "hubris",
+      "temerity"
+     ],
+     "answer": "deference"
+    }
+   ],
+   "targets": [
+    "deference",
+    "defiance",
+    "effrontery",
+    "temerity"
+   ],
+   "hint": "Cụm cố định 'in … to'.",
+   "explanation": "Cụm cố định 'in deference to X': vì tôn trọng X. 'In defiance of' là bất chấp, dùng giới từ khác và nghĩa ngược lại.",
+   "difficulty": 2,
+   "skills": [
+    "collocation"
+   ],
+   "addedIn": "batch-03"
+  },
+  {
+   "id": "ha104",
+   "type": "se",
+   "sentence": "The restaurant is {0}, with plain wooden tables and a handwritten menu, yet its food draws critics from across the country.",
+   "options": [
+    "unpretentious",
+    "unassuming",
+    "ostentatious",
+    "pretentious",
+    "haughty",
+    "imperious"
+   ],
+   "answers": [
+    "unpretentious",
+    "unassuming"
+   ],
+   "targets": [
+    "unpretentious",
+    "unassuming",
+    "ostentatious",
+    "pretentious"
+   ],
+   "hint": "Bàn gỗ đơn sơ, thực đơn viết tay.",
+   "explanation": "Giản dị, không màu mè: unpretentious, unassuming. Ostentatious và pretentious là cặp ngược nghĩa.",
+   "difficulty": 2,
+   "skills": [
+    "continuation",
+    "contrast"
+   ],
+   "addedIn": "batch-03"
+  },
+  {
+   "id": "ha105",
+   "type": "tc",
+   "sentence": "The {0} official refused even to meet the villagers' delegation, sending a junior clerk to tell them that he had more important matters to attend to.",
+   "blanks": [
+    {
+     "options": [
+      "haughty",
+      "diffident",
+      "self-effacing",
+      "timorous",
+      "deferential"
+     ],
+     "answer": "haughty"
+    }
+   ],
+   "targets": [
+    "haughty",
+    "diffident",
+    "self-effacing"
+   ],
+   "hint": "Thái độ với dân làng.",
+   "explanation": "Không thèm gặp dân, cho rằng mình có việc quan trọng hơn: kiêu căng, haughty.",
+   "difficulty": 1,
+   "skills": [
+    "continuation"
+   ],
+   "addedIn": "batch-03"
+  },
+  {
+   "id": "ha106",
+   "type": "tc",
+   "sentence": "Explaining what a regression is to a room full of econometricians struck the audience as faintly {0}.",
+   "blanks": [
+    {
+     "options": [
+      "patronizing",
+      "imperious",
+      "impudent",
+      "diffident",
+      "timorous"
+     ],
+     "answer": "patronizing"
+    }
+   ],
+   "targets": [
+    "patronizing",
+    "imperious",
+    "impudent"
+   ],
+   "hint": "Coi người nghe như người mới học.",
+   "explanation": "Giảng điều cơ bản cho chuyên gia, như coi họ là người mới: kẻ cả, patronizing. Imperious là ra lệnh hống hách; impudent là hỗn láo với người trên.",
+   "difficulty": 2,
+   "skills": [
+    "nuance"
+   ],
+   "addedIn": "batch-03"
+  },
+  {
+   "id": "ha107",
+   "type": "se",
+   "sentence": "The {0} general commissioned three statues of himself and renamed the capital's main square in his own honor.",
+   "options": [
+    "vainglorious",
+    "conceited",
+    "diffident",
+    "self-effacing",
+    "peremptory",
+    "imperious"
+   ],
+   "answers": [
+    "vainglorious",
+    "conceited"
+   ],
+   "targets": [
+    "vainglorious",
+    "conceited",
+    "diffident",
+    "self-effacing",
+    "peremptory",
+    "imperious"
+   ],
+   "hint": "Phù phiếm hay hống hách?",
+   "explanation": "Tự dựng tượng, đặt tên quảng trường theo mình: khoe khoang, tự phụ, vainglorious, conceited. Peremptory và imperious là cặp ra lệnh hống hách, không nhấn vào sự phù phiếm.",
+   "difficulty": 2,
+   "skills": [
+    "nuance"
+   ],
+   "addedIn": "batch-03"
+  },
+  {
+   "id": "ha108",
+   "type": "tc",
+   "sentence": "With an {0} wave of her hand, the director dismissed the committee's objections and ordered the plan carried out at once.",
+   "blanks": [
+    {
+     "options": [
+      "imperious",
+      "diffident",
+      "unassuming",
+      "self-effacing",
+      "timorous"
+     ],
+     "answer": "imperious"
+    }
+   ],
+   "targets": [
+    "imperious",
+    "diffident",
+    "unassuming"
+   ],
+   "hint": "Một cử chỉ ra lệnh.",
+   "explanation": "Phẩy tay gạt phản đối, ra lệnh làm ngay: hống hách, imperious.",
+   "difficulty": 1,
+   "skills": [
+    "continuation"
+   ],
+   "addedIn": "batch-03"
+  },
+  {
+   "id": "ha109",
+   "type": "se",
+   "sentence": "A {0} supervisor can silence an entire lab: junior researchers stop proposing ideas when every suggestion is overruled.",
+   "options": [
+    "domineering",
+    "overbearing",
+    "diffident",
+    "timorous",
+    "smug",
+    "complacent"
+   ],
+   "answers": [
+    "domineering",
+    "overbearing"
+   ],
+   "targets": [
+    "domineering",
+    "overbearing",
+    "diffident",
+    "timorous",
+    "smug",
+    "complacent"
+   ],
+   "hint": "Mọi đề xuất đều bị gạt.",
+   "explanation": "Gạt bỏ mọi đề xuất, áp đặt: domineering, overbearing. Smug và complacent là cặp tự mãn.",
+   "difficulty": 1,
+   "skills": [
+    "continuation"
+   ],
+   "addedIn": "batch-03"
+  },
+  {
+   "id": "ha110",
+   "type": "tc",
+   "sentence": "Local officials complained about the ministry's {0} decision to redraw district boundaries without consulting a single resident.",
+   "blanks": [
+    {
+     "options": [
+      "high-handed",
+      "self-effacing",
+      "diffident",
+      "timorous",
+      "unassuming"
+     ],
+     "answer": "high-handed"
+    }
+   ],
+   "targets": [
+    "high-handed",
+    "self-effacing",
+    "diffident"
+   ],
+   "hint": "'Without consulting a single resident'.",
+   "explanation": "Quyết định không hỏi ý ai: độc đoán, high-handed.",
+   "difficulty": 1,
+   "skills": [
+    "continuation"
+   ],
+   "addedIn": "batch-03"
+  },
+  {
+   "id": "ha111",
+   "type": "tc",
+   "sentence": "Staff who had expected the new chair to be {0}, given her modest manner in interviews, were dismayed to find her {1}, issuing orders by memo and treating every question as a challenge to her authority.",
+   "blanks": [
+    {
+     "options": [
+      "self-effacing",
+      "supercilious",
+      "brazen"
+     ],
+     "answer": "self-effacing"
+    },
+    {
+     "options": [
+      "imperious",
+      "unassuming",
+      "timorous"
+     ],
+     "answer": "imperious"
+    }
+   ],
+   "targets": [
+    "self-effacing",
+    "imperious"
+   ],
+   "hint": "'Expected… dismayed'.",
+   "explanation": "(i) 'Modest manner': khiêm nhường, self-effacing. (ii) 'Dismayed', ra lệnh qua giấy tờ, coi mọi câu hỏi là thách thức: hống hách, imperious.",
+   "difficulty": 2,
+   "skills": [
+    "contrast"
+   ],
+   "addedIn": "batch-03"
+  },
+  {
+   "id": "ha112",
+   "type": "tc",
+   "sentence": "The junior clerk's {0} reply to the auditor, 'Find it yourself', earned him a formal reprimand.",
+   "blanks": [
+    {
+     "options": [
+      "impudent",
+      "deferential",
+      "timorous",
+      "diffident",
+      "unassuming"
+     ],
+     "answer": "impudent"
+    }
+   ],
+   "targets": [
+    "impudent",
+    "deferential",
+    "timorous"
+   ],
+   "hint": "Câu trả lời trong ngoặc.",
+   "explanation": "Trả lời kiểu 'Tự đi mà tìm' với kiểm toán viên: hỗn láo, impudent.",
+   "difficulty": 1,
+   "skills": [
+    "continuation"
+   ],
+   "addedIn": "batch-03"
+  },
+  {
+   "id": "ha113",
+   "type": "tc",
+   "sentence": "After causing the losses himself, the trader had the {0} to blame the compliance team for failing to stop him.",
+   "blanks": [
+    {
+     "options": [
+      "effrontery",
+      "deference",
+      "diffidence",
+      "humility",
+      "probity"
+     ],
+     "answer": "effrontery"
+    }
+   ],
+   "targets": [
+    "effrontery",
+    "deference",
+    "diffident",
+    "probity"
+   ],
+   "hint": "Cấu trúc 'had the … to'.",
+   "explanation": "Gây lỗ rồi đổ cho người khác: trơ trẽn, have the effrontery to.",
+   "difficulty": 2,
+   "skills": [
+    "collocation",
+    "nuance"
+   ],
+   "addedIn": "batch-03"
+  },
+  {
+   "id": "ha114",
+   "type": "se",
+   "sentence": "The student's {0} remarks to the examiner, delivered with a smirk, ensured that he failed the oral exam.",
+   "options": [
+    "insolent",
+    "impertinent",
+    "deferential",
+    "respectful",
+    "diffident",
+    "timorous"
+   ],
+   "answers": [
+    "insolent",
+    "impertinent"
+   ],
+   "targets": [
+    "insolent",
+    "deferential",
+    "diffident",
+    "timorous"
+   ],
+   "hint": "'Delivered with a smirk'.",
+   "explanation": "Nói với giám khảo kèm nụ cười khẩy: láo xược, insolent, impertinent. Deferential và respectful là cặp ngược nghĩa.",
+   "difficulty": 1,
+   "skills": [
+    "continuation"
+   ],
+   "addedIn": "batch-03"
+  },
+  {
+   "id": "ha115",
+   "type": "tc",
+   "sentence": "It would be {0} of me to speak on behalf of the committee before it has even met.",
+   "blanks": [
+    {
+     "options": [
+      "presumptuous",
+      "diffident",
+      "timorous",
+      "self-effacing",
+      "deferential"
+     ],
+     "answer": "presumptuous"
+    }
+   ],
+   "targets": [
+    "presumptuous",
+    "diffident",
+    "self-effacing"
+   ],
+   "hint": "Làm điều mình chưa có quyền làm.",
+   "explanation": "Tự tiện nói thay hội đồng khi chưa có quyền: presumptuous.",
+   "difficulty": 2,
+   "skills": [
+    "nuance"
+   ],
+   "addedIn": "batch-03"
+  },
+  {
+   "id": "ha116",
+   "type": "tc",
+   "sentence": "The incumbent's {0} confidence (he had told reporters the result was 'a formality') evaporated on election night.",
+   "blanks": [
+    {
+     "options": [
+      "smug",
+      "diffident",
+      "timorous",
+      "self-effacing",
+      "unassuming"
+     ],
+     "answer": "smug"
+    }
+   ],
+   "targets": [
+    "smug",
+    "diffident",
+    "timorous"
+   ],
+   "hint": "'A formality'.",
+   "explanation": "Coi kết quả là chuyện đương nhiên: tự mãn, smug.",
+   "difficulty": 1,
+   "skills": [
+    "continuation"
+   ],
+   "addedIn": "batch-03"
+  },
+  {
+   "id": "ha117",
+   "type": "tc",
+   "sentence": "The firm's founders, once {0} enough to admit their early mistakes, grew so {1} after a decade of success that they dismissed every warning; the collapse that followed was a textbook case of {2}.",
+   "blanks": [
+    {
+     "options": [
+      "self-effacing",
+      "imperious",
+      "brazen"
+     ],
+     "answer": "self-effacing"
+    },
+    {
+     "options": [
+      "complacent",
+      "diffident",
+      "timorous"
+     ],
+     "answer": "complacent"
+    },
+    {
+     "options": [
+      "hubris",
+      "deference",
+      "temerity"
+     ],
+     "answer": "hubris"
+    }
+   ],
+   "targets": [
+    "self-effacing",
+    "complacent",
+    "hubris"
+   ],
+   "hint": "Ba giai đoạn: trước, sau mười năm, kết cục.",
+   "explanation": "(i) Sẵn sàng nhận lỗi: khiêm nhường, self-effacing. (ii) Sau mười năm thành công thì gạt mọi cảnh báo: tự mãn, complacent. (iii) Kiêu ngạo dẫn tới sụp đổ: hubris. Temerity là sự liều lĩnh trong một hành động, không hàm ý kiêu ngạo dẫn đến sụp đổ.",
+   "difficulty": 3,
+   "skills": [
+    "contrast",
+    "continuation"
+   ],
+   "addedIn": "batch-03"
+  }
+ ],
+ "belief-doubt": [
+  {
+   "id": "bd101",
+   "type": "tc",
+   "sentence": "{0} tourists were easily persuaded that the 'ancient' coins on sale at the temple gate were genuine, though most had been minted the previous year.",
+   "blanks": [
+    {
+     "options": [
+      "Gullible",
+      "Skeptical",
+      "Cynical",
+      "Incredulous",
+      "Agnostic"
+     ],
+     "answer": "Gullible"
+    }
+   ],
+   "targets": [
+    "gullible",
+    "skeptical",
+    "cynical",
+    "incredulous"
+   ],
+   "hint": "'Easily persuaded'.",
+   "explanation": "Dễ bị thuyết phục rằng đồ giả là thật: cả tin, gullible.",
+   "difficulty": 1,
+   "skills": [
+    "continuation"
+   ],
+   "addedIn": "batch-03"
+  },
+  {
+   "id": "bd102",
+   "type": "tc",
+   "sentence": "It would be {0} to expect the new tax to raise much revenue in its first year, when collection systems are not yet in place.",
+   "blanks": [
+    {
+     "options": [
+      "naive",
+      "cogent",
+      "tenable",
+      "incontrovertible",
+      "credible"
+     ],
+     "answer": "naive"
+    }
+   ],
+   "targets": [
+    "naive",
+    "cogent",
+    "tenable"
+   ],
+   "hint": "Lý do sau dấu phẩy.",
+   "explanation": "Kỳ vọng thu nhiều thuế khi hệ thống chưa có: ngây thơ, naive.",
+   "difficulty": 1,
+   "skills": [
+    "continuation"
+   ],
+   "addedIn": "batch-03"
+  },
+  {
+   "id": "bd103",
+   "type": "se",
+   "sentence": "Fraudsters target the {0}: people who accept promises of easy wealth without asking for evidence.",
+   "options": [
+    "credulous",
+    "gullible",
+    "skeptical",
+    "incredulous",
+    "cynical",
+    "wary"
+   ],
+   "answers": [
+    "credulous",
+    "gullible"
+   ],
+   "targets": [
+    "credulous",
+    "gullible",
+    "skeptical",
+    "incredulous",
+    "cynical",
+    "wary"
+   ],
+   "hint": "Mô tả sau dấu hai chấm.",
+   "explanation": "Tin lời hứa mà không đòi bằng chứng: cả tin, credulous, gullible. Skeptical và incredulous là cặp ngược nghĩa.",
+   "difficulty": 1,
+   "skills": [
+    "continuation"
+   ],
+   "addedIn": "batch-03"
+  },
+  {
+   "id": "bd104",
+   "type": "tc",
+   "sentence": "Referees were {0} about the paper's main claim, noting that the instrument might affect the outcome through several other channels.",
+   "blanks": [
+    {
+     "options": [
+      "dubious",
+      "credulous",
+      "gullible",
+      "naive",
+      "cogent"
+     ],
+     "answer": "dubious"
+    }
+   ],
+   "targets": [
+    "dubious",
+    "credulous",
+    "gullible",
+    "cogent"
+   ],
+   "hint": "Nghĩa của dubious khi chủ ngữ là người.",
+   "explanation": "Người phản biện nghi ngờ nhận định chính: dubious about X (nghĩa 'ngờ vực' khi dùng cho người).",
+   "difficulty": 2,
+   "skills": [
+    "secondary-meaning"
+   ],
+   "addedIn": "batch-03"
+  },
+  {
+   "id": "bd105",
+   "type": "tc",
+   "sentence": "Years of broken campaign promises have made voters deeply {0}: many now assume that every politician is motivated purely by self-interest.",
+   "blanks": [
+    {
+     "options": [
+      "cynical",
+      "credulous",
+      "gullible",
+      "naive",
+      "agnostic"
+     ],
+     "answer": "cynical"
+    }
+   ],
+   "targets": [
+    "cynical",
+    "credulous",
+    "naive",
+    "agnostic"
+   ],
+   "hint": "Nghi ngờ động cơ của người khác.",
+   "explanation": "Cho rằng chính trị gia nào cũng chỉ vì lợi riêng: nghi ngờ động cơ, cynical. Agnostic là trung lập, không ngả về bên nào.",
+   "difficulty": 2,
+   "skills": [
+    "nuance"
+   ],
+   "addedIn": "batch-03"
+  },
+  {
+   "id": "bd106",
+   "type": "tc",
+   "sentence": "The method is {0} about the functional form of the relationship, imposing no assumption that the effect is linear.",
+   "blanks": [
+    {
+     "options": [
+      "agnostic",
+      "dogmatic",
+      "doctrinaire",
+      "cynical",
+      "credulous"
+     ],
+     "answer": "agnostic"
+    }
+   ],
+   "targets": [
+    "agnostic",
+    "dogmatic",
+    "doctrinaire",
+    "cynical"
+   ],
+   "hint": "Không áp đặt giả định nào.",
+   "explanation": "Không giả định trước dạng hàm: agnostic about X (nghĩa học thuật: không đặt giả định). Dogmatic và doctrinaire là ngược lại.",
+   "difficulty": 2,
+   "skills": [
+    "nuance"
+   ],
+   "addedIn": "batch-03"
+  },
+  {
+   "id": "bd107",
+   "type": "tc",
+   "sentence": "Once the leaked emails showed that the agency had known of the defect for years, its claim of ignorance was no longer {0}.",
+   "blanks": [
+    {
+     "options": [
+      "tenable",
+      "untenable",
+      "tentative",
+      "speculative",
+      "provisional"
+     ],
+     "answer": "tenable"
+    }
+   ],
+   "targets": [
+    "tenable",
+    "untenable",
+    "tentative",
+    "provisional"
+   ],
+   "hint": "Chú ý 'no longer'.",
+   "explanation": "Cụm 'no longer tenable': không còn đứng vững được. Untenable là bẫy: 'no longer untenable' ngược nghĩa câu.",
+   "difficulty": 2,
+   "skills": [
+    "lookalike",
+    "collocation"
+   ],
+   "addedIn": "batch-03"
+  },
+  {
+   "id": "bd108",
+   "type": "tc",
+   "sentence": "Fears that the new port would destroy local fishing proved {0}: catches actually rose in the years after it opened.",
+   "blanks": [
+    {
+     "options": [
+      "unfounded",
+      "cogent",
+      "compelling",
+      "incontrovertible",
+      "tenable"
+     ],
+     "answer": "unfounded"
+    }
+   ],
+   "targets": [
+    "unfounded",
+    "cogent",
+    "compelling"
+   ],
+   "hint": "Điều thực tế xảy ra.",
+   "explanation": "Sản lượng còn tăng: nỗi lo vô căn cứ, unfounded.",
+   "difficulty": 1,
+   "skills": [
+    "continuation"
+   ],
+   "addedIn": "batch-03"
+  },
+  {
+   "id": "bd109",
+   "type": "se",
+   "sentence": "The minister dismissed the accusations as {0}, pointing out that the auditors had found no irregularities at all.",
+   "options": [
+    "groundless",
+    "baseless",
+    "cogent",
+    "compelling",
+    "tentative",
+    "provisional"
+   ],
+   "answers": [
+    "groundless",
+    "baseless"
+   ],
+   "targets": [
+    "groundless",
+    "cogent",
+    "compelling",
+    "tentative",
+    "provisional"
+   ],
+   "hint": "Kiểm toán không thấy gì.",
+   "explanation": "Kiểm toán không thấy sai phạm: cáo buộc vô căn cứ, groundless, baseless. Tentative và provisional là cặp tạm thời.",
+   "difficulty": 1,
+   "skills": [
+    "continuation"
+   ],
+   "addedIn": "batch-03"
+  },
+  {
+   "id": "bd110",
+   "type": "tc",
+   "sentence": "The report's {0} framing, which presented only the studies that supported its sponsor's position, made its conclusions {1} at best.",
+   "blanks": [
+    {
+     "options": [
+      "tendentious",
+      "agnostic",
+      "cogent"
+     ],
+     "answer": "tendentious"
+    },
+    {
+     "options": [
+      "dubious",
+      "incontrovertible",
+      "compelling"
+     ],
+     "answer": "dubious"
+    }
+   ],
+   "targets": [
+    "tendentious",
+    "dubious",
+    "agnostic"
+   ],
+   "hint": "Hai chỗ trống cùng hướng.",
+   "explanation": "(i) Chỉ đưa nghiên cứu có lợi cho nhà tài trợ: thiên vị, tendentious. (ii) Nên kết luận đáng ngờ: dubious.",
+   "difficulty": 2,
+   "skills": [
+    "continuation"
+   ],
+   "addedIn": "batch-03"
+  },
+  {
+   "id": "bd111",
+   "type": "tc",
+   "sentence": "The authors offer only {0} conclusions, cautioning that their sample covers a single province over two years.",
+   "blanks": [
+    {
+     "options": [
+      "tentative",
+      "incontrovertible",
+      "cogent",
+      "compelling",
+      "dogmatic"
+     ],
+     "answer": "tentative"
+    }
+   ],
+   "targets": [
+    "tentative",
+    "incontrovertible",
+    "cogent"
+   ],
+   "hint": "'Cautioning'.",
+   "explanation": "Mẫu nhỏ nên kết luận dè dặt: tentative.",
+   "difficulty": 1,
+   "skills": [
+    "continuation"
+   ],
+   "addedIn": "batch-03"
+  },
+  {
+   "id": "bd112",
+   "type": "tc",
+   "sentence": "From the minister's silence at the press conference, reporters {0} that the negotiations had failed.",
+   "blanks": [
+    {
+     "options": [
+      "surmised",
+      "corroborated",
+      "substantiated",
+      "validated",
+      "refuted"
+     ],
+     "answer": "surmised"
+    }
+   ],
+   "targets": [
+    "surmise",
+    "corroborate",
+    "substantiate"
+   ],
+   "hint": "Chỉ dựa vào sự im lặng.",
+   "explanation": "Suy đoán từ sự im lặng: surmised. Corroborated và substantiated cần bằng chứng, không chỉ là sự im lặng.",
+   "difficulty": 2,
+   "skills": [
+    "nuance"
+   ],
+   "addedIn": "batch-03"
+  },
+  {
+   "id": "bd113",
+   "type": "tc",
+   "sentence": "The model {0} that consumers know the price of every product, an assumption that is plainly false for most rural markets.",
+   "blanks": [
+    {
+     "options": [
+      "presupposes",
+      "refutes",
+      "debunks",
+      "corroborates",
+      "gainsays"
+     ],
+     "answer": "presupposes"
+    }
+   ],
+   "targets": [
+    "presuppose",
+    "refute",
+    "debunk"
+   ],
+   "hint": "'An assumption that…'.",
+   "explanation": "'An assumption': mô hình giả định trước, presupposes.",
+   "difficulty": 2,
+   "skills": [
+    "continuation"
+   ],
+   "addedIn": "batch-03"
+  },
+  {
+   "id": "bd114",
+   "type": "se",
+   "sentence": "Without any surviving records, claims about why the treaty was signed remain mere {0}.",
+   "options": [
+    "conjecture",
+    "speculation",
+    "evidence",
+    "proof",
+    "sophistry",
+    "chicanery"
+   ],
+   "answers": [
+    "conjecture",
+    "speculation"
+   ],
+   "targets": [
+    "conjecture",
+    "sophistry",
+    "chicanery"
+   ],
+   "hint": "'Without any surviving records'.",
+   "explanation": "Không có tài liệu: chỉ là phỏng đoán, conjecture, speculation. Sophistry và chicanery là cặp lừa dối, không hợp.",
+   "difficulty": 1,
+   "skills": [
+    "continuation"
+   ],
+   "addedIn": "batch-03"
+  },
+  {
+   "id": "bd115",
+   "type": "tc",
+   "sentence": "The doctor's initial diagnosis was {0}, based on only a few symptoms; once the test results arrived they {1} it, proving her early {2} correct.",
+   "blanks": [
+    {
+     "options": [
+      "tentative",
+      "incontrovertible",
+      "dogmatic"
+     ],
+     "answer": "tentative"
+    },
+    {
+     "options": [
+      "corroborated",
+      "gainsaid",
+      "debunked"
+     ],
+     "answer": "corroborated"
+    },
+    {
+     "options": [
+      "surmise",
+      "sophistry",
+      "fallacy"
+     ],
+     "answer": "surmise"
+    }
+   ],
+   "targets": [
+    "tentative",
+    "corroborate",
+    "surmise"
+   ],
+   "hint": "Chẩn đoán, xét nghiệm, kết luận.",
+   "explanation": "(i) Chỉ dựa vào vài triệu chứng: tạm thời, tentative. (ii) Kết quả xét nghiệm xác nhận: corroborated. (iii) Phỏng đoán ban đầu đúng: surmise.",
+   "difficulty": 3,
+   "skills": [
+    "continuation"
+   ],
+   "addedIn": "batch-03"
+  }
+ ],
+ "support-refute": [
+  {
+   "id": "sr101",
+   "type": "tc",
+   "sentence": "Before using the model for forecasts, the team {0} it on ten years of data it had not been trained on.",
+   "blanks": [
+    {
+     "options": [
+      "validated",
+      "discredited",
+      "debunked",
+      "gainsaid",
+      "recanted"
+     ],
+     "answer": "validated"
+    }
+   ],
+   "targets": [
+    "validate",
+    "discredit",
+    "debunk"
+   ],
+   "hint": "Kiểm tra trước khi dùng.",
+   "explanation": "Kiểm tra mô hình trên dữ liệu ngoài mẫu: validated.",
+   "difficulty": 1,
+   "skills": [
+    "continuation"
+   ],
+   "addedIn": "batch-03"
+  },
+  {
+   "id": "sr102",
+   "type": "tc",
+   "sentence": "Later data {0} her prediction: inflation did indeed peak in the spring, exactly as she had forecast.",
+   "blanks": [
+    {
+     "options": [
+      "bore out",
+      "undercut",
+      "discredited",
+      "vitiated",
+      "repudiated"
+     ],
+     "answer": "bore out"
+    }
+   ],
+   "targets": [
+    "bear-out",
+    "undercut",
+    "discredit",
+    "vitiate"
+   ],
+   "hint": "'Exactly as she had forecast'.",
+   "explanation": "Dữ liệu sau xác nhận dự báo: bore out (bear out).",
+   "difficulty": 1,
+   "skills": [
+    "collocation"
+   ],
+   "addedIn": "batch-03"
+  },
+  {
+   "id": "sr103",
+   "type": "tc",
+   "sentence": "The board formally {0} the proposal, clearing the way for construction to begin.",
+   "blanks": [
+    {
+     "options": [
+      "endorsed",
+      "repudiated",
+      "disavowed",
+      "recanted",
+      "rebutted"
+     ],
+     "answer": "endorsed"
+    }
+   ],
+   "targets": [
+    "endorse",
+    "repudiate",
+    "disavow"
+   ],
+   "hint": "Kết quả: được khởi công.",
+   "explanation": "Mở đường cho xây dựng: thông qua, tán thành, endorsed.",
+   "difficulty": 1,
+   "skills": [
+    "continuation"
+   ],
+   "addedIn": "batch-03"
+  },
+  {
+   "id": "sr104",
+   "type": "se",
+   "sentence": "Long before it became fashionable, she {0} microfinance as a tool for empowering rural women.",
+   "options": [
+    "championed",
+    "advocated",
+    "repudiated",
+    "renounced",
+    "debunked",
+    "discredited"
+   ],
+   "answers": [
+    "championed",
+    "advocated"
+   ],
+   "targets": [
+    "champion",
+    "advocate",
+    "repudiate",
+    "renounce",
+    "debunk",
+    "discredit"
+   ],
+   "hint": "'Long before it became fashionable'.",
+   "explanation": "Ủng hộ từ trước khi thành trào lưu: championed, advocated. Repudiated và renounced là cặp từ bỏ, ngược nghĩa.",
+   "difficulty": 1,
+   "skills": [
+    "contrast"
+   ],
+   "addedIn": "batch-03"
+  },
+  {
+   "id": "sr105",
+   "type": "tc",
+   "sentence": "The appeals court {0} the lower court's ruling, leaving the fine in place.",
+   "blanks": [
+    {
+     "options": [
+      "upheld",
+      "recanted",
+      "controverted",
+      "retracted",
+      "eschewed"
+     ],
+     "answer": "upheld"
+    }
+   ],
+   "targets": [
+    "uphold",
+    "recant",
+    "retract"
+   ],
+   "hint": "'Leaving the fine in place'.",
+   "explanation": "Giữ nguyên phán quyết, tiền phạt vẫn áp dụng: upheld.",
+   "difficulty": 2,
+   "skills": [
+    "collocation"
+   ],
+   "addedIn": "batch-03"
+  },
+  {
+   "id": "sr106",
+   "type": "tc",
+   "sentence": "The revelation that he had fabricated data in two earlier papers {0} the economist so thoroughly that even his genuine findings were ignored.",
+   "blanks": [
+    {
+     "options": [
+      "discredited",
+      "vindicated",
+      "corroborated",
+      "endorsed",
+      "upheld"
+     ],
+     "answer": "discredited"
+    }
+   ],
+   "targets": [
+    "discredit",
+    "vindicate",
+    "corroborate"
+   ],
+   "hint": "Ngay cả kết quả thật cũng bị phớt lờ.",
+   "explanation": "Bịa dữ liệu, mất hết uy tín: discredited.",
+   "difficulty": 1,
+   "skills": [
+    "continuation"
+   ],
+   "addedIn": "batch-03"
+  },
+  {
+   "id": "sr107",
+   "type": "tc",
+   "sentence": "The study {0} the popular belief that the poor do not save, showing that low-income households set aside a larger share of irregular income than the rich.",
+   "blanks": [
+    {
+     "options": [
+      "debunks",
+      "espouses",
+      "champions",
+      "upholds",
+      "endorses"
+     ],
+     "answer": "debunks"
+    }
+   ],
+   "targets": [
+    "debunk",
+    "espouse",
+    "champion"
+   ],
+   "hint": "Kết quả nghiên cứu trái với quan niệm.",
+   "explanation": "Bác bỏ một quan niệm phổ biến bằng bằng chứng: debunks (debunk a myth/belief).",
+   "difficulty": 1,
+   "skills": [
+    "collocation"
+   ],
+   "addedIn": "batch-03"
+  },
+  {
+   "id": "sr108",
+   "type": "tc",
+   "sentence": "Her central finding has survived every attempt to {0} it; critics have instead {1} over minor details of the estimation.",
+   "blanks": [
+    {
+     "options": [
+      "controvert",
+      "corroborate",
+      "validate"
+     ],
+     "answer": "controvert"
+    },
+    {
+     "options": [
+      "quibbled",
+      "endorsed",
+      "espoused"
+     ],
+     "answer": "quibbled"
+    }
+   ],
+   "targets": [
+    "controvert",
+    "quibble"
+   ],
+   "hint": "'Survived every attempt to … it'.",
+   "explanation": "(i) Kết quả vượt qua mọi nỗ lực bác bỏ: controvert. Corroborate và validate không hợp với 'survived every attempt to … it'. (ii) 'Instead': chỉ bắt bẻ chi tiết nhỏ, quibbled.",
+   "difficulty": 2,
+   "skills": [
+    "contrast"
+   ],
+   "addedIn": "batch-03"
+  },
+  {
+   "id": "sr109",
+   "type": "tc",
+   "sentence": "Severe malnutrition in early childhood can permanently {0} cognitive development.",
+   "blanks": [
+    {
+     "options": [
+      "impair",
+      "validate",
+      "buttress",
+      "bolster",
+      "corroborate"
+     ],
+     "answer": "impair"
+    }
+   ],
+   "targets": [
+    "impair",
+    "buttress",
+    "bolster"
+   ],
+   "hint": "Tác hại của suy dinh dưỡng.",
+   "explanation": "Suy dinh dưỡng làm suy giảm phát triển nhận thức: impair.",
+   "difficulty": 1,
+   "skills": [
+    "continuation"
+   ],
+   "addedIn": "batch-03"
+  },
+  {
+   "id": "sr110",
+   "type": "tc",
+   "sentence": "Threatened with dismissal, the scientist publicly {0} his earlier claims, though in private letters he continued to defend them.",
+   "blanks": [
+    {
+     "options": [
+      "recanted",
+      "espoused",
+      "championed",
+      "upheld",
+      "corroborated"
+     ],
+     "answer": "recanted"
+    }
+   ],
+   "targets": [
+    "recant",
+    "espouse",
+    "champion",
+    "uphold"
+   ],
+   "hint": "'Publicly… though in private'.",
+   "explanation": "Công khai rút lại nhưng riêng tư vẫn bảo vệ: recanted.",
+   "difficulty": 2,
+   "skills": [
+    "contrast"
+   ],
+   "addedIn": "batch-03"
+  },
+  {
+   "id": "sr111",
+   "type": "tc",
+   "sentence": "The authors deliberately {0} strong structural assumptions, preferring a design that lets the data speak for themselves.",
+   "blanks": [
+    {
+     "options": [
+      "eschew",
+      "espouse",
+      "champion",
+      "advocate",
+      "endorse"
+     ],
+     "answer": "eschew"
+    }
+   ],
+   "targets": [
+    "eschew",
+    "espouse",
+    "champion",
+    "advocate"
+   ],
+   "hint": "'Preferring a design that…'.",
+   "explanation": "Cố ý tránh giả định mạnh: eschew.",
+   "difficulty": 2,
+   "skills": [
+    "contrast"
+   ],
+   "addedIn": "batch-03"
+  },
+  {
+   "id": "sr112",
+   "type": "se",
+   "sentence": "After independent researchers failed to reproduce its results, the journal {0} the article.",
+   "options": [
+    "retracted",
+    "withdrew",
+    "endorsed",
+    "upheld",
+    "espoused",
+    "championed"
+   ],
+   "answers": [
+    "retracted",
+    "withdrew"
+   ],
+   "targets": [
+    "retract",
+    "endorse",
+    "uphold",
+    "espouse",
+    "champion"
+   ],
+   "hint": "Hậu quả của việc không tái lập được.",
+   "explanation": "Không tái lập được kết quả: rút bài, retracted, withdrew.",
+   "difficulty": 1,
+   "skills": [
+    "continuation"
+   ],
+   "addedIn": "batch-03"
+  },
+  {
+   "id": "sr113",
+   "type": "tc",
+   "sentence": "The ministry quickly {0} the leaked memo, insisting that it reflected the personal views of a junior official rather than government policy.",
+   "blanks": [
+    {
+     "options": [
+      "disavowed",
+      "endorsed",
+      "upheld",
+      "espoused",
+      "corroborated"
+     ],
+     "answer": "disavowed"
+    }
+   ],
+   "targets": [
+    "disavow",
+    "endorse",
+    "uphold"
+   ],
+   "hint": "'Personal views… rather than government policy'.",
+   "explanation": "Chối bỏ liên quan đến bản ghi nhớ: disavowed.",
+   "difficulty": 1,
+   "skills": [
+    "continuation"
+   ],
+   "addedIn": "batch-03"
+  },
+  {
+   "id": "sr114",
+   "type": "tc",
+   "sentence": "To take up the post, he was required to {0} his foreign citizenship.",
+   "blanks": [
+    {
+     "options": [
+      "renounce",
+      "espouse",
+      "corroborate",
+      "validate",
+      "bear out"
+     ],
+     "answer": "renounce"
+    }
+   ],
+   "targets": [
+    "renounce",
+    "espouse",
+    "corroborate"
+   ],
+   "hint": "Điều kiện để nhận chức.",
+   "explanation": "Từ bỏ quốc tịch (chính thức): renounce citizenship.",
+   "difficulty": 1,
+   "skills": [
+    "collocation"
+   ],
+   "addedIn": "batch-03"
+  },
+  {
+   "id": "sr115",
+   "type": "tc",
+   "sentence": "In a later interview she {0} her earlier claim, noting that the effect holds only for firms with fewer than fifty employees.",
+   "blanks": [
+    {
+     "options": [
+      "qualified",
+      "recanted",
+      "corroborated",
+      "debunked",
+      "espoused"
+     ],
+     "answer": "qualified"
+    }
+   ],
+   "targets": [
+    "qualify-v",
+    "recant",
+    "corroborate"
+   ],
+   "hint": "Rút lại hoàn toàn hay chỉ giới hạn lại?",
+   "explanation": "Thêm điều kiện, giới hạn phạm vi: qualified. Recanted là rút lại hoàn toàn, nhưng câu cho thấy bà vẫn giữ nhận định với các công ty nhỏ.",
+   "difficulty": 3,
+   "skills": [
+    "secondary-meaning",
+    "nuance"
+   ],
+   "addedIn": "batch-03"
+  },
+  {
+   "id": "sr116",
+   "type": "tc",
+   "sentence": "It is difficult to {0} the authors' optimistic conclusion with the weak results reported in their own tables.",
+   "blanks": [
+    {
+     "options": [
+      "reconcile",
+      "concede",
+      "gainsay",
+      "rebut",
+      "espouse"
+     ],
+     "answer": "reconcile"
+    }
+   ],
+   "targets": [
+    "reconcile",
+    "concede",
+    "gainsay",
+    "rebut"
+   ],
+   "hint": "Cấu trúc '… X with Y'.",
+   "explanation": "Cấu trúc 'reconcile X with Y': làm cho hai điều mâu thuẫn khớp nhau.",
+   "difficulty": 2,
+   "skills": [
+    "collocation"
+   ],
+   "addedIn": "batch-03"
+  },
+  {
+   "id": "sr117",
+   "type": "se",
+   "sentence": "Even the program's critics {0} that it reduced child mortality; their objection is to its cost, not its effectiveness.",
+   "options": [
+    "concede",
+    "acknowledge",
+    "gainsay",
+    "controvert",
+    "espouse",
+    "champion"
+   ],
+   "answers": [
+    "concede",
+    "acknowledge"
+   ],
+   "targets": [
+    "concede",
+    "acknowledge",
+    "gainsay",
+    "controvert",
+    "espouse",
+    "champion"
+   ],
+   "hint": "'Even the critics'.",
+   "explanation": "Thừa nhận dù đang phê phán: concede, acknowledge. Gainsay và controvert là cặp phản bác, ngược nghĩa.",
+   "difficulty": 1,
+   "skills": [
+    "contrast"
+   ],
+   "addedIn": "batch-03"
+  },
+  {
+   "id": "sr118",
+   "type": "tc",
+   "sentence": "Dismissed for decades by the profession, the theory was finally {0} when new data {1} its central prediction; several former critics even {2} their earlier objections in print.",
+   "blanks": [
+    {
+     "options": [
+      "vindicated",
+      "discredited",
+      "impaired"
+     ],
+     "answer": "vindicated"
+    },
+    {
+     "options": [
+      "bore out",
+      "undercut",
+      "vitiated"
+     ],
+     "answer": "bore out"
+    },
+    {
+     "options": [
+      "retracted",
+      "espoused",
+      "upheld"
+     ],
+     "answer": "retracted"
+    }
+   ],
+   "targets": [
+    "vindicate",
+    "bear-out",
+    "retract"
+   ],
+   "hint": "Diễn biến từ bị gạt bỏ đến được công nhận.",
+   "explanation": "(i) Bị gạt bỏ nhiều năm rồi được chứng minh đúng: vindicated. (ii) Dữ liệu mới xác nhận dự đoán: bore out. (iii) Người phê phán rút lại phản đối: retracted.",
+   "difficulty": 3,
+   "skills": [
+    "contrast",
+    "continuation"
+   ],
+   "addedIn": "batch-03"
+  }
+ ],
+ "lasting-fleeting": [
+  {
+   "id": "lf101",
+   "type": "tc",
+   "sentence": "The effect of the subsidy proved {0}: enrollment jumped in the first year but returned to its earlier level by the third.",
+   "blanks": [
+    {
+     "options": [
+      "transient",
+      "indelible",
+      "immutable",
+      "entrenched",
+      "inveterate"
+     ],
+     "answer": "transient"
+    }
+   ],
+   "targets": [
+    "transient",
+    "indelible",
+    "immutable"
+   ],
+   "hint": "Diễn biến sau dấu hai chấm.",
+   "explanation": "Tăng rồi quay về mức cũ: tác động tạm thời, transient.",
+   "difficulty": 1,
+   "skills": [
+    "continuation"
+   ],
+   "addedIn": "batch-03"
+  },
+  {
+   "id": "lf102",
+   "type": "tc",
+   "sentence": "Commuters caught only a {0} glimpse of the minister's motorcade as it sped past.",
+   "blanks": [
+    {
+     "options": [
+      "fleeting",
+      "abiding",
+      "perennial",
+      "indelible",
+      "inveterate"
+     ],
+     "answer": "fleeting"
+    }
+   ],
+   "targets": [
+    "fleeting",
+    "abiding",
+    "perennial"
+   ],
+   "hint": "Đoàn xe chạy vụt qua.",
+   "explanation": "Cụm 'a fleeting glimpse': thoáng thấy.",
+   "difficulty": 1,
+   "skills": [
+    "collocation"
+   ],
+   "addedIn": "batch-03"
+  },
+  {
+   "id": "lf103",
+   "type": "tc",
+   "sentence": "The poet tried to capture the {0} impressions of early morning, images that vanished almost as soon as they appeared.",
+   "blanks": [
+    {
+     "options": [
+      "fugitive",
+      "entrenched",
+      "inveterate",
+      "immutable",
+      "perennial"
+     ],
+     "answer": "fugitive"
+    }
+   ],
+   "targets": [
+    "fugitive",
+    "entrenched",
+    "inveterate"
+   ],
+   "hint": "'Vanished almost as soon as they appeared'.",
+   "explanation": "Thoáng qua, khó nắm bắt: fugitive (nghĩa phụ, không phải kẻ đào tẩu).",
+   "difficulty": 3,
+   "skills": [
+    "secondary-meaning"
+   ],
+   "addedIn": "batch-03"
+  },
+  {
+   "id": "lf104",
+   "type": "tc",
+   "sentence": "Her {0} interest in rural credit, which began during fieldwork as a student, shaped four decades of research.",
+   "blanks": [
+    {
+     "options": [
+      "abiding",
+      "transient",
+      "ephemeral",
+      "evanescent",
+      "fleeting"
+     ],
+     "answer": "abiding"
+    }
+   ],
+   "targets": [
+    "abiding",
+    "transient",
+    "ephemeral"
+   ],
+   "hint": "'Four decades'.",
+   "explanation": "Mối quan tâm kéo dài bốn thập kỷ: abiding (an abiding interest).",
+   "difficulty": 1,
+   "skills": [
+    "collocation"
+   ],
+   "addedIn": "batch-03"
+  },
+  {
+   "id": "lf105",
+   "type": "tc",
+   "sentence": "Earlier economists treated preferences as {0}, fixed once and for all; behavioral research suggests that they are shaped by context and experience.",
+   "blanks": [
+    {
+     "options": [
+      "immutable",
+      "protean",
+      "mutable",
+      "malleable",
+      "volatile"
+     ],
+     "answer": "immutable"
+    }
+   ],
+   "targets": [
+    "immutable",
+    "protean",
+    "mutable",
+    "malleable"
+   ],
+   "hint": "'Fixed once and for all'.",
+   "explanation": "'Fixed once and for all', đối lập với nghiên cứu hành vi: không thay đổi, immutable.",
+   "difficulty": 2,
+   "skills": [
+    "contrast"
+   ],
+   "addedIn": "batch-03"
+  },
+  {
+   "id": "lf106",
+   "type": "se",
+   "sentence": "An {0} optimist, the finance minister never revised a growth forecast downward in eight years in office.",
+   "options": [
+    "inveterate",
+    "incorrigible",
+    "transient",
+    "ephemeral",
+    "protean",
+    "mutable"
+   ],
+   "answers": [
+    "inveterate",
+    "incorrigible"
+   ],
+   "targets": [
+    "inveterate",
+    "transient",
+    "ephemeral",
+    "protean",
+    "mutable"
+   ],
+   "hint": "Tám năm không đổi.",
+   "explanation": "Lạc quan thành tật, không sửa được: inveterate, incorrigible. Transient và ephemeral là cặp tạm thời.",
+   "difficulty": 2,
+   "skills": [
+    "nuance"
+   ],
+   "addedIn": "batch-03"
+  },
+  {
+   "id": "lf107",
+   "type": "tc",
+   "sentence": "{0} interests, from landowners to local officials, blocked land reform for three decades.",
+   "blanks": [
+    {
+     "options": [
+      "Entrenched",
+      "Ephemeral",
+      "Transient",
+      "Evanescent",
+      "Fugitive"
+     ],
+     "answer": "Entrenched"
+    }
+   ],
+   "targets": [
+    "entrenched",
+    "ephemeral",
+    "transient"
+   ],
+   "hint": "Chặn cải cách ba mươi năm.",
+   "explanation": "Cụm 'entrenched interests': các nhóm lợi ích cố thủ.",
+   "difficulty": 1,
+   "skills": [
+    "collocation"
+   ],
+   "addedIn": "batch-03"
+  },
+  {
+   "id": "lf108",
+   "type": "tc",
+   "sentence": "The famine of 1945 left an {0} mark on the region's collective memory, still visible in the way elderly residents store rice.",
+   "blanks": [
+    {
+     "options": [
+      "indelible",
+      "evanescent",
+      "ephemeral",
+      "transient",
+      "fleeting"
+     ],
+     "answer": "indelible"
+    }
+   ],
+   "targets": [
+    "indelible",
+    "evanescent",
+    "ephemeral"
+   ],
+   "hint": "'Still visible'.",
+   "explanation": "Dấu ấn không thể xóa nhòa: an indelible mark.",
+   "difficulty": 1,
+   "skills": [
+    "collocation"
+   ],
+   "addedIn": "batch-03"
+  },
+  {
+   "id": "lf109",
+   "type": "tc",
+   "sentence": "'Inequality' is a {0} concept: it can refer to income, wealth, opportunity or outcomes, and dozens of measures compete to capture each.",
+   "blanks": [
+    {
+     "options": [
+      "protean",
+      "immutable",
+      "ossified",
+      "stagnant",
+      "inert"
+     ],
+     "answer": "protean"
+    }
+   ],
+   "targets": [
+    "protean",
+    "immutable",
+    "ossified"
+   ],
+   "hint": "Nhiều nghĩa, nhiều thước đo.",
+   "explanation": "Khái niệm có nhiều hình thái: protean.",
+   "difficulty": 2,
+   "skills": [
+    "continuation"
+   ],
+   "addedIn": "batch-03"
+  },
+  {
+   "id": "lf110",
+   "type": "tc",
+   "sentence": "The family firm survived the {0} of a century, from war and hyperinflation to nationalization and its eventual reversal.",
+   "blanks": [
+    {
+     "options": [
+      "vicissitudes",
+      "stagnation",
+      "inertia",
+      "permanence",
+      "quiescence"
+     ],
+     "answer": "vicissitudes"
+    }
+   ],
+   "targets": [
+    "vicissitudes",
+    "stagnant",
+    "inert",
+    "quiescent"
+   ],
+   "hint": "Chiến tranh, siêu lạm phát, quốc hữu hóa.",
+   "explanation": "Những thăng trầm: the vicissitudes of X.",
+   "difficulty": 2,
+   "skills": [
+    "collocation"
+   ],
+   "addedIn": "batch-03"
+  },
+  {
+   "id": "lf111",
+   "type": "se",
+   "sentence": "Commodity prices {0} wildly over the decade, tripling in some years and collapsing in others.",
+   "options": [
+    "fluctuated",
+    "swung",
+    "stagnated",
+    "ossified",
+    "endured",
+    "abided"
+   ],
+   "answers": [
+    "fluctuated",
+    "swung"
+   ],
+   "targets": [
+    "fluctuate",
+    "stagnant",
+    "ossified",
+    "enduring",
+    "abiding"
+   ],
+   "hint": "Tăng gấp ba rồi sụp đổ.",
+   "explanation": "Lên xuống thất thường: fluctuated, swung. Stagnated và ossified là cặp trì trệ.",
+   "difficulty": 1,
+   "skills": [
+    "continuation"
+   ],
+   "addedIn": "batch-03"
+  },
+  {
+   "id": "lf112",
+   "type": "tc",
+   "sentence": "Policy {0} between austerity and stimulus, with each new government reversing the course set by the last.",
+   "blanks": [
+    {
+     "options": [
+      "oscillated",
+      "stagnated",
+      "ossified",
+      "endured",
+      "persisted"
+     ],
+     "answer": "oscillated"
+    }
+   ],
+   "targets": [
+    "oscillate",
+    "stagnant",
+    "ossified"
+   ],
+   "hint": "Cấu trúc 'between X and Y'.",
+   "explanation": "Dao động qua lại giữa hai trạng thái: oscillated between X and Y.",
+   "difficulty": 2,
+   "skills": [
+    "collocation"
+   ],
+   "addedIn": "batch-03"
+  },
+  {
+   "id": "lf113",
+   "type": "tc",
+   "sentence": "With the regulations still in {0}, few firms were willing to commit to long-term investments.",
+   "blanks": [
+    {
+     "options": [
+      "flux",
+      "quiescence",
+      "inertia",
+      "permanence",
+      "vicissitudes"
+     ],
+     "answer": "flux"
+    }
+   ],
+   "targets": [
+    "flux",
+    "quiescent",
+    "inert",
+    "vicissitudes"
+   ],
+   "hint": "Cụm 'in …'.",
+   "explanation": "Quy định còn đang thay đổi: in flux.",
+   "difficulty": 2,
+   "skills": [
+    "collocation"
+   ],
+   "addedIn": "batch-03"
+  },
+  {
+   "id": "lf114",
+   "type": "tc",
+   "sentence": "Unlike the constitution, which can be amended only with great difficulty, ordinary statutes are relatively {0}.",
+   "blanks": [
+    {
+     "options": [
+      "mutable",
+      "immutable",
+      "entrenched",
+      "indelible",
+      "inveterate"
+     ],
+     "answer": "mutable"
+    }
+   ],
+   "targets": [
+    "mutable",
+    "immutable",
+    "entrenched"
+   ],
+   "hint": "'Unlike'.",
+   "explanation": "'Unlike' đổi chiều với 'amended only with great difficulty': dễ thay đổi, mutable. Immutable là bẫy hình thức.",
+   "difficulty": 2,
+   "skills": [
+    "contrast",
+    "lookalike"
+   ],
+   "addedIn": "batch-03"
+  },
+  {
+   "id": "lf115",
+   "type": "se",
+   "sentence": "Real wages remained {0} for a decade, barely rising even as productivity grew.",
+   "options": [
+    "stagnant",
+    "flat",
+    "protean",
+    "mercurial",
+    "transient",
+    "fleeting"
+   ],
+   "answers": [
+    "stagnant",
+    "flat"
+   ],
+   "targets": [
+    "stagnant",
+    "protean",
+    "mercurial",
+    "transient",
+    "fleeting"
+   ],
+   "hint": "'Barely rising'.",
+   "explanation": "Gần như không tăng: stagnant, flat. Transient và fleeting là cặp ngắn ngủi.",
+   "difficulty": 1,
+   "skills": [
+    "continuation"
+   ],
+   "addedIn": "batch-03"
+  },
+  {
+   "id": "lf116",
+   "type": "tc",
+   "sentence": "The committee remained {0} while the crisis deepened, issuing no statements and taking no action for six weeks.",
+   "blanks": [
+    {
+     "options": [
+      "inert",
+      "protean",
+      "volatile",
+      "mercurial",
+      "capricious"
+     ],
+     "answer": "inert"
+    }
+   ],
+   "targets": [
+    "inert",
+    "protean",
+    "volatile"
+   ],
+   "hint": "'No action for six weeks'.",
+   "explanation": "Không hành động suốt sáu tuần: trơ, bất động, inert.",
+   "difficulty": 1,
+   "skills": [
+    "continuation"
+   ],
+   "addedIn": "batch-03"
+  },
+  {
+   "id": "lf117",
+   "type": "tc",
+   "sentence": "Once thought to be an {0} feature of the economy, the high saving rate turned out to be surprisingly {1}: it fell sharply within a decade, as {2} habits of thrift gave way to the spending patterns of a younger generation.",
+   "blanks": [
+    {
+     "options": [
+      "immutable",
+      "transient",
+      "evanescent"
+     ],
+     "answer": "immutable"
+    },
+    {
+     "options": [
+      "mutable",
+      "entrenched",
+      "indelible"
+     ],
+     "answer": "mutable"
+    },
+    {
+     "options": [
+      "ingrained",
+      "ephemeral",
+      "fugitive"
+     ],
+     "answer": "ingrained"
+    }
+   ],
+   "targets": [
+    "immutable",
+    "mutable",
+    "ingrained"
+   ],
+   "hint": "'Once thought… turned out'.",
+   "explanation": "(i) Từng được coi là đặc điểm không đổi: immutable. (ii) 'Surprisingly', giảm mạnh trong mười năm: dễ thay đổi, mutable. (iii) Thói quen tiết kiệm ăn sâu: ingrained.",
+   "difficulty": 3,
+   "skills": [
+    "contrast",
+    "lookalike"
+   ],
+   "addedIn": "batch-03"
+  }
+ ]
+}

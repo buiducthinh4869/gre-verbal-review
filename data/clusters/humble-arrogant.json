@@ -736,6 +736,532 @@
         "nuance"
       ],
       "addedIn": "base"
+    },
+    {
+      "id": "ha101",
+      "type": "tc",
+      "sentence": "Despite having founded two of the country's largest companies, she remained remarkably {0}, taking the bus to work and introducing herself only by her first name.",
+      "blanks": [
+        {
+          "options": [
+            "unassuming",
+            "imperious",
+            "haughty",
+            "supercilious",
+            "vainglorious"
+          ],
+          "answer": "unassuming"
+        }
+      ],
+      "targets": [
+        "unassuming",
+        "imperious",
+        "haughty"
+      ],
+      "hint": "'Despite'.",
+      "explanation": "'Despite… remarkably': giàu có, thành đạt mà vẫn giản dị, khiêm tốn: unassuming.",
+      "difficulty": 1,
+      "skills": [
+        "contrast"
+      ],
+      "addedIn": "batch-03"
+    },
+    {
+      "id": "ha102",
+      "type": "tc",
+      "sentence": "{0} investors, frightened by the first rumor of trouble, withdrew their money days before the bank's position was revealed to be perfectly sound.",
+      "blanks": [
+        {
+          "options": [
+            "Timorous",
+            "Brash",
+            "Audacious",
+            "Brazen",
+            "Complacent"
+          ],
+          "answer": "Timorous"
+        }
+      ],
+      "targets": [
+        "timorous",
+        "brash",
+        "audacious",
+        "complacent"
+      ],
+      "hint": "'Frightened by the first rumor'.",
+      "explanation": "Sợ hãi ngay từ tin đồn đầu tiên: nhút nhát, timorous.",
+      "difficulty": 1,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-03"
+    },
+    {
+      "id": "ha103",
+      "type": "tc",
+      "sentence": "The hearing was postponed in {0} to the minister's period of mourning.",
+      "blanks": [
+        {
+          "options": [
+            "deference",
+            "defiance",
+            "effrontery",
+            "hubris",
+            "temerity"
+          ],
+          "answer": "deference"
+        }
+      ],
+      "targets": [
+        "deference",
+        "defiance",
+        "effrontery",
+        "temerity"
+      ],
+      "hint": "Cụm cố định 'in … to'.",
+      "explanation": "Cụm cố định 'in deference to X': vì tôn trọng X. 'In defiance of' là bất chấp, dùng giới từ khác và nghĩa ngược lại.",
+      "difficulty": 2,
+      "skills": [
+        "collocation"
+      ],
+      "addedIn": "batch-03"
+    },
+    {
+      "id": "ha104",
+      "type": "se",
+      "sentence": "The restaurant is {0}, with plain wooden tables and a handwritten menu, yet its food draws critics from across the country.",
+      "options": [
+        "unpretentious",
+        "unassuming",
+        "ostentatious",
+        "pretentious",
+        "haughty",
+        "imperious"
+      ],
+      "answers": [
+        "unpretentious",
+        "unassuming"
+      ],
+      "targets": [
+        "unpretentious",
+        "unassuming",
+        "ostentatious",
+        "pretentious"
+      ],
+      "hint": "Bàn gỗ đơn sơ, thực đơn viết tay.",
+      "explanation": "Giản dị, không màu mè: unpretentious, unassuming. Ostentatious và pretentious là cặp ngược nghĩa.",
+      "difficulty": 2,
+      "skills": [
+        "continuation",
+        "contrast"
+      ],
+      "addedIn": "batch-03"
+    },
+    {
+      "id": "ha105",
+      "type": "tc",
+      "sentence": "The {0} official refused even to meet the villagers' delegation, sending a junior clerk to tell them that he had more important matters to attend to.",
+      "blanks": [
+        {
+          "options": [
+            "haughty",
+            "diffident",
+            "self-effacing",
+            "timorous",
+            "deferential"
+          ],
+          "answer": "haughty"
+        }
+      ],
+      "targets": [
+        "haughty",
+        "diffident",
+        "self-effacing"
+      ],
+      "hint": "Thái độ với dân làng.",
+      "explanation": "Không thèm gặp dân, cho rằng mình có việc quan trọng hơn: kiêu căng, haughty.",
+      "difficulty": 1,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-03"
+    },
+    {
+      "id": "ha106",
+      "type": "tc",
+      "sentence": "Explaining what a regression is to a room full of econometricians struck the audience as faintly {0}.",
+      "blanks": [
+        {
+          "options": [
+            "patronizing",
+            "imperious",
+            "impudent",
+            "diffident",
+            "timorous"
+          ],
+          "answer": "patronizing"
+        }
+      ],
+      "targets": [
+        "patronizing",
+        "imperious",
+        "impudent"
+      ],
+      "hint": "Coi người nghe như người mới học.",
+      "explanation": "Giảng điều cơ bản cho chuyên gia, như coi họ là người mới: kẻ cả, patronizing. Imperious là ra lệnh hống hách; impudent là hỗn láo với người trên.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "batch-03"
+    },
+    {
+      "id": "ha107",
+      "type": "se",
+      "sentence": "The {0} general commissioned three statues of himself and renamed the capital's main square in his own honor.",
+      "options": [
+        "vainglorious",
+        "conceited",
+        "diffident",
+        "self-effacing",
+        "peremptory",
+        "imperious"
+      ],
+      "answers": [
+        "vainglorious",
+        "conceited"
+      ],
+      "targets": [
+        "vainglorious",
+        "conceited",
+        "diffident",
+        "self-effacing",
+        "peremptory",
+        "imperious"
+      ],
+      "hint": "Phù phiếm hay hống hách?",
+      "explanation": "Tự dựng tượng, đặt tên quảng trường theo mình: khoe khoang, tự phụ, vainglorious, conceited. Peremptory và imperious là cặp ra lệnh hống hách, không nhấn vào sự phù phiếm.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "batch-03"
+    },
+    {
+      "id": "ha108",
+      "type": "tc",
+      "sentence": "With an {0} wave of her hand, the director dismissed the committee's objections and ordered the plan carried out at once.",
+      "blanks": [
+        {
+          "options": [
+            "imperious",
+            "diffident",
+            "unassuming",
+            "self-effacing",
+            "timorous"
+          ],
+          "answer": "imperious"
+        }
+      ],
+      "targets": [
+        "imperious",
+        "diffident",
+        "unassuming"
+      ],
+      "hint": "Một cử chỉ ra lệnh.",
+      "explanation": "Phẩy tay gạt phản đối, ra lệnh làm ngay: hống hách, imperious.",
+      "difficulty": 1,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-03"
+    },
+    {
+      "id": "ha109",
+      "type": "se",
+      "sentence": "A {0} supervisor can silence an entire lab: junior researchers stop proposing ideas when every suggestion is overruled.",
+      "options": [
+        "domineering",
+        "overbearing",
+        "diffident",
+        "timorous",
+        "smug",
+        "complacent"
+      ],
+      "answers": [
+        "domineering",
+        "overbearing"
+      ],
+      "targets": [
+        "domineering",
+        "overbearing",
+        "diffident",
+        "timorous",
+        "smug",
+        "complacent"
+      ],
+      "hint": "Mọi đề xuất đều bị gạt.",
+      "explanation": "Gạt bỏ mọi đề xuất, áp đặt: domineering, overbearing. Smug và complacent là cặp tự mãn.",
+      "difficulty": 1,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-03"
+    },
+    {
+      "id": "ha110",
+      "type": "tc",
+      "sentence": "Local officials complained about the ministry's {0} decision to redraw district boundaries without consulting a single resident.",
+      "blanks": [
+        {
+          "options": [
+            "high-handed",
+            "self-effacing",
+            "diffident",
+            "timorous",
+            "unassuming"
+          ],
+          "answer": "high-handed"
+        }
+      ],
+      "targets": [
+        "high-handed",
+        "self-effacing",
+        "diffident"
+      ],
+      "hint": "'Without consulting a single resident'.",
+      "explanation": "Quyết định không hỏi ý ai: độc đoán, high-handed.",
+      "difficulty": 1,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-03"
+    },
+    {
+      "id": "ha111",
+      "type": "tc",
+      "sentence": "Staff who had expected the new chair to be {0}, given her modest manner in interviews, were dismayed to find her {1}, issuing orders by memo and treating every question as a challenge to her authority.",
+      "blanks": [
+        {
+          "options": [
+            "self-effacing",
+            "supercilious",
+            "brazen"
+          ],
+          "answer": "self-effacing"
+        },
+        {
+          "options": [
+            "imperious",
+            "unassuming",
+            "timorous"
+          ],
+          "answer": "imperious"
+        }
+      ],
+      "targets": [
+        "self-effacing",
+        "imperious"
+      ],
+      "hint": "'Expected… dismayed'.",
+      "explanation": "(i) 'Modest manner': khiêm nhường, self-effacing. (ii) 'Dismayed', ra lệnh qua giấy tờ, coi mọi câu hỏi là thách thức: hống hách, imperious.",
+      "difficulty": 2,
+      "skills": [
+        "contrast"
+      ],
+      "addedIn": "batch-03"
+    },
+    {
+      "id": "ha112",
+      "type": "tc",
+      "sentence": "The junior clerk's {0} reply to the auditor, 'Find it yourself', earned him a formal reprimand.",
+      "blanks": [
+        {
+          "options": [
+            "impudent",
+            "deferential",
+            "timorous",
+            "diffident",
+            "unassuming"
+          ],
+          "answer": "impudent"
+        }
+      ],
+      "targets": [
+        "impudent",
+        "deferential",
+        "timorous"
+      ],
+      "hint": "Câu trả lời trong ngoặc.",
+      "explanation": "Trả lời kiểu 'Tự đi mà tìm' với kiểm toán viên: hỗn láo, impudent.",
+      "difficulty": 1,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-03"
+    },
+    {
+      "id": "ha113",
+      "type": "tc",
+      "sentence": "After causing the losses himself, the trader had the {0} to blame the compliance team for failing to stop him.",
+      "blanks": [
+        {
+          "options": [
+            "effrontery",
+            "deference",
+            "diffidence",
+            "humility",
+            "probity"
+          ],
+          "answer": "effrontery"
+        }
+      ],
+      "targets": [
+        "effrontery",
+        "deference",
+        "diffident",
+        "probity"
+      ],
+      "hint": "Cấu trúc 'had the … to'.",
+      "explanation": "Gây lỗ rồi đổ cho người khác: trơ trẽn, have the effrontery to.",
+      "difficulty": 2,
+      "skills": [
+        "collocation",
+        "nuance"
+      ],
+      "addedIn": "batch-03"
+    },
+    {
+      "id": "ha114",
+      "type": "se",
+      "sentence": "The student's {0} remarks to the examiner, delivered with a smirk, ensured that he failed the oral exam.",
+      "options": [
+        "insolent",
+        "impertinent",
+        "deferential",
+        "respectful",
+        "diffident",
+        "timorous"
+      ],
+      "answers": [
+        "insolent",
+        "impertinent"
+      ],
+      "targets": [
+        "insolent",
+        "deferential",
+        "diffident",
+        "timorous"
+      ],
+      "hint": "'Delivered with a smirk'.",
+      "explanation": "Nói với giám khảo kèm nụ cười khẩy: láo xược, insolent, impertinent. Deferential và respectful là cặp ngược nghĩa.",
+      "difficulty": 1,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-03"
+    },
+    {
+      "id": "ha115",
+      "type": "tc",
+      "sentence": "It would be {0} of me to speak on behalf of the committee before it has even met.",
+      "blanks": [
+        {
+          "options": [
+            "presumptuous",
+            "diffident",
+            "timorous",
+            "self-effacing",
+            "deferential"
+          ],
+          "answer": "presumptuous"
+        }
+      ],
+      "targets": [
+        "presumptuous",
+        "diffident",
+        "self-effacing"
+      ],
+      "hint": "Làm điều mình chưa có quyền làm.",
+      "explanation": "Tự tiện nói thay hội đồng khi chưa có quyền: presumptuous.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "batch-03"
+    },
+    {
+      "id": "ha116",
+      "type": "tc",
+      "sentence": "The incumbent's {0} confidence (he had told reporters the result was 'a formality') evaporated on election night.",
+      "blanks": [
+        {
+          "options": [
+            "smug",
+            "diffident",
+            "timorous",
+            "self-effacing",
+            "unassuming"
+          ],
+          "answer": "smug"
+        }
+      ],
+      "targets": [
+        "smug",
+        "diffident",
+        "timorous"
+      ],
+      "hint": "'A formality'.",
+      "explanation": "Coi kết quả là chuyện đương nhiên: tự mãn, smug.",
+      "difficulty": 1,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-03"
+    },
+    {
+      "id": "ha117",
+      "type": "tc",
+      "sentence": "The firm's founders, once {0} enough to admit their early mistakes, grew so {1} after a decade of success that they dismissed every warning; the collapse that followed was a textbook case of {2}.",
+      "blanks": [
+        {
+          "options": [
+            "self-effacing",
+            "imperious",
+            "brazen"
+          ],
+          "answer": "self-effacing"
+        },
+        {
+          "options": [
+            "complacent",
+            "diffident",
+            "timorous"
+          ],
+          "answer": "complacent"
+        },
+        {
+          "options": [
+            "hubris",
+            "deference",
+            "temerity"
+          ],
+          "answer": "hubris"
+        }
+      ],
+      "targets": [
+        "self-effacing",
+        "complacent",
+        "hubris"
+      ],
+      "hint": "Ba giai đoạn: trước, sau mười năm, kết cục.",
+      "explanation": "(i) Sẵn sàng nhận lỗi: khiêm nhường, self-effacing. (ii) Sau mười năm thành công thì gạt mọi cảnh báo: tự mãn, complacent. (iii) Kiêu ngạo dẫn tới sụp đổ: hubris. Temerity là sự liều lĩnh trong một hành động, không hàm ý kiêu ngạo dẫn đến sụp đổ.",
+      "difficulty": 3,
+      "skills": [
+        "contrast",
+        "continuation"
+      ],
+      "addedIn": "batch-03"
     }
   ]
 }
