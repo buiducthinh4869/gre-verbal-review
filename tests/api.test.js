@@ -410,3 +410,23 @@ test('cài đặt skipVocabIntro được lưu (khóa cài đặt mới)', () =>
   assert.equal(t.call('saveEvents', { events: [ev] }, a).ok, true);
   assert.equal(t.call('getState', {}, a).data.settings.skipVocabIntro, true);
 });
+
+test('danh sách hôm nay: khóa todayNew:/todayDue:<ngày> lưu mảng id (lọc id lạ, tối đa 80); khóa lạ khác vẫn bị bỏ', () => {
+  const t = ready();
+  const a = t.loginReady('user01');
+  const before = t.sheet('settings').data.length;
+  t.call('saveSettings', { settings: { 'todayNew:2026-11-11': ['laud', 'extol', 'laud', 'BAD ID', 42, 'c-abc123'], 'todayDue:2026-11-11': ['vilify'], 'todayNew:x': ['laud'], 'todayFoo:2026-11-11': ['laud'] } }, a);
+  const st = t.call('getState', {}, a).data.settings;
+  assert.deepEqual(st['todayNew:2026-11-11'], ['laud', 'extol', 'c-abc123']);
+  assert.deepEqual(st['todayDue:2026-11-11'], ['vilify']);
+  assert.ok(!('todayNew:x' in st) && !('todayFoo:2026-11-11' in st));
+  assert.equal(t.sheet('settings').data.length, before + 2, 'mỗi khóa một dòng mới');
+  // ghi lại cùng ngày: cập nhật dòng đó, không thêm dòng
+  t.call('saveEvents', { events: [{ id: 'tn-2', type: 'setting', ts: new Date().toISOString(), key: 'todayNew:2026-11-11', value: Array.from({ length: 120 }, (_, i) => 'w' + i) }] }, a);
+  assert.equal(t.call('getState', {}, a).data.settings['todayNew:2026-11-11'].length, 80);
+  assert.equal(t.sheet('settings').data.length, before + 2);
+  // chỉ dòng của người gửi
+  const sh = t.sheet('settings');
+  const ui = sh.data[0].indexOf('userId'), ki = sh.data[0].indexOf('key');
+  sh.data.slice(1).filter((r) => /^today/.test(String(r[ki]))).forEach((r) => assert.equal(r[ui], 'u01'));
+});

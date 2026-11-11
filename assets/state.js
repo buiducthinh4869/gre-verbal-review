@@ -7,9 +7,10 @@ import { doneFixedIds, heldExerciseIds } from './bank.js';
 import { applyOverrides } from './overrides.js';
 import { escapeHtml as esc } from './render.js';
 import { LS } from './api.js';
+import * as TL from './todaylist.js';
 import { EXAM_DATE } from '../config.js';
 
-export { S, esc, EXAM_DATE };
+export { S, TL, esc, EXAM_DATE };
 export const SESSION_MAX = 40;
 export const DEFAULT_SETTINGS = { newPerDay: 10, autoStart: false, thinkFirst: true, examMode: false, skipVocabIntro: false };
 
@@ -32,7 +33,9 @@ export const App = {
   view: 'today',
   session: null,
   vocab: { c: null, g: null, all: false, open: null, q: '', prio: 'all', status: 'all' },
-  practice: { clusters: [], group: 'all', p3: false, leech: false, mode: 'w2m', count: '20', kinds: [], diffs: [], skills: [], onlyNew: false, useGroup: 'all' },
+  // today: null = phạm vi theo cụm; 'all' | 'due' | 'new' | 'leech' = phạm vi "Danh sách hôm nay" (cả danh sách hoặc một thẻ)
+  practice: { clusters: [], group: 'all', p3: false, leech: false, mode: 'w2m', count: '20', kinds: [], diffs: [], skills: [], onlyNew: false, useGroup: 'all', today: null },
+  todayList: { tab: null, open: null }, // khối Danh sách hôm nay: thẻ đang mở (null = tự chọn), mở / thu gọn (null = theo khổ màn hình)
   editId: null,
   keyHandler: null,
   timer: null,
@@ -79,7 +82,7 @@ export function applyState(st, opts = {}) {
   App.progress = {};
   Object.keys(st.progress || {}).forEach((id) => { App.progress[id] = S.normalizeState(st.progress[id]); });
   App.customWords = (st.customWords || []).slice();
-  App.settings = Object.assign({}, DEFAULT_SETTINGS, st.settings || {});
+  App.settings = Object.assign({}, DEFAULT_SETTINGS, TL.dropStaleDayKeys(st.settings || {}, today()));
   App.daily = Object.assign({}, st.daily || {});
   App.exLast = Object.assign({}, st.exLast || {});
   App.exRes = Object.assign({}, st.exRes || {});
@@ -207,9 +210,32 @@ export const activeDays = () => Object.keys(App.daily).filter((d) => App.daily[d
 export function leechWords() {
   return App.idx.words.filter((w) => S.isLeech(stateOf(w.id))).sort((a, b) => stateOf(b.id).lapses - stateOf(a.id).lapses);
 }
+/** Phiên ôn hôm nay: từ đến hạn + đúng các từ mới cố định của hôm nay (todayLists().new) còn chưa học. */
 export function dailyQueue() {
-  return S.buildDailyQueue(App.idx, App.progress, { today: today(), newLimit: Number(App.settings.newPerDay) || 0, newDoneToday: newToday(), max: SESSION_MAX });
+  return S.buildDailyQueue(App.idx, App.progress, { today: today(), newIds: todayLists().new, max: SESSION_MAX });
 }
+
+/**
+ * Danh sách hôm nay {due, new, leech} (mảng id từ). Từ mới cố định trong ngày và ảnh chụp Đến hạn đầu ngày được lưu ở
+ * cài đặt todayNew:<ngày> / todayDue:<ngày> (đồng bộ giữa các thiết bị). Chỉ lưu khi đã tải trạng thái từ server trong
+ * hôm nay, để máy đang dùng bộ nhớ đệm cũ không ghi đè danh sách đã chọn ở máy khác.
+ */
+export function todayLists() {
+  const t = today();
+  const fresh = App.lastRefresh > 0 && S.vnDate(App.lastRefresh + App.clockOffset) === t;
+  const nw = TL.pickTodayNew(App.idx, App.progress, { today: t, newLimit: Number(App.settings.newPerDay) || 0, newDoneToday: newToday(), stored: App.settings[TL.newKey(t)] });
+  if (nw.save && fresh) setSetting(TL.newKey(t), nw.ids);
+  const du = TL.pickTodayDue(App.idx, App.progress, { today: t, stored: App.settings[TL.dueKey(t)], newIds: nw.ids });
+  if (du.save && fresh) setSetting(TL.dueKey(t), du.ids);
+  return { due: du.ids, new: nw.ids, leech: TL.pickLeech(App.idx, App.progress) };
+}
+/** Id các từ của Danh sách hôm nay theo phạm vi: 'all' (cả danh sách, không trùng) hoặc một thẻ. */
+export function todayScopeIds(card) {
+  const L = todayLists();
+  return card === 'all' ? TL.unionIds(L) : (L[card] || []);
+}
+/** Từ đã có câu trả lời hôm nay (giờ Việt Nam). */
+export const reviewedToday = () => TL.reviewedToday(App.progress, today());
 export function statusTag(id) {
   const st = S.statusOf(stateOf(id));
   if (st === 'new') return '';

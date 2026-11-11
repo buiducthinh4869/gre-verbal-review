@@ -13,6 +13,7 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const mockIndex = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/mocks/index.json'), 'utf8'));
 const mocks = mockIndex.mocks.map((id) => JSON.parse(fs.readFileSync(path.join(ROOT, 'data/mocks', id + '.json'), 'utf8')));
 const mock01 = mocks.find((m) => m.id === 'mock-01');
+const mock02 = mocks.find((m) => m.id === 'mock-02');
 
 /* ---------------- Ánh xạ phương án → id ---------------- */
 
@@ -64,24 +65,25 @@ test('wrongAnswerIds: TC chỉ lấy chỗ trống sai; SE lấy đáp án khôn
 
 /* ---------------- Phân loại, bộ lọc, ngân hàng câu ---------------- */
 
-test('ngân hàng câu: 222 câu = 113 TC1 + 32 TC2 + 5 TC3 + 72 SE; tổng theo cụm khớp', () => {
+test('ngân hàng câu: 289 câu = 153 TC1 + 39 TC2 + 8 TC3 + 89 SE; tổng theo cụm khớp', () => {
   const b = B.bankTable(idx);
-  assert.deepEqual(b.total, { tc1: 113, tc2: 32, tc3: 5, se: 72, total: 222 });
+  assert.deepEqual(b.total, { tc1: 153, tc2: 39, tc3: 8, se: 89, total: 289 });
   assert.equal(b.rows.length, 16);
-  assert.equal(b.rows.reduce((a, r) => a + r.total, 0), 222);
+  assert.equal(b.rows.reduce((a, r) => a + r.total, 0), 289);
   b.rows.forEach((r) => assert.equal(r.tc1 + r.tc2 + r.tc3 + r.se, r.total));
 });
 
 test('bộ lọc: TC 3 chỗ trống ra đúng câu có 3 cột; kỹ năng Nghĩa phụ có co102, co109; câu mới; độ khó; nhóm', () => {
   const all = idx.exercises;
   const tc3 = B.filterExercises(all, { kinds: ['tc3'] });
-  assert.equal(tc3.length, 5);
+  assert.equal(tc3.length, 8);
   assert.ok(tc3.every((e) => e.type === 'tc' && e.blanks.length === 3));
   const sec = B.filterExercises(all, { skills: ['secondary-meaning'] }).map((e) => e.id);
   assert.ok(sec.includes('co102') && sec.includes('co109'), sec.join(','));
   const fresh = B.filterExercises(all, { onlyNew: true });
-  assert.equal(fresh.length, 67);
-  assert.ok(fresh.every((e) => /^(pc1|co1|sy1|wc1)/.test(e.id)));
+  assert.equal(fresh.length, 134);
+  assert.ok(fresh.every((e) => /^(pc1|co1|sy1|wc1|ma1|hp1|on1|hd1)/.test(e.id)));
+  assert.equal(fresh.filter((e) => e.addedIn === 'batch-02').length, 67);
   const hard = B.filterExercises(all, { diffs: [3] });
   assert.ok(hard.some((e) => e.id === 'pc114') && hard.every((e) => e.difficulty === 3));
   // nhiều kỹ năng: câu có ít nhất một kỹ năng đã chọn
@@ -92,14 +94,14 @@ test('bộ lọc: TC 3 chỗ trống ra đúng câu có 3 cột; kỹ năng Ngh�
   const useG = B.filterExercises(all, { group: g });
   assert.ok(useG.some((e) => e.id === 'pc111') && useG.every((e) => e.relatedGroups.includes(g)));
   // kết hợp điều kiện
-  assert.ok(B.filterExercises(all, { kinds: ['se'], diffs: [1, 2], onlyNew: true }).every((e) => e.type === 'se' && e.difficulty < 3 && e.addedIn === 'batch-01'));
+  assert.ok(B.filterExercises(all, { kinds: ['se'], diffs: [1, 2], onlyNew: true }).every((e) => e.type === 'se' && e.difficulty < 3 && /^batch-0[12]$/.test(e.addedIn)));
 });
 
 test('mọi câu đều có difficulty, skills, addedIn hợp lệ', () => {
   idx.allExercises.forEach((e) => {
     assert.ok([1, 2, 3].includes(e.difficulty), e.id);
     assert.ok(Array.isArray(e.skills) && e.skills.length && e.skills.every((k) => B.SKILLS[k]), e.id);
-    assert.ok(['base', 'batch-01'].includes(e.addedIn), e.id);
+    assert.ok(['base', 'batch-01', 'batch-02'].includes(e.addedIn), e.id);
   });
   assert.deepEqual(validateExercise(Object.assign({}, idx.exById.pc114, { difficulty: 5 })), ['Độ khó phải là 1 (dễ), 2 (vừa) hoặc 3 (khó)']);
 });
@@ -123,11 +125,14 @@ test('vocabNeeded: nhóm sắp theo số câu dùng tới giảm dần; đếm t
 
 /* ---------------- Giữ câu cho đề cố định chưa làm ---------------- */
 
-test('giữ câu: đề chưa làm thì giữ đủ 27 câu; làm xong (mode fixed) thì nhả; thi thử ngẫu nhiên không tính', () => {
-  assert.equal(B.heldExerciseIds(mocks, new Set()).size, 27);
-  assert.equal(B.heldExerciseIds(mocks, B.doneFixedIds(null)).size, 27, 'chưa tải lịch sử: vẫn giữ');
-  assert.equal(B.heldExerciseIds(mocks, B.doneFixedIds([{ mode: 'full', mockId: 'mock-01' }])).size, 27);
-  assert.equal(B.heldExerciseIds(mocks, B.doneFixedIds([{ mode: 'fixed', mockId: 'mock-01' }])).size, 0);
+test('giữ câu: đề chưa làm thì giữ đủ 27 câu mỗi đề; làm xong (mode fixed) thì nhả; thi thử ngẫu nhiên không tính', () => {
+  assert.equal(B.heldExerciseIds(mocks, new Set()).size, 54);
+  assert.equal(B.heldExerciseIds(mocks, B.doneFixedIds(null)).size, 54, 'chưa tải lịch sử: vẫn giữ');
+  assert.equal(B.heldExerciseIds(mocks, B.doneFixedIds([{ mode: 'full', mockId: 'mock-01' }])).size, 54);
+  assert.equal(B.heldExerciseIds(mocks, B.doneFixedIds([{ mode: 'fixed', mockId: 'mock-01' }])).size, 27);
+  const only2 = B.heldExerciseIds(mocks, B.doneFixedIds([{ mode: 'fixed', mockId: 'mock-01' }]));
+  mock02.sections.forEach((s) => s.items.forEach((id) => assert.ok(only2.has(id))));
+  assert.equal(B.heldExerciseIds(mocks, B.doneFixedIds([{ mode: 'fixed', mockId: 'mock-01' }, { mode: 'fixed', mockId: 'mock-02' }])).size, 0);
   const held = B.heldExerciseIds(mocks, new Set());
   mock01.sections.forEach((s) => s.items.forEach((id) => assert.ok(held.has(id))));
 });
@@ -177,4 +182,14 @@ test('đề cố định mock-01 hợp lệ: 12 + 15 câu, 18 + 23 phút, không
   bad.sections[0].minutes = 0;
   const errs = validateMock(bad, { file: 'mock-01.json', hasExercise: (id) => !!idx.exById[id] });
   assert.ok(errs.some((e) => /bị lặp/.test(e)) && errs.some((e) => /không tồn tại/.test(e)) && errs.some((e) => /minutes/.test(e)), errs.join('\n'));
+});
+
+test('đề cố định mock-02 hợp lệ: 12 + 15 câu từ cụm 5–8, không trùng câu nào với Đề 1', () => {
+  assert.deepEqual(mockIndex.mocks, ['mock-01', 'mock-02']);
+  assert.deepEqual(validateMock(mock02, { file: 'mock-02.json', hasExercise: (id) => !!idx.exById[id], hasCluster: (id) => !!idx.clusterById[id] }), []);
+  assert.deepEqual(mock02.sections.map((s) => [s.items.length, s.minutes]), [[12, 18], [15, 23]]);
+  const items1 = new Set(mock01.sections.flatMap((s) => s.items));
+  const items2 = mock02.sections.flatMap((s) => s.items);
+  assert.equal(items2.filter((id) => items1.has(id)).length, 0);
+  items2.forEach((id) => assert.ok(mock02.clusters.includes(idx.exById[id].clusterId), id));
 });

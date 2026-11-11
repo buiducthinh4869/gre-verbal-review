@@ -209,7 +209,10 @@ test('mọi đáp án GRE trong dữ liệu đều ánh xạ được về id (t
     se02: ['question'], ha07: ['barefaced'], sr07: ['denying'], hm08: ['heartless'],
     // đợt bài tập 01: đáp án là từ thông dụng chưa có trên web (hiện "Chưa có trên web" + link Merriam-Webster)
     pc102: ['promoted'], pc109: ['complimentary'], pc114: ['unmoved'], pc127: ['guarded'], pc129: ['gushing'],
-    sy103: ['unyielding'], sy107: ['tireless'], sy109: ['respectful'], wc107: ['brief'], wc110: ['uncommunicative']
+    sy103: ['unyielding'], sy107: ['tireless'], sy109: ['respectful'], wc107: ['brief'], wc110: ['uncommunicative'],
+    // đợt bài tập 02
+    ma103: ['temperate'], ma111: ['wasted'], ma115: ['selfless'], hp116: ['accelerate'], on110: ['nonconformist'],
+    hd106: ['two-faced'], hd112: ['casuistry']
   };
   idx.exercises.forEach((ex) => {
     const answers = ex.type === 'se' ? ex.answers : ex.blanks.map((b) => b.answer);

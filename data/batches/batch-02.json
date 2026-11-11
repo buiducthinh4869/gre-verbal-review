@@ -1,0 +1,2066 @@
+{
+ "money-attitudes": [
+  {
+   "id": "ma101",
+   "type": "tc",
+   "sentence": "Raised by parents who had lived through famine, she remained {0} all her life, mending her own clothes and saving part of every paycheck, yet she was never mean with others.",
+   "blanks": [
+    {
+     "options": [
+      "frugal",
+      "parsimonious",
+      "miserly",
+      "penurious",
+      "prodigal"
+     ],
+     "answer": "frugal"
+    }
+   ],
+   "targets": [
+    "frugal",
+    "parsimonious",
+    "miserly"
+   ],
+   "hint": "'Yet she was never mean'.",
+   "explanation": "Tiết kiệm nhưng 'never mean with others': nghĩa khen, frugal. Parsimonious và miserly là keo kiệt, chính điều câu phủ nhận; penurious là keo kiệt hoặc nghèo túng.",
+   "difficulty": 2,
+   "skills": [
+    "nuance",
+    "contrast"
+   ],
+   "addedIn": "batch-02"
+  },
+  {
+   "id": "ma102",
+   "type": "tc",
+   "sentence": "A {0} government saves during booms so that it can spend during slumps without borrowing at punishing rates.",
+   "blanks": [
+    {
+     "options": [
+      "provident",
+      "prodigal",
+      "profligate",
+      "abstemious",
+      "covetous"
+     ],
+     "answer": "provident"
+    }
+   ],
+   "targets": [
+    "provident",
+    "prodigal",
+    "profligate",
+    "abstemious"
+   ],
+   "hint": "Lo cho tương lai.",
+   "explanation": "Dành dụm lúc thuận lợi để dùng lúc khó khăn: biết lo xa, provident. Abstemious là điều độ trong ăn uống, không nói về tài chính.",
+   "difficulty": 2,
+   "skills": [
+    "nuance"
+   ],
+   "addedIn": "batch-02"
+  },
+  {
+   "id": "ma103",
+   "type": "se",
+   "sentence": "Famously {0}, the senator drank only water at state banquets and ate little more than bread.",
+   "options": [
+    "abstemious",
+    "temperate",
+    "prodigal",
+    "profligate",
+    "parsimonious",
+    "miserly"
+   ],
+   "answers": [
+    "abstemious",
+    "temperate"
+   ],
+   "targets": [
+    "abstemious",
+    "parsimonious",
+    "miserly"
+   ],
+   "hint": "Ăn uống, không phải tiền bạc.",
+   "explanation": "Điều độ trong ăn uống: abstemious, temperate. Parsimonious và miserly là cặp keo kiệt về tiền bạc, không nói về ăn uống.",
+   "difficulty": 2,
+   "skills": [
+    "nuance"
+   ],
+   "addedIn": "batch-02"
+  },
+  {
+   "id": "ma104",
+   "type": "tc",
+   "sentence": "The {0} household saved a third of its income, while the family next door, headed by a notorious {1}, had borrowed against its house twice in a single year.",
+   "blanks": [
+    {
+     "options": [
+      "thrifty",
+      "prodigal",
+      "munificent"
+     ],
+     "answer": "thrifty"
+    },
+    {
+     "options": [
+      "spendthrift",
+      "miser",
+      "benefactor"
+     ],
+     "answer": "spendthrift"
+    }
+   ],
+   "targets": [
+    "thrifty",
+    "spendthrift"
+   ],
+   "hint": "Bẫy hình thức ở chỗ (ii).",
+   "explanation": "(i) Tiết kiệm một phần ba thu nhập: thrifty. (ii) 'While' đổi chiều, vay nợ liên tục: kẻ tiêu hoang, spendthrift. Bẫy: spendthrift có chữ 'thrift' nhưng nghĩa ngược.",
+   "difficulty": 2,
+   "skills": [
+    "lookalike",
+    "contrast"
+   ],
+   "addedIn": "batch-02"
+  },
+  {
+   "id": "ma105",
+   "type": "tc",
+   "sentence": "The {0} conditions of the settlement, with families sharing single rooms and children going without shoes, shocked the visiting officials.",
+   "blanks": [
+    {
+     "options": [
+      "penurious",
+      "munificent",
+      "opulent",
+      "lavish",
+      "prodigal"
+     ],
+     "answer": "penurious"
+    }
+   ],
+   "targets": [
+    "penurious",
+    "munificent",
+    "opulent"
+   ],
+   "hint": "Nghĩa thứ hai của từ.",
+   "explanation": "Cảnh sống thiếu thốn: penurious theo nghĩa nghèo túng (nghĩa thứ hai, bên cạnh nghĩa keo kiệt). Các phương án còn lại ngược nghĩa.",
+   "difficulty": 3,
+   "skills": [
+    "secondary-meaning"
+   ],
+   "addedIn": "batch-02"
+  },
+  {
+   "id": "ma106",
+   "type": "se",
+   "sentence": "Despite record profits, the company's {0} owners refused to raise wages for the fourth year in a row.",
+   "options": [
+    "miserly",
+    "stingy",
+    "munificent",
+    "magnanimous",
+    "provident",
+    "thrifty"
+   ],
+   "answers": [
+    "miserly",
+    "stingy"
+   ],
+   "targets": [
+    "miserly",
+    "stingy",
+    "provident",
+    "thrifty"
+   ],
+   "hint": "'Despite record profits'.",
+   "explanation": "Lãi kỷ lục mà vẫn không tăng lương: keo kiệt, miserly, stingy. Provident và thrifty là cặp tiết kiệm theo nghĩa khen.",
+   "difficulty": 2,
+   "skills": [
+    "nuance"
+   ],
+   "addedIn": "batch-02"
+  },
+  {
+   "id": "ma107",
+   "type": "tc",
+   "sentence": "Colonial administrators were notoriously {0}, stripping the region of timber and minerals with no thought for the people who lived there.",
+   "blanks": [
+    {
+     "options": [
+      "rapacious",
+      "parsimonious",
+      "miserly",
+      "provident",
+      "frugal"
+     ],
+     "answer": "rapacious"
+    }
+   ],
+   "targets": [
+    "rapacious",
+    "parsimonious",
+    "miserly"
+   ],
+   "hint": "'Stripping the region'.",
+   "explanation": "Vơ vét tài nguyên không thương tiếc: rapacious. Parsimonious và miserly là keo kiệt, không phải cướp đoạt; provident và frugal mang nghĩa khen.",
+   "difficulty": 1,
+   "skills": [
+    "nuance"
+   ],
+   "addedIn": "batch-02"
+  },
+  {
+   "id": "ma108",
+   "type": "tc",
+   "sentence": "He cast {0} glances at his neighbor's new tractor, convinced that it should have been his.",
+   "blanks": [
+    {
+     "options": [
+      "covetous",
+      "rapacious",
+      "venal",
+      "mercenary",
+      "prodigal"
+     ],
+     "answer": "covetous"
+    }
+   ],
+   "targets": [
+    "covetous",
+    "rapacious",
+    "venal"
+   ],
+   "hint": "'Should have been his'.",
+   "explanation": "Thèm muốn thứ thuộc về người khác: covetous. Rapacious là vơ vét; venal là dễ bị mua chuộc.",
+   "difficulty": 2,
+   "skills": [
+    "nuance"
+   ],
+   "addedIn": "batch-02"
+  },
+  {
+   "id": "ma109",
+   "type": "tc",
+   "sentence": "Under its new chief executive the conglomerate became aggressively {0}, buying three rival firms in a single year.",
+   "blanks": [
+    {
+     "options": [
+      "acquisitive",
+      "venal",
+      "abstemious",
+      "profligate",
+      "parsimonious"
+     ],
+     "answer": "acquisitive"
+    }
+   ],
+   "targets": [
+    "acquisitive",
+    "venal",
+    "abstemious"
+   ],
+   "hint": "Mua lại ba công ty đối thủ.",
+   "explanation": "Ham thâu tóm, mua lại công ty: acquisitive (nghĩa trung tính trong kinh doanh). Venal là tham nhũng; abstemious là điều độ ăn uống.",
+   "difficulty": 2,
+   "skills": [
+    "nuance"
+   ],
+   "addedIn": "batch-02"
+  },
+  {
+   "id": "ma110",
+   "type": "tc",
+   "sentence": "The {0} son of a wealthy industrialist, he had spent his entire inheritance on racehorses within three years.",
+   "blanks": [
+    {
+     "options": [
+      "prodigal",
+      "provident",
+      "frugal",
+      "parsimonious",
+      "munificent"
+     ],
+     "answer": "prodigal"
+    }
+   ],
+   "targets": [
+    "prodigal",
+    "provident"
+   ],
+   "hint": "Thành ngữ quen thuộc.",
+   "explanation": "Tiêu hết gia tài: hoang phí, prodigal. Thành ngữ: the prodigal son.",
+   "difficulty": 1,
+   "skills": [
+    "collocation"
+   ],
+   "addedIn": "batch-02"
+  },
+  {
+   "id": "ma111",
+   "type": "se",
+   "sentence": "The ministry {0} public money on a stadium that has hosted only two events since it opened.",
+   "options": [
+    "squandered",
+    "wasted",
+    "hoarded",
+    "conserved",
+    "bestowed",
+    "amassed"
+   ],
+   "answers": [
+    "squandered",
+    "wasted"
+   ],
+   "targets": [
+    "squander"
+   ],
+   "hint": "Sân vận động chỉ dùng hai lần.",
+   "explanation": "Tiêu tiền vào sân vận động gần như bỏ không: squandered, wasted. Hoarded và conserved là cặp giữ gìn, ngược nghĩa.",
+   "difficulty": 1,
+   "skills": [
+    "continuation"
+   ],
+   "addedIn": "batch-02"
+  },
+  {
+   "id": "ma112",
+   "type": "tc",
+   "sentence": "Critics {0} praise on the debut novel, calling it the most accomplished first book in a generation.",
+   "blanks": [
+    {
+     "options": [
+      "lavished",
+      "squandered",
+      "dissipated",
+      "hoarded",
+      "stinted"
+     ],
+     "answer": "lavished"
+    }
+   ],
+   "targets": [
+    "lavish",
+    "squander",
+    "dissipate"
+   ],
+   "hint": "Cấu trúc 'lavish X on Y'.",
+   "explanation": "Collocation: lavish praise on X (khen hết lời). Squandered và dissipated là phung phí, không đi với 'praise on'.",
+   "difficulty": 2,
+   "skills": [
+    "collocation"
+   ],
+   "addedIn": "batch-02"
+  },
+  {
+   "id": "ma113",
+   "type": "tc",
+   "sentence": "The early lead that the firm built through innovation was quickly {0} by a series of {1} acquisitions, each more expensive and less useful than the last.",
+   "blanks": [
+    {
+     "options": [
+      "dissipated",
+      "consolidated",
+      "hoarded"
+     ],
+     "answer": "dissipated"
+    },
+    {
+     "options": [
+      "profligate",
+      "provident",
+      "judicious"
+     ],
+     "answer": "profligate"
+    }
+   ],
+   "targets": [
+    "dissipate",
+    "profligate"
+   ],
+   "hint": "Bắt đầu từ mô tả các thương vụ.",
+   "explanation": "(ii) Các thương vụ ngày càng đắt và vô dụng: hoang phí, profligate. (i) Nhờ vậy lợi thế ban đầu bị phung phí hết, dissipated.",
+   "difficulty": 2,
+   "skills": [
+    "continuation"
+   ],
+   "addedIn": "batch-02"
+  },
+  {
+   "id": "ma114",
+   "type": "tc",
+   "sentence": "Rural voters had grown dependent on the governor's {0}: new roads, cash handouts and free fertilizer appeared every election year.",
+   "blanks": [
+    {
+     "options": [
+      "largesse",
+      "parsimony",
+      "avarice",
+      "penury",
+      "frugality"
+     ],
+     "answer": "largesse"
+    }
+   ],
+   "targets": [
+    "largesse"
+   ],
+   "hint": "Ví dụ sau dấu hai chấm.",
+   "explanation": "Tiền ban phát vào mỗi mùa bầu cử: largesse.",
+   "difficulty": 2,
+   "skills": [
+    "continuation"
+   ],
+   "addedIn": "batch-02"
+  },
+  {
+   "id": "ma115",
+   "type": "se",
+   "sentence": "Economists still debate whether blood donation is genuinely {0} or whether donors expect some private reward, such as social recognition.",
+   "options": [
+    "altruistic",
+    "selfless",
+    "mercenary",
+    "venal",
+    "munificent",
+    "liberal"
+   ],
+   "answers": [
+    "altruistic",
+    "selfless"
+   ],
+   "targets": [
+    "altruistic",
+    "mercenary",
+    "venal",
+    "munificent",
+    "liberal"
+   ],
+   "hint": "Câu hỏi về động cơ.",
+   "explanation": "Đối lập với việc mong phần thưởng riêng: vị tha, altruistic, selfless. Munificent và liberal là cặp hào phóng về tiền của, không nói về động cơ.",
+   "difficulty": 2,
+   "skills": [
+    "nuance",
+    "contrast"
+   ],
+   "addedIn": "batch-02"
+  },
+  {
+   "id": "ma116",
+   "type": "tc",
+   "sentence": "Even a {0} dictator, one who sincerely wishes his people well, remains accountable to no one.",
+   "blanks": [
+    {
+     "options": [
+      "benevolent",
+      "rapacious",
+      "venal",
+      "mercenary",
+      "parsimonious"
+     ],
+     "answer": "benevolent"
+    }
+   ],
+   "targets": [
+    "benevolent"
+   ],
+   "hint": "Mô tả ngay sau dấu phẩy.",
+   "explanation": "'Sincerely wishes his people well': nhân từ, benevolent.",
+   "difficulty": 1,
+   "skills": [
+    "continuation"
+   ],
+   "addedIn": "batch-02"
+  },
+  {
+   "id": "ma117",
+   "type": "tc",
+   "sentence": "She was {0} with her time, mentoring dozens of junior researchers and reading every draft they sent her.",
+   "blanks": [
+    {
+     "options": [
+      "liberal",
+      "parsimonious",
+      "miserly",
+      "penurious",
+      "frugal"
+     ],
+     "answer": "liberal"
+    }
+   ],
+   "targets": [
+    "liberal",
+    "parsimonious",
+    "frugal"
+   ],
+   "hint": "Nghĩa phụ của 'liberal'.",
+   "explanation": "Hào phóng về thời gian: liberal with X (nghĩa phụ). Các phương án còn lại là keo kiệt hoặc tiết kiệm.",
+   "difficulty": 2,
+   "skills": [
+    "secondary-meaning"
+   ],
+   "addedIn": "batch-02"
+  },
+  {
+   "id": "ma118",
+   "type": "tc",
+   "sentence": "Though critics accused the foundation of {0} spending on lavish galas, its accounts show it to be remarkably {1}: overhead consumes less than five percent of its budget, and the rest goes to grants so {2} that recipients often call them life-changing.",
+   "blanks": [
+    {
+     "options": [
+      "profligate",
+      "parsimonious",
+      "penurious"
+     ],
+     "answer": "profligate"
+    },
+    {
+     "options": [
+      "frugal",
+      "prodigal",
+      "covetous"
+     ],
+     "answer": "frugal"
+    },
+    {
+     "options": [
+      "munificent",
+      "meager",
+      "venal"
+     ],
+     "answer": "munificent"
+    }
+   ],
+   "targets": [
+    "profligate",
+    "frugal",
+    "munificent"
+   ],
+   "hint": "Ba chỗ trống: cáo buộc, thực tế, các khoản tài trợ.",
+   "explanation": "(i) Bị cáo buộc tiêu xài vào tiệc xa hoa: profligate. (ii) 'Though… remarkably' đổi chiều, chi phí quản lý dưới 5%: frugal. (iii) Khoản tài trợ thay đổi cuộc đời: rất hào phóng, munificent.",
+   "difficulty": 3,
+   "skills": [
+    "contrast",
+    "continuation"
+   ],
+   "addedIn": "batch-02"
+  }
+ ],
+ "hinder-promote": [
+  {
+   "id": "hp101",
+   "type": "tc",
+   "sentence": "Poor rural roads {0} the movement of crops to market, so that farmers in remote districts receive far lower prices than those near the cities.",
+   "blanks": [
+    {
+     "options": [
+      "impede",
+      "expedite",
+      "facilitate",
+      "spur",
+      "foster"
+     ],
+     "answer": "impede"
+    }
+   ],
+   "targets": [
+    "impede",
+    "expedite",
+    "facilitate"
+   ],
+   "hint": "Hệ quả: nông dân vùng xa được giá thấp.",
+   "explanation": "Đường xấu làm cản trở việc chở nông sản: impede.",
+   "difficulty": 1,
+   "skills": [
+    "continuation"
+   ],
+   "addedIn": "batch-02"
+  },
+  {
+   "id": "hp102",
+   "type": "se",
+   "sentence": "Quick action by regulators {0} the hostile takeover just days before it was due to close.",
+   "options": [
+    "thwarted",
+    "foiled",
+    "abetted",
+    "facilitated",
+    "exacerbated",
+    "compounded"
+   ],
+   "answers": [
+    "thwarted",
+    "foiled"
+   ],
+   "targets": [
+    "thwart",
+    "foil",
+    "abet",
+    "facilitate"
+   ],
+   "hint": "Kết quả của việc cơ quan quản lý ra tay.",
+   "explanation": "Chặn đứng thương vụ: thwarted, foiled. Abetted và facilitated là cặp sai hướng; exacerbated và compounded dùng cho vấn đề.",
+   "difficulty": 1,
+   "skills": [
+    "nuance"
+   ],
+   "addedIn": "batch-02"
+  },
+  {
+   "id": "hp103",
+   "type": "tc",
+   "sentence": "For a decade the project was {0} by red tape: every permit required another, and no ministry would take responsibility.",
+   "blanks": [
+    {
+     "options": [
+      "stymied",
+      "expedited",
+      "galvanized",
+      "buttressed",
+      "catalyzed"
+     ],
+     "answer": "stymied"
+    }
+   ],
+   "targets": [
+    "stymie",
+    "expedite",
+    "galvanize"
+   ],
+   "hint": "Mô tả sau dấu hai chấm.",
+   "explanation": "Giấy phép chồng giấy phép: bế tắc, stymied.",
+   "difficulty": 1,
+   "skills": [
+    "continuation"
+   ],
+   "addedIn": "batch-02"
+  },
+  {
+   "id": "hp104",
+   "type": "tc",
+   "sentence": "Critics argue that excessive regulation does not merely slow innovation but {0} it altogether, deterring entrepreneurs from starting firms in the first place.",
+   "blanks": [
+    {
+     "options": [
+      "stifles",
+      "retards",
+      "impedes",
+      "hampers",
+      "curbs"
+     ],
+     "answer": "stifles"
+    }
+   ],
+   "targets": [
+    "stifle",
+    "retard",
+    "impede",
+    "hamper",
+    "curb"
+   ],
+   "hint": "Mạnh hơn 'slow'.",
+   "explanation": "'Not merely slow… but … altogether' đòi từ mạnh hơn làm chậm: bóp nghẹt, stifles. Retards, impedes, hampers, curbs đều chỉ là làm chậm hoặc hạn chế.",
+   "difficulty": 3,
+   "skills": [
+    "degree"
+   ],
+   "addedIn": "batch-02"
+  },
+  {
+   "id": "hp105",
+   "type": "tc",
+   "sentence": "The small size of the sample {0} any firm conclusions about the effect on women, though the estimates for men are reasonably precise.",
+   "blanks": [
+    {
+     "options": [
+      "precludes",
+      "obviates",
+      "forestalls",
+      "averts",
+      "palliates"
+     ],
+     "answer": "precludes"
+    }
+   ],
+   "targets": [
+    "preclude",
+    "obviate",
+    "forestall",
+    "avert"
+   ],
+   "hint": "Đối tượng là 'kết luận'.",
+   "explanation": "Làm cho không thể kết luận được: precludes. Obviates là làm cho không cần thiết; forestalls và averts là ngăn một sự kiện xảy ra.",
+   "difficulty": 2,
+   "skills": [
+    "nuance"
+   ],
+   "addedIn": "batch-02"
+  },
+  {
+   "id": "hp106",
+   "type": "se",
+   "sentence": "The central bank cut rates sharply in an attempt to {0} a recession that most forecasters already considered likely.",
+   "options": [
+    "forestall",
+    "avert",
+    "obviate",
+    "galvanize",
+    "exacerbate",
+    "foment"
+   ],
+   "answers": [
+    "forestall",
+    "avert"
+   ],
+   "targets": [
+    "forestall",
+    "avert",
+    "obviate",
+    "galvanize"
+   ],
+   "hint": "Ngăn một sự kiện sắp tới.",
+   "explanation": "Chặn trước một cuộc suy thoái: forestall, avert. Obviate đi với 'the need for', không đi với một sự kiện; exacerbate và foment sai hướng.",
+   "difficulty": 2,
+   "skills": [
+    "nuance"
+   ],
+   "addedIn": "batch-02"
+  },
+  {
+   "id": "hp107",
+   "type": "tc",
+   "sentence": "Last-minute negotiations {0} a strike that would have closed the port, and a new automated scheduling system has since {1} the need for the overtime rules that had caused the dispute.",
+   "blanks": [
+    {
+     "options": [
+      "averted",
+      "obviated",
+      "fomented"
+     ],
+     "answer": "averted"
+    },
+    {
+     "options": [
+      "obviated",
+      "instigated",
+      "compounded"
+     ],
+     "answer": "obviated"
+    }
+   ],
+   "targets": [
+    "avert",
+    "obviate"
+   ],
+   "hint": "Collocation 'the need for'.",
+   "explanation": "(i) Tránh được cuộc đình công: averted. (ii) Collocation 'obviate the need for': hệ thống mới làm cho quy định cũ không còn cần thiết.",
+   "difficulty": 2,
+   "skills": [
+    "collocation",
+    "nuance"
+   ],
+   "addedIn": "batch-02"
+  },
+  {
+   "id": "hp108",
+   "type": "tc",
+   "sentence": "Microcredit can {0} some of the hardships of rural poverty, but on its own it rarely lifts households out of poverty altogether.",
+   "blanks": [
+    {
+     "options": [
+      "alleviate",
+      "exacerbate",
+      "aggravate",
+      "compound",
+      "foment"
+     ],
+     "answer": "alleviate"
+    }
+   ],
+   "targets": [
+    "alleviate",
+    "exacerbate",
+    "aggravate",
+    "compound"
+   ],
+   "hint": "'But' giới hạn tác dụng.",
+   "explanation": "'Can … some of the hardships, but rarely lifts out of poverty': làm giảm bớt, alleviate.",
+   "difficulty": 1,
+   "skills": [
+    "contrast"
+   ],
+   "addedIn": "batch-02"
+  },
+  {
+   "id": "hp109",
+   "type": "tc",
+   "sentence": "She {0} her criticism of the paper with genuine praise for its data collection, so that the authors read her report as encouragement rather than rejection.",
+   "blanks": [
+    {
+     "options": [
+      "tempered",
+      "compounded",
+      "exacerbated",
+      "aggravated",
+      "galvanized"
+     ],
+     "answer": "tempered"
+    }
+   ],
+   "targets": [
+    "temper",
+    "compound",
+    "exacerbate"
+   ],
+   "hint": "Cấu trúc '… X with Y'.",
+   "explanation": "Collocation 'temper X with Y': làm dịu lời phê bình bằng lời khen.",
+   "difficulty": 2,
+   "skills": [
+    "secondary-meaning",
+    "collocation"
+   ],
+   "addedIn": "batch-02"
+  },
+  {
+   "id": "hp110",
+   "type": "se",
+   "sentence": "The company offered refunds and a public apology in an effort to {0} customers furious about the data breach.",
+   "options": [
+    "mollify",
+    "placate",
+    "palliate",
+    "alleviate",
+    "incite",
+    "foment"
+   ],
+   "answers": [
+    "mollify",
+    "placate"
+   ],
+   "targets": [
+    "mollify",
+    "placate",
+    "palliate",
+    "alleviate",
+    "incite",
+    "foment"
+   ],
+   "hint": "Đối tượng là người đang giận.",
+   "explanation": "Làm nguôi giận khách hàng: mollify, placate. Palliate và alleviate là cặp làm giảm khó khăn, đau khổ, không dùng với người đang giận làm tân ngữ.",
+   "difficulty": 2,
+   "skills": [
+    "nuance"
+   ],
+   "addedIn": "batch-02"
+  },
+  {
+   "id": "hp111",
+   "type": "tc",
+   "sentence": "Rent subsidies {0} the housing shortage but do not cure it: they ease the burden on tenants while leaving the underlying lack of supply untouched.",
+   "blanks": [
+    {
+     "options": [
+      "palliate",
+      "obviate",
+      "preclude",
+      "foment",
+      "galvanize"
+     ],
+     "answer": "palliate"
+    }
+   ],
+   "targets": [
+    "palliate",
+    "obviate",
+    "preclude"
+   ],
+   "hint": "'But do not cure it'.",
+   "explanation": "Giảm triệu chứng mà không chữa tận gốc: palliate.",
+   "difficulty": 3,
+   "skills": [
+    "nuance"
+   ],
+   "addedIn": "batch-02"
+  },
+  {
+   "id": "hp112",
+   "type": "se",
+   "sentence": "Poor sanitation in the camps {0} the outbreak, allowing the disease to spread far faster than in the surrounding villages.",
+   "options": [
+    "aggravated",
+    "exacerbated",
+    "mitigated",
+    "alleviated",
+    "fomented",
+    "instigated"
+   ],
+   "answers": [
+    "aggravated",
+    "exacerbated"
+   ],
+   "targets": [
+    "aggravate",
+    "exacerbate",
+    "mitigate",
+    "alleviate",
+    "foment",
+    "instigate"
+   ],
+   "hint": "Đối tượng là dịch bệnh.",
+   "explanation": "Làm dịch nặng thêm: aggravated, exacerbated. Fomented và instigated là cặp kích động con người, không dùng cho dịch bệnh.",
+   "difficulty": 2,
+   "skills": [
+    "nuance"
+   ],
+   "addedIn": "batch-02"
+  },
+  {
+   "id": "hp113",
+   "type": "tc",
+   "sentence": "The speaker was charged with attempting to {0} violence after urging the crowd to attack the police station.",
+   "blanks": [
+    {
+     "options": [
+      "incite",
+      "mollify",
+      "placate",
+      "palliate",
+      "temper"
+     ],
+     "answer": "incite"
+    }
+   ],
+   "targets": [
+    "incite",
+    "mollify"
+   ],
+   "hint": "Kêu gọi đám đông tấn công.",
+   "explanation": "Kích động bạo lực: incite violence.",
+   "difficulty": 1,
+   "skills": [
+    "collocation"
+   ],
+   "addedIn": "batch-02"
+  },
+  {
+   "id": "hp114",
+   "type": "tc",
+   "sentence": "The authors {0} their argument with evidence from forty countries, showing that the pattern holds across very different institutional settings.",
+   "blanks": [
+    {
+     "options": [
+      "buttress",
+      "undermine",
+      "abet",
+      "foment",
+      "instigate"
+     ],
+     "answer": "buttress"
+    }
+   ],
+   "targets": [
+    "buttress",
+    "undermine",
+    "abet"
+   ],
+   "hint": "Bằng chứng từ bốn mươi quốc gia.",
+   "explanation": "Củng cố lập luận bằng bằng chứng: buttress. Undermine ngược nghĩa; abet là tiếp tay cho việc xấu.",
+   "difficulty": 1,
+   "skills": [
+    "collocation"
+   ],
+   "addedIn": "batch-02"
+  },
+  {
+   "id": "hp115",
+   "type": "tc",
+   "sentence": "Transparent rules tend to {0} trust in public institutions, whereas arbitrary enforcement breeds suspicion.",
+   "blanks": [
+    {
+     "options": [
+      "engender",
+      "stymie",
+      "stifle",
+      "thwart",
+      "abet"
+     ],
+     "answer": "engender"
+    }
+   ],
+   "targets": [
+    "engender",
+    "stifle",
+    "abet"
+   ],
+   "hint": "'Whereas'.",
+   "explanation": "'Whereas' đổi chiều với 'breeds suspicion': làm nảy sinh lòng tin, engender trust.",
+   "difficulty": 2,
+   "skills": [
+    "contrast",
+    "collocation"
+   ],
+   "addedIn": "batch-02"
+  },
+  {
+   "id": "hp116",
+   "type": "se",
+   "sentence": "The new online portal is designed to {0} visa applications, cutting processing times from six weeks to five days.",
+   "options": [
+    "expedite",
+    "accelerate",
+    "impede",
+    "hamper",
+    "abet",
+    "foment"
+   ],
+   "answers": [
+    "expedite",
+    "accelerate"
+   ],
+   "targets": [
+    "expedite",
+    "impede",
+    "hamper",
+    "abet"
+   ],
+   "hint": "Kết quả sau dấu phẩy.",
+   "explanation": "Rút thời gian xử lý từ sáu tuần xuống năm ngày: đẩy nhanh, expedite, accelerate.",
+   "difficulty": 1,
+   "skills": [
+    "continuation"
+   ],
+   "addedIn": "batch-02"
+  },
+  {
+   "id": "hp117",
+   "type": "tc",
+   "sentence": "The banker was convicted of aiding and {0} the fraud by moving money through accounts he knew to be fictitious.",
+   "blanks": [
+    {
+     "options": [
+      "abetting",
+      "bolstering",
+      "buttressing",
+      "fostering",
+      "galvanizing"
+     ],
+     "answer": "abetting"
+    }
+   ],
+   "targets": [
+    "abet",
+    "bolster",
+    "buttress",
+    "foster"
+   ],
+   "hint": "Cụm cố định trong luật.",
+   "explanation": "Cụm cố định 'aid and abet': tiếp tay cho tội phạm. Các động từ còn lại mang nghĩa củng cố, nuôi dưỡng theo hướng tích cực.",
+   "difficulty": 2,
+   "skills": [
+    "collocation"
+   ],
+   "addedIn": "batch-02"
+  },
+  {
+   "id": "hp118",
+   "type": "tc",
+   "sentence": "Tax credits for research are intended to {0} private investment in new technology, while public universities {1} the skilled workforce that such investment requires.",
+   "blanks": [
+    {
+     "options": [
+      "spur",
+      "stem",
+      "curb"
+     ],
+     "answer": "spur"
+    },
+    {
+     "options": [
+      "foster",
+      "stifle",
+      "thwart"
+     ],
+     "answer": "foster"
+    }
+   ],
+   "targets": [
+    "spur",
+    "foster",
+    "stem",
+    "curb"
+   ],
+   "hint": "Mục đích của chính sách.",
+   "explanation": "(i) Thúc đẩy đầu tư: spur. (ii) Nuôi dưỡng lực lượng lao động: foster. Hai chỗ trống cùng hướng tích cực.",
+   "difficulty": 2,
+   "skills": [
+    "continuation"
+   ],
+   "addedIn": "batch-02"
+  },
+  {
+   "id": "hp119",
+   "type": "tc",
+   "sentence": "The government insisted that the new tariff would {0} domestic manufacturing; in practice it {1} the very firms it meant to protect by raising the cost of imported components, and the resulting job losses {2} rather than allayed public anxiety about the economy.",
+   "blanks": [
+    {
+     "options": [
+      "bolster",
+      "stymie",
+      "mollify"
+     ],
+     "answer": "bolster"
+    },
+    {
+     "options": [
+      "hampered",
+      "galvanized",
+      "abetted"
+     ],
+     "answer": "hampered"
+    },
+    {
+     "options": [
+      "aggravated",
+      "palliated",
+      "tempered"
+     ],
+     "answer": "aggravated"
+    }
+   ],
+   "targets": [
+    "bolster",
+    "hamper",
+    "aggravate"
+   ],
+   "hint": "Lời hứa, thực tế, hệ quả.",
+   "explanation": "(i) Chính phủ hứa củng cố: bolster. (ii) 'In practice' đổi chiều, chi phí tăng: cản trở, hampered. (iii) 'Rather than allayed': làm trầm trọng thêm, aggravated.",
+   "difficulty": 3,
+   "skills": [
+    "contrast"
+   ],
+   "addedIn": "batch-02"
+  }
+ ],
+ "ordinary-novel": [
+  {
+   "id": "on101",
+   "type": "tc",
+   "sentence": "The interview yielded only {0} observations ('hard work pays off', 'family comes first'), nothing a reader could not have guessed in advance.",
+   "blanks": [
+    {
+     "options": [
+      "banal",
+      "iconoclastic",
+      "idiosyncratic",
+      "heterodox",
+      "seminal"
+     ],
+     "answer": "banal"
+    }
+   ],
+   "targets": [
+    "banal",
+    "iconoclastic",
+    "idiosyncratic"
+   ],
+   "hint": "Ví dụ trong ngoặc.",
+   "explanation": "Những câu ai cũng đoán trước được: tầm thường, sáo rỗng, banal.",
+   "difficulty": 1,
+   "skills": [
+    "continuation"
+   ],
+   "addedIn": "batch-02"
+  },
+  {
+   "id": "on102",
+   "type": "se",
+   "sentence": "The film relies on a {0} plot twist: the detective, it turns out, was the killer all along.",
+   "options": [
+    "hackneyed",
+    "clichéd",
+    "heretical",
+    "anomalous",
+    "seminal",
+    "novel"
+   ],
+   "answers": [
+    "hackneyed",
+    "clichéd"
+   ],
+   "targets": [
+    "hackneyed",
+    "cliched",
+    "anomalous",
+    "seminal",
+    "novel"
+   ],
+   "hint": "Cú lật kiểu này đã gặp bao nhiêu lần?",
+   "explanation": "Cú lật quen thuộc đến nhàm: hackneyed, clichéd. Seminal và novel là cặp sai hướng.",
+   "difficulty": 1,
+   "skills": [
+    "continuation"
+   ],
+   "addedIn": "batch-02"
+  },
+  {
+   "id": "on103",
+   "type": "tc",
+   "sentence": "After the bold flavors of the original, the sequel's dialogue seemed {0}, competent but utterly without spice or wit.",
+   "blanks": [
+    {
+     "options": [
+      "insipid",
+      "heretical",
+      "doctrinaire",
+      "anomalous",
+      "heterodox"
+     ],
+     "answer": "insipid"
+    }
+   ],
+   "targets": [
+    "insipid",
+    "heretical",
+    "doctrinaire"
+   ],
+   "hint": "'Without spice'.",
+   "explanation": "Nhạt nhẽo, thiếu gia vị: insipid. Các phương án còn lại nói về quan điểm hoặc sự bất thường, không mô tả lời thoại nhạt.",
+   "difficulty": 2,
+   "skills": [
+    "nuance"
+   ],
+   "addedIn": "batch-02"
+  },
+  {
+   "id": "on104",
+   "type": "tc",
+   "sentence": "His {0} analysis of the trade war, which ignored half a century of research on tariffs, embarrassed the think tank that had published it.",
+   "blanks": [
+    {
+     "options": [
+      "jejune",
+      "seminal",
+      "novel",
+      "avant-garde",
+      "iconoclastic"
+     ],
+     "answer": "jejune"
+    }
+   ],
+   "targets": [
+    "jejune",
+    "seminal",
+    "novel"
+   ],
+   "hint": "Vì sao tổ chức thấy xấu hổ?",
+   "explanation": "Bỏ qua nửa thế kỷ nghiên cứu, khiến tổ chức xấu hổ: non nớt, ấu trĩ, jejune.",
+   "difficulty": 3,
+   "skills": [
+    "nuance"
+   ],
+   "addedIn": "batch-02"
+  },
+  {
+   "id": "on105",
+   "type": "tc",
+   "sentence": "The novel's plot is gripping, but its prose is {0}: competent, clear and entirely without flair.",
+   "blanks": [
+    {
+     "options": [
+      "pedestrian",
+      "avant-garde",
+      "iconoclastic",
+      "idiosyncratic",
+      "florid"
+     ],
+     "answer": "pedestrian"
+    }
+   ],
+   "targets": [
+    "pedestrian",
+    "idiosyncratic",
+    "florid"
+   ],
+   "hint": "Nghĩa phụ, không phải 'người đi bộ'.",
+   "explanation": "Đúng, rõ, nhưng không có gì đặc sắc: tầm thường, pedestrian (nghĩa phụ). Florid là hoa mỹ, ngược với 'without flair'.",
+   "difficulty": 2,
+   "skills": [
+    "secondary-meaning",
+    "contrast"
+   ],
+   "addedIn": "batch-02"
+  },
+  {
+   "id": "on106",
+   "type": "se",
+   "sentence": "The explanation for the outage turned out to be thoroughly {0}: a technician had unplugged the wrong cable.",
+   "options": [
+    "prosaic",
+    "mundane",
+    "anomalous",
+    "heretical",
+    "seminal",
+    "iconoclastic"
+   ],
+   "answers": [
+    "prosaic",
+    "mundane"
+   ],
+   "targets": [
+    "prosaic",
+    "mundane",
+    "anomalous",
+    "heretical"
+   ],
+   "hint": "Rút nhầm dây cáp.",
+   "explanation": "Nguyên nhân rất bình thường: prosaic, mundane.",
+   "difficulty": 1,
+   "skills": [
+    "continuation"
+   ],
+   "addedIn": "batch-02"
+  },
+  {
+   "id": "on107",
+   "type": "tc",
+   "sentence": "The paper's contribution is a {0} instrument for schooling, one that no previous study had thought to use: distance to the nearest teacher-training college.",
+   "blanks": [
+    {
+     "options": [
+      "novel",
+      "hackneyed",
+      "banal",
+      "trite",
+      "derivative"
+     ],
+     "answer": "novel"
+    }
+   ],
+   "targets": [
+    "novel",
+    "hackneyed",
+    "derivative"
+   ],
+   "hint": "'No previous study'.",
+   "explanation": "Chưa nghiên cứu nào nghĩ tới: mới, novel (tính từ, không phải tiểu thuyết).",
+   "difficulty": 1,
+   "skills": [
+    "lookalike"
+   ],
+   "addedIn": "batch-02"
+  },
+  {
+   "id": "on108",
+   "type": "tc",
+   "sentence": "Although the 1956 article was {0}, inspiring an entire literature, many of the later papers it spawned were merely {1}, restating its insights with minor variations.",
+   "blanks": [
+    {
+     "options": [
+      "seminal",
+      "derivative",
+      "doctrinaire"
+     ],
+     "answer": "seminal"
+    },
+    {
+     "options": [
+      "derivative",
+      "seminal",
+      "heterodox"
+     ],
+     "answer": "derivative"
+    }
+   ],
+   "targets": [
+    "seminal",
+    "derivative"
+   ],
+   "hint": "'Although… merely'.",
+   "explanation": "(i) Khơi nguồn cả một dòng nghiên cứu: seminal. (ii) 'Although… merely': các bài sau chỉ lặp lại, derivative.",
+   "difficulty": 2,
+   "skills": [
+    "contrast"
+   ],
+   "addedIn": "batch-02"
+  },
+  {
+   "id": "on109",
+   "type": "tc",
+   "sentence": "{0} economists, who reject the assumption of rational, self-interested agents, have long complained that their work is ignored by the leading journals.",
+   "blanks": [
+    {
+     "options": [
+      "Heterodox",
+      "Orthodox",
+      "Doctrinaire",
+      "Hidebound",
+      "Conformist"
+     ],
+     "answer": "Heterodox"
+    }
+   ],
+   "targets": [
+    "heterodox",
+    "orthodox",
+    "doctrinaire"
+   ],
+   "hint": "Bác bỏ giả định của dòng chính.",
+   "explanation": "Bác bỏ giả định chủ đạo và bị tạp chí hàng đầu phớt lờ: không chính thống, heterodox.",
+   "difficulty": 2,
+   "skills": [
+    "nuance"
+   ],
+   "addedIn": "batch-02"
+  },
+  {
+   "id": "on110",
+   "type": "se",
+   "sentence": "A {0} senator who often voted against her own party, she was distrusted by its leadership but popular with independent voters.",
+   "options": [
+    "maverick",
+    "nonconformist",
+    "conformist",
+    "orthodox",
+    "doctrinaire",
+    "dogmatic"
+   ],
+   "answers": [
+    "maverick",
+    "nonconformist"
+   ],
+   "targets": [
+    "maverick",
+    "conformist",
+    "orthodox",
+    "doctrinaire",
+    "dogmatic"
+   ],
+   "hint": "Bỏ phiếu ngược đảng.",
+   "explanation": "Hay bỏ phiếu ngược đảng mình: độc lập, không theo số đông, maverick, nonconformist. Doctrinaire và dogmatic là cặp giáo điều.",
+   "difficulty": 1,
+   "skills": [
+    "nuance"
+   ],
+   "addedIn": "batch-02"
+  },
+  {
+   "id": "on111",
+   "type": "tc",
+   "sentence": "The {0} readings from one weather station, wildly out of line with those of its neighbors, were eventually traced to a faulty sensor.",
+   "blanks": [
+    {
+     "options": [
+      "anomalous",
+      "quotidian",
+      "mundane",
+      "prosaic",
+      "orthodox"
+     ],
+     "answer": "anomalous"
+    }
+   ],
+   "targets": [
+    "anomalous",
+    "quotidian",
+    "mundane"
+   ],
+   "hint": "'Wildly out of line'.",
+   "explanation": "Lệch hẳn so với các trạm lân cận: bất thường, anomalous.",
+   "difficulty": 1,
+   "skills": [
+    "continuation"
+   ],
+   "addedIn": "batch-02"
+  },
+  {
+   "id": "on112",
+   "type": "tc",
+   "sentence": "Questioning the efficient-markets hypothesis was once considered almost {0} in finance departments; after 2008 it became commonplace.",
+   "blanks": [
+    {
+     "options": [
+      "heretical",
+      "orthodox",
+      "doctrinaire",
+      "conformist",
+      "hidebound"
+     ],
+     "answer": "heretical"
+    }
+   ],
+   "targets": [
+    "heretical",
+    "orthodox",
+    "doctrinaire"
+   ],
+   "hint": "'Once… became commonplace'.",
+   "explanation": "'Once… after 2008 commonplace' đổi chiều: trước kia bị coi như dị giáo, heretical.",
+   "difficulty": 2,
+   "skills": [
+    "contrast"
+   ],
+   "addedIn": "batch-02"
+  },
+  {
+   "id": "on113",
+   "type": "tc",
+   "sentence": "The ministry's {0} bureaucrats resisted digital filing for a decade, insisting that paper forms had always worked well enough.",
+   "blanks": [
+    {
+     "options": [
+      "hidebound",
+      "maverick",
+      "iconoclastic",
+      "heterodox",
+      "avant-garde"
+     ],
+     "answer": "hidebound"
+    }
+   ],
+   "targets": [
+    "hidebound",
+    "maverick",
+    "iconoclastic"
+   ],
+   "hint": "Mười năm chống đổi mới.",
+   "explanation": "Bám vào giấy tờ, chống số hóa: bảo thủ, hidebound.",
+   "difficulty": 1,
+   "skills": [
+    "continuation"
+   ],
+   "addedIn": "batch-02"
+  },
+  {
+   "id": "on114",
+   "type": "se",
+   "sentence": "Science advances when researchers are willing to abandon cherished theories; a {0} commitment to any single model can blind a field to contrary evidence.",
+   "options": [
+    "dogmatic",
+    "doctrinaire",
+    "heterodox",
+    "iconoclastic",
+    "prosaic",
+    "mundane"
+   ],
+   "answers": [
+    "dogmatic",
+    "doctrinaire"
+   ],
+   "targets": [
+    "dogmatic",
+    "doctrinaire",
+    "heterodox",
+    "iconoclastic"
+   ],
+   "hint": "Điều làm cả ngành 'mù'.",
+   "explanation": "Cam kết cứng nhắc, làm mù trước bằng chứng trái chiều: giáo điều, dogmatic, doctrinaire. Heterodox và iconoclastic là cặp phá cách, ngược hướng.",
+   "difficulty": 2,
+   "skills": [
+    "contrast"
+   ],
+   "addedIn": "batch-02"
+  },
+  {
+   "id": "on115",
+   "type": "tc",
+   "sentence": "In a {0} academic culture, where junior scholars are rewarded for extending established models, the {1} who challenges first principles risks never finding a job.",
+   "blanks": [
+    {
+     "options": [
+      "conformist",
+      "heterodox",
+      "avant-garde"
+     ],
+     "answer": "conformist"
+    },
+    {
+     "options": [
+      "iconoclast",
+      "conformist",
+      "doctrinaire"
+     ],
+     "answer": "iconoclast"
+    }
+   ],
+   "targets": [
+    "conformist",
+    "iconoclastic"
+   ],
+   "hint": "Ai bị thiệt trong văn hóa đó?",
+   "explanation": "(i) Thưởng cho người mở rộng mô hình có sẵn: văn hóa tuân thủ, conformist. (ii) Người thách thức nguyên lý nền tảng: iconoclast.",
+   "difficulty": 2,
+   "skills": [
+    "contrast"
+   ],
+   "addedIn": "batch-02"
+  },
+  {
+   "id": "on116",
+   "type": "tc",
+   "sentence": "Critics initially dismissed the director's first film as {0}, a mere imitation of the French New Wave; her second, however, was so {1} that some found it incomprehensible, and only with her third did she find a style both original and {2}.",
+   "blanks": [
+    {
+     "options": [
+      "derivative",
+      "seminal",
+      "anomalous"
+     ],
+     "answer": "derivative"
+    },
+    {
+     "options": [
+      "idiosyncratic",
+      "hackneyed",
+      "prosaic"
+     ],
+     "answer": "idiosyncratic"
+    },
+    {
+     "options": [
+      "lucid",
+      "abstruse",
+      "turgid"
+     ],
+     "answer": "lucid"
+    }
+   ],
+   "targets": [
+    "derivative",
+    "idiosyncratic",
+    "lucid"
+   ],
+   "hint": "Ba bộ phim, ba đánh giá.",
+   "explanation": "(i) 'A mere imitation': derivative. (ii) 'However… incomprehensible': quá riêng, quá lạ, idiosyncratic. (iii) Vừa độc đáo vừa dễ hiểu: lucid.",
+   "difficulty": 3,
+   "skills": [
+    "contrast"
+   ],
+   "addedIn": "batch-02"
+  }
+ ],
+ "honesty-deception": [
+  {
+   "id": "hd101",
+   "type": "tc",
+   "sentence": "The {0} young clerk, who had never imagined that a colleague might lie to him, signed the fraudulent invoices without a second thought.",
+   "blanks": [
+    {
+     "options": [
+      "guileless",
+      "duplicitous",
+      "disingenuous",
+      "perfidious",
+      "mendacious"
+     ],
+     "answer": "guileless"
+    }
+   ],
+   "targets": [
+    "guileless",
+    "duplicitous",
+    "disingenuous"
+   ],
+   "hint": "Mô tả ngay sau từ cần điền.",
+   "explanation": "Chưa từng nghĩ có người nói dối mình: ngây thơ, không mưu mô, guileless.",
+   "difficulty": 1,
+   "skills": [
+    "continuation"
+   ],
+   "addedIn": "batch-02"
+  },
+  {
+   "id": "hd102",
+   "type": "tc",
+   "sentence": "Reporters questioned the {0} of the minister's account, noting that phone records placed him in another city on the night in question.",
+   "blanks": [
+    {
+     "options": [
+      "veracity",
+      "probity",
+      "guile",
+      "sophistry",
+      "chicanery"
+     ],
+     "answer": "veracity"
+    }
+   ],
+   "targets": [
+    "veracity",
+    "probity",
+    "guile"
+   ],
+   "hint": "Thuộc tính của một lời kể.",
+   "explanation": "Nghi ngờ tính xác thực của lời kể: veracity. Probity là sự liêm chính của con người, không dùng cho một lời kể.",
+   "difficulty": 2,
+   "skills": [
+    "collocation",
+    "nuance"
+   ],
+   "addedIn": "batch-02"
+  },
+  {
+   "id": "hd103",
+   "type": "se",
+   "sentence": "The child's {0} questions about the minister's salary, asked without any sense of how awkward they were, delighted the audience.",
+   "options": [
+    "artless",
+    "ingenuous",
+    "disingenuous",
+    "duplicitous",
+    "evasive",
+    "prevaricating"
+   ],
+   "answers": [
+    "artless",
+    "ingenuous"
+   ],
+   "targets": [
+    "artless",
+    "ingenuous",
+    "disingenuous",
+    "duplicitous",
+    "evasive",
+    "prevaricate"
+   ],
+   "hint": "Bẫy ingenuous và disingenuous.",
+   "explanation": "Hỏi hồn nhiên, không biết là khó xử: artless, ingenuous. Disingenuous là bẫy hình thức, nghĩa ngược với ingenuous.",
+   "difficulty": 2,
+   "skills": [
+    "lookalike"
+   ],
+   "addedIn": "batch-02"
+  },
+  {
+   "id": "hd104",
+   "type": "tc",
+   "sentence": "'We had a {0} exchange of views,' the ambassador said, which in diplomatic language means that the two sides disagreed sharply.",
+   "blanks": [
+    {
+     "options": [
+      "frank",
+      "evasive",
+      "disingenuous",
+      "duplicitous",
+      "specious"
+     ],
+     "answer": "frank"
+    }
+   ],
+   "targets": [
+    "frank",
+    "evasive"
+   ],
+   "hint": "Một cụm ngoại giao quen thuộc.",
+   "explanation": "Ngôn ngữ ngoại giao: 'a frank exchange of views' nghĩa là bất đồng gay gắt.",
+   "difficulty": 2,
+   "skills": [
+    "collocation"
+   ],
+   "addedIn": "batch-02"
+  },
+  {
+   "id": "hd105",
+   "type": "tc",
+   "sentence": "It is {0} for the company to claim that it had no idea the product was dangerous; its own engineers had warned management in writing two years earlier.",
+   "blanks": [
+    {
+     "options": [
+      "disingenuous",
+      "ingenuous",
+      "guileless",
+      "artless",
+      "candid"
+     ],
+     "answer": "disingenuous"
+    }
+   ],
+   "targets": [
+    "disingenuous",
+    "ingenuous",
+    "guileless"
+   ],
+   "hint": "Bẫy ingenuous và disingenuous.",
+   "explanation": "Giả vờ không biết dù đã được cảnh báo bằng văn bản: disingenuous. Ingenuous là bẫy hình thức, nghĩa ngược lại.",
+   "difficulty": 2,
+   "skills": [
+    "lookalike"
+   ],
+   "addedIn": "batch-02"
+  },
+  {
+   "id": "hd106",
+   "type": "se",
+   "sentence": "The negotiator turned out to be {0}, promising each side in the dispute exactly what it wanted to hear.",
+   "options": [
+    "duplicitous",
+    "two-faced",
+    "guileless",
+    "artless",
+    "frank",
+    "forthright"
+   ],
+   "answers": [
+    "duplicitous",
+    "two-faced"
+   ],
+   "targets": [
+    "duplicitous",
+    "guileless",
+    "artless",
+    "frank",
+    "forthright"
+   ],
+   "hint": "Hứa với mỗi bên điều họ muốn nghe.",
+   "explanation": "Hứa với mỗi bên một kiểu: hai mặt, duplicitous, two-faced.",
+   "difficulty": 1,
+   "skills": [
+    "continuation"
+   ],
+   "addedIn": "batch-02"
+  },
+  {
+   "id": "hd107",
+   "type": "tc",
+   "sentence": "Historians have long debated whether the ally's switch of sides on the eve of battle was a calculated, {0} betrayal or a desperate attempt to save its own army.",
+   "blanks": [
+    {
+     "options": [
+      "perfidious",
+      "guileless",
+      "ingenuous",
+      "candid",
+      "forthright"
+     ],
+     "answer": "perfidious"
+    }
+   ],
+   "targets": [
+    "perfidious",
+    "guileless"
+   ],
+   "hint": "'Calculated … betrayal'.",
+   "explanation": "Sự phản bội có tính toán: bội bạc, perfidious.",
+   "difficulty": 2,
+   "skills": [
+    "nuance"
+   ],
+   "addedIn": "batch-02"
+  },
+  {
+   "id": "hd108",
+   "type": "tc",
+   "sentence": "The 'technical delay' announced by the ministry was a {0}, designed to buy time while officials quietly renegotiated the contract; such {1} has become routine in the agency's dealings with foreign suppliers.",
+   "blanks": [
+    {
+     "options": [
+      "ruse",
+      "veracity",
+      "probity"
+     ],
+     "answer": "ruse"
+    },
+    {
+     "options": [
+      "chicanery",
+      "candor",
+      "guilelessness"
+     ],
+     "answer": "chicanery"
+    }
+   ],
+   "targets": [
+    "ruse",
+    "chicanery",
+    "veracity",
+    "probity"
+   ],
+   "hint": "'Designed to buy time'.",
+   "explanation": "(i) Một mưu kế để kéo dài thời gian: ruse. (ii) Thủ đoạn gian xảo đã thành thói quen: chicanery.",
+   "difficulty": 2,
+   "skills": [
+    "continuation"
+   ],
+   "addedIn": "batch-02"
+  },
+  {
+   "id": "hd109",
+   "type": "tc",
+   "sentence": "Investors were {0} into buying worthless bonds by brochures promising guaranteed returns of thirty percent a year.",
+   "blanks": [
+    {
+     "options": [
+      "duped",
+      "feigned",
+      "dissembled",
+      "prevaricated",
+      "equivocated"
+     ],
+     "answer": "duped"
+    }
+   ],
+   "targets": [
+    "dupe",
+    "feign",
+    "dissemble"
+   ],
+   "hint": "Cấu trúc 'were … into buying'.",
+   "explanation": "Collocation 'dupe X into doing Y': lừa ai làm gì. Các động từ còn lại không có cấu trúc này.",
+   "difficulty": 2,
+   "skills": [
+    "collocation"
+   ],
+   "addedIn": "batch-02"
+  },
+  {
+   "id": "hd110",
+   "type": "tc",
+   "sentence": "Unable to obtain the documents legally, the reporters resorted to {0}, posing as cleaners to gain access to the building.",
+   "blanks": [
+    {
+     "options": [
+      "subterfuge",
+      "veracity",
+      "probity",
+      "sophistry",
+      "guilelessness"
+     ],
+     "answer": "subterfuge"
+    }
+   ],
+   "targets": [
+    "subterfuge",
+    "veracity",
+    "sophistry"
+   ],
+   "hint": "Hành động, không phải lời nói.",
+   "explanation": "Giả làm người dọn dẹp để vào tòa nhà: mưu kế, subterfuge. Sophistry là ngụy biện bằng lời, không phải hành động giả mạo.",
+   "difficulty": 2,
+   "skills": [
+    "nuance"
+   ],
+   "addedIn": "batch-02"
+  },
+  {
+   "id": "hd111",
+   "type": "tc",
+   "sentence": "The conclusion rests on a {0} assumption: that because two variables rose together, one must have caused the other.",
+   "blanks": [
+    {
+     "options": [
+      "fallacious",
+      "apocryphal",
+      "guileless",
+      "candid",
+      "forthright"
+     ],
+     "answer": "fallacious"
+    }
+   ],
+   "targets": [
+    "fallacious",
+    "apocryphal"
+   ],
+   "hint": "Ví dụ sau dấu hai chấm là một lỗi lập luận.",
+   "explanation": "Nhầm tương quan với nhân quả: giả định sai lầm, fallacious. Apocryphal dùng cho giai thoại không xác thực.",
+   "difficulty": 2,
+   "skills": [
+    "continuation"
+   ],
+   "addedIn": "batch-02"
+  },
+  {
+   "id": "hd112",
+   "type": "se",
+   "sentence": "His defense of the policy was clever but dishonest, a piece of {0} designed to mislead rather than persuade.",
+   "options": [
+    "sophistry",
+    "casuistry",
+    "veracity",
+    "probity",
+    "candor",
+    "artlessness"
+   ],
+   "answers": [
+    "sophistry",
+    "casuistry"
+   ],
+   "targets": [
+    "sophistry",
+    "veracity",
+    "probity"
+   ],
+   "hint": "'Clever but dishonest'.",
+   "explanation": "Lập luận khéo nhưng không trung thực: ngụy biện, sophistry, casuistry.",
+   "difficulty": 3,
+   "skills": [
+    "nuance"
+   ],
+   "addedIn": "batch-02"
+  },
+  {
+   "id": "hd113",
+   "type": "tc",
+   "sentence": "Asked directly whether taxes would rise, the minister continued to {0}, offering answers that could be read either way.",
+   "blanks": [
+    {
+     "options": [
+      "equivocate",
+      "feign",
+      "dupe",
+      "recant",
+      "rebut"
+     ],
+     "answer": "equivocate"
+    }
+   ],
+   "targets": [
+    "equivocate",
+    "feign",
+    "dupe",
+    "recant",
+    "rebut"
+   ],
+   "hint": "'Could be read either way'.",
+   "explanation": "Trả lời nước đôi, hiểu kiểu nào cũng được: equivocate.",
+   "difficulty": 2,
+   "skills": [
+    "nuance"
+   ],
+   "addedIn": "batch-02"
+  },
+  {
+   "id": "hd114",
+   "type": "se",
+   "sentence": "Her answers to the committee were deliberately {0}: she spoke at length without ever confirming or denying that the meetings had taken place.",
+   "options": [
+    "evasive",
+    "equivocal",
+    "forthright",
+    "candid",
+    "apocryphal",
+    "spurious"
+   ],
+   "answers": [
+    "evasive",
+    "equivocal"
+   ],
+   "targets": [
+    "evasive",
+    "equivocal",
+    "forthright",
+    "candid",
+    "apocryphal",
+    "spurious"
+   ],
+   "hint": "Mô tả sau dấu hai chấm.",
+   "explanation": "Nói dài mà không xác nhận cũng không phủ nhận: lẩn tránh, nước đôi, evasive, equivocal. Forthright và candid là cặp sai hướng.",
+   "difficulty": 2,
+   "skills": [
+    "continuation"
+   ],
+   "addedIn": "batch-02"
+  }
+ ]
+}

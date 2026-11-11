@@ -173,7 +173,8 @@ function newWordOrder(a, b) {
 
 /**
  * Thẻ hôm nay: từ đến hạn (sổ hay quên trước, hộp thấp trước) rồi từ mới.
- * opts: {today, newLimit, newDoneToday, max}. Trả về {items: [{wordId, isNew}], total, dueCount, newCount}.
+ * opts: {today, newLimit, newDoneToday, max} hoặc {today, newIds, max}: newIds = danh sách từ mới cố định của hôm nay
+ * (chỉ lấy các từ trong đó còn chưa học, theo đúng thứ tự). Trả về {items: [{wordId, isNew}], total, dueCount, newCount}.
  */
 export function buildDailyQueue(idx, states, opts) {
   const today = opts.today;
@@ -187,8 +188,13 @@ export function buildDailyQueue(idx, states, opts) {
     if (sa.dueDate !== sb.dueDate) return sa.dueDate < sb.dueDate ? -1 : 1;
     return (b.priority || 0) - (a.priority || 0);
   });
-  const room = Math.max(0, (opts.newLimit || 0) - (opts.newDoneToday || 0));
-  const fresh = unlearnedWords(idx, states).slice(0, room);
+  let fresh;
+  if (Array.isArray(opts.newIds)) {
+    fresh = opts.newIds.map((id) => idx.byId[id]).filter((w) => { const s = w && states[w.id]; return w && (!s || !s.box); });
+  } else {
+    const room = Math.max(0, (opts.newLimit || 0) - (opts.newDoneToday || 0));
+    fresh = unlearnedWords(idx, states).slice(0, room);
+  }
   const items = due.map((w) => ({ wordId: w.id, isNew: false }))
     .concat(fresh.map((w) => ({ wordId: w.id, isNew: true })));
   return { items: items.slice(0, max), total: items.length, dueCount: due.length, newCount: fresh.length };

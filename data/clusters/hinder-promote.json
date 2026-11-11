@@ -1020,6 +1020,599 @@
         "nuance"
       ],
       "addedIn": "base"
+    },
+    {
+      "id": "hp101",
+      "type": "tc",
+      "sentence": "Poor rural roads {0} the movement of crops to market, so that farmers in remote districts receive far lower prices than those near the cities.",
+      "blanks": [
+        {
+          "options": [
+            "impede",
+            "expedite",
+            "facilitate",
+            "spur",
+            "foster"
+          ],
+          "answer": "impede"
+        }
+      ],
+      "targets": [
+        "impede",
+        "expedite",
+        "facilitate"
+      ],
+      "hint": "Hệ quả: nông dân vùng xa được giá thấp.",
+      "explanation": "Đường xấu làm cản trở việc chở nông sản: impede.",
+      "difficulty": 1,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-02"
+    },
+    {
+      "id": "hp102",
+      "type": "se",
+      "sentence": "Quick action by regulators {0} the hostile takeover just days before it was due to close.",
+      "options": [
+        "thwarted",
+        "foiled",
+        "abetted",
+        "facilitated",
+        "exacerbated",
+        "compounded"
+      ],
+      "answers": [
+        "thwarted",
+        "foiled"
+      ],
+      "targets": [
+        "thwart",
+        "foil",
+        "abet",
+        "facilitate"
+      ],
+      "hint": "Kết quả của việc cơ quan quản lý ra tay.",
+      "explanation": "Chặn đứng thương vụ: thwarted, foiled. Abetted và facilitated là cặp sai hướng; exacerbated và compounded dùng cho vấn đề.",
+      "difficulty": 1,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "batch-02"
+    },
+    {
+      "id": "hp103",
+      "type": "tc",
+      "sentence": "For a decade the project was {0} by red tape: every permit required another, and no ministry would take responsibility.",
+      "blanks": [
+        {
+          "options": [
+            "stymied",
+            "expedited",
+            "galvanized",
+            "buttressed",
+            "catalyzed"
+          ],
+          "answer": "stymied"
+        }
+      ],
+      "targets": [
+        "stymie",
+        "expedite",
+        "galvanize"
+      ],
+      "hint": "Mô tả sau dấu hai chấm.",
+      "explanation": "Giấy phép chồng giấy phép: bế tắc, stymied.",
+      "difficulty": 1,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-02"
+    },
+    {
+      "id": "hp104",
+      "type": "tc",
+      "sentence": "Critics argue that excessive regulation does not merely slow innovation but {0} it altogether, deterring entrepreneurs from starting firms in the first place.",
+      "blanks": [
+        {
+          "options": [
+            "stifles",
+            "retards",
+            "impedes",
+            "hampers",
+            "curbs"
+          ],
+          "answer": "stifles"
+        }
+      ],
+      "targets": [
+        "stifle",
+        "retard",
+        "impede",
+        "hamper",
+        "curb"
+      ],
+      "hint": "Mạnh hơn 'slow'.",
+      "explanation": "'Not merely slow… but … altogether' đòi từ mạnh hơn làm chậm: bóp nghẹt, stifles. Retards, impedes, hampers, curbs đều chỉ là làm chậm hoặc hạn chế.",
+      "difficulty": 3,
+      "skills": [
+        "degree"
+      ],
+      "addedIn": "batch-02"
+    },
+    {
+      "id": "hp105",
+      "type": "tc",
+      "sentence": "The small size of the sample {0} any firm conclusions about the effect on women, though the estimates for men are reasonably precise.",
+      "blanks": [
+        {
+          "options": [
+            "precludes",
+            "obviates",
+            "forestalls",
+            "averts",
+            "palliates"
+          ],
+          "answer": "precludes"
+        }
+      ],
+      "targets": [
+        "preclude",
+        "obviate",
+        "forestall",
+        "avert"
+      ],
+      "hint": "Đối tượng là 'kết luận'.",
+      "explanation": "Làm cho không thể kết luận được: precludes. Obviates là làm cho không cần thiết; forestalls và averts là ngăn một sự kiện xảy ra.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "batch-02"
+    },
+    {
+      "id": "hp106",
+      "type": "se",
+      "sentence": "The central bank cut rates sharply in an attempt to {0} a recession that most forecasters already considered likely.",
+      "options": [
+        "forestall",
+        "avert",
+        "obviate",
+        "galvanize",
+        "exacerbate",
+        "foment"
+      ],
+      "answers": [
+        "forestall",
+        "avert"
+      ],
+      "targets": [
+        "forestall",
+        "avert",
+        "obviate",
+        "galvanize"
+      ],
+      "hint": "Ngăn một sự kiện sắp tới.",
+      "explanation": "Chặn trước một cuộc suy thoái: forestall, avert. Obviate đi với 'the need for', không đi với một sự kiện; exacerbate và foment sai hướng.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "batch-02"
+    },
+    {
+      "id": "hp107",
+      "type": "tc",
+      "sentence": "Last-minute negotiations {0} a strike that would have closed the port, and a new automated scheduling system has since {1} the need for the overtime rules that had caused the dispute.",
+      "blanks": [
+        {
+          "options": [
+            "averted",
+            "obviated",
+            "fomented"
+          ],
+          "answer": "averted"
+        },
+        {
+          "options": [
+            "obviated",
+            "instigated",
+            "compounded"
+          ],
+          "answer": "obviated"
+        }
+      ],
+      "targets": [
+        "avert",
+        "obviate"
+      ],
+      "hint": "Collocation 'the need for'.",
+      "explanation": "(i) Tránh được cuộc đình công: averted. (ii) Collocation 'obviate the need for': hệ thống mới làm cho quy định cũ không còn cần thiết.",
+      "difficulty": 2,
+      "skills": [
+        "collocation",
+        "nuance"
+      ],
+      "addedIn": "batch-02"
+    },
+    {
+      "id": "hp108",
+      "type": "tc",
+      "sentence": "Microcredit can {0} some of the hardships of rural poverty, but on its own it rarely lifts households out of poverty altogether.",
+      "blanks": [
+        {
+          "options": [
+            "alleviate",
+            "exacerbate",
+            "aggravate",
+            "compound",
+            "foment"
+          ],
+          "answer": "alleviate"
+        }
+      ],
+      "targets": [
+        "alleviate",
+        "exacerbate",
+        "aggravate",
+        "compound"
+      ],
+      "hint": "'But' giới hạn tác dụng.",
+      "explanation": "'Can … some of the hardships, but rarely lifts out of poverty': làm giảm bớt, alleviate.",
+      "difficulty": 1,
+      "skills": [
+        "contrast"
+      ],
+      "addedIn": "batch-02"
+    },
+    {
+      "id": "hp109",
+      "type": "tc",
+      "sentence": "She {0} her criticism of the paper with genuine praise for its data collection, so that the authors read her report as encouragement rather than rejection.",
+      "blanks": [
+        {
+          "options": [
+            "tempered",
+            "compounded",
+            "exacerbated",
+            "aggravated",
+            "galvanized"
+          ],
+          "answer": "tempered"
+        }
+      ],
+      "targets": [
+        "temper",
+        "compound",
+        "exacerbate"
+      ],
+      "hint": "Cấu trúc '… X with Y'.",
+      "explanation": "Collocation 'temper X with Y': làm dịu lời phê bình bằng lời khen.",
+      "difficulty": 2,
+      "skills": [
+        "secondary-meaning",
+        "collocation"
+      ],
+      "addedIn": "batch-02"
+    },
+    {
+      "id": "hp110",
+      "type": "se",
+      "sentence": "The company offered refunds and a public apology in an effort to {0} customers furious about the data breach.",
+      "options": [
+        "mollify",
+        "placate",
+        "palliate",
+        "alleviate",
+        "incite",
+        "foment"
+      ],
+      "answers": [
+        "mollify",
+        "placate"
+      ],
+      "targets": [
+        "mollify",
+        "placate",
+        "palliate",
+        "alleviate",
+        "incite",
+        "foment"
+      ],
+      "hint": "Đối tượng là người đang giận.",
+      "explanation": "Làm nguôi giận khách hàng: mollify, placate. Palliate và alleviate là cặp làm giảm khó khăn, đau khổ, không dùng với người đang giận làm tân ngữ.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "batch-02"
+    },
+    {
+      "id": "hp111",
+      "type": "tc",
+      "sentence": "Rent subsidies {0} the housing shortage but do not cure it: they ease the burden on tenants while leaving the underlying lack of supply untouched.",
+      "blanks": [
+        {
+          "options": [
+            "palliate",
+            "obviate",
+            "preclude",
+            "foment",
+            "galvanize"
+          ],
+          "answer": "palliate"
+        }
+      ],
+      "targets": [
+        "palliate",
+        "obviate",
+        "preclude"
+      ],
+      "hint": "'But do not cure it'.",
+      "explanation": "Giảm triệu chứng mà không chữa tận gốc: palliate.",
+      "difficulty": 3,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "batch-02"
+    },
+    {
+      "id": "hp112",
+      "type": "se",
+      "sentence": "Poor sanitation in the camps {0} the outbreak, allowing the disease to spread far faster than in the surrounding villages.",
+      "options": [
+        "aggravated",
+        "exacerbated",
+        "mitigated",
+        "alleviated",
+        "fomented",
+        "instigated"
+      ],
+      "answers": [
+        "aggravated",
+        "exacerbated"
+      ],
+      "targets": [
+        "aggravate",
+        "exacerbate",
+        "mitigate",
+        "alleviate",
+        "foment",
+        "instigate"
+      ],
+      "hint": "Đối tượng là dịch bệnh.",
+      "explanation": "Làm dịch nặng thêm: aggravated, exacerbated. Fomented và instigated là cặp kích động con người, không dùng cho dịch bệnh.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "batch-02"
+    },
+    {
+      "id": "hp113",
+      "type": "tc",
+      "sentence": "The speaker was charged with attempting to {0} violence after urging the crowd to attack the police station.",
+      "blanks": [
+        {
+          "options": [
+            "incite",
+            "mollify",
+            "placate",
+            "palliate",
+            "temper"
+          ],
+          "answer": "incite"
+        }
+      ],
+      "targets": [
+        "incite",
+        "mollify"
+      ],
+      "hint": "Kêu gọi đám đông tấn công.",
+      "explanation": "Kích động bạo lực: incite violence.",
+      "difficulty": 1,
+      "skills": [
+        "collocation"
+      ],
+      "addedIn": "batch-02"
+    },
+    {
+      "id": "hp114",
+      "type": "tc",
+      "sentence": "The authors {0} their argument with evidence from forty countries, showing that the pattern holds across very different institutional settings.",
+      "blanks": [
+        {
+          "options": [
+            "buttress",
+            "undermine",
+            "abet",
+            "foment",
+            "instigate"
+          ],
+          "answer": "buttress"
+        }
+      ],
+      "targets": [
+        "buttress",
+        "undermine",
+        "abet"
+      ],
+      "hint": "Bằng chứng từ bốn mươi quốc gia.",
+      "explanation": "Củng cố lập luận bằng bằng chứng: buttress. Undermine ngược nghĩa; abet là tiếp tay cho việc xấu.",
+      "difficulty": 1,
+      "skills": [
+        "collocation"
+      ],
+      "addedIn": "batch-02"
+    },
+    {
+      "id": "hp115",
+      "type": "tc",
+      "sentence": "Transparent rules tend to {0} trust in public institutions, whereas arbitrary enforcement breeds suspicion.",
+      "blanks": [
+        {
+          "options": [
+            "engender",
+            "stymie",
+            "stifle",
+            "thwart",
+            "abet"
+          ],
+          "answer": "engender"
+        }
+      ],
+      "targets": [
+        "engender",
+        "stifle",
+        "abet"
+      ],
+      "hint": "'Whereas'.",
+      "explanation": "'Whereas' đổi chiều với 'breeds suspicion': làm nảy sinh lòng tin, engender trust.",
+      "difficulty": 2,
+      "skills": [
+        "contrast",
+        "collocation"
+      ],
+      "addedIn": "batch-02"
+    },
+    {
+      "id": "hp116",
+      "type": "se",
+      "sentence": "The new online portal is designed to {0} visa applications, cutting processing times from six weeks to five days.",
+      "options": [
+        "expedite",
+        "accelerate",
+        "impede",
+        "hamper",
+        "abet",
+        "foment"
+      ],
+      "answers": [
+        "expedite",
+        "accelerate"
+      ],
+      "targets": [
+        "expedite",
+        "impede",
+        "hamper",
+        "abet"
+      ],
+      "hint": "Kết quả sau dấu phẩy.",
+      "explanation": "Rút thời gian xử lý từ sáu tuần xuống năm ngày: đẩy nhanh, expedite, accelerate.",
+      "difficulty": 1,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-02"
+    },
+    {
+      "id": "hp117",
+      "type": "tc",
+      "sentence": "The banker was convicted of aiding and {0} the fraud by moving money through accounts he knew to be fictitious.",
+      "blanks": [
+        {
+          "options": [
+            "abetting",
+            "bolstering",
+            "buttressing",
+            "fostering",
+            "galvanizing"
+          ],
+          "answer": "abetting"
+        }
+      ],
+      "targets": [
+        "abet",
+        "bolster",
+        "buttress",
+        "foster"
+      ],
+      "hint": "Cụm cố định trong luật.",
+      "explanation": "Cụm cố định 'aid and abet': tiếp tay cho tội phạm. Các động từ còn lại mang nghĩa củng cố, nuôi dưỡng theo hướng tích cực.",
+      "difficulty": 2,
+      "skills": [
+        "collocation"
+      ],
+      "addedIn": "batch-02"
+    },
+    {
+      "id": "hp118",
+      "type": "tc",
+      "sentence": "Tax credits for research are intended to {0} private investment in new technology, while public universities {1} the skilled workforce that such investment requires.",
+      "blanks": [
+        {
+          "options": [
+            "spur",
+            "stem",
+            "curb"
+          ],
+          "answer": "spur"
+        },
+        {
+          "options": [
+            "foster",
+            "stifle",
+            "thwart"
+          ],
+          "answer": "foster"
+        }
+      ],
+      "targets": [
+        "spur",
+        "foster",
+        "stem",
+        "curb"
+      ],
+      "hint": "Mục đích của chính sách.",
+      "explanation": "(i) Thúc đẩy đầu tư: spur. (ii) Nuôi dưỡng lực lượng lao động: foster. Hai chỗ trống cùng hướng tích cực.",
+      "difficulty": 2,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-02"
+    },
+    {
+      "id": "hp119",
+      "type": "tc",
+      "sentence": "The government insisted that the new tariff would {0} domestic manufacturing; in practice it {1} the very firms it meant to protect by raising the cost of imported components, and the resulting job losses {2} rather than allayed public anxiety about the economy.",
+      "blanks": [
+        {
+          "options": [
+            "bolster",
+            "stymie",
+            "mollify"
+          ],
+          "answer": "bolster"
+        },
+        {
+          "options": [
+            "hampered",
+            "galvanized",
+            "abetted"
+          ],
+          "answer": "hampered"
+        },
+        {
+          "options": [
+            "aggravated",
+            "palliated",
+            "tempered"
+          ],
+          "answer": "aggravated"
+        }
+      ],
+      "targets": [
+        "bolster",
+        "hamper",
+        "aggravate"
+      ],
+      "hint": "Lời hứa, thực tế, hệ quả.",
+      "explanation": "(i) Chính phủ hứa củng cố: bolster. (ii) 'In practice' đổi chiều, chi phí tăng: cản trở, hampered. (iii) 'Rather than allayed': làm trầm trọng thêm, aggravated.",
+      "difficulty": 3,
+      "skills": [
+        "contrast"
+      ],
+      "addedIn": "batch-02"
     }
   ]
 }

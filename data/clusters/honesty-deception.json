@@ -728,6 +728,427 @@
         "contrast"
       ],
       "addedIn": "base"
+    },
+    {
+      "id": "hd101",
+      "type": "tc",
+      "sentence": "The {0} young clerk, who had never imagined that a colleague might lie to him, signed the fraudulent invoices without a second thought.",
+      "blanks": [
+        {
+          "options": [
+            "guileless",
+            "duplicitous",
+            "disingenuous",
+            "perfidious",
+            "mendacious"
+          ],
+          "answer": "guileless"
+        }
+      ],
+      "targets": [
+        "guileless",
+        "duplicitous",
+        "disingenuous"
+      ],
+      "hint": "Mô tả ngay sau từ cần điền.",
+      "explanation": "Chưa từng nghĩ có người nói dối mình: ngây thơ, không mưu mô, guileless.",
+      "difficulty": 1,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-02"
+    },
+    {
+      "id": "hd102",
+      "type": "tc",
+      "sentence": "Reporters questioned the {0} of the minister's account, noting that phone records placed him in another city on the night in question.",
+      "blanks": [
+        {
+          "options": [
+            "veracity",
+            "probity",
+            "guile",
+            "sophistry",
+            "chicanery"
+          ],
+          "answer": "veracity"
+        }
+      ],
+      "targets": [
+        "veracity",
+        "probity",
+        "guile"
+      ],
+      "hint": "Thuộc tính của một lời kể.",
+      "explanation": "Nghi ngờ tính xác thực của lời kể: veracity. Probity là sự liêm chính của con người, không dùng cho một lời kể.",
+      "difficulty": 2,
+      "skills": [
+        "collocation",
+        "nuance"
+      ],
+      "addedIn": "batch-02"
+    },
+    {
+      "id": "hd103",
+      "type": "se",
+      "sentence": "The child's {0} questions about the minister's salary, asked without any sense of how awkward they were, delighted the audience.",
+      "options": [
+        "artless",
+        "ingenuous",
+        "disingenuous",
+        "duplicitous",
+        "evasive",
+        "prevaricating"
+      ],
+      "answers": [
+        "artless",
+        "ingenuous"
+      ],
+      "targets": [
+        "artless",
+        "ingenuous",
+        "disingenuous",
+        "duplicitous",
+        "evasive",
+        "prevaricate"
+      ],
+      "hint": "Bẫy ingenuous và disingenuous.",
+      "explanation": "Hỏi hồn nhiên, không biết là khó xử: artless, ingenuous. Disingenuous là bẫy hình thức, nghĩa ngược với ingenuous.",
+      "difficulty": 2,
+      "skills": [
+        "lookalike"
+      ],
+      "addedIn": "batch-02"
+    },
+    {
+      "id": "hd104",
+      "type": "tc",
+      "sentence": "'We had a {0} exchange of views,' the ambassador said, which in diplomatic language means that the two sides disagreed sharply.",
+      "blanks": [
+        {
+          "options": [
+            "frank",
+            "evasive",
+            "disingenuous",
+            "duplicitous",
+            "specious"
+          ],
+          "answer": "frank"
+        }
+      ],
+      "targets": [
+        "frank",
+        "evasive"
+      ],
+      "hint": "Một cụm ngoại giao quen thuộc.",
+      "explanation": "Ngôn ngữ ngoại giao: 'a frank exchange of views' nghĩa là bất đồng gay gắt.",
+      "difficulty": 2,
+      "skills": [
+        "collocation"
+      ],
+      "addedIn": "batch-02"
+    },
+    {
+      "id": "hd105",
+      "type": "tc",
+      "sentence": "It is {0} for the company to claim that it had no idea the product was dangerous; its own engineers had warned management in writing two years earlier.",
+      "blanks": [
+        {
+          "options": [
+            "disingenuous",
+            "ingenuous",
+            "guileless",
+            "artless",
+            "candid"
+          ],
+          "answer": "disingenuous"
+        }
+      ],
+      "targets": [
+        "disingenuous",
+        "ingenuous",
+        "guileless"
+      ],
+      "hint": "Bẫy ingenuous và disingenuous.",
+      "explanation": "Giả vờ không biết dù đã được cảnh báo bằng văn bản: disingenuous. Ingenuous là bẫy hình thức, nghĩa ngược lại.",
+      "difficulty": 2,
+      "skills": [
+        "lookalike"
+      ],
+      "addedIn": "batch-02"
+    },
+    {
+      "id": "hd106",
+      "type": "se",
+      "sentence": "The negotiator turned out to be {0}, promising each side in the dispute exactly what it wanted to hear.",
+      "options": [
+        "duplicitous",
+        "two-faced",
+        "guileless",
+        "artless",
+        "frank",
+        "forthright"
+      ],
+      "answers": [
+        "duplicitous",
+        "two-faced"
+      ],
+      "targets": [
+        "duplicitous",
+        "guileless",
+        "artless",
+        "frank",
+        "forthright"
+      ],
+      "hint": "Hứa với mỗi bên điều họ muốn nghe.",
+      "explanation": "Hứa với mỗi bên một kiểu: hai mặt, duplicitous, two-faced.",
+      "difficulty": 1,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-02"
+    },
+    {
+      "id": "hd107",
+      "type": "tc",
+      "sentence": "Historians have long debated whether the ally's switch of sides on the eve of battle was a calculated, {0} betrayal or a desperate attempt to save its own army.",
+      "blanks": [
+        {
+          "options": [
+            "perfidious",
+            "guileless",
+            "ingenuous",
+            "candid",
+            "forthright"
+          ],
+          "answer": "perfidious"
+        }
+      ],
+      "targets": [
+        "perfidious",
+        "guileless"
+      ],
+      "hint": "'Calculated … betrayal'.",
+      "explanation": "Sự phản bội có tính toán: bội bạc, perfidious.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "batch-02"
+    },
+    {
+      "id": "hd108",
+      "type": "tc",
+      "sentence": "The 'technical delay' announced by the ministry was a {0}, designed to buy time while officials quietly renegotiated the contract; such {1} has become routine in the agency's dealings with foreign suppliers.",
+      "blanks": [
+        {
+          "options": [
+            "ruse",
+            "veracity",
+            "probity"
+          ],
+          "answer": "ruse"
+        },
+        {
+          "options": [
+            "chicanery",
+            "candor",
+            "guilelessness"
+          ],
+          "answer": "chicanery"
+        }
+      ],
+      "targets": [
+        "ruse",
+        "chicanery",
+        "veracity",
+        "probity"
+      ],
+      "hint": "'Designed to buy time'.",
+      "explanation": "(i) Một mưu kế để kéo dài thời gian: ruse. (ii) Thủ đoạn gian xảo đã thành thói quen: chicanery.",
+      "difficulty": 2,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-02"
+    },
+    {
+      "id": "hd109",
+      "type": "tc",
+      "sentence": "Investors were {0} into buying worthless bonds by brochures promising guaranteed returns of thirty percent a year.",
+      "blanks": [
+        {
+          "options": [
+            "duped",
+            "feigned",
+            "dissembled",
+            "prevaricated",
+            "equivocated"
+          ],
+          "answer": "duped"
+        }
+      ],
+      "targets": [
+        "dupe",
+        "feign",
+        "dissemble"
+      ],
+      "hint": "Cấu trúc 'were … into buying'.",
+      "explanation": "Collocation 'dupe X into doing Y': lừa ai làm gì. Các động từ còn lại không có cấu trúc này.",
+      "difficulty": 2,
+      "skills": [
+        "collocation"
+      ],
+      "addedIn": "batch-02"
+    },
+    {
+      "id": "hd110",
+      "type": "tc",
+      "sentence": "Unable to obtain the documents legally, the reporters resorted to {0}, posing as cleaners to gain access to the building.",
+      "blanks": [
+        {
+          "options": [
+            "subterfuge",
+            "veracity",
+            "probity",
+            "sophistry",
+            "guilelessness"
+          ],
+          "answer": "subterfuge"
+        }
+      ],
+      "targets": [
+        "subterfuge",
+        "veracity",
+        "sophistry"
+      ],
+      "hint": "Hành động, không phải lời nói.",
+      "explanation": "Giả làm người dọn dẹp để vào tòa nhà: mưu kế, subterfuge. Sophistry là ngụy biện bằng lời, không phải hành động giả mạo.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "batch-02"
+    },
+    {
+      "id": "hd111",
+      "type": "tc",
+      "sentence": "The conclusion rests on a {0} assumption: that because two variables rose together, one must have caused the other.",
+      "blanks": [
+        {
+          "options": [
+            "fallacious",
+            "apocryphal",
+            "guileless",
+            "candid",
+            "forthright"
+          ],
+          "answer": "fallacious"
+        }
+      ],
+      "targets": [
+        "fallacious",
+        "apocryphal"
+      ],
+      "hint": "Ví dụ sau dấu hai chấm là một lỗi lập luận.",
+      "explanation": "Nhầm tương quan với nhân quả: giả định sai lầm, fallacious. Apocryphal dùng cho giai thoại không xác thực.",
+      "difficulty": 2,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-02"
+    },
+    {
+      "id": "hd112",
+      "type": "se",
+      "sentence": "His defense of the policy was clever but dishonest, a piece of {0} designed to mislead rather than persuade.",
+      "options": [
+        "sophistry",
+        "casuistry",
+        "veracity",
+        "probity",
+        "candor",
+        "artlessness"
+      ],
+      "answers": [
+        "sophistry",
+        "casuistry"
+      ],
+      "targets": [
+        "sophistry",
+        "veracity",
+        "probity"
+      ],
+      "hint": "'Clever but dishonest'.",
+      "explanation": "Lập luận khéo nhưng không trung thực: ngụy biện, sophistry, casuistry.",
+      "difficulty": 3,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "batch-02"
+    },
+    {
+      "id": "hd113",
+      "type": "tc",
+      "sentence": "Asked directly whether taxes would rise, the minister continued to {0}, offering answers that could be read either way.",
+      "blanks": [
+        {
+          "options": [
+            "equivocate",
+            "feign",
+            "dupe",
+            "recant",
+            "rebut"
+          ],
+          "answer": "equivocate"
+        }
+      ],
+      "targets": [
+        "equivocate",
+        "feign",
+        "dupe",
+        "recant",
+        "rebut"
+      ],
+      "hint": "'Could be read either way'.",
+      "explanation": "Trả lời nước đôi, hiểu kiểu nào cũng được: equivocate.",
+      "difficulty": 2,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "batch-02"
+    },
+    {
+      "id": "hd114",
+      "type": "se",
+      "sentence": "Her answers to the committee were deliberately {0}: she spoke at length without ever confirming or denying that the meetings had taken place.",
+      "options": [
+        "evasive",
+        "equivocal",
+        "forthright",
+        "candid",
+        "apocryphal",
+        "spurious"
+      ],
+      "answers": [
+        "evasive",
+        "equivocal"
+      ],
+      "targets": [
+        "evasive",
+        "equivocal",
+        "forthright",
+        "candid",
+        "apocryphal",
+        "spurious"
+      ],
+      "hint": "Mô tả sau dấu hai chấm.",
+      "explanation": "Nói dài mà không xác nhận cũng không phủ nhận: lẩn tránh, nước đôi, evasive, equivocal. Forthright và candid là cặp sai hướng.",
+      "difficulty": 2,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-02"
     }
   ]
 }
