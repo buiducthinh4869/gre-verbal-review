@@ -764,6 +764,571 @@
         "collocation"
       ],
       "addedIn": "base"
+    },
+    {
+      "id": "cc101",
+      "type": "tc",
+      "sentence": "A {0} use of subsidies, targeted at firms that would not otherwise invest, can correct the market failure without wasting public money.",
+      "blanks": [
+        {
+          "options": [
+            "judicious",
+            "indiscriminate",
+            "cavalier",
+            "impetuous",
+            "perfunctory"
+          ],
+          "answer": "judicious"
+        }
+      ],
+      "targets": [
+        "judicious",
+        "indiscriminate",
+        "cavalier"
+      ],
+      "hint": "'Targeted at…'.",
+      "explanation": "Dùng có chọn lọc, không lãng phí: sáng suốt, judicious.",
+      "difficulty": 1,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-04"
+    },
+    {
+      "id": "cc102",
+      "type": "tc",
+      "sentence": "The negotiators were careful to remain {0}, refusing to tell reporters even where the talks were being held.",
+      "blanks": [
+        {
+          "options": [
+            "discreet",
+            "discrete",
+            "overt",
+            "flamboyant",
+            "brash"
+          ],
+          "answer": "discreet"
+        }
+      ],
+      "targets": [
+        "discreet",
+        "overt",
+        "flamboyant",
+        "brash"
+      ],
+      "hint": "Bẫy chính tả kinh điển.",
+      "explanation": "Kín đáo trong lời nói: discreet. Discrete là bẫy chính tả: riêng biệt, rời rạc.",
+      "difficulty": 2,
+      "skills": [
+        "lookalike"
+      ],
+      "addedIn": "batch-04"
+    },
+    {
+      "id": "cc103",
+      "type": "se",
+      "sentence": "Given how little was known about the new market, it seemed {0} to begin with a small pilot rather than a national rollout.",
+      "options": [
+        "prudent",
+        "sensible",
+        "rash",
+        "impetuous",
+        "cursory",
+        "perfunctory"
+      ],
+      "answers": [
+        "prudent",
+        "sensible"
+      ],
+      "targets": [
+        "prudent",
+        "rash",
+        "impetuous",
+        "cursory",
+        "perfunctory"
+      ],
+      "hint": "Ít thông tin thì nên làm gì?",
+      "explanation": "Bắt đầu thí điểm nhỏ khi còn ít thông tin: thận trọng, prudent, sensible. Rash và impetuous là cặp hấp tấp.",
+      "difficulty": 1,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-04"
+    },
+    {
+      "id": "cc104",
+      "type": "tc",
+      "sentence": "The replication was conducted with {0} attention to the original protocol: the authors even used the same brand of survey tablets.",
+      "blanks": [
+        {
+          "options": [
+            "scrupulous",
+            "cursory",
+            "perfunctory",
+            "desultory",
+            "cavalier"
+          ],
+          "answer": "scrupulous"
+        }
+      ],
+      "targets": [
+        "scrupulous",
+        "cursory",
+        "perfunctory"
+      ],
+      "hint": "Ví dụ sau dấu hai chấm.",
+      "explanation": "Dùng cả cùng loại máy tính bảng: tỉ mỉ, scrupulous.",
+      "difficulty": 1,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-04"
+    },
+    {
+      "id": "cc105",
+      "type": "tc",
+      "sentence": "The {0} clerk rejected the application because a single box had been initialed in blue ink rather than black.",
+      "blanks": [
+        {
+          "options": [
+            "punctilious",
+            "cavalier",
+            "negligent",
+            "remiss",
+            "lax"
+          ],
+          "answer": "punctilious"
+        }
+      ],
+      "targets": [
+        "punctilious",
+        "cavalier",
+        "negligent",
+        "remiss",
+        "lax"
+      ],
+      "hint": "Lý do từ chối.",
+      "explanation": "Bắt lỗi màu mực: quá chú trọng chi tiết, quy tắc, punctilious.",
+      "difficulty": 1,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-04"
+    },
+    {
+      "id": "cc106",
+      "type": "tc",
+      "sentence": "He is so {0} about citation format that he once returned a student's thesis because of a misplaced comma in the bibliography.",
+      "blanks": [
+        {
+          "options": [
+            "fastidious",
+            "slipshod",
+            "cavalier",
+            "lax",
+            "negligent"
+          ],
+          "answer": "fastidious"
+        }
+      ],
+      "targets": [
+        "fastidious",
+        "slipshod",
+        "cavalier",
+        "lax"
+      ],
+      "hint": "Một dấu phẩy.",
+      "explanation": "Khó tính, cầu kỳ đến mức trả luận văn vì một dấu phẩy: fastidious about X.",
+      "difficulty": 1,
+      "skills": [
+        "collocation"
+      ],
+      "addedIn": "batch-04"
+    },
+    {
+      "id": "cc107",
+      "type": "se",
+      "sentence": "The journal's {0} standards mean that fewer than one submission in ten is accepted.",
+      "options": [
+        "exacting",
+        "rigorous",
+        "lax",
+        "cavalier",
+        "cursory",
+        "perfunctory"
+      ],
+      "answers": [
+        "exacting",
+        "rigorous"
+      ],
+      "targets": [
+        "exacting",
+        "lax",
+        "cavalier",
+        "cursory",
+        "perfunctory"
+      ],
+      "hint": "Ít hơn một phần mười bài được nhận.",
+      "explanation": "Tiêu chuẩn khắt khe: exacting, rigorous. Cursory và perfunctory là cặp qua loa.",
+      "difficulty": 1,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-04"
+    },
+    {
+      "id": "cc108",
+      "type": "tc",
+      "sentence": "{0} enumerators double-checked every questionnaire before leaving the household, so the dataset has almost no missing values.",
+      "blanks": [
+        {
+          "options": [
+            "Conscientious",
+            "Slipshod",
+            "Negligent",
+            "Remiss",
+            "Cavalier"
+          ],
+          "answer": "Conscientious"
+        }
+      ],
+      "targets": [
+        "conscientious",
+        "slipshod",
+        "negligent",
+        "remiss",
+        "cavalier"
+      ],
+      "hint": "Kết quả: gần như không thiếu dữ liệu.",
+      "explanation": "Kiểm tra lại mọi bảng hỏi: tận tâm, conscientious.",
+      "difficulty": 1,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-04"
+    },
+    {
+      "id": "cc109",
+      "type": "tc",
+      "sentence": "After months of {0} negotiations, held irregularly and with no clear agenda, the talks quietly collapsed.",
+      "blanks": [
+        {
+          "options": [
+            "desultory",
+            "painstaking",
+            "meticulous",
+            "scrupulous",
+            "exacting"
+          ],
+          "answer": "desultory"
+        }
+      ],
+      "targets": [
+        "desultory",
+        "painstaking",
+        "meticulous"
+      ],
+      "hint": "'Irregularly and with no clear agenda'.",
+      "explanation": "Họp thất thường, không chương trình: rời rạc, desultory.",
+      "difficulty": 1,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-04"
+    },
+    {
+      "id": "cc110",
+      "type": "se",
+      "sentence": "Even a {0} reading of the contract reveals that the penalty clause applies to both parties.",
+      "options": [
+        "cursory",
+        "superficial",
+        "painstaking",
+        "meticulous",
+        "punctilious",
+        "scrupulous"
+      ],
+      "answers": [
+        "cursory",
+        "superficial"
+      ],
+      "targets": [
+        "cursory",
+        "superficial",
+        "painstaking",
+        "meticulous",
+        "punctilious",
+        "scrupulous"
+      ],
+      "hint": "Chữ 'even'.",
+      "explanation": "Cấu trúc 'even a … reading reveals': chỉ đọc lướt cũng thấy, cursory, superficial.",
+      "difficulty": 2,
+      "skills": [
+        "collocation"
+      ],
+      "addedIn": "batch-04"
+    },
+    {
+      "id": "cc111",
+      "type": "tc",
+      "sentence": "Regulators criticized the bank's {0} attitude toward customer data, noting that passwords had been stored unencrypted for years.",
+      "blanks": [
+        {
+          "options": [
+            "cavalier",
+            "scrupulous",
+            "punctilious",
+            "fastidious",
+            "meticulous"
+          ],
+          "answer": "cavalier"
+        }
+      ],
+      "targets": [
+        "cavalier",
+        "scrupulous",
+        "punctilious",
+        "fastidious"
+      ],
+      "hint": "Mật khẩu không mã hóa nhiều năm.",
+      "explanation": "Coi nhẹ việc bảo mật: cavalier attitude.",
+      "difficulty": 1,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-04"
+    },
+    {
+      "id": "cc112",
+      "type": "tc",
+      "sentence": "The {0} use of antibiotics in livestock, given routinely whether or not the animals are sick, has accelerated the spread of resistant bacteria.",
+      "blanks": [
+        {
+          "options": [
+            "indiscriminate",
+            "judicious",
+            "scrupulous",
+            "punctilious",
+            "meticulous"
+          ],
+          "answer": "indiscriminate"
+        }
+      ],
+      "targets": [
+        "indiscriminate",
+        "judicious",
+        "scrupulous"
+      ],
+      "hint": "'Whether or not the animals are sick'.",
+      "explanation": "Dùng bất kể con vật có bệnh hay không: bừa bãi, indiscriminate.",
+      "difficulty": 1,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-04"
+    },
+    {
+      "id": "cc113",
+      "type": "tc",
+      "sentence": "Years of {0} supervision allowed risky lending to grow unchecked; the new rules, by contrast, are so {1} that some banks complain they can barely lend at all.",
+      "blanks": [
+        {
+          "options": [
+            "lax",
+            "stringent",
+            "exacting"
+          ],
+          "answer": "lax"
+        },
+        {
+          "options": [
+            "stringent",
+            "lax",
+            "cursory"
+          ],
+          "answer": "stringent"
+        }
+      ],
+      "targets": [
+        "lax",
+        "stringent",
+        "exacting"
+      ],
+      "hint": "'By contrast'.",
+      "explanation": "(i) Cho vay rủi ro không bị kiểm soát: giám sát lỏng lẻo, lax. (ii) 'By contrast', ngân hàng khó cho vay: nghiêm ngặt, stringent.",
+      "difficulty": 2,
+      "skills": [
+        "contrast"
+      ],
+      "addedIn": "batch-04"
+    },
+    {
+      "id": "cc114",
+      "type": "tc",
+      "sentence": "The {0} decision to float the currency overnight, taken without consulting the central bank, triggered a run on the banks.",
+      "blanks": [
+        {
+          "options": [
+            "impetuous",
+            "judicious",
+            "circumspect",
+            "prudent",
+            "scrupulous"
+          ],
+          "answer": "impetuous"
+        }
+      ],
+      "targets": [
+        "impetuous",
+        "judicious",
+        "circumspect",
+        "prudent"
+      ],
+      "hint": "'Overnight… without consulting'.",
+      "explanation": "Quyết định bốc đồng, không tham khảo ai: impetuous.",
+      "difficulty": 1,
+      "skills": [
+        "continuation"
+      ],
+      "addedIn": "batch-04"
+    },
+    {
+      "id": "cc115",
+      "type": "se",
+      "sentence": "It would be {0} to draw firm conclusions from a single quarter of data.",
+      "options": [
+        "rash",
+        "hasty",
+        "prudent",
+        "judicious",
+        "punctilious",
+        "fastidious"
+      ],
+      "answers": [
+        "rash",
+        "hasty"
+      ],
+      "targets": [
+        "rash",
+        "prudent",
+        "judicious",
+        "punctilious",
+        "fastidious"
+      ],
+      "hint": "Một quý dữ liệu là quá ít.",
+      "explanation": "Kết luận từ một quý dữ liệu: hấp tấp, rash, hasty. Prudent và judicious là cặp ngược nghĩa.",
+      "difficulty": 1,
+      "skills": [
+        "nuance"
+      ],
+      "addedIn": "batch-04"
+    },
+    {
+      "id": "cc116",
+      "type": "tc",
+      "sentence": "Investing one's entire savings in a single untested start-up is not bold but {0}.",
+      "blanks": [
+        {
+          "options": [
+            "foolhardy",
+            "judicious",
+            "prudent",
+            "circumspect",
+            "scrupulous"
+          ],
+          "answer": "foolhardy"
+        }
+      ],
+      "targets": [
+        "foolhardy",
+        "judicious",
+        "prudent",
+        "circumspect"
+      ],
+      "hint": "'Not bold but…'.",
+      "explanation": "'Not bold but': không phải táo bạo mà là liều mạng, dại dột, foolhardy.",
+      "difficulty": 2,
+      "skills": [
+        "contrast",
+        "degree"
+      ],
+      "addedIn": "batch-04"
+    },
+    {
+      "id": "cc117",
+      "type": "tc",
+      "sentence": "{0} of the warnings from their own engineers, the managers pressed ahead with the launch.",
+      "blanks": [
+        {
+          "options": [
+            "Heedless",
+            "Wary",
+            "Chary",
+            "Circumspect",
+            "Judicious"
+          ],
+          "answer": "Heedless"
+        }
+      ],
+      "targets": [
+        "heedless",
+        "wary",
+        "chary",
+        "circumspect",
+        "judicious"
+      ],
+      "hint": "Cấu trúc '… of the warnings'.",
+      "explanation": "Bất chấp cảnh báo, vẫn tiến hành: heedless of X.",
+      "difficulty": 2,
+      "skills": [
+        "collocation"
+      ],
+      "addedIn": "batch-04"
+    },
+    {
+      "id": "cc118",
+      "type": "tc",
+      "sentence": "The first inspection was so {0} that it missed half the faulty welds; the second, ordered after the accident, was {1}, examining every joint by hand; critics noted, however, that this {2} came too late to help the victims' families.",
+      "blanks": [
+        {
+          "options": [
+            "cursory",
+            "meticulous",
+            "punctilious"
+          ],
+          "answer": "cursory"
+        },
+        {
+          "options": [
+            "painstaking",
+            "perfunctory",
+            "desultory"
+          ],
+          "answer": "painstaking"
+        },
+        {
+          "options": [
+            "rigor",
+            "negligence",
+            "laxity"
+          ],
+          "answer": "rigor"
+        }
+      ],
+      "targets": [
+        "cursory",
+        "painstaking",
+        "perfunctory",
+        "lax"
+      ],
+      "hint": "Lần một, lần hai, và nhận xét cuối.",
+      "explanation": "(i) Bỏ sót một nửa: qua loa, cursory. (ii) Kiểm tra từng mối hàn: công phu, painstaking. (iii) Sự nghiêm ngặt ấy đến quá muộn: rigor.",
+      "difficulty": 3,
+      "skills": [
+        "contrast",
+        "continuation"
+      ],
+      "addedIn": "batch-04"
     }
   ]
 }
