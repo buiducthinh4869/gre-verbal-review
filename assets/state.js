@@ -16,6 +16,7 @@ export const DEFAULT_SETTINGS = { newPerDay: 10, autoStart: false, thinkFirst: t
 
 export const App = {
   vocabData: null,        // {clusters: [...]} tải từ data/
+  reading: { passages: [], byId: {} }, // Reading cho thi thử (data/reading/passages.json, assets/reading.js)
   fixedMocks: [],         // đề thi thử cố định (data/mocks/*.json), theo thứ tự trong data/mocks/index.json
   token: null,
   user: null,             // {userId, username, displayName, role, mustChangePassword}

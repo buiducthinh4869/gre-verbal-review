@@ -8,10 +8,14 @@ import { fileURLToPath } from 'node:url';
 import { idx, Srs, seq } from './fixture.js';
 import * as B from '../assets/bank.js';
 import { validateMock, validateExercise } from '../assets/validate.js';
+import { buildReading } from '../assets/reading.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const mockIndex = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/mocks/index.json'), 'utf8'));
 const mocks = mockIndex.mocks.map((id) => JSON.parse(fs.readFileSync(path.join(ROOT, 'data/mocks', id + '.json'), 'utf8')));
+const RC = buildReading(JSON.parse(fs.readFileSync(path.join(ROOT, 'data/reading/passages.json'), 'utf8')));
+const hasEx = (id) => !!idx.exById[id] || !!RC.byId[id];
+const tcse = (id) => !RC.byId[id]; // câu Reading dùng chung, không thuộc cụm nào
 const mock01 = mocks.find((m) => m.id === 'mock-01');
 const mock02 = mocks.find((m) => m.id === 'mock-02');
 const mock03 = mocks.find((m) => m.id === 'mock-03');
@@ -188,42 +192,42 @@ test('câu khác có cùng từ: chỉ câu có từ trong targets, chưa làm t
 /* ---------------- Đề cố định ---------------- */
 
 test('đề cố định mock-01 hợp lệ: 12 + 15 câu, 18 + 23 phút, không lặp, câu đều tồn tại', () => {
-  assert.deepEqual(validateMock(mock01, { file: 'mock-01.json', hasExercise: (id) => !!idx.exById[id], hasCluster: (id) => !!idx.clusterById[id] }), []);
+  assert.deepEqual(validateMock(mock01, { file: 'mock-01.json', hasExercise: hasEx, hasCluster: (id) => !!idx.clusterById[id] }), []);
   assert.deepEqual(mock01.sections.map((s) => [s.items.length, s.minutes]), [[12, 18], [15, 23]]);
   const bad = JSON.parse(JSON.stringify(mock01));
   bad.sections[1].items.push(bad.sections[0].items[0], 'khong-co');
   bad.sections[0].minutes = 0;
-  const errs = validateMock(bad, { file: 'mock-01.json', hasExercise: (id) => !!idx.exById[id] });
+  const errs = validateMock(bad, { file: 'mock-01.json', hasExercise: hasEx });
   assert.ok(errs.some((e) => /bị lặp/.test(e)) && errs.some((e) => /không tồn tại/.test(e)) && errs.some((e) => /minutes/.test(e)), errs.join('\n'));
 });
 
 test('đề cố định mock-02 hợp lệ: 12 + 15 câu từ cụm 5–8, không trùng câu nào với Đề 1', () => {
   assert.deepEqual(mockIndex.mocks, ['mock-01', 'mock-02', 'mock-03', 'mock-04']);
-  assert.deepEqual(validateMock(mock02, { file: 'mock-02.json', hasExercise: (id) => !!idx.exById[id], hasCluster: (id) => !!idx.clusterById[id] }), []);
+  assert.deepEqual(validateMock(mock02, { file: 'mock-02.json', hasExercise: hasEx, hasCluster: (id) => !!idx.clusterById[id] }), []);
   assert.deepEqual(mock02.sections.map((s) => [s.items.length, s.minutes]), [[12, 18], [15, 23]]);
   const items1 = new Set(mock01.sections.flatMap((s) => s.items));
   const items2 = mock02.sections.flatMap((s) => s.items);
   assert.equal(items2.filter((id) => items1.has(id)).length, 0);
-  items2.forEach((id) => assert.ok(mock02.clusters.includes(idx.exById[id].clusterId), id));
+  items2.filter(tcse).forEach((id) => assert.ok(mock02.clusters.includes(idx.exById[id].clusterId), id));
 });
 
 test('đề cố định mock-03 hợp lệ: 12 + 15 câu từ cụm 9–12, không trùng câu nào với Đề 1 và Đề 2', () => {
-  assert.deepEqual(validateMock(mock03, { file: 'mock-03.json', hasExercise: (id) => !!idx.exById[id], hasCluster: (id) => !!idx.clusterById[id] }), []);
+  assert.deepEqual(validateMock(mock03, { file: 'mock-03.json', hasExercise: hasEx, hasCluster: (id) => !!idx.clusterById[id] }), []);
   assert.deepEqual(mock03.sections.map((s) => [s.items.length, s.minutes]), [[12, 18], [15, 23]]);
   const before = new Set([mock01, mock02].flatMap((m) => m.sections.flatMap((s) => s.items)));
   const items3 = mock03.sections.flatMap((s) => s.items);
   assert.equal(items3.filter((id) => before.has(id)).length, 0);
   assert.deepEqual(mock03.clusters, ['humble-arrogant', 'belief-doubt', 'support-refute', 'lasting-fleeting']);
-  items3.forEach((id) => assert.ok(mock03.clusters.includes(idx.exById[id].clusterId), id));
+  items3.filter(tcse).forEach((id) => assert.ok(mock03.clusters.includes(idx.exById[id].clusterId), id));
 });
 
 test('đề cố định mock-04 hợp lệ: 12 + 15 câu từ cụm 13–16, không trùng câu nào với Đề 1–3', () => {
-  assert.deepEqual(validateMock(mock04, { file: 'mock-04.json', hasExercise: (id) => !!idx.exById[id], hasCluster: (id) => !!idx.clusterById[id] }), []);
+  assert.deepEqual(validateMock(mock04, { file: 'mock-04.json', hasExercise: hasEx, hasCluster: (id) => !!idx.clusterById[id] }), []);
   assert.deepEqual(mock04.sections.map((s) => [s.items.length, s.minutes]), [[12, 18], [15, 23]]);
   const before = new Set([mock01, mock02, mock03].flatMap((m) => m.sections.flatMap((s) => s.items)));
   const items4 = mock04.sections.flatMap((s) => s.items);
   assert.equal(new Set(items4).size, 27);
   assert.equal(items4.filter((id) => before.has(id)).length, 0);
   assert.deepEqual(mock04.clusters, ['harsh-mild', 'careful-careless', 'secret-showy', 'amount-harm']);
-  items4.forEach((id) => assert.ok(mock04.clusters.includes(idx.exById[id].clusterId), id));
+  items4.filter(tcse).forEach((id) => assert.ok(mock04.clusters.includes(idx.exById[id].clusterId), id));
 });

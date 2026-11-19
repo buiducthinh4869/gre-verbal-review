@@ -5,10 +5,14 @@
  *    tránh câu đã làm đúng trong 7 ngày gần nhất nếu còn đủ câu.
  *  - Thích ứng theo section (gần đúng): Section 1 đúng ≥ 70% thì Section 2 ưu tiên TC nhiều chỗ trống và câu
  *    từng làm sai; ngược lại ưu tiên TC một chỗ trống.
- *  - Chấm như đề thật: chỉ đúng khi đúng toàn bộ; SE phải chọn đúng 2 ô.
+ *  - Reading Comprehension (assets/reading.js): khoảng một nửa số câu mỗi section như đề thật, lấy trọn bộ câu hỏi của
+ *    từng đoạn văn; ngân hàng đoạn văn chưa đủ thì phần còn lại bù bằng TC/SE. Thứ tự: TC, Reading, SE.
+ *  - Chấm như đề thật: chỉ đúng khi đúng toàn bộ; SE phải chọn đúng 2 ô; Reading chọn nhiều đáp án phải đúng hết.
+ *  - Điểm quy đổi 130–170: ước lượng thô từ tỉ lệ câu đúng (ETS không công bố bảng quy đổi).
  */
 import { shuffle, daysBetween } from './srs.js';
 import { gradeExercise } from './vocab.js';
+import { gradeRC } from './reading.js';
 
 export const SECTION_SPEC = { 1: { n: 12, min: 18 }, 2: { n: 15, min: 23 } };
 export const MODES = {
@@ -16,18 +20,24 @@ export const MODES = {
   s2: { label: 'Section 2', secs: [2] },
   full: { label: 'Đầy đủ', secs: [1, 2] }
 };
-export const SE_SHARE = 0.45;
+export const SE_SHARE = 0.45; // trong phần TC/SE
+export const RC_SHARE = 0.5; // phần Reading mỗi section (đề thật: khoảng một nửa)
 export const ADAPT_THRESHOLD = 0.7;
 export const RECENT_DAYS = 7;
-export const KIND_LABEL = { tc1: 'TC 1 chỗ trống', tc2: 'TC 2 chỗ trống', tc3: 'TC 3 chỗ trống', se: 'Sentence Equivalence' };
+export const KIND_LABEL = { tc1: 'TC 1 chỗ trống', tc2: 'TC 2 chỗ trống', tc3: 'TC 3 chỗ trống', se: 'Sentence Equivalence', rcmc: 'Reading: chọn 1 đáp án', rcmulti: 'Reading: chọn mọi đáp án đúng', rcsentence: 'Reading: chọn câu trong đoạn' };
+export const KIND_ORDER = ['tc1', 'tc2', 'tc3', 'se', 'rcmc', 'rcmulti', 'rcsentence'];
 const TC_MIX = {
   normal: { 1: 0.4, 2: 0.35, 3: 0.25 },
   hard: { 1: 0.2, 2: 0.4, 3: 0.4 },
   easy: { 1: 0.65, 2: 0.25, 3: 0.1 }
 };
 
-export const exKind = (ex) => (ex.type === 'se' ? 'se' : 'tc' + ex.blanks.length);
-export const isAnswered = (ex, choice) => (ex.type === 'se' ? (choice || []).length === 2 : !!choice && ex.blanks.every((b, i) => !!choice[i]));
+export const exKind = (ex) => (ex.type === 'se' ? 'se' : ex.type === 'rc' ? 'rc' + ex.kind : 'tc' + ex.blanks.length);
+export const isAnswered = (ex, choice) => {
+  if (ex.type === 'se') return (choice || []).length === 2;
+  if (ex.type === 'rc') return ex.kind === 'multi' ? (choice || []).length >= 1 : (choice || []).length === 1;
+  return !!choice && ex.blanks.every((b, i) => !!choice[i]);
+};
 export const isTouched = (choice) => (choice || []).some(Boolean);
 
 /** Bậc ưu tiên của một câu theo kết quả gần nhất (exRes[id] = [ngày, 1 đúng | 0 sai]): 0 chưa làm / làm sai, 1 đúng đã lâu, 2 đúng trong 7 ngày. */
@@ -99,7 +109,37 @@ export function pickSection(pool, n, opts = {}) {
     rest.slice(0, nTC - chosen.length).forEach((ex) => chosen.push(ex));
   }
   const tcIds = shuffle(chosen, rng).map((ex) => ex.id);
-  return tcIds.concat(se.slice(0, nSE).map((ex) => ex.id));
+  return tcIds.concat(opts.rc || [], se.slice(0, nSE).map((ex) => ex.id));
+}
+
+/**
+ * Chọn câu Reading cho một section: lấy trọn bộ câu hỏi của từng đoạn văn, tổng không quá target.
+ * passages: [{id, questionIds}] (đã bỏ đoạn có câu đang bị giữ); byId: id → câu hỏi. Ưu tiên đoạn chưa làm hoặc từng làm sai.
+ * opts: {exRes, today, exclude: Set id, rng}
+ */
+export function pickReading(passages, target, byId, opts = {}) {
+  const rng = opts.rng || Math.random;
+  const exclude = opts.exclude || new Set();
+  const cands = shuffle((passages || []).filter((p) => p.questionIds.length && p.questionIds.every((id) => byId[id] && !exclude.has(id))), rng);
+  const tier = (p) => Math.max(...p.questionIds.map((id) => tierOf(byId[id], opts.exRes, opts.today)));
+  const pos = new Map(cands.map((p, i) => [p.id, i]));
+  cands.sort((a, b) => tier(a) - tier(b) || pos.get(a.id) - pos.get(b.id));
+  const ids = [];
+  cands.forEach((p) => { if (ids.length + p.questionIds.length <= target) ids.push(...p.questionIds); });
+  return ids;
+}
+export const rcTarget = (n) => Math.round(n * RC_SHARE);
+
+/**
+ * Điểm quy đổi ước lượng (130–170) từ số câu đúng. Bảng neo cho đề 27 câu, nội suy theo tỉ lệ khi đề ngắn hơn.
+ * Đây là ước lượng thô dựa trên các bảng quy đổi không chính thức; ETS không công bố bảng cho đề rút gọn.
+ */
+const SCALE27 = [130, 130, 130, 131, 132, 133, 134, 136, 138, 140, 142, 144, 145, 147, 148, 150, 151, 152, 154, 156, 157, 159, 161, 163, 165, 167, 169, 170];
+export function estimateScaled(score, total) {
+  if (!total) return null;
+  const x = Math.max(0, Math.min(1, score / total)) * 27;
+  const lo = Math.floor(x), hi = Math.min(27, lo + 1);
+  return Math.round(SCALE27[lo] + (SCALE27[hi] - SCALE27[lo]) * (x - lo));
 }
 
 /** Hướng thích ứng cho Section 2 theo kết quả Section 1. */
@@ -108,6 +148,7 @@ export const adaptFrom = (score, total) => (total && score / total >= ADAPT_THRE
 /** Chấm một câu (chỉ đúng khi đúng toàn bộ; SE đúng 2 ô). */
 export function gradeItem(ex, choice, idx) {
   if (!isAnswered(ex, choice)) return { correct: false, answered: false, g: null };
+  if (ex.type === 'rc') return { correct: gradeRC(ex, choice), answered: true, g: { answerIds: [], confusions: [], otherTargetIds: [] } };
   const g = gradeExercise(ex, choice, idx);
   return { correct: g.correct, answered: true, g };
 }
@@ -116,7 +157,7 @@ export function gradeItem(ex, choice, idx) {
 export const encodeChoice = (choice) => (choice || []).map((x) => x || '').join(' | ');
 export const decodeChoice = (s, ex) => {
   const parts = String(s || '').split(' | ').map((x) => x.trim());
-  if (ex && ex.type !== 'se') return ex.blanks.map((b, i) => parts[i] || null);
+  if (ex && ex.blanks) return ex.blanks.map((b, i) => parts[i] || null);
   return parts.filter(Boolean);
 };
 
@@ -127,7 +168,7 @@ export function summarize(sections, idx) {
   sections.forEach((s) => {
     score += s.score; total += s.total; dur += s.durationSec;
     s.items.forEach((it) => {
-      const ex = idx.exById[it.i];
+      const ex = typeof idx === 'function' ? idx(it.i) : idx.exById[it.i];
       if (!ex) return;
       const k = exKind(ex);
       const b = byKind[k] || (byKind[k] = { n: 0, ok: 0, t: 0 });
