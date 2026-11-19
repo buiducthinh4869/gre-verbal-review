@@ -815,6 +815,283 @@
           "explanation": "'such exclusive partnerships are rare' (1); 'if the moth disappears, the orchid cannot reproduce' (2). Tính bền vững là của quan hệ tổng quát, nên (3) sai."
         }
       ]
+    },
+    {
+      "id": "rc17",
+      "title": "Early printing",
+      "length": "short",
+      "paragraphs": [
+        [
+          "The spread of printing in fifteenth-century Europe is often credited with standardizing texts, since every copy of an edition was identical.",
+          "In practice, early printers corrected errors while a sheet was still being printed, so that copies of the same edition could differ from one another.",
+          "Scholars who compare surviving copies therefore sometimes find several versions of a page, each reflecting a different stage of correction."
+        ]
+      ],
+      "questions": [
+        {
+          "id": "rc17a",
+          "kind": "multi",
+          "difficulty": 2,
+          "stem": "The passage suggests which of the following about early printed editions?",
+          "options": [
+            "Not every copy of an edition was identical to the others.",
+            "Printers sometimes changed a text while an edition was being produced.",
+            "Printing put an immediate end to variation among copies of a text."
+          ],
+          "answers": [
+            "Not every copy of an edition was identical to the others.",
+            "Printers sometimes changed a text while an edition was being produced."
+          ],
+          "explanation": "Câu 2 và 3: sửa lỗi khi đang in nên các bản trong cùng ấn bản khác nhau. Phương án 3 là quan niệm bị bài điều chỉnh."
+        },
+        {
+          "id": "rc17b",
+          "kind": "mc",
+          "difficulty": 2,
+          "stem": "The primary purpose of the passage is to",
+          "options": [
+            "explain why printing spread rapidly in Europe",
+            "describe how scholars date early printed books",
+            "celebrate the accuracy of fifteenth-century printers",
+            "qualify a common claim about the effects of printing",
+            "argue that handwritten manuscripts were more reliable than printed books"
+          ],
+          "answer": "qualify a common claim about the effects of printing",
+          "explanation": "Câu 1 nêu quan niệm phổ biến, câu 2 'In practice' điều chỉnh nó. E so sánh với bản chép tay, bài không nói."
+        }
+      ]
+    },
+    {
+      "id": "rc18",
+      "title": "Volcanic winters",
+      "length": "short",
+      "paragraphs": [
+        [
+          "Large volcanic eruptions can cool the planet for a year or two by injecting sulfur gases into the stratosphere, where they form droplets that reflect sunlight.",
+          "The size of the cooling depends less on the amount of ash an eruption produces than on how much sulfur reaches the stratosphere.",
+          "Thus a spectacular eruption that releases little sulfur may have almost no effect on climate, while a less dramatic one can lower global temperatures noticeably."
+        ]
+      ],
+      "questions": [
+        {
+          "id": "rc18a",
+          "kind": "sentence",
+          "difficulty": 2,
+          "stem": "Select the sentence in the passage that draws a conclusion from a claim made earlier in the passage.",
+          "answer": 2,
+          "explanation": "'Thus ...' rút ra hệ quả từ câu 2 (lượng lưu huỳnh quan trọng hơn lượng tro)."
+        },
+        {
+          "id": "rc18b",
+          "kind": "mc",
+          "difficulty": 2,
+          "stem": "According to the passage, the cooling effect of an eruption depends chiefly on",
+          "options": [
+            "the amount of ash it produces",
+            "how visible it is from a distance",
+            "the quantity of sulfur that reaches the stratosphere",
+            "the length of time it continues",
+            "the size of the volcano"
+          ],
+          "answer": "the quantity of sulfur that reaches the stratosphere",
+          "explanation": "Câu 2: 'depends less on the amount of ash ... than on how much sulfur reaches the stratosphere'."
+        }
+      ]
+    },
+    {
+      "id": "rc19",
+      "title": "Placebo effects",
+      "length": "short",
+      "paragraphs": [
+        [
+          "Patients who receive inert pills in clinical trials often report improvement, a response that is commonly attributed to their expectations.",
+          "Part of this improvement, however, would have occurred without any pill at all: many conditions fluctuate, and patients tend to enroll in trials when their symptoms are at their worst, after which symptoms often ease on their own.",
+          "Trials that include a third group receiving no treatment are needed to separate the effect of expectation from this natural return toward the average."
+        ]
+      ],
+      "questions": [
+        {
+          "id": "rc19a",
+          "kind": "multi",
+          "difficulty": 3,
+          "stem": "Which of the following can be inferred from the passage?",
+          "options": [
+            "Some of the improvement seen in patients who take inert pills is not caused by the pills or by expectation.",
+            "Comparing only a placebo group with a drug group cannot by itself measure the effect of expectation.",
+            "Patients' expectations have no effect on their reported symptoms."
+          ],
+          "answers": [
+            "Some of the improvement seen in patients who take inert pills is not caused by the pills or by expectation.",
+            "Comparing only a placebo group with a drug group cannot by itself measure the effect of expectation."
+          ],
+          "explanation": "(1) và (2) suy ra từ câu 2 và 3: một phần cải thiện là tự nhiên, nên cần nhóm không điều trị. Bài không nói kỳ vọng không có tác dụng, nên (3) sai."
+        },
+        {
+          "id": "rc19b",
+          "kind": "mc",
+          "difficulty": 2,
+          "stem": "The author mentions that patients tend to enroll when their symptoms are at their worst in order to",
+          "options": [
+            "show that most clinical trials are poorly designed",
+            "help explain why symptoms might improve without treatment",
+            "argue that inert pills are as effective as real drugs",
+            "suggest that patients exaggerate their symptoms",
+            "explain why patients expect to improve"
+          ],
+          "answer": "help explain why symptoms might improve without treatment",
+          "explanation": "Đây là lý do triệu chứng tự giảm: vào thử nghiệm lúc nặng nhất, sau đó thường nhẹ đi."
+        }
+      ]
+    },
+    {
+      "id": "rc20",
+      "title": "Dialect leveling",
+      "length": "short",
+      "paragraphs": [
+        [
+          "When people from many regions move to a new town, the speech of the town's children often converges on a single dialect within a generation or two.",
+          "Linguists have found that the resulting dialect tends to drop features that are rare or marked among the settlers, keeping forms shared by most groups.",
+          "The new dialect is therefore not simply the speech of the largest group of settlers, though that group's forms usually have an advantage."
+        ]
+      ],
+      "questions": [
+        {
+          "id": "rc20a",
+          "kind": "mc",
+          "difficulty": 3,
+          "stem": "It can be inferred that a pronunciation used by only one small group of settlers would most likely",
+          "options": [
+            "become the standard in the new dialect",
+            "survive only among the town's children",
+            "be adopted by the largest group of settlers",
+            "disappear from the new dialect",
+            "spread to every region the settlers came from"
+          ],
+          "answer": "disappear from the new dialect",
+          "explanation": "Phương ngữ mới 'tends to drop features that are rare ... among the settlers', nên dạng hiếm có khả năng biến mất."
+        },
+        {
+          "id": "rc20b",
+          "kind": "sentence",
+          "difficulty": 2,
+          "stem": "Select the sentence in the passage that rules out an overly simple account of how the new dialect is formed.",
+          "answer": 2,
+          "explanation": "'not simply the speech of the largest group of settlers' loại bỏ cách giải thích đơn giản."
+        }
+      ]
+    },
+    {
+      "id": "rc21",
+      "title": "Bike lanes",
+      "length": "argument",
+      "paragraphs": [
+        [
+          "After the city added protected bike lanes on Main Street, the number of cyclists using the street doubled within a year.",
+          "City officials concluded that the lanes caused more residents to take up cycling."
+        ]
+      ],
+      "questions": [
+        {
+          "id": "rc21a",
+          "kind": "mc",
+          "difficulty": 2,
+          "stem": "Which of the following, if true, most seriously weakens the officials' conclusion?",
+          "options": [
+            "Cycling has health benefits for many residents.",
+            "The protected lanes cost less than officials had expected.",
+            "Most of the new cyclists on Main Street had previously cycled on nearby streets that lack bike lanes.",
+            "Bike lanes have been added in several other cities.",
+            "Some drivers complained that the lanes slowed traffic."
+          ],
+          "answer": "Most of the new cyclists on Main Street had previously cycled on nearby streets that lack bike lanes.",
+          "explanation": "Nếu người đi xe đạp mới chỉ chuyển từ phố khác sang, số người đạp xe trong thành phố không tăng; làn đường chỉ đổi tuyến, không làm thêm cư dân đạp xe."
+        }
+      ]
+    },
+    {
+      "id": "rc22",
+      "title": "Museum attendance",
+      "length": "argument",
+      "paragraphs": [
+        [
+          "Attendance at the city museum rose sharply in the year after it stopped charging admission.",
+          "The museum's director argues that eliminating the fee is what attracted the additional visitors."
+        ]
+      ],
+      "questions": [
+        {
+          "id": "rc22a",
+          "kind": "mc",
+          "difficulty": 2,
+          "stem": "Which of the following, if true, most strengthens the director's argument?",
+          "options": [
+            "Attendance at nearby museums that continued to charge admission did not change during the same year.",
+            "The museum opened a new wing during the year in question.",
+            "Many visitors to the museum are tourists.",
+            "The museum's operating costs rose during the year.",
+            "Some visitors said they would have paid the fee."
+          ],
+          "answer": "Attendance at nearby museums that continued to charge admission did not change during the same year.",
+          "explanation": "Bảo tàng gần đó vẫn thu phí mà không tăng khách: loại trừ giải thích chung (như du lịch tăng), củng cố vai trò của việc bỏ phí. B làm yếu lập luận."
+        }
+      ]
+    },
+    {
+      "id": "rc23",
+      "title": "Sleep and grades",
+      "length": "argument",
+      "paragraphs": [
+        [
+          "A survey found that students who slept more than eight hours a night earned higher grades, on average, than students who slept less.",
+          "The author of the survey concludes that getting more sleep improves academic performance."
+        ]
+      ],
+      "questions": [
+        {
+          "id": "rc23a",
+          "kind": "multi",
+          "difficulty": 3,
+          "stem": "Which of the following, if true, would cast doubt on the author's conclusion?",
+          "options": [
+            "Students with heavy part-time work schedules both sleep less and have less time to study.",
+            "Students who are anxious about failing courses tend to sleep poorly.",
+            "Students in the survey reported their sleep hours accurately."
+          ],
+          "answers": [
+            "Students with heavy part-time work schedules both sleep less and have less time to study.",
+            "Students who are anxious about failing courses tend to sleep poorly."
+          ],
+          "explanation": "(1) và (2) nêu yếu tố thứ ba (việc làm thêm, lo âu) có thể gây ra cả ngủ ít lẫn điểm thấp, hoặc quan hệ nhân quả ngược. (3) nếu đúng chỉ loại một nghi ngờ về dữ liệu, không làm yếu kết luận."
+        }
+      ]
+    },
+    {
+      "id": "rc24",
+      "title": "Fishing quotas",
+      "length": "argument",
+      "paragraphs": [
+        [
+          "Since strict fishing quotas were introduced in the bay ten years ago, the cod population there has grown steadily.",
+          "Some observers attribute the recovery to the quotas, but others note that water temperatures in the bay have also changed during the decade, in ways that favor cod."
+        ]
+      ],
+      "questions": [
+        {
+          "id": "rc24a",
+          "kind": "mc",
+          "difficulty": 3,
+          "stem": "Which of the following would be most useful to know in evaluating whether the quotas caused the recovery?",
+          "options": [
+            "Whether fishermen supported the quotas when they were introduced",
+            "Whether cod populations recovered in nearby waters that had similar temperature changes but no quotas",
+            "Whether cod is the most valuable fish caught in the bay",
+            "Whether the quotas were reduced after five years",
+            "Whether other species in the bay are also fished"
+          ],
+          "answer": "Whether cod populations recovered in nearby waters that had similar temperature changes but no quotas",
+          "explanation": "So sánh với vùng nước có cùng thay đổi nhiệt độ nhưng không có hạn ngạch tách được hai nguyên nhân. Nếu cá ở đó cũng phục hồi, nhiệt độ có thể là nguyên nhân chính."
+        }
+      ]
     }
   ]
 }

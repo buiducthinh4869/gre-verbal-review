@@ -8,7 +8,7 @@
     "support-refute",
     "lasting-fleeting"
   ],
-  "description": "Đề cố định gồm 27 câu: Text Completion và Sentence Equivalence lấy từ cụm 9–12, cùng Reading Comprehension. Section 2 khó hơn Section 1. Mỗi section có hai đoạn văn Reading (10/27 câu).",
+  "description": "Đề cố định gồm 27 câu: Text Completion và Sentence Equivalence lấy từ cụm 9–12, cùng Reading Comprehension. Section 2 khó hơn Section 1. 13/27 câu là Reading (gần một nửa như đề thật), gồm cả đoạn lập luận ngắn một câu hỏi.",
   "sections": [
     {
       "title": "Section 1",
@@ -19,13 +19,13 @@
         "bd115",
         "ha05",
         "rc03a",
+        "rc19a",
+        "rc19b",
         "rc03b",
         "ha107",
         "lf08",
         "rc11a",
-        "rc11b",
-        "bd111",
-        "ha105"
+        "rc11b"
       ]
     },
     {
@@ -33,7 +33,6 @@
       "minutes": 23,
       "items": [
         "ha117",
-        "bd01",
         "ha06",
         "sr02",
         "rc07a",
@@ -46,7 +45,8 @@
         "rc15c",
         "ha111",
         "sr08",
-        "lf105"
+        "lf105",
+        "rc23a"
       ]
     }
   ]
