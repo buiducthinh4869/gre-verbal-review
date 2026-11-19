@@ -278,6 +278,9 @@ textarea.input { min-height: 84px; resize: vertical; line-height: 1.5; }
 .rung-meter i { width: 8px; height: 8px; border-radius: 2px; background: var(--box0); }
 .rung-meter i.on { background: var(--accent); }
 .rung-words .wrow:last-child { border-bottom: 0; }
+.w-level { display: inline-flex; gap: 2px; align-self: center; margin-left: 2px; }
+.w-level i { width: 7px; height: 7px; border-radius: 2px; background: var(--box0); }
+.w-level i.on { background: var(--accent); }
 
 .wrow {
   display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2px 10px; width: 100%;
