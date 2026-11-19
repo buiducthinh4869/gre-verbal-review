@@ -21,8 +21,12 @@ export function scopeWords(P = App.practice) {
  */
 function scopeExercises(words) {
   const ids = new Set(words.map((w) => w.id));
-  if (App.practice.today) return practiceExercises().filter((ex) => (ex.answerIds || []).some((t) => ids.has(t)));
-  return practiceExercises().filter((ex) => (ex.targets || []).some((t) => ids.has(t)));
+  // Lấy theo ĐÁP ÁN, không theo targets: targets gồm cả phương án nhiễu (vd flaunt trong câu đáp án flout),
+  // nên chọn một nhóm sẽ kéo vào câu có đáp án thuộc nhóm khác. Câu không có đáp án nào trên web mới dùng targets.
+  return practiceExercises().filter((ex) => {
+    const keys = (ex.answerIds || []).length ? ex.answerIds : (App.practice.today ? [] : (ex.targets || []));
+    return keys.some((t) => ids.has(t));
+  });
 }
 /** Câu GRE thỏa mọi điều kiện (phạm vi + bộ lọc phân loại). */
 export function filteredExercises() {
