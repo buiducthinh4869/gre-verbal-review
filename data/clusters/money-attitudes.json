@@ -16,8 +16,8 @@
       "id": "stingy",
       "title": "Keo kiệt",
       "direction": "negative",
-      "scale": false,
-      "note": ""
+      "scale": true,
+      "note": "Từ nhẹ (1) đến mạnh (4)."
     },
     {
       "id": "greedy",
@@ -120,7 +120,8 @@
       "confusables": [
         "frugal",
         "miserly"
-      ]
+      ],
+      "level": 3
     },
     {
       "id": "penurious",
@@ -135,7 +136,8 @@
       "root": "penury (cảnh nghèo túng)",
       "confusables": [
         "parsimonious"
-      ]
+      ],
+      "level": 4
     },
     {
       "id": "miserly",
@@ -149,7 +151,8 @@
       "collocations": [],
       "confusables": [
         "parsimonious"
-      ]
+      ],
+      "level": 3
     },
     {
       "id": "stingy",
@@ -163,7 +166,8 @@
       "collocations": [],
       "confusables": [
         "miserly"
-      ]
+      ],
+      "level": 2
     },
     {
       "id": "tightfisted",
@@ -177,7 +181,8 @@
       "collocations": [],
       "confusables": [
         "stingy"
-      ]
+      ],
+      "level": 1
     },
     {
       "id": "avaricious",

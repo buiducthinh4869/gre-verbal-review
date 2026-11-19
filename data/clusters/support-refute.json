@@ -16,22 +16,22 @@
       "id": "endorse",
       "title": "Tán thành, cổ vũ",
       "direction": "positive",
-      "scale": false,
+      "scale": true,
       "note": "Espouse: theo, chấp nhận một quan điểm. Champion/advocate: đấu tranh cho một quan điểm."
     },
     {
       "id": "refute",
       "title": "Bác bỏ, phản bác",
       "direction": "negative",
-      "scale": false,
+      "scale": true,
       "note": "Refute: chứng minh là sai. Rebut: đưa ra lập luận phản bác (chưa chắc đã thắng). Gainsay: phủ nhận, cãi lại."
     },
     {
       "id": "weaken",
       "title": "Làm suy yếu",
       "direction": "negative",
-      "scale": false,
-      "note": ""
+      "scale": true,
+      "note": "Từ nhẹ (1) đến mạnh (4)."
     },
     {
       "id": "retract",
@@ -141,7 +141,8 @@
       "collocations": [],
       "confusables": [
         "espouse"
-      ]
+      ],
+      "level": 2
     },
     {
       "id": "espouse",
@@ -158,7 +159,8 @@
       "confusables": [
         "advocate",
         "repudiate"
-      ]
+      ],
+      "level": 2
     },
     {
       "id": "advocate",
@@ -173,7 +175,8 @@
       "root": "voc- (gọi)",
       "confusables": [
         "champion"
-      ]
+      ],
+      "level": 3
     },
     {
       "id": "champion",
@@ -187,7 +190,8 @@
       "collocations": [],
       "confusables": [
         "advocate"
-      ]
+      ],
+      "level": 4
     },
     {
       "id": "uphold",
@@ -203,7 +207,8 @@
       ],
       "confusables": [
         "endorse"
-      ]
+      ],
+      "level": 1
     },
     {
       "id": "refute",
@@ -218,7 +223,8 @@
       "confusables": [
         "rebut",
         "gainsay"
-      ]
+      ],
+      "level": 4
     },
     {
       "id": "rebut",
@@ -234,7 +240,8 @@
       ],
       "confusables": [
         "refute"
-      ]
+      ],
+      "level": 2
     },
     {
       "id": "debunk",
@@ -250,7 +257,8 @@
       ],
       "confusables": [
         "refute"
-      ]
+      ],
+      "level": 4
     },
     {
       "id": "discredit",
@@ -264,7 +272,8 @@
       "collocations": [],
       "confusables": [
         "undermine"
-      ]
+      ],
+      "level": 3
     },
     {
       "id": "gainsay",
@@ -281,7 +290,8 @@
       "confusables": [
         "refute",
         "controvert"
-      ]
+      ],
+      "level": 1
     },
     {
       "id": "controvert",
@@ -295,7 +305,8 @@
       "collocations": [],
       "confusables": [
         "gainsay"
-      ]
+      ],
+      "level": 1
     },
     {
       "id": "undermine",
@@ -310,7 +321,8 @@
       "confusables": [
         "undercut",
         "discredit"
-      ]
+      ],
+      "level": 2
     },
     {
       "id": "undercut",
@@ -324,7 +336,8 @@
       "collocations": [],
       "confusables": [
         "undermine"
-      ]
+      ],
+      "level": 2
     },
     {
       "id": "vitiate",
@@ -338,7 +351,8 @@
       "collocations": [],
       "confusables": [
         "undermine"
-      ]
+      ],
+      "level": 3
     },
     {
       "id": "impair",
@@ -352,7 +366,8 @@
       "collocations": [],
       "confusables": [
         "undermine"
-      ]
+      ],
+      "level": 1
     },
     {
       "id": "recant",

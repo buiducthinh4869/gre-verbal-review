@@ -9,7 +9,7 @@
       "id": "hinder",
       "title": "Cản trở, làm chậm",
       "direction": "negative",
-      "scale": false,
+      "scale": true,
       "note": "Nhiều từ ở đây là nghĩa phụ: check, arrest, stem, retard, frustrate."
     },
     {
@@ -59,7 +59,8 @@
       "confusables": [
         "hamper",
         "stymie"
-      ]
+      ],
+      "level": 1
     },
     {
       "id": "hinder",
@@ -73,7 +74,8 @@
       "collocations": [],
       "confusables": [
         "impede"
-      ]
+      ],
+      "level": 1
     },
     {
       "id": "hamper",
@@ -89,7 +91,8 @@
       ],
       "confusables": [
         "impede"
-      ]
+      ],
+      "level": 2
     },
     {
       "id": "thwart",
@@ -106,7 +109,8 @@
       "confusables": [
         "foil",
         "stymie"
-      ]
+      ],
+      "level": 4
     },
     {
       "id": "stymie",
@@ -121,7 +125,8 @@
       "confusables": [
         "thwart",
         "impede"
-      ]
+      ],
+      "level": 3
     },
     {
       "id": "foil",
@@ -137,7 +142,8 @@
       ],
       "confusables": [
         "thwart"
-      ]
+      ],
+      "level": 4
     },
     {
       "id": "frustrate",
@@ -153,7 +159,8 @@
       ],
       "confusables": [
         "thwart"
-      ]
+      ],
+      "level": 3
     },
     {
       "id": "stifle",
@@ -170,7 +177,8 @@
       ],
       "confusables": [
         "curb"
-      ]
+      ],
+      "level": 3
     },
     {
       "id": "curb",
@@ -188,7 +196,8 @@
       "confusables": [
         "check",
         "stem"
-      ]
+      ],
+      "level": 2
     },
     {
       "id": "stem",
@@ -206,7 +215,8 @@
       ],
       "confusables": [
         "curb"
-      ]
+      ],
+      "level": 2
     },
     {
       "id": "check",
@@ -223,7 +233,8 @@
       ],
       "confusables": [
         "curb"
-      ]
+      ],
+      "level": 2
     },
     {
       "id": "arrest",
@@ -240,7 +251,8 @@
       "confusables": [
         "stem",
         "retard"
-      ]
+      ],
+      "level": 3
     },
     {
       "id": "retard",
@@ -254,7 +266,8 @@
       "collocations": [],
       "confusables": [
         "impede"
-      ]
+      ],
+      "level": 1
     },
     {
       "id": "preclude",

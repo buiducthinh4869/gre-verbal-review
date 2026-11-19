@@ -16,7 +16,7 @@
       "id": "meticulous",
       "title": "Tỉ mỉ, kỹ lưỡng",
       "direction": "positive",
-      "scale": false,
+      "scale": true,
       "note": "Fastidious có thể chê: khó tính, quá cầu kỳ. Exacting: đòi hỏi khắt khe."
     },
     {
@@ -37,7 +37,7 @@
       "id": "rash",
       "title": "Hấp tấp, liều lĩnh",
       "direction": "negative",
-      "scale": false,
+      "scale": true,
       "note": "Precipitate là bẫy: tính từ nghĩa là hấp tấp; động từ nghĩa là gây ra đột ngột."
     }
   ],
@@ -152,7 +152,8 @@
       "confusables": [
         "scrupulous",
         "painstaking"
-      ]
+      ],
+      "level": 3
     },
     {
       "id": "scrupulous",
@@ -169,7 +170,8 @@
       "confusables": [
         "meticulous",
         "punctilious"
-      ]
+      ],
+      "level": 3
     },
     {
       "id": "punctilious",
@@ -184,7 +186,8 @@
       "confusables": [
         "scrupulous",
         "fastidious"
-      ]
+      ],
+      "level": 4
     },
     {
       "id": "fastidious",
@@ -200,7 +203,8 @@
       ],
       "confusables": [
         "punctilious"
-      ]
+      ],
+      "level": 4
     },
     {
       "id": "painstaking",
@@ -217,7 +221,8 @@
       "confusables": [
         "meticulous",
         "cursory"
-      ]
+      ],
+      "level": 2
     },
     {
       "id": "exacting",
@@ -233,7 +238,8 @@
       ],
       "confusables": [
         "fastidious"
-      ]
+      ],
+      "level": 4
     },
     {
       "id": "conscientious",
@@ -247,7 +253,8 @@
       "collocations": [],
       "confusables": [
         "scrupulous"
-      ]
+      ],
+      "level": 1
     },
     {
       "id": "cursory",
@@ -435,7 +442,8 @@
       "collocations": [],
       "confusables": [
         "impetuous"
-      ]
+      ],
+      "level": 2
     },
     {
       "id": "impetuous",
@@ -450,7 +458,8 @@
       "confusables": [
         "rash",
         "precipitate"
-      ]
+      ],
+      "level": 2
     },
     {
       "id": "precipitate",
@@ -467,7 +476,8 @@
       "confusables": [
         "impetuous",
         "rash"
-      ]
+      ],
+      "level": 2
     },
     {
       "id": "reckless",
@@ -481,7 +491,8 @@
       "collocations": [],
       "confusables": [
         "rash"
-      ]
+      ],
+      "level": 3
     },
     {
       "id": "foolhardy",
@@ -495,7 +506,8 @@
       "collocations": [],
       "confusables": [
         "reckless"
-      ]
+      ],
+      "level": 4
     },
     {
       "id": "heedless",
@@ -511,7 +523,8 @@
       ],
       "confusables": [
         "reckless"
-      ]
+      ],
+      "level": 1
     }
   ],
   "exercises": [

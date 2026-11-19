@@ -16,7 +16,7 @@
       "id": "obscure",
       "title": "Khó hiểu, uyên thâm",
       "direction": "negative",
-      "scale": false,
+      "scale": true,
       "note": "Recondite/arcane/esoteric: khó vì ít người biết. Convoluted/byzantine: khó vì cấu trúc rối. Nebulous/murky: khó vì mơ hồ. Cryptic/enigmatic/inscrutable: khó vì bí ẩn."
     },
     {
@@ -191,7 +191,8 @@
       "confusables": [
         "recondite",
         "esoteric"
-      ]
+      ],
+      "level": 3
     },
     {
       "id": "recondite",
@@ -210,7 +211,8 @@
         "arcane",
         "esoteric",
         "abstruse"
-      ]
+      ],
+      "level": 3
     },
     {
       "id": "arcane",
@@ -228,7 +230,8 @@
       "confusables": [
         "recondite",
         "esoteric"
-      ]
+      ],
+      "level": 3
     },
     {
       "id": "esoteric",
@@ -246,7 +249,8 @@
       "confusables": [
         "recondite",
         "arcane"
-      ]
+      ],
+      "level": 3
     },
     {
       "id": "opaque",
@@ -263,7 +267,8 @@
       ],
       "confusables": [
         "lucid"
-      ]
+      ],
+      "level": 2
     },
     {
       "id": "cryptic",
@@ -281,7 +286,8 @@
       "root": "crypt- (giấu kín)",
       "confusables": [
         "enigmatic"
-      ]
+      ],
+      "level": 2
     },
     {
       "id": "enigmatic",
@@ -299,7 +305,8 @@
       "confusables": [
         "cryptic",
         "inscrutable"
-      ]
+      ],
+      "level": 2
     },
     {
       "id": "inscrutable",
@@ -315,7 +322,8 @@
       ],
       "confusables": [
         "enigmatic"
-      ]
+      ],
+      "level": 4
     },
     {
       "id": "impenetrable",
@@ -331,7 +339,8 @@
       ],
       "confusables": [
         "opaque"
-      ]
+      ],
+      "level": 4
     },
     {
       "id": "convoluted",
@@ -350,7 +359,8 @@
       "confusables": [
         "byzantine",
         "labyrinthine"
-      ]
+      ],
+      "level": 2
     },
     {
       "id": "byzantine",
@@ -366,7 +376,8 @@
       ],
       "confusables": [
         "convoluted"
-      ]
+      ],
+      "level": 3
     },
     {
       "id": "labyrinthine",
@@ -381,7 +392,8 @@
       "root": "labyrinth (mê cung)",
       "confusables": [
         "convoluted"
-      ]
+      ],
+      "level": 3
     },
     {
       "id": "nebulous",
@@ -399,7 +411,8 @@
       "root": "nebula (đám mây)",
       "confusables": [
         "ambiguous"
-      ]
+      ],
+      "level": 1
     },
     {
       "id": "murky",
@@ -415,7 +428,8 @@
       ],
       "confusables": [
         "opaque"
-      ]
+      ],
+      "level": 2
     },
     {
       "id": "ambiguous",
@@ -433,7 +447,8 @@
       "confusables": [
         "equivocal",
         "nebulous"
-      ]
+      ],
+      "level": 1
     },
     {
       "id": "elucidate",

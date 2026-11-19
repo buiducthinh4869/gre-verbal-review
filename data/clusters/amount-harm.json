@@ -9,14 +9,14 @@
       "id": "abundant",
       "title": "Dồi dào, nhiều",
       "direction": "neutral",
-      "scale": false,
+      "scale": true,
       "note": "Prodigious: to lớn đến kinh ngạc. Inordinate: quá mức hợp lý (chê)."
     },
     {
       "id": "scarce",
       "title": "Khan hiếm, ít ỏi",
       "direction": "negative",
-      "scale": false,
+      "scale": true,
       "note": "Paucity/dearth: sự khan hiếm (danh từ). Scant/meager: ít ỏi, không đủ."
     },
     {
@@ -57,7 +57,8 @@
       "confusables": [
         "plethora",
         "ample"
-      ]
+      ],
+      "level": 2
     },
     {
       "id": "plethora",
@@ -74,7 +75,8 @@
       "confusables": [
         "myriad",
         "copious"
-      ]
+      ],
+      "level": 3
     },
     {
       "id": "myriad",
@@ -90,7 +92,8 @@
       ],
       "confusables": [
         "plethora"
-      ]
+      ],
+      "level": 3
     },
     {
       "id": "prodigious",
@@ -107,7 +110,8 @@
       "confusables": [
         "copious",
         "prodigal"
-      ]
+      ],
+      "level": 4
     },
     {
       "id": "ample",
@@ -124,7 +128,8 @@
       "confusables": [
         "copious",
         "scant"
-      ]
+      ],
+      "level": 1
     },
     {
       "id": "inordinate",
@@ -138,7 +143,8 @@
       "collocations": [
         "an inordinate amount of"
       ],
-      "confusables": []
+      "confusables": [],
+      "level": 4
     },
     {
       "id": "profuse",
@@ -154,7 +160,8 @@
       ],
       "confusables": [
         "copious"
-      ]
+      ],
+      "level": 2
     },
     {
       "id": "paucity",
@@ -172,7 +179,8 @@
       "confusables": [
         "dearth",
         "plethora"
-      ]
+      ],
+      "level": 3
     },
     {
       "id": "dearth",
@@ -188,7 +196,8 @@
       ],
       "confusables": [
         "paucity"
-      ]
+      ],
+      "level": 4
     },
     {
       "id": "scant",
@@ -206,7 +215,8 @@
       "confusables": [
         "meager",
         "ample"
-      ]
+      ],
+      "level": 2
     },
     {
       "id": "meager",
@@ -222,7 +232,8 @@
       ],
       "confusables": [
         "scant"
-      ]
+      ],
+      "level": 2
     },
     {
       "id": "sparse",
@@ -236,7 +247,8 @@
       "collocations": [],
       "confusables": [
         "scant"
-      ]
+      ],
+      "level": 1
     },
     {
       "id": "superfluous",

@@ -22,8 +22,8 @@
     {
       "id": "praise-nouns",
       "title": "Danh từ khen ngợi",
-      "scale": false,
-      "note": "",
+      "scale": true,
+      "note": "Từ nhẹ (1) đến mạnh (4).",
       "direction": "positive"
     },
     {
@@ -50,15 +50,15 @@
     {
       "id": "denounce",
       "title": "Đả kích, lên án công khai",
-      "scale": false,
+      "scale": true,
       "note": "Impugn nhắm vào động cơ, sự trung thực.",
       "direction": "negative"
     },
     {
       "id": "ridicule",
       "title": "Chế giễu",
-      "scale": false,
-      "note": "",
+      "scale": true,
+      "note": "Từ nhẹ (1) đến mạnh (4).",
       "direction": "negative"
     },
     {
@@ -71,7 +71,7 @@
     {
       "id": "lukewarm",
       "title": "Khen nửa vời",
-      "scale": false,
+      "scale": true,
       "note": "Vùng GRE hay đặt bẫy ở câu khó.",
       "direction": "positive"
     },
@@ -306,7 +306,8 @@
       "collocations": [
         "receive an accolade"
       ],
-      "confusables": []
+      "confusables": [],
+      "level": 2
     },
     {
       "id": "plaudits",
@@ -321,7 +322,8 @@
         "win plaudits for X"
       ],
       "root": "laud- (lời khen)",
-      "confusables": []
+      "confusables": [],
+      "level": 1
     },
     {
       "id": "encomium",
@@ -337,7 +339,8 @@
       ],
       "confusables": [
         "panegyric"
-      ]
+      ],
+      "level": 3
     },
     {
       "id": "panegyric",
@@ -354,7 +357,8 @@
       ],
       "confusables": [
         "encomium"
-      ]
+      ],
+      "level": 4
     },
     {
       "id": "homage",
@@ -368,7 +372,8 @@
       "collocations": [
         "pay homage to X"
       ],
-      "confusables": []
+      "confusables": [],
+      "level": 2
     },
     {
       "id": "laudatory",
@@ -641,7 +646,8 @@
         "decry X as Y"
       ],
       "root": "de- (xuống)",
-      "confusables": []
+      "confusables": [],
+      "level": 1
     },
     {
       "id": "denounce",
@@ -653,7 +659,8 @@
       "nuance": "Công khai, mạnh.",
       "example": "Human rights groups *denounced* the new law.",
       "collocations": [],
-      "confusables": []
+      "confusables": [],
+      "level": 2
     },
     {
       "id": "condemn",
@@ -665,7 +672,8 @@
       "nuance": "Mang tính đạo đức.",
       "example": "The resolution *condemned* the use of force against civilians.",
       "collocations": [],
-      "confusables": []
+      "confusables": [],
+      "level": 3
     },
     {
       "id": "lambaste",
@@ -681,7 +689,8 @@
       ],
       "confusables": [
         "excoriate"
-      ]
+      ],
+      "level": 4
     },
     {
       "id": "excoriate",
@@ -699,7 +708,8 @@
       "confusables": [
         "deprecate",
         "lambaste"
-      ]
+      ],
+      "level": 4
     },
     {
       "id": "pillory",
@@ -713,7 +723,8 @@
       "collocations": [
         "be pilloried in the press"
       ],
-      "confusables": []
+      "confusables": [],
+      "level": 3
     },
     {
       "id": "impugn",
@@ -731,7 +742,8 @@
       "root": "pugn- (đánh), như pugnacious",
       "confusables": [
         "carp"
-      ]
+      ],
+      "level": 1
     },
     {
       "id": "deride",
@@ -746,7 +758,8 @@
         "deride X as Y"
       ],
       "root": "rid- (cười)",
-      "confusables": []
+      "confusables": [],
+      "level": 3
     },
     {
       "id": "ridicule",
@@ -761,7 +774,8 @@
         "ridicule X as Y"
       ],
       "root": "rid- (cười)",
-      "confusables": []
+      "confusables": [],
+      "level": 3
     },
     {
       "id": "scoff",
@@ -775,7 +789,8 @@
       "collocations": [
         "scoff at X"
       ],
-      "confusables": []
+      "confusables": [],
+      "level": 1
     },
     {
       "id": "lampoon",
@@ -787,7 +802,8 @@
       "nuance": "Chế giễu bằng văn bản, hình ảnh, hài kịch.",
       "example": "The cartoonist *lampooned* the politicians' empty promises.",
       "collocations": [],
-      "confusables": []
+      "confusables": [],
+      "level": 2
     },
     {
       "id": "disdain",
@@ -801,7 +817,8 @@
       "collocations": [
         "treat X with disdain"
       ],
-      "confusables": []
+      "confusables": [],
+      "level": 4
     },
     {
       "id": "carp",
@@ -877,7 +894,8 @@
       ],
       "confusables": [
         "unqualified"
-      ]
+      ],
+      "level": 3
     },
     {
       "id": "unqualified",
@@ -894,7 +912,8 @@
       ],
       "confusables": [
         "qualified"
-      ]
+      ],
+      "level": 4
     },
     {
       "id": "grudging",
@@ -909,7 +928,8 @@
         "grudging admiration",
         "grudging respect"
       ],
-      "confusables": []
+      "confusables": [],
+      "level": 1
     },
     {
       "id": "tepid",
@@ -926,7 +946,8 @@
       ],
       "confusables": [
         "effusive"
-      ]
+      ],
+      "level": 2
     },
     {
       "id": "muted",
@@ -940,7 +961,8 @@
       "collocations": [
         "muted enthusiasm"
       ],
-      "confusables": []
+      "confusables": [],
+      "level": 2
     },
     {
       "id": "equivocal",
@@ -955,7 +977,8 @@
         "equivocal evidence",
         "an equivocal answer"
       ],
-      "confusables": []
+      "confusables": [],
+      "level": 2
     },
     {
       "id": "backhanded",
@@ -967,7 +990,8 @@
       "nuance": "",
       "example": "Calling her paper \"surprisingly rigorous\" was a *backhanded compliment*.",
       "collocations": [],
-      "confusables": []
+      "confusables": [],
+      "level": 1
     },
     {
       "id": "effusive",
