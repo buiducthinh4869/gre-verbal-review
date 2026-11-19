@@ -110,3 +110,53 @@ test('tổng hợp: điểm, thời gian, trung bình theo dạng câu', () => {
   assert.deepEqual(s.byKind.tc1, { n: 1, ok: 1, t: 30 });
   assert.deepEqual(s.byKind.se, { n: 1, ok: 0, t: 70 });
 });
+
+/* ---------------- Reading Comprehension và điểm quy đổi ---------------- */
+import fs from 'node:fs';
+import { buildReading, validateReading, gradeRC } from '../assets/reading.js';
+
+const rcData = JSON.parse(fs.readFileSync(new URL('../data/reading/passages.json', import.meta.url), 'utf8'));
+const RC = buildReading(rcData);
+
+test('Reading: dữ liệu hợp lệ, đủ 3 dạng câu hỏi, id không trùng với câu TC/SE', () => {
+  assert.deepEqual(validateReading(rcData, new Set(Object.keys(idx.exById))), []);
+  const kinds = new Set(Object.values(RC.byId).map((q) => q.kind));
+  assert.deepEqual([...kinds].sort(), ['mc', 'multi', 'sentence']);
+  const bad = JSON.parse(JSON.stringify(rcData));
+  bad.passages[0].questions[0].options.pop();
+  bad.passages[0].questions[1].answer = 99;
+  assert.equal(validateReading(bad).length, 2);
+});
+
+test('Reading: chấm như đề thật (chọn nhiều phải đúng hết, chọn câu theo số thứ tự)', () => {
+  const mc = RC.byId.rc01a, multi = RC.byId.rc02a, sent = RC.byId.rc01b;
+  assert.equal(Mk.exKind(mc), 'rcmc');
+  assert.equal(Mk.gradeItem(mc, [mc.answer], idx).correct, true);
+  assert.equal(Mk.gradeItem(mc, [mc.options[0]], idx).correct, false);
+  assert.equal(Mk.isAnswered(multi, [multi.answers[0]]), true);
+  assert.equal(gradeRC(multi, [multi.answers[0]]), false, 'thiếu một đáp án thì sai');
+  assert.equal(gradeRC(multi, multi.options), false, 'thừa đáp án thì sai');
+  assert.equal(gradeRC(multi, multi.answers.slice().reverse()), true);
+  assert.equal(Mk.gradeItem(sent, [String(sent.answer)], idx).correct, true);
+  assert.deepEqual(Mk.decodeChoice(Mk.encodeChoice(['3']), sent), ['3']);
+  assert.equal(Mk.gradeItem(sent, [], idx).answered, false);
+});
+
+test('Reading: chọn trọn bộ câu hỏi của từng đoạn, không quá số câu cần; TC trước, Reading, rồi SE', () => {
+  const ids = Mk.pickReading(RC.passages, 6, RC.byId, { rng: seq(1) });
+  assert.ok(ids.length <= 6 && ids.length >= 5, String(ids.length));
+  RC.passages.forEach((p) => { const n = p.questionIds.filter((id) => ids.includes(id)).length; assert.ok(n === 0 || n === p.questionIds.length, p.id); });
+  const sec = Mk.pickSection(pool, 6, { rng: seq(2), rc: ids });
+  const kinds = sec.map((id) => (RC.byId[id] ? 'rc' : idx.exById[id].type === 'se' ? 'se' : 'tc'));
+  assert.equal(kinds.join(',').replace(/(tc,)*tc/, 'T').replace(/(rc,)*rc/, 'R').replace(/(se,)*se/, 'S'), 'T,R,S');
+  assert.deepEqual(Mk.pickReading(RC.passages, 6, RC.byId, { exclude: new Set(Object.keys(RC.byId)) }), []);
+});
+
+test('điểm quy đổi ước lượng: 130–170, tăng theo số câu đúng', () => {
+  assert.equal(Mk.estimateScaled(27, 27), 170);
+  assert.equal(Mk.estimateScaled(0, 27), 130);
+  let prev = 0;
+  for (let k = 0; k <= 27; k++) { const v = Mk.estimateScaled(k, 27); assert.ok(v >= prev); prev = v; }
+  assert.equal(Mk.estimateScaled(12, 12), 170);
+  assert.equal(Mk.estimateScaled(0, 0), null);
+});

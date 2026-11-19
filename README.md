@@ -49,7 +49,7 @@ tests/                  srs, distractors, mock, bank, content, api (server chạ
 
   Ô tìm kiếm ở mọi cấp tìm trên toàn bộ các cụm, mỗi kết quả kèm nhãn `Cụm › Nhóm`. Trang nhớ cấp xem gần nhất theo từng tài khoản.
 - **Luyện tập**: phạm vi gồm nhiều cụm, một nhóm, chỉ ★★★, hoặc chỉ sổ từ hay quên. Dạng GRE chuẩn lấy bài có `targets` thuộc phạm vi đã chọn.
-- **Thi thử** (section Verbal, chỉ gồm TC và SE):
+- **Thi thử** (section Verbal, gồm TC, SE và Reading Comprehension; đoạn văn ở `data/reading/passages.json`, lõi ở `assets/reading.js`; màn kết quả có điểm ước lượng 130–170 khi làm đủ hai section):
   - Cấu trúc như đề thật: Section 1 có 12 câu trong 18 phút, Section 2 có 15 câu trong 23 phút; chế độ Đầy đủ làm cả hai.
   - Chọn câu: khoảng 55% TC và 45% SE, TC trộn 1, 2, 3 chỗ trống. Ưu tiên câu chưa làm hoặc đã làm sai; tránh câu đã làm đúng trong 7 ngày gần nhất.
   - Ở chế độ Đầy đủ, Section 2 thích ứng gần đúng theo Section 1: đúng từ 70% trở lên thì ưu tiên TC nhiều chỗ trống và câu từng sai; dưới 70% thì ưu tiên TC một chỗ trống.

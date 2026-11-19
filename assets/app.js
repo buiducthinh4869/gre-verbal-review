@@ -3,6 +3,7 @@
  */
 import { App, views, actions, go, render, rebuildIndex, ROUTES, parseHash, lastHash, setLastHash } from './state.js';
 import { boot, refresh } from './auth.js';
+import { buildReading } from './reading.js';
 import { openMenu, closeMenu, closeSettings } from './views/settings.js';
 import './views/today.js';
 import './views/vocab.js';
@@ -37,6 +38,14 @@ async function loadFixedMocks() {
     const all = await Promise.all(ids.map((id) => fetch('data/mocks/' + id + '.json', { cache: 'no-cache' }).then((x) => (x.ok ? x.json() : null)).catch(() => null)));
     return all.filter((m) => m && m.id && Array.isArray(m.sections));
   } catch (e) { return []; }
+}
+
+/** Đoạn văn Reading cho thi thử (data/reading/passages.json). Lỗi thì bỏ qua: thi thử chỉ còn TC và SE. */
+async function loadReading() {
+  try {
+    const r = await fetch('data/reading/passages.json', { cache: 'no-cache' });
+    return buildReading(r.ok ? await r.json() : null);
+  } catch (e) { return buildReading(null); }
 }
 
 /** Nút Quay lại / Tiến của trình duyệt, hoặc bấm link #...: dựng lại đúng trang và cấp đang xem. */
@@ -109,9 +118,10 @@ window.addEventListener('online', () => { if (App.sync && App.sync.queue.length)
 /* ---------------- Khởi động ---------------- */
 (async function start() {
   try {
-    const [vocab, fixed] = await Promise.all([loadVocab(), loadFixedMocks()]);
+    const [vocab, fixed, reading] = await Promise.all([loadVocab(), loadFixedMocks(), loadReading()]);
     App.vocabData = vocab;
     App.fixedMocks = fixed;
+    App.reading = reading;
   } catch (err) {
     document.getElementById('view').innerHTML = '<div class="empty">Không tải được dữ liệu từ vựng (' + String(err.message || err) + '). Tải lại trang để thử lại.</div>';
     return;

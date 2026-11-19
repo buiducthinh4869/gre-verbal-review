@@ -1,0 +1,376 @@
+{
+  "schemaVersion": 1,
+  "note": "Reading Comprehension cho thi thử. Đoạn văn tự viết theo văn phong đề GRE (không chép đề ETS). paragraphs: mảng đoạn, mỗi đoạn là mảng câu. Câu hỏi: kind mc (chọn 1 trong 5, answer là chữ của phương án), multi (chọn mọi đáp án đúng trong 3, answers), sentence (chọn câu trong đoạn văn, answer là số thứ tự câu tính từ 0 trên toàn đoạn văn).",
+  "passages": [
+    {
+      "id": "rc01",
+      "title": "Cleaner wrasse",
+      "length": "short",
+      "paragraphs": [
+        [
+          "For decades, biologists treated the relationship between cleaner wrasse and the larger reef fish that visit them as a textbook case of mutualism: the wrasse remove parasites, and their clients gain healthier skin.",
+          "Field observations have complicated this picture.",
+          "Wrasse often prefer to eat the protective mucus of their clients rather than the parasites, and clients respond by chasing away wrasse that bite too hard.",
+          "Wrasse that are being watched by other potential clients, moreover, bite less often, as if mindful of a reputation.",
+          "The relationship thus looks less like a harmonious partnership than a negotiated truce, in which cooperation persists only because each party can punish the other's defection."
+        ]
+      ],
+      "questions": [
+        {
+          "id": "rc01a", "kind": "mc", "difficulty": 1,
+          "stem": "The primary purpose of the passage is to",
+          "options": [
+            "argue that cleaner wrasse harm their clients more than they help them",
+            "qualify a traditional characterization of a relationship between two kinds of fish",
+            "explain why parasites are uncommon on coral reefs",
+            "compare the feeding habits of several species of reef fish",
+            "defend the textbook account of mutualism against recent criticism"
+          ],
+          "answer": "qualify a traditional characterization of a relationship between two kinds of fish",
+          "explanation": "Câu 1 nêu cách nhìn cũ (mutualism), câu 2 'complicated this picture', câu cuối kết luận 'negotiated truce'. Tác giả điều chỉnh chứ không bác bỏ hẳn (loại A) và không bảo vệ cách nhìn cũ (loại E)."
+        },
+        {
+          "id": "rc01b", "kind": "sentence", "difficulty": 2,
+          "stem": "Select the sentence in the passage that presents evidence that the behavior of the wrasse is influenced by the presence of observers.",
+          "answer": 3,
+          "explanation": "Câu 'Wrasse that are being watched by other potential clients ... bite less often' nói về hành vi thay đổi khi có cá khác quan sát. Câu chasing away nói về phản ứng của client, không phải người quan sát."
+        }
+      ]
+    },
+    {
+      "id": "rc02",
+      "title": "Medieval guilds",
+      "length": "short",
+      "paragraphs": [
+        [
+          "Economic historians long regarded medieval craft guilds as cartels whose chief function was to restrict entry and keep prices high.",
+          "Recent scholarship has not overturned this view so much as narrowed it.",
+          "Guilds did limit membership, but in cities where they enforced quality standards, buyers who could not inspect goods before purchase (cloth whose weave concealed flaws, for instance) gained an assurance they would otherwise have lacked.",
+          "Whether such benefits outweighed the costs of restricted competition probably varied from trade to trade, a conclusion less satisfying than either blanket condemnation or blanket praise, but more consistent with the surviving records."
+        ]
+      ],
+      "questions": [
+        {
+          "id": "rc02a", "kind": "multi", "difficulty": 2,
+          "stem": "Which of the following can be inferred about the recent scholarship described in the passage?",
+          "options": [
+            "It accepts that guilds restricted entry into their trades.",
+            "It implies that guild quality standards mattered more to buyers in some markets than in others.",
+            "It concludes that guilds, on the whole, lowered prices for consumers."
+          ],
+          "answers": [
+            "It accepts that guilds restricted entry into their trades.",
+            "It implies that guild quality standards mattered more to buyers in some markets than in others."
+          ],
+          "explanation": "'Guilds did limit membership' cho thấy học giả mới vẫn chấp nhận việc hạn chế gia nhập (A). Lợi ích chỉ có khi người mua không kiểm tra được hàng và 'varied from trade to trade' (B). Đoạn văn không nói giá giảm (C sai)."
+        },
+        {
+          "id": "rc02b", "kind": "mc", "difficulty": 2,
+          "stem": "The author's attitude toward the conclusion described in the last sentence is best described as",
+          "options": [
+            "enthusiastic endorsement",
+            "reluctant rejection",
+            "qualified acceptance",
+            "skepticism prompted by a lack of evidence",
+            "detached indifference"
+          ],
+          "answer": "qualified acceptance",
+          "explanation": "Tác giả thừa nhận kết luận 'less satisfying' (có phần dè dặt) nhưng 'more consistent with the surviving records' (chấp nhận). Đó là chấp nhận có điều kiện."
+        }
+      ]
+    },
+    {
+      "id": "rc03",
+      "title": "Serial novels",
+      "length": "short",
+      "paragraphs": [
+        [
+          "Critics who fault Victorian novels for their sprawling plots often forget the conditions under which many of those novels were written.",
+          "Published in monthly installments, a novel by Dickens or Thackeray had to hold readers' interest across a year or more, and each installment needed its own small climax.",
+          "Digressions and subplots that look like a lack of discipline in a bound volume were, in serial form, a means of keeping a large and varied audience engaged.",
+          "To judge such works by the standard of the tightly unified modern novel is therefore to misunderstand the form in which they first appeared."
+        ]
+      ],
+      "questions": [
+        {
+          "id": "rc03a", "kind": "mc", "difficulty": 1,
+          "stem": "The passage is primarily concerned with",
+          "options": [
+            "criticizing Victorian novelists for padding their works",
+            "explaining a feature of certain novels by reference to how they were first published",
+            "comparing the popularity of Dickens with that of Thackeray",
+            "arguing that modern novels are inferior to Victorian novels",
+            "describing how monthly magazines were financed"
+          ],
+          "answer": "explaining a feature of certain novels by reference to how they were first published",
+          "explanation": "Đặc điểm là cốt truyện dàn trải; nguyên nhân là hình thức đăng theo kỳ. D quá mạnh: tác giả chỉ nói không nên dùng chuẩn của tiểu thuyết hiện đại để đánh giá."
+        },
+        {
+          "id": "rc03b", "kind": "mc", "difficulty": 2,
+          "stem": "The author mentions that each installment needed its own small climax primarily in order to",
+          "options": [
+            "illustrate a demand of serial publication that shaped the structure of the novels",
+            "suggest that Victorian readers preferred short fiction to long fiction",
+            "concede that Victorian plots are poorly unified",
+            "explain why Dickens sold more copies than Thackeray",
+            "show that publishers, rather than authors, controlled the content of installments"
+          ],
+          "answer": "illustrate a demand of serial publication that shaped the structure of the novels",
+          "explanation": "Chi tiết này là một yêu cầu của hình thức đăng kỳ, giải thích vì sao truyện có nhiều tình tiết phụ. C sai vì tác giả không nhượng bộ lời chê."
+        }
+      ]
+    },
+    {
+      "id": "rc04",
+      "title": "Galaxy rotation",
+      "length": "short",
+      "paragraphs": [
+        [
+          "When astronomers measured how fast stars orbit the centers of spiral galaxies, they expected outer stars to move more slowly than inner ones, just as the outer planets of the solar system move more slowly than the inner planets.",
+          "Instead, orbital speeds stayed roughly constant far from the galactic center.",
+          "Most astronomers infer from this that galaxies contain large amounts of unseen matter whose gravity holds the fast-moving outer stars in orbit.",
+          "A minority argue that the law of gravity itself must be modified at very low accelerations, an approach that accounts for the rotation of individual galaxies with fewer adjustable parameters but struggles to explain observations of colliding galaxy clusters."
+        ]
+      ],
+      "questions": [
+        {
+          "id": "rc04a", "kind": "sentence", "difficulty": 1,
+          "stem": "Select the sentence in the passage that describes an observation that conflicted with astronomers' expectations.",
+          "answer": 1,
+          "explanation": "'Instead, orbital speeds stayed roughly constant' trái với kỳ vọng ở câu 1. Câu 1 chỉ nêu kỳ vọng, chưa nêu quan sát."
+        },
+        {
+          "id": "rc04b", "kind": "multi", "difficulty": 2,
+          "stem": "According to the passage, the proposal to modify the law of gravity",
+          "options": [
+            "fits the rotation of individual galaxies using fewer adjustable quantities than the alternative",
+            "has difficulty accounting for certain observations of galaxy clusters",
+            "is accepted by most astronomers"
+          ],
+          "answers": [
+            "fits the rotation of individual galaxies using fewer adjustable quantities than the alternative",
+            "has difficulty accounting for certain observations of galaxy clusters"
+          ],
+          "explanation": "Câu cuối nêu cả ưu điểm (fewer adjustable parameters) và nhược điểm (struggles to explain colliding clusters). Đề xuất này của 'a minority', nên phương án 3 sai."
+        }
+      ]
+    },
+    {
+      "id": "rc05",
+      "title": "Minimum wages",
+      "length": "long",
+      "paragraphs": [
+        [
+          "Standard competitive models predict that a legally mandated wage above the market rate will reduce employment, because employers will hire fewer workers whose labor now costs more than it produces.",
+          "For much of the twentieth century, economists regarded this prediction as close to settled.",
+          "In the 1990s, however, a series of studies compared fast-food employment in neighboring areas, one of which had raised its minimum wage and one of which had not, and found little or no decline in employment where the wage had risen."
+        ],
+        [
+          "Defenders of the standard view questioned the data, noting that the surveys relied on telephone interviews with restaurant managers.",
+          "Yet later studies that used payroll records reached broadly similar conclusions, and attention shifted from whether the effect was small to why it might be.",
+          "One explanation holds that many low-wage employers have some power to set wages below what a fully competitive market would produce, because workers cannot easily switch jobs; a modest mandated increase may then draw more workers into jobs rather than fewer.",
+          "This explanation does not imply that any increase, however large, is harmless, only that the effect of a given increase depends on how far it moves the wage relative to what employers could afford to pay."
+        ]
+      ],
+      "questions": [
+        {
+          "id": "rc05a", "kind": "mc", "difficulty": 2,
+          "stem": "The passage is primarily concerned with",
+          "options": [
+            "defending a long-standing prediction against flawed empirical challenges",
+            "describing how empirical findings prompted a reconsideration of a policy's likely effects",
+            "arguing that minimum wages should be raised substantially",
+            "explaining why telephone surveys produce unreliable data",
+            "comparing labor markets in the twentieth century with those of earlier periods"
+          ],
+          "answer": "describing how empirical findings prompted a reconsideration of a policy's likely effects",
+          "explanation": "Mạch bài: dự đoán chuẩn, kết quả thực nghiệm trái ngược, tranh luận về dữ liệu, rồi tìm lời giải thích mới. C sai vì câu cuối nói rõ không phải mức tăng nào cũng vô hại."
+        },
+        {
+          "id": "rc05b", "kind": "multi", "difficulty": 3,
+          "stem": "The passage suggests which of the following about the explanation discussed in the second paragraph?",
+          "options": [
+            "It assumes that some workers face obstacles to changing employers.",
+            "It implies that the size of a wage increase affects its consequences for employment.",
+            "It holds that employment rises whenever a minimum wage is raised."
+          ],
+          "answers": [
+            "It assumes that some workers face obstacles to changing employers.",
+            "It implies that the size of a wage increase affects its consequences for employment."
+          ],
+          "explanation": "'workers cannot easily switch jobs' là giả định (1). 'depends on how far it moves the wage' cho thấy độ lớn mức tăng quan trọng (2). 'whenever' quá mạnh, mâu thuẫn với câu cuối (3 sai)."
+        },
+        {
+          "id": "rc05c", "kind": "sentence", "difficulty": 2,
+          "stem": "Select the sentence in the passage that describes a response to a methodological objection.",
+          "answer": 4,
+          "explanation": "Phản đối về phương pháp là dữ liệu phỏng vấn qua điện thoại. Câu 'Yet later studies that used payroll records ...' đáp lại phản đối đó bằng nguồn dữ liệu khác."
+        }
+      ]
+    },
+    {
+      "id": "rc06",
+      "title": "Paint tubes",
+      "length": "long",
+      "paragraphs": [
+        [
+          "It is often said that the invention of the collapsible metal paint tube in 1841 made Impressionism possible.",
+          "Before the tube, painters stored pigments in pig bladders that burst easily and could not be resealed, so painting outdoors was cumbersome.",
+          "The tube, the argument runs, freed artists to work in front of their subjects and to capture fleeting effects of light."
+        ],
+        [
+          "This account is not wrong, but it is incomplete.",
+          "Landscape painters had sketched outdoors in oil for decades before 1841, often producing small studies on paper that they later worked up in the studio.",
+          "What distinguished the Impressionists was less their ability to paint outside than their willingness to exhibit the results as finished works, a choice that the official Salon, which prized polished studio compositions, regarded as presumptuous.",
+          "The tube made an outdoor practice easier; it did not by itself make that practice respectable."
+        ]
+      ],
+      "questions": [
+        {
+          "id": "rc06a", "kind": "mc", "difficulty": 1,
+          "stem": "The author's attitude toward the claim in the first sentence is best described as",
+          "options": [
+            "unreserved agreement",
+            "outright dismissal",
+            "qualified acceptance",
+            "amused indifference",
+            "reluctant admiration"
+          ],
+          "answer": "qualified acceptance",
+          "explanation": "'not wrong, but it is incomplete': chấp nhận nhưng bổ sung điều kiện."
+        },
+        {
+          "id": "rc06b", "kind": "mc", "difficulty": 2,
+          "stem": "According to the passage, the Impressionists differed from earlier landscape painters chiefly in that the Impressionists",
+          "options": [
+            "were the first to paint in oil outdoors",
+            "presented paintings made outdoors as finished works",
+            "painted on paper rather than on canvas",
+            "won the approval of the official Salon",
+            "rejected the use of metal paint tubes"
+          ],
+          "answer": "presented paintings made outdoors as finished works",
+          "explanation": "'What distinguished the Impressionists was ... their willingness to exhibit the results as finished works.' A sai vì họa sĩ trước đó đã vẽ ngoài trời; D ngược với ý Salon cho là 'presumptuous'."
+        },
+        {
+          "id": "rc06c", "kind": "sentence", "difficulty": 2,
+          "stem": "Select the sentence in the passage that provides evidence against the view that the paint tube was necessary for painting outdoors in oil.",
+          "answer": 4,
+          "explanation": "'Landscape painters had sketched outdoors in oil for decades before 1841' cho thấy vẽ dầu ngoài trời đã có trước ống màu. Câu 'not wrong, but incomplete' chỉ là nhận định, không phải bằng chứng."
+        }
+      ]
+    },
+    {
+      "id": "rc07",
+      "title": "Ice cores",
+      "length": "long",
+      "paragraphs": [
+        [
+          "Ice cores drilled from the Antarctic ice sheet preserve tiny bubbles of air trapped as snow compacted into ice, and these bubbles allow scientists to measure atmospheric carbon dioxide over the past 800,000 years.",
+          "The records show that carbon dioxide rose and fell in step with temperature through repeated glacial cycles.",
+          "Some commentators have cited a detail of these records as evidence against the view that carbon dioxide drives warming: at the end of several ice ages, temperature appears to have begun rising centuries before carbon dioxide did."
+        ],
+        [
+          "The objection misreads the proposed mechanism.",
+          "Few climate scientists claim that carbon dioxide initiated the ends of ice ages; the usual account is that slow changes in Earth's orbit started the warming, which caused the oceans to release dissolved carbon dioxide, which in turn amplified and spread the warming.",
+          "On this account, a lag is exactly what one would expect.",
+          "Moreover, the apparent lag is itself uncertain, because air can move through compacting snow for centuries before it is sealed off, so the bubbles are younger than the ice that surrounds them."
+        ]
+      ],
+      "questions": [
+        {
+          "id": "rc07a", "kind": "mc", "difficulty": 2,
+          "stem": "The primary purpose of the passage is to",
+          "options": [
+            "argue that changes in Earth's orbit, rather than carbon dioxide, explain recent warming",
+            "rebut an argument based on a feature of ice-core records",
+            "describe the methods by which ice cores are drilled and dated",
+            "show that carbon dioxide initiated the end of every ice age",
+            "question the reliability of all data derived from ice cores"
+          ],
+          "answer": "rebut an argument based on a feature of ice-core records",
+          "explanation": "Đoạn 2 mở đầu bằng 'The objection misreads the proposed mechanism' rồi đưa hai lý do bác bỏ. D ngược ý bài; E quá rộng."
+        },
+        {
+          "id": "rc07b", "kind": "multi", "difficulty": 3,
+          "stem": "It can be inferred that the author would agree with which of the following statements?",
+          "options": [
+            "A rise in temperature that precedes a rise in carbon dioxide is compatible with carbon dioxide amplifying warming.",
+            "The air in an ice-core bubble can be younger than the ice in which the bubble is found.",
+            "Ice-core records show that carbon dioxide and temperature varied independently of each other."
+          ],
+          "answers": [
+            "A rise in temperature that precedes a rise in carbon dioxide is compatible with carbon dioxide amplifying warming.",
+            "The air in an ice-core bubble can be younger than the ice in which the bubble is found."
+          ],
+          "explanation": "'a lag is exactly what one would expect' ứng với 1; 'the bubbles are younger than the ice' ứng với 2. Câu 2 của bài nói hai đại lượng 'rose and fell in step', nên 3 sai."
+        },
+        {
+          "id": "rc07c", "kind": "mc", "difficulty": 2,
+          "stem": "In the context of the passage, the objection is best understood as the claim that",
+          "options": [
+            "a delay between rising temperature and rising carbon dioxide undermines the view that carbon dioxide drives warming",
+            "ice cores cannot preserve samples of ancient air",
+            "changes in Earth's orbit started the warming at the end of ice ages",
+            "carbon dioxide levels are not measurable over long periods",
+            "the oceans absorb rather than release carbon dioxide as they warm"
+          ],
+          "answer": "a delay between rising temperature and rising carbon dioxide undermines the view that carbon dioxide drives warming",
+          "explanation": "'The objection' trỏ về câu cuối đoạn 1: nhiệt độ tăng trước CO2 nên CO2 không phải nguyên nhân. C là lập luận của chính tác giả."
+        }
+      ]
+    },
+    {
+      "id": "rc08",
+      "title": "Chess expertise",
+      "length": "long",
+      "paragraphs": [
+        [
+          "Studies of chess masters in the mid-twentieth century found that masters could reconstruct a position from a real game after viewing it for only a few seconds, whereas novices recalled only a handful of pieces.",
+          "It was tempting to conclude that masters simply had superior memories.",
+          "When the pieces were placed at random, however, masters performed little better than novices."
+        ],
+        [
+          "This finding suggested that expertise consists largely in a store of familiar patterns, built up over years of study, that lets an expert perceive a position as a few meaningful units rather than as many separate pieces.",
+          "Later researchers extended this idea to fields from medicine to firefighting, arguing that what looks like intuition is often rapid recognition.",
+          "Critics have cautioned that the extension works best in domains, like chess, that offer regular structure and quick, reliable feedback; in domains such as long-range political forecasting, where feedback is slow and ambiguous, experienced practitioners may develop confidence without developing accuracy."
+        ]
+      ],
+      "questions": [
+        {
+          "id": "rc08a", "kind": "sentence", "difficulty": 2,
+          "stem": "Select the sentence in the passage that presents a result that undermines an explanation mentioned in the passage.",
+          "answer": 2,
+          "explanation": "Giải thích bị bác là 'masters simply had superior memories'. Kết quả bác bỏ: khi xếp quân ngẫu nhiên, kiện tướng không nhớ tốt hơn người mới."
+        },
+        {
+          "id": "rc08b", "kind": "mc", "difficulty": 2,
+          "stem": "The critics mentioned in the last sentence would most likely agree that",
+          "options": [
+            "expert intuition is equally reliable in every field",
+            "chess masters have superior general memories",
+            "the reliability of intuition depends partly on the kind of feedback a field provides",
+            "political forecasters are less capable than chess masters",
+            "pattern recognition plays no role in medicine"
+          ],
+          "answer": "the reliability of intuition depends partly on the kind of feedback a field provides",
+          "explanation": "Các nhà phê bình phân biệt lĩnh vực có phản hồi nhanh, rõ với lĩnh vực phản hồi chậm, mơ hồ. D so sánh năng lực con người, bài không nói."
+        },
+        {
+          "id": "rc08c", "kind": "multi", "difficulty": 3,
+          "stem": "The passage suggests which of the following about the chess masters' recall of positions from real games?",
+          "options": [
+            "It depended on recognizing configurations familiar from prior study.",
+            "It was not mainly the result of a superior general memory.",
+            "It was no better than the novices' recall."
+          ],
+          "answers": [
+            "It depended on recognizing configurations familiar from prior study.",
+            "It was not mainly the result of a superior general memory."
+          ],
+          "explanation": "Đoạn 2 giải thích bằng 'store of familiar patterns' (1); thí nghiệm xếp ngẫu nhiên loại bỏ giải thích trí nhớ chung (2). Với thế cờ thật, kiện tướng nhớ tốt hơn hẳn, nên 3 sai."
+        }
+      ]
+    }
+  ]
+}

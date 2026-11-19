@@ -5,8 +5,8 @@ import { exTools } from './content.js';
 import { App, S, esc, views, actions, word, record, touch, render, go, toast, isTyping, now, stopTimer, heldIds } from '../state.js';
 import { call, LS, isAuthError } from '../api.js';
 import {
-  MODES, SECTION_SPEC, KIND_LABEL, ADAPT_THRESHOLD, exKind, isAnswered, isTouched, planSections, pickSection, adaptFrom,
-  gradeItem, encodeChoice, decodeChoice, summarize
+  MODES, SECTION_SPEC, KIND_LABEL, KIND_ORDER, ADAPT_THRESHOLD, exKind, isAnswered, isTouched, planSections, pickSection, adaptFrom,
+  gradeItem, encodeChoice, decodeChoice, summarize, pickReading, rcTarget, estimateScaled
 } from '../mock.js';
 import { startSession, startWordsSession } from './session.js';
 import { difficultyHtml, skillsHtml, wordsInQuestionHtml, vocabIntroHtml } from './grevocab.js';
@@ -28,7 +28,8 @@ export function activeRun() {
 function saveRun() { if (!App.user) return; if (run) LS.set(runKey(), run); else LS.del(runKey()); }
 const curSec = () => run.sections[run.sec];
 const curItem = () => curSec().items[run.cur];
-const ex = (id) => App.idx.exById[id];
+const ex = (id) => App.idx.exById[id] || App.reading.byId[id];
+const LETTERS = 'ABCDE';
 
 const pad2 = (n) => ('0' + n).slice(-2);
 const mmss = (sec) => { sec = Math.max(0, Math.round(sec)); return Math.floor(sec / 60) + ':' + pad2(sec % 60); };
@@ -39,6 +40,16 @@ const shortDate = (stamp) => String(stamp || '').slice(0, 16);
 function poolFor(clusters) {
   const held = heldIds();
   return App.idx.exercises.filter((e) => !held.has(e.id) && (!clusters.length || clusters.includes(e.clusterId)));
+}
+/** Đoạn văn Reading cho thi thử ngẫu nhiên: bỏ đoạn có câu đang giữ cho đề cố định chưa làm (không lọc theo cụm). */
+function rcPool() {
+  const held = heldIds();
+  return App.reading.passages.filter((p) => !p.questionIds.some((id) => held.has(id)));
+}
+/** Chọn câu cho một section ngẫu nhiên: Reading trọn đoạn (khoảng một nửa), phần còn lại TC/SE. */
+function pickRandomSection(clusters, n, opts) {
+  const rc = pickReading(rcPool(), rcTarget(n), App.reading.byId, opts);
+  return pickSection(poolFor(clusters), n - rc.length, Object.assign({}, opts, { rc }));
 }
 
 /* ---------------- Đề cố định ---------------- */
@@ -62,7 +73,9 @@ function newSection(no, ids, min) {
   return {
     no, min, items: ids.map((id) => {
       const e = ex(id);
-      return { ex: id, order: e.type === 'se' ? [S.shuffle(e.options)] : e.blanks.map((b) => S.shuffle(b.options)), choice: e.type === 'se' ? [] : e.blanks.map(() => null), marked: false, t: 0 };
+      // Reading: giữ thứ tự phương án như đề (đáp án dạng chọn câu không có phương án)
+      const order = e.type === 'rc' ? (e.kind === 'sentence' ? [] : [e.options.slice()]) : e.type === 'se' ? [S.shuffle(e.options)] : e.blanks.map((b) => S.shuffle(b.options));
+      return { ex: id, order, choice: e.type === 'se' || e.type === 'rc' ? [] : e.blanks.map(() => null), marked: false, t: 0 };
     }), startMs: null, deadline: null, endMs: null, score: null
   };
 }
@@ -81,10 +94,11 @@ function beginSection() {
 /** Chuẩn bị đề ngẫu nhiên: chọn câu Section đầu (Section sau chọn khi nộp Section trước, theo kết quả). */
 function prepRandom() {
   const pool = poolFor(M.clusters);
-  const plan = planSections(M.mode, pool.length);
+  const nRC = rcPool().reduce((a, p) => a + p.questionIds.length, 0);
+  const plan = planSections(M.mode, pool.length + nRC);
   if (!plan.sections.every((s) => s.n > 0)) { toast('Phạm vi này chưa đủ câu để thi thử.'); return null; }
   const first = plan.sections[0];
-  return { kind: 'random', mode: M.mode, clusters: M.clusters.slice(), plan: plan.sections, ids: pickSection(pool, first.n, { exRes: App.exRes, today: S.vnDate(now()) }) };
+  return { kind: 'random', mode: M.mode, clusters: M.clusters.slice(), plan: plan.sections, ids: pickRandomSection(M.clusters, first.n, { exRes: App.exRes, today: S.vnDate(now()) }) };
 }
 /** Chuẩn bị đề cố định: thứ tự câu đúng như file đề; thứ tự phương án vẫn xáo trộn khi tạo section. */
 function prepFixed(id) {
@@ -136,7 +150,7 @@ function submitSection() {
     if (run.fixedId) ids = next.ids; // đề cố định: đúng thứ tự trong file, không thích ứng
     else {
       run.adapt = adaptFrom(score, s.items.length);
-      ids = pickSection(poolFor(run.clusters), next.n, { exRes: App.exRes, today: S.vnDate(now()), prefer: run.adapt, exclude: used });
+      ids = pickRandomSection(run.clusters, next.n, { exRes: App.exRes, today: S.vnDate(now()), prefer: run.adapt, exclude: used });
     }
     run.sections.push(newSection(next.no, ids, next.min));
     run.sec++;
@@ -249,9 +263,10 @@ function startScreen() {
   M.clusters = M.clusters.filter((id) => clusters.some((c) => c.id === id));
   const pool = poolFor(M.clusters);
   const nSE = pool.filter((e) => e.type === 'se').length;
-  const plan = planSections(M.mode, pool.length);
+  const nRC = rcPool().reduce((a, p) => a + p.questionIds.length, 0);
+  const plan = planSections(M.mode, pool.length + nRC);
   let h = '<div class="page-head"><h1>Thi thử section Verbal</h1><p>Mô phỏng làm bài trên máy: đồng hồ đếm ngược, đi lại tự do trong section, đánh dấu, xem lại. Không gợi ý, không hiện đúng sai trong lúc làm.</p></div>';
-  h += '<div class="notice">Đề thật có khoảng một nửa số câu là Reading Comprehension. Bản thi thử này hiện chỉ gồm Text Completion và Sentence Equivalence.</div>';
+  h += '<div class="notice">Cấu trúc như đề GRE hiện hành: Section 1 có 12 câu trong 18 phút, Section 2 có 15 câu trong 23 phút, độ khó Section 2 theo kết quả Section 1. Mỗi section gồm Text Completion, Sentence Equivalence và Reading Comprehension (3 dạng: chọn 1 đáp án, chọn mọi đáp án đúng, chọn câu trong đoạn). Ngân hàng đoạn văn còn nhỏ nên tỉ lệ Reading có thể thấp hơn đề thật (khoảng một nửa).</div>';
   h += fixedList();
   h += '<h2 class="section">Đề ngẫu nhiên</h2><p class="muted small" style="margin-top:0">Câu chọn ngẫu nhiên trong các cụm bạn chọn, ưu tiên câu chưa làm hoặc từng làm sai.</p>';
   h += '<div class="form-grid"><div class="field"><span class="label">Loại bài</span><div class="modes" role="radiogroup">' + Object.keys(MODES).map((m) => {
@@ -263,10 +278,10 @@ function startScreen() {
   h += '<div class="field"><span class="label" id="mkcl">Lấy câu từ các cụm</span><div class="chips-wrap" role="group" aria-labelledby="mkcl">' +
     '<button class="chip" data-act="mk-cluster" data-id="all" aria-pressed="' + !M.clusters.length + '">Tất cả</button>' +
     clusters.map((c) => '<button class="chip" data-act="mk-cluster" data-id="' + c.id + '" aria-pressed="' + M.clusters.includes(c.id) + '">' + esc(c.title) + '</button>').join('') + '</div>' +
-    '<div class="help">Phạm vi có ' + pool.length + ' câu: ' + (pool.length - nSE) + ' Text Completion, ' + nSE + ' Sentence Equivalence.</div></div>';
+    '<div class="help">Phạm vi có ' + (pool.length + nRC) + ' câu: ' + (pool.length - nSE) + ' Text Completion, ' + nSE + ' Sentence Equivalence, ' + nRC + ' Reading (Reading dùng chung cho mọi cụm).</div></div>';
   const total = plan.sections.reduce((a, s) => a + s.n, 0), mins = plan.sections.reduce((a, s) => a + s.min, 0);
   if (plan.short) {
-    h += '<div class="notice warn">Phạm vi này chỉ có <b>' + pool.length + ' câu</b>, ít hơn ' + plan.need + ' câu của đề thật. ' +
+    h += '<div class="notice warn">Phạm vi này chỉ có <b>' + (pool.length + nRC) + ' câu</b>, ít hơn ' + plan.need + ' câu của đề thật. ' +
       (total ? 'Bạn có thể làm bài ngắn hơn: ' + total + ' câu trong ' + mins + ' phút (giữ nhịp thời gian như đề thật).' : 'Chọn thêm cụm để thi thử.') + '</div>';
   }
   h += '<button class="btn primary big" data-act="mk-start"' + (total && plan.sections.every((s) => s.n) ? '' : ' disabled') + '>' +
@@ -314,7 +329,7 @@ function fixedList() {
 function introScreen() {
   const p = M.prep;
   const ids = p.kind === 'fixed' ? p.plan.flatMap((s) => s.ids) : p.ids;
-  const exs = ids.map((id) => ex(id)).filter(Boolean);
+  const exs = ids.map((id) => ex(id)).filter((e) => e && e.type !== 'rc');
   const title = p.kind === 'fixed' ? fixedById(p.fixedId).title : 'Thi thử ' + MODES[p.mode].label;
   const total = p.plan.reduce((a, s) => a + s.n, 0), mins = p.plan.reduce((a, s) => a + s.min, 0);
   App.keyHandler = (e) => { if (e.key === 'Enter' && !isTyping(e)) { e.preventDefault(); launch(p); } };
@@ -350,6 +365,7 @@ function runScreen() {
 
 function questionScreen() {
   const s = curSec(), it = curItem(), e = ex(it.ex);
+  if (e.type === 'rc') return rcScreen(s, it, e);
   const isSE = e.type === 'se';
   const nB = isSE ? 1 : e.blanks.length;
   const label = isSE ? 'Sentence Equivalence: chọn đúng 2 từ cho hai câu cùng nghĩa' : 'Text Completion' + (nB > 1 ? ', ' + nB + ' chỗ trống: chọn một từ cho mỗi cột' : ': chọn một từ');
@@ -374,8 +390,13 @@ function questionScreen() {
     }).join('') + '</div>';
   }
   h += '</article>';
+  return h + examNav(s, it);
+}
+
+/** Thanh Trước / Đánh dấu / Xem lại / Tiếp và phím tắt (số = chọn phương án, ← →). */
+function examNav(s, it) {
   const last = run.cur === s.items.length - 1;
-  h += '<div class="exam-nav" role="toolbar" aria-label="Điều hướng bài thi">' +
+  const h = '<div class="exam-nav" role="toolbar" aria-label="Điều hướng bài thi">' +
     '<button class="btn" data-act="mk-prev"' + (run.cur === 0 ? ' disabled' : '') + '>‹ Trước</button>' +
     '<button class="btn" data-act="mk-mark" aria-pressed="' + !!it.marked + '">' + (it.marked ? '⚑ Bỏ đánh dấu' : '⚐ Đánh dấu') + '</button>' +
     '<button class="btn" data-act="mk-review">Xem lại</button>' +
@@ -390,6 +411,45 @@ function questionScreen() {
     } else if (ev.key === 'ArrowRight' || ev.key === 'Enter') { ev.preventDefault(); nextQ(); } else if (ev.key === 'ArrowLeft') { ev.preventDefault(); prevQ(); }
   };
   return h;
+}
+
+/** Đoạn văn Reading: mỗi đoạn một <p>; dạng chọn câu thì từng câu bấm được. sel: số thứ tự câu đang chọn (chuỗi) hoặc null. */
+function passageHtml(p, clickable, sel, mark) {
+  let k = 0;
+  return p.paragraphs.map((para) => '<p>' + para.map((sent) => {
+    const i = k++;
+    const cls = (clickable ? 'rc-sent pick' : 'rc-sent') + (sel === String(i) ? ' on' : '') + (mark === i ? ' ans' : '');
+    return clickable
+      ? '<span class="' + cls + '" role="radio" tabindex="0" aria-checked="' + (sel === String(i)) + '" data-act="mk-pick" data-b="0" data-o="' + i + '">' + esc(sent) + '</span> '
+      : '<span class="' + cls + '">' + esc(sent) + '</span> ';
+  }).join('') + '</p>').join('');
+}
+
+/** Câu Reading: đoạn văn bên trái (hoặc trên, khi màn hẹp), câu hỏi bên phải, như giao diện thi trên máy. */
+function rcScreen(s, it, e) {
+  const p = e.passage;
+  // Các câu liền nhau trong section cùng đoạn văn: "Questions x to y are based on this passage", như đề thật
+  let a = run.cur, b = run.cur;
+  while (a > 0 && (ex(s.items[a - 1].ex) || {}).passageId === p.id) a--;
+  while (b < s.items.length - 1 && (ex(s.items[b + 1].ex) || {}).passageId === p.id) b++;
+  const isSent = e.kind === 'sentence';
+  const label = e.kind === 'multi' ? 'Reading: chọn mọi đáp án đúng' : isSent ? 'Reading: chọn câu trong đoạn văn' : 'Reading: chọn một đáp án';
+  let h = '<div class="rc-wrap"><section class="card rc-passage" aria-label="Đoạn văn"><div class="card-kind"><span>' +
+    (a === b ? 'Câu ' + (a + 1) + ' dựa trên đoạn văn này' : 'Câu ' + (a + 1) + ' đến ' + (b + 1) + ' dựa trên đoạn văn này') + '</span></div>' +
+    '<div class="rc-text">' + passageHtml(p, isSent, isSent ? (it.choice[0] != null ? String(it.choice[0]) : null) : null) + '</div></section>';
+  h += '<article class="card exam-q rc-q"><div class="card-kind"><span>' + label + '</span>' + (it.marked ? '<span class="dotsep mark-on">⚑ Đã đánh dấu</span>' : '') + '</div>';
+  if (e.kind === 'multi') h += '<p class="muted small rc-dir">Consider each of the choices separately and select all that apply.</p>';
+  h += '<p class="rc-stem">' + esc(e.stem) + '</p>';
+  if (isSent) {
+    h += '<p class="muted small">Bấm vào một câu trong đoạn văn để chọn; bấm câu khác để đổi.</p>' +
+      (it.choice.length ? '<div class="rc-chosen">Đã chọn: <i>' + esc(p.sentences[+it.choice[0]] || '') + '</i></div>' : '');
+  } else {
+    const multi = e.kind === 'multi';
+    h += '<div class="options" role="' + (multi ? 'group' : 'radiogroup') + '">' + it.order[0].map((o, k) =>
+      '<button class="opt' + (multi ? ' se-box' : '') + '" role="' + (multi ? 'checkbox' : 'radio') + '" aria-checked="' + it.choice.includes(o) + '" data-act="mk-pick" data-b="0" data-o="' + esc(o) + '"><span class="num">' + (multi ? k + 1 : LETTERS[k]) + '</span><span>' + esc(o) + '</span><span class="mark"></span></button>').join('') + '</div>';
+  }
+  h += '</article></div>';
+  return h + examNav(s, it);
 }
 
 function reviewScreen() {
@@ -440,7 +500,9 @@ function startClock() {
 
 function pick(b, o) {
   const it = curItem(), e = ex(it.ex);
-  if (e.type === 'se') {
+  if (e.type === 'rc') {
+    if (e.kind === 'multi') { const i = it.choice.indexOf(o); if (i >= 0) it.choice.splice(i, 1); else it.choice.push(o); } else it.choice = [String(o)];
+  } else if (e.type === 'se') {
     const i = it.choice.indexOf(o);
     if (i >= 0) it.choice.splice(i, 1);
     else if (it.choice.length < 2) it.choice.push(o);
@@ -523,11 +585,17 @@ function resultScreen() {
     return '<div class="page-head"><h1>Kết quả thi thử</h1></div>' + (App.mocks == null ? '<p class="muted">Đang tải…</p>' : '<p class="muted">Không tìm thấy bài thi thử này.</p>') +
       '<button class="btn" data-act="mk-new">Về trang Thi thử</button>';
   }
-  const sum = summarize(m.sections, App.idx);
+  const sum = summarize(m.sections, ex);
   const fm = m.mode === 'fixed' ? fixedById(m.mockId) : null;
   let h = '<div class="page-head"><h1>Kết quả thi thử</h1><p>' + esc(modeLabel(m)) + ' · ' + esc(shortDate(m.startedAt)) +
     (m.pending ? ' · <span title="Sẽ tự gửi lại khi có mạng">chưa lưu lên máy chủ</span>' : '') + '</p></div>';
   h += '<div class="summary-score">' + sum.score + '<small> / ' + sum.total + ' câu đúng</small></div>';
+  if (m.sections.length > 1) {
+    const est = estimateScaled(sum.score, sum.total);
+    h += '<p class="notice">Điểm Verbal ước lượng: <b>' + Math.max(130, est - 3) + '–' + Math.min(170, est + 3) + '</b> (thang 130–170). Ước lượng thô từ tỉ lệ câu đúng theo các bảng quy đổi không chính thức; ETS chấm theo độ khó từng câu và không công bố bảng quy đổi, nên điểm thật có thể lệch.</p>';
+  } else {
+    h += '<p class="muted small">Điểm quy đổi 130–170 chỉ ước lượng khi làm đủ hai section.</p>';
+  }
   h += '<div class="table-wrap"><table class="mock-table"><thead><tr><th>Section</th><th>Đúng</th><th>Thời gian đã dùng</th></tr></thead><tbody>' +
     m.sections.map((s) => {
       const lim = fm && fm.sections[s.section - 1] ? fm.sections[s.section - 1].minutes : (SECTION_SPEC[s.section] && s.total === SECTION_SPEC[s.section].n ? SECTION_SPEC[s.section].min : null);
@@ -543,7 +611,7 @@ function resultScreen() {
     }
   }
   h += '<h2 class="section">Thời gian trung bình mỗi câu, theo dạng câu</h2><div class="table-wrap"><table class="mock-table"><thead><tr><th>Dạng câu</th><th>Số câu</th><th>Đúng</th><th>TB mỗi câu</th></tr></thead><tbody>' +
-    ['tc1', 'tc2', 'tc3', 'se'].filter((k) => sum.byKind[k]).map((k) => {
+    KIND_ORDER.filter((k) => sum.byKind[k]).map((k) => {
       const b = sum.byKind[k];
       return '<tr><td>' + KIND_LABEL[k] + '</td><td class="num">' + b.n + '</td><td class="num">' + b.ok + '</td><td class="num">' + mmss(b.t / b.n) + '</td></tr>';
     }).join('') + '</tbody></table></div>';
@@ -562,11 +630,13 @@ function resultScreen() {
     (e.answerIds || []).concat(e.targets || []).forEach((id) => { if (word(id) && !wrongWords.includes(id)) wrongWords.push(id); });
   });
   if (wrong.length) {
-    h += '<div class="form-grid" style="margin-top:18px"><button class="btn primary big" data-act="mk-retry-ex" data-ids="' + wrong.map((x) => x.i).join(',') + '">Ôn lại các câu sai (' + wrong.length + ')</button>' +
+    const wrongEx = wrong.filter((x) => ex(x.i).type !== 'rc'); // câu Reading chỉ có trong thi thử, không đưa vào phiên luyện
+    h += '<div class="form-grid" style="margin-top:18px">' + (wrongEx.length ? '<button class="btn primary big" data-act="mk-retry-ex" data-ids="' + wrongEx.map((x) => x.i).join(',') + '">Ôn lại các câu TC/SE sai (' + wrongEx.length + ')</button>' : '') +
       '<button class="btn big" data-act="mk-retry-words" data-ids="' + wrongWords.join(',') + '">Đưa các từ sai vào phiên ôn (' + wrongWords.length + ' từ)</button></div>';
   }
   h += '<h2 class="section">Từng câu</h2><ol class="review-list mock-items">' + items.map((it, k) => {
     const e = ex(it.i);
+    if (e.type === 'rc') return rcResultItem(m, it, k, e);
     const isSE = e.type === 'se';
     const choice = decodeChoice(it.c, e);
     const ans = isSE ? e.answers.join(', ') : e.blanks.map((b) => b.answer).join(' · ');
@@ -582,6 +652,22 @@ function resultScreen() {
   }).join('') + '</ol>';
   h += '<div class="form-grid" style="margin-top:20px"><button class="btn big" data-act="mk-new">Về trang Thi thử</button></div>';
   return h;
+}
+
+/** Một câu Reading ở màn kết quả: đoạn văn (thu gọn), câu hỏi, lựa chọn của bạn, đáp án, giải thích. */
+function rcResultItem(m, it, k, e) {
+  const choice = decodeChoice(it.c, e);
+  const show = (arr) => (e.kind === 'sentence' ? arr.map((x) => '"' + (e.passage.sentences[+x] || '?') + '"') : arr.map((x) => {
+    const i = e.options.indexOf(x);
+    return (e.kind === 'mc' ? LETTERS[i] : i + 1) + '. ' + x;
+  })).join('; ');
+  const ans = e.kind === 'multi' ? e.answers : [String(e.answer)];
+  return '<li><div class="row"><b>Câu ' + (k + 1) + '</b><span class="muted small">' + (m.sections.length > 1 ? 'Section ' + it.sec + ' · ' : '') + KIND_LABEL[exKind(e)] + ' · ' + mmss(it.t) + '</span>' + difficultyHtml(e) +
+    (it.ok ? '<span class="tag known">✓ Đúng</span>' : (isTouched(choice) ? '<span class="tag leech">✗ Sai</span>' : '<span class="tag leech">○ Bỏ trống</span>')) + '</div>' +
+    '<details class="rc-res-passage"><summary>Đoạn văn: ' + esc(e.passage.title) + '</summary><div class="rc-text">' + passageHtml(e.passage, false, null, e.kind === 'sentence' ? e.answer : null) + '</div></details>' +
+    '<p class="example" style="margin:6px 0">' + esc(e.stem) + '</p>' +
+    '<div class="small">Bạn chọn: <b>' + esc(isTouched(choice) ? show(choice) : '(bỏ trống)') + '</b><br>Đáp án: <b>' + esc(show(ans)) + '</b></div>' +
+    '<div class="explain small">' + esc(e.explanation || '') + '</div></li>';
 }
 
 /** Tỉ lệ đúng theo kỹ năng và theo độ khó: biết nên luyện thêm kỹ năng nào (lọc theo kỹ năng ở mục Luyện tập). */

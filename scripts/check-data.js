@@ -7,6 +7,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { validateWord, validateExercise, validateMock } from '../assets/validate.js';
+import { validateReading } from '../assets/reading.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DATA_DIR = path.join(ROOT, 'data');
@@ -114,6 +115,16 @@ export function validateMocks(clusters) {
   files.forEach((f) => { if (!index.mocks.includes(f)) err('index.json', `File data/mocks/${f}.json chưa có trong data/mocks/index.json`); });
   const exIds = new Set(), clusterIds = new Set();
   clusters.forEach((c) => { clusterIds.add(c.id); c.exercises.forEach((ex) => exIds.add(ex.id)); });
+  // Reading (data/reading/passages.json): câu hỏi Reading cũng được dùng trong đề cố định
+  const rcFile = path.join(DATA_DIR, 'reading', 'passages.json');
+  if (fs.existsSync(rcFile)) {
+    let rc = null;
+    try { rc = readJson(rcFile); } catch (e) { errors.push(`  - [reading/passages.json] ${e.message}`); }
+    if (rc) {
+      validateReading(rc, exIds).forEach((msg) => errors.push(`  - [reading/passages.json] ${msg}`));
+      (rc.passages || []).forEach((p) => (p.questions || []).forEach((q) => exIds.add(q.id)));
+    }
+  }
   index.mocks.forEach((id) => {
     const file = path.join(MOCK_DIR, `${id}.json`);
     if (!fs.existsSync(file)) { err('index.json', `liệt kê đề "${id}" nhưng không có file data/mocks/${id}.json`); return; }
