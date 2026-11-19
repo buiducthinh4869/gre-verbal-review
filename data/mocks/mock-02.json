@@ -8,7 +8,7 @@
     "ordinary-novel",
     "honesty-deception"
   ],
-  "description": "Đề cố định gồm 27 câu: Text Completion và Sentence Equivalence lấy từ cụm 5–8, cùng Reading Comprehension. Section 2 khó hơn Section 1. Mỗi section có một đoạn văn Reading.",
+  "description": "Đề cố định gồm 27 câu: Text Completion và Sentence Equivalence lấy từ cụm 5–8, cùng Reading Comprehension. Section 2 khó hơn Section 1. Mỗi section có hai đoạn văn Reading (10/27 câu).",
   "sections": [
     {
       "title": "Section 1",
@@ -16,26 +16,24 @@
       "items": [
         "hp107",
         "hd03",
-        "on07",
         "hd07",
         "on01",
         "rc02a",
         "rc02b",
         "ma113",
         "ma115",
+        "rc10a",
+        "rc10b",
         "on116",
-        "hp109",
-        "ma110"
+        "hp109"
       ]
     },
     {
       "title": "Section 2",
       "minutes": 23,
       "items": [
-        "hd112",
         "ma104",
         "on109",
-        "on08",
         "hp03",
         "hd108",
         "rc06a",
@@ -43,7 +41,9 @@
         "rc06c",
         "hp112",
         "hp111",
-        "hp110",
+        "rc14a",
+        "rc14b",
+        "rc14c",
         "hd105",
         "ma03",
         "ma118"

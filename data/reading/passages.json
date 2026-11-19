@@ -17,20 +17,24 @@
       ],
       "questions": [
         {
-          "id": "rc01a", "kind": "mc", "difficulty": 1,
+          "id": "rc01a",
+          "kind": "mc",
+          "difficulty": 1,
           "stem": "The primary purpose of the passage is to",
           "options": [
-            "argue that cleaner wrasse harm their clients more than they help them",
             "qualify a traditional characterization of a relationship between two kinds of fish",
             "explain why parasites are uncommon on coral reefs",
             "compare the feeding habits of several species of reef fish",
+            "argue that cleaner wrasse harm their clients more than they help them",
             "defend the textbook account of mutualism against recent criticism"
           ],
           "answer": "qualify a traditional characterization of a relationship between two kinds of fish",
-          "explanation": "Câu 1 nêu cách nhìn cũ (mutualism), câu 2 'complicated this picture', câu cuối kết luận 'negotiated truce'. Tác giả điều chỉnh chứ không bác bỏ hẳn (loại A) và không bảo vệ cách nhìn cũ (loại E)."
+          "explanation": "Câu 1 nêu cách nhìn cũ (mutualism), câu 2 'complicated this picture', câu cuối kết luận 'negotiated truce'. Tác giả điều chỉnh chứ không bác bỏ hẳn (loại D) và không bảo vệ cách nhìn cũ (loại E)."
         },
         {
-          "id": "rc01b", "kind": "sentence", "difficulty": 2,
+          "id": "rc01b",
+          "kind": "sentence",
+          "difficulty": 2,
           "stem": "Select the sentence in the passage that presents evidence that the behavior of the wrasse is influenced by the presence of observers.",
           "answer": 3,
           "explanation": "Câu 'Wrasse that are being watched by other potential clients ... bite less often' nói về hành vi thay đổi khi có cá khác quan sát. Câu chasing away nói về phản ứng của client, không phải người quan sát."
@@ -51,28 +55,32 @@
       ],
       "questions": [
         {
-          "id": "rc02a", "kind": "multi", "difficulty": 2,
+          "id": "rc02a",
+          "kind": "multi",
+          "difficulty": 2,
           "stem": "Which of the following can be inferred about the recent scholarship described in the passage?",
           "options": [
-            "It accepts that guilds restricted entry into their trades.",
             "It implies that guild quality standards mattered more to buyers in some markets than in others.",
+            "It accepts that guilds restricted entry into their trades.",
             "It concludes that guilds, on the whole, lowered prices for consumers."
           ],
           "answers": [
-            "It accepts that guilds restricted entry into their trades.",
-            "It implies that guild quality standards mattered more to buyers in some markets than in others."
+            "It implies that guild quality standards mattered more to buyers in some markets than in others.",
+            "It accepts that guilds restricted entry into their trades."
           ],
-          "explanation": "'Guilds did limit membership' cho thấy học giả mới vẫn chấp nhận việc hạn chế gia nhập (A). Lợi ích chỉ có khi người mua không kiểm tra được hàng và 'varied from trade to trade' (B). Đoạn văn không nói giá giảm (C sai)."
+          "explanation": "'Guilds did limit membership' cho thấy học giả mới vẫn chấp nhận việc hạn chế gia nhập (phương án 2). Lợi ích chỉ có khi người mua không kiểm tra được hàng và 'varied from trade to trade' (phương án 1). Đoạn văn không nói giá giảm (phương án 3 sai)."
         },
         {
-          "id": "rc02b", "kind": "mc", "difficulty": 2,
+          "id": "rc02b",
+          "kind": "mc",
+          "difficulty": 2,
           "stem": "The author's attitude toward the conclusion described in the last sentence is best described as",
           "options": [
             "enthusiastic endorsement",
-            "reluctant rejection",
             "qualified acceptance",
-            "skepticism prompted by a lack of evidence",
-            "detached indifference"
+            "reluctant rejection",
+            "detached indifference",
+            "skepticism prompted by a lack of evidence"
           ],
           "answer": "qualified acceptance",
           "explanation": "Tác giả thừa nhận kết luận 'less satisfying' (có phần dè dặt) nhưng 'more consistent with the surviving records' (chấp nhận). Đó là chấp nhận có điều kiện."
@@ -93,30 +101,34 @@
       ],
       "questions": [
         {
-          "id": "rc03a", "kind": "mc", "difficulty": 1,
+          "id": "rc03a",
+          "kind": "mc",
+          "difficulty": 1,
           "stem": "The passage is primarily concerned with",
           "options": [
-            "criticizing Victorian novelists for padding their works",
-            "explaining a feature of certain novels by reference to how they were first published",
-            "comparing the popularity of Dickens with that of Thackeray",
+            "describing how monthly magazines were financed",
             "arguing that modern novels are inferior to Victorian novels",
-            "describing how monthly magazines were financed"
+            "explaining a feature of certain novels by reference to how they were first published",
+            "criticizing Victorian novelists for padding their works",
+            "comparing the popularity of Dickens with that of Thackeray"
           ],
           "answer": "explaining a feature of certain novels by reference to how they were first published",
-          "explanation": "Đặc điểm là cốt truyện dàn trải; nguyên nhân là hình thức đăng theo kỳ. D quá mạnh: tác giả chỉ nói không nên dùng chuẩn của tiểu thuyết hiện đại để đánh giá."
+          "explanation": "Đặc điểm là cốt truyện dàn trải; nguyên nhân là hình thức đăng theo kỳ. B quá mạnh: tác giả chỉ nói không nên dùng chuẩn của tiểu thuyết hiện đại để đánh giá."
         },
         {
-          "id": "rc03b", "kind": "mc", "difficulty": 2,
+          "id": "rc03b",
+          "kind": "mc",
+          "difficulty": 2,
           "stem": "The author mentions that each installment needed its own small climax primarily in order to",
           "options": [
-            "illustrate a demand of serial publication that shaped the structure of the novels",
-            "suggest that Victorian readers preferred short fiction to long fiction",
             "concede that Victorian plots are poorly unified",
+            "suggest that Victorian readers preferred short fiction to long fiction",
             "explain why Dickens sold more copies than Thackeray",
+            "illustrate a demand of serial publication that shaped the structure of the novels",
             "show that publishers, rather than authors, controlled the content of installments"
           ],
           "answer": "illustrate a demand of serial publication that shaped the structure of the novels",
-          "explanation": "Chi tiết này là một yêu cầu của hình thức đăng kỳ, giải thích vì sao truyện có nhiều tình tiết phụ. C sai vì tác giả không nhượng bộ lời chê."
+          "explanation": "Chi tiết này là một yêu cầu của hình thức đăng kỳ, giải thích vì sao truyện có nhiều tình tiết phụ. A sai vì tác giả không nhượng bộ lời chê."
         }
       ]
     },
@@ -134,22 +146,26 @@
       ],
       "questions": [
         {
-          "id": "rc04a", "kind": "sentence", "difficulty": 1,
+          "id": "rc04a",
+          "kind": "sentence",
+          "difficulty": 1,
           "stem": "Select the sentence in the passage that describes an observation that conflicted with astronomers' expectations.",
           "answer": 1,
           "explanation": "'Instead, orbital speeds stayed roughly constant' trái với kỳ vọng ở câu 1. Câu 1 chỉ nêu kỳ vọng, chưa nêu quan sát."
         },
         {
-          "id": "rc04b", "kind": "multi", "difficulty": 2,
+          "id": "rc04b",
+          "kind": "multi",
+          "difficulty": 2,
           "stem": "According to the passage, the proposal to modify the law of gravity",
           "options": [
-            "fits the rotation of individual galaxies using fewer adjustable quantities than the alternative",
             "has difficulty accounting for certain observations of galaxy clusters",
+            "fits the rotation of individual galaxies using fewer adjustable quantities than the alternative",
             "is accepted by most astronomers"
           ],
           "answers": [
-            "fits the rotation of individual galaxies using fewer adjustable quantities than the alternative",
-            "has difficulty accounting for certain observations of galaxy clusters"
+            "has difficulty accounting for certain observations of galaxy clusters",
+            "fits the rotation of individual galaxies using fewer adjustable quantities than the alternative"
           ],
           "explanation": "Câu cuối nêu cả ưu điểm (fewer adjustable parameters) và nhược điểm (struggles to explain colliding clusters). Đề xuất này của 'a minority', nên phương án 3 sai."
         }
@@ -174,34 +190,40 @@
       ],
       "questions": [
         {
-          "id": "rc05a", "kind": "mc", "difficulty": 2,
+          "id": "rc05a",
+          "kind": "mc",
+          "difficulty": 2,
           "stem": "The passage is primarily concerned with",
           "options": [
-            "defending a long-standing prediction against flawed empirical challenges",
-            "describing how empirical findings prompted a reconsideration of a policy's likely effects",
             "arguing that minimum wages should be raised substantially",
             "explaining why telephone surveys produce unreliable data",
-            "comparing labor markets in the twentieth century with those of earlier periods"
+            "defending a long-standing prediction against flawed empirical challenges",
+            "comparing labor markets in the twentieth century with those of earlier periods",
+            "describing how empirical findings prompted a reconsideration of a policy's likely effects"
           ],
           "answer": "describing how empirical findings prompted a reconsideration of a policy's likely effects",
-          "explanation": "Mạch bài: dự đoán chuẩn, kết quả thực nghiệm trái ngược, tranh luận về dữ liệu, rồi tìm lời giải thích mới. C sai vì câu cuối nói rõ không phải mức tăng nào cũng vô hại."
+          "explanation": "Mạch bài: dự đoán chuẩn, kết quả thực nghiệm trái ngược, tranh luận về dữ liệu, rồi tìm lời giải thích mới. A sai vì câu cuối nói rõ không phải mức tăng nào cũng vô hại."
         },
         {
-          "id": "rc05b", "kind": "multi", "difficulty": 3,
+          "id": "rc05b",
+          "kind": "multi",
+          "difficulty": 3,
           "stem": "The passage suggests which of the following about the explanation discussed in the second paragraph?",
           "options": [
+            "It holds that employment rises whenever a minimum wage is raised.",
             "It assumes that some workers face obstacles to changing employers.",
-            "It implies that the size of a wage increase affects its consequences for employment.",
-            "It holds that employment rises whenever a minimum wage is raised."
+            "It implies that the size of a wage increase affects its consequences for employment."
           ],
           "answers": [
             "It assumes that some workers face obstacles to changing employers.",
             "It implies that the size of a wage increase affects its consequences for employment."
           ],
-          "explanation": "'workers cannot easily switch jobs' là giả định (1). 'depends on how far it moves the wage' cho thấy độ lớn mức tăng quan trọng (2). 'whenever' quá mạnh, mâu thuẫn với câu cuối (3 sai)."
+          "explanation": "'workers cannot easily switch jobs' là giả định (2). 'depends on how far it moves the wage' cho thấy độ lớn mức tăng quan trọng (3). 'whenever' quá mạnh, mâu thuẫn với câu cuối (1 sai)."
         },
         {
-          "id": "rc05c", "kind": "sentence", "difficulty": 2,
+          "id": "rc05c",
+          "kind": "sentence",
+          "difficulty": 2,
           "stem": "Select the sentence in the passage that describes a response to a methodological objection.",
           "answer": 4,
           "explanation": "Phản đối về phương pháp là dữ liệu phỏng vấn qua điện thoại. Câu 'Yet later studies that used payroll records ...' đáp lại phản đối đó bằng nguồn dữ liệu khác."
@@ -227,33 +249,39 @@
       ],
       "questions": [
         {
-          "id": "rc06a", "kind": "mc", "difficulty": 1,
+          "id": "rc06a",
+          "kind": "mc",
+          "difficulty": 1,
           "stem": "The author's attitude toward the claim in the first sentence is best described as",
           "options": [
-            "unreserved agreement",
-            "outright dismissal",
             "qualified acceptance",
+            "reluctant admiration",
             "amused indifference",
-            "reluctant admiration"
+            "outright dismissal",
+            "unreserved agreement"
           ],
           "answer": "qualified acceptance",
           "explanation": "'not wrong, but it is incomplete': chấp nhận nhưng bổ sung điều kiện."
         },
         {
-          "id": "rc06b", "kind": "mc", "difficulty": 2,
+          "id": "rc06b",
+          "kind": "mc",
+          "difficulty": 2,
           "stem": "According to the passage, the Impressionists differed from earlier landscape painters chiefly in that the Impressionists",
           "options": [
-            "were the first to paint in oil outdoors",
-            "presented paintings made outdoors as finished works",
-            "painted on paper rather than on canvas",
             "won the approval of the official Salon",
-            "rejected the use of metal paint tubes"
+            "presented paintings made outdoors as finished works",
+            "rejected the use of metal paint tubes",
+            "painted on paper rather than on canvas",
+            "were the first to paint in oil outdoors"
           ],
           "answer": "presented paintings made outdoors as finished works",
-          "explanation": "'What distinguished the Impressionists was ... their willingness to exhibit the results as finished works.' A sai vì họa sĩ trước đó đã vẽ ngoài trời; D ngược với ý Salon cho là 'presumptuous'."
+          "explanation": "'What distinguished the Impressionists was ... their willingness to exhibit the results as finished works.' E sai vì họa sĩ trước đó đã vẽ ngoài trời; A ngược với ý Salon cho là 'presumptuous'."
         },
         {
-          "id": "rc06c", "kind": "sentence", "difficulty": 2,
+          "id": "rc06c",
+          "kind": "sentence",
+          "difficulty": 2,
           "stem": "Select the sentence in the passage that provides evidence against the view that the paint tube was necessary for painting outdoors in oil.",
           "answer": 4,
           "explanation": "'Landscape painters had sketched outdoors in oil for decades before 1841' cho thấy vẽ dầu ngoài trời đã có trước ống màu. Câu 'not wrong, but incomplete' chỉ là nhận định, không phải bằng chứng."
@@ -279,44 +307,50 @@
       ],
       "questions": [
         {
-          "id": "rc07a", "kind": "mc", "difficulty": 2,
+          "id": "rc07a",
+          "kind": "mc",
+          "difficulty": 2,
           "stem": "The primary purpose of the passage is to",
           "options": [
-            "argue that changes in Earth's orbit, rather than carbon dioxide, explain recent warming",
-            "rebut an argument based on a feature of ice-core records",
             "describe the methods by which ice cores are drilled and dated",
-            "show that carbon dioxide initiated the end of every ice age",
-            "question the reliability of all data derived from ice cores"
+            "question the reliability of all data derived from ice cores",
+            "rebut an argument based on a feature of ice-core records",
+            "argue that changes in Earth's orbit, rather than carbon dioxide, explain recent warming",
+            "show that carbon dioxide initiated the end of every ice age"
           ],
           "answer": "rebut an argument based on a feature of ice-core records",
-          "explanation": "Đoạn 2 mở đầu bằng 'The objection misreads the proposed mechanism' rồi đưa hai lý do bác bỏ. D ngược ý bài; E quá rộng."
+          "explanation": "Đoạn 2 mở đầu bằng 'The objection misreads the proposed mechanism' rồi đưa hai lý do bác bỏ. D ngược ý bài; B quá rộng."
         },
         {
-          "id": "rc07b", "kind": "multi", "difficulty": 3,
+          "id": "rc07b",
+          "kind": "multi",
+          "difficulty": 3,
           "stem": "It can be inferred that the author would agree with which of the following statements?",
           "options": [
+            "Ice-core records show that carbon dioxide and temperature varied independently of each other.",
             "A rise in temperature that precedes a rise in carbon dioxide is compatible with carbon dioxide amplifying warming.",
-            "The air in an ice-core bubble can be younger than the ice in which the bubble is found.",
-            "Ice-core records show that carbon dioxide and temperature varied independently of each other."
+            "The air in an ice-core bubble can be younger than the ice in which the bubble is found."
           ],
           "answers": [
             "A rise in temperature that precedes a rise in carbon dioxide is compatible with carbon dioxide amplifying warming.",
             "The air in an ice-core bubble can be younger than the ice in which the bubble is found."
           ],
-          "explanation": "'a lag is exactly what one would expect' ứng với 1; 'the bubbles are younger than the ice' ứng với 2. Câu 2 của bài nói hai đại lượng 'rose and fell in step', nên 3 sai."
+          "explanation": "'a lag is exactly what one would expect' ứng với 2; 'the bubbles are younger than the ice' ứng với 3. Câu 2 của bài nói hai đại lượng 'rose and fell in step', nên 1 sai."
         },
         {
-          "id": "rc07c", "kind": "mc", "difficulty": 2,
+          "id": "rc07c",
+          "kind": "mc",
+          "difficulty": 2,
           "stem": "In the context of the passage, the objection is best understood as the claim that",
           "options": [
-            "a delay between rising temperature and rising carbon dioxide undermines the view that carbon dioxide drives warming",
-            "ice cores cannot preserve samples of ancient air",
             "changes in Earth's orbit started the warming at the end of ice ages",
             "carbon dioxide levels are not measurable over long periods",
+            "ice cores cannot preserve samples of ancient air",
+            "a delay between rising temperature and rising carbon dioxide undermines the view that carbon dioxide drives warming",
             "the oceans absorb rather than release carbon dioxide as they warm"
           ],
           "answer": "a delay between rising temperature and rising carbon dioxide undermines the view that carbon dioxide drives warming",
-          "explanation": "'The objection' trỏ về câu cuối đoạn 1: nhiệt độ tăng trước CO2 nên CO2 không phải nguyên nhân. C là lập luận của chính tác giả."
+          "explanation": "'The objection' trỏ về câu cuối đoạn 1: nhiệt độ tăng trước CO2 nên CO2 không phải nguyên nhân. A là lập luận của chính tác giả."
         }
       ]
     },
@@ -338,37 +372,447 @@
       ],
       "questions": [
         {
-          "id": "rc08a", "kind": "sentence", "difficulty": 2,
+          "id": "rc08a",
+          "kind": "sentence",
+          "difficulty": 2,
           "stem": "Select the sentence in the passage that presents a result that undermines an explanation mentioned in the passage.",
           "answer": 2,
           "explanation": "Giải thích bị bác là 'masters simply had superior memories'. Kết quả bác bỏ: khi xếp quân ngẫu nhiên, kiện tướng không nhớ tốt hơn người mới."
         },
         {
-          "id": "rc08b", "kind": "mc", "difficulty": 2,
+          "id": "rc08b",
+          "kind": "mc",
+          "difficulty": 2,
           "stem": "The critics mentioned in the last sentence would most likely agree that",
           "options": [
+            "pattern recognition plays no role in medicine",
+            "political forecasters are less capable than chess masters",
             "expert intuition is equally reliable in every field",
             "chess masters have superior general memories",
-            "the reliability of intuition depends partly on the kind of feedback a field provides",
-            "political forecasters are less capable than chess masters",
-            "pattern recognition plays no role in medicine"
+            "the reliability of intuition depends partly on the kind of feedback a field provides"
           ],
           "answer": "the reliability of intuition depends partly on the kind of feedback a field provides",
-          "explanation": "Các nhà phê bình phân biệt lĩnh vực có phản hồi nhanh, rõ với lĩnh vực phản hồi chậm, mơ hồ. D so sánh năng lực con người, bài không nói."
+          "explanation": "Các nhà phê bình phân biệt lĩnh vực có phản hồi nhanh, rõ với lĩnh vực phản hồi chậm, mơ hồ. B so sánh năng lực con người, bài không nói."
         },
         {
-          "id": "rc08c", "kind": "multi", "difficulty": 3,
+          "id": "rc08c",
+          "kind": "multi",
+          "difficulty": 3,
           "stem": "The passage suggests which of the following about the chess masters' recall of positions from real games?",
           "options": [
-            "It depended on recognizing configurations familiar from prior study.",
             "It was not mainly the result of a superior general memory.",
-            "It was no better than the novices' recall."
+            "It was no better than the novices' recall.",
+            "It depended on recognizing configurations familiar from prior study."
           ],
           "answers": [
-            "It depended on recognizing configurations familiar from prior study.",
-            "It was not mainly the result of a superior general memory."
+            "It was not mainly the result of a superior general memory.",
+            "It depended on recognizing configurations familiar from prior study."
           ],
-          "explanation": "Đoạn 2 giải thích bằng 'store of familiar patterns' (1); thí nghiệm xếp ngẫu nhiên loại bỏ giải thích trí nhớ chung (2). Với thế cờ thật, kiện tướng nhớ tốt hơn hẳn, nên 3 sai."
+          "explanation": "Đoạn 2 giải thích bằng 'store of familiar patterns' (3); thí nghiệm xếp ngẫu nhiên loại bỏ giải thích trí nhớ chung (1). Với thế cờ thật, kiện tướng nhớ tốt hơn hẳn, nên 2 sai."
+        }
+      ]
+    },
+    {
+      "id": "rc09",
+      "title": "Urban heat islands",
+      "length": "short",
+      "paragraphs": [
+        [
+          "Cities are often several degrees warmer than the surrounding countryside, a pattern usually attributed to dark pavement and roofs that absorb sunlight.",
+          "Yet the difference is frequently greatest at night, when no sunlight is being absorbed.",
+          "The explanation is that pavement and masonry store heat during the day and release it slowly after sunset, while narrow streets lined with tall buildings trap the outgoing radiation that would otherwise escape to the sky."
+        ]
+      ],
+      "questions": [
+        {
+          "id": "rc09a",
+          "kind": "mc",
+          "difficulty": 2,
+          "stem": "The author mentions that the temperature difference is often greatest at night primarily in order to",
+          "options": [
+            "introduce a fact that the usual explanation does not fully account for",
+            "suggest that sunlight is stronger in cities than in rural areas",
+            "argue that dark pavement plays no role in urban warming",
+            "show that cities are cooler than the countryside during the day",
+            "explain why tall buildings are built on narrow streets"
+          ],
+          "answer": "introduce a fact that the usual explanation does not fully account for",
+          "explanation": "Ban đêm không có nắng nên lời giải thích 'hấp thụ ánh nắng' chưa đủ; câu 3 bổ sung cơ chế lưu nhiệt. C quá mạnh: tác giả không phủ nhận vai trò của mặt đường."
+        },
+        {
+          "id": "rc09b",
+          "kind": "multi",
+          "difficulty": 2,
+          "stem": "According to the passage, which of the following contribute to higher nighttime temperatures in cities?",
+          "options": [
+            "Materials that release stored heat slowly",
+            "Street layouts that hinder the escape of radiation",
+            "Sunlight absorbed after sunset"
+          ],
+          "answers": [
+            "Materials that release stored heat slowly",
+            "Street layouts that hinder the escape of radiation"
+          ],
+          "explanation": "Câu cuối nêu hai cơ chế: vật liệu nhả nhiệt chậm và phố hẹp giữ bức xạ. Sau hoàng hôn không còn ánh nắng, nên phương án 3 sai."
+        }
+      ]
+    },
+    {
+      "id": "rc10",
+      "title": "Oral history",
+      "length": "short",
+      "paragraphs": [
+        [
+          "Historians once treated oral testimony as a poor substitute for written records, prone to the distortions of memory and self-interest.",
+          "Practitioners of oral history reply that written records are hardly free of such distortions, since they were usually produced by officials with interests of their own.",
+          "More important, oral sources preserve the perspectives of people who left few documents, such as laborers and migrants, and the very ways in which these speakers misremember events can reveal how a community has come to understand its past."
+        ]
+      ],
+      "questions": [
+        {
+          "id": "rc10a",
+          "kind": "mc",
+          "difficulty": 2,
+          "stem": "The passage suggests that the errors in oral testimony can be",
+          "options": [
+            "the main reason historians now prefer oral sources",
+            "a source of insight into how a group interprets its history",
+            "evidence that laborers and migrants kept no documents",
+            "more serious than those found in any written source",
+            "easily corrected by comparison with official documents"
+          ],
+          "answer": "a source of insight into how a group interprets its history",
+          "explanation": "Câu cuối: cách người kể nhớ sai 'can reveal how a community has come to understand its past'."
+        },
+        {
+          "id": "rc10b",
+          "kind": "sentence",
+          "difficulty": 2,
+          "stem": "Select the sentence in the passage that answers a criticism by pointing out a weakness in the alternative that the critics favor.",
+          "answer": 1,
+          "explanation": "Câu 2 đáp lại lời chê (trí nhớ méo mó) bằng cách chỉ ra tài liệu viết cũng bị méo do lợi ích của quan chức."
+        }
+      ]
+    },
+    {
+      "id": "rc11",
+      "title": "Bird migration",
+      "length": "short",
+      "paragraphs": [
+        [
+          "Many songbirds migrate at night, and for decades researchers assumed that they navigated mainly by the stars.",
+          "Experiments in planetariums showed that young birds do learn to orient themselves by the rotation of the night sky.",
+          "But birds kept under overcast skies still head in roughly the right direction, and later work found that they can also sense Earth's magnetic field, apparently through light-sensitive molecules in their eyes.",
+          "Researchers now think that birds combine several cues, relying on whichever is most dependable at a given moment."
+        ]
+      ],
+      "questions": [
+        {
+          "id": "rc11a",
+          "kind": "mc",
+          "difficulty": 1,
+          "stem": "Which of the following best describes the organization of the passage?",
+          "options": [
+            "A method of study is criticized and an alternative method is defended.",
+            "A phenomenon is described and its causes are said to be unknowable.",
+            "An early view is presented, evidence for it is given, further findings complicate it, and a broader view is proposed.",
+            "Two competing theories are described and judged equally plausible.",
+            "A hypothesis is presented and then rejected as entirely mistaken."
+          ],
+          "answer": "An early view is presented, evidence for it is given, further findings complicate it, and a broader view is proposed.",
+          "explanation": "Quan niệm cũ (sao), bằng chứng ủng hộ (planetarium), phát hiện làm phức tạp (trời nhiều mây, từ trường), quan niệm rộng hơn (kết hợp nhiều tín hiệu). E sai vì quan niệm cũ không bị bác hoàn toàn."
+        },
+        {
+          "id": "rc11b",
+          "kind": "multi",
+          "difficulty": 2,
+          "stem": "It can be inferred from the passage that a songbird flying on a cloudy night",
+          "options": [
+            "could still orient itself without seeing the stars",
+            "would be unable to migrate in the correct direction",
+            "may rely on its sensitivity to Earth's magnetic field"
+          ],
+          "answers": [
+            "could still orient itself without seeing the stars",
+            "may rely on its sensitivity to Earth's magnetic field"
+          ],
+          "explanation": "Chim dưới trời nhiều mây vẫn bay gần đúng hướng và có thể cảm nhận từ trường. Phương án 3 trái với câu 3."
+        }
+      ]
+    },
+    {
+      "id": "rc12",
+      "title": "Dating rock art",
+      "length": "short",
+      "paragraphs": [
+        [
+          "Estimating the age of prehistoric rock paintings is notoriously difficult, because most pigments, such as red ochre, contain no carbon that can be dated directly.",
+          "One technique sidesteps this problem by dating thin mineral crusts that formed over the paintings after they were made.",
+          "Because the crust must be younger than the painting beneath it, the method yields only a minimum age; a painting dated in this way may be considerably older than the date suggests."
+        ]
+      ],
+      "questions": [
+        {
+          "id": "rc12a",
+          "kind": "sentence",
+          "difficulty": 2,
+          "stem": "Select the sentence in the passage that identifies a limitation of a dating technique.",
+          "answer": 2,
+          "explanation": "Câu cuối: phương pháp chỉ cho tuổi tối thiểu. Câu 1 nói về khó khăn chung, chưa phải hạn chế của kỹ thuật."
+        },
+        {
+          "id": "rc12b",
+          "kind": "mc",
+          "difficulty": 3,
+          "stem": "If a mineral crust over a painting were dated to 40,000 years ago, the passage implies that the painting",
+          "options": [
+            "contains carbon that can be dated directly",
+            "cannot be dated by any method",
+            "was made exactly 40,000 years ago",
+            "was made no later than about 40,000 years ago",
+            "was made no earlier than about 40,000 years ago"
+          ],
+          "answer": "was made no later than about 40,000 years ago",
+          "explanation": "Lớp vỏ hình thành sau bức vẽ, nên bức vẽ có từ ít nhất 40.000 năm trước, tức không muộn hơn mốc đó. E đảo ngược quan hệ."
+        }
+      ]
+    },
+    {
+      "id": "rc13",
+      "title": "Coffeehouses",
+      "length": "long",
+      "paragraphs": [
+        [
+          "Accounts of the eighteenth-century English coffeehouse often describe it as a cradle of democratic debate, a place where merchants, writers, and artisans argued about politics as equals.",
+          "Contemporary pamphlets celebrated the coffeehouse in just these terms, and later theorists of the public sphere drew heavily on them."
+        ],
+        [
+          "Such sources, however, were written largely by the coffeehouses' most enthusiastic patrons, and they say little about who was absent.",
+          "Women appear in the records mostly as proprietors or servers rather than customers, and the price of admission, though low, was not trivial for laborers.",
+          "None of this means that the coffeehouse ideal was a fiction; ideals can shape behavior even when they are imperfectly realized.",
+          "It does suggest that historians should distinguish between what coffeehouses claimed to be and whom they actually served."
+        ]
+      ],
+      "questions": [
+        {
+          "id": "rc13a",
+          "kind": "mc",
+          "difficulty": 2,
+          "stem": "The author's main purpose is to",
+          "options": [
+            "explain why coffee became popular in eighteenth-century England",
+            "dismiss the view that coffeehouses fostered political debate",
+            "show that coffeehouses were mainly frequented by women",
+            "argue that pamphlets are worthless as historical evidence",
+            "urge caution about accepting a celebratory account at face value"
+          ],
+          "answer": "urge caution about accepting a celebratory account at face value",
+          "explanation": "Tác giả không phủ nhận lý tưởng ('None of this means ... fiction') mà khuyên phân biệt lời tự nhận với thực tế. B và D quá mạnh."
+        },
+        {
+          "id": "rc13b",
+          "kind": "multi",
+          "difficulty": 3,
+          "stem": "The passage suggests that the pamphlets mentioned in the first paragraph",
+          "options": [
+            "were written by people with reason to portray coffeehouses favorably",
+            "give limited information about those excluded from coffeehouses",
+            "prove that the coffeehouse ideal was entirely fictitious"
+          ],
+          "answers": [
+            "were written by people with reason to portray coffeehouses favorably",
+            "give limited information about those excluded from coffeehouses"
+          ],
+          "explanation": "Tác giả pamphlet là 'most enthusiastic patrons' (1) và 'say little about who was absent' (2). Phương án 3 trái với câu 'None of this means that the coffeehouse ideal was a fiction'."
+        },
+        {
+          "id": "rc13c",
+          "kind": "sentence",
+          "difficulty": 2,
+          "stem": "Select the sentence in the passage that anticipates and rejects an overly strong conclusion that might be drawn from the evidence presented.",
+          "answer": 4,
+          "explanation": "Sau khi nêu bằng chứng về người bị loại trừ, câu 'None of this means that the coffeehouse ideal was a fiction' chặn trước kết luận quá mạnh."
+        }
+      ]
+    },
+    {
+      "id": "rc14",
+      "title": "Antibiotic resistance",
+      "length": "long",
+      "paragraphs": [
+        [
+          "Bacteria that carry genes for antibiotic resistance usually pay a price for them: producing the proteins that neutralize a drug consumes energy, so in the absence of the drug, resistant strains tend to grow more slowly than susceptible ones.",
+          "This observation once encouraged hope that resistance would fade if the use of a particular antibiotic were curtailed."
+        ],
+        [
+          "Experience has been disappointing.",
+          "Resistant strains often persist for years after a drug is withdrawn, in part because they acquire further mutations that offset the cost of resistance without eliminating the resistance itself.",
+          "In addition, resistance genes frequently travel together on mobile pieces of DNA, so the use of one antibiotic can maintain resistance to several others.",
+          "Reducing antibiotic use remains worthwhile, but its benefits are likely to be slower and smaller than early models predicted."
+        ]
+      ],
+      "questions": [
+        {
+          "id": "rc14a",
+          "kind": "mc",
+          "difficulty": 2,
+          "stem": "The passage is primarily concerned with",
+          "options": [
+            "explaining why a promising strategy has produced weaker results than expected",
+            "arguing that antibiotic use should not be reduced",
+            "comparing the growth rates of different bacterial species",
+            "describing how bacteria produce proteins that neutralize drugs",
+            "proving that resistance genes cannot be lost"
+          ],
+          "answer": "explaining why a promising strategy has produced weaker results than expected",
+          "explanation": "Đoạn 1 nêu hy vọng, đoạn 2 giải thích vì sao kết quả 'disappointing'. B trái với câu cuối."
+        },
+        {
+          "id": "rc14b",
+          "kind": "multi",
+          "difficulty": 3,
+          "stem": "According to the passage, which of the following help explain the persistence of resistant strains after a drug is withdrawn?",
+          "options": [
+            "Mutations that reduce the cost of resistance",
+            "Faster growth of resistant strains in the absence of any drug",
+            "The linkage of several resistance genes on mobile DNA"
+          ],
+          "answers": [
+            "Mutations that reduce the cost of resistance",
+            "The linkage of several resistance genes on mobile DNA"
+          ],
+          "explanation": "Hai nguyên nhân: đột biến bù chi phí và gen kháng đi cùng nhau trên DNA di động. Phương án 3 ngược với câu 1 (chủng kháng mọc chậm hơn)."
+        },
+        {
+          "id": "rc14c",
+          "kind": "mc",
+          "difficulty": 2,
+          "stem": "The author's attitude toward reducing antibiotic use can best be described as",
+          "options": [
+            "unqualified enthusiasm",
+            "tempered support",
+            "studied neutrality",
+            "complete disillusionment",
+            "hostile skepticism"
+          ],
+          "answer": "tempered support",
+          "explanation": "'remains worthwhile, but its benefits are likely to be slower and smaller': ủng hộ có chừng mực."
+        }
+      ]
+    },
+    {
+      "id": "rc15",
+      "title": "Translation",
+      "length": "long",
+      "paragraphs": [
+        [
+          "A common complaint about literary translation is that it inevitably loses something of the original: puns vanish, rhythms are broken, and allusions that were obvious to the first readers become obscure.",
+          "The complaint is accurate as far as it goes."
+        ],
+        [
+          "What it overlooks is that translation can also add.",
+          "A translator who cannot reproduce a pun may find a different one in the new language, and the need to choose among several possible renderings can bring to light ambiguities that native readers had passed over.",
+          "Some writers have even revised their own works after reading translations of them, having discovered through the translator's questions what their sentences actually said.",
+          "To regard translation solely as loss is to treat the original as a fixed object rather than as a text whose meanings are partly realized in each new reading."
+        ]
+      ],
+      "questions": [
+        {
+          "id": "rc15a",
+          "kind": "sentence",
+          "difficulty": 2,
+          "stem": "Select the sentence in the passage that concedes a point to the view the author goes on to challenge.",
+          "answer": 1,
+          "explanation": "'The complaint is accurate as far as it goes': tác giả nhượng bộ trước khi phản bác ở đoạn 2."
+        },
+        {
+          "id": "rc15b",
+          "kind": "mc",
+          "difficulty": 2,
+          "stem": "The author mentions writers who revised their own works primarily in order to",
+          "options": [
+            "prove that native readers misunderstand literature",
+            "show that writers dislike being translated",
+            "illustrate a way in which translation can benefit an original text",
+            "suggest that most translations are inaccurate",
+            "argue that puns cannot be translated"
+          ],
+          "answer": "illustrate a way in which translation can benefit an original text",
+          "explanation": "Ví dụ cho luận điểm 'translation can also add': câu hỏi của dịch giả giúp tác giả nhìn lại câu chữ."
+        },
+        {
+          "id": "rc15c",
+          "kind": "multi",
+          "difficulty": 3,
+          "stem": "Which of the following statements would the author most likely accept?",
+          "options": [
+            "Translation never involves any loss.",
+            "Translators sometimes make readers aware of ambiguities in an original text.",
+            "The meaning of a literary work is not entirely fixed at the moment of its composition."
+          ],
+          "answers": [
+            "Translators sometimes make readers aware of ambiguities in an original text.",
+            "The meaning of a literary work is not entirely fixed at the moment of its composition."
+          ],
+          "explanation": "(2) ứng với 'bring to light ambiguities'; (3) ứng với câu cuối. Tác giả thừa nhận có mất mát ('accurate as far as it goes'), nên (1) sai."
+        }
+      ]
+    },
+    {
+      "id": "rc16",
+      "title": "Pollination",
+      "length": "long",
+      "paragraphs": [
+        [
+          "Flowers that are pollinated by a single species of insect have long been cited as examples of tight coevolution, in which plant and pollinator shape each other's traits over many generations.",
+          "The orchid whose nectar lies at the bottom of a spur more than twenty centimeters long, reachable only by a moth with a tongue of matching length, is the classic case."
+        ],
+        [
+          "Surveys of pollination networks have revealed, however, that such exclusive partnerships are rare.",
+          "Most plants are visited by many kinds of animals, and most pollinators visit many kinds of plants.",
+          "Some ecologists argue that this generalization makes ecological communities more resilient, since the loss of one pollinator seldom leaves a plant without visitors.",
+          "Specialized partnerships, by contrast, are vulnerable: if the moth disappears, the orchid cannot reproduce."
+        ]
+      ],
+      "questions": [
+        {
+          "id": "rc16a",
+          "kind": "mc",
+          "difficulty": 2,
+          "stem": "The passage suggests that the orchid described in the first paragraph is",
+          "options": [
+            "an example of a generalized partnership",
+            "pollinated by many species of insects",
+            "typical of most flowering plants",
+            "a vivid but unrepresentative example of plant-pollinator relationships",
+            "the reason pollination networks are resilient"
+          ],
+          "answer": "a vivid but unrepresentative example of plant-pollinator relationships",
+          "explanation": "Ví dụ kinh điển nhưng đoạn 2 cho biết quan hệ độc quyền 'rare'. B và C trái với bài."
+        },
+        {
+          "id": "rc16b",
+          "kind": "sentence",
+          "difficulty": 2,
+          "stem": "Select the sentence in the passage that offers a reason why a widespread pattern may be advantageous.",
+          "answer": 4,
+          "explanation": "Câu 'Some ecologists argue that this generalization makes ecological communities more resilient' nêu lợi ích của kiểu quan hệ phổ biến."
+        },
+        {
+          "id": "rc16c",
+          "kind": "multi",
+          "difficulty": 2,
+          "stem": "According to the passage, which of the following is true of specialized plant-pollinator partnerships?",
+          "options": [
+            "They are less common than generalized relationships.",
+            "They leave the plant at risk if its pollinator disappears.",
+            "They make ecological communities more resilient."
+          ],
+          "answers": [
+            "They are less common than generalized relationships.",
+            "They leave the plant at risk if its pollinator disappears."
+          ],
+          "explanation": "'such exclusive partnerships are rare' (1); 'if the moth disappears, the orchid cannot reproduce' (2). Tính bền vững là của quan hệ tổng quát, nên (3) sai."
         }
       ]
     }

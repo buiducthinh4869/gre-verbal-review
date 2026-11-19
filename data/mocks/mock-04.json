@@ -8,22 +8,22 @@
     "secret-showy",
     "amount-harm"
   ],
-  "description": "Đề cố định gồm 27 câu: Text Completion và Sentence Equivalence lấy từ cụm 13–16, cùng Reading Comprehension. Section 2 khó hơn Section 1. Mỗi section có một đoạn văn Reading.",
+  "description": "Đề cố định gồm 27 câu: Text Completion và Sentence Equivalence lấy từ cụm 13–16, cùng Reading Comprehension. Section 2 khó hơn Section 1. Mỗi section có hai đoạn văn Reading (10/27 câu).",
   "sections": [
     {
       "title": "Section 1",
       "minutes": 18,
       "items": [
         "ss07",
-        "ah101",
         "cc113",
         "ss113",
         "hm112",
         "rc04a",
         "rc04b",
-        "ah110",
         "hm108",
         "ah06",
+        "rc12a",
+        "rc12b",
         "cc03",
         "cc110"
       ]
@@ -41,12 +41,12 @@
         "rc08a",
         "rc08b",
         "rc08c",
-        "ah111",
+        "rc16a",
+        "rc16b",
+        "rc16c",
         "cc02",
-        "ss06",
         "ss109",
-        "cc103",
-        "cc116"
+        "cc103"
       ]
     }
   ]
