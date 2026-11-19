@@ -30,8 +30,8 @@
       "id": "silent",
       "title": "Kiệm lời, ít nói",
       "direction": "neutral",
-      "scale": false,
-      "note": ""
+      "scale": true,
+      "note": "Từ nhẹ (1) đến mạnh (4)."
     }
   ],
   "words": [
@@ -429,7 +429,8 @@
       "confusables": [
         "reticent",
         "laconic"
-      ]
+      ],
+      "level": 3
     },
     {
       "id": "reticent",
@@ -447,7 +448,8 @@
       "confusables": [
         "taciturn",
         "reserved"
-      ]
+      ],
+      "level": 2
     },
     {
       "id": "reserved",
@@ -461,7 +463,8 @@
       "collocations": [],
       "confusables": [
         "reticent"
-      ]
+      ],
+      "level": 1
     },
     {
       "id": "tight-lipped",
@@ -475,7 +478,8 @@
       "collocations": [],
       "confusables": [
         "reticent"
-      ]
+      ],
+      "level": 2
     }
   ],
   "exercises": [

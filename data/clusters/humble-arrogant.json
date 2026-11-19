@@ -16,7 +16,7 @@
       "id": "haughty",
       "title": "Kiêu căng, khinh người",
       "direction": "negative",
-      "scale": false,
+      "scale": true,
       "note": "Supercilious/condescending/patronizing: coi thường người khác. Haughty: tự cho mình cao hơn."
     },
     {
@@ -30,7 +30,7 @@
       "id": "brazen",
       "title": "Trơ tráo, xấc xược",
       "direction": "negative",
-      "scale": false,
+      "scale": true,
       "note": "Temerity/effrontery/audacity: sự cả gan, trơ trẽn. Audacious có thể khen (táo bạo)."
     },
     {
@@ -161,7 +161,8 @@
       "confusables": [
         "supercilious",
         "arrogant"
-      ]
+      ],
+      "level": 3
     },
     {
       "id": "supercilious",
@@ -177,7 +178,8 @@
       "confusables": [
         "condescending",
         "haughty"
-      ]
+      ],
+      "level": 3
     },
     {
       "id": "condescending",
@@ -194,7 +196,8 @@
       "confusables": [
         "patronizing",
         "supercilious"
-      ]
+      ],
+      "level": 2
     },
     {
       "id": "patronizing",
@@ -208,7 +211,8 @@
       "collocations": [],
       "confusables": [
         "condescending"
-      ]
+      ],
+      "level": 2
     },
     {
       "id": "arrogant",
@@ -222,7 +226,8 @@
       "collocations": [],
       "confusables": [
         "haughty"
-      ]
+      ],
+      "level": 3
     },
     {
       "id": "conceited",
@@ -234,7 +239,8 @@
       "nuance": "Tự đánh giá mình quá cao.",
       "example": "The *conceited* author quoted himself in every chapter.",
       "collocations": [],
-      "confusables": []
+      "confusables": [],
+      "level": 1
     },
     {
       "id": "vainglorious",
@@ -248,7 +254,8 @@
       "collocations": [],
       "confusables": [
         "conceited"
-      ]
+      ],
+      "level": 3
     },
     {
       "id": "hubris",
@@ -263,7 +270,8 @@
       "root": "Hy Lạp: hybris",
       "confusables": [
         "arrogant"
-      ]
+      ],
+      "level": 4
     },
     {
       "id": "imperious",
@@ -356,7 +364,8 @@
       ],
       "confusables": [
         "impudent"
-      ]
+      ],
+      "level": 4
     },
     {
       "id": "impudent",
@@ -371,7 +380,8 @@
       "confusables": [
         "insolent",
         "brazen"
-      ]
+      ],
+      "level": 2
     },
     {
       "id": "insolent",
@@ -385,7 +395,8 @@
       "collocations": [],
       "confusables": [
         "impudent"
-      ]
+      ],
+      "level": 3
     },
     {
       "id": "temerity",
@@ -401,7 +412,8 @@
       ],
       "confusables": [
         "effrontery"
-      ]
+      ],
+      "level": 3
     },
     {
       "id": "effrontery",
@@ -417,7 +429,8 @@
       ],
       "confusables": [
         "temerity"
-      ]
+      ],
+      "level": 4
     },
     {
       "id": "audacious",
@@ -434,7 +447,8 @@
       "root": "audac- (dám)",
       "confusables": [
         "temerity"
-      ]
+      ],
+      "level": 2
     },
     {
       "id": "brash",
@@ -448,7 +462,8 @@
       "collocations": [],
       "confusables": [
         "brazen"
-      ]
+      ],
+      "level": 2
     },
     {
       "id": "presumptuous",
@@ -462,7 +477,8 @@
       "collocations": [],
       "confusables": [
         "impudent"
-      ]
+      ],
+      "level": 1
     },
     {
       "id": "complacent",

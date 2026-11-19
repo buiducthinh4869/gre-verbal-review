@@ -9,7 +9,7 @@
       "id": "stubborn",
       "title": "Cứng đầu, ngoan cố",
       "direction": "negative",
-      "scale": false,
+      "scale": true,
       "note": "GRE hay phân biệt: intransigent (không chịu thỏa hiệp), recalcitrant (chống lại quyền lực), obdurate (cứng lòng), implacable (không nguôi giận)."
     },
     {
@@ -50,7 +50,8 @@
       "confusables": [
         "tenacious",
         "resolute"
-      ]
+      ],
+      "level": 2
     },
     {
       "id": "intransigent",
@@ -69,7 +70,8 @@
       "confusables": [
         "recalcitrant",
         "adamant"
-      ]
+      ],
+      "level": 3
     },
     {
       "id": "recalcitrant",
@@ -87,7 +89,8 @@
       "confusables": [
         "refractory",
         "intransigent"
-      ]
+      ],
+      "level": 3
     },
     {
       "id": "obdurate",
@@ -103,7 +106,8 @@
       "confusables": [
         "implacable",
         "obstinate"
-      ]
+      ],
+      "level": 4
     },
     {
       "id": "intractable",
@@ -121,7 +125,8 @@
       "root": "in- + tract- (kéo, dắt)",
       "confusables": [
         "tractable"
-      ]
+      ],
+      "level": 3
     },
     {
       "id": "refractory",
@@ -137,7 +142,8 @@
       ],
       "confusables": [
         "recalcitrant"
-      ]
+      ],
+      "level": 3
     },
     {
       "id": "adamant",
@@ -155,7 +161,8 @@
       "confusables": [
         "intransigent",
         "resolute"
-      ]
+      ],
+      "level": 1
     },
     {
       "id": "implacable",
@@ -174,7 +181,8 @@
       "confusables": [
         "obdurate",
         "inexorable"
-      ]
+      ],
+      "level": 4
     },
     {
       "id": "inexorable",
@@ -191,7 +199,8 @@
       ],
       "confusables": [
         "implacable"
-      ]
+      ],
+      "level": 4
     },
     {
       "id": "pertinacious",
@@ -206,7 +215,8 @@
       "confusables": [
         "tenacious",
         "obstinate"
-      ]
+      ],
+      "level": 1
     },
     {
       "id": "tenacious",
