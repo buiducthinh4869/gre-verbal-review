@@ -132,7 +132,7 @@ test('Reading: chấm như đề thật (chọn nhiều phải đúng hết, ch�
   const mc = RC.byId.rc01a, multi = RC.byId.rc02a, sent = RC.byId.rc01b;
   assert.equal(Mk.exKind(mc), 'rcmc');
   assert.equal(Mk.gradeItem(mc, [mc.answer], idx).correct, true);
-  assert.equal(Mk.gradeItem(mc, [mc.options[0]], idx).correct, false);
+  assert.equal(Mk.gradeItem(mc, [mc.options.find((o) => o !== mc.answer)], idx).correct, false);
   assert.equal(Mk.isAnswered(multi, [multi.answers[0]]), true);
   assert.equal(gradeRC(multi, [multi.answers[0]]), false, 'thiếu một đáp án thì sai');
   assert.equal(gradeRC(multi, multi.options), false, 'thừa đáp án thì sai');
