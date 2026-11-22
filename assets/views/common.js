@@ -13,7 +13,8 @@ export function wordDetail(w, withStatus) {
   if (editing) h += editableRows(w);
   else {
   if (w.nuance) h += '<dt>Sắc thái</dt><dd>' + esc(w.nuance) + '</dd>';
-  if (w.level) h += '<dt>Mức</dt><dd>' + w.level + '/4 trên “' + esc(g ? g.title : '') + '”</dd>';
+  if (g && g.scale && w.level) h += '<dt>Mức</dt><dd>' + w.level + '/4 trên “' + esc(g.title) + '”' + (w.tone ? ' · ' + esc(w.tone) : '') + '</dd>';
+  else if (w.degree || w.tone) h += '<dt>Mức</dt><dd>' + (w.degree ? w.degree + '/4 so với nhóm “' + esc(g ? g.title : '') + '” (tham khảo)' : '') + (w.degree && w.tone ? ' · ' : '') + (w.tone ? esc(w.tone) : '') + '</dd>';
   if (w.example) h += '<dt>Ví dụ</dt><dd class="example">' + renderMarkup(w.example) + '</dd>';
   if (w.collocations && w.collocations.length) h += '<dt>Collocation</dt><dd><ul class="colls">' + w.collocations.map((x) => '<li>' + esc(x) + '</li>').join('') + '</ul></dd>';
   if (w.root) h += '<dt>Gốc từ</dt><dd>' + esc(w.root) + '</dd>';

@@ -44,7 +44,9 @@
       "pos": "adj",
       "group": "clear",
       "priority": 3,
+      "degree": 2,
       "meaning": "sáng sủa, rõ ràng, dễ hiểu",
+      "tone": "sáng sủa, khen",
       "nuance": "Nói về cách diễn đạt hoặc tư duy mạch lạc.",
       "example": "Her **lucid account of** the identification strategy made a technical paper accessible to policymakers.",
       "collocations": [
@@ -63,7 +65,9 @@
       "pos": "adj",
       "group": "clear",
       "priority": 3,
+      "degree": 2,
       "meaning": "diễn đạt rõ ràng, dễ hiểu",
+      "tone": "diễn đạt rõ; trang trọng",
       "nuance": "Rất trang trọng; gần nghĩa lucid. Đừng nhầm với perspicacious (sắc sảo, tinh ý).",
       "example": "The textbook is admired for its *perspicuous* treatment of difficult proofs.",
       "collocations": [
@@ -80,7 +84,9 @@
       "pos": "adj",
       "group": "clear",
       "priority": 2,
+      "degree": 3,
       "meaning": "trong suốt; rất dễ hiểu",
+      "tone": "trong suốt, rất dễ hiểu",
       "nuance": "Nghĩa đen là nước trong vắt; nghĩa bóng là văn phong trong sáng.",
       "example": "Orwell's *pellucid* prose remains a model for policy writers.",
       "collocations": [
@@ -98,7 +104,9 @@
       "pos": "adj",
       "group": "clear",
       "priority": 2,
+      "degree": 1,
       "meaning": "trong veo; giản dị, dễ hiểu",
+      "tone": "trong trẻo; văn chương",
       "nuance": "Thường dùng cho nước, mắt, hoặc văn phong đơn giản, thanh thoát.",
       "example": "The poem's *limpid* language conceals considerable emotional depth.",
       "collocations": [
@@ -114,7 +122,9 @@
       "pos": "adj",
       "group": "clear",
       "priority": 2,
+      "degree": 3,
       "meaning": "rõ ràng, nói thẳng ra",
+      "tone": "nói thẳng, không ẩn ý",
       "nuance": "Đối lập với implicit (ngầm hiểu). Nhấn vào việc được nói thẳng, không phải dễ hiểu.",
       "example": "The contract makes the penalty **explicit**, leaving no room for interpretation.",
       "collocations": [
@@ -131,7 +141,9 @@
       "pos": "adj",
       "group": "clear",
       "priority": 3,
+      "degree": 4,
       "meaning": "rõ ràng, dứt khoát, không nước đôi",
+      "tone": "dứt khoát, không nước đôi",
       "nuance": "Trái nghĩa trực tiếp với equivocal.",
       "example": "The court issued an *unequivocal* ruling in favor of the plaintiffs.",
       "collocations": [
@@ -150,7 +162,9 @@
       "pos": "adj/v",
       "group": "clear",
       "priority": 3,
+      "degree": 3,
       "meaning": "hiển nhiên, rõ ràng (adj); biểu lộ ra (v)",
+      "tone": "hiển nhiên",
       "nuance": "Hiển nhiên ai cũng thấy được, không cần giải thích.",
       "example": "The policy's failure became **manifest** within a year.",
       "collocations": [
@@ -168,7 +182,9 @@
       "pos": "adj",
       "group": "clear",
       "priority": 3,
+      "degree": 4,
       "meaning": "hiển nhiên, rành rành",
+      "tone": "rành rành, ai cũng thấy",
       "nuance": "Bẫy nghĩa phụ: không phải bằng sáng chế. Hay đi với thứ sai trái hiển nhiên: a patent lie.",
       "example": "The claim was a **patent falsehood**, contradicted by the ministry's own data.",
       "collocations": [
@@ -186,6 +202,7 @@
       "group": "obscure",
       "priority": 3,
       "meaning": "khó hiểu, trừu tượng sâu xa",
+      "tone": "khó vì trừu tượng",
       "nuance": "Khó vì nội dung trừu tượng, phức tạp về ý.",
       "example": "Measure theory strikes many first-year students as hopelessly *abstruse*.",
       "collocations": [
@@ -204,6 +221,7 @@
       "group": "obscure",
       "priority": 3,
       "meaning": "uyên thâm, ít người biết",
+      "tone": "khó vì ít người biết",
       "nuance": "Khó vì kiến thức hiếm, chỉ chuyên gia biết.",
       "example": "The essay is full of *recondite* allusions to medieval law.",
       "collocations": [
@@ -224,6 +242,7 @@
       "group": "obscure",
       "priority": 3,
       "meaning": "bí ẩn, chỉ người trong cuộc hiểu",
+      "tone": "chỉ người trong cuộc",
       "nuance": "Chỉ người trong cuộc hoặc chuyên gia mới hiểu; thường dùng cho quy tắc, thủ tục, kiến thức chuyên biệt.",
       "example": "Few outside the bank understood the *arcane* rules governing the reserve requirement.",
       "collocations": [
@@ -243,6 +262,7 @@
       "group": "obscure",
       "priority": 3,
       "meaning": "chỉ dành cho một nhóm nhỏ hiểu",
+      "tone": "dành cho nhóm hẹp",
       "nuance": "Nhấn vào đối tượng hẹp: dành cho người trong giới.",
       "example": "The conference featured several *esoteric* debates about estimator efficiency.",
       "collocations": [
@@ -262,6 +282,7 @@
       "group": "obscure",
       "priority": 3,
       "meaning": "mờ đục; khó hiểu, thiếu minh bạch",
+      "tone": "thiếu minh bạch",
       "nuance": "Nghĩa bóng: không minh bạch, khó nhìn thấu (quy trình, văn bản).",
       "example": "The fund's fee structure was deliberately *opaque*.",
       "collocations": [
@@ -280,6 +301,7 @@
       "group": "obscure",
       "priority": 2,
       "meaning": "bí ẩn, khó hiểu (thường cố ý)",
+      "tone": "bí ẩn, thường cố ý",
       "nuance": "Ngắn và bí ẩn, như mật mã.",
       "example": "She left a *cryptic* note saying only that the data 'was not what it seemed'.",
       "collocations": [
@@ -299,6 +321,7 @@
       "group": "obscure",
       "priority": 2,
       "meaning": "bí ẩn, khó đoán",
+      "tone": "bí ẩn, gây tò mò",
       "nuance": "Nói về con người, nụ cười, lời nói gây tò mò.",
       "example": "The governor's *enigmatic* smile gave reporters no clue about the decision.",
       "collocations": [
@@ -318,6 +341,7 @@
       "group": "obscure",
       "priority": 3,
       "meaning": "không thể hiểu thấu",
+      "tone": "không thể đoán thấu",
       "nuance": "Thường nói về nét mặt, động cơ của con người.",
       "example": "His motives remained *inscrutable* even to close colleagues.",
       "collocations": [
@@ -335,6 +359,7 @@
       "group": "obscure",
       "priority": 2,
       "meaning": "không thể xuyên qua; không thể hiểu",
+      "tone": "không thể hiểu nổi",
       "nuance": "Nghĩa bóng: văn bản dày đặc đến mức không hiểu được.",
       "example": "The legal disclaimer was written in *impenetrable* jargon.",
       "collocations": [
@@ -352,6 +377,7 @@
       "group": "obscure",
       "priority": 3,
       "meaning": "phức tạp, rối rắm",
+      "tone": "rối vì cấu trúc",
       "nuance": "Khó vì cấu trúc quanh co, chồng chéo.",
       "example": "The tax code's *convoluted* structure creates endless opportunities for avoidance.",
       "collocations": [
@@ -372,6 +398,7 @@
       "group": "obscure",
       "priority": 2,
       "meaning": "rối rắm, phức tạp đến mức khó nắm",
+      "tone": "rối như bộ máy",
       "nuance": "Thường dùng cho bộ máy, thủ tục hành chính chằng chịt.",
       "example": "Investors complained about the *byzantine* approval process.",
       "collocations": [
@@ -389,6 +416,7 @@
       "group": "obscure",
       "priority": 1,
       "meaning": "như mê cung, rối rắm",
+      "tone": "rối như mê cung",
       "nuance": "Rối như mê cung, nhiều lối rẽ (labyrinthine bureaucracy). Nhấn vào cấu trúc phức tạp, khác abstruse nhấn vào nội dung khó.",
       "example": "The novel's *labyrinthine* plot rewards a second reading.",
       "collocations": [],
@@ -405,6 +433,7 @@
       "group": "obscure",
       "priority": 3,
       "meaning": "mơ hồ, không rõ ràng",
+      "tone": "mơ hồ, thiếu hình hài",
       "nuance": "Khó vì thiếu hình hài cụ thể, không phải vì phức tạp.",
       "example": "The plan's goals remained *nebulous*, so no one could judge whether it had succeeded.",
       "collocations": [
@@ -424,6 +453,7 @@
       "group": "obscure",
       "priority": 1,
       "meaning": "đục ngầu; mập mờ",
+      "tone": "mập mờ, có thể mờ ám",
       "nuance": "Đục ngầu; nghĩa bóng: mập mờ, khó hiểu, thường gợi ý điều mờ ám (murky finances).",
       "example": "The *murky* origins of the funding raised questions.",
       "collocations": [
@@ -441,6 +471,7 @@
       "group": "obscure",
       "priority": 2,
       "meaning": "có thể hiểu theo nhiều nghĩa",
+      "tone": "nhiều cách hiểu",
       "nuance": "Khác equivocal: ambiguous có thể vô tình; equivocal thường cố ý né tránh.",
       "example": "The clause was *ambiguous*: it could apply to either party.",
       "collocations": [
@@ -459,7 +490,9 @@
       "pos": "v",
       "group": "clarify",
       "priority": 3,
+      "degree": 3,
       "meaning": "làm sáng tỏ, giải thích rõ",
+      "tone": "làm sáng tỏ, trang trọng",
       "nuance": "Rất hay gặp trong viết học thuật.",
       "example": "This section **elucidates the mechanism** through which credit constraints bind.",
       "collocations": [
@@ -477,7 +510,9 @@
       "pos": "v",
       "group": "clarify",
       "priority": 2,
+      "degree": 4,
       "meaning": "giải thích chi tiết, phân tích",
+      "tone": "phân tích tỉ mỉ",
       "nuance": "Thường cho một văn bản, lý thuyết.",
       "example": "The lecturer spent an hour *explicating* a single paragraph of Keynes.",
       "collocations": [
@@ -493,7 +528,9 @@
       "pos": "v",
       "group": "clarify",
       "priority": 2,
+      "degree": 2,
       "meaning": "soi sáng, làm rõ",
+      "tone": "soi sáng, khen",
       "nuance": "Làm sáng tỏ, giúp hiểu rõ (illuminate the mechanism). Khen; nghĩa đen là chiếu sáng.",
       "example": "The case studies *illuminate* how informal lenders price risk.",
       "collocations": [],
@@ -508,7 +545,9 @@
       "pos": "v",
       "group": "clarify",
       "priority": 2,
+      "degree": 3,
       "meaning": "trình bày chi tiết (một quan điểm)",
+      "tone": "trình bày dài, chi tiết",
       "nuance": "Thường đi với on hoặc upon.",
       "example": "He loved to **expound on** the virtues of the gold standard.",
       "collocations": [
@@ -524,7 +563,9 @@
       "pos": "v",
       "group": "clarify",
       "priority": 1,
+      "degree": 2,
       "meaning": "làm cho bớt bí ẩn, dễ hiểu",
+      "tone": "bớt bí ẩn, đơn giản hóa",
       "nuance": "Làm bớt bí ẩn, giải thích cho người ngoài hiểu (demystify finance). Hàm ý chủ đề trước đó bị coi là khó, bí hiểm.",
       "example": "The guide aims to *demystify* the visa process.",
       "collocations": [],
@@ -537,7 +578,9 @@
       "pos": "n/v",
       "group": "clarify",
       "priority": 3,
+      "degree": 1,
       "meaning": "lời chú giải (n); gloss over = lờ đi, che lấp",
+      "tone": "chú giải; gloss over: lờ đi",
       "nuance": "Bẫy kép: gloss là chú giải, nhưng gloss over là cố ý bỏ qua điều khó chịu.",
       "example": "The report **glossed over** the program's high dropout rate.",
       "collocations": [
@@ -554,7 +597,9 @@
       "pos": "v",
       "group": "muddle",
       "priority": 3,
+      "degree": 4,
       "meaning": "làm rối, cố ý làm khó hiểu",
+      "tone": "cố ý làm rối",
       "nuance": "Cố ý dùng ngôn từ để che giấu.",
       "example": "The spokesman used technical jargon to *obfuscate* the scale of the losses.",
       "collocations": [
@@ -571,7 +616,9 @@
       "pos": "v",
       "group": "muddle",
       "priority": 2,
+      "degree": 2,
       "meaning": "che khuất, làm mờ đi",
+      "tone": "che mờ, có thể vô tình",
       "nuance": "Có thể vô tình; obfuscate thường cố ý.",
       "example": "Averages can *obscure* large differences between regions.",
       "collocations": [
@@ -587,7 +634,9 @@
       "pos": "v",
       "group": "muddle",
       "priority": 3,
+      "degree": 3,
       "meaning": "che giấu; tạo ấn tượng sai; cho thấy là sai",
+      "tone": "tạo ấn tượng sai",
       "nuance": "Bẫy lớn: bề ngoài trái ngược với thực chất.",
       "example": "His calm manner **belied** the panic he felt.",
       "collocations": [
@@ -604,7 +653,9 @@
       "pos": "v",
       "group": "muddle",
       "priority": 1,
+      "degree": 1,
       "meaning": "làm vẩn đục, làm rối",
+      "tone": "làm vẩn, thường vô tình",
       "nuance": "Thân mật: muddy the waters.",
       "example": "New exceptions only **muddied the waters**.",
       "collocations": [

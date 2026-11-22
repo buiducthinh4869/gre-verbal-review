@@ -70,6 +70,9 @@ function validate(index, clusters) {
       const g = c.groups.find((x) => x.id === w.group);
       if (w.collocations != null && !Array.isArray(w.collocations)) err(at, '"collocations" phải là mảng');
       if (w.confusables != null && !Array.isArray(w.confusables)) err(at, '"confusables" phải là mảng');
+      // Từ nào cũng phải có nhãn sắc thái bên trái; nhóm không phải thang thì cần thêm mức tham khảo degree
+      if (!w.tone) err(at, 'thiếu "tone" (nhãn sắc thái ngắn hiện bên trái)');
+      if (g && !g.scale && w.degree == null) err(at, 'nhóm không phải thang nên cần "degree" 1–4 (mức tham khảo hiện bên trái)');
       w.__scale = !!(g && g.scale);
     });
   });

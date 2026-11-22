@@ -111,7 +111,7 @@ function openGroup(gid) {
   const ct = (App.idx.clusterById[g.clusterId] || {}).title || '';
   openModal(g.title + ' · ' + ct, () => (g.note ? '<p class="muted small" style="margin-top:0">' + esc(g.note) + '</p>' : '') +
     '<ul class="gq-list">' + ws.map((w) => '<li><div class="gq-head"><button class="linkish w-word" data-act="gv-word" data-id="' + esc(w.id) + '">' + esc(w.word) + '</button>' +
-      '<span class="pos">' + esc(posLabel(w.pos)) + '</span>' + stars(w.priority) + (g.scale && w.level ? '<span class="muted small">mức ' + w.level + '/4</span>' : '') + statusPill(w.id) + '</div>' +
+      '<span class="pos">' + esc(posLabel(w.pos)) + '</span>' + stars(w.priority) + ((g.scale ? w.level : w.degree) ? '<span class="muted small">mức ' + (g.scale ? w.level : w.degree) + '/4' + (w.tone ? ' · ' + esc(w.tone) : '') + '</span>' : '') + statusPill(w.id) + '</div>' +
       '<div>' + esc(w.meaning) + '</div>' + (w.nuance ? '<div class="muted small">' + esc(w.nuance) + '</div>' : '') + '</li>').join('') + '</ul>');
 }
 

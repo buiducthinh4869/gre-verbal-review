@@ -68,7 +68,7 @@ Câu của một đề cố định mới sẽ tự được giữ (không xuấ
 ## `npm run check` kiểm tra gì
 
 - Mọi file trong `data/clusters/` đều có trong `data/index.json` và ngược lại; `id` cụm trùng tên file; `schemaVersion` = 1.
-- Không trùng `id` từ, `id` nhóm, `id` bài giữa các cụm; `group` của từ phải tồn tại; `priority` là 1–3; nhóm `scale` thì mọi từ phải có `level` 1–4.
+- Không trùng `id` từ, `id` nhóm, `id` bài giữa các cụm; `group` của từ phải tồn tại; `priority` là 1–3; nhóm `scale` thì mọi từ phải có `level` 1–4; mọi từ phải có `tone`; từ ở nhóm không phải `scale` phải có `degree` 1–4.
 - Mỗi nhóm phải có `direction` là `"positive"`, `"negative"` hoặc `"neutral"`.
 - `confusables` và `targets` trỏ tới id có thật (được phép trỏ sang từ ở cụm khác).
 - TC: số chỗ `{n}` bằng số `blanks`, đánh số liên tục từ `{0}`; 1 chỗ trống cần 5 phương án, 2–3 chỗ trống cần 3 phương án mỗi chỗ; `answer` nằm trong `options`.
@@ -85,6 +85,11 @@ Câu của một đề cố định mới sẽ tự được giữ (không xuấ
 - `direction` (bắt buộc): hướng nghĩa của cả nhóm, là `"positive"` (khen, tích cực), `"negative"` (chê, tiêu cực) hoặc `"neutral"` (trung tính). Trang Từ vựng hiện hướng này trên thẻ nhóm bằng ký hiệu kèm chữ (+ Khen, − Chê, ○ Trung tính).
 - `scale`: `true` nếu nhóm là thang mức độ; khi đó mọi từ phải có `level` 1–4.
 - `note`: ghi chú phân biệt; thẻ nhóm hiện rút gọn một dòng, trang nhóm hiện đầy đủ.
+
+## Nhãn mức bên trái mỗi từ
+
+- `tone` (bắt buộc, tối đa 40 ký tự): nhãn sắc thái ngắn hiện dưới ô "Mức N" bên trái, vd. `"chê nhẹ, thân mật"`.
+- `degree` (bắt buộc với từ ở nhóm không phải `scale`, 1–4): mức tham khảo so với các từ cùng nhóm, chỉ để hiển thị. Khác `level`: `degree` **không** dùng cho bài xếp thang hay chọn phương án nhiễu, nên gán mức cho nhóm gần đồng nghĩa không sinh ra câu có hai đáp án đúng.
 
 ## Phương án nhiễu (Nghĩa → Từ)
 

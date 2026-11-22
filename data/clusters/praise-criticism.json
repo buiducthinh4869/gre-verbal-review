@@ -104,6 +104,7 @@
       "priority": 2,
       "level": 1,
       "meaning": "biểu dương, khen ngợi",
+      "tone": "khen chính thức, vừa",
       "nuance": "Khen chính thức, mức vừa phải, thấp nhất thang khen.",
       "example": "The auditors *commended* the ministry **for** its transparent reporting.",
       "collocations": [
@@ -121,6 +122,7 @@
       "priority": 2,
       "level": 2,
       "meaning": "hoan nghênh rộng rãi",
+      "tone": "được khen rộng rãi",
       "nuance": "Lời khen đến từ đông đảo công chúng hoặc giới chuyên môn.",
       "example": "Her first book was **widely** *acclaimed* by critics and practitioners.",
       "collocations": [
@@ -137,6 +139,7 @@
       "priority": 1,
       "level": 2,
       "meaning": "tán thưởng",
+      "tone": "tán thưởng, thông dụng",
       "nuance": "Nghĩa đen là vỗ tay; tiếng Anh thông dụng.",
       "example": "We *applaud* the government's decision to publish the microdata.",
       "collocations": [
@@ -153,6 +156,7 @@
       "priority": 3,
       "level": 3,
       "meaning": "ca ngợi nồng nhiệt, công khai",
+      "tone": "khen mạnh, công khai",
       "nuance": "Khen mạnh, trang trọng, công khai, hay gặp trên báo chí, giới học thuật (widely lauded). Gốc Latin laus là lời khen, không có nghĩa vỗ tay: nghĩa vỗ tay thuộc applaud và plaudits (gốc plaudere).",
       "example": "The study was *lauded* **for** its credible identification strategy.",
       "collocations": [
@@ -172,6 +176,7 @@
       "priority": 3,
       "level": 3,
       "meaning": "ca tụng hết lời",
+      "tone": "ca tụng hết lời",
       "nuance": "Khen mạnh, nhiệt tình, chân thành.",
       "example": "Reformers *extolled* **the virtues of** free trade.",
       "collocations": [
@@ -189,6 +194,7 @@
       "priority": 2,
       "level": 3,
       "meaning": "đề cao, tôn lên",
+      "tone": "tôn lên cao",
       "nuance": "Đặt một thứ lên vị trí cao hơn những thứ khác.",
       "example": "The manifesto *exalts* growth **above** every other policy goal.",
       "collocations": [
@@ -205,6 +211,7 @@
       "priority": 3,
       "level": 4,
       "meaning": "tung hô như người nổi tiếng",
+      "tone": "tung hô như ngôi sao",
       "nuance": "Rất mạnh, gắn với sự chú ý ồn ào của báo chí, công chúng.",
       "example": "After the Nobel, the economist was *lionized* **in the national press**.",
       "collocations": [
@@ -223,6 +230,7 @@
       "priority": 3,
       "level": 4,
       "meaning": "tôn kính sâu sắc",
+      "tone": "tôn kính, truyền thống",
       "nuance": "Kính trọng lâu dài, gắn với tuổi tác, truyền thống, người thầy.",
       "example": "Many macroeconomists still *venerate* Keynes **as** a founding figure.",
       "collocations": [
@@ -242,6 +250,7 @@
       "priority": 3,
       "level": 4,
       "meaning": "tôn kính sâu sắc",
+      "tone": "tôn kính, ngưỡng mộ",
       "nuance": "Cảm xúc kính trọng sâu, pha ngưỡng mộ (revered as a saint). Venerate nhấn vào lý do tuổi tác, truyền thống, sự linh thiêng.",
       "example": "Keynes is still *revered* **as** the father of modern macroeconomics.",
       "collocations": [
@@ -259,6 +268,7 @@
       "priority": 1,
       "level": 4,
       "meaning": "thần tượng hóa, tôn như thần",
+      "tone": "thần tượng hóa, thái quá",
       "nuance": "Mức cao nhất, thường mang ý thái quá.",
       "example": "Start-up culture tends to *idolize* its founders.",
       "collocations": [],
@@ -271,7 +281,9 @@
       "group": "praise-special",
       "priority": 2,
       "level": 3,
+      "degree": 3,
       "meaning": "ca ngợi người đã mất",
+      "tone": "ca ngợi người đã mất",
       "nuance": "Điều kiện riêng: thường dùng tại tang lễ, lễ tưởng niệm. Câu về người còn sống thì tránh chọn.",
       "example": "At the memorial, colleagues *eulogized* him **as** a generous mentor.",
       "collocations": [
@@ -288,7 +300,9 @@
       "pos": "v",
       "group": "praise-special",
       "priority": 3,
+      "degree": 2,
       "meaning": "quảng bá, thổi phồng",
+      "tone": "quảng bá, thổi phồng",
       "nuance": "Khen bề ngoài; người nói thường ngầm nghi ngờ. Hay đi trong câu đổi chiều.",
       "example": "The policy was *touted* **as** a cure for inequality, yet its effects proved negligible.",
       "collocations": [
@@ -306,6 +320,7 @@
       "group": "praise-nouns",
       "priority": 3,
       "meaning": "sự vinh danh, giải thưởng",
+      "tone": "vinh danh chính thức",
       "nuance": "Danh từ chỉ sự công nhận chính thức.",
       "example": "The paper received **the highest** *accolade* in the field.",
       "collocations": [
@@ -321,6 +336,7 @@
       "group": "praise-nouns",
       "priority": 3,
       "meaning": "lời tán dương",
+      "tone": "lời tán dương",
       "nuance": "Danh từ số nhiều: lời tán dương, tràng khen (won plaudits from critics). Gốc plaudere là vỗ tay.",
       "example": "The central bank **won** *plaudits* **for** its swift response to the crisis.",
       "collocations": [
@@ -337,6 +353,7 @@
       "group": "praise-nouns",
       "priority": 3,
       "meaning": "lời khen ngợi nồng nhiệt, trang trọng",
+      "tone": "khen nồng nhiệt",
       "nuance": "Danh từ: bài hoặc lời khen nồng nhiệt, trang trọng. Nhấn vào sự nhiệt thành, ấm áp.",
       "example": "The obituary was an *encomium* **to** her decades of public service.",
       "collocations": [
@@ -354,6 +371,7 @@
       "group": "praise-nouns",
       "priority": 3,
       "meaning": "bài ca tụng trang trọng, công phu",
+      "tone": "ca tụng hoa mỹ",
       "nuance": "Danh từ: bài ca tụng công phu, giàu chất văn chương. Nhấn vào sự cầu kỳ, hoa mỹ.",
       "example": "The court poet composed a two-hundred-line *panegyric* **to** the emperor.",
       "collocations": [
@@ -372,6 +390,7 @@
       "group": "praise-nouns",
       "priority": 1,
       "meaning": "sự bày tỏ lòng kính trọng",
+      "tone": "tỏ lòng kính trọng",
       "nuance": "Danh từ: sự tỏ lòng kính trọng công khai (pay homage to). Thường qua hành động hoặc tác phẩm tưởng nhớ.",
       "example": "The conference **paid** *homage* **to** the founder of development economics.",
       "collocations": [
@@ -386,7 +405,9 @@
       "pos": "adj",
       "group": "praise-adj",
       "priority": 3,
+      "degree": 2,
       "meaning": "mang tính khen ngợi",
+      "tone": "lời lẽ khen ngợi",
       "nuance": "Mô tả LỜI LẼ (bài review, báo cáo, bài phát biểu).",
       "example": "The referee wrote a **largely** *laudatory* report.",
       "collocations": [
@@ -403,7 +424,9 @@
       "pos": "adj",
       "group": "praise-adj",
       "priority": 3,
+      "degree": 2,
       "meaning": "đáng khen",
+      "tone": "đáng khen (đối tượng)",
       "nuance": "Mô tả ĐỐI TƯỢNG được khen (mục tiêu, nỗ lực).",
       "example": "The program's aims are *laudable*, but its design is flawed.",
       "collocations": [],
@@ -420,6 +443,7 @@
       "priority": 3,
       "level": 1,
       "meaning": "chê nhẹ, không tán thành",
+      "tone": "chê nhẹ",
       "nuance": "Mức nhẹ nhất. Self-deprecating là tự trào, một phẩm chất tích cực.",
       "example": "She spoke in a *self-deprecating* tone about her early mistakes.",
       "collocations": [
@@ -438,6 +462,7 @@
       "priority": 3,
       "level": 2,
       "meaning": "xem nhẹ, làm cho có vẻ nhỏ bé",
+      "tone": "làm cho có vẻ nhỏ",
       "nuance": "Coi điều gì đó ít quan trọng hơn thực tế.",
       "example": "Critics *belittled* the reform **as** merely cosmetic.",
       "collocations": [
@@ -453,6 +478,7 @@
       "priority": 3,
       "level": 2,
       "meaning": "coi thường, hạ thấp giá trị",
+      "tone": "hạ thấp giá trị",
       "nuance": "Nhắm vào giá trị của đối tượng.",
       "example": "It is easy to *disparage* survey data, but often there is no better source.",
       "collocations": [],
@@ -468,6 +494,7 @@
       "priority": 3,
       "level": 3,
       "meaning": "bôi nhọ, chê nặng",
+      "tone": "bôi nhọ danh tiếng",
       "nuance": "Nặng hơn disparage, hại cả danh tiếng.",
       "example": "The campaign sought to *denigrate* the opposition's record.",
       "collocations": [],
@@ -484,6 +511,7 @@
       "priority": 3,
       "level": 4,
       "meaning": "phỉ báng, biến thành kẻ xấu",
+      "tone": "phỉ báng nặng",
       "nuance": "Mức nặng nhất nhóm hạ thấp.",
       "example": "Bankers were **widely** *vilified* after the financial crisis.",
       "collocations": [],
@@ -498,6 +526,7 @@
       "priority": 3,
       "level": 1,
       "meaning": "nhắc nhở, cảnh cáo nhẹ",
+      "tone": "nhắc nhở, kèm khuyên",
       "nuance": "Nhẹ nhàng, thường kèm lời khuyên.",
       "example": "The supervisor *admonished* the student **to** check her code more carefully.",
       "collocations": [
@@ -516,6 +545,7 @@
       "priority": 3,
       "level": 2,
       "meaning": "trách",
+      "tone": "trách nhẹ, sửa lỗi",
       "nuance": "Trách nhẹ nhàng, có ý sửa lỗi (reproved him for his tardiness). Mức vừa, không gay gắt.",
       "example": "She gently *reproved* him **for** missing the deadline.",
       "collocations": [
@@ -531,6 +561,7 @@
       "priority": 2,
       "level": 2,
       "meaning": "trách, kèm thất vọng",
+      "tone": "trách, thất vọng",
       "nuance": "Thiên về cảm giác thất vọng hơn là giận dữ.",
       "example": "He *reproached* himself **for** not spotting the error sooner.",
       "collocations": [
@@ -547,6 +578,7 @@
       "priority": 3,
       "level": 3,
       "meaning": "quở trách thẳng thừng",
+      "tone": "quở thẳng thừng",
       "nuance": "Gay gắt, nghiêm khắc hơn reprove.",
       "example": "The minister **publicly** *rebuked* the agency **for** its slow response.",
       "collocations": [
@@ -564,6 +596,7 @@
       "priority": 2,
       "level": 3,
       "meaning": "khiển trách",
+      "tone": "khiển trách từ cấp trên",
       "nuance": "Thường mang tính chính thức, từ cấp trên.",
       "example": "The officer was *reprimanded* **for** leaking the report.",
       "collocations": [
@@ -579,6 +612,7 @@
       "priority": 3,
       "level": 3,
       "meaning": "khiển trách chính thức",
+      "tone": "khiển trách chính thức",
       "nuance": "Thường mang tính chính thức: một cơ quan, tổ chức khiển trách thành viên. Cũng có nghĩa chung là chỉ trích nghiêm khắc.",
       "example": "The senate **voted to** *censure* the member **for** misconduct.",
       "collocations": [
@@ -596,6 +630,7 @@
       "priority": 3,
       "level": 4,
       "meaning": "mắng mỏ gay gắt",
+      "tone": "mắng to, kéo dài",
       "nuance": "Berate thường kéo dài và to tiếng.",
       "example": "The coach *berated* his players **for** their careless defending.",
       "collocations": [
@@ -613,6 +648,7 @@
       "priority": 3,
       "level": 4,
       "meaning": "trách phạt nghiêm khắc",
+      "tone": "trách phạt nghiêm",
       "nuance": "Chỉ trích hoặc trừng phạt nghiêm khắc.",
       "example": "The IMF *chastised* the government **for** its fiscal indiscipline.",
       "collocations": [
@@ -628,6 +664,7 @@
       "priority": 3,
       "level": 4,
       "meaning": "chỉ trích rất nghiêm khắc",
+      "tone": "chỉ trích rất gắt",
       "nuance": "Nhấn vào ĐỘ GAY GẮT; ai cũng có thể castigate.",
       "example": "The report *castigated* regulators **for** ignoring early warning signs.",
       "collocations": [
@@ -645,6 +682,7 @@
       "group": "denounce",
       "priority": 3,
       "meaning": "lên án công khai",
+      "tone": "phản đối công khai",
       "nuance": "Phản đối công khai, thường về chính sách, hiện tượng.",
       "example": "Unions *decried* the reform **as** an attack on workers' rights.",
       "collocations": [
@@ -661,6 +699,7 @@
       "group": "denounce",
       "priority": 2,
       "meaning": "tố cáo, lên án",
+      "tone": "tố cáo công khai",
       "nuance": "Lên án công khai, thường kèm tố cáo người hoặc hành vi trước công chúng (denounce corruption).",
       "example": "Human rights groups *denounced* the new law.",
       "collocations": [],
@@ -674,6 +713,7 @@
       "group": "denounce",
       "priority": 2,
       "meaning": "lên án mạnh",
+      "tone": "lên án đạo đức",
       "nuance": "Lên án mạnh trên cơ sở đạo đức (condemn the violence). Cũng chỉ tuyên án.",
       "example": "The resolution *condemned* the use of force against civilians.",
       "collocations": [],
@@ -687,6 +727,7 @@
       "group": "denounce",
       "priority": 3,
       "meaning": "mắng nhiếc dữ dội bằng lời",
+      "tone": "mắng nhiếc dữ dội",
       "nuance": "Mắng nhiếc, đả kích dữ dội, thường bằng lời nói trực tiếp, ồn ào (lambasted by the coach).",
       "example": "Commentators *lambasted* the budget **as** reckless.",
       "collocations": [
@@ -704,6 +745,7 @@
       "group": "denounce",
       "priority": 3,
       "meaning": "chỉ trích gay gắt, thường bằng văn bản",
+      "tone": "chỉ trích lột trần",
       "nuance": "Chỉ trích gay gắt đến mức lột trần, thường bằng văn bản như bài phê bình (excoriated in the review). Nghĩa gốc là lột da.",
       "example": "The review *excoriated* the authors **for** cherry-picking their data.",
       "collocations": [
@@ -723,6 +765,7 @@
       "group": "denounce",
       "priority": 2,
       "meaning": "bêu riếu công khai",
+      "tone": "bêu riếu trước công chúng",
       "nuance": "Bị đem ra chế giễu, chỉ trích trước công chúng.",
       "example": "The CEO was *pilloried* **in the press** for the bank's collapse.",
       "collocations": [
@@ -738,6 +781,7 @@
       "group": "denounce",
       "priority": 3,
       "meaning": "công kích động cơ, sự trung thực",
+      "tone": "nghi ngờ sự trung thực",
       "nuance": "Nhắm vào INTEGRITY / MOTIVES / độ tin cậy, không phải chê chung chung.",
       "example": "Rather than rebut the findings, he *impugned* **the integrity of** the researchers.",
       "collocations": [
@@ -757,6 +801,7 @@
       "group": "ridicule",
       "priority": 3,
       "meaning": "chế giễu",
+      "tone": "chế giễu, khinh",
       "nuance": "Coi là đáng cười, đáng khinh.",
       "example": "Behavioral economics was once *derided* **as** a collection of anecdotes.",
       "collocations": [
@@ -773,6 +818,7 @@
       "group": "ridicule",
       "priority": 2,
       "meaning": "nhạo báng",
+      "tone": "nhạo báng",
       "nuance": "Chế nhạo để làm người khác trông ngớ ngẩn. Động từ và danh từ, thông dụng.",
       "example": "The proposal was *ridiculed* **as** naive.",
       "collocations": [
@@ -789,6 +835,7 @@
       "group": "ridicule",
       "priority": 1,
       "meaning": "chế nhạo, cười khẩy",
+      "tone": "cười khẩy",
       "nuance": "Coi một ý tưởng là vô lý.",
       "example": "Many *scoffed at* the idea that mobile money could reach rural farmers.",
       "collocations": [
@@ -804,6 +851,7 @@
       "group": "ridicule",
       "priority": 3,
       "meaning": "châm biếm",
+      "tone": "châm biếm bằng tác phẩm",
       "nuance": "Chế giễu bằng văn bản, hình ảnh, hài kịch.",
       "example": "The cartoonist *lampooned* the politicians' empty promises.",
       "collocations": [],
@@ -817,6 +865,7 @@
       "group": "ridicule",
       "priority": 2,
       "meaning": "khinh miệt",
+      "tone": "khinh miệt",
       "nuance": "Coi là không xứng đáng để quan tâm.",
       "example": "Theorists once **treated** empirical work **with** *disdain*.",
       "collocations": [
@@ -831,7 +880,9 @@
       "pos": "v",
       "group": "quibble",
       "priority": 3,
+      "degree": 2,
       "meaning": "cằn nhằn, bắt lỗi vặt",
+      "tone": "cằn nhằn dai dẳng",
       "nuance": "Chuyện nhỏ, nói đi nói lại.",
       "example": "Critics continued to *carp* **about** the font size of the tables.",
       "collocations": [
@@ -847,7 +898,9 @@
       "pos": "v/n",
       "group": "quibble",
       "priority": 3,
+      "degree": 2,
       "meaning": "bắt bẻ điểm nhỏ nhặt",
+      "tone": "bắt bẻ vô lý, trang trọng",
       "nuance": "Phản đối những chi tiết không quan trọng.",
       "example": "**Apart from minor** *cavils*, the referee supported publication.",
       "collocations": [
@@ -863,7 +916,9 @@
       "pos": "v/n",
       "group": "quibble",
       "priority": 3,
+      "degree": 1,
       "meaning": "cãi vặt về chi tiết",
+      "tone": "cãi vặt chi tiết",
       "nuance": "Rất hay dùng trong viết học thuật.",
       "example": "One may *quibble* **with** the choice of controls, but the main result is robust.",
       "collocations": [
@@ -878,7 +933,9 @@
       "pos": "v",
       "group": "quibble",
       "priority": 1,
+      "degree": 1,
       "meaning": "soi mói lỗi nhỏ",
+      "tone": "soi lỗi vặt, thân mật",
       "nuance": "Soi mói lỗi vặt không quan trọng. Thân mật, chê người soi.",
       "example": "Instead of *nitpicking*, focus on the core argument.",
       "collocations": [],
@@ -891,6 +948,7 @@
       "group": "lukewarm",
       "priority": 3,
       "meaning": "có giới hạn, có điều kiện",
+      "tone": "có điều kiện",
       "nuance": "Trong GRE gần như luôn mang nghĩa này, không phải 'đủ tiêu chuẩn'.",
       "example": "The board gave the merger **only** *qualified* support.",
       "collocations": [
@@ -909,6 +967,7 @@
       "group": "lukewarm",
       "priority": 2,
       "meaning": "trọn vẹn, không giới hạn",
+      "tone": "trọn vẹn, không dè dặt",
       "nuance": "Unqualified success là thành công trọn vẹn.",
       "example": "The project was an *unqualified* success.",
       "collocations": [
@@ -927,6 +986,7 @@
       "group": "lukewarm",
       "priority": 3,
       "meaning": "miễn cưỡng",
+      "tone": "thừa nhận miễn cưỡng",
       "nuance": "Không muốn nhưng vẫn phải thừa nhận.",
       "example": "Even rivals expressed *grudging* admiration **for** her persistence.",
       "collocations": [
@@ -943,6 +1003,7 @@
       "group": "lukewarm",
       "priority": 3,
       "meaning": "hờ hững, không mặn mà",
+      "tone": "hờ hững",
       "nuance": "Mô tả thái độ hoặc phản ứng, không dùng cho bằng chứng.",
       "example": "Investors gave the bond issue a *tepid* reception.",
       "collocations": [
@@ -961,6 +1022,7 @@
       "group": "lukewarm",
       "priority": 1,
       "meaning": "dè dặt, kiềm chế",
+      "tone": "dè dặt, kiềm chế",
       "nuance": "Dè dặt, kiềm chế (muted praise, muted response). Phản ứng yếu hơn mong đợi.",
       "example": "The announcement met with *muted* enthusiasm.",
       "collocations": [
@@ -976,6 +1038,7 @@
       "group": "lukewarm",
       "priority": 3,
       "meaning": "nước đôi, không rõ ràng",
+      "tone": "nước đôi",
       "nuance": "Dùng được cho bằng chứng, kết quả, câu trả lời.",
       "example": "The evidence on minimum wages and employment **remains** *equivocal*.",
       "collocations": [
@@ -992,6 +1055,7 @@
       "group": "lukewarm",
       "priority": 2,
       "meaning": "lời khen mà thực chất là chê",
+      "tone": "khen mà là chê",
       "nuance": "Lời khen mà thực chất là chê (a backhanded compliment).",
       "example": "Calling her paper \"surprisingly rigorous\" was a *backhanded compliment*.",
       "collocations": [],
@@ -1004,7 +1068,9 @@
       "pos": "adj",
       "group": "excess",
       "priority": 3,
+      "degree": 2,
       "meaning": "khen tuôn trào, nồng nhiệt",
+      "tone": "tuôn trào, nhiệt tình",
       "nuance": "Có thể quá mức. Đồng nghĩa thân mật: gushing.",
       "example": "The minister was *effusive* **in her praise of** the new partnership.",
       "collocations": [
@@ -1021,7 +1087,9 @@
       "pos": "adj",
       "group": "excess",
       "priority": 3,
+      "degree": 4,
       "meaning": "khen quá mức, thiếu chân thành; (cũng) dồi dào, đầy đủ",
+      "tone": "khen quá, thiếu thật",
       "nuance": "Có hai nghĩa đang dùng: (1) khen quá mức, xu nịnh; (2) dồi dào, đầy đủ. Nghĩa (2) mới là nghĩa gốc từ thế kỷ 14 và nay phổ biến trở lại. Sách luyện GRE thường kiểm tra nghĩa (1); luôn dựa vào ngữ cảnh để chọn nghĩa.",
       "example": "The CEO's *fulsome* praise of the regulator struck many as insincere.",
       "collocations": [
@@ -1036,7 +1104,9 @@
       "pos": "adj",
       "group": "excess",
       "priority": 1,
+      "degree": 3,
       "meaning": "cường điệu, phóng đại",
+      "tone": "phóng đại",
       "nuance": "Cường điệu, phóng đại (hyperbolic claims). Nhấn vào nói quá sự thật.",
       "example": "Claims that AI will end poverty within a decade are *hyperbolic*.",
       "collocations": [],
@@ -1048,7 +1118,9 @@
       "pos": "adj",
       "group": "flattery",
       "priority": 3,
+      "degree": 3,
       "meaning": "khúm núm, quá vâng dạ",
+      "tone": "khúm núm quá mức",
       "nuance": "Quá mức chiều lòng người có quyền.",
       "example": "The *obsequious* assistant agreed with everything his boss said.",
       "collocations": [],
@@ -1060,7 +1132,9 @@
       "pos": "adj",
       "group": "flattery",
       "priority": 3,
+      "degree": 4,
       "meaning": "nịnh bợ để được lợi",
+      "tone": "nịnh để được lợi",
       "nuance": "Danh từ sycophant: kẻ nịnh.",
       "example": "The documentary portrays the minister's advisers as *sycophantic*.",
       "collocations": [],
@@ -1072,7 +1146,9 @@
       "pos": "adj",
       "group": "flattery",
       "priority": 2,
+      "degree": 3,
       "meaning": "xun xoe, bợ đỡ",
+      "tone": "xun xoe, bợ đỡ",
       "nuance": "Xun xoe, bợ đỡ để lấy lòng. Chê mạnh.",
       "example": "The interview was so *fawning* that it read like an advertisement.",
       "collocations": [],
