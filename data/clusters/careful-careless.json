@@ -199,7 +199,7 @@
       "group": "meticulous",
       "priority": 3,
       "meaning": "tỉ mỉ; khó tính, cầu kỳ",
-      "nuance": "Có thể khen hoặc chê.",
+      "nuance": "Tỉ mỉ đến mức khó tính, đòi mọi thứ hoàn hảo (fastidious about cleanliness). Khen sự cẩn thận hoặc chê sự cầu kỳ.",
       "example": "He is *fastidious* about citation formats.",
       "collocations": [
         "fastidious about X"
@@ -423,7 +423,7 @@
       "group": "negligent",
       "priority": 2,
       "meaning": "nghiêm ngặt",
-      "nuance": "Trái nghĩa lax.",
+      "nuance": "Nghiêm ngặt, chặt chẽ về quy định, tiêu chuẩn (stringent regulations). Nói về luật lệ, không nói về tính người.",
       "example": "*Stringent* capital requirements reduce bank risk.",
       "collocations": [
         "stringent rules"
@@ -519,7 +519,7 @@
       "group": "rash",
       "priority": 2,
       "meaning": "không để ý, bất chấp",
-      "nuance": "heedless of X.",
+      "nuance": "Bất chấp, không để ý đến cảnh báo hoặc hậu quả (heedless of the danger). Nhấn vào việc phớt lờ.",
       "example": "**Heedless of** the warnings, they pressed ahead.",
       "collocations": [
         "heedless of X"

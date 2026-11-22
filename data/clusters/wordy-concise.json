@@ -94,7 +94,7 @@
       "group": "wordy",
       "priority": 3,
       "meaning": "nói nhiều, lắm lời về chuyện vặt",
-      "nuance": "Chê rõ hơn loquacious.",
+      "nuance": "Nói nhiều về chuyện vặt, gây mệt. Chê rõ.",
       "example": "A *garrulous* taxi driver narrated the entire history of the city.",
       "collocations": [],
       "confusables": [
@@ -168,7 +168,7 @@
       "group": "wordy",
       "priority": 1,
       "meaning": "dài dòng, nói lê thê",
-      "nuance": "Thân mật.",
+      "nuance": "Dài dòng, nói lê thê, khiến người nghe chán. Thân mật.",
       "example": "Spare us the *long-winded* introduction.",
       "collocations": [],
       "confusables": [
@@ -215,7 +215,7 @@
       "group": "grandiose",
       "priority": 1,
       "meaning": "khoa trương, kênh kiệu trong lời nói",
-      "nuance": "Gần nghĩa grandiloquent.",
+      "nuance": "Khoa trương, dùng lời hoa mỹ kênh kiệu (magniloquent speech). Văn chương, chê.",
       "example": "The ambassador's *magniloquent* toast went on for twenty minutes.",
       "collocations": [],
       "root": "magni- (lớn) + loqu- (nói)",

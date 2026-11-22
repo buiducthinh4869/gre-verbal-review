@@ -141,7 +141,7 @@
       "group": "abundant",
       "priority": 3,
       "meaning": "quá mức, thái quá",
-      "nuance": "Nhiều hơn mức hợp lý.",
+      "nuance": "Vượt quá mức hợp lý, nhấn vào sự không cân xứng (an inordinate amount of time). Luôn chê.",
       "example": "The project took an *inordinate* amount of time.",
       "collocations": [
         "an inordinate amount of"
@@ -173,7 +173,7 @@
       "group": "scarce",
       "priority": 3,
       "meaning": "sự khan hiếm, ít ỏi",
-      "nuance": "a paucity of X: thiếu X.",
+      "nuance": "Danh từ trang trọng: sự ít ỏi, thiếu hụt (a paucity of data). Dùng nhiều trong văn học thuật, nhẹ hơn dearth.",
       "example": "**A paucity of** reliable data limits the analysis.",
       "collocations": [
         "a paucity of X"
@@ -335,7 +335,7 @@
       "group": "useless",
       "priority": 2,
       "meaning": "thừa, vô dụng",
-      "nuance": "Rất trang trọng.",
+      "nuance": "Thừa và vô dụng, không phục vụ mục đích gì (an otiose remark). Rất trang trọng, hiếm gặp ngoài văn viết.",
       "example": "The final chapter is *otiose*; it repeats the introduction.",
       "collocations": [],
       "confusables": [
@@ -561,7 +561,7 @@
       "group": "defy",
       "priority": 2,
       "meaning": "sự thách thức, bất chấp",
-      "nuance": "in defiance of X.",
+      "nuance": "Danh từ: thái độ công khai chống lại quyền lực hoặc mệnh lệnh (in defiance of the law). Nhấn vào sự thách thức có chủ ý.",
       "example": "They marched **in defiance of** the ban.",
       "collocations": [
         "in defiance of X"
@@ -581,7 +581,7 @@
           "options": [
             "flout",
             "flaunt",
-            "contravene",
+            "heed",
             "appease",
             "divulge"
           ],
@@ -590,11 +590,10 @@
       ],
       "targets": [
         "flout",
-        "flaunt",
-        "contravene"
+        "flaunt"
       ],
       "hint": "'In full view of inspectors': công khai coi thường.",
-      "explanation": "Tiếp tục công khai bất chấp phán quyết: flout. Flaunt là khoe khoang. Contravene đi với luật, hợp đồng, nhưng không có ý 'công khai coi thường' mà câu nhấn mạnh.",
+      "explanation": "Tiếp tục công khai bất chấp phán quyết, ngay trước mặt thanh tra: flout. Flaunt là khoe khoang (hay bị nhầm với flout). Heed là nghe theo, trái hướng; appease, divulge không hợp nghĩa.",
       "difficulty": 2,
       "skills": [
         "contrast"
