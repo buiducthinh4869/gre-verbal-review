@@ -14,7 +14,9 @@ export const CARDS = ['due', 'new', 'leech'];
 export const CARD_LABEL = { due: 'Đến hạn', new: 'Từ mới', leech: 'Hay quên' };
 export const newKey = (day) => 'todayNew:' + day;
 export const dueKey = (day) => 'todayDue:' + day;
-const DAY_KEY_RE = /^today(New|Due):(\d{4}-\d{2}-\d{2})$/;
+/** Từ đã đọc trong ngày (mở ở Từ vựng hoặc bấm Đã đọc ở trang Hôm nay): phiên ôn bỏ thẻ giới thiệu của các từ này. */
+export const readKey = (day) => 'todayRead:' + day;
+const DAY_KEY_RE = /^today(New|Due|Read):(\d{4}-\d{2}-\d{2})$/;
 
 /** Khóa danh sách theo ngày cũ hơn KEEP_DAYS ngày (bỏ qua khi đọc; dòng trong Sheet vẫn giữ). */
 export function isStaleDayKey(key, today) {
@@ -129,6 +131,25 @@ export function groupByClusterGroup(ids, idx) {
 /** Dòng tóm tắt chủ đề: "Khen & Chê (Khiển trách 3, Thang khen ngợi 2) · Rõ ràng & Khó hiểu (Khó hiểu 4)". */
 export function topicLine(ids, idx) {
   return groupByClusterGroup(ids, idx).map((c) => c.title + ' (' + c.groups.map((g) => g.title + ' ' + g.ids.length).join(', ') + ')').join(' · ');
+}
+
+/**
+ * Câu hỏi nhanh ở trang Hôm nay. poolIds: từ đã gặp (đến hạn, từ mới đã đọc, hay quên), hay quên trước.
+ * Trả về [{type: 'm2w', wordId} | {type: 'gre', exId}], xen kẽ 2 câu nghĩa rồi 1 câu GRE, tối đa n câu.
+ */
+export function quickPlan(poolIds, exercises, n = 10, rng = Math.random) {
+  const ids = poolIds.slice(0, Math.max(0, n));
+  const gre = grePlan(ids, exercises, Math.ceil(n / 3), rng).picked;
+  const nMean = Math.max(0, Math.min(ids.length, n - gre.length));
+  const means = ids.slice(0, nMean);
+  const out = [];
+  let gi = 0, mi = 0;
+  while (out.length < n && (mi < means.length || gi < gre.length)) {
+    if (mi < means.length) out.push({ type: 'm2w', wordId: means[mi++] });
+    if (out.length < n && mi < means.length) out.push({ type: 'm2w', wordId: means[mi++] });
+    if (out.length < n && gi < gre.length) out.push({ type: 'gre', exId: gre[gi++].id });
+  }
+  return out;
 }
 
 /** Số ngày quá hạn của một từ (0 nếu chưa quá hạn hoặc chưa học). */

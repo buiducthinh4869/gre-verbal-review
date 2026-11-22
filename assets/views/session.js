@@ -2,7 +2,7 @@
 import { exTools } from './content.js';
 import {
   App, S, esc, views, actions, word, stateOf, posLabel, stars, record, touch, pushReview,
-  dailyQueue, toast, isTyping, render, go, stopTimer, now, heldIds, practiceExercises
+  dailyQueue, toast, isTyping, render, go, stopTimer, now, heldIds, practiceExercises, readToday
 } from '../state.js';
 import { renderMarkup, maskForms } from '../render.js';
 import { pickDistractors } from '../distractors.js';
@@ -36,7 +36,10 @@ export function cardsForDaily(items) {
   const out = [], usedEx = {};
   const held = heldIds(); // câu đang giữ cho đề thi thử chưa làm: không dùng trong ôn hôm nay
   let alt = 0;
-  const news = items.filter((x) => x.isNew);
+  // từ mới đã đọc hôm nay (ở Từ vựng hoặc trang Hôm nay): bỏ thẻ giới thiệu, hỏi thẳng
+  const read = readToday();
+  const news = items.filter((x) => x.isNew && !read.has(x.wordId));
+  const readNews = items.filter((x) => x.isNew && read.has(x.wordId));
   items.filter((x) => !x.isNew).forEach((it) => {
     const s = stateOf(it.wordId);
     if (s && s.box >= 3) {
@@ -51,6 +54,7 @@ export function cardsForDaily(items) {
     }
     out.push({ type: qType(alt++), wordId: it.wordId });
   });
+  readNews.forEach((it) => out.push({ type: qType(alt++), wordId: it.wordId, isNew: true }));
   // từ mới: thẻ giới thiệu đầy đủ trước; câu hỏi chậm một thẻ để không hỏi ngay sau khi vừa đọc
   news.forEach((it, k) => {
     out.push({ type: 'intro', wordId: it.wordId });
