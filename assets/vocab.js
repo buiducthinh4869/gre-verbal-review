@@ -58,7 +58,7 @@ export function buildIndex(vocab, customWords) {
   all.forEach((c) => {
     idx.clusterById[c.id] = c;
     (c.groups || []).forEach((g) => {
-      idx.groupById[g.id] = { id: g.id, title: g.title, scale: !!g.scale, note: g.note || '', clusterId: c.id, direction: groupDirection(g) };
+      idx.groupById[g.id] = { id: g.id, title: g.title, scale: !!g.scale, note: g.note || '', intensity: g.intensity || '', clusterId: c.id, direction: groupDirection(g) };
     });
     (c.words || []).forEach((w, i) => {
       const e = Object.assign({}, w, {
