@@ -288,7 +288,7 @@ function wordRow(w, where) {
     label = '<span class="w-where">' + esc(c.title) + ' › ' + esc(g ? g.title : '') + '</span>';
   }
   return '<button class="wrow" id="w-' + w.id + '" data-act="v-open" data-id="' + w.id + '" aria-expanded="' + open + '">' +
-    '<span class="w-main"><span class="w-word">' + esc(w.word) + '</span><span class="pos">' + esc(w.pos) + '</span>' + levelMeter(w) + '</span>' +
+    '<span class="w-main"><span class="w-word">' + esc(w.word) + '</span><span class="pos">' + esc(w.pos) + '</span>' + (where ? levelMeter(w) : '') + '</span>' +
     '<span class="w-side">' + (w.custom || open ? '' : correctedTag('word', w.id)) + statusTag(w.id) + stars(w.priority) + '</span>' +
     '<span class="w-meaning">' + esc(w.meaning) + '</span>' + label + '</button>' +
     (open ? '<div class="wdetail">' + wordDetail(w, true) +
