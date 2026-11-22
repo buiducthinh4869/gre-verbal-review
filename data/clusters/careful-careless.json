@@ -10,7 +10,8 @@
       "title": "Thận trọng, khôn ngoan",
       "direction": "positive",
       "scale": false,
-      "note": "Circumspect/chary/wary: dè chừng rủi ro. Judicious/prudent: khôn ngoan, cân nhắc đúng mực."
+      "note": "Circumspect/chary/wary: dè chừng rủi ro. Judicious/prudent: khôn ngoan, cân nhắc đúng mực.",
+      "intensity": "Gần đồng nghĩa, cùng mức. Khác ở trọng tâm: khôn ngoan (prudent, judicious), dè chừng (circumspect, wary, chary), kín đáo (discreet)."
     },
     {
       "id": "meticulous",
@@ -24,14 +25,16 @@
       "title": "Qua loa, hời hợt",
       "direction": "negative",
       "scale": false,
-      "note": "Cursory: lướt qua vội vàng. Perfunctory: làm cho có, chiếu lệ. Desultory: rời rạc, thiếu kế hoạch."
+      "note": "Cursory: lướt qua vội vàng. Perfunctory: làm cho có, chiếu lệ. Desultory: rời rạc, thiếu kế hoạch.",
+      "intensity": "Gần đồng nghĩa, cùng mức. Khác ở nguyên nhân: vội (cursory), làm cho có (perfunctory), thiếu mạch lạc (desultory), nông (superficial)."
     },
     {
       "id": "negligent",
       "title": "Cẩu thả, lơ là",
       "direction": "negative",
       "scale": false,
-      "note": ""
+      "note": "",
+      "intensity": "Thang ngầm: lax < remiss < negligent/slipshod. Cavalier chỉ thái độ coi nhẹ. Stringent là nghĩa ngược (nghiêm ngặt)."
     },
     {
       "id": "rash",

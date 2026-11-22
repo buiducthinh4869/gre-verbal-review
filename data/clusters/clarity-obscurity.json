@@ -10,7 +10,8 @@
       "title": "Rõ ràng, dễ hiểu",
       "direction": "positive",
       "scale": false,
-      "note": "Phân biệt: lucid/perspicuous là diễn đạt rõ; manifest/patent là hiển nhiên ai cũng thấy; unequivocal là không nước đôi."
+      "note": "Phân biệt: lucid/perspicuous là diễn đạt rõ; manifest/patent là hiển nhiên ai cũng thấy; unequivocal là không nước đôi.",
+      "intensity": "Gần đồng nghĩa, cùng mức. Khác ở đối tượng: cách diễn đạt (lucid, perspicuous, pellucid, limpid) hay sự hiển nhiên (manifest, patent, explicit, unequivocal)."
     },
     {
       "id": "obscure",
@@ -24,14 +25,16 @@
       "title": "Làm sáng tỏ",
       "direction": "positive",
       "scale": false,
-      "note": ""
+      "note": "",
+      "intensity": "Gần đồng nghĩa, cùng mức. Gloss có thể chê: lướt qua, che lỗi (gloss over)."
     },
     {
       "id": "muddle",
       "title": "Làm rối, che giấu",
       "direction": "negative",
       "scale": false,
-      "note": "Belie là bẫy lớn: tạo ấn tượng sai, che đi sự thật, hoặc cho thấy điều gì đó là sai."
+      "note": "Belie là bẫy lớn: tạo ấn tượng sai, che đi sự thật, hoặc cho thấy điều gì đó là sai.",
+      "intensity": "Gần đồng nghĩa, cùng mức. Obfuscate thường có chủ ý; muddy/obscure có thể vô tình."
     }
   ],
   "words": [

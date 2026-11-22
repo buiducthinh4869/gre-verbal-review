@@ -10,7 +10,8 @@
       "title": "Khiêm tốn, rụt rè",
       "direction": "positive",
       "scale": false,
-      "note": "Diffident là rụt rè vì thiếu tự tin; self-effacing là chủ động lùi lại, không phô mình."
+      "note": "Diffident là rụt rè vì thiếu tự tin; self-effacing là chủ động lùi lại, không phô mình.",
+      "intensity": "Không xếp thang: unassuming/unpretentious/self-effacing là khiêm tốn; diffident/demure/timorous là rụt rè."
     },
     {
       "id": "haughty",
@@ -24,7 +25,8 @@
       "title": "Hống hách, áp đặt",
       "direction": "negative",
       "scale": false,
-      "note": ""
+      "note": "",
+      "intensity": "Gần đồng nghĩa, cùng mức. Peremptory nhấn vào giọng ra lệnh không cho cãi."
     },
     {
       "id": "brazen",
@@ -38,7 +40,8 @@
       "title": "Tự mãn",
       "direction": "negative",
       "scale": false,
-      "note": "Bẫy: complacent (tự mãn) khác complaisant (chiều lòng)."
+      "note": "Bẫy: complacent (tự mãn) khác complaisant (chiều lòng).",
+      "intensity": "Smug nặng hơn complacent: smug lộ ra ngoài, complacent là tự mãn đến lơ là."
     }
   ],
   "words": [

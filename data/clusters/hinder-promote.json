@@ -17,28 +17,32 @@
       "title": "Ngăn chặn từ trước",
       "direction": "negative",
       "scale": false,
-      "note": "Preclude: làm cho không thể xảy ra. Forestall: chặn trước bằng hành động sớm. Obviate: làm cho không còn cần thiết (obviate the need)."
+      "note": "Preclude: làm cho không thể xảy ra. Forestall: chặn trước bằng hành động sớm. Obviate: làm cho không còn cần thiết (obviate the need).",
+      "intensity": "Gần đồng nghĩa, cùng mức. Khác ở cách chặn: làm cho không thể (preclude), ra tay trước (forestall), làm cho không cần (obviate), tránh được (avert)."
     },
     {
       "id": "relieve",
       "title": "Giảm nhẹ, xoa dịu",
       "direction": "positive",
       "scale": false,
-      "note": "Mitigate/alleviate: giảm mức độ tác hại. Assuage/allay: xoa dịu nỗi sợ, lo âu. Mollify/placate: làm nguôi một người đang giận."
+      "note": "Mitigate/alleviate: giảm mức độ tác hại. Assuage/allay: xoa dịu nỗi sợ, lo âu. Mollify/placate: làm nguôi một người đang giận.",
+      "intensity": "Gần đồng nghĩa, cùng mức. Khác ở đối tượng: tác hại (mitigate, alleviate, palliate), nỗi sợ, nỗi đau (assuage, allay), cơn giận (mollify, placate)."
     },
     {
       "id": "worsen",
       "title": "Làm trầm trọng, kích động",
       "direction": "negative",
       "scale": false,
-      "note": ""
+      "note": "",
+      "intensity": "Không xếp thang: exacerbate/aggravate/compound là làm tệ hơn; foment/instigate/incite là kích động gây ra."
     },
     {
       "id": "promote",
       "title": "Củng cố, thúc đẩy",
       "direction": "positive",
       "scale": false,
-      "note": "Abet là bẫy: tiếp tay, thường cho việc xấu."
+      "note": "Abet là bẫy: tiếp tay, thường cho việc xấu.",
+      "intensity": "Gần đồng nghĩa, cùng mức. Khác ở cách: chống đỡ (bolster, buttress, shore up), làm nhanh (facilitate, expedite), khơi dậy (galvanize, catalyze, spur, engender, foster)."
     }
   ],
   "words": [

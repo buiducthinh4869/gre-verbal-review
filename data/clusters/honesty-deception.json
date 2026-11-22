@@ -10,28 +10,32 @@
       "title": "Thẳng thắn, chân thật",
       "direction": "positive",
       "scale": false,
-      "note": "Bẫy lớn: ingenuous là ngây thơ, chân thật; disingenuous là giả vờ ngây thơ, không thành thật."
+      "note": "Bẫy lớn: ingenuous là ngây thơ, chân thật; disingenuous là giả vờ ngây thơ, không thành thật.",
+      "intensity": "Gần đồng nghĩa, cùng mức. Hai nhánh: thẳng thắn (candid, frank, forthright) và ngây thơ, không mưu mẹo (guileless, ingenuous, artless)."
     },
     {
       "id": "deceitful",
       "title": "Gian dối, xảo trá",
       "direction": "negative",
       "scale": false,
-      "note": ""
+      "note": "",
+      "intensity": "Gần đồng nghĩa, cùng mức. Perfidious nặng hơn vì kèm phản bội. Guile, chicanery, subterfuge, ruse là danh từ."
     },
     {
       "id": "false",
       "title": "Sai lệch, ngụy biện",
       "direction": "negative",
       "scale": false,
-      "note": "Specious: nghe có vẻ đúng nhưng sai. Spurious: giả, không có cơ sở. Fallacious: dựa trên lập luận sai."
+      "note": "Specious: nghe có vẻ đúng nhưng sai. Spurious: giả, không có cơ sở. Fallacious: dựa trên lập luận sai.",
+      "intensity": "Gần đồng nghĩa, cùng mức. Khác ở loại sai: lập luận (specious, fallacious, sophistry) hay nguồn gốc (spurious, apocryphal, bogus)."
     },
     {
       "id": "evade",
       "title": "Lẩn tránh, che giấu",
       "direction": "negative",
       "scale": false,
-      "note": "Prevaricate/equivocate: nói vòng vo để né sự thật. Dissemble/feign: giả vờ."
+      "note": "Prevaricate/equivocate: nói vòng vo để né sự thật. Dissemble/feign: giả vờ.",
+      "intensity": "Gần đồng nghĩa, cùng mức. Khác ở cách: nói vòng vo (prevaricate, equivocate) hay giả vờ, che cảm xúc (dissemble, feign, dissimulate)."
     }
   ],
   "words": [

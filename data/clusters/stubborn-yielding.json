@@ -17,21 +17,24 @@
       "title": "Kiên trì (nghĩa tốt)",
       "direction": "positive",
       "scale": false,
-      "note": "Cùng là không bỏ cuộc nhưng mang nghĩa khen, khác nhóm cứng đầu."
+      "note": "Cùng là không bỏ cuộc nhưng mang nghĩa khen, khác nhóm cứng đầu.",
+      "intensity": "Gần đồng nghĩa, cùng mức. Indefatigable nhấn vào không biết mệt; assiduous/sedulous nhấn vào chăm chỉ."
     },
     {
       "id": "yielding",
       "title": "Dễ bảo, mềm mỏng",
       "direction": "neutral",
       "scale": false,
-      "note": "Bẫy: complaisant (chiều lòng) khác complacent (tự mãn)."
+      "note": "Bẫy: complaisant (chiều lòng) khác complacent (tự mãn).",
+      "intensity": "Gần đồng nghĩa, cùng mức. Amenable nhẹ nhất (sẵn lòng); docile/pliant/malleable nặng hơn (dễ bị điều khiển)."
     },
     {
       "id": "fickle",
       "title": "Thất thường, dao động",
       "direction": "negative",
       "scale": false,
-      "note": ""
+      "note": "",
+      "intensity": "Gần đồng nghĩa, cùng mức. Vacillate/waver là động từ."
     }
   ],
   "words": [

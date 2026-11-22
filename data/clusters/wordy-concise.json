@@ -10,21 +10,24 @@
       "title": "Dài dòng, nói nhiều",
       "direction": "negative",
       "scale": false,
-      "note": "Verbose/prolix: văn dài. Loquacious/garrulous/voluble: người nói nhiều. Garrulous thường chê nặng hơn loquacious."
+      "note": "Verbose/prolix: văn dài. Loquacious/garrulous/voluble: người nói nhiều. Garrulous thường chê nặng hơn loquacious.",
+      "intensity": "Gần đồng nghĩa, cùng mức. Khác ở đối tượng: văn bản (verbose, prolix, digressive, discursive) hay người nói (loquacious, garrulous, voluble)."
     },
     {
       "id": "grandiose",
       "title": "Khoa trương, sáo rỗng",
       "direction": "negative",
       "scale": false,
-      "note": "Nhấn vào sự phô trương của lời lẽ, không phải độ dài."
+      "note": "Nhấn vào sự phô trương của lời lẽ, không phải độ dài.",
+      "intensity": "Gần đồng nghĩa, cùng mức."
     },
     {
       "id": "concise",
       "title": "Ngắn gọn, súc tích",
       "direction": "neutral",
       "scale": false,
-      "note": "Succinct/pithy/aphoristic là khen. Curt/brusque là ngắn đến mức cộc lốc, thô."
+      "note": "Succinct/pithy/aphoristic là khen. Curt/brusque là ngắn đến mức cộc lốc, thô.",
+      "intensity": "Không xếp thang: khác nhau ở khen (succinct, pithy, aphoristic) hay chê (curt, brusque), không ở độ mạnh."
     },
     {
       "id": "silent",

@@ -10,35 +10,39 @@
       "title": "Sáo mòn, nhạt nhẽo",
       "direction": "negative",
       "scale": false,
-      "note": "Banal/trite/hackneyed: dùng nhiều quá thành nhàm. Derivative: bắt chước người khác. Insipid/vapid: nhạt, rỗng."
+      "note": "Banal/trite/hackneyed: dùng nhiều quá thành nhàm. Derivative: bắt chước người khác. Insipid/vapid: nhạt, rỗng.",
+      "intensity": "Gần đồng nghĩa, cùng mức. Hai nhánh: nhàm vì lặp lại (banal, hackneyed, trite, clichéd, platitudinous, derivative) và nhạt, non (insipid, vapid, jejune)."
     },
     {
       "id": "mundane",
       "title": "Bình thường, đời thường",
       "direction": "neutral",
       "scale": false,
-      "note": "Pedestrian là bẫy nghĩa phụ: tầm thường, thiếu cảm hứng (không phải người đi bộ)."
+      "note": "Pedestrian là bẫy nghĩa phụ: tầm thường, thiếu cảm hứng (không phải người đi bộ).",
+      "intensity": "Gần đồng nghĩa, cùng mức."
     },
     {
       "id": "novel",
       "title": "Mới mẻ, đột phá",
       "direction": "positive",
       "scale": false,
-      "note": ""
+      "note": "",
+      "intensity": "Không xếp thang: novel là mới; seminal là có ảnh hưởng mở đường; avant-garde là tiên phong."
     },
     {
       "id": "unconventional",
       "title": "Phá cách, khác thường",
       "direction": "neutral",
       "scale": false,
-      "note": "Iconoclastic: đả phá niềm tin được tôn sùng. Heterodox: khác quan điểm chính thống. Idiosyncratic: riêng biệt, đặc trưng của một người."
+      "note": "Iconoclastic: đả phá niềm tin được tôn sùng. Heterodox: khác quan điểm chính thống. Idiosyncratic: riêng biệt, đặc trưng của một người.",
+      "intensity": "Gần đồng nghĩa, cùng mức. Heretical và iconoclastic nặng hơn vì chống lại niềm tin được tôn sùng."
     },
     {
       "id": "conventional",
       "title": "Chính thống, bảo thủ",
       "direction": "neutral",
-      "scale": false,
-      "note": ""
+      "scale": true,
+      "note": "Từ trung tính (1) đến cứng nhắc (4). Orthodox chỉ là theo chuẩn chung; dogmatic/doctrinaire là chê."
     }
   ],
   "words": [
@@ -443,7 +447,8 @@
       "confusables": [
         "heterodox",
         "doctrinaire"
-      ]
+      ],
+      "level": 1
     },
     {
       "id": "conformist",
@@ -457,7 +462,8 @@
       "collocations": [],
       "confusables": [
         "orthodox"
-      ]
+      ],
+      "level": 2
     },
     {
       "id": "doctrinaire",
@@ -473,7 +479,8 @@
       "confusables": [
         "dogmatic",
         "orthodox"
-      ]
+      ],
+      "level": 4
     },
     {
       "id": "dogmatic",
@@ -488,7 +495,8 @@
       "root": "dogma",
       "confusables": [
         "doctrinaire"
-      ]
+      ],
+      "level": 4
     },
     {
       "id": "hidebound",
@@ -502,7 +510,8 @@
       "collocations": [],
       "confusables": [
         "doctrinaire"
-      ]
+      ],
+      "level": 3
     }
   ],
   "exercises": [
