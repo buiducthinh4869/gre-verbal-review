@@ -235,6 +235,29 @@ export function todayScopeIds(card) {
   const L = todayLists();
   return card === 'all' ? TL.unionIds(L) : (L[card] || []);
 }
+/**
+ * Từ đã đọc hôm nay: cài đặt todayRead:<ngày> (đồng bộ khi API hỗ trợ) hợp với bản lưu trên máy (localStorage),
+ * để dấu Đã đọc không mất nếu server chưa nhận khóa này.
+ */
+function localRead(t) {
+  try { const v = JSON.parse(localStorage.getItem('gre:' + TL.readKey(t)) || '[]'); return Array.isArray(v) ? v : []; } catch (e) { return []; }
+}
+export function readToday() {
+  const t = today();
+  const v = App.settings[TL.readKey(t)];
+  return new Set((Array.isArray(v) ? v : []).concat(localRead(t)));
+}
+/** Đánh dấu đã đọc hôm nay; trả về true nếu có từ mới được thêm. */
+export function markRead(ids) {
+  const t = today();
+  const cur = readToday();
+  const add = (ids || []).filter((id) => id && !cur.has(id) && App.idx.byId[id]);
+  if (!add.length) return false;
+  const list = [...cur].concat(add).slice(-80);
+  try { localStorage.setItem('gre:' + TL.readKey(t), JSON.stringify(list)); } catch (e) { /* bộ nhớ bị chặn: vẫn lưu ở cài đặt */ }
+  setSetting(TL.readKey(t), list);
+  return true;
+}
 /** Từ đã có câu trả lời hôm nay (giờ Việt Nam). */
 export const reviewedToday = () => TL.reviewedToday(App.progress, today());
 export function statusTag(id) {

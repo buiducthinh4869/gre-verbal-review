@@ -4,7 +4,7 @@
 //   #vocab/<cụm>/<nhóm>[/<từ>]     danh sách từ của nhóm (giao diện danh sách như cũ), mở sẵn chi tiết <từ>
 // Ô tìm kiếm ở mọi cấp: có chữ thì thay lưới bằng kết quả phẳng trên toàn bộ các cụm, kèm nhãn Cụm › Nhóm.
 import { correctedTag } from './content.js';
-import { App, S, esc, views, actions, word, statusTag, stars, render, syncHash, go } from '../state.js';
+import { App, S, esc, views, actions, word, statusTag, stars, render, syncHash, go, markRead } from '../state.js';
 import { fold } from '../render.js';
 import { LS } from '../api.js';
 import { wordDetail } from './common.js';
@@ -310,6 +310,7 @@ Object.assign(actions, {
   'v-open': (t) => {
     const V = App.vocab;
     V.open = V.open === t.dataset.id ? null : t.dataset.id;
+    if (V.open) markRead([V.open]); // mở xem chi tiết = đã đọc hôm nay
     relist();
     if (!V.q) syncHash(true);
     const el = document.getElementById('w-' + t.dataset.id);

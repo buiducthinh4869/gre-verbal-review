@@ -175,3 +175,13 @@ test('câu GRE cho danh sách: câu có từ của danh sách là đáp án; t�
   const p2 = TL.grePlan(heldEx.answerIds, usable, Infinity);
   assert.ok(!p2.picked.some((e) => e.id === heldEx.id));
 });
+
+test('todayRead:<ngày> cũ hơn 7 ngày bị bỏ; quickPlan xen kẽ câu nghĩa và câu GRE, không quá n câu', () => {
+  assert.equal(TL.isStaleDayKey('todayRead:2026-11-01', '2026-11-22'), true);
+  assert.equal(TL.isStaleDayKey('todayRead:2026-11-20', '2026-11-22'), false);
+  const ex = [{ id: 'e1', answerIds: ['a'] }, { id: 'e2', answerIds: ['b'] }];
+  const plan = TL.quickPlan(['a', 'b', 'c', 'd', 'e'], ex, 6, () => 0);
+  assert.ok(plan.length <= 6 && plan.length >= 5);
+  assert.deepEqual(plan.slice(0, 3).map((q) => q.type), ['m2w', 'm2w', 'gre']);
+  assert.deepEqual(TL.quickPlan([], ex, 6), []);
+});

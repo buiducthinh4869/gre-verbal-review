@@ -11,9 +11,9 @@
 
 var LOCK_WAIT_MS = 10000;
 var SETTING_KEYS = ['newPerDay', 'autoStart', 'thinkFirst', 'examMode', 'skipVocabIntro'];
-// Danh sách hôm nay (đợt 02): todayNew:<YYYY-MM-DD> (từ mới cố định trong ngày), todayDue:<YYYY-MM-DD> (từ đến hạn đầu ngày).
+// Danh sách hôm nay (đợt 02): todayNew:<YYYY-MM-DD> (từ mới cố định trong ngày), todayDue:<YYYY-MM-DD> (từ đến hạn đầu ngày), todayRead:<YYYY-MM-DD> (từ đã đọc trong ngày).
 // Giá trị là mảng id từ. Mỗi ngày một dòng mới trong tab settings; dòng cũ giữ nguyên (client bỏ qua khóa cũ hơn 7 ngày).
-var DAY_LIST_KEY_RE = /^today(New|Due):\d{4}-\d{2}-\d{2}$/;
+var DAY_LIST_KEY_RE = /^today(New|Due|Read):\d{4}-\d{2}-\d{2}$/;
 var DAY_LIST_MAX = 80;
 function isSettingKey_(k) { return SETTING_KEYS.indexOf(k) >= 0 || DAY_LIST_KEY_RE.test(String(k || '')); }
 var MAX_EVENTS = 100;
