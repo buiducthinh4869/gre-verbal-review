@@ -102,7 +102,7 @@ function head() {
     return crumbs() + '<div class="page-head"><h1>' + esc(g.title) + '</h1>' +
       '<div class="group-meta">' + dirBadge(g.direction) + (g.scale ? '<span class="scale-tag">Thang nhẹ → mạnh</span>' : '') +
       '<span class="muted small">' + groupWords(g.id).length + ' từ</span></div>' +
-      (g.note ? '<p class="group-lead">' + esc(g.note) + '</p>' : '') + '</div>';
+      (g.note ? '<p class="group-lead">' + esc(g.note) + '</p>' : '') + intensityNote(g) + '</div>';
   }
   if (V.all) return crumbs() + '<div class="page-head"><h1>' + esc(c.title) + ': tất cả từ</h1><p>' + esc(c.description || '') + '</p></div>';
   return crumbs() + '<div class="page-head"><h1>' + esc(c.title) + '</h1><p>' + esc(c.description || '') + '</p></div>';
@@ -204,6 +204,7 @@ function groupSection(g, gw, withHead) {
     h += '<div class="group-head"><h3>' + esc(g.title) + '</h3>' + (g.scale ? '<span class="scale-tag">Thang nhẹ → mạnh</span>' : '') +
       '<a class="group-link" href="#vocab/' + encodeURIComponent(g.clusterId) + '/' + encodeURIComponent(g.id) + '">Mở nhóm</a></div>';
     if (g.note) h += '<p class="group-note">' + esc(g.note) + '</p>';
+    h += intensityNote(g);
   }
   if (g.scale) {
     const levels = [...new Set(gw.map((w) => w.level))].sort();
@@ -266,6 +267,11 @@ function searchResults() {
 
 /** Một dòng từ (giữ nguyên giao diện cũ). where = true: kèm nhãn Cụm › Nhóm (kết quả tìm kiếm). */
 /** Bốn ô mức cường độ cạnh từ, chỉ cho nhóm có thang. */
+/** Ghi chú cường độ cho nhóm không có thang (từ gần đồng nghĩa hoặc khác loại). */
+function intensityNote(g) {
+  return !g.scale && g.intensity ? '<p class="intensity-note"><b>Cường độ:</b> ' + esc(g.intensity) + '</p>' : '';
+}
+
 function levelMeter(w) {
   const g = App.idx.groupById[w.group];
   if (!g || !g.scale || !w.level) return '';

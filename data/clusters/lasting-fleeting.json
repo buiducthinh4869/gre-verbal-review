@@ -10,28 +10,32 @@
       "title": "Ngắn ngủi, chóng tàn",
       "direction": "neutral",
       "scale": false,
-      "note": "Ephemeral/evanescent: chóng phai như hơi sương. Transient/transitory: tạm thời, đi qua."
+      "note": "Ephemeral/evanescent: chóng phai như hơi sương. Transient/transitory: tạm thời, đi qua.",
+      "intensity": "Gần đồng nghĩa, cùng mức. Ephemeral/evanescent mang sắc thái văn chương hơn."
     },
     {
       "id": "enduring",
       "title": "Lâu bền, không đổi",
       "direction": "positive",
       "scale": false,
-      "note": "Inveterate/entrenched/ingrained: ăn sâu, khó bỏ (thường là thói xấu). Immutable: không thể thay đổi."
+      "note": "Inveterate/entrenched/ingrained: ăn sâu, khó bỏ (thường là thói xấu). Immutable: không thể thay đổi.",
+      "intensity": "Không xếp thang: enduring/abiding/perennial/perpetual/immutable là lâu bền; inveterate/entrenched/ingrained/indelible là ăn sâu, khó bỏ."
     },
     {
       "id": "changing",
       "title": "Hay thay đổi",
       "direction": "neutral",
       "scale": false,
-      "note": "Protean: biến hóa đa dạng (thường khen). Vicissitudes: thăng trầm."
+      "note": "Protean: biến hóa đa dạng (thường khen). Vicissitudes: thăng trầm.",
+      "intensity": "Gần đồng nghĩa, cùng mức. Khác ở loại từ và sắc thái (protean thường khen)."
     },
     {
       "id": "static",
       "title": "Trì trệ, tiềm ẩn",
       "direction": "neutral",
       "scale": false,
-      "note": "Latent: tiềm ẩn, chưa lộ ra. Dormant: đang ngủ yên, có thể thức dậy. Moribund: sắp chết, suy tàn."
+      "note": "Latent: tiềm ẩn, chưa lộ ra. Dormant: đang ngủ yên, có thể thức dậy. Moribund: sắp chết, suy tàn.",
+      "intensity": "Không xếp thang: các từ khác nhau ở trạng thái (đứng yên, đang ngủ, tiềm ẩn, sắp chết, cứng lại), không ở độ mạnh."
     }
   ],
   "words": [

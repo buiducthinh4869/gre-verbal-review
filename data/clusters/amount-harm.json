@@ -24,21 +24,24 @@
       "title": "Thừa, vô ích",
       "direction": "negative",
       "scale": false,
-      "note": "Superfluous/redundant: thừa. Nugatory/futile: vô giá trị, vô ích. Gratuitous: không cần thiết, vô cớ."
+      "note": "Superfluous/redundant: thừa. Nugatory/futile: vô giá trị, vô ích. Gratuitous: không cần thiết, vô cớ.",
+      "intensity": "Các từ khác nhau ở loại vô ích, không ở độ mạnh: thừa (superfluous, redundant, otiose), vô hiệu (futile, nugatory), không cần thiết (gratuitous), quá nhỏ (negligible)."
     },
     {
       "id": "harmful",
       "title": "Có hại",
       "direction": "negative",
       "scale": false,
-      "note": "Pernicious/insidious: tác hại âm thầm, dần dần. Deleterious/noxious: có hại nói chung. Malign/malevolent: ác ý."
+      "note": "Pernicious/insidious: tác hại âm thầm, dần dần. Deleterious/noxious: có hại nói chung. Malign/malevolent: ác ý.",
+      "intensity": "Các từ khác nhau ở cách gây hại, không ở độ mạnh: âm thầm (pernicious, insidious), trực tiếp (deleterious, noxious, detrimental), có ác ý (malign, malevolent)."
     },
     {
       "id": "defy",
       "title": "Coi thường, vi phạm",
       "direction": "negative",
       "scale": false,
-      "note": "Bẫy: flout (coi thường luật) khác flaunt (khoe khoang)."
+      "note": "Bẫy: flout (coi thường luật) khác flaunt (khoe khoang).",
+      "intensity": "Không xếp thang: flout/contravene/transgress là hành động vi phạm; flagrant/blatant mô tả mức lộ liễu của vi phạm."
     }
   ],
   "words": [

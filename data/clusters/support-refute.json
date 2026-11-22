@@ -10,7 +10,8 @@
       "title": "Xác nhận bằng bằng chứng",
       "direction": "positive",
       "scale": false,
-      "note": "Corroborate: xác nhận bằng nguồn độc lập. Substantiate: chứng minh bằng bằng chứng. Vindicate: minh oan, chứng tỏ là đúng sau khi bị nghi ngờ."
+      "note": "Corroborate: xác nhận bằng nguồn độc lập. Substantiate: chứng minh bằng bằng chứng. Vindicate: minh oan, chứng tỏ là đúng sau khi bị nghi ngờ.",
+      "intensity": "Gần đồng nghĩa, cùng mức. Vindicate khác: chứng minh ai đó đúng hoặc vô tội."
     },
     {
       "id": "endorse",
@@ -38,14 +39,16 @@
       "title": "Rút lại, từ bỏ",
       "direction": "negative",
       "scale": false,
-      "note": "Recant: công khai rút lại niềm tin trước đây. Repudiate: bác bỏ, chối bỏ. Eschew: tránh xa, kiêng."
+      "note": "Recant: công khai rút lại niềm tin trước đây. Repudiate: bác bỏ, chối bỏ. Eschew: tránh xa, kiêng.",
+      "intensity": "Gần đồng nghĩa, cùng mức. Eschew khác: tránh, kiêng (không phải rút lại lời)."
     },
     {
       "id": "concede",
       "title": "Thừa nhận, nhượng bộ",
       "direction": "neutral",
       "scale": false,
-      "note": ""
+      "note": "",
+      "intensity": "Gần đồng nghĩa, cùng mức."
     }
   ],
   "words": [

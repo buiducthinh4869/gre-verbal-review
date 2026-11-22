@@ -24,21 +24,24 @@
       "title": "Đáng tin, thuyết phục",
       "direction": "positive",
       "scale": false,
-      "note": "Tenable: đứng vững được trước phản biện. Cogent: thuyết phục nhờ logic chặt."
+      "note": "Tenable: đứng vững được trước phản biện. Cogent: thuyết phục nhờ logic chặt.",
+      "intensity": "Thang ngầm: plausible (nghe hợp lý) < credible/tenable < cogent/compelling < incontrovertible (không thể bác). Untenable là nghĩa ngược nên không xếp vào thang."
     },
     {
       "id": "doubtful",
       "title": "Đáng ngờ, thiếu cơ sở",
       "direction": "negative",
       "scale": false,
-      "note": ""
+      "note": "",
+      "intensity": "Gần đồng nghĩa, cùng mức. Tendentious khác: thiên vị, có ý đồ."
     },
     {
       "id": "tentative",
       "title": "Phỏng đoán, tạm thời",
       "direction": "neutral",
       "scale": false,
-      "note": ""
+      "note": "",
+      "intensity": "Gần đồng nghĩa, cùng mức. Khác nhau ở loại từ: danh từ (conjecture, hypothesis, surmise) và tính từ (speculative, tentative, provisional)."
     }
   ],
   "words": [

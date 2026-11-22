@@ -17,7 +17,8 @@
       "title": "Khen có điều kiện riêng",
       "scale": false,
       "note": "Eulogize dành cho người đã mất; tout mang hàm ý thổi phồng.",
-      "direction": "positive"
+      "direction": "positive",
+      "intensity": "Không xếp thang: hai từ khác nhau ở hoàn cảnh dùng, không ở độ mạnh."
     },
     {
       "id": "praise-nouns",
@@ -31,7 +32,8 @@
       "title": "Tính từ khen ngợi",
       "scale": false,
       "note": "Phân biệt laudatory (lời lẽ) và laudable (đối tượng).",
-      "direction": "positive"
+      "direction": "positive",
+      "intensity": "Không xếp thang: laudatory mô tả lời lẽ; laudable/commendable mô tả đối tượng đáng khen."
     },
     {
       "id": "belittle",
@@ -66,7 +68,8 @@
       "title": "Bắt bẻ vặt",
       "scale": false,
       "note": "Dùng khi câu nhấn vào chuyện nhỏ: minor, trivial, apart from a few.",
-      "direction": "negative"
+      "direction": "negative",
+      "intensity": "Gần đồng nghĩa, cùng mức nhẹ: chỉ bắt lỗi chuyện nhỏ, không phải phê bình nặng. Khác ở sắc thái: carp là cằn nhằn dai dẳng; nitpick thân mật."
     },
     {
       "id": "lukewarm",
@@ -80,14 +83,16 @@
       "title": "Khen quá đà",
       "scale": false,
       "note": "",
-      "direction": "positive"
+      "direction": "positive",
+      "intensity": "Không xếp thang chắc chắn: effusive có thể chỉ nhiệt tình; fulsome có hai nghĩa (khen quá mức, hoặc dồi dào); hyperbolic là phóng đại nói chung."
     },
     {
       "id": "flattery",
       "title": "Nịnh bợ",
       "scale": false,
       "note": "",
-      "direction": "positive"
+      "direction": "positive",
+      "intensity": "Gần đồng nghĩa, cùng mức."
     }
   ],
   "words": [

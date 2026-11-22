@@ -24,21 +24,24 @@
       "title": "Thù hằn, ác cảm",
       "direction": "negative",
       "scale": false,
-      "note": ""
+      "note": "",
+      "intensity": "Thang ngầm: antipathy (ác cảm) < animosity < enmity/rancor (thù hằn sâu). Acrimonious mô tả lời lẽ; callous là nhẫn tâm, khác loại."
     },
     {
       "id": "amiable",
       "title": "Hòa nhã, thân thiện",
       "direction": "positive",
       "scale": false,
-      "note": ""
+      "note": "",
+      "intensity": "Gần đồng nghĩa, cùng mức. Amicable dùng cho quan hệ, thỏa thuận; còn lại dùng cho người."
     },
     {
       "id": "soothe",
       "title": "Hòa giải, vô hại",
       "direction": "positive",
       "scale": false,
-      "note": "Conciliatory: nhằm hòa giải. Appease: xoa dịu bằng cách nhượng bộ (có thể chê). Innocuous/benign: vô hại."
+      "note": "Conciliatory: nhằm hòa giải. Appease: xoa dịu bằng cách nhượng bộ (có thể chê). Innocuous/benign: vô hại.",
+      "intensity": "Không xếp thang: conciliatory/appease là hành động xoa dịu; innocuous/benign là vô hại."
     }
   ],
   "words": [

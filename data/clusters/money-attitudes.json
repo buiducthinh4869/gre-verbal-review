@@ -10,7 +10,8 @@
       "title": "Tiết kiệm (nghĩa tốt)",
       "direction": "positive",
       "scale": false,
-      "note": "Bẫy lớn: frugal/thrifty là khen; parsimonious/miserly là chê."
+      "note": "Bẫy lớn: frugal/thrifty là khen; parsimonious/miserly là chê.",
+      "intensity": "Gần đồng nghĩa, cùng mức. Abstemious nói về ăn uống; provident là biết lo xa."
     },
     {
       "id": "stingy",
@@ -23,22 +24,23 @@
       "id": "greedy",
       "title": "Tham lam, vụ lợi",
       "direction": "negative",
-      "scale": false,
-      "note": "Venal là bẫy riêng: tham đến mức có thể bị mua chuộc."
+      "scale": true,
+      "note": "Venal là bẫy riêng: tham đến mức có thể bị mua chuộc. Từ nhẹ (1) đến mạnh (4). Acquisitive có thể trung tính; rapacious là tham đến mức vơ vét."
     },
     {
       "id": "wasteful",
       "title": "Hoang phí",
       "direction": "negative",
-      "scale": false,
-      "note": ""
+      "scale": true,
+      "note": "Từ nhẹ (1) đến mạnh (4). Lavish có thể khen; profligate nặng nhất, có thể kèm sa đọa."
     },
     {
       "id": "generous",
       "title": "Hào phóng, vị tha",
       "direction": "positive",
       "scale": false,
-      "note": "Munificent: hào phóng về tiền của. Magnanimous: rộng lượng, độ lượng (tha thứ). Altruistic: vị tha (động cơ)."
+      "note": "Munificent: hào phóng về tiền của. Magnanimous: rộng lượng, độ lượng (tha thứ). Altruistic: vị tha (động cơ).",
+      "intensity": "Gần đồng nghĩa, cùng mức. Khác ở đối tượng: tiền của (munificent, bountiful, philanthropic, largesse) hay tấm lòng (magnanimous, altruistic, benevolent)."
     }
   ],
   "words": [
@@ -198,7 +200,8 @@
       "confusables": [
         "rapacious",
         "covetous"
-      ]
+      ],
+      "level": 3
     },
     {
       "id": "rapacious",
@@ -215,7 +218,8 @@
       "root": "rap- (cướp), như rapt",
       "confusables": [
         "avaricious"
-      ]
+      ],
+      "level": 4
     },
     {
       "id": "covetous",
@@ -232,7 +236,8 @@
       "root": "covet (thèm muốn)",
       "confusables": [
         "avaricious"
-      ]
+      ],
+      "level": 2
     },
     {
       "id": "acquisitive",
@@ -246,7 +251,8 @@
       "collocations": [],
       "confusables": [
         "avaricious"
-      ]
+      ],
+      "level": 1
     },
     {
       "id": "mercenary",
@@ -262,7 +268,8 @@
       ],
       "confusables": [
         "venal"
-      ]
+      ],
+      "level": 2
     },
     {
       "id": "venal",
@@ -279,7 +286,8 @@
       "confusables": [
         "mercenary",
         "avaricious"
-      ]
+      ],
+      "level": 3
     },
     {
       "id": "grasping",
@@ -293,7 +301,8 @@
       "collocations": [],
       "confusables": [
         "avaricious"
-      ]
+      ],
+      "level": 3
     },
     {
       "id": "prodigal",
@@ -310,7 +319,8 @@
       "confusables": [
         "profligate",
         "provident"
-      ]
+      ],
+      "level": 3
     },
     {
       "id": "profligate",
@@ -326,7 +336,8 @@
       ],
       "confusables": [
         "prodigal"
-      ]
+      ],
+      "level": 4
     },
     {
       "id": "spendthrift",
@@ -341,7 +352,8 @@
       "confusables": [
         "thrifty",
         "prodigal"
-      ]
+      ],
+      "level": 3
     },
     {
       "id": "extravagant",
@@ -355,7 +367,8 @@
       "collocations": [],
       "confusables": [
         "lavish"
-      ]
+      ],
+      "level": 2
     },
     {
       "id": "lavish",
@@ -373,7 +386,8 @@
       "confusables": [
         "extravagant",
         "munificent"
-      ]
+      ],
+      "level": 1
     },
     {
       "id": "squander",
@@ -389,7 +403,8 @@
       ],
       "confusables": [
         "dissipate"
-      ]
+      ],
+      "level": 3
     },
     {
       "id": "dissipate",
@@ -403,7 +418,8 @@
       "collocations": [],
       "confusables": [
         "squander"
-      ]
+      ],
+      "level": 3
     },
     {
       "id": "munificent",
