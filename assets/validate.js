@@ -79,6 +79,8 @@ export function validateWord(w, ctx = {}) {
   });
   if (![1, 2, 3].includes(w.priority)) errs.push('Mức ưu tiên phải là 1, 2 hoặc 3');
   if (w.level != null && (!Number.isInteger(w.level) || w.level < 1 || w.level > 4)) errs.push('Mức trên thang phải là số nguyên từ 1 đến 4');
+  if (w.degree != null && (!Number.isInteger(w.degree) || w.degree < 1 || w.degree > 4)) errs.push('Mức tham khảo (degree) phải là số nguyên từ 1 đến 4');
+  if (w.tone != null && (!isStr(w.tone) || !w.tone.trim() || w.tone.length > 40)) errs.push('Nhãn sắc thái (tone) phải là văn bản 1–40 ký tự');
   if (ctx.isScale && w.level == null) errs.push('Từ thuộc nhóm thang nhẹ → mạnh nên phải có mức trên thang (1–4)');
   if (w.collocations != null) {
     if (!isStrArr(w.collocations)) errs.push('Collocation phải là danh sách văn bản');

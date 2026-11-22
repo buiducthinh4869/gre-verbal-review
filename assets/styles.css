@@ -273,7 +273,8 @@ textarea.input { min-height: 84px; resize: vertical; line-height: 1.5; }
 .scale-tag { font-size: 12px; color: var(--accent); font-weight: 600; }
 
 .ladder { margin-top: 6px; }
-.rung { display: grid; grid-template-columns: 58px 1fr; border-bottom: 1px solid var(--rule); }
+.rung { display: grid; grid-template-columns: 104px 1fr; gap: 0 10px; border-bottom: 1px solid var(--rule); }
+@media (max-width: 480px) { .rung { grid-template-columns: 82px 1fr; gap: 0 8px; } }
 .rung-label {
   padding: 13px 0; font-size: 12.5px; color: var(--muted); font-weight: 500;
   display: flex; flex-direction: column; gap: 6px;
@@ -281,7 +282,10 @@ textarea.input { min-height: 84px; resize: vertical; line-height: 1.5; }
 .rung-meter { display: flex; gap: 2px; }
 .rung-meter i { width: 8px; height: 8px; border-radius: 2px; background: var(--box0); }
 .rung-meter i.on { background: var(--accent); }
+.rung-tone { font-size: 11.5px; line-height: 1.35; font-weight: 400; color: var(--muted); overflow-wrap: anywhere; }
+.rung-words { min-width: 0; }
 .rung-words .wrow:last-child { border-bottom: 0; }
+.w-tone { font-size: 12px; color: var(--muted); align-self: center; }
 .w-level { display: inline-flex; gap: 2px; align-self: center; margin-left: 2px; }
 .w-level i { width: 7px; height: 7px; border-radius: 2px; background: var(--box0); }
 .w-level i.on { background: var(--accent); }

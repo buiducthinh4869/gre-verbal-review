@@ -206,17 +206,10 @@ function groupSection(g, gw, withHead) {
     if (g.note) h += '<p class="group-note">' + esc(g.note) + '</p>';
     h += intensityNote(g);
   }
-  if (g.scale) {
-    const levels = [...new Set(gw.map((w) => w.level))].sort();
-    h += '<div class="ladder">' + levels.map((lv) => {
-      let meter = '';
-      for (let k = 1; k <= 4; k++) meter += '<i' + (k <= lv ? ' class="on"' : '') + '></i>';
-      return '<div class="rung"><div class="rung-label">Mức ' + lv + '<span class="rung-meter" aria-hidden="true">' + meter + '</span></div><div class="rung-words">' +
-        gw.filter((w) => w.level === lv).map((w) => wordRow(w)).join('') + '</div></div>';
-    }).join('') + '</div>';
-  } else {
-    h += gw.map((w) => wordRow(w)).join('');
-  }
+  // Mỗi dòng từ có nhãn mức riêng bên trái (Mức N, bốn ô, sắc thái ngắn). Nhóm thang xếp theo mức;
+  // nhóm không phải thang giữ thứ tự gốc và dùng "degree" (chỉ để hiển thị, không dùng cho bài luyện).
+  const rows = g.scale ? gw.slice().sort((a, b) => (a.level || 0) - (b.level || 0) || a.fileIndex - b.fileIndex) : gw;
+  h += '<div class="ladder">' + rows.map((w) => '<div class="rung">' + rungLabel(w, g) + '<div class="rung-words">' + wordRow(w) + '</div></div>').join('') + '</div>';
   return h + '</section>';
 }
 
@@ -266,18 +259,38 @@ function searchResults() {
 }
 
 /** Một dòng từ (giữ nguyên giao diện cũ). where = true: kèm nhãn Cụm › Nhóm (kết quả tìm kiếm). */
-/** Bốn ô mức cường độ cạnh từ, chỉ cho nhóm có thang. */
 /** Ghi chú cường độ cho nhóm không có thang (từ gần đồng nghĩa hoặc khác loại). */
 function intensityNote(g) {
   return !g.scale && g.intensity ? '<p class="intensity-note"><b>Cường độ:</b> ' + esc(g.intensity) + '</p>' : '';
 }
 
+/** Mức hiển thị của một từ: level (nhóm thang) hoặc degree (nhóm không phải thang, chỉ để tham khảo). */
+export function displayLevel(w, g) {
+  if (g && g.scale) return w.level || 0;
+  return w.degree || w.level || 0;
+}
+
+function meterHtml(lv) {
+  let m = '';
+  for (let k = 1; k <= 4; k++) m += '<i' + (k <= lv ? ' class="on"' : '') + '></i>';
+  return m;
+}
+
+/** Ô bên trái của một dòng từ: Mức N, bốn ô cường độ, nhãn sắc thái ngắn. */
+function rungLabel(w, g) {
+  const lv = displayLevel(w, g);
+  const title = lv ? (g.scale ? 'Mức ' + lv + '/4 trên thang nhẹ → mạnh' : 'Mức ' + lv + '/4 so với các từ trong nhóm (tham khảo, nhóm không xếp thang)') : '';
+  return '<div class="rung-label"' + (title ? ' title="' + esc(title) + '"' : '') + '>' +
+    (lv ? '<span>Mức ' + lv + '</span><span class="rung-meter" aria-hidden="true">' + meterHtml(lv) + '</span>' : '') +
+    (w.tone ? '<span class="rung-tone">' + esc(w.tone) + '</span>' : '') + '</div>';
+}
+
 function levelMeter(w) {
   const g = App.idx.groupById[w.group];
-  if (!g || !g.scale || !w.level) return '';
-  let m = '';
-  for (let k = 1; k <= 4; k++) m += '<i' + (k <= w.level ? ' class="on"' : '') + '></i>';
-  return '<span class="w-level" role="img" aria-label="Mức ' + w.level + ' trên 4" title="Mức ' + w.level + '/4">' + m + '</span>';
+  const lv = displayLevel(w, g);
+  if (!g || !lv) return '';
+  return '<span class="w-level" role="img" aria-label="Mức ' + lv + ' trên 4" title="Mức ' + lv + '/4">' + meterHtml(lv) + '</span>' +
+    (w.tone ? '<span class="w-tone">' + esc(w.tone) + '</span>' : '');
 }
 
 function wordRow(w, where) {
