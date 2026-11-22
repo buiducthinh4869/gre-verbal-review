@@ -52,7 +52,7 @@
       "group": "abundant",
       "priority": 3,
       "meaning": "dồi dào, nhiều",
-      "nuance": "",
+      "nuance": "Nhiều đến mức tràn ra; hay đi với lời nói, ghi chép, lượng chất lỏng (copious notes). Nhấn vào số lượng lớn, không nhấn đa dạng.",
       "example": "She took *copious* notes during the interviews.",
       "collocations": [
         "copious notes"
@@ -88,7 +88,7 @@
       "group": "abundant",
       "priority": 2,
       "meaning": "vô số",
-      "nuance": "",
+      "nuance": "Nhiều không đếm xuể và đa dạng (myriad reasons). Mạnh hơn many; dùng như tính từ hoặc danh từ (a myriad of).",
       "example": "The reform has *myriad* unintended effects.",
       "collocations": [
         "a myriad of X"
@@ -105,7 +105,7 @@
       "group": "abundant",
       "priority": 3,
       "meaning": "to lớn, phi thường",
-      "nuance": "",
+      "nuance": "Lớn đến mức gây kinh ngạc về quy mô hoặc tài năng (a prodigious memory). Có sắc thái thán phục, khác copious chỉ đếm số lượng.",
       "example": "He had a *prodigious* memory for statistics.",
       "collocations": [
         "a prodigious output"
@@ -123,7 +123,7 @@
       "group": "abundant",
       "priority": 2,
       "meaning": "dư dả, đủ",
-      "nuance": "",
+      "nuance": "Đủ, và dư một chút so với nhu cầu (ample time). Nhẹ nhất trong nhóm; không ngụ ý thừa thãi.",
       "example": "There is *ample* evidence that the policy worked.",
       "collocations": [
         "ample evidence"
@@ -156,7 +156,7 @@
       "group": "abundant",
       "priority": 2,
       "meaning": "dồi dào, tuôn trào",
-      "nuance": "",
+      "nuance": "Tuôn ra dồi dào, thường quá mức (profuse apologies, profuse bleeding). Có thể hơi chê vì nhiều đến thừa.",
       "example": "He offered *profuse* apologies.",
       "collocations": [
         "profuse apologies"
@@ -192,7 +192,7 @@
       "group": "scarce",
       "priority": 3,
       "meaning": "sự thiếu hụt",
-      "nuance": "",
+      "nuance": "Danh từ: thiếu hụt nghiêm trọng thứ cần có (a dearth of evidence). Mạnh hơn shortage; GRE hay dùng trong câu đổi chiều.",
       "example": "There is a *dearth* of qualified teachers in rural areas.",
       "collocations": [
         "a dearth of X"
@@ -209,7 +209,7 @@
       "group": "scarce",
       "priority": 3,
       "meaning": "ít ỏi, không đủ",
-      "nuance": "",
+      "nuance": "Ít hơn mức cần, gần như không đủ (scant attention). Thường đi với danh từ trừu tượng: attention, evidence, regard.",
       "example": "The proposal pays *scant* attention to costs.",
       "collocations": [
         "scant attention",
@@ -228,7 +228,7 @@
       "group": "scarce",
       "priority": 2,
       "meaning": "ít ỏi, nghèo nàn",
-      "nuance": "",
+      "nuance": "Ít ỏi và nghèo nàn về chất lượng (meager salary). Nhấn vào sự đáng thất vọng, không chỉ số lượng nhỏ.",
       "example": "Farmers earn *meager* incomes from rice.",
       "collocations": [
         "meager income"
@@ -245,7 +245,7 @@
       "group": "scarce",
       "priority": 2,
       "meaning": "thưa thớt",
-      "nuance": "",
+      "nuance": "Thưa, rải rác trên một không gian (sparse population, sparse data). Nói về mật độ phân bố, không phải tổng lượng.",
       "example": "Population is *sparse* in the highlands.",
       "collocations": [],
       "confusables": [
@@ -260,7 +260,7 @@
       "group": "useless",
       "priority": 3,
       "meaning": "thừa, không cần thiết",
-      "nuance": "",
+      "nuance": "Vượt quá mức cần, không phục vụ mục đích gì (superfluous details). Nhấn vào sự thừa.",
       "example": "Cut the *superfluous* adjectives from your abstract.",
       "collocations": [],
       "root": "super- (trên) + flu- (chảy): tràn ra",
@@ -276,7 +276,7 @@
       "group": "useless",
       "priority": 2,
       "meaning": "thừa, lặp lại; bị cho nghỉ việc (Anh)",
-      "nuance": "",
+      "nuance": "Thừa vì lặp lại thứ đã có (redundant phrase). Khác superfluous: lý do thừa là trùng lặp. Nghĩa Anh-Anh: bị sa thải vì thừa người.",
       "example": "The second robustness table is *redundant*.",
       "collocations": [],
       "confusables": [
@@ -304,7 +304,7 @@
       "group": "useless",
       "priority": 2,
       "meaning": "vô ích",
-      "nuance": "",
+      "nuance": "Vô ích vì chắc chắn không đạt kết quả (a futile attempt). Nói về nỗ lực, không nói về đồ vật.",
       "example": "Resistance proved *futile*.",
       "collocations": [],
       "confusables": [
@@ -349,7 +349,7 @@
       "group": "useless",
       "priority": 2,
       "meaning": "không đáng kể",
-      "nuance": "",
+      "nuance": "Nhỏ đến mức có thể bỏ qua (negligible effect). Không chê; chỉ nói quy mô không đáng kể.",
       "example": "The effect on employment was *negligible*.",
       "collocations": [
         "a negligible effect"
@@ -365,7 +365,7 @@
       "group": "harmful",
       "priority": 3,
       "meaning": "độc hại (âm thầm, dần dần)",
-      "nuance": "",
+      "nuance": "Có hại một cách âm thầm, dần dần, khó nhận ra (pernicious influence). Đặc trưng là tác hại ngấm ngầm.",
       "example": "Inflation has a *pernicious* effect on savers.",
       "collocations": [
         "a pernicious influence"
@@ -413,7 +413,7 @@
       "group": "harmful",
       "priority": 2,
       "meaning": "độc hại; khó chịu",
-      "nuance": "",
+      "nuance": "Độc hại theo nghĩa đen về hóa chất, khí (noxious fumes); nghĩa bóng: rất khó chịu. Tác hại trực tiếp, không âm thầm.",
       "example": "*Noxious* fumes from the factory sickened residents.",
       "collocations": [
         "noxious fumes"
@@ -447,7 +447,7 @@
       "group": "harmful",
       "priority": 3,
       "meaning": "có ác tâm, hiểm độc",
-      "nuance": "",
+      "nuance": "Có ác ý, muốn người khác bị hại (malevolent intent). Nói về ý định của người, khác pernicious nói về tác động.",
       "example": "The rumors attributed *malevolent* motives to the regulator.",
       "collocations": [],
       "root": "mal- (xấu) + vol- (muốn)",
@@ -463,7 +463,7 @@
       "group": "harmful",
       "priority": 2,
       "meaning": "bất lợi, có hại",
-      "nuance": "",
+      "nuance": "Gây bất lợi, làm tổn hại (detrimental to health). Trung tính, học thuật; nhẹ hơn pernicious.",
       "example": "Long commutes are *detrimental* **to** health.",
       "collocations": [
         "detrimental to X"
@@ -497,7 +497,7 @@
       "group": "defy",
       "priority": 3,
       "meaning": "vi phạm, trái với",
-      "nuance": "",
+      "nuance": "Vi phạm luật, quy định, nguyên tắc (contravene the treaty). Trang trọng, pháp lý.",
       "example": "The contract *contravenes* competition law.",
       "collocations": [],
       "root": "contra- (ngược) + ven- (đi)",
@@ -513,7 +513,7 @@
       "group": "defy",
       "priority": 2,
       "meaning": "vượt quá giới hạn, vi phạm",
-      "nuance": "",
+      "nuance": "Vượt qua giới hạn đạo đức hoặc xã hội (transgress norms). Có hàm ý tội lỗi, phạm giới.",
       "example": "The editorial *transgressed* the paper's own standards.",
       "collocations": [],
       "root": "trans- (vượt) + gress- (bước)",
@@ -545,7 +545,7 @@
       "group": "defy",
       "priority": 3,
       "meaning": "trắng trợn, lộ liễu",
-      "nuance": "",
+      "nuance": "Rõ ràng trắng trợn, không thèm che giấu (blatant lie). Luôn chê; nhấn vào sự lộ liễu của hành vi sai.",
       "example": "The study is a *blatant* attempt to influence regulators.",
       "collocations": [
         "a blatant attempt"

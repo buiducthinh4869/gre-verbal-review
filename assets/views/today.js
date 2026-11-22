@@ -8,7 +8,8 @@ import { startDaily, startSession, startWordsSession, cardsForDaily } from './se
 import { lastMockLine } from './mock.js';
 import { pickDistractors } from '../distractors.js';
 import { gradeExercise } from '../vocab.js';
-import { resultLine } from './common.js';
+import { resultLine, contrastHtml } from './common.js';
+import { renderMarkup, maskForms } from '../render.js';
 
 const ROMAN = ['i', 'ii', 'iii'];
 
@@ -132,7 +133,9 @@ function quickBlock(L, read) {
 function quickM2W(c) {
   const w = word(c.wordId);
   if (!c.options) c.options = S.shuffle([w.id].concat(pickDistractors(w, App.idx, 3)));
-  let h = '<div class="q-kind">Nghĩa → Từ</div><div class="q-prompt">' + esc(w.meaning) + '</div>';
+  let h = '<div class="q-kind">Nghĩa → Từ</div><div class="q-prompt">' + esc(w.meaning) + '</div>' +
+    (w.nuance ? '<p class="q-nuance">' + maskForms(esc(w.nuance), w) + '</p>' : '') +
+    (w.example ? '<div class="q-example example">' + maskForms(renderMarkup(w.example, true), w) + '</div>' : '');
   h += '<div class="options q-opts">' + c.options.map((id, k) => {
     let cls = '', mark = '';
     if (c.picked) { if (id === w.id) { cls = ' correct'; mark = '✓'; } else if (id === c.picked) { cls = ' wrong'; mark = '✗'; } }
@@ -142,7 +145,7 @@ function quickM2W(c) {
   if (c.picked) {
     const ok = c.picked === w.id;
     h += resultLine(ok, ok ? 'Chính xác' : 'Đáp án: ' + esc(w.word));
-    if (!ok) { const p = word(c.picked); h += '<div class="explain"><b>' + esc(p.word) + '</b>: ' + esc(p.meaning) + '</div>'; }
+    h += contrastHtml(c.options, w.id, c.picked);
     h += nextBtn();
   }
   return h;

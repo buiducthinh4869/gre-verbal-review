@@ -111,7 +111,7 @@
       "group": "fleeting",
       "priority": 2,
       "meaning": "lướt qua, ngắn ngủi",
-      "nuance": "",
+      "nuance": "Thoáng qua rất nhanh (a fleeting glimpse). Nhấn vào khoảnh khắc ngắn.",
       "example": "She caught a *fleeting* glimpse of the minister.",
       "collocations": [
         "a fleeting glimpse"
@@ -141,7 +141,7 @@
       "group": "enduring",
       "priority": 2,
       "meaning": "lâu dài, bền bỉ",
-      "nuance": "",
+      "nuance": "Kéo dài lâu bất chấp thời gian (enduring legacy). Khen.",
       "example": "The *enduring* appeal of the gold standard puzzles economists.",
       "collocations": [],
       "confusables": [
@@ -189,7 +189,7 @@
       "group": "enduring",
       "priority": 2,
       "meaning": "vĩnh viễn; liên miên",
-      "nuance": "",
+      "nuance": "Liên tục không dứt, hoặc vĩnh viễn (perpetual complaints). Có thể chê khi chỉ sự lặp mãi.",
       "example": "The office was in a state of *perpetual* reorganization.",
       "collocations": [],
       "confusables": [
@@ -203,7 +203,7 @@
       "group": "enduring",
       "priority": 3,
       "meaning": "không thể thay đổi",
-      "nuance": "",
+      "nuance": "Không thể thay đổi, về bản chất (immutable laws). Mạnh hơn unchanging.",
       "example": "Preferences are not *immutable*.",
       "collocations": [
         "immutable laws"
@@ -271,7 +271,7 @@
       "group": "enduring",
       "priority": 3,
       "meaning": "không thể xóa nhòa",
-      "nuance": "",
+      "nuance": "Không thể xóa (indelible ink, indelible impression). Hay nói về dấu ấn, ký ức.",
       "example": "The famine left an *indelible* mark on the region.",
       "collocations": [
         "an indelible mark"
@@ -287,7 +287,7 @@
       "group": "changing",
       "priority": 2,
       "meaning": "có thể thay đổi, hay đổi",
-      "nuance": "",
+      "nuance": "Có thể thay đổi, hay biến đổi. Trái nghĩa immutable.",
       "example": "Social norms are more *mutable* than they appear.",
       "collocations": [],
       "root": "mut- (thay đổi)",
@@ -318,7 +318,7 @@
       "group": "changing",
       "priority": 2,
       "meaning": "dao động, lên xuống",
-      "nuance": "",
+      "nuance": "Dao động lên xuống không đều (prices fluctuate). Nói về đại lượng.",
       "example": "Commodity prices *fluctuate* widely.",
       "collocations": [],
       "confusables": [
@@ -332,7 +332,7 @@
       "group": "changing",
       "priority": 2,
       "meaning": "dao động qua lại giữa hai trạng thái",
-      "nuance": "",
+      "nuance": "Dao động qua lại giữa hai cực (oscillate between hope and despair).",
       "example": "Policy *oscillated* between austerity and stimulus.",
       "collocations": [
         "oscillate between X and Y"
@@ -381,7 +381,7 @@
       "group": "changing",
       "priority": 2,
       "meaning": "sự biến hình, biến đổi hoàn toàn",
-      "nuance": "",
+      "nuance": "Danh từ: biến đổi hoàn toàn về hình dạng hoặc bản chất.",
       "example": "The city's *metamorphosis* from port to tech hub took two decades.",
       "collocations": [],
       "confusables": [
@@ -395,7 +395,7 @@
       "group": "static",
       "priority": 2,
       "meaning": "trì trệ, tù đọng",
-      "nuance": "",
+      "nuance": "Tù đọng, không phát triển (stagnant economy). Chê.",
       "example": "Wages remained *stagnant* for a decade.",
       "collocations": [
         "stagnant wages"
@@ -411,7 +411,7 @@
       "group": "static",
       "priority": 2,
       "meaning": "trơ, bất động",
-      "nuance": "",
+      "nuance": "Trơ, không hoạt động (inert gas); nghĩa bóng: thụ động, uể oải.",
       "example": "The committee remained *inert* while the crisis deepened.",
       "collocations": [],
       "confusables": [

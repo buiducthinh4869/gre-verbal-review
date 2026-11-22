@@ -73,7 +73,7 @@
       "group": "hinder",
       "priority": 2,
       "meaning": "cản trở",
-      "nuance": "",
+      "nuance": "Cản trở, làm chậm hoặc khó hơn (hinder progress). Thông dụng, mức vừa.",
       "example": "Language barriers *hinder* access to public services.",
       "collocations": [],
       "confusables": [
@@ -88,7 +88,7 @@
       "group": "hinder",
       "priority": 2,
       "meaning": "gây trở ngại, cản trở",
-      "nuance": "",
+      "nuance": "Gây vướng víu, hạn chế cử động hoặc tiến độ (hampered by lack of funds). Gần hinder, thường do điều kiện ngoại cảnh.",
       "example": "Fieldwork was **hampered by** heavy flooding.",
       "collocations": [
         "hampered by X"
@@ -363,7 +363,7 @@
       "group": "relieve",
       "priority": 3,
       "meaning": "làm giảm bớt (đau khổ, khó khăn)",
-      "nuance": "",
+      "nuance": "Làm nhẹ bớt đau khổ, khó khăn, nhưng không xóa hẳn (alleviate poverty).",
       "example": "Microcredit alone cannot *alleviate* poverty.",
       "collocations": [
         "alleviate poverty"
@@ -494,7 +494,7 @@
       "group": "worsen",
       "priority": 2,
       "meaning": "làm nặng thêm; (thân mật) làm bực",
-      "nuance": "",
+      "nuance": "Làm tình trạng xấu thêm (aggravate the problem). Thân mật: làm bực mình.",
       "example": "Poor sanitation *aggravated* the outbreak.",
       "collocations": [],
       "confusables": [
@@ -558,7 +558,7 @@
       "group": "worsen",
       "priority": 2,
       "meaning": "kích động (bạo lực, thù hận)",
-      "nuance": "",
+      "nuance": "Kích động người khác làm điều xấu (incite violence). Có tác nhân người, mục tiêu tiêu cực.",
       "example": "The speech was condemned for *inciting* violence.",
       "collocations": [
         "incite violence"
@@ -608,7 +608,7 @@
       "group": "promote",
       "priority": 2,
       "meaning": "chống đỡ, gia cố",
-      "nuance": "",
+      "nuance": "Chống đỡ thứ đang yếu, sắp đổ (shore up support). Hàm ý tình trạng trước đó mong manh.",
       "example": "The government stepped in to *shore up* the banking system.",
       "collocations": [
         "shore up X"
@@ -641,7 +641,7 @@
       "group": "promote",
       "priority": 2,
       "meaning": "tạo điều kiện, làm cho dễ dàng",
-      "nuance": "",
+      "nuance": "Làm cho dễ dàng hơn (facilitate trade). Trung tính, hành chính.",
       "example": "Mobile money *facilitates* transfers to rural households.",
       "collocations": [],
       "root": "facil- (dễ)",
@@ -656,7 +656,7 @@
       "group": "promote",
       "priority": 2,
       "meaning": "xúc tiến, đẩy nhanh",
-      "nuance": "",
+      "nuance": "Đẩy nhanh tiến trình (expedite approval). Nhấn vào tốc độ, không nhấn vào dễ.",
       "example": "The new portal *expedites* visa processing.",
       "collocations": [],
       "root": "ex- + ped- (chân): gỡ chân ra",
@@ -689,7 +689,7 @@
       "group": "promote",
       "priority": 2,
       "meaning": "xúc tác, thúc đẩy nhanh",
-      "nuance": "",
+      "nuance": "Kích hoạt thay đổi nhanh, như chất xúc tác (catalyze reform). Nhấn vào việc khởi phát.",
       "example": "The crisis *catalyzed* long-delayed reforms.",
       "collocations": [],
       "confusables": [
@@ -735,7 +735,7 @@
       "group": "promote",
       "priority": 2,
       "meaning": "nuôi dưỡng, thúc đẩy (phát triển)",
-      "nuance": "",
+      "nuance": "Nuôi dưỡng sự phát triển lâu dài (foster innovation). Nhấn vào quá trình dài hạn.",
       "example": "Schools should *foster* curiosity.",
       "collocations": [
         "foster growth"

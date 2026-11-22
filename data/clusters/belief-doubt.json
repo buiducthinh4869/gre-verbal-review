@@ -70,7 +70,7 @@
       "group": "credulous",
       "priority": 2,
       "meaning": "dễ bị lừa",
-      "nuance": "",
+      "nuance": "Dễ tin nên dễ bị lừa (a gullible investor). Thân mật hơn credulous; chê nhẹ.",
       "example": "*Gullible* customers believed the promise of guaranteed returns.",
       "collocations": [],
       "confusables": [
@@ -100,7 +100,7 @@
       "group": "skeptical",
       "priority": 2,
       "meaning": "hoài nghi",
-      "nuance": "",
+      "nuance": "Nghi ngờ, đòi bằng chứng trước khi tin (skeptical of claims). Trung tính hoặc khen trong học thuật.",
       "example": "Referees were **skeptical of** the paper's exclusion restriction.",
       "collocations": [
         "skeptical of X",
@@ -189,7 +189,7 @@
       "group": "credible",
       "priority": 2,
       "meaning": "đáng tin",
-      "nuance": "",
+      "nuance": "Đáng tin vì có cơ sở (credible evidence, credible threat). Nói về nguồn tin, không nói về người dễ tin (khác credulous).",
       "example": "A *credible* commitment to low inflation anchors expectations.",
       "collocations": [
         "a credible threat"
@@ -240,7 +240,7 @@
       "group": "credible",
       "priority": 3,
       "meaning": "không thể bảo vệ được",
-      "nuance": "",
+      "nuance": "Không thể bảo vệ trước phản biện (an untenable position). Lập luận đã bị bác, không đứng vững.",
       "example": "The government's position became *untenable* after the leak.",
       "collocations": [],
       "confusables": [
@@ -271,7 +271,7 @@
       "group": "credible",
       "priority": 2,
       "meaning": "thuyết phục, hấp dẫn",
-      "nuance": "",
+      "nuance": "Thuyết phục mạnh đến mức khó cưỡng (compelling evidence). Mạnh hơn convincing.",
       "example": "The evidence is *compelling*.",
       "collocations": [],
       "confusables": [
@@ -285,7 +285,7 @@
       "group": "credible",
       "priority": 3,
       "meaning": "không thể chối cãi",
-      "nuance": "",
+      "nuance": "Không thể tranh cãi, chắc chắn đúng (incontrovertible proof). Mức cao nhất của độ chắc chắn.",
       "example": "DNA evidence provided *incontrovertible* proof.",
       "collocations": [
         "incontrovertible evidence"
@@ -302,7 +302,7 @@
       "group": "doubtful",
       "priority": 3,
       "meaning": "vô căn cứ",
-      "nuance": "",
+      "nuance": "Không có căn cứ thực tế (unfounded rumors). Hay đi với nỗi sợ, tin đồn, cáo buộc.",
       "example": "Fears of a bank run proved *unfounded*.",
       "collocations": [
         "unfounded fears"
@@ -318,7 +318,7 @@
       "group": "doubtful",
       "priority": 2,
       "meaning": "không có cơ sở",
-      "nuance": "",
+      "nuance": "Không có cơ sở, gần như đồng nghĩa unfounded; hay đi với fears, accusations. Hơi thông dụng hơn.",
       "example": "The accusation proved *groundless*.",
       "collocations": [],
       "confusables": [
@@ -347,7 +347,7 @@
       "group": "doubtful",
       "priority": 1,
       "meaning": "đáng ngờ",
-      "nuance": "",
+      "nuance": "Đáng ngờ về tính đúng hoặc đạo đức (questionable methods). Nhẹ hơn unfounded: chưa bị bác, chỉ đáng nghi.",
       "example": "The sample's representativeness is *questionable*.",
       "collocations": [],
       "confusables": [
@@ -378,7 +378,7 @@
       "group": "tentative",
       "priority": 3,
       "meaning": "có tính suy đoán",
-      "nuance": "",
+      "nuance": "Dựa trên suy đoán, chưa có bằng chứng (speculative claims); cũng chỉ đầu cơ (speculative investment).",
       "example": "The link between the two events is *speculative*.",
       "collocations": [],
       "confusables": [
@@ -392,7 +392,7 @@
       "group": "tentative",
       "priority": 3,
       "meaning": "dè dặt, tạm thời, chưa chắc chắn",
-      "nuance": "",
+      "nuance": "Tạm thời, dè dặt, chưa chốt (tentative conclusion, tentative agreement). Nhấn vào trạng thái chưa chắc, còn có thể đổi.",
       "example": "The authors offer only *tentative* conclusions.",
       "collocations": [
         "tentative conclusions"
@@ -424,7 +424,7 @@
       "group": "tentative",
       "priority": 1,
       "meaning": "giả thuyết",
-      "nuance": "",
+      "nuance": "Danh từ: giả thuyết cần kiểm định. Trung tính, khoa học.",
       "example": "The data reject the *hypothesis* of constant returns.",
       "collocations": [],
       "confusables": [
@@ -438,7 +438,7 @@
       "group": "tentative",
       "priority": 2,
       "meaning": "phỏng đoán, ước đoán",
-      "nuance": "",
+      "nuance": "Phỏng đoán dựa trên bằng chứng ít ỏi (I surmised that...). Trang trọng hơn guess.",
       "example": "From her silence, we *surmised* that the talks had failed.",
       "collocations": [],
       "confusables": [
@@ -452,7 +452,7 @@
       "group": "tentative",
       "priority": 2,
       "meaning": "giả định trước",
-      "nuance": "",
+      "nuance": "Ngầm giả định một điều là đúng trước khi lập luận (the argument presupposes that...). Hay gặp trong câu hỏi logic.",
       "example": "The model *presupposes* rational expectations.",
       "collocations": [],
       "confusables": [

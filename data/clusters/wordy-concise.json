@@ -138,7 +138,7 @@
       "group": "wordy",
       "priority": 2,
       "meaning": "lạc đề, hay đi lan man",
-      "nuance": "",
+      "nuance": "Lạc đề, hay đi lan man sang chủ đề khác. Khác verbose: vấn đề là lạc hướng, không phải nhiều chữ.",
       "example": "The *digressive* second chapter could be cut entirely.",
       "collocations": [],
       "root": "digress (lạc đề)",
@@ -461,7 +461,7 @@
       "group": "silent",
       "priority": 1,
       "meaning": "dè dặt, kín đáo",
-      "nuance": "",
+      "nuance": "Dè dặt, kín đáo, ít bộc lộ cảm xúc (a reserved manner). Nói về tính cách.",
       "example": "A *reserved* person by nature, she rarely discussed her own achievements.",
       "collocations": [],
       "confusables": [
@@ -476,7 +476,7 @@
       "group": "silent",
       "priority": 1,
       "meaning": "kín miệng, không tiết lộ",
-      "nuance": "",
+      "nuance": "Kín miệng, không tiết lộ thông tin trong một tình huống cụ thể.",
       "example": "Officials remained *tight-lipped* about the investigation.",
       "collocations": [],
       "confusables": [

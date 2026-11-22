@@ -142,7 +142,7 @@
       "collocations": [
         "applaud X for Y"
       ],
-      "root": "laud- (lời khen)",
+      "root": "plaud- (vỗ tay)",
       "confusables": []
     },
     {
@@ -152,8 +152,8 @@
       "group": "praise-verbs",
       "priority": 3,
       "level": 3,
-      "meaning": "ca ngợi công khai",
-      "nuance": "Khen mạnh, trang trọng, công khai.",
+      "meaning": "ca ngợi nồng nhiệt, công khai",
+      "nuance": "Khen mạnh, trang trọng, công khai, hay gặp trên báo chí, giới học thuật (widely lauded). Gốc Latin laus là lời khen, không có nghĩa vỗ tay: nghĩa vỗ tay thuộc applaud và plaudits (gốc plaudere).",
       "example": "The study was *lauded* **for** its credible identification strategy.",
       "collocations": [
         "laud X for Y"
@@ -242,7 +242,7 @@
       "priority": 3,
       "level": 4,
       "meaning": "tôn kính sâu sắc",
-      "nuance": "Gần như đồng nghĩa với venerate.",
+      "nuance": "Cảm xúc kính trọng sâu, pha ngưỡng mộ (revered as a saint). Venerate nhấn vào lý do tuổi tác, truyền thống, sự linh thiêng.",
       "example": "Keynes is still *revered* **as** the father of modern macroeconomics.",
       "collocations": [
         "be revered as X"
@@ -961,7 +961,7 @@
       "group": "lukewarm",
       "priority": 1,
       "meaning": "dè dặt, kiềm chế",
-      "nuance": "",
+      "nuance": "Dè dặt, kiềm chế (muted praise, muted response). Phản ứng yếu hơn mong đợi.",
       "example": "The announcement met with *muted* enthusiasm.",
       "collocations": [
         "muted enthusiasm"
@@ -992,7 +992,7 @@
       "group": "lukewarm",
       "priority": 2,
       "meaning": "lời khen mà thực chất là chê",
-      "nuance": "",
+      "nuance": "Lời khen mà thực chất là chê (a backhanded compliment).",
       "example": "Calling her paper \"surprisingly rigorous\" was a *backhanded compliment*.",
       "collocations": [],
       "confusables": [],
@@ -1037,7 +1037,7 @@
       "group": "excess",
       "priority": 1,
       "meaning": "cường điệu, phóng đại",
-      "nuance": "",
+      "nuance": "Cường điệu, phóng đại (hyperbolic claims). Nhấn vào nói quá sự thật.",
       "example": "Claims that AI will end poverty within a decade are *hyperbolic*.",
       "collocations": [],
       "confusables": []
@@ -1073,7 +1073,7 @@
       "group": "flattery",
       "priority": 2,
       "meaning": "xun xoe, bợ đỡ",
-      "nuance": "",
+      "nuance": "Xun xoe, bợ đỡ để lấy lòng. Chê mạnh.",
       "example": "The interview was so *fawning* that it read like an advertisement.",
       "collocations": [],
       "confusables": []

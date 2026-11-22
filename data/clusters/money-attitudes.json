@@ -296,7 +296,7 @@
       "group": "greedy",
       "priority": 1,
       "meaning": "tham lam, hám lợi",
-      "nuance": "",
+      "nuance": "Tham lam, chộp giật tiền bạc (grasping landlord). Nhấn vào hành vi vơ vét.",
       "example": "The *grasping* middlemen took most of the farmers' profits.",
       "collocations": [],
       "confusables": [
@@ -362,7 +362,7 @@
       "group": "wasteful",
       "priority": 1,
       "meaning": "phung phí; quá mức",
-      "nuance": "",
+      "nuance": "Tiêu xài quá mức; cũng chỉ quá đà (extravagant claims). Nhấn vào vượt mức hợp lý.",
       "example": "The *extravagant* opening ceremony cost more than the stadium.",
       "collocations": [],
       "confusables": [
@@ -396,7 +396,7 @@
       "group": "wasteful",
       "priority": 2,
       "meaning": "phung phí, lãng phí (cơ hội, tiền)",
-      "nuance": "",
+      "nuance": "Phung phí cơ hội, tiền, tài năng một cách dại dột. Động từ; nhấn vào để mất thứ quý.",
       "example": "The country **squandered its oil windfall**.",
       "collocations": [
         "squander an opportunity"
@@ -494,7 +494,7 @@
       "group": "generous",
       "priority": 1,
       "meaning": "dồi dào; hào phóng",
-      "nuance": "",
+      "nuance": "Dồi dào, phong phú (bountiful harvest); hào phóng. Thường về tài nguyên, mùa màng.",
       "example": "A *bountiful* harvest pushed rice prices down.",
       "collocations": [],
       "confusables": [
@@ -508,7 +508,7 @@
       "group": "generous",
       "priority": 2,
       "meaning": "nhân đức, làm từ thiện",
-      "nuance": "",
+      "nuance": "Làm từ thiện quy mô lớn, có tổ chức. Nói về hoạt động quyên góp.",
       "example": "Her *philanthropic* foundation funds malaria research.",
       "collocations": [],
       "root": "phil- (yêu) + anthrop- (con người)",
@@ -541,7 +541,7 @@
       "group": "generous",
       "priority": 2,
       "meaning": "nhân từ, có thiện ý",
-      "nuance": "",
+      "nuance": "Nhân từ, có thiện ý (benevolent ruler). Nhấn vào thiện chí, không nhất thiết cho tiền.",
       "example": "A *benevolent* dictator is still a dictator.",
       "collocations": [],
       "root": "bene- (tốt) + vol- (muốn)",

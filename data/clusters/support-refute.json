@@ -77,7 +77,7 @@
       "group": "confirm",
       "priority": 3,
       "meaning": "chứng minh bằng bằng chứng",
-      "nuance": "",
+      "nuance": "Chứng minh bằng bằng chứng cụ thể (substantiate a claim). Nhấn vào cung cấp bằng chứng.",
       "example": "The authors fail to *substantiate* their central claim.",
       "collocations": [
         "substantiate a claim"
@@ -93,7 +93,7 @@
       "group": "confirm",
       "priority": 2,
       "meaning": "xác nhận tính đúng đắn",
-      "nuance": "",
+      "nuance": "Xác nhận là đúng hoặc hợp lệ, thường qua kiểm tra chính thức.",
       "example": "We *validate* the model on an out-of-sample period.",
       "collocations": [],
       "confusables": [
@@ -123,7 +123,7 @@
       "group": "confirm",
       "priority": 2,
       "meaning": "xác nhận, chứng thực",
-      "nuance": "",
+      "nuance": "Cụm động từ: sự kiện hoặc dữ liệu sau đó chứng thực điều đã nói (the data bore out the prediction). Khác corroborate cần nguồn độc lập thứ hai.",
       "example": "Later data **bore out** her prediction.",
       "collocations": [
         "bear out a prediction"
@@ -139,7 +139,7 @@
       "group": "endorse",
       "priority": 2,
       "meaning": "tán thành, ủng hộ công khai",
-      "nuance": "",
+      "nuance": "Tán thành công khai, thường chính thức (endorse a candidate).",
       "example": "The board *endorsed* the proposal.",
       "collocations": [],
       "confusables": [
@@ -172,7 +172,7 @@
       "group": "endorse",
       "priority": 2,
       "meaning": "ủng hộ, biện hộ cho",
-      "nuance": "",
+      "nuance": "Ủng hộ và lên tiếng bảo vệ (advocate reform). Nhấn vào vận động.",
       "example": "She *advocates* a carbon tax.",
       "collocations": [],
       "root": "voc- (gọi)",
@@ -203,7 +203,7 @@
       "group": "endorse",
       "priority": 2,
       "meaning": "duy trì, giữ vững; y án",
-      "nuance": "",
+      "nuance": "Giữ vững quyết định, nguyên tắc; tòa y án (uphold the verdict).",
       "example": "The court *upheld* the ruling.",
       "collocations": [
         "uphold a decision"
@@ -270,7 +270,7 @@
       "group": "refute",
       "priority": 3,
       "meaning": "làm mất uy tín, làm mất tin tưởng",
-      "nuance": "",
+      "nuance": "Làm mất uy tín người hoặc ý tưởng (discredit the theory).",
       "example": "The scandal *discredited* the theory's leading proponent.",
       "collocations": [],
       "confusables": [
@@ -303,7 +303,7 @@
       "group": "refute",
       "priority": 2,
       "meaning": "tranh luận, phản bác",
-      "nuance": "",
+      "nuance": "Phản bác bằng lập luận (controvert a claim). Trang trọng.",
       "example": "No one has been able to *controvert* her central finding.",
       "collocations": [],
       "confusables": [
@@ -334,7 +334,7 @@
       "group": "weaken",
       "priority": 3,
       "meaning": "làm suy yếu, làm mất tác dụng",
-      "nuance": "",
+      "nuance": "Làm suy yếu hiệu lực (undercut the argument); bán rẻ hơn đối thủ.",
       "example": "The new evidence *undercuts* the official explanation.",
       "collocations": [],
       "confusables": [
@@ -364,7 +364,7 @@
       "group": "weaken",
       "priority": 2,
       "meaning": "làm suy giảm",
-      "nuance": "",
+      "nuance": "Làm suy giảm chức năng (impaired judgment).",
       "example": "Malnutrition can *impair* children's learning.",
       "collocations": [],
       "confusables": [
@@ -379,7 +379,7 @@
       "group": "retract",
       "priority": 3,
       "meaning": "công khai rút lại (quan điểm, lời nói)",
-      "nuance": "",
+      "nuance": "Công khai rút lại quan điểm, thường do áp lực (recant testimony).",
       "example": "Under pressure, the scientist **recanted** his earlier findings.",
       "collocations": [],
       "root": "re- + cant- (hát)",
@@ -395,7 +395,7 @@
       "group": "retract",
       "priority": 2,
       "meaning": "rút lại (tuyên bố, bài báo)",
-      "nuance": "",
+      "nuance": "Rút lại tuyên bố hoặc bài báo (retract a paper). Trung tính.",
       "example": "The journal *retracted* the paper.",
       "collocations": [
         "retract a paper"
@@ -426,7 +426,7 @@
       "group": "retract",
       "priority": 2,
       "meaning": "chối bỏ trách nhiệm hoặc liên quan",
-      "nuance": "",
+      "nuance": "Chối bỏ trách nhiệm hoặc liên quan đến điều gì.",
       "example": "The ministry *disavowed* the leaked memo.",
       "collocations": [],
       "confusables": [
@@ -440,7 +440,7 @@
       "group": "retract",
       "priority": 2,
       "meaning": "từ bỏ (chính thức)",
-      "nuance": "",
+      "nuance": "Từ bỏ chính thức quyền lợi, niềm tin (renounce citizenship).",
       "example": "He *renounced* his citizenship to take the post.",
       "collocations": [],
       "confusables": [
@@ -485,7 +485,7 @@
       "group": "concede",
       "priority": 1,
       "meaning": "thừa nhận",
-      "nuance": "",
+      "nuance": "Thừa nhận sự thật, thường miễn cưỡng (acknowledge limitations).",
       "example": "The authors *acknowledge* that their sample is small.",
       "collocations": [],
       "confusables": [

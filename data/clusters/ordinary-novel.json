@@ -87,7 +87,7 @@
       "group": "trite",
       "priority": 3,
       "meaning": "sáo mòn, nhàm chán",
-      "nuance": "",
+      "nuance": "Sáo mòn, nhàm vì dùng quá nhiều (trite remark). Chê về ý hoặc câu chữ.",
       "example": "Avoid *trite* openings like 'Since the dawn of time'.",
       "collocations": [
         "a trite expression"
@@ -119,7 +119,7 @@
       "group": "trite",
       "priority": 1,
       "meaning": "sáo rỗng, rập khuôn",
-      "nuance": "",
+      "nuance": "Sáo rỗng, dùng khuôn mẫu cũ (cliched plot). Gần trite, hay dùng cho tác phẩm.",
       "example": "The ad's *clichéd* imagery of happy families failed to move viewers.",
       "collocations": [],
       "root": "cliché",
@@ -295,7 +295,7 @@
       "group": "novel",
       "priority": 1,
       "meaning": "tiên phong (nghệ thuật)",
-      "nuance": "",
+      "nuance": "Tiên phong, thử nghiệm trong nghệ thuật. Có thể khen hoặc ám chỉ khó tiếp nhận.",
       "example": "The gallery specializes in *avant-garde* installations.",
       "collocations": [],
       "confusables": [
@@ -345,7 +345,7 @@
       "group": "unconventional",
       "priority": 2,
       "meaning": "không theo lối thông thường",
-      "nuance": "",
+      "nuance": "Không theo cách thông thường (unorthodox methods). Trung tính.",
       "example": "The central bank's *unorthodox* policies drew criticism.",
       "collocations": [
         "unorthodox methods"
@@ -379,7 +379,7 @@
       "group": "unconventional",
       "priority": 2,
       "meaning": "người độc lập, không theo số đông",
-      "nuance": "",
+      "nuance": "Danh từ: người độc lập, không theo số đông, đặc biệt trong chính trị.",
       "example": "A *maverick* senator, she often voted against her party.",
       "collocations": [],
       "confusables": [
@@ -393,7 +393,7 @@
       "group": "unconventional",
       "priority": 1,
       "meaning": "lập dị, kỳ quặc",
-      "nuance": "",
+      "nuance": "Lập dị, kỳ quặc về hành vi. Thường vô hại, hơi đáng yêu.",
       "example": "The *eccentric* professor lectured in a different hat every week.",
       "collocations": [],
       "confusables": [
@@ -407,7 +407,7 @@
       "group": "unconventional",
       "priority": 2,
       "meaning": "dị giáo; trái với quan điểm được chấp nhận",
-      "nuance": "",
+      "nuance": "Trái với giáo lý hoặc quan điểm được chấp nhận. Mạnh, gắn với chính thống.",
       "example": "Questioning the model was once considered *heretical*.",
       "collocations": [],
       "confusables": [
@@ -438,7 +438,7 @@
       "group": "conventional",
       "priority": 2,
       "meaning": "chính thống, được thừa nhận rộng rãi",
-      "nuance": "",
+      "nuance": "Chính thống, theo quan điểm được chấp nhận rộng rãi.",
       "example": "*Orthodox* theory predicts that the tariff will reduce welfare.",
       "collocations": [
         "orthodox view"
@@ -457,7 +457,7 @@
       "group": "conventional",
       "priority": 2,
       "meaning": "người tuân theo khuôn phép số đông",
-      "nuance": "",
+      "nuance": "Danh từ hoặc tính từ: người làm theo khuôn phép số đông. Thường chê.",
       "example": "In a *conformist* workplace, few dared to question the director.",
       "collocations": [],
       "confusables": [
