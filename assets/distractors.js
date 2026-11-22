@@ -25,6 +25,35 @@ export function sameFamily(a, b) {
   return false;
 }
 
+/* ---------------- Hai từ quá gần nghĩa (không được làm phương án nhiễu cho nhau) ---------------- */
+
+// cụm hai âm tiết chỉ mang chức năng ngữ pháp: trùng các cụm này không có nghĩa là trùng nghĩa
+const STOP_BIGRAMS = new Set(['không thể', 'làm cho', 'một cách', 'có thể', 'người khác', 'của người', 'quá mức', 'cho người',
+  'không có', 'không đủ', 'rất nhiều', 'thường là', 'theo lối', 'đến mức', 'trước khi', 'khó chịu', 'sự thiếu', 'bị cho']);
+function bigrams(meaning) {
+  const toks = lc(meaning).replace(/\([^)]*\)/g, ' ').split(/[^\p{L}]+/u).filter(Boolean);
+  const out = new Set();
+  for (let i = 0; i + 1 < toks.length; i++) { const b = toks[i] + ' ' + toks[i + 1]; if (!STOP_BIGRAMS.has(b)) out.add(b); }
+  return out;
+}
+
+/**
+ * Hai từ quá gần nghĩa để cùng xuất hiện như "một đúng, một sai" trong câu Nghĩa → Từ:
+ *  - nghĩa giống hệt; hoặc
+ *  - cùng nhóm, trừ khi nhóm là thang và hai từ cách nhau từ 2 mức trở lên (khác mức rõ); hoặc
+ *  - nghĩa tiếng Việt chung một cụm hai âm tiết có nội dung (vd "đả kích", "lên án", "ca ngợi").
+ * loose = true dùng cho câu TC/SE (ngữ cảnh câu đã phân biệt các từ khác loại trong một nhóm).
+ */
+export function tooClose(a, b, loose) {
+  if (!a || !b || a.id === b.id) return true;
+  if (normMeaning(a.meaning) === normMeaning(b.meaning)) return true;
+  // loose (soát câu TC/SE, có ngữ cảnh câu): trong cùng nhóm chỉ coi là quá gần khi cùng mức của một thang
+  if (a.group === b.group && (loose ? (a.level && a.level === b.level) : !(a.level && b.level && Math.abs(a.level - b.level) >= 2))) return true;
+  const ba = bigrams(a.meaning);
+  for (const x of bigrams(b.meaning)) if (ba.has(x)) return true;
+  return false;
+}
+
 const posSet = (p) => lc(p).split('/').map((x) => x.trim());
 const posCompatible = (a, b) => { const sb = posSet(b.pos); return posSet(a.pos).some((x) => sb.includes(x)); };
 
@@ -35,20 +64,20 @@ const posCompatible = (a, b) => { const sb = posSet(b.pos); return posSet(a.pos)
  *  3. cùng cụm, cùng hướng nghĩa ("direction" của nhóm; nhóm neutral hợp với mọi hướng)
  *  4. cùng hướng nghĩa ở cụm khác
  *  5. còn thiếu mới lấy từ khác hướng
- * Ở bậc 2–5 ưu tiên từ cùng loại từ. Loại trừ: nghĩa giống hệt từ đúng; cùng dòng từ
+ * Ở bậc 2–5 ưu tiên từ cùng loại từ. Loại trừ ở mọi bậc: từ quá gần nghĩa (tooClose: cùng mức trong thang,
+ * cùng nhóm không phải thang, nghĩa chung cụm từ); cùng dòng từ
  * (trừ khi dữ liệu ghi rõ là confusable). Không lặp phương án.
  */
 export function pickDistractors(word, idx, n = 3, rng = Math.random) {
   const out = [];
   const used = new Set([word.id]);
-  const wm = normMeaning(word.meaning);
   const wDir = groupDirection(idx.groupById[word.group]);
   const dirOf = (c) => groupDirection(idx.groupById[c.group]);
   const sameDir = (c) => directionsMatch(wDir, dirOf(c));
 
   const accept = (c, allowFamily) => {
     if (!c || used.has(c.id) || out.length >= n) return;
-    if (normMeaning(c.meaning) === wm) return;
+    if (tooClose(word, c)) return;
     if (!allowFamily && sameFamily(word, c)) return;
     used.add(c.id);
     out.push(c.id);
@@ -85,5 +114,6 @@ export function pickDistractors(word, idx, n = 3, rng = Math.random) {
 
   // Bất đắc dĩ: nới điều kiện cùng dòng từ
   if (out.length < n) idx.words.forEach((c) => accept(c, true));
+  // tooClose không bao giờ được nới: thiếu thì trả ít phương án hơn
   return out;
 }

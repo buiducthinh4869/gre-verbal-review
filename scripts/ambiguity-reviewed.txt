@@ -1,0 +1,52 @@
+tc01 (TC chỗ 2): đáp án laud ~ eulogize
+tc10 (TC chỗ 1): đáp án a backhanded compliment ~ an encomium
+tc15 (TC chỗ 2): đáp án venerated ~ lionized
+tc18 (TC chỗ 1): đáp án venerated ~ lionized
+tc19 (TC chỗ 1): đáp án lionized ~ venerated
+tc21 (TC chỗ 1): đáp án impugned ~ decried
+tc22 (TC chỗ 1): đáp án equivocal ~ tepid
+tc22 (TC chỗ 1): đáp án equivocal ~ muted
+tc23 (TC chỗ 1): đáp án qualified ~ unqualified
+tc23 (TC chỗ 1): đáp án qualified ~ unstinting
+se01 (SE): đáp án laud ~ eulogizing
+se02 (SE): đáp án impugn ~ decry
+se07 (SE): đáp án laud ~ decried
+se08 (SE): đáp án revere ~ lionized
+se08 (SE): đáp án venerate ~ lionized
+pc103 (TC chỗ 1): đáp án accolade ~ homage
+pc107 (TC chỗ 1): đáp án homage ~ accolade
+pc127 (SE): đáp án qualified ~ unqualified
+pc127 (SE): đáp án qualified ~ unstinting
+co02 (TC chỗ 1): đáp án convoluted ~ cryptic
+co05 (TC chỗ 1): đáp án unequivocal ~ manifest
+co05 (TC chỗ 1): đáp án unequivocal ~ lucid
+co07 (SE): đáp án lucid ~ manifest
+co07 (SE): đáp án perspicuous ~ manifest
+co103 (SE): đáp án explicit ~ nebulous
+co103 (SE): đáp án unequivocal ~ nebulous
+ma108 (TC chỗ 1): đáp án covetous ~ mercenary
+hp110 (SE): đáp án mollify ~ palliate
+hp110 (SE): đáp án placate ~ palliate
+on03 (TC chỗ 2): đáp án orthodox ~ heterodox
+on109 (TC chỗ 1): đáp án Heterodox ~ Orthodox
+on110 (SE): đáp án maverick ~ conformist
+hd01 (TC chỗ 1): đáp án ingenuous ~ disingenuous
+hd101 (TC chỗ 1): đáp án guileless ~ disingenuous
+hd103 (SE): đáp án ingenuous ~ disingenuous
+hd105 (TC chỗ 1): đáp án disingenuous ~ ingenuous
+hd105 (TC chỗ 1): đáp án disingenuous ~ guileless
+ha08 (SE): đáp án brash ~ unassuming
+ha104 (SE): đáp án unassuming ~ ostentatious
+bd04 (TC chỗ 1): đáp án tendentious ~ speculative
+bd08 (SE): đáp án speculative ~ tendentious
+bd107 (TC chỗ 1): đáp án tenable ~ untenable
+sr06 (SE): đáp án substantiate ~ refuted
+sr103 (TC chỗ 1): đáp án endorsed ~ recanted
+lf05 (TC chỗ 1): đáp án ossified ~ protean
+lf105 (TC chỗ 1): đáp án immutable ~ mutable
+lf105 (TC chỗ 1): đáp án immutable ~ malleable
+lf109 (TC chỗ 1): đáp án protean ~ ossified
+lf114 (TC chỗ 1): đáp án mutable ~ immutable
+lf114 (TC chỗ 1): đáp án mutable ~ entrenched
+lf117 (TC chỗ 2): đáp án mutable ~ entrenched
+hm02 (TC chỗ 1): đáp án incisive ~ sardonic

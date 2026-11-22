@@ -68,7 +68,7 @@
       "group": "frugal",
       "priority": 2,
       "meaning": "tiết kiệm, biết chi tiêu",
-      "nuance": "Gần nghĩa frugal.",
+      "nuance": "Tiết kiệm, chi tiêu khôn ngoan (a thrifty household). Khen, đời thường.",
       "example": "*Thrifty* households cut back on meat when prices rose.",
       "collocations": [],
       "confusables": [
@@ -148,7 +148,7 @@
       "group": "stingy",
       "priority": 2,
       "meaning": "hà tiện, keo kiệt",
-      "nuance": "miser: kẻ hà tiện.",
+      "nuance": "Hà tiện, keo kiệt đến mức khổ sở, thích tích trữ tiền. Chê mạnh.",
       "example": "He was too *miserly* to tip the waiter.",
       "collocations": [],
       "confusables": [
@@ -163,7 +163,7 @@
       "group": "stingy",
       "priority": 1,
       "meaning": "keo kiệt",
-      "nuance": "Thông dụng.",
+      "nuance": "Keo kiệt, không muốn cho hoặc chi (stingy with praise). Chê, thông dụng, thân mật hơn parsimonious.",
       "example": "The *stingy* sponsor refused to cover the speakers' travel.",
       "collocations": [],
       "confusables": [
@@ -178,7 +178,7 @@
       "group": "stingy",
       "priority": 1,
       "meaning": "chặt chẽ, keo kiệt",
-      "nuance": "Thân mật.",
+      "nuance": "Keo kiệt, nắm chặt tiền. Thân mật, hình ảnh bàn tay nắm chặt.",
       "example": "Even in good years, the *tightfisted* board froze salaries.",
       "collocations": [],
       "confusables": [
@@ -261,7 +261,7 @@
       "group": "greedy",
       "priority": 2,
       "meaning": "vụ lợi, hám tiền; lính đánh thuê (n)",
-      "nuance": "Chỉ làm vì tiền.",
+      "nuance": "Vụ lợi, làm mọi thứ chỉ vì tiền (mercenary motives). Danh từ: lính đánh thuê.",
       "example": "Critics questioned the *mercenary* motives behind the sudden donation.",
       "collocations": [
         "mercenary motives"

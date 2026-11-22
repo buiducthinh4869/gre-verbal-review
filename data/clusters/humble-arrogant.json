@@ -127,7 +127,7 @@
       "group": "humble",
       "priority": 2,
       "meaning": "nhút nhát, rụt rè",
-      "nuance": "Nhấn vào sự sợ hãi.",
+      "nuance": "Nhút nhát, rụt rè vì sợ hãi (a timorous voice). Văn chương; nhấn vào nỗi sợ.",
       "example": "*Timorous* investors pulled out at the first sign of trouble.",
       "collocations": [],
       "root": "timor (sợ hãi), như timid",
@@ -554,7 +554,7 @@
           "options": [
             "complacent",
             "complaisant",
-            "smug",
+            "obsequious",
             "diffident",
             "haughty"
           ],
@@ -564,10 +564,10 @@
       "targets": [
         "complacent",
         "complaisant",
-        "smug"
+        "obsequious"
       ],
       "hint": "Bẫy chính tả kinh điển.",
-      "explanation": "Chủ quan đến mức ngừng kiểm tra rủi ro: complacent. Complaisant là chiều lòng; smug nhấn vào vẻ đắc ý, không nhấn vào sự lơ là cảnh giác.",
+      "explanation": "Chủ quan đến mức ngừng kiểm tra rủi ro: complacent. Complaisant là chiều lòng người khác; obsequious là xu nịnh; diffident là thiếu tự tin; haughty là kiêu căng. Chỉ complacent nói về sự yên tâm đến mức lơ là.",
       "difficulty": 3,
       "skills": [
         "degree",

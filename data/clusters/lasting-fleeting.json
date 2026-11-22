@@ -46,7 +46,7 @@
       "group": "fleeting",
       "priority": 3,
       "meaning": "phù du, chóng tàn",
-      "nuance": "Tồn tại rất ngắn.",
+      "nuance": "Tồn tại rất ngắn, phù du (ephemeral fame). Nhấn vào bản chất chóng tàn của sự vật.",
       "example": "Most viral trends are *ephemeral*.",
       "collocations": [],
       "root": "ephemera (thứ sống một ngày)",
@@ -349,7 +349,7 @@
       "group": "changing",
       "priority": 2,
       "meaning": "sự thay đổi liên tục",
-      "nuance": "in flux: đang biến động.",
+      "nuance": "Danh từ: trạng thái thay đổi liên tục (in a state of flux). Nhấn vào sự chưa ổn định.",
       "example": "The rules are **in flux**.",
       "collocations": [
         "in a state of flux"
@@ -365,7 +365,7 @@
       "group": "changing",
       "priority": 3,
       "meaning": "những thăng trầm",
-      "nuance": "Thường dùng ở số nhiều.",
+      "nuance": "Danh từ số nhiều: những thăng trầm, thay đổi bất ngờ của cuộc sống, vận may (the vicissitudes of life).",
       "example": "The firm survived the **vicissitudes of** the commodity cycle.",
       "collocations": [
         "the vicissitudes of X"

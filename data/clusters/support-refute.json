@@ -188,7 +188,7 @@
       "group": "endorse",
       "priority": 2,
       "meaning": "đấu tranh cho, bênh vực",
-      "nuance": "Nghĩa động từ.",
+      "nuance": "Động từ: đấu tranh bảo vệ một lý tưởng hoặc người (champion reform). Nhấn vào sự nhiệt thành ủng hộ.",
       "example": "He *championed* microfinance long before it was fashionable.",
       "collocations": [],
       "confusables": [
@@ -454,7 +454,7 @@
       "group": "retract",
       "priority": 3,
       "meaning": "tránh xa, không dùng",
-      "nuance": "Cố ý tránh một cách làm.",
+      "nuance": "Cố ý tránh xa, không dùng một thứ (eschew jargon). Trang trọng, nhấn vào lựa chọn có chủ ý.",
       "example": "The authors *eschew* structural assumptions.",
       "collocations": [],
       "confusables": [
@@ -633,7 +633,7 @@
           "options": [
             "vitiated",
             "qualified",
-            "undercut",
+            "buttressed",
             "reconciled",
             "conceded"
           ],
@@ -642,11 +642,11 @@
       ],
       "targets": [
         "vitiate",
-        "undercut",
-        "qualify-v"
+        "qualify-v",
+        "buttress"
       ],
       "hint": "'None of the main results survived'.",
-      "explanation": "Một lỗi làm vô hiệu toàn bộ phân tích: vitiated. Undercut chỉ là làm suy yếu; qualified là thêm điều kiện.",
+      "explanation": "Một lỗi làm vô hiệu toàn bộ phân tích (không kết quả nào còn đứng được): vitiated. Buttressed là củng cố, trái hướng; qualified là thêm điều kiện; reconciled, conceded không hợp.",
       "difficulty": 2,
       "skills": [
         "contrast"
@@ -688,7 +688,7 @@
       "options": [
         "corroborated",
         "substantiated",
-        "vindicated",
+        "impugned",
         "debunked",
         "refuted",
         "eschewed"
@@ -700,12 +700,12 @@
       "targets": [
         "corroborate",
         "substantiate",
-        "vindicate",
         "debunk",
-        "refute"
+        "refute",
+        "impugn"
       ],
       "hint": "Đối tượng là một tuyên bố.",
-      "explanation": "Kiểm toán độc lập xác nhận tuyên bố: corroborated, substantiated. Vindicated dùng cho người; debunked và refuted là cặp sai hướng.",
+      "explanation": "Kiểm toán độc lập xác nhận tuyên bố: corroborated, substantiated. Debunked và refuted là cặp sai hướng; impugned là nghi ngờ sự trung thực, cũng sai hướng; eschewed là né tránh, không hợp.",
       "difficulty": 2,
       "skills": [
         "nuance"

@@ -321,7 +321,7 @@
       "group": "praise-nouns",
       "priority": 3,
       "meaning": "lời tán dương",
-      "nuance": "Thường dùng ở số nhiều.",
+      "nuance": "Danh từ số nhiều: lời tán dương, tràng khen (won plaudits from critics). Gốc plaudere là vỗ tay.",
       "example": "The central bank **won** *plaudits* **for** its swift response to the crisis.",
       "collocations": [
         "win plaudits for X"
@@ -337,7 +337,7 @@
       "group": "praise-nouns",
       "priority": 3,
       "meaning": "lời khen ngợi nồng nhiệt, trang trọng",
-      "nuance": "Nhấn vào sự nhiệt thành, ấm áp của lời khen. Gần như đồng nghĩa với panegyric.",
+      "nuance": "Danh từ: bài hoặc lời khen nồng nhiệt, trang trọng. Nhấn vào sự nhiệt thành, ấm áp.",
       "example": "The obituary was an *encomium* **to** her decades of public service.",
       "collocations": [
         "an encomium to X"
@@ -354,7 +354,7 @@
       "group": "praise-nouns",
       "priority": 3,
       "meaning": "bài ca tụng trang trọng, công phu",
-      "nuance": "Nhấn vào sự cầu kỳ, giàu chất văn chương, có khi như thơ. Gần như đồng nghĩa với encomium, nhưng encomium nhấn vào sự nhiệt thành hơn.",
+      "nuance": "Danh từ: bài ca tụng công phu, giàu chất văn chương. Nhấn vào sự cầu kỳ, hoa mỹ.",
       "example": "The court poet composed a two-hundred-line *panegyric* **to** the emperor.",
       "collocations": [
         "a panegyric to X",
@@ -372,7 +372,7 @@
       "group": "praise-nouns",
       "priority": 1,
       "meaning": "sự bày tỏ lòng kính trọng",
-      "nuance": "Tiếng Anh thông dụng.",
+      "nuance": "Danh từ: sự tỏ lòng kính trọng công khai (pay homage to). Thường qua hành động hoặc tác phẩm tưởng nhớ.",
       "example": "The conference **paid** *homage* **to** the founder of development economics.",
       "collocations": [
         "pay homage to X"
@@ -516,7 +516,7 @@
       "priority": 3,
       "level": 2,
       "meaning": "trách",
-      "nuance": "Mức vừa phải.",
+      "nuance": "Trách nhẹ nhàng, có ý sửa lỗi (reproved him for his tardiness). Mức vừa, không gay gắt.",
       "example": "She gently *reproved* him **for** missing the deadline.",
       "collocations": [
         "reprove X for Y"
@@ -661,7 +661,7 @@
       "group": "denounce",
       "priority": 2,
       "meaning": "tố cáo, lên án",
-      "nuance": "Công khai, mạnh.",
+      "nuance": "Lên án công khai, thường kèm tố cáo người hoặc hành vi trước công chúng (denounce corruption).",
       "example": "Human rights groups *denounced* the new law.",
       "collocations": [],
       "confusables": [],
@@ -674,7 +674,7 @@
       "group": "denounce",
       "priority": 2,
       "meaning": "lên án mạnh",
-      "nuance": "Mang tính đạo đức.",
+      "nuance": "Lên án mạnh trên cơ sở đạo đức (condemn the violence). Cũng chỉ tuyên án.",
       "example": "The resolution *condemned* the use of force against civilians.",
       "collocations": [],
       "confusables": [],
@@ -686,8 +686,8 @@
       "pos": "v",
       "group": "denounce",
       "priority": 3,
-      "meaning": "đả kích dữ dội",
-      "nuance": "Đỉnh thang chê, ngang excoriate.",
+      "meaning": "mắng nhiếc dữ dội bằng lời",
+      "nuance": "Mắng nhiếc, đả kích dữ dội, thường bằng lời nói trực tiếp, ồn ào (lambasted by the coach).",
       "example": "Commentators *lambasted* the budget **as** reckless.",
       "collocations": [
         "lambaste X as Y"
@@ -703,8 +703,8 @@
       "pos": "v",
       "group": "denounce",
       "priority": 3,
-      "meaning": "đả kích cực mạnh",
-      "nuance": "Thuộc mức mạnh nhất của thang chê, ngang lambaste.",
+      "meaning": "chỉ trích gay gắt, thường bằng văn bản",
+      "nuance": "Chỉ trích gay gắt đến mức lột trần, thường bằng văn bản như bài phê bình (excoriated in the review). Nghĩa gốc là lột da.",
       "example": "The review *excoriated* the authors **for** cherry-picking their data.",
       "collocations": [
         "excoriate X for Y"
@@ -773,7 +773,7 @@
       "group": "ridicule",
       "priority": 2,
       "meaning": "nhạo báng",
-      "nuance": "Gần nghĩa deride.",
+      "nuance": "Chế nhạo để làm người khác trông ngớ ngẩn. Động từ và danh từ, thông dụng.",
       "example": "The proposal was *ridiculed* **as** naive.",
       "collocations": [
         "ridicule X as Y"
@@ -879,7 +879,7 @@
       "group": "quibble",
       "priority": 1,
       "meaning": "soi mói lỗi nhỏ",
-      "nuance": "Thân mật.",
+      "nuance": "Soi mói lỗi vặt không quan trọng. Thân mật, chê người soi.",
       "example": "Instead of *nitpicking*, focus on the core argument.",
       "collocations": [],
       "confusables": []
@@ -1579,7 +1579,7 @@
             "lionized",
             "touted",
             "acclaimed",
-            "extolled"
+            "pilloried"
           ],
           "answer": "venerated"
         }
@@ -1588,7 +1588,7 @@
         "venerate"
       ],
       "hint": "'Long after his death'.",
-      "explanation": "Tôn kính lâu dài sau khi mất, thể hiện qua chân dung ở mọi văn phòng: venerated. Lionized gắn với sự chú ý ồn ào lúc sinh thời; acclaimed, extolled là khen chứ không phải tôn kính.",
+      "explanation": "Tôn kính lâu dài sau khi mất, thể hiện qua chân dung ở mọi văn phòng: venerated. Lionized gắn với sự tung hô ồn ào lúc sinh thời; touted là quảng bá, thổi phồng; acclaimed là được hoan nghênh, không phải tôn kính; pilloried là bị bêu riếu, trái hướng.",
       "difficulty": 2,
       "skills": [
         "nuance"

@@ -424,7 +424,7 @@
       "group": "obscure",
       "priority": 1,
       "meaning": "đục ngầu; mập mờ",
-      "nuance": "Thường gợi ý sự mờ ám.",
+      "nuance": "Đục ngầu; nghĩa bóng: mập mờ, khó hiểu, thường gợi ý điều mờ ám (murky finances).",
       "example": "The *murky* origins of the funding raised questions.",
       "collocations": [
         "murky origins"
@@ -750,7 +750,7 @@
         {
           "options": [
             "unequivocal",
-            "explicit",
+            "esoteric",
             "manifest",
             "pellucid",
             "lucid"
@@ -760,10 +760,10 @@
       ],
       "targets": [
         "unequivocal",
-        "explicit"
+        "esoteric"
       ],
       "hint": "Phóng viên phản bác điều gì: sự dễ hiểu, hay sự dứt khoát?",
-      "explanation": "Điều phóng viên bác bỏ là việc bà ấy đã dứt khoát chọn phe (declined to commit to either side): unequivocal. Explicit chỉ là nói thẳng ra; lucid, pellucid là diễn đạt dễ hiểu; manifest là hiển nhiên.",
+      "explanation": "Điều phóng viên bác bỏ là việc bà ấy đã dứt khoát chọn phe (declined to commit to either side): unequivocal. Lucid, pellucid là diễn đạt dễ hiểu; manifest là hiển nhiên; esoteric là khó hiểu với người ngoài. Không từ nào trong số đó trái ngược với việc né chọn phe.",
       "difficulty": 2,
       "skills": [
         "nuance"
@@ -921,8 +921,8 @@
         "unequivocal",
         "nebulous",
         "ambiguous",
-        "lucid",
-        "pellucid"
+        "tacit",
+        "implicit"
       ],
       "answers": [
         "explicit",
@@ -930,12 +930,10 @@
       ],
       "targets": [
         "explicit",
-        "unequivocal",
-        "lucid",
-        "pellucid"
+        "unequivocal"
       ],
       "hint": "Nói thẳng ra, hay viết dễ hiểu?",
-      "explanation": "Nêu thẳng, không nước đôi: explicit, unequivocal. Lucid và pellucid là cặp nói về văn phong dễ hiểu, không phải việc điều khoản được nêu rõ ràng dứt khoát.",
+      "explanation": "Nêu thẳng, không nước đôi: explicit, unequivocal. Nebulous và ambiguous là cặp mơ hồ; tacit và implicit là cặp ngầm hiểu, không nói ra. Cả hai cặp đều trái với điều khoản ghi rõ ở đoạn đầu.",
       "difficulty": 2,
       "skills": [
         "nuance"

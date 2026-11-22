@@ -18,7 +18,6 @@ test('venerate: không bao giờ có revere (nghĩa giống hệt)', () => {
   for (let seed = 1; seed <= 50; seed++) {
     const d = Srs.pickDistractors(idx.byId.venerate, idx, 3, seq(seed));
     assert.ok(!d.includes('revere'), `seed ${seed}: ${d}`);
-    assert.equal(d[0], 'lionize');
     assert.equal(new Set(d).size, 3);
   }
 });
@@ -43,13 +42,23 @@ test('phương án nhiễu cùng hướng nghĩa (theo direction của nhóm), k
   });
 });
 
-test('nhóm thang: ưu tiên level gần nhất', () => {
-  // castigate (reprove, level 4): confusable censure; rồi cùng nhóm level 4 (berate, chastise)
+test('nhóm thang: không lấy từ cùng mức (castigate không có berate, chastise; excoriate không có lambaste)', () => {
   for (let seed = 1; seed <= 20; seed++) {
     const d = Srs.pickDistractors(idx.byId.castigate, idx, 3, seq(seed));
-    assert.equal(d[0], 'censure');
-    assert.deepEqual(d.slice(1).sort(), ['berate', 'chastise']);
+    assert.ok(!d.includes('berate') && !d.includes('chastise'), `seed ${seed}: ${d}`);
+    const e = Srs.pickDistractors(idx.byId.excoriate, idx, 3, seq(seed));
+    assert.ok(!e.includes('lambaste'), `seed ${seed}: ${e}`);
   }
+});
+
+test('mọi từ: không phương án nhiễu nào quá gần nghĩa đáp án (tooClose), đủ 3 phương án', () => {
+  idx.words.forEach((w) => {
+    for (let seed = 1; seed <= 5; seed++) {
+      const d = Srs.pickDistractors(w, idx, 3, seq(seed));
+      assert.equal(d.length, 3, w.id);
+      d.forEach((id) => assert.ok(!Srs.tooClose(w, idx.byId[id]), `${w.id} lấy ${id}`));
+    }
+  });
 });
 
 test('laud không lấy laudable/laudatory làm phương án nhiễu (cùng dòng từ)', () => {
@@ -67,15 +76,13 @@ test('mọi từ đều có đủ 3 phương án nhiễu khác nhau, không trù
   });
 });
 
-test('parsimonious: ưu tiên frugal, miserly (confusables, cùng nhóm); revere không có venerate', () => {
+test('confusable cùng mức trong cùng nhóm không được làm nhiễu; revere không có venerate', () => {
   for (let seed = 1; seed <= 30; seed++) {
-    const d = Srs.pickDistractors(idx.byId.parsimonious, idx, 3, seq(seed));
-    const pref = idx.byId.parsimonious.confusables.concat(idx.reverseConf.parsimonious || []);
-    assert.ok(d.includes('frugal') && d.includes('miserly'), `seed ${seed}: ${d}`);
-    assert.ok(d.every((id) => pref.includes(id) || idx.byId[id].group === idx.byId.parsimonious.group), `seed ${seed}: ${d}`);
     const r = Srs.pickDistractors(idx.byId.revere, idx, 3, seq(seed));
     assert.ok(!r.includes('venerate'), `seed ${seed}: ${r}`);
   }
+  assert.ok(Srs.tooClose(idx.byId.excoriate, idx.byId.lambaste));
+  assert.ok(!Srs.tooClose(idx.byId.laud, idx.byId.commend)); // cùng thang, cách 2 mức
 });
 
 test('neutral hợp với mọi hướng; nhóm không rõ hướng không khớp', () => {
