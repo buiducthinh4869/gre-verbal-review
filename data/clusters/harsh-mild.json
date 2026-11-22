@@ -89,7 +89,7 @@
       "group": "biting",
       "priority": 3,
       "meaning": "chua cay, gay gắt",
-      "nuance": "",
+      "nuance": "Chua cay, sắc bén trong lời nói hoặc giọng văn (acerbic wit). Có thể hơi khen về sự sắc sảo.",
       "example": "The columnist was famous for her *acerbic* wit.",
       "collocations": [
         "acerbic wit"
@@ -108,7 +108,7 @@
       "group": "biting",
       "priority": 2,
       "meaning": "cay độc, châm chích",
-      "nuance": "",
+      "nuance": "Cay độc, châm chích, thường hài hước đen (mordant humor). Nhấn vào sự châm biếm thông minh.",
       "example": "The play is a *mordant* satire of academic life.",
       "collocations": [
         "mordant humor"
@@ -145,7 +145,7 @@
       "group": "biting",
       "priority": 2,
       "meaning": "gay gắt, tàn nhẫn (phê bình)",
-      "nuance": "",
+      "nuance": "Phê phán gay gắt, tàn nhẫn (a scathing review). Mạnh nhất trong nhóm; dùng cho bài phê bình.",
       "example": "The audit was a *scathing* indictment of the agency.",
       "collocations": [
         "a scathing review"
@@ -162,7 +162,7 @@
       "group": "biting",
       "priority": 1,
       "meaning": "mỉa mai",
-      "nuance": "",
+      "nuance": "Mỉa mai, nói ngược ý để chế giễu. Thông dụng, không văn chương bằng mordant.",
       "example": "His *sarcastic* reply ended the discussion.",
       "collocations": [],
       "confusables": [
@@ -213,7 +213,7 @@
       "group": "hostile",
       "priority": 3,
       "meaning": "hiếu chiến, hung hăng",
-      "nuance": "",
+      "nuance": "Hiếu chiến, thù địch công khai (belligerent tone); cũng chỉ bên tham chiến.",
       "example": "The *belligerent* tone of the speech alarmed neighbors.",
       "collocations": [],
       "root": "bell- (chiến tranh)",
@@ -248,7 +248,7 @@
       "group": "hostile",
       "priority": 3,
       "meaning": "thích gây gổ, hay đánh nhau",
-      "nuance": "",
+      "nuance": "Thích gây gổ, sẵn sàng cãi hoặc đánh nhau (pugnacious debater). Nhấn vào tính hay gây sự.",
       "example": "A *pugnacious* debater, he relished every confrontation.",
       "collocations": [],
       "root": "pugn- (đánh)",
@@ -264,7 +264,7 @@
       "group": "hostile",
       "priority": 3,
       "meaning": "hung hăng, sẵn sàng gây sự",
-      "nuance": "",
+      "nuance": "Hung hăng, cáu kỉnh, sẵn sàng gây sự (truculent response). Gần pugnacious, thêm vẻ cộc cằn.",
       "example": "The *truculent* union leader rejected every offer.",
       "collocations": [],
       "confusables": [
@@ -295,7 +295,7 @@
       "group": "hostile",
       "priority": 3,
       "meaning": "dễ nổi cáu",
-      "nuance": "",
+      "nuance": "Dễ nổi cáu, nóng tính (an irascible professor). Nói về tính khí, không nhất thiết hiếu chiến.",
       "example": "The *irascible* professor shouted at latecomers.",
       "collocations": [],
       "root": "ira (cơn giận)",
@@ -312,7 +312,7 @@
       "group": "hostile",
       "priority": 2,
       "meaning": "khó tính, cáu kỉnh",
-      "nuance": "",
+      "nuance": "Khó tính, hay cáu và hay gây khó dễ (a cantankerous old man). Thường dùng cho người già.",
       "example": "The *cantankerous* landlord complained about everything.",
       "collocations": [],
       "confusables": [
@@ -327,7 +327,7 @@
       "group": "hostile",
       "priority": 2,
       "meaning": "hờn dỗi, cáu kỉnh như trẻ con",
-      "nuance": "",
+      "nuance": "Hờn dỗi, cáu kỉnh như trẻ con khi không được chiều. Nhấn vào sự trẻ con.",
       "example": "The minister's *petulant* walkout embarrassed his party.",
       "collocations": [],
       "confusables": [
@@ -359,7 +359,7 @@
       "group": "enmity",
       "priority": 3,
       "meaning": "mối hận thù, ác cảm sâu",
-      "nuance": "",
+      "nuance": "Mối hận thù cay đắng, dai dẳng (without rancor). Nhấn vào sự cay cú lâu dài.",
       "example": "The election left deep *rancor* between the two factions.",
       "collocations": [],
       "confusables": [
@@ -373,7 +373,7 @@
       "group": "enmity",
       "priority": 2,
       "meaning": "sự thù oán",
-      "nuance": "",
+      "nuance": "Sự thù ghét mạnh, thường giữa hai bên (mutual animosity). Thông dụng nhất trong nhóm.",
       "example": "There was open *animosity* **between** the two ministers.",
       "collocations": [
         "animosity toward X"
@@ -407,7 +407,7 @@
       "group": "enmity",
       "priority": 2,
       "meaning": "sự thù địch",
-      "nuance": "",
+      "nuance": "Trạng thái thù địch giữa hai bên (enmity between nations). Trang trọng, nhấn vào quan hệ.",
       "example": "Decades of *enmity* divided the neighboring villages.",
       "collocations": [],
       "confusables": [
@@ -435,7 +435,7 @@
       "group": "amiable",
       "priority": 2,
       "meaning": "hòa nhã, dễ mến",
-      "nuance": "",
+      "nuance": "Hòa nhã, dễ mến, thân thiện về tính cách (an amiable host).",
       "example": "The *amiable* host made every guest feel welcome.",
       "collocations": [],
       "confusables": [
@@ -449,7 +449,7 @@
       "group": "amiable",
       "priority": 3,
       "meaning": "niềm nở, dễ gần",
-      "nuance": "",
+      "nuance": "Niềm nở, dễ bắt chuyện (affable manner). Nhấn vào sự dễ tiếp cận khi giao tiếp.",
       "example": "The *affable* ambassador put everyone at ease.",
       "collocations": [],
       "confusables": [
@@ -464,7 +464,7 @@
       "group": "amiable",
       "priority": 2,
       "meaning": "thân thiện, vui vẻ",
-      "nuance": "",
+      "nuance": "Thân thiện, vui vẻ, ấm áp (a genial smile). Nhấn vào sự vui vẻ, ấm áp.",
       "example": "The *genial* chair kept the seminar relaxed.",
       "collocations": [],
       "confusables": [
@@ -478,7 +478,7 @@
       "group": "amiable",
       "priority": 2,
       "meaning": "thân mật, chân thành (thường lịch sự)",
-      "nuance": "",
+      "nuance": "Thân mật nhưng lịch sự, có chừng mực (cordial relations). Hay dùng cho quan hệ ngoại giao.",
       "example": "Relations between the two banks remained *cordial*.",
       "collocations": [
         "cordial relations"
@@ -511,7 +511,7 @@
       "group": "amiable",
       "priority": 2,
       "meaning": "dễ mến, có ngoại hình và phong thái dễ chịu",
-      "nuance": "",
+      "nuance": "Dễ mến nhờ ngoại hình và phong thái. Nhấn vào ấn tượng bên ngoài.",
       "example": "The *personable* candidate charmed voters.",
       "collocations": [],
       "confusables": [
@@ -558,7 +558,7 @@
       "group": "soothe",
       "priority": 3,
       "meaning": "vô hại, không gây phản cảm",
-      "nuance": "",
+      "nuance": "Vô hại, không gây phản cảm (an innocuous remark). Đôi khi hàm ý nhạt nhẽo.",
       "example": "What seemed an *innocuous* remark caused a diplomatic row.",
       "collocations": [
         "an innocuous remark"
@@ -575,7 +575,7 @@
       "group": "soothe",
       "priority": 3,
       "meaning": "lành tính, nhân từ, vô hại",
-      "nuance": "",
+      "nuance": "Lành, nhân hậu (benign smile); y học: lành tính (benign tumor). Nhấn vào thiện ý hoặc không nguy hiểm.",
       "example": "The side effects are mostly *benign*.",
       "collocations": [
         "a benign tumor"

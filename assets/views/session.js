@@ -8,7 +8,7 @@ import { renderMarkup, maskForms } from '../render.js';
 import { pickDistractors } from '../distractors.js';
 import { gradeExercise, pickExerciseForWord, wrongAnswerIds } from '../vocab.js';
 import { insertQuickCards, otherExercisesFor } from '../bank.js';
-import { wordDetail, resultLine } from './common.js';
+import { wordDetail, resultLine, contrastHtml } from './common.js';
 import { difficultyHtml, skillsHtml, groupLabelsHtml, wordsInQuestionHtml, vocabIntroHtml } from './grevocab.js';
 
 const shuffle = (a) => S.shuffle(a);
@@ -234,7 +234,7 @@ function cardM2W(c) {
   if (c.picked) {
     const ok = c.picked === w.id;
     h += resultLine(ok, ok ? 'Chính xác' : 'Chưa đúng. Đáp án: ' + esc(w.word));
-    if (!ok) { const p = word(c.picked); h += '<div class="explain"><b>' + esc(p.word) + '</b>: ' + esc(p.meaning) + (p.nuance ? '. ' + esc(p.nuance) : '') + '</div>'; }
+    h += contrastHtml(c.options, w.id, c.picked);
     if (w.example) h += '<div class="example" style="margin-top:12px">' + renderMarkup(w.example) + '</div>';
     h += '<div class="card-actions"><button class="btn primary" data-act="next">Câu tiếp <kbd>Enter</kbd></button></div>';
     App.keyHandler = (e) => { if (e.key === 'Enter' && !isTyping(e)) { e.preventDefault(); nextCard(); } };

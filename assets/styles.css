@@ -1015,3 +1015,13 @@ h1, h2, h3, .hero-title, .page-head h1, .word-big, .meaning-big, .group-head h3,
 .t-progress > summary { cursor: pointer; padding: 14px 0 6px; list-style: none; }
 .t-progress > summary::-webkit-details-marker { display: none; }
 .t-progress > summary h2::after { content: " ▾"; color: var(--muted); font-size: 14px; }
+.q-nuance { margin: 6px 0 0; color: var(--ink-2); font-size: 14.5px; line-height: 1.5; }
+.q-example { margin-top: 8px; padding-top: 8px; border-top: 1px dashed var(--rule-strong); font-size: 15.5px; }
+.contrast { margin-top: 12px; border-top: 1px solid var(--rule); padding-top: 10px; }
+.contrast-title { font-size: 12px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+.contrast ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.contrast li { padding: 8px 10px; border-left: 3px solid var(--rule-strong); background: var(--bg); font-size: 14.5px; line-height: 1.45; }
+.contrast li b { font: 500 16.5px/1.3 var(--serif); }
+.contrast li.right { border-left-color: var(--good); background: var(--good-soft); }
+.contrast li.picked { border-left-color: var(--bad); background: var(--bad-soft); }
+.contrast-nu { display: block; color: var(--muted); font-size: 13.5px; margin-top: 2px; }

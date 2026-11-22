@@ -52,7 +52,7 @@
       "group": "prudent",
       "priority": 2,
       "meaning": "thận trọng, khôn ngoan",
-      "nuance": "",
+      "nuance": "Thận trọng và khôn ngoan, tính đến hậu quả lâu dài (prudent policy). Khen; gắn với phán đoán tốt.",
       "example": "It would be *prudent* to wait for revised data.",
       "collocations": [],
       "confusables": [
@@ -100,7 +100,7 @@
       "group": "prudent",
       "priority": 3,
       "meaning": "cảnh giác, dè chừng",
-      "nuance": "",
+      "nuance": "Cảnh giác vì nghi có nguy hiểm (wary of strangers). Nhấn vào sự đề phòng, không nhấn vào khôn ngoan.",
       "example": "Investors are **wary of** emerging-market debt.",
       "collocations": [
         "wary of X"
@@ -147,7 +147,7 @@
       "group": "meticulous",
       "priority": 3,
       "meaning": "tỉ mỉ, kỹ càng",
-      "nuance": "",
+      "nuance": "Tỉ mỉ đến từng chi tiết nhỏ (meticulous records). Khen; mạnh hơn careful.",
       "example": "*Meticulous* record-keeping made the audit easy.",
       "collocations": [
         "meticulous attention to detail"
@@ -234,7 +234,7 @@
       "group": "meticulous",
       "priority": 3,
       "meaning": "đòi hỏi khắt khe",
-      "nuance": "",
+      "nuance": "Đòi hỏi tiêu chuẩn rất cao từ người khác hoặc công việc (an exacting teacher). Mô tả yêu cầu, không mô tả người làm.",
       "example": "The journal's *exacting* standards reject most submissions.",
       "collocations": [
         "exacting standards"
@@ -251,7 +251,7 @@
       "group": "meticulous",
       "priority": 2,
       "meaning": "tận tâm, chu đáo",
-      "nuance": "",
+      "nuance": "Tận tâm vì ý thức trách nhiệm (a conscientious worker). Nhấn vào đạo đức nghề nghiệp, không chỉ tỉ mỉ.",
       "example": "*Conscientious* enumerators double-checked every questionnaire.",
       "collocations": [],
       "confusables": [
@@ -266,7 +266,7 @@
       "group": "perfunctory",
       "priority": 3,
       "meaning": "vội vàng, lướt qua",
-      "nuance": "",
+      "nuance": "Làm nhanh, lướt qua, không kỹ (a cursory glance). Nhấn vào sự vội; khác perfunctory nhấn vào thiếu tâm.",
       "example": "Even a *cursory* glance at the data reveals the outlier.",
       "collocations": [
         "a cursory glance",
@@ -316,7 +316,7 @@
       "group": "perfunctory",
       "priority": 2,
       "meaning": "hời hợt, bề ngoài",
-      "nuance": "",
+      "nuance": "Chỉ chạm bề mặt, thiếu chiều sâu (superficial analysis). Có thể nói về vết thương hoặc hiểu biết.",
       "example": "The review offered only a *superficial* reading of the evidence.",
       "collocations": [],
       "confusables": [
@@ -330,7 +330,7 @@
       "group": "negligent",
       "priority": 3,
       "meaning": "cẩu thả, luộm thuộm",
-      "nuance": "",
+      "nuance": "Cẩu thả, làm ẩu, kết quả kém (slipshod work). Chê mạnh về chất lượng sản phẩm.",
       "example": "*Slipshod* accounting hid the losses for months.",
       "collocations": [],
       "confusables": [
@@ -344,7 +344,7 @@
       "group": "negligent",
       "priority": 2,
       "meaning": "lơ là, cẩu thả (trách nhiệm)",
-      "nuance": "",
+      "nuance": "Lơ là nghĩa vụ đến mức có lỗi (negligent driver). Có sắc thái pháp lý, trách nhiệm.",
       "example": "The court found the builder *negligent*.",
       "collocations": [],
       "confusables": [
@@ -408,7 +408,7 @@
       "group": "negligent",
       "priority": 3,
       "meaning": "bừa bãi, không phân biệt",
-      "nuance": "",
+      "nuance": "Bừa bãi, không chọn lọc (indiscriminate bombing). Nhấn vào việc không phân biệt đối tượng.",
       "example": "*Indiscriminate* use of antibiotics breeds resistance.",
       "collocations": [],
       "root": "in- + discriminate (phân biệt)",
@@ -440,7 +440,7 @@
       "group": "rash",
       "priority": 2,
       "meaning": "hấp tấp, liều lĩnh",
-      "nuance": "",
+      "nuance": "Hấp tấp, không suy nghĩ trước (a rash decision). Nhẹ nhất trong nhóm liều lĩnh.",
       "example": "It would be *rash* to draw conclusions from one quarter.",
       "collocations": [],
       "confusables": [
@@ -455,7 +455,7 @@
       "group": "rash",
       "priority": 3,
       "meaning": "bốc đồng, hành động theo cảm xúc",
-      "nuance": "",
+      "nuance": "Bốc đồng do cảm xúc mạnh (an impetuous youth). Nhấn vào nguồn gốc cảm xúc của hành động.",
       "example": "The *impetuous* decision to float the currency triggered a crisis.",
       "collocations": [],
       "confusables": [
@@ -489,7 +489,7 @@
       "group": "rash",
       "priority": 2,
       "meaning": "liều lĩnh, không lo hậu quả",
-      "nuance": "",
+      "nuance": "Liều lĩnh, bất chấp hậu quả, nhất là nguy hiểm cho người khác (reckless driving).",
       "example": "*Reckless* lending fueled the housing bubble.",
       "collocations": [],
       "confusables": [
@@ -504,7 +504,7 @@
       "group": "rash",
       "priority": 2,
       "meaning": "liều mạng, dại dột",
-      "nuance": "",
+      "nuance": "Liều đến mức dại dột, vô ích (a foolhardy attempt). Nhấn vào sự ngu ngốc của việc liều.",
       "example": "Investing your savings in a single stock is *foolhardy*.",
       "collocations": [],
       "confusables": [

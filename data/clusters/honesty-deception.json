@@ -80,7 +80,7 @@
       "group": "candid",
       "priority": 2,
       "meaning": "thẳng thắn",
-      "nuance": "",
+      "nuance": "Thẳng thắn, nói thật dù khó nghe (frank discussion). Gần candid; frank hơi thẳng thừng hơn.",
       "example": "We had a *frank* discussion of the budget gap.",
       "collocations": [
         "a frank exchange"
@@ -238,7 +238,7 @@
       "group": "deceitful",
       "priority": 2,
       "meaning": "mưu mẹo, xảo quyệt",
-      "nuance": "",
+      "nuance": "Danh từ: sự xảo quyệt, mưu mẹo để lừa (without guile). Chỉ phẩm chất, không chỉ một mưu cụ thể.",
       "example": "He relied on *guile* rather than force.",
       "collocations": [],
       "confusables": [
@@ -268,7 +268,7 @@
       "group": "deceitful",
       "priority": 2,
       "meaning": "mưu kế, thủ đoạn che giấu",
-      "nuance": "",
+      "nuance": "Thủ đoạn che giấu để đạt mục đích hoặc né tránh. Nhấn vào sự che đậy.",
       "example": "They obtained the documents **by subterfuge**.",
       "collocations": [
         "by subterfuge"
@@ -285,7 +285,7 @@
       "group": "deceitful",
       "priority": 2,
       "meaning": "mưu mẹo, kế đánh lừa",
-      "nuance": "",
+      "nuance": "Một mưu kế cụ thể để đánh lừa (a clever ruse). Đếm được, chỉ một hành động.",
       "example": "The 'technical delay' was a *ruse* to buy time.",
       "collocations": [],
       "confusables": [
@@ -299,7 +299,7 @@
       "group": "deceitful",
       "priority": 2,
       "meaning": "lừa bịp (v); người bị lừa (n)",
-      "nuance": "",
+      "nuance": "Động từ: lừa người nhẹ dạ; danh từ: người bị lừa. Nhấn vào nạn nhân dễ tin.",
       "example": "Investors were **duped into** buying worthless bonds.",
       "collocations": [
         "dupe X into Y"
@@ -394,7 +394,7 @@
       "group": "false",
       "priority": 1,
       "meaning": "giả, rởm",
-      "nuance": "",
+      "nuance": "Giả, không thật (bogus claims). Thân mật, chê.",
       "example": "The firm submitted *bogus* invoices to claim the subsidy.",
       "collocations": [],
       "confusables": [
@@ -456,7 +456,7 @@
       "group": "evade",
       "priority": 3,
       "meaning": "giả vờ",
-      "nuance": "",
+      "nuance": "Giả vờ có cảm xúc, bệnh (feign illness). Luôn là hành động cố ý.",
       "example": "He *feigned* surprise at the announcement.",
       "collocations": [
         "feign surprise",
@@ -473,7 +473,7 @@
       "group": "evade",
       "priority": 2,
       "meaning": "lẩn tránh, né tránh",
-      "nuance": "",
+      "nuance": "Né tránh câu hỏi, không trả lời thẳng (evasive answer).",
       "example": "Her answers were deliberately *evasive*.",
       "collocations": [],
       "confusables": [

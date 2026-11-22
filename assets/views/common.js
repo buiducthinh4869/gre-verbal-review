@@ -41,3 +41,14 @@ export function wordDetail(w, withStatus) {
 export function resultLine(ok, text) {
   return '<div class="result-line ' + (ok ? 'ok' : 'no') + '" role="status"><span class="ico" aria-hidden="true">' + (ok ? '✓' : '✗') + '</span><span>' + text + '</span></div>';
 }
+
+/** Sau câu Nghĩa → Từ: so sánh nghĩa và sắc thái của mọi phương án, đáp án đúng trước, để thấy chỗ khác nhau. */
+export function contrastHtml(ids, rightId, pickedId) {
+  const order = [rightId].concat(ids.filter((id) => id !== rightId));
+  return '<div class="contrast"><div class="contrast-title">Phân biệt các phương án</div><ul>' + order.map((id) => {
+    const w = word(id);
+    if (!w) return '';
+    const cls = id === rightId ? ' right' : id === pickedId ? ' picked' : '';
+    return '<li class="' + cls.trim() + '"><b>' + esc(w.word) + '</b>: ' + esc(w.meaning) + (w.nuance ? '<span class="contrast-nu">' + esc(w.nuance) + '</span>' : '') + '</li>';
+  }).join('') + '</ul></div>';
+}
