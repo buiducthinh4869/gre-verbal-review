@@ -206,9 +206,10 @@ function groupSection(g, gw, withHead) {
     if (g.note) h += '<p class="group-note">' + esc(g.note) + '</p>';
     h += intensityNote(g);
   }
-  // Mỗi dòng từ có nhãn mức riêng bên trái (Mức N, bốn ô, sắc thái ngắn). Nhóm thang xếp theo mức;
-  // nhóm không phải thang giữ thứ tự gốc và dùng "degree" (chỉ để hiển thị, không dùng cho bài luyện).
-  const rows = g.scale ? gw.slice().sort((a, b) => (a.level || 0) - (b.level || 0) || a.fileIndex - b.fileIndex) : gw;
+  // Mỗi dòng từ có nhãn mức riêng bên trái (Mức N, bốn ô, sắc thái ngắn). Mọi nhóm xếp theo mức tăng dần
+  // (Mức 1 → 4; nhóm không phải thang dùng "degree"); từ chưa có mức xếp cuối; cùng mức giữ thứ tự gốc.
+  const rank = (w) => displayLevel(w, g) || 5;
+  const rows = gw.slice().sort((a, b) => rank(a) - rank(b) || (a.fileIndex ?? 0) - (b.fileIndex ?? 0));
   h += '<div class="ladder">' + rows.map((w) => '<div class="rung">' + rungLabel(w, g) + '<div class="rung-words">' + wordRow(w) + '</div></div>').join('') + '</div>';
   return h + '</section>';
 }
