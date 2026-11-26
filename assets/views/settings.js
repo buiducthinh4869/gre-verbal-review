@@ -8,6 +8,7 @@ export function openMenu() {
   m.innerHTML = '<div class="menu-who"><b>' + esc(u.displayName || u.username || '') + '</b><span class="muted small">' + esc(u.username || '') + '</span></div>' +
     '<button role="menuitem" data-act="menu-go" data-id="account">Tài khoản</button>' +
     '<button role="menuitem" data-act="open-settings">Cài đặt</button>' +
+    '<button role="menuitem" class="menu-add" data-act="menu-go" data-id="add">Thêm từ</button>' +
     '<button role="menuitem" data-act="menu-go" data-id="mysugg">Đề xuất của tôi</button>' +
     (u.role === 'admin' ? '<button role="menuitem" data-act="menu-go" data-id="admin">Quản lý' +
       (App.content.pending ? ' <span class="badge-inline" aria-label="' + App.content.pending + ' đề xuất chờ duyệt">' + App.content.pending + '</span>' : '') + '</button>' : '') +

@@ -1072,3 +1072,51 @@ h1, h2, h3, .hero-title, .page-head h1, .word-big, .meaning-big, .group-head h3,
 .tips-dl dd { margin: 2px 0 0; color: var(--muted); }
 .tips-table td { vertical-align: top; }
 .rc-text b.rc-bold { font-weight: 700; }
+
+/* Tab Luyện Reading (#reading) */
+.rcp-setup { margin: 0 0 16px; }
+.rcp-setup .field + .field { margin-top: 12px; }
+.rcp-guide { margin: 0 0 18px; }
+.rcp-guide summary, .rcp-routine summary { cursor: pointer; }
+.rcp-stats td.bad, .rcp-res .bad, .page-head .bad { color: var(--bad); font-weight: 600; }
+.rcp-stats td.good { color: var(--good); font-weight: 600; }
+.rcp-list .row .btn { padding: 4px 12px; min-height: 0; }
+.rcp-bar { position: sticky; top: 60px; z-index: 12; background: var(--bg); display: flex; align-items: center; gap: 12px; padding: 8px 0; margin-bottom: 8px; border-bottom: 1px solid var(--rule); }
+.rcp-title { display: grid; min-width: 0; }
+.rcp-title b { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.rcp-timer { margin-left: auto; font: 600 16px/1 var(--sans); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.rcp-timer.over { color: var(--bad); }
+.rcp-dots { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 12px; }
+.rcp-dot { font: 500 13px/1 var(--sans); padding: 6px 10px; border-radius: 999px; border: 1px solid var(--rule-strong); background: var(--surface, transparent); color: var(--muted); cursor: pointer; }
+.rcp-dot.cur { border-color: var(--accent); color: var(--accent); box-shadow: 0 0 0 1px var(--accent) inset; }
+.rcp-dot.ans { background: var(--accent-soft); }
+.rcp-dot.ok { background: var(--good-soft); color: var(--good); border-color: var(--good); }
+.rcp-dot.bad { background: var(--bad-soft); color: var(--bad); border-color: var(--bad); }
+.rcp-verdict { font-weight: 600; margin-top: 12px; }
+.rcp-verdict.good { color: var(--good); }
+.rcp-verdict.bad { color: var(--bad); }
+.rcp-routine { margin-top: 12px; padding: 10px 12px; border: 1px solid var(--rule); border-radius: var(--radius); font-size: 14px; }
+.rcp-actions { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 8px; }
+.rcp-reason { margin-top: 10px; }
+
+/* Thanh tab có 8 mục: màn vừa dùng nhãn ngắn, màn hẹp hơn chỉ còn biểu tượng (nhãn trong title);
+   điện thoại: Thêm từ chuyển vào menu tài khoản để thanh dưới còn 7 mục */
+.me-menu .menu-add { display: none; }
+@media (min-width: 1100px) {
+  .brand-text { display: none; }
+  .tab { padding: 8px 9px; gap: 6px; }
+  .tab .tab-long { display: none; }
+  .tab .tab-short { display: inline; }
+}
+@media (min-width: 860px) and (max-width: 1099px) {
+  .tab .tab-long, .tab .tab-short { display: none; }
+  .tab { padding: 8px 10px; position: relative; }
+  .tab .badge { position: absolute; top: 0; right: -2px; }
+}
+@media (max-width: 859px) {
+  .tab[data-nav="add"] { display: none; }
+  .me-menu .menu-add { display: block; }
+  .tab { padding: 6px 0; font-size: 10.5px; letter-spacing: -.01em; }
+  .tab .tab-short { white-space: nowrap; }
+}
+@media (min-width: 1440px) { .brand-text { display: inline; } }

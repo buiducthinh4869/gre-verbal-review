@@ -19,6 +19,7 @@
         {
           "id": "rc01a",
           "kind": "mc",
+          "task": "purpose",
           "difficulty": 1,
           "stem": "The primary purpose of the passage is to",
           "options": [
@@ -34,6 +35,7 @@
         {
           "id": "rc01b",
           "kind": "sentence",
+          "task": "select",
           "difficulty": 2,
           "stem": "Select the sentence in the passage that presents evidence that the behavior of the wrasse is influenced by the presence of observers.",
           "answer": 3,
@@ -57,6 +59,7 @@
         {
           "id": "rc02a",
           "kind": "multi",
+          "task": "inference",
           "difficulty": 2,
           "stem": "Which of the following can be inferred about the recent scholarship described in the passage?",
           "options": [
@@ -73,6 +76,7 @@
         {
           "id": "rc02b",
           "kind": "mc",
+          "task": "attitude",
           "difficulty": 2,
           "stem": "The author's attitude toward the conclusion described in the last sentence is best described as",
           "options": [
@@ -103,6 +107,7 @@
         {
           "id": "rc03a",
           "kind": "mc",
+          "task": "purpose",
           "difficulty": 1,
           "stem": "The passage is primarily concerned with",
           "options": [
@@ -118,6 +123,7 @@
         {
           "id": "rc03b",
           "kind": "mc",
+          "task": "function",
           "difficulty": 2,
           "stem": "The author mentions that each installment needed its own small climax primarily in order to",
           "options": [
@@ -148,6 +154,7 @@
         {
           "id": "rc04a",
           "kind": "sentence",
+          "task": "select",
           "difficulty": 1,
           "stem": "Select the sentence in the passage that describes an observation that conflicted with astronomers' expectations.",
           "answer": 1,
@@ -156,6 +163,7 @@
         {
           "id": "rc04b",
           "kind": "multi",
+          "task": "detail",
           "difficulty": 2,
           "stem": "According to the passage, the proposal to modify the law of gravity",
           "options": [
@@ -192,6 +200,7 @@
         {
           "id": "rc05a",
           "kind": "mc",
+          "task": "purpose",
           "difficulty": 2,
           "stem": "The passage is primarily concerned with",
           "options": [
@@ -207,6 +216,7 @@
         {
           "id": "rc05b",
           "kind": "multi",
+          "task": "inference",
           "difficulty": 3,
           "stem": "The passage suggests which of the following about the explanation discussed in the second paragraph?",
           "options": [
@@ -223,6 +233,7 @@
         {
           "id": "rc05c",
           "kind": "sentence",
+          "task": "select",
           "difficulty": 2,
           "stem": "Select the sentence in the passage that describes a response to a methodological objection.",
           "answer": 4,
@@ -251,6 +262,7 @@
         {
           "id": "rc06a",
           "kind": "mc",
+          "task": "attitude",
           "difficulty": 1,
           "stem": "The author's attitude toward the claim in the first sentence is best described as",
           "options": [
@@ -266,6 +278,7 @@
         {
           "id": "rc06b",
           "kind": "mc",
+          "task": "detail",
           "difficulty": 2,
           "stem": "According to the passage, the Impressionists differed from earlier landscape painters chiefly in that the Impressionists",
           "options": [
@@ -281,6 +294,7 @@
         {
           "id": "rc06c",
           "kind": "sentence",
+          "task": "select",
           "difficulty": 2,
           "stem": "Select the sentence in the passage that provides evidence against the view that the paint tube was necessary for painting outdoors in oil.",
           "answer": 4,
@@ -309,6 +323,7 @@
         {
           "id": "rc07a",
           "kind": "mc",
+          "task": "purpose",
           "difficulty": 2,
           "stem": "The primary purpose of the passage is to",
           "options": [
@@ -324,6 +339,7 @@
         {
           "id": "rc07b",
           "kind": "multi",
+          "task": "inference",
           "difficulty": 3,
           "stem": "It can be inferred that the author would agree with which of the following statements?",
           "options": [
@@ -340,6 +356,7 @@
         {
           "id": "rc07c",
           "kind": "mc",
+          "task": "function",
           "difficulty": 2,
           "stem": "In the context of the passage, the objection is best understood as the claim that",
           "options": [
@@ -374,6 +391,7 @@
         {
           "id": "rc08a",
           "kind": "sentence",
+          "task": "select",
           "difficulty": 2,
           "stem": "Select the sentence in the passage that presents a result that undermines an explanation mentioned in the passage.",
           "answer": 2,
@@ -382,6 +400,7 @@
         {
           "id": "rc08b",
           "kind": "mc",
+          "task": "inference",
           "difficulty": 2,
           "stem": "The critics mentioned in the last sentence would most likely agree that",
           "options": [
@@ -397,6 +416,7 @@
         {
           "id": "rc08c",
           "kind": "multi",
+          "task": "inference",
           "difficulty": 3,
           "stem": "The passage suggests which of the following about the chess masters' recall of positions from real games?",
           "options": [
@@ -427,6 +447,7 @@
         {
           "id": "rc09a",
           "kind": "mc",
+          "task": "function",
           "difficulty": 2,
           "stem": "The author mentions that the temperature difference is often greatest at night primarily in order to",
           "options": [
@@ -442,6 +463,7 @@
         {
           "id": "rc09b",
           "kind": "multi",
+          "task": "detail",
           "difficulty": 2,
           "stem": "According to the passage, which of the following contribute to higher nighttime temperatures in cities?",
           "options": [
@@ -472,6 +494,7 @@
         {
           "id": "rc10a",
           "kind": "mc",
+          "task": "inference",
           "difficulty": 2,
           "stem": "The passage suggests that the errors in oral testimony can be",
           "options": [
@@ -487,6 +510,7 @@
         {
           "id": "rc10b",
           "kind": "sentence",
+          "task": "select",
           "difficulty": 2,
           "stem": "Select the sentence in the passage that answers a criticism by pointing out a weakness in the alternative that the critics favor.",
           "answer": 1,
@@ -510,6 +534,7 @@
         {
           "id": "rc11a",
           "kind": "mc",
+          "task": "purpose",
           "difficulty": 1,
           "stem": "Which of the following best describes the organization of the passage?",
           "options": [
@@ -525,6 +550,7 @@
         {
           "id": "rc11b",
           "kind": "multi",
+          "task": "inference",
           "difficulty": 2,
           "stem": "It can be inferred from the passage that a songbird flying on a cloudy night",
           "options": [
@@ -555,6 +581,7 @@
         {
           "id": "rc12a",
           "kind": "sentence",
+          "task": "select",
           "difficulty": 2,
           "stem": "Select the sentence in the passage that identifies a limitation of a dating technique.",
           "answer": 2,
@@ -563,6 +590,7 @@
         {
           "id": "rc12b",
           "kind": "mc",
+          "task": "inference",
           "difficulty": 3,
           "stem": "If a mineral crust over a painting were dated to 40,000 years ago, the passage implies that the painting",
           "options": [
@@ -597,6 +625,7 @@
         {
           "id": "rc13a",
           "kind": "mc",
+          "task": "purpose",
           "difficulty": 2,
           "stem": "The author's main purpose is to",
           "options": [
@@ -612,6 +641,7 @@
         {
           "id": "rc13b",
           "kind": "multi",
+          "task": "inference",
           "difficulty": 3,
           "stem": "The passage suggests that the pamphlets mentioned in the first paragraph",
           "options": [
@@ -628,6 +658,7 @@
         {
           "id": "rc13c",
           "kind": "sentence",
+          "task": "select",
           "difficulty": 2,
           "stem": "Select the sentence in the passage that anticipates and rejects an overly strong conclusion that might be drawn from the evidence presented.",
           "answer": 4,
@@ -655,6 +686,7 @@
         {
           "id": "rc14a",
           "kind": "mc",
+          "task": "purpose",
           "difficulty": 2,
           "stem": "The passage is primarily concerned with",
           "options": [
@@ -670,6 +702,7 @@
         {
           "id": "rc14b",
           "kind": "multi",
+          "task": "detail",
           "difficulty": 3,
           "stem": "According to the passage, which of the following help explain the persistence of resistant strains after a drug is withdrawn?",
           "options": [
@@ -686,6 +719,7 @@
         {
           "id": "rc14c",
           "kind": "mc",
+          "task": "attitude",
           "difficulty": 2,
           "stem": "The author's attitude toward reducing antibiotic use can best be described as",
           "options": [
@@ -720,6 +754,7 @@
         {
           "id": "rc15a",
           "kind": "sentence",
+          "task": "select",
           "difficulty": 2,
           "stem": "Select the sentence in the passage that concedes a point to the view the author goes on to challenge.",
           "answer": 1,
@@ -728,6 +763,7 @@
         {
           "id": "rc15b",
           "kind": "mc",
+          "task": "function",
           "difficulty": 2,
           "stem": "The author mentions writers who revised their own works primarily in order to",
           "options": [
@@ -743,6 +779,7 @@
         {
           "id": "rc15c",
           "kind": "multi",
+          "task": "inference",
           "difficulty": 3,
           "stem": "Which of the following statements would the author most likely accept?",
           "options": [
@@ -778,6 +815,7 @@
         {
           "id": "rc16a",
           "kind": "mc",
+          "task": "inference",
           "difficulty": 2,
           "stem": "The passage suggests that the orchid described in the first paragraph is",
           "options": [
@@ -793,6 +831,7 @@
         {
           "id": "rc16b",
           "kind": "sentence",
+          "task": "select",
           "difficulty": 2,
           "stem": "Select the sentence in the passage that offers a reason why a widespread pattern may be advantageous.",
           "answer": 4,
@@ -801,6 +840,7 @@
         {
           "id": "rc16c",
           "kind": "multi",
+          "task": "detail",
           "difficulty": 2,
           "stem": "According to the passage, which of the following is true of specialized plant-pollinator partnerships?",
           "options": [
@@ -831,6 +871,7 @@
         {
           "id": "rc17a",
           "kind": "multi",
+          "task": "inference",
           "difficulty": 2,
           "stem": "The passage suggests which of the following about early printed editions?",
           "options": [
@@ -847,6 +888,7 @@
         {
           "id": "rc17b",
           "kind": "mc",
+          "task": "purpose",
           "difficulty": 2,
           "stem": "The primary purpose of the passage is to",
           "options": [
@@ -876,6 +918,7 @@
         {
           "id": "rc18a",
           "kind": "sentence",
+          "task": "select",
           "difficulty": 2,
           "stem": "Select the sentence in the passage that draws a conclusion from a claim made earlier in the passage.",
           "answer": 2,
@@ -884,6 +927,7 @@
         {
           "id": "rc18b",
           "kind": "mc",
+          "task": "detail",
           "difficulty": 2,
           "stem": "According to the passage, the cooling effect of an eruption depends chiefly on",
           "options": [
@@ -913,6 +957,7 @@
         {
           "id": "rc19a",
           "kind": "multi",
+          "task": "inference",
           "difficulty": 3,
           "stem": "Which of the following can be inferred from the passage?",
           "options": [
@@ -929,6 +974,7 @@
         {
           "id": "rc19b",
           "kind": "mc",
+          "task": "function",
           "difficulty": 2,
           "stem": "The author mentions that patients tend to enroll when their symptoms are at their worst in order to",
           "options": [
@@ -958,6 +1004,7 @@
         {
           "id": "rc20a",
           "kind": "mc",
+          "task": "inference",
           "difficulty": 3,
           "stem": "It can be inferred that a pronunciation used by only one small group of settlers would most likely",
           "options": [
@@ -973,6 +1020,7 @@
         {
           "id": "rc20b",
           "kind": "sentence",
+          "task": "select",
           "difficulty": 2,
           "stem": "Select the sentence in the passage that rules out an overly simple account of how the new dialect is formed.",
           "answer": 2,
@@ -994,6 +1042,7 @@
         {
           "id": "rc21a",
           "kind": "mc",
+          "task": "weaken",
           "difficulty": 2,
           "stem": "Which of the following, if true, most seriously weakens the officials' conclusion?",
           "options": [
@@ -1022,6 +1071,7 @@
         {
           "id": "rc22a",
           "kind": "mc",
+          "task": "strengthen",
           "difficulty": 2,
           "stem": "Which of the following, if true, most strengthens the director's argument?",
           "options": [
@@ -1050,6 +1100,7 @@
         {
           "id": "rc23a",
           "kind": "multi",
+          "task": "weaken",
           "difficulty": 3,
           "stem": "Which of the following, if true, would cast doubt on the author's conclusion?",
           "options": [
@@ -1079,6 +1130,7 @@
         {
           "id": "rc24a",
           "kind": "mc",
+          "task": "evaluate",
           "difficulty": 3,
           "stem": "Which of the following would be most useful to know in evaluating whether the quotas caused the recovery?",
           "options": [
@@ -1107,6 +1159,7 @@
         {
           "id": "rc25a",
           "kind": "mc",
+          "task": "assumption",
           "difficulty": 2,
           "stem": "The agency's plan depends on which of the following assumptions?",
           "options": [
@@ -1135,6 +1188,7 @@
         {
           "id": "rc26a",
           "kind": "mc",
+          "task": "paradox",
           "difficulty": 2,
           "stem": "Which of the following, if true, most helps to resolve the apparent discrepancy described above?",
           "options": [
@@ -1166,6 +1220,7 @@
         {
           "id": "rc27a",
           "kind": "mc",
+          "task": "boldface",
           "difficulty": 3,
           "stem": "In the argument above, the two portions in boldface play which of the following roles?",
           "options": [
@@ -1195,6 +1250,7 @@
         {
           "id": "rc28a",
           "kind": "multi",
+          "task": "weaken",
           "difficulty": 3,
           "stem": "Which of the following, if true, would weaken the product manager's conclusion?",
           "options": [
@@ -1225,6 +1281,7 @@
         {
           "id": "rc29a",
           "kind": "mc",
+          "task": "evaluate",
           "difficulty": 3,
           "stem": "Which of the following would be most useful to know in evaluating the managers' conclusion?",
           "options": [
@@ -1255,6 +1312,7 @@
         {
           "id": "rc30a",
           "kind": "mc",
+          "task": "vocab",
           "difficulty": 1,
           "stem": "In the context in which it appears, \"mistakes\" most nearly means",
           "options": [
@@ -1270,6 +1328,7 @@
         {
           "id": "rc30b",
           "kind": "mc",
+          "task": "purpose",
           "difficulty": 2,
           "stem": "The primary purpose of the passage is to",
           "options": [
@@ -1285,6 +1344,7 @@
         {
           "id": "rc30c",
           "kind": "sentence",
+          "task": "select",
           "difficulty": 2,
           "stem": "Select the sentence in the passage that reinterprets a feature that critics regard as a flaw.",
           "answer": 3,
@@ -1312,6 +1372,7 @@
         {
           "id": "rc31a",
           "kind": "mc",
+          "task": "function",
           "difficulty": 2,
           "stem": "The observation attributed to Coase's critics serves primarily to",
           "options": [
@@ -1327,6 +1388,7 @@
         {
           "id": "rc31b",
           "kind": "multi",
+          "task": "inference",
           "difficulty": 3,
           "stem": "It can be inferred that the author would agree with which of the following statements?",
           "options": [
@@ -1343,6 +1405,7 @@
         {
           "id": "rc31c",
           "kind": "mc",
+          "task": "vocab",
           "difficulty": 2,
           "stem": "In the context in which it appears, \"record\" most nearly means",
           "options": [
@@ -1354,6 +1417,267 @@
           ],
           "answer": "historical evidence",
           "explanation": "Checked against the record: đối chiếu với tư liệu lịch sử về cách hải đăng thực sự được tài trợ, đúng việc Coase đã làm. Official register of ships là bẫy gần ngữ cảnh hàng hải nhưng quá hẹp."
+        }
+      ]
+    },
+    {
+      "id": "rc32",
+      "title": "Calorie labels",
+      "length": "argument",
+      "paragraphs": [
+        [
+          "Last spring, Hallam Bakery began printing calorie counts on its menu boards.",
+          "Over the following six months, sales of its pastries fell by 18 percent, while sales of its salads rose.",
+          "The bakery's owner concluded that the calorie labels led customers to choose lower-calorie items."
+        ]
+      ],
+      "questions": [
+        {
+          "id": "rc32a",
+          "kind": "mc",
+          "task": "strengthen",
+          "difficulty": 2,
+          "stem": "Which of the following, if true, most strengthens the owner's conclusion?",
+          "options": [
+            "Hallam Bakery's pastries cost more than its salads.",
+            "At a second Hallam Bakery location that did not post calorie counts, sales of pastries and salads did not change over the same six months.",
+            "Many customers say that they enjoy the bakery's pastries.",
+            "The bakery added two new salads to its menu at the start of the six months.",
+            "Calorie labels have been required on menus in some other countries for years."
+          ],
+          "answer": "At a second Hallam Bakery location that did not post calorie counts, sales of pastries and salads did not change over the same six months.",
+          "explanation": "Phương án B là nhóm đối chứng: cửa hàng không dán nhãn thì doanh số không đổi, nên loại được các nguyên nhân chung như mùa hay xu hướng ăn uống. Phương án D làm yếu (nguyên nhân khác: có món salad mới)."
+        }
+      ]
+    },
+    {
+      "id": "rc33",
+      "title": "Distant clay",
+      "length": "argument",
+      "paragraphs": [
+        [
+          "Pottery fragments from the eighth century found at the Tel Amra site were made with clay from a riverbank 200 kilometers away, whereas earlier fragments at the site were made with local clay.",
+          "Archaeologists conclude that by the eighth century the town's residents were trading with communities along the distant river."
+        ]
+      ],
+      "questions": [
+        {
+          "id": "rc33a",
+          "kind": "mc",
+          "task": "assumption",
+          "difficulty": 3,
+          "stem": "The archaeologists' conclusion depends on which of the following assumptions?",
+          "options": [
+            "The clay from the distant riverbank is of higher quality than the local clay.",
+            "Residents of Tel Amra did not obtain the distant clay by traveling to the riverbank and collecting it themselves.",
+            "Pottery was the main good traded between communities in the eighth century.",
+            "No pottery made with local clay was produced at Tel Amra in the eighth century.",
+            "Communities along the distant river also used clay from Tel Amra."
+          ],
+          "answer": "Residents of Tel Amra did not obtain the distant clay by traveling to the riverbank and collecting it themselves.",
+          "explanation": "Phép thử phủ định: nếu cư dân tự đi lấy đất sét ở bờ sông thì không cần có trao đổi với cộng đồng ở đó, kết luận sụp. Phương án C quá mạnh (chỉ cần có trao đổi, không cần gốm là hàng chính); D và E không cần thiết."
+        }
+      ]
+    },
+    {
+      "id": "rc34",
+      "title": "Seabird chicks",
+      "length": "argument",
+      "paragraphs": [
+        [
+          "In the four years after a program removed invasive rats from the nesting islands of a coastal reserve, the number of seabird chicks that survived to leave the nest rose sharply.",
+          "Over the same four years, however, the reserve's seabird population did not grow."
+        ]
+      ],
+      "questions": [
+        {
+          "id": "rc34a",
+          "kind": "mc",
+          "task": "paradox",
+          "difficulty": 2,
+          "stem": "Which of the following, if true, most helps to resolve the apparent discrepancy described above?",
+          "options": [
+            "Rats were brought to the islands by ships more than a century ago.",
+            "The reserve's population counts include only breeding adults, and these seabirds do not begin breeding until they are five or six years old.",
+            "Seabird chicks are most vulnerable to predators in their first week after hatching.",
+            "Several other reserves have also removed invasive rats.",
+            "The number of chicks that survived to leave the nest had been declining before the program began."
+          ],
+          "answer": "The reserve's population counts include only breeding adults, and these seabirds do not begin breeding until they are five or six years old.",
+          "explanation": "Chim non sống sót nhiều hơn nhưng phải 5–6 năm mới sinh sản, nên chưa được tính vào số đếm (chỉ đếm chim trưởng thành sinh sản). Cả hai dữ kiện cùng đúng. Các phương án khác không nối được hai dữ kiện."
+        }
+      ]
+    },
+    {
+      "id": "rc35",
+      "title": "Sugary drink tax",
+      "length": "argument",
+      "paragraphs": [
+        [
+          "**Many economists predicted that the city's new tax on sugary drinks would do little to reduce consumption, because shoppers would simply buy the drinks in neighboring towns.**",
+          "Purchases of sugary drinks within the city did fall by 30 percent, and purchases in neighboring towns rose.",
+          "**Yet the rise outside the city offset only about a quarter of the fall inside it.**",
+          "The tax, therefore, did reduce the consumption of sugary drinks."
+        ]
+      ],
+      "questions": [
+        {
+          "id": "rc35a",
+          "kind": "mc",
+          "task": "boldface",
+          "difficulty": 3,
+          "stem": "In the argument above, the two portions in boldface play which of the following roles?",
+          "options": [
+            "The first is a prediction that the argument opposes; the second is evidence offered against that prediction.",
+            "The first is the main conclusion of the argument; the second is evidence offered in support of that conclusion.",
+            "The first is a prediction that the argument supports; the second is a consideration that the argument acknowledges weighs against it.",
+            "The first is evidence offered in support of the argument's conclusion; the second is that conclusion.",
+            "The first and the second are both predictions that the argument rejects."
+          ],
+          "answer": "The first is a prediction that the argument opposes; the second is evidence offered against that prediction.",
+          "explanation": "Kết luận là câu cuối: thuế có làm giảm tiêu thụ. Phần in đậm 1 là dự đoán của các nhà kinh tế mà lập luận phản đối. Phần in đậm 2 là bằng chứng chống lại dự đoán đó (mua ngoài thành phố chỉ bù được một phần tư), không phải kết luận (loại D)."
+        }
+      ]
+    },
+    {
+      "id": "rc36",
+      "title": "The parlor piano",
+      "length": "short",
+      "paragraphs": [
+        [
+          "Historians of music have long credited the piano's rise in the nineteenth century to its expressive range, which allowed a single performer to move from a whisper to a roar.",
+          "This account is not wrong, but it is incomplete.",
+          "Improvements in factory production cut the price of an upright piano by more than half between 1850 and 1900, and a growing middle class came to regard the instrument as a mark of respectability; a piano in the parlor announced a family's standing as surely as its furniture did.",
+          "The instrument's musical virtues help explain why composers wrote for it, but they do little to explain why so many households that seldom played it nevertheless bought one."
+        ]
+      ],
+      "questions": [
+        {
+          "id": "rc36a",
+          "kind": "mc",
+          "task": "vocab",
+          "difficulty": 1,
+          "stem": "In the context in which it appears, \"announced\" most nearly means",
+          "options": [
+            "signaled",
+            "proclaimed aloud",
+            "predicted",
+            "introduced formally",
+            "advertised for sale"
+          ],
+          "answer": "signaled",
+          "explanation": "Cây đàn trong phòng khách cho thấy địa vị của gia đình: announced ở đây là báo hiệu, thể hiện. Proclaimed aloud là nghĩa đen thường gặp, không hợp vì đồ vật không nói."
+        },
+        {
+          "id": "rc36b",
+          "kind": "mc",
+          "task": "attitude",
+          "difficulty": 2,
+          "stem": "The author's attitude toward the historians' account described in the first sentence is best described as",
+          "options": [
+            "qualified acceptance",
+            "outright rejection",
+            "unreserved endorsement",
+            "amused indifference",
+            "reluctant admiration"
+          ],
+          "answer": "qualified acceptance",
+          "explanation": "Not wrong, but incomplete: chấp nhận có điều kiện. Outright rejection và unreserved endorsement là hai thái cực, đúng kiểu bẫy thái độ quá mạnh."
+        },
+        {
+          "id": "rc36c",
+          "kind": "multi",
+          "task": "detail",
+          "difficulty": 2,
+          "stem": "According to the passage, which of the following contributed to the spread of the piano in nineteenth-century households?",
+          "options": [
+            "A fall in the price of upright pianos",
+            "The piano's association with social respectability",
+            "The growing number of compositions written for the piano"
+          ],
+          "answers": [
+            "A fall in the price of upright pianos",
+            "The piano's association with social respectability"
+          ],
+          "explanation": "Câu 3 nêu hai yếu tố: giá giảm hơn một nửa và đàn là dấu hiệu đáng kính. Câu cuối nói phẩm chất âm nhạc giải thích vì sao nhà soạn nhạc viết cho đàn, chứ không giải thích vì sao các gia đình mua đàn, nên phương án 3 không đúng."
+        }
+      ]
+    },
+    {
+      "id": "rc37",
+      "title": "Continental drift",
+      "length": "long",
+      "paragraphs": [
+        [
+          "When geologists first heard the proposal that the continents had drifted across the globe, they met it with fierce resistance.",
+          "Its chief proponent, Alfred Wegener, could point to the matching coastlines of Africa and South America and to fossils of the same land animals on both continents, but he could not explain what force might move a continent.",
+          "Most geologists judged the evidence suggestive at best and the mechanism absurd."
+        ],
+        [
+          "The objection was reasonable.",
+          "A theory that cannot say how an effect is produced invites the suspicion that the effect has been misread.",
+          "What changed opinion in the 1960s was not a better reading of the old evidence but new evidence of a different kind: maps of the ocean floor revealed ridges where new crust forms and spreads outward, supplying the mechanism that Wegener had lacked.",
+          "The history is sometimes told as a parable of a lone genius ignored by a hidebound establishment, yet the establishment's demand for a mechanism was precisely what the eventual theory satisfied."
+        ]
+      ],
+      "questions": [
+        {
+          "id": "rc37a",
+          "kind": "mc",
+          "task": "function",
+          "difficulty": 2,
+          "stem": "The author mentions the matching coastlines of Africa and South America primarily in order to",
+          "options": [
+            "illustrate the kind of evidence that Wegener was able to offer",
+            "show that the mechanism Wegener proposed was mistaken",
+            "explain why geologists in the 1960s accepted continental drift",
+            "suggest that the shapes of the continents have not changed",
+            "argue that fossil evidence is less reliable than geographic evidence"
+          ],
+          "answer": "illustrate the kind of evidence that Wegener was able to offer",
+          "explanation": "Bờ biển khớp nhau là ví dụ về bằng chứng Wegener có, đặt cạnh điều ông thiếu (cơ chế). Phương án C sai thời điểm: thập niên 1960 thay đổi nhờ bằng chứng mới, không phải bằng chứng cũ."
+        },
+        {
+          "id": "rc37b",
+          "kind": "sentence",
+          "task": "select",
+          "difficulty": 2,
+          "stem": "Select the sentence in the second paragraph that explains why the geologists' skepticism was justified.",
+          "answer": 4,
+          "explanation": "Câu The objection was reasonable chỉ khẳng định; câu ngay sau mới giải thích lý do: thuyết không nói được cơ chế thì dễ bị nghi là hiểu sai hiện tượng. Chọn câu chỉ khớp một phần mô tả là bẫy phổ biến."
+        },
+        {
+          "id": "rc37c",
+          "kind": "multi",
+          "task": "inference",
+          "difficulty": 3,
+          "stem": "It can be inferred that the author would agree with which of the following statements?",
+          "options": [
+            "The acceptance of continental drift depended on evidence that Wegener did not have.",
+            "Geologists who rejected Wegener's theory were wrong to require an explanation of how continents move.",
+            "The popular account of Wegener as an ignored genius overlooks the role that his critics' demand played."
+          ],
+          "answers": [
+            "The acceptance of continental drift depended on evidence that Wegener did not have.",
+            "The popular account of Wegener as an ignored genius overlooks the role that his critics' demand played."
+          ],
+          "explanation": "Phương án 1: dư luận đổi nhờ bằng chứng mới về đáy đại dương. Phương án 3: câu cuối nói chính đòi hỏi về cơ chế là điều thuyết sau cùng đáp ứng. Phương án 2 ngược ý tác giả (The objection was reasonable)."
+        },
+        {
+          "id": "rc37d",
+          "kind": "mc",
+          "task": "vocab",
+          "difficulty": 2,
+          "stem": "In the context in which it appears, \"misread\" most nearly means",
+          "options": [
+            "misinterpreted",
+            "read too quickly",
+            "copied incorrectly",
+            "overlooked",
+            "exaggerated"
+          ],
+          "answer": "misinterpreted",
+          "explanation": "Hiện tượng bị hiểu sai, tức diễn giải sai dữ kiện. Read too quickly bám nghĩa đen của read; overlooked là bỏ qua, khác với hiểu sai."
         }
       ]
     }

@@ -12,6 +12,7 @@ import './views/mock.js';
 import './views/session.js';
 import './views/notebook.js';
 import './views/tips.js';
+import './views/reading.js';
 import './views/addword.js';
 import './views/account.js';
 import './views/admin.js';

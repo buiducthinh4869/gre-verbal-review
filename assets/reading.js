@@ -6,6 +6,9 @@
  *  - Câu hỏi Reading có type 'rc' và nằm riêng (không vào App.idx.exercises), chỉ dùng trong thi thử.
  */
 export const RC_KINDS = { mc: 'mc', multi: 'multi', sentence: 'sentence' };
+/** Dạng nhiệm vụ của câu Reading (trường task, tùy chọn): dùng cho tab Luyện Reading (lọc, thống kê theo dạng). */
+export const RC_TASK_CODES = ['purpose', 'detail', 'inference', 'function', 'attitude', 'vocab', 'select',
+  'weaken', 'strengthen', 'assumption', 'paradox', 'boldface', 'evaluate'];
 
 const isStr = (x) => typeof x === 'string' && x.trim().length > 0;
 
@@ -54,6 +57,8 @@ export function validateReading(data, knownIds) {
         if (!Number.isInteger(q.answer) || q.answer < 0 || q.answer >= nSent) errs.push(w + ': answer phải là số thứ tự câu (0–' + (nSent - 1) + ')');
       } else errs.push(w + ': kind phải là mc, multi hoặc sentence');
       if (q.difficulty != null && ![1, 2, 3].includes(q.difficulty)) errs.push(w + ': difficulty phải là 1, 2 hoặc 3');
+      if (q.task != null && !RC_TASK_CODES.includes(q.task)) errs.push(w + ': task phải là một trong ' + RC_TASK_CODES.join(', '));
+      if (q.task === 'select' && q.kind !== 'sentence') errs.push(w + ': task select chỉ dùng cho kind sentence');
     });
   });
   return errs;
