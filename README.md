@@ -49,6 +49,9 @@ tests/                  srs, distractors, mock, bank, content, api (server chạ
 
   Ô tìm kiếm ở mọi cấp tìm trên toàn bộ các cụm, mỗi kết quả kèm nhãn `Cụm › Nhóm`. Trang nhớ cấp xem gần nhất theo từng tài khoản.
 - **Luyện tập**: phạm vi gồm nhiều cụm, một nhóm, chỉ ★★★, hoặc chỉ sổ từ hay quên. Dạng GRE chuẩn lấy bài có `targets` thuộc phạm vi đã chọn.
+- **Reading** (`#reading`, `assets/views/reading.js`, lõi `assets/rcpractice.js`): luyện từng đoạn văn, lọc theo loại đoạn, 13 dạng câu (trường `task` của câu Reading) và trạng thái; chế độ Học (chấm từng câu, cách làm 3 bước và 2 bẫy của dạng câu) và Có giờ (1,5 phút/câu). Nhật ký lý do sai, thống kê theo dạng câu. Lịch sử lưu trên trình duyệt (`gre.rcHist.<userId>`). Đoạn đang giữ cho đề cố định chưa làm bị ẩn.
+- **Quant** (`#quant`, `assets/views/quant.js`, lõi `assets/quant.js`): mỗi ngày 4 câu sinh ngẫu nhiên từ 28 mẫu có tham số, cố định theo ngày và tài khoản, ưu tiên các kiểu bẫy hay sai (trọng số ban đầu theo sổ lỗi Notre Dame 26/11/2026). Đủ 4 dạng QC, chọn 1, chọn nhiều, điền số. Nút sao chép dữ liệu lỗi (JSON) để Claude dựng đề Quant đầy đủ. `tests/quant.test.js` kiểm tra đáp án mọi mẫu bằng vét cạn. Lịch sử lưu trên trình duyệt (`gre.quantHist.<userId>`).
+- **Chiến lược** (`#tips`, `assets/views/tips.js`): cấu trúc đề rút gọn, cách chấm, mẹo TC/SE/Reading, dạng câu Reading, lỗi lập luận, bẫy, phân bổ thời gian (tóm tắt từ The Official Guide qua NotebookLM).
 - **Thi thử** (section Verbal, gồm TC, SE và Reading Comprehension; đoạn văn ở `data/reading/passages.json`, lõi ở `assets/reading.js`; màn kết quả có điểm ước lượng 130–170 khi làm đủ hai section):
   - Cấu trúc như đề thật: Section 1 có 12 câu trong 18 phút, Section 2 có 15 câu trong 23 phút; chế độ Đầy đủ làm cả hai.
   - Chọn câu: khoảng 55% TC và 45% SE, TC trộn 1, 2, 3 chỗ trống. Ưu tiên câu chưa làm hoặc đã làm sai; tránh câu đã làm đúng trong 7 ngày gần nhất.
