@@ -1038,9 +1038,32 @@ h1, h2, h3, .hero-title, .page-head h1, .word-big, .meaning-big, .group-head h3,
 .m2w-hint .nuance, .m2w-hint .q-nuance { margin: 0 0 4px; }
 
 /* Trang Chiến lược (#tips) */
-.tips-toc { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 16px; }
-.tips-toc .chip { text-decoration: none; }
-.tips-card { margin: 0 0 16px; scroll-margin-top: 80px; }
+/* Mục lục: màn hẹp là hàng nút cuộn ngang dính dưới thanh trên; màn rộng là thanh dọc dính bên trái */
+.tips-toc { position: sticky; top: 60px; z-index: 10; background: var(--bg); margin: 0 -16px 14px; padding: 8px 16px; border-bottom: 1px solid var(--rule); }
+.tips-toc-title { display: none; }
+.tips-toc ol { list-style: none; margin: 0; padding: 0; display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; }
+.tips-toc ol::-webkit-scrollbar { display: none; }
+.tips-toc a { display: flex; align-items: center; gap: 8px; white-space: nowrap; text-decoration: none; color: var(--muted); font-size: 14px;
+  padding: 6px 12px; border: 1px solid var(--rule-strong); border-radius: 999px; }
+.tips-toc a:hover { color: var(--ink); border-color: var(--accent-line); }
+.tips-toc a.on { color: var(--accent); background: var(--accent-soft); border-color: var(--accent-line); font-weight: 600; }
+.tips-toc-n { display: none; }
+.tips-progress { height: 3px; background: var(--rule); border-radius: 3px; margin-top: 8px; overflow: hidden; }
+.tips-progress i { display: block; height: 100%; width: 0; background: var(--accent); transition: width .15s; }
+.tips-main { min-width: 0; }
+@media (min-width: 900px) {
+  .tips-layout { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 28px; align-items: start; }
+  .tips-toc { top: 80px; margin: 0; padding: 4px 0 0; border: 0; background: none; max-height: calc(100vh - 100px); overflow: auto; }
+  .tips-toc-title { display: block; font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin: 0 0 10px 12px; }
+  .tips-toc ol { flex-direction: column; gap: 2px; overflow: visible; border-left: 1px solid var(--rule); }
+  .tips-toc a { border: 0; border-radius: 0 8px 8px 0; margin-left: -1px; border-left: 2px solid transparent; padding: 8px 12px; white-space: normal; }
+  .tips-toc a.on { border-left-color: var(--accent); background: var(--accent-soft); }
+  .tips-toc-n { display: inline-grid; place-items: center; flex: none; width: 22px; height: 22px; border-radius: 50%; font-size: 12px; background: var(--rule); color: var(--muted); }
+  .tips-toc a.on .tips-toc-n { background: var(--accent); color: var(--accent-ink); }
+  .tips-progress { margin: 14px 0 0 12px; }
+}
+.tips-card { margin: 0 0 16px; scroll-margin-top: 130px; }
+@media (min-width: 900px) { .tips-card { scroll-margin-top: 80px; } }
 .tips-card .section { margin-top: 0; }
 .tips-h { font-size: 15px; font-weight: 600; margin: 14px 0 6px; }
 .tips-list { margin: 8px 0 0; padding-left: 1.3em; }

@@ -114,6 +114,10 @@ const VOCAB = [
   'Giáo trình chính thức không cho danh sách từ; trên web này, mục Từ vựng và sổ Hay quên đóng vai trò đó.'
 ];
 
+const TOC = [['t-format', 'Cấu trúc và cách chấm'], ['t-tc', 'Text Completion'], ['t-se', 'Sentence Equivalence'], ['t-rc', 'Reading'], ['t-tasks', 'Dạng câu hỏi Reading'],
+  ['t-arg', 'Lỗi lập luận'], ['t-traps', 'Bẫy trong phương án'], ['t-pace', 'Thời gian và đoán'], ['t-vocab', 'Học từ vựng']];
+let spy = null;
+
 const ul = (arr) => '<ul class="tips-list">' + arr.map((x) => '<li>' + esc(x) + '</li>').join('') + '</ul>';
 const ol = (arr) => '<ol class="tips-list">' + arr.map((x) => '<li>' + esc(x) + '</li>').join('') + '</ol>';
 
@@ -121,9 +125,9 @@ views.tips = {
   title: 'Chiến lược',
   render() {
     let h = '<div class="page-head"><h1>Chiến lược làm bài Verbal</h1><p>Tóm tắt từ The Official Guide to the GRE General Test và quy định đề rút gọn của ETS (áp dụng từ 22/9/2023).</p></div>';
-    h += '<nav class="tips-toc" aria-label="Mục lục">' + [['t-format', 'Cấu trúc'], ['t-tc', 'TC'], ['t-se', 'SE'], ['t-rc', 'Reading'], ['t-tasks', 'Dạng câu hỏi'], ['t-arg', 'Lập luận'], ['t-traps', 'Bẫy'], ['t-pace', 'Thời gian'], ['t-vocab', 'Từ vựng']]
-      .map(([id, l]) => '<a class="chip" href="#tips" data-jump="' + id + '">' + l + '</a>').join('') + '</nav>';
-
+    h += '<div class="tips-layout"><nav class="tips-toc" aria-label="Mục lục"><div class="tips-toc-title">Mục lục</div><ol>' +
+      TOC.map(([id, l], k) => '<li><a href="#tips" data-jump="' + id + '"><span class="tips-toc-n">' + (k + 1) + '</span><span>' + l + '</span></a></li>').join('') +
+      '</ol><div class="tips-progress" aria-hidden="true"><i></i></div></nav><div class="tips-main">';
     h += '<section class="card tips-card" id="t-format"><h2 class="section">Cấu trúc và cách chấm</h2>';
     h += '<div class="table-wrap"><table class="mock-table"><thead><tr><th>Section</th><th>Số câu</th><th>Thời gian</th><th>Ghi chú</th></tr></thead><tbody>' +
       STRUCTURE.map((r) => '<tr>' + r.map((c) => '<td>' + esc(c) + '</td>').join('') + '</tr>').join('') + '</tbody></table></div>';
@@ -143,13 +147,39 @@ views.tips = {
     h += '<section class="card tips-card" id="t-traps"><h2 class="section">Bẫy trong phương án</h2>' + ul(TRAPS) + '</section>';
     h += '<section class="card tips-card" id="t-pace"><h2 class="section">Phân bổ thời gian và đoán</h2>' + ul(PACING) + '</section>';
     h += '<section class="card tips-card" id="t-vocab"><h2 class="section">Học từ vựng cho TC và SE</h2>' + ul(VOCAB) + '</section>';
-    return h;
+    return h + '</div></div>';
   },
+  wide: () => true,
   after() {
-    document.querySelectorAll('[data-jump]').forEach((a) => a.addEventListener('click', (e) => {
+    if (spy) spy.disconnect();
+    const links = [...document.querySelectorAll('.tips-toc [data-jump]')];
+    const setActive = (id) => links.forEach((a) => {
+      const on = a.dataset.jump === id;
+      a.classList.toggle('on', on);
+      if (on) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current');
+      // Màn hẹp (hàng nút cuộn ngang): đưa nút đang đọc vào giữa hàng, chỉ cuộn ngang
+      const ol = a.closest('ol');
+      if (on && ol && ol.scrollWidth > ol.clientWidth) ol.scrollLeft = a.parentElement.offsetLeft - (ol.clientWidth - a.parentElement.offsetWidth) / 2;
+    });
+    links.forEach((a) => a.addEventListener('click', (e) => {
       e.preventDefault();
       const el = document.getElementById(a.dataset.jump);
-      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (el) { el.scrollIntoView({ behavior: 'smooth', block: 'start' }); setActive(a.dataset.jump); }
     }));
+    // Mục đang đọc: mục trên cùng còn nằm trong vùng nhìn; thanh tiến độ theo vị trí cuộn của trang
+    const bar = document.querySelector('.tips-progress i');
+    const ids = TOC.map(([id]) => id);
+    const update = () => {
+      if (!document.querySelector('.tips-layout')) { window.removeEventListener('scroll', update); return; }
+      let cur = ids[0];
+      ids.forEach((id) => { const el = document.getElementById(id); if (el && el.getBoundingClientRect().top < 140) cur = id; });
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      if (max > 0 && window.scrollY >= max - 2) cur = ids[ids.length - 1];
+      setActive(cur);
+      if (bar) bar.style.width = (max > 0 ? Math.min(100, Math.round(100 * window.scrollY / max)) : 100) + '%';
+    };
+    spy = { disconnect: () => window.removeEventListener('scroll', update) };
+    window.addEventListener('scroll', update, { passive: true });
+    update();
   }
 };
