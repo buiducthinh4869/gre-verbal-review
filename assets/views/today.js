@@ -133,9 +133,16 @@ function quickBlock(L, read) {
 function quickM2W(c) {
   const w = word(c.wordId);
   if (!c.options) c.options = S.shuffle([w.id].concat(pickDistractors(w, App.idx, 3)));
-  let h = '<div class="q-kind">Nghĩa → Từ</div><div class="q-prompt">' + esc(w.meaning) + '</div>' +
-    (w.nuance ? '<p class="q-nuance">' + maskForms(esc(w.nuance), w) + '</p>' : '') +
-    (w.example ? '<div class="q-example example">' + maskForms(renderMarkup(w.example, true), w) + '</div>' : '');
+  // Mặc định chỉ hiện câu ví dụ; nghĩa là gợi ý, bấm mới hiện. Từ không có ví dụ thì hiện nghĩa luôn.
+  const meaningHtml = '<div class="q-prompt">' + esc(w.meaning) + '</div>' +
+    (w.nuance ? '<p class="q-nuance">' + maskForms(esc(w.nuance), w) + '</p>' : '');
+  let h = '<div class="q-kind">Nghĩa → Từ</div>';
+  if (!w.example) h += meaningHtml;
+  else {
+    h += '<div class="q-example example m2w-lead">' + maskForms(renderMarkup(w.example, true), w) + '</div>';
+    h += (c.meaningShown || c.picked) ? '<div class="m2w-hint">' + meaningHtml + '</div>'
+      : '<div class="m2w-hint-btn"><button class="btn quiet" data-act="q-hint">Gợi ý: xem nghĩa</button></div>';
+  }
   h += '<div class="options q-opts">' + c.options.map((id, k) => {
     let cls = '', mark = '';
     if (c.picked) { if (id === w.id) { cls = ' correct'; mark = '✓'; } else if (id === c.picked) { cls = ' wrong'; mark = '✗'; } }
@@ -274,6 +281,7 @@ Object.assign(actions, {
   },
   't-leech': () => startWordsSession('book', todayLists().leech, 'Ôn sổ từ hay quên', 'today'),
   'q-focus': () => { const el = document.getElementById('quick'); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' }); },
+  'q-hint': () => { const c = qcur(); if (c) { c.meaningShown = true; rerenderQuick(); } },
   'q-pick': (t) => {
     const c = qcur();
     if (!c || c.picked) return;

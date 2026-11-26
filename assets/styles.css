@@ -1029,3 +1029,10 @@ h1, h2, h3, .hero-title, .page-head h1, .word-big, .meaning-big, .group-head h3,
 .contrast li.right { border-left-color: var(--good); background: var(--good-soft); }
 .contrast li.picked { border-left-color: var(--bad); background: var(--bad-soft); }
 .contrast-nu { display: block; color: var(--muted); font-size: 13.5px; margin-top: 2px; }
+
+/* Nghĩa → Từ: câu ví dụ là đề chính, nghĩa ẩn sau nút gợi ý */
+.m2w-lead { font-size: 18px; line-height: 1.55; border-top: 0; padding-top: 6px; margin-top: 4px; }
+.m2w-hint-btn { margin: 10px 0 4px; }
+.m2w-hint { margin-top: 10px; padding: 8px 14px; border-left: 3px solid var(--warn); background: var(--warn-soft); border-radius: 0 8px 8px 0; }
+.m2w-hint .meaning-big, .m2w-hint .q-prompt { font-size: 19px; margin: 2px 0 4px; }
+.m2w-hint .nuance, .m2w-hint .q-nuance { margin: 0 0 4px; }

@@ -215,12 +215,21 @@ function cardM2W(c) {
   if (!w) return skipCard();
   const se = App.session;
   if (!c.options) c.options = shuffle([w.id].concat(pickDistractors(w, App.idx, 3)));
-  let h = '<article class="card">' + kindLine(c, 'Nghĩa → Từ') + '<div class="meaning-big">' + esc(w.meaning) + '</div>' +
-    (w.nuance ? '<p class="nuance">' + maskForms(esc(w.nuance), w) + '</p>' : '') +
-    (w.example ? '<div class="prompt-example example">' + maskForms(renderMarkup(w.example, true), w) + '</div>' : '');
+  // Mặc định chỉ hiện câu ví dụ; nghĩa và sắc thái là gợi ý, bấm (hoặc phím H) mới hiện. Từ không có ví dụ thì hiện nghĩa luôn.
+  const showMeaning = !w.example || c.meaningShown || c.picked;
+  const meaningHtml = '<div class="meaning-big">' + esc(w.meaning) + '</div>' +
+    (w.nuance ? '<p class="nuance">' + maskForms(esc(w.nuance), w) + '</p>' : '');
+  let h = '<article class="card">' + kindLine(c, 'Nghĩa → Từ');
+  if (w.example) h += '<div class="prompt-example example m2w-lead">' + maskForms(renderMarkup(w.example, true), w) + '</div>';
+  h += showMeaning ? (w.example ? '<div class="m2w-hint">' + meaningHtml + '</div>' : meaningHtml)
+    : '<div class="m2w-hint-btn"><button class="btn quiet" data-act="m2w-hint">Gợi ý: xem nghĩa <kbd>H</kbd></button></div>';
+  const hintKey = (e) => {
+    if (!showMeaning && (e.key === 'h' || e.key === 'H') && !isTyping(e)) { e.preventDefault(); c.meaningShown = true; render(); return true; }
+    return false;
+  };
   if (!(c.revealed || !se.thinkFirst)) {
     h += '<div class="think"><p>Tự nghĩ ra từ trước, rồi mới xem lựa chọn.</p><button class="btn primary" data-act="show-options">Hiện lựa chọn <kbd>Space</kbd></button></div>';
-    App.keyHandler = (e) => { if ((e.key === ' ' || e.key === 'Enter') && !isTyping(e)) { e.preventDefault(); c.revealed = true; render(); } };
+    App.keyHandler = (e) => { if (hintKey(e)) return; if ((e.key === ' ' || e.key === 'Enter') && !isTyping(e)) { e.preventDefault(); c.revealed = true; render(); } };
     return h + '</article>';
   }
   h += '<div class="options" role="group" aria-label="Chọn từ đúng">' + c.options.map((id, k) => {
@@ -240,7 +249,7 @@ function cardM2W(c) {
     App.keyHandler = (e) => { if (e.key === 'Enter' && !isTyping(e)) { e.preventDefault(); nextCard(); } };
   } else {
     App.keyHandler = (e) => {
-      if (isTyping(e)) return;
+      if (isTyping(e) || hintKey(e)) return;
       const k = parseInt(e.key, 10);
       if (k >= 1 && k <= c.options.length) { e.preventDefault(); pickM2W(c.options[k - 1]); }
     };
@@ -569,6 +578,7 @@ Object.assign(actions, {
   'w2m-reveal': () => revealW2M(),
   'w2m-grade': (t) => gradeW2M(t.dataset.r),
   'show-options': () => { card().revealed = true; render(); },
+  'm2w-hint': () => { card().meaningShown = true; render(); },
   'm2w-pick': (t) => pickM2W(t.dataset.id),
   'gre-hint': () => { card().hint = true; render(); },
   'gre-pick': (t) => pickGRE(Number(t.dataset.b), t.dataset.o),
