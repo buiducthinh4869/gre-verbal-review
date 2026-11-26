@@ -413,6 +413,11 @@ function examNav(s, it) {
   return h;
 }
 
+/** Câu trong đoạn văn: escape rồi chuyển **...** thành chữ in đậm (dạng câu hỏi Boldface của đoạn argument). */
+const sentHtml = (sent) => esc(sent).replace(/\*\*([^*]+)\*\*/g, '<b class="rc-bold">$1</b>');
+/** Câu trong đoạn văn dạng chữ thường (bỏ dấu ** của phần in đậm). */
+const sentPlain = (sent) => String(sent || '').replace(/\*\*/g, '');
+
 /** Đoạn văn Reading: mỗi đoạn một <p>; dạng chọn câu thì từng câu bấm được. sel: số thứ tự câu đang chọn (chuỗi) hoặc null. */
 function passageHtml(p, clickable, sel, mark) {
   let k = 0;
@@ -420,8 +425,8 @@ function passageHtml(p, clickable, sel, mark) {
     const i = k++;
     const cls = (clickable ? 'rc-sent pick' : 'rc-sent') + (sel === String(i) ? ' on' : '') + (mark === i ? ' ans' : '');
     return clickable
-      ? '<span class="' + cls + '" role="radio" tabindex="0" aria-checked="' + (sel === String(i)) + '" data-act="mk-pick" data-b="0" data-o="' + i + '">' + esc(sent) + '</span> '
-      : '<span class="' + cls + '">' + esc(sent) + '</span> ';
+      ? '<span class="' + cls + '" role="radio" tabindex="0" aria-checked="' + (sel === String(i)) + '" data-act="mk-pick" data-b="0" data-o="' + i + '">' + sentHtml(sent) + '</span> '
+      : '<span class="' + cls + '">' + sentHtml(sent) + '</span> ';
   }).join('') + '</p>').join('');
 }
 
@@ -442,7 +447,7 @@ function rcScreen(s, it, e) {
   h += '<p class="rc-stem">' + esc(e.stem) + '</p>';
   if (isSent) {
     h += '<p class="muted small">Bấm vào một câu trong đoạn văn để chọn; bấm câu khác để đổi.</p>' +
-      (it.choice.length ? '<div class="rc-chosen">Đã chọn: <i>' + esc(p.sentences[+it.choice[0]] || '') + '</i></div>' : '');
+      (it.choice.length ? '<div class="rc-chosen">Đã chọn: <i>' + esc(sentPlain(p.sentences[+it.choice[0]])) + '</i></div>' : '');
   } else {
     const multi = e.kind === 'multi';
     h += '<div class="options" role="' + (multi ? 'group' : 'radiogroup') + '">' + it.order[0].map((o, k) =>
@@ -657,7 +662,7 @@ function resultScreen() {
 /** Một câu Reading ở màn kết quả: đoạn văn (thu gọn), câu hỏi, lựa chọn của bạn, đáp án, giải thích. */
 function rcResultItem(m, it, k, e) {
   const choice = decodeChoice(it.c, e);
-  const show = (arr) => (e.kind === 'sentence' ? arr.map((x) => '"' + (e.passage.sentences[+x] || '?') + '"') : arr.map((x) => {
+  const show = (arr) => (e.kind === 'sentence' ? arr.map((x) => '"' + (sentPlain(e.passage.sentences[+x]) || '?') + '"') : arr.map((x) => {
     const i = e.options.indexOf(x);
     return (e.kind === 'mc' ? LETTERS[i] : i + 1) + '. ' + x;
   })).join('; ');

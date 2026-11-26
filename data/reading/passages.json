@@ -1092,6 +1092,270 @@
           "explanation": "So sánh với vùng nước có cùng thay đổi nhiệt độ nhưng không có hạn ngạch tách được hai nguyên nhân. Nếu cá ở đó cũng phục hồi, nhiệt độ có thể là nguyên nhân chính."
         }
       ]
+    },
+    {
+      "id": "rc25",
+      "title": "Dog adoption subsidy",
+      "length": "argument",
+      "paragraphs": [
+        [
+          "Residents of Lakeview who own a dog report walking an average of 40 minutes a day, compared with 15 minutes a day for residents who do not own a dog.",
+          "The town's health agency therefore plans to subsidize dog adoption, expecting the subsidy to increase the amount that residents walk."
+        ]
+      ],
+      "questions": [
+        {
+          "id": "rc25a",
+          "kind": "mc",
+          "difficulty": 2,
+          "stem": "The agency's plan depends on which of the following assumptions?",
+          "options": [
+            "Dog ownership is more common in Lakeview than in neighboring towns.",
+            "Residents who adopt a dog because of the subsidy will walk about as much as residents who already own dogs.",
+            "Walking 40 minutes a day lowers the risk of heart disease more than walking 15 minutes a day.",
+            "Most dog owners in Lakeview adopted their dogs from animal shelters.",
+            "Some residents who do not own a dog walk more than 40 minutes a day."
+          ],
+          "answer": "Residents who adopt a dog because of the subsidy will walk about as much as residents who already own dogs.",
+          "explanation": "Dữ kiện chỉ là tương quan: người đang nuôi chó có thể vốn thích đi bộ nên mới nuôi chó. Kế hoạch ngầm giả định người nhận nuôi nhờ trợ cấp cũng đi bộ nhiều như vậy. Phép thử phủ định: nếu họ không đi bộ nhiều hơn, kế hoạch sụp. Các phương án khác không cần thiết cho kết luận."
+        }
+      ]
+    },
+    {
+      "id": "rc26",
+      "title": "Helmet law",
+      "length": "argument",
+      "paragraphs": [
+        [
+          "In the decade after Varnia made helmets mandatory for motorcycle riders, the number of motorcyclists treated in Varnian hospitals for head injuries rose by 20 percent.",
+          "Yet studies conducted during the same decade consistently found that wearing a helmet sharply reduces a rider's chance of suffering a head injury in a crash."
+        ]
+      ],
+      "questions": [
+        {
+          "id": "rc26a",
+          "kind": "mc",
+          "difficulty": 2,
+          "stem": "Which of the following, if true, most helps to resolve the apparent discrepancy described above?",
+          "options": [
+            "Helmets sold in Varnia must meet a national safety standard.",
+            "The number of motorcycles on Varnian roads more than doubled during the decade.",
+            "Some Varnian riders wear helmets only when riding on highways.",
+            "Head injuries are more costly to treat than most other injuries caused by crashes.",
+            "Before the law took effect, about half of Varnian riders already wore helmets."
+          ],
+          "answer": "The number of motorcycles on Varnian roads more than doubled during the decade.",
+          "explanation": "Bẫy số tuyệt đối và tỷ lệ: nếu số xe tăng hơn gấp đôi, số ca chấn thương đầu vẫn có thể tăng 20% dù tỷ lệ chấn thương trên mỗi người lái giảm mạnh. Cả hai dữ kiện cùng đúng. Phương án E chỉ làm tác dụng của luật nhỏ đi, không giải thích vì sao số ca tăng."
+        }
+      ]
+    },
+    {
+      "id": "rc27",
+      "title": "Newspaper sales",
+      "length": "argument",
+      "paragraphs": [
+        [
+          "**Sales of printed newspapers in Corvia fell by a third over the past five years.**",
+          "Some analysts conclude that Corvians have lost interest in local news.",
+          "This conclusion is mistaken.",
+          "**Over the same period, the number of visits to the websites of Corvia's local newspapers more than tripled.**",
+          "The decline in print sales therefore reflects a change in how residents read the news, not a decline in their interest in it."
+        ]
+      ],
+      "questions": [
+        {
+          "id": "rc27a",
+          "kind": "mc",
+          "difficulty": 3,
+          "stem": "In the argument above, the two portions in boldface play which of the following roles?",
+          "options": [
+            "The first is a finding that the argument seeks to explain; the second is evidence that supports the argument's own explanation of that finding.",
+            "The first is evidence offered for the analysts' conclusion; the second is the main conclusion of the argument.",
+            "The first is the main conclusion of the argument; the second is evidence offered in support of that conclusion.",
+            "The first is a finding that the argument rejects as inaccurate; the second is evidence for an alternative account of that finding.",
+            "The first and the second are both evidence offered in support of the analysts' conclusion."
+          ],
+          "answer": "The first is a finding that the argument seeks to explain; the second is evidence that supports the argument's own explanation of that finding.",
+          "explanation": "Kết luận chính là câu cuối: giảm bán báo in là do đổi cách đọc. Phần in đậm 1 là dữ kiện cả hai bên cùng chấp nhận và cần giải thích (không bị bác bỏ, loại D). Phần in đậm 2 là bằng chứng cho cách giải thích của tác giả, không phải kết luận (loại B)."
+        }
+      ]
+    },
+    {
+      "id": "rc28",
+      "title": "Help forum survey",
+      "length": "argument",
+      "paragraphs": [
+        [
+          "A software company surveyed users who had posted on its online help forum during the past year.",
+          "More than 70 percent of respondents said that the company's latest update made its program harder to use.",
+          "The company's product manager concluded that most of the company's customers dislike the update."
+        ]
+      ],
+      "questions": [
+        {
+          "id": "rc28a",
+          "kind": "multi",
+          "difficulty": 3,
+          "stem": "Which of the following, if true, would weaken the product manager's conclusion?",
+          "options": [
+            "Users typically post on the help forum only after they run into a problem with the program.",
+            "Fewer than 2 percent of the company's customers have ever posted on the help forum.",
+            "The survey asked respondents to rate several features of the update on a five-point scale."
+          ],
+          "answers": [
+            "Users typically post on the help forum only after they run into a problem with the program.",
+            "Fewer than 2 percent of the company's customers have ever posted on the help forum."
+          ],
+          "explanation": "Lỗi mẫu khảo sát. Phương án 1: người viết lên diễn đàn là người đang gặp lỗi, nên mẫu nghiêng về phía không hài lòng. Phương án 2: mẫu quá nhỏ so với toàn bộ khách hàng. Phương án 3 chỉ mô tả cách hỏi, không làm mẫu kém đại diện."
+        }
+      ]
+    },
+    {
+      "id": "rc29",
+      "title": "Bank complaints",
+      "length": "argument",
+      "paragraphs": [
+        [
+          "Over the past two years, the number of complaints that Brenton Bank received about its customer service rose by 60 percent.",
+          "During the same period, the bank replaced its paper complaint form with a one-click complaint button in its mobile app.",
+          "The bank's managers concluded that the quality of the bank's customer service has declined."
+        ]
+      ],
+      "questions": [
+        {
+          "id": "rc29a",
+          "kind": "mc",
+          "difficulty": 3,
+          "stem": "Which of the following would be most useful to know in evaluating the managers' conclusion?",
+          "options": [
+            "Whether the bank's competitors have also introduced mobile apps",
+            "Whether the number of customers who closed their accounts and cited poor service as the reason rose during the two years",
+            "How many employees work in the bank's customer service department",
+            "Whether the one-click button cost more to build than the paper form cost to print",
+            "Whether most complaints were filed on weekdays"
+          ],
+          "answer": "Whether the number of customers who closed their accounts and cited poor service as the reason rose during the two years",
+          "explanation": "Số khiếu nại tăng có thể chỉ vì khiếu nại dễ hơn (nút một chạm), không phải vì dịch vụ kém đi. Cần một thước đo không bị ảnh hưởng bởi cách khiếu nại: số người đóng tài khoản vì dịch vụ kém. Nếu số này cũng tăng, kết luận mạnh hơn; nếu không, kết luận yếu đi."
+        }
+      ]
+    },
+    {
+      "id": "rc30",
+      "title": "Medieval world maps",
+      "length": "short",
+      "paragraphs": [
+        [
+          "Medieval world maps are often dismissed as crude attempts at geography, since they distort coastlines and place Jerusalem at the center of the world.",
+          "Such a judgment, however, mistakes their purpose.",
+          "Their makers were less concerned to record the land than to organize knowledge: alongside cities and rivers, the maps depict biblical episodes, legendary peoples, and the ages of history.",
+          "A traveler would have found them of little use, but a reader could move across them as through an encyclopedia, and their distortions were often deliberate choices that gave sacred places the prominence their makers believed those places deserved."
+        ]
+      ],
+      "questions": [
+        {
+          "id": "rc30a",
+          "kind": "mc",
+          "difficulty": 1,
+          "stem": "In the context in which it appears, \"mistakes\" most nearly means",
+          "options": [
+            "misunderstands",
+            "regrets",
+            "exaggerates",
+            "overlooks",
+            "imitates"
+          ],
+          "answer": "misunderstands",
+          "explanation": "Cách đánh giá đó hiểu sai mục đích của bản đồ: mistake ở đây là động từ, nghĩa là hiểu sai. Overlooks (bỏ qua) gần nhưng câu sau cho thấy người phê bình có nghĩ tới mục đích, chỉ là nghĩ sai."
+        },
+        {
+          "id": "rc30b",
+          "kind": "mc",
+          "difficulty": 2,
+          "stem": "The primary purpose of the passage is to",
+          "options": [
+            "challenge a common assessment of a kind of map by reconsidering what such maps were meant to do",
+            "trace the development of map-making techniques in the Middle Ages",
+            "argue that medieval world maps were more geographically accurate than is commonly believed",
+            "explain why medieval travelers relied on encyclopedias rather than maps",
+            "compare medieval world maps with modern encyclopedias"
+          ],
+          "answer": "challenge a common assessment of a kind of map by reconsidering what such maps were meant to do",
+          "explanation": "Câu 1 nêu cách đánh giá phổ biến, câu 2 bác bỏ, câu 3–4 giải thích mục đích thật. Tác giả không nói bản đồ chính xác hơn (loại C, bẫy nói quá) mà nói chúng không nhằm chính xác."
+        },
+        {
+          "id": "rc30c",
+          "kind": "sentence",
+          "difficulty": 2,
+          "stem": "Select the sentence in the passage that reinterprets a feature that critics regard as a flaw.",
+          "answer": 3,
+          "explanation": "Câu cuối coi sự méo mó (distortions) là lựa chọn có chủ ý. Câu 1 chỉ nêu sự méo mó theo góc nhìn người phê bình, chưa diễn giải lại."
+        }
+      ]
+    },
+    {
+      "id": "rc31",
+      "title": "Lighthouses",
+      "length": "long",
+      "paragraphs": [
+        [
+          "For decades, economics textbooks used the lighthouse as the standard example of a public good.",
+          "A ship that benefits from a lighthouse's beam, the argument ran, cannot be prevented from using it and cannot be charged for it, so no private firm would build one; only the state could provide such a service."
+        ],
+        [
+          "In 1974, however, Ronald Coase showed that many English lighthouses had in fact been built and run by private owners.",
+          "These owners collected fees from ships at the ports where the ships docked, under charges authorized by the Crown, and the proceeds made many lighthouses profitable.",
+          "Coase's critics have since noted that the system depended on the state to set and enforce the fees, so that the lighthouses were not purely private ventures.",
+          "Yet this qualification leaves the central point intact: the textbook claim that a lighthouse could be financed only through taxation was not a deduction from theory but an assumption that no one had checked against the record."
+        ]
+      ],
+      "questions": [
+        {
+          "id": "rc31a",
+          "kind": "mc",
+          "difficulty": 2,
+          "stem": "The observation attributed to Coase's critics serves primarily to",
+          "options": [
+            "qualify the description of the lighthouses as private enterprises",
+            "refute the historical evidence that Coase presented",
+            "explain why textbooks chose the lighthouse as an example",
+            "show that many ships avoided paying lighthouse fees",
+            "argue that the state should have operated the lighthouses directly"
+          ],
+          "answer": "qualify the description of the lighthouses as private enterprises",
+          "explanation": "Phê bình chỉ điều chỉnh: hệ thống cần nhà nước đặt và thu phí nên không hoàn toàn tư nhân. Tác giả nói ngay sau đó rằng điểm chính vẫn đứng vững, nên phê bình không bác bỏ bằng chứng của Coase (loại B)."
+        },
+        {
+          "id": "rc31b",
+          "kind": "multi",
+          "difficulty": 3,
+          "stem": "It can be inferred that the author would agree with which of the following statements?",
+          "options": [
+            "Economists accepted the textbook account of lighthouses without examining how lighthouses had actually been financed.",
+            "The state's role in setting lighthouse fees does not show that lighthouses had to be funded through taxation.",
+            "Most lighthouses in England today are operated by private firms."
+          ],
+          "answers": [
+            "Economists accepted the textbook account of lighthouses without examining how lighthouses had actually been financed.",
+            "The state's role in setting lighthouse fees does not show that lighthouses had to be funded through taxation."
+          ],
+          "explanation": "Câu cuối: tuyên bố của sách giáo khoa là giả định chưa ai kiểm chứng (phương án 1), và phê bình về vai trò nhà nước không làm mất điểm chính, vì phí do tàu trả chứ không qua thuế (phương án 2). Bài không nói gì về hải đăng hiện nay (phương án 3, kiến thức ngoài)."
+        },
+        {
+          "id": "rc31c",
+          "kind": "mc",
+          "difficulty": 2,
+          "stem": "In the context in which it appears, \"record\" most nearly means",
+          "options": [
+            "historical evidence",
+            "highest achievement",
+            "official register of ships",
+            "audio recording",
+            "personal reputation"
+          ],
+          "answer": "historical evidence",
+          "explanation": "Checked against the record: đối chiếu với tư liệu lịch sử về cách hải đăng thực sự được tài trợ, đúng việc Coase đã làm. Official register of ships là bẫy gần ngữ cảnh hàng hải nhưng quá hẹp."
+        }
+      ]
     }
   ]
 }

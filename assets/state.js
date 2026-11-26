@@ -288,6 +288,7 @@ const ICONS = {
   mock: '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M12 21a7.5 7.5 0 1 0 0-15 7.5 7.5 0 0 0 0 15Zm0-11v3.8l2.4 1.6M10 2.8h4M18.4 6.6l1.3-1.3"/></svg>',
   practice: '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M9 4.5h6M10 4.5v4.2L5.2 17a2 2 0 0 0 1.7 3h10.2a2 2 0 0 0 1.7-3L14 8.7V4.5M7.5 14h9"/></svg>',
   book: '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Zm0-13v5m0 3.2v.3"/></svg>',
+  tips: '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.6 10.8c.7.5 1.1 1.3 1.1 2.2h5c0-.9.4-1.7 1.1-2.2A6 6 0 0 0 12 3Z"/></svg>',
   add: '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M12 5v14M5 12h14"/></svg>'
 };
 const TABS = [
@@ -296,9 +297,10 @@ const TABS = [
   { id: 'practice', long: 'Luyện tập', short: 'Luyện tập' },
   { id: 'mock', long: 'Thi thử', short: 'Thi thử' },
   { id: 'book', long: 'Sổ từ hay quên', short: 'Hay quên' },
+  { id: 'tips', long: 'Chiến lược', short: 'Mẹo' },
   { id: 'add', long: 'Thêm từ', short: 'Thêm từ' }
 ];
-export const ROUTES = ['today', 'vocab', 'practice', 'mock', 'book', 'add', 'account', 'admin', 'mysugg'];
+export const ROUTES = ['today', 'vocab', 'practice', 'mock', 'book', 'tips', 'add', 'account', 'admin', 'mysugg'];
 
 function renderChrome() {
   const authView = !!(views[App.view] && views[App.view].auth);

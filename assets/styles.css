@@ -1036,3 +1036,16 @@ h1, h2, h3, .hero-title, .page-head h1, .word-big, .meaning-big, .group-head h3,
 .m2w-hint { margin-top: 10px; padding: 8px 14px; border-left: 3px solid var(--warn); background: var(--warn-soft); border-radius: 0 8px 8px 0; }
 .m2w-hint .meaning-big, .m2w-hint .q-prompt { font-size: 19px; margin: 2px 0 4px; }
 .m2w-hint .nuance, .m2w-hint .q-nuance { margin: 0 0 4px; }
+
+/* Trang Chiến lược (#tips) */
+.tips-toc { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 16px; }
+.tips-toc .chip { text-decoration: none; }
+.tips-card { margin: 0 0 16px; scroll-margin-top: 80px; }
+.tips-card .section { margin-top: 0; }
+.tips-h { font-size: 15px; font-weight: 600; margin: 14px 0 6px; }
+.tips-list { margin: 8px 0 0; padding-left: 1.3em; }
+.tips-list li { margin: 0 0 6px; line-height: 1.55; }
+.tips-dl dt { font-weight: 600; margin-top: 10px; }
+.tips-dl dd { margin: 2px 0 0; color: var(--muted); }
+.tips-table td { vertical-align: top; }
+.rc-text b.rc-bold { font-weight: 700; }
