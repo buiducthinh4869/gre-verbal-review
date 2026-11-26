@@ -296,14 +296,14 @@ const ICONS = {
 const TABS = [
   { id: 'today', long: 'Hôm nay', short: 'Hôm nay' },
   { id: 'vocab', long: 'Từ vựng', short: 'Từ vựng' },
-  { id: 'practice', long: 'Luyện tập', short: 'Luyện tập' },
-  { id: 'reading', long: 'Reading', short: 'Reading' },
-  { id: 'quant', long: 'Quant', short: 'Quant' },
   { id: 'mock', long: 'Thi thử', short: 'Thi thử' },
   { id: 'book', long: 'Sổ từ hay quên', short: 'Hay quên' },
   { id: 'tips', long: 'Chiến lược', short: 'Mẹo' },
-  { id: 'add', long: 'Thêm từ', short: 'Thêm từ' }
+  { id: 'add', long: 'Thêm từ', short: 'Thêm từ' },
+  { id: 'practice', long: 'Luyện tập', short: 'Luyện tập' }
 ];
+/** Trang con của tab Luyện tập (Verbal, Reading, Quant): thanh tab sáng mục Luyện tập. */
+const PRACTICE_VIEWS = ['practice', 'reading', 'quant'];
 export const ROUTES = ['today', 'vocab', 'practice', 'reading', 'quant', 'mock', 'book', 'tips', 'add', 'account', 'admin', 'mysugg'];
 
 function renderChrome() {
@@ -318,7 +318,8 @@ function renderChrome() {
   const me = document.getElementById('meBtn');
   if (me) me.classList.toggle('has-badge', !authView && isAdmin() && App.content.pending > 0);
   if (authView || !App.idx) { tabs.innerHTML = ''; return; }
-  const current = App.view === 'session' ? (App.session && App.session.from) || 'today' : App.view;
+  const cur0 = App.view === 'session' ? (App.session && App.session.from) || 'today' : App.view;
+  const current = PRACTICE_VIEWS.includes(cur0) ? 'practice' : cur0;
   document.body.classList.toggle('exam-mode', !!(views[App.view] && views[App.view].immersive && views[App.view].immersive()));
   const nLeech = leechWords().length;
   tabs.innerHTML = TABS.map((t) => {
@@ -341,7 +342,7 @@ export function render() {
   el.classList.toggle('wide', !!(v.wide && v.wide()));
   el.innerHTML = v.render();
   if (v.after) v.after();
-  document.title = (v.title ? v.title + ' · ' : '') + 'Ôn GRE Verbal';
+  document.title = (v.title ? v.title + ' · ' : '') + 'Sổ GRE';
 }
 
 /** Tách hash thành {view, sub}: "#vocab/praise-criticism/praise-verbs" → {view: 'vocab', sub: ['praise-criticism', 'praise-verbs']}. */

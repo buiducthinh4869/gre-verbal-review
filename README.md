@@ -1,6 +1,6 @@
-# Sổ GRE Verbal
+# Sổ GRE
 
-Web ôn từ vựng GRE Verbal (thi 18/12/2026). Mỗi người một tài khoản và một lộ trình ôn riêng (lặp lại ngắt quãng theo hộp Leitner). Tiến độ tự lưu và đồng bộ giữa các thiết bị.
+Web ôn GRE: từ vựng và Verbal, Reading, Quant (thi 18/12/2026). Tên cũ: Sổ GRE Verbal; địa chỉ web và repo giữ nguyên. Mỗi người một tài khoản và một lộ trình ôn riêng (lặp lại ngắt quãng theo hộp Leitner). Tiến độ tự lưu và đồng bộ giữa các thiết bị.
 
 - **Web:** https://buiducthinh4869.github.io/gre-verbal-review/
 - **API:** Google Apps Script (URL trong `config.js`, deployment ID trong `.deployment-id`)
@@ -41,6 +41,8 @@ tests/                  srs, distractors, mock, bank, content, api (server chạ
 ```
 
 ## Các trang
+
+Thanh tab: Hôm nay · Từ vựng · Thi thử · Hay quên · Chiến lược · Thêm từ · **Luyện tập** (ngoài cùng phải). Luyện tập có thanh điều hướng con (`practiceShell` trong `assets/views/ui.js`) gồm Verbal (`#practice`), Reading (`#reading`), Quant (`#quant`). Hôm nay có mục lục bên trái, khối Reading trong ngày (`dailyReadingCard`) và 2 bài Quant khởi động (`warmQuantCard`, ghi vào lịch sử Quant với `no: 'w'`). Ô mẹo 💡 / bẫy ⚠️ dùng `callout` trong `assets/views/ui.js`.
 
 - **Từ vựng** có ba cấp, định tuyến bằng hash (nút Quay lại của trình duyệt đi đúng giữa các cấp):
   - `#vocab`: lưới thẻ cụm.

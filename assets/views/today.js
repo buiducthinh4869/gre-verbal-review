@@ -10,6 +10,9 @@ import { pickDistractors } from '../distractors.js';
 import { gradeExercise } from '../vocab.js';
 import { resultLine, contrastHtml } from './common.js';
 import { renderMarkup, maskForms } from '../render.js';
+import { tocLayout, bindToc } from './ui.js';
+import { dailyReadingCard } from './reading.js';
+import { warmQuantCard } from './quant.js';
 
 const ROMAN = ['i', 'ii', 'iii'];
 
@@ -210,30 +213,34 @@ views.today = {
     let h = '<header class="t-hero"><div><div class="today-date">' + weekday(t) + ', ' + fmtDate(t) + (name ? ' · ' + esc(name) : '') + '</div>' +
       '<h1 class="hero-title">' + (q.total ? 'Hôm nay: ' + L.new.length + ' từ mới, ' + L.due.length + ' từ đến hạn' : 'Hôm nay đã ôn xong') + '</h1></div>' +
       '<div class="t-badges"><span class="badge-big"><b>' + left + '</b> ngày đến GRE</span><span class="badge-big"><b>' + streak + '</b> ngày liên tục</span></div></header>';
-    h += stepsBlock(L, done, read, q);
+    let m = '<section id="td-steps" class="toc-sec">' + stepsBlock(L, done, read, q);
     if (!q.total) {
       const more = moreNewWords(L).length;
-      h += '<div class="done-note"><p class="muted">Không còn thẻ nào đến hạn. Có thể học thêm từ mới hoặc làm vài câu GRE.</p><div class="done-actions">' +
+      m += '<div class="done-note"><p class="muted">Không còn thẻ nào đến hạn. Có thể học thêm từ mới hoặc làm vài câu GRE.</p><div class="done-actions">' +
         (more ? '<button class="btn" data-act="more-new">Học thêm 5 từ mới</button>' : '') + '<button class="btn" data-act="quick-gre">Làm 10 câu GRE</button></div></div>';
     }
-    h += '<div class="t-grid"><div class="t-main">' + topicsBlock(L, done, read, t) + '</div><div class="t-side">' + quickBlock(L, read) + leechBlock(L) + '</div></div>';
-    h += lastMockLine();
-    h += '<details class="t-section t-progress"><summary><h2>Tiến độ theo cụm</h2></summary>';
+    m += '</section>';
+    m += '<section id="td-warm" class="toc-sec t-warm"><h2 class="t-h2">Khởi động Reading và Quant</h2><div class="warm-grid">' + dailyReadingCard(t) + warmQuantCard(t) + '</div></section>';
+    m += '<section id="td-topics" class="toc-sec"><div class="t-grid"><div class="t-main">' + topicsBlock(L, done, read, t) + '</div><div class="t-side">' + quickBlock(L, read) + leechBlock(L) + '</div></div></section>';
+    m += lastMockLine();
+    m += '<section id="td-progress" class="toc-sec"><details class="t-section t-progress"><summary><h2>Tiến độ theo cụm</h2></summary>';
     App.idx.clusters.forEach((c) => {
       const ws = App.idx.words.filter((w) => w.clusterId === c.id);
       if (!ws.length) return;
       const counts = [0, 0, 0, 0, 0, 0];
       ws.forEach((w) => { const s = App.progress[w.id]; counts[s ? s.box : 0]++; });
-      h += '<div class="cluster-progress"><div class="cp-head"><span class="cp-title">' + esc(c.title) + '</span>' +
+      m += '<div class="cluster-progress"><div class="cp-head"><span class="cp-title">' + esc(c.title) + '</span>' +
         '<span class="muted small">' + (ws.length - counts[0]) + '/' + ws.length + ' từ đã học</span></div>' +
         '<div class="bar" role="img" aria-label="' + counts.map((n, b) => 'hộp ' + b + ': ' + n).join(', ') + '">' +
         counts.map((n, b) => (n ? '<span class="b' + b + '" style="width:' + (100 * n / ws.length) + '%" title="Hộp ' + b + ': ' + n + ' từ"></span>' : '')).join('') +
         '</div></div>';
     });
-    h += '<div class="legend">' + ['Chưa học', 'Hộp 1', 'Hộp 2', 'Hộp 3', 'Hộp 4', 'Hộp 5'].map((l, b) => '<span><i class="b' + b + '"></i>' + l + '</span>').join('') + '</div></details>';
+    m += '<div class="legend">' + ['Chưa học', 'Hộp 1', 'Hộp 2', 'Hộp 3', 'Hộp 4', 'Hộp 5'].map((l, b) => '<span><i class="b' + b + '"></i>' + l + '</span>').join('') + '</div></details></section>';
+    h += tocLayout([['td-steps', 'Từ vựng hôm nay'], ['td-warm', 'Reading và Quant'], ['td-topics', 'Chủ đề và câu nhanh'], ['td-progress', 'Tiến độ theo cụm']], m, 'Hôm nay');
     App.keyHandler = (e) => { if (e.key === 'Enter' && q.total && !isTyping(e) && !(e.target && e.target.closest && e.target.closest('button, summary, a'))) { e.preventDefault(); startDaily(); } };
     return h;
-  }
+  },
+  after() { bindToc(); }
 };
 
 /** Từ chưa học ngoài danh sách từ mới hôm nay (cho nút "Học thêm 5 từ mới"). */

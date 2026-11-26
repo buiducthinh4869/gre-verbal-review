@@ -1,13 +1,14 @@
 // Tab Luyện Reading: chọn đoạn văn theo loại đoạn, dạng câu, trạng thái; làm bài ở chế độ Học (chấm từng câu, hiện cách làm)
 // hoặc Có giờ (đồng hồ theo thời gian gợi ý, chấm khi nộp); màn tổng kết có nhật ký lý do sai; thống kê theo dạng câu.
 // Lịch sử lưu trên trình duyệt này (localStorage, theo tài khoản). Đoạn đang giữ cho đề thi thử cố định chưa làm bị ẩn.
-import { App, esc, views, actions, render, heldIds, now } from '../state.js';
+import { App, esc, views, actions, render, heldIds, now, go as goView } from '../state.js';
 import { LS } from '../api.js';
 import {
   LENGTHS, TASKS, TASK_ORDER, READ_GUIDE, REASONS, budgetSec, taskOf, lastByPassage, passageStatus, filterPassages, pickNext,
   gradeAttempt, taskStats, reasonStats, weakestTask, trimHistory
 } from '../rcpractice.js';
 import { rcAnswers } from '../reading.js';
+import { practiceShell, callout, calloutList } from './ui.js';
 
 const LETTERS = 'ABCDE';
 const STATUS = { all: 'Tất cả', new: 'Chưa làm', wrong: 'Còn sai', done: 'Đã đúng hết' };
@@ -76,8 +77,7 @@ function listScreen() {
   h += '<div class="field"><span class="label">Trạng thái</span><div class="chips-wrap">' + Object.keys(STATUS).map((k) => chip('rcp-status', k, f.status === k, STATUS[k])).join('') + '</div></div>';
   h += '<div class="form-grid"><button class="btn primary big" data-act="rcp-next"' + (list.length ? '' : ' disabled') + '>Làm đoạn tiếp theo' + (list.length ? ' (' + list.length + ' đoạn phù hợp)' : ': không có đoạn phù hợp') + '</button></div></section>';
 
-  h += '<details class="card rcp-guide"><summary><b>Cách đọc đoạn văn trước khi trả lời</b></summary><ul class="tips-list">' +
-    READ_GUIDE.all.map((x) => '<li>' + esc(x) + '</li>').join('') + Object.keys(LENGTHS).map((k) => '<li>' + esc(READ_GUIDE[k]) + '</li>').join('') + '</ul></details>';
+  h += calloutList('tip', 'Cách đọc đoạn văn trước khi trả lời', READ_GUIDE.all.concat(Object.keys(LENGTHS).map((k) => READ_GUIDE[k])));
 
   if (tot.n) {
     h += '<h2 class="section">Theo dạng câu</h2><div class="table-wrap"><table class="mock-table rcp-stats"><thead><tr><th>Dạng</th><th>Câu</th><th>Đúng</th><th>Giây/câu</th><th></th></tr></thead><tbody>' +
@@ -137,8 +137,8 @@ function passageHtml(p, e, showAns) {
 
 function routineHtml(t, open) {
   const T = TASKS[t];
-  return '<details class="rcp-routine"' + (open ? ' open' : '') + '><summary>Cách làm dạng ' + esc(T.label) + '</summary><ol class="tips-list">' + T.steps.map((x) => '<li>' + esc(x) + '</li>').join('') +
-    '</ol><div class="small"><b>Bẫy hay gặp:</b></div><ul class="tips-list small">' + T.traps.map((x) => '<li>' + esc(x) + '</li>').join('') + '</ul></details>';
+  return '<details class="rcp-routine"' + (open ? ' open' : '') + '><summary>💡 Cách làm dạng ' + esc(T.label) + '</summary>' +
+    calloutList('tip', 'Ba bước', T.steps, true) + calloutList('trap', 'Bẫy hay gặp', T.traps) + '</details>';
 }
 
 function optionsHtml(e) {
@@ -261,7 +261,7 @@ views.reading = {
     if (R.screen === 'do' && pas(R.pid)) return doScreen();
     if (R.screen === 'result' && R.attempt && pas(R.attempt.pid)) return resultScreen();
     R.screen = 'list';
-    return listScreen();
+    return practiceShell('reading', listScreen());
   },
   after() {
     if (R.screen === 'do') {
@@ -341,3 +341,40 @@ Object.assign(actions, {
     render();
   }
 });
+
+/* ---------------- Đoạn văn trong ngày (hiện ở trang Hôm nay) ---------------- */
+const dailyKey = () => 'gre.rcDaily.' + App.user.userId;
+/** Đoạn văn trong ngày: chọn một lần mỗi ngày (ưu tiên đoạn chưa làm, rồi đoạn còn sai), giữ nguyên cả ngày. */
+export function dailyPassage(day) {
+  const saved = LS.get(dailyKey(), null);
+  const held = heldIds();
+  if (saved && saved.day === day && pas(saved.pid) && !pas(saved.pid).questionIds.some((id) => held.has(id))) return pas(saved.pid);
+  const usable = App.reading.passages.filter((p) => !p.questionIds.some((id) => held.has(id)));
+  const p = pickNext(usable, lastByPassage(hist()), null);
+  if (p) LS.set(dailyKey(), { day, pid: p.id });
+  return p;
+}
+/** Thẻ đoạn văn trong ngày cho trang Hôm nay. */
+export function dailyReadingCard(day) {
+  const p = dailyPassage(day);
+  if (!p) return '<div class="card warm-card"><div class="card-kind"><span>📖 Reading trong ngày</span></div><p class="muted">Chưa có đoạn văn nào dùng được.</p></div>';
+  const todayAt = (a) => a && a.pid === p.id && new Date(a.at + 7 * 3600e3).toISOString().slice(0, 10) === day;
+  const a = hist().filter(todayAt).pop();
+  const tasks = [...new Set(p.questionIds.map((id) => taskOf(q(id))))];
+  const preview = sentPlain(p.sentences[0]);
+  let h = '<div class="card warm-card"><div class="card-kind"><span>📖 Reading trong ngày</span><span class="dotsep">' + esc(LENGTHS[p.length] || '') + ' · ' + p.questionIds.length + ' câu · gợi ý ' + mmss(budgetSec(p)) + '</span></div>' +
+    '<h3 class="warm-title">' + esc(p.title) + '</h3><p class="warm-preview">' + esc(preview.length > 180 ? preview.slice(0, 177) + '…' : preview) + '</p>' +
+    '<div class="small muted">' + tasks.map((t) => esc(TASKS[t].label)).join(' · ') + '</div>';
+  if (a) {
+    const ok = a.items.filter((x) => x.ok).length;
+    h += '<div class="warm-done ' + (ok === a.items.length ? 'good' : 'bad') + '">' + (ok === a.items.length ? '✓' : '✗') + ' Đã làm hôm nay: ' + ok + '/' + a.items.length + ' câu đúng, ' + mmss(a.sec) + '</div>' +
+      '<div class="form-grid"><button class="btn" data-act="rcp-daily" data-id="' + esc(p.id) + '">Làm lại</button></div>';
+  } else h += '<div class="form-grid"><button class="btn primary" data-act="rcp-daily" data-id="' + esc(p.id) + '">Làm ngay (chế độ Học)</button></div>';
+  return h + '</div>';
+}
+actions['rcp-daily'] = (t) => {
+  if (!pas(t.dataset.id)) return;
+  prefs(); R.mode = 'study';
+  Object.assign(R, { screen: 'do', pid: t.dataset.id, cur: 0, choices: {}, checked: {}, start: now(), attempt: null });
+  goView('reading');
+};

@@ -3,6 +3,7 @@
 // Lịch sử và bài đang làm lưu trên trình duyệt này (localStorage, theo tài khoản).
 import { App, esc, views, actions, render, toast, now, today, isTyping } from '../state.js';
 import { LS } from '../api.js';
+import { practiceShell, callout, calloutList } from './ui.js';
 import { dailySet, makeItem, TEMPLATES, grade, answerText, trapStats, exportSummary, QC_CHOICES, FMT_LABEL, TOPICS, TRAPS } from '../quant.js';
 
 const histKey = () => 'gre.quantHist.' + App.user.userId;
@@ -18,7 +19,7 @@ const dayLabel = (d) => { const p = d.split('-'); return p[2] + '/' + p[1]; };
 const Z = { screen: 'home', last: null, showExport: false };
 let run = null;
 
-const setsToday = () => hist().filter((s) => s.day === today());
+const setsToday = () => hist().filter((s) => s.day === today() && s.no !== 'w');
 const seedFor = (no) => today() + '|' + App.user.userId + '|' + no;
 
 /** Bài đang làm lưu dưới dạng [{tpl, seed}] để tải lại trang (kể cả sau khi web cập nhật mẫu) vẫn ra đúng các câu cũ. */
@@ -71,7 +72,7 @@ function homeScreen() {
   const tot = h.reduce((a, s) => ({ n: a.n + s.items.length, ok: a.ok + s.items.filter((x) => x.ok).length }), { n: 0, ok: 0 });
   let html = '<div class="page-head"><h1>Quant hằng ngày</h1><p>Mỗi ngày 4 câu sinh ngẫu nhiên, cố tình gài bẫy. Câu nhắm vào các bẫy bạn hay sai: lúc đầu theo sổ lỗi bài thi thử 26/11, sau đó theo kết quả bạn làm ở đây.</p></div>';
   html += '<div class="stats"><div class="stat"><div class="stat-num">' + streak(h) + '</div><div class="stat-label">Ngày liên tiếp</div></div>' +
-    '<div class="stat"><div class="stat-num">' + h.length + '</div><div class="stat-label">Bộ đã làm</div></div>' +
+    '<div class="stat"><div class="stat-num">' + h.filter((s) => s.no !== 'w').length + '</div><div class="stat-label">Bộ 4 câu đã làm</div></div>' +
     '<div class="stat"><div class="stat-num">' + (tot.n ? Math.round(100 * tot.ok / tot.n) + '%' : '—') + '</div><div class="stat-label">Đúng (' + tot.n + ' câu)</div></div>' +
     '<div class="stat"><div class="stat-num">' + done.length + '</div><div class="stat-label">Bộ hôm nay</div></div></div>';
 
@@ -90,15 +91,14 @@ function homeScreen() {
   }
   html += '</section>';
 
-  html += '<details class="card qz-guide"><summary><b>Mẹo làm Quantitative Comparison</b></summary><ul class="tips-list">' +
-    ['Bốn phương án cố định: A lớn hơn, B lớn hơn, bằng nhau, không xác định được (D).',
+  html += calloutList('tip', 'Mẹo làm Quantitative Comparison', ['Bốn phương án cố định: A lớn hơn, B lớn hơn, bằng nhau, không xác định được (D).',
       'Thử nhiều loại số: số âm, số 0, phân số giữa 0 và 1, số rất lớn, hai số bằng nhau. Hai lần thử cho hai kết quả khác nhau thì chọn D.',
       'Rút gọn cả hai vế bằng phép biến đổi giữ chiều: cộng trừ cùng một lượng, nhân chia cùng một số DƯƠNG.',
       'Không chọn D nếu cả hai đại lượng tính ra được con số cụ thể.',
       'Hình vẽ không theo tỉ lệ: không suy độ dài hay góc vuông từ hình.',
       'Đọc đúng điều được hỏi: số lượng hay giá trị, tổng hay đơn giá, phần trăm hay điểm phần trăm, đơn vị (nghìn, triệu, phút, giây).',
       'Điền số: phân số không cần rút gọn; chỉ làm tròn khi đề yêu cầu, và chỉ làm tròn ở bước cuối.'
-    ].map((x) => '<li>' + esc(x) + '</li>').join('') + '</ul></details>';
+    ]);
 
   const keys = Object.keys(st).sort((a, b) => (st[a].ok / st[a].n) - (st[b].ok / st[b].n));
   if (keys.length) {
@@ -178,7 +178,7 @@ function resultScreen() {
       '<div class="small">' + esc(it.stem) + '</div>' + (it.fmt === 'qc' ? '<div class="small">Quantity A: <b>' + esc(it.qa) + '</b> · Quantity B: <b>' + esc(it.qb) + '</b></div>' : '') +
       '<div class="small">Bạn chọn: <b>' + esc(mine) + '</b><br>Đáp án: <b>' + esc(answerText(it)) + '</b></div>' +
       '<div class="explain small">' + esc(it.explain) + '</div>' +
-      '<div class="small qz-trap"><b>Bẫy: ' + esc(TRAPS[it.trap].label) + '.</b> ' + esc(it.tip) + '</div></li>';
+      callout('trap', 'Bẫy: ' + TRAPS[it.trap].label, '<div class="small">' + esc(it.tip) + '</div>') + '</li>';
   }).join('') + '</ol>';
   h += '<div class="form-grid" style="margin-top:20px"><button class="btn primary big" data-act="qz-home">Về trang Quant</button></div>';
   return h;
@@ -193,7 +193,7 @@ views.quant = {
     if (Z.screen === 'do' && run) return doScreen();
     if (Z.screen === 'result' && Z.last) return resultScreen();
     Z.screen = 'home';
-    return homeScreen();
+    return practiceShell('quant', homeScreen());
   },
   after() {
     if (Z.screen === 'do' && run) {
@@ -240,4 +240,100 @@ Object.assign(actions, {
     try { await navigator.clipboard.writeText(txt); toast('Đã sao chép dữ liệu lỗi.'); } catch (e) { toast('Không sao chép tự động được; hãy chọn và sao chép trong ô bên dưới.'); }
     render();
   }
+});
+
+/* ---------------- 2 bài khởi động (hiện ở trang Hôm nay) ---------------- */
+// Làm ngay trên trang, chấm từng câu; xong cả hai thì ghi vào lịch sử Quant (no: 'w') để tính vào thống kê bẫy.
+const warmKey = () => 'gre.qWarm.' + App.user.userId;
+// Giữ chữ đang gõ ở ô điền số khi trang vẽ lại (vd trả lời câu kia)
+document.addEventListener('input', (e) => {
+  const t = e.target;
+  if (!t || !t.dataset || t.dataset.qw == null || !App.user) return;
+  const w = LS.get(warmKey(), null);
+  if (!w || w.day !== t.dataset.day || (w.checked || {})[t.dataset.qw]) return;
+  w.choices = w.choices || {}; w.choices[t.dataset.qw] = t.value; LS.set(warmKey(), w);
+});
+function warmState(day) {
+  let w = LS.get(warmKey(), null);
+  if (!w || w.day !== day || !Array.isArray(w.spec) || !w.spec.every((x) => TEMPLATES[x.tpl])) {
+    const snap = hist().slice(-60).map((s) => ({ day: s.day, items: s.items.map((x) => ({ tpl: x.tpl, trap: x.trap, ok: x.ok })) }));
+    const items = dailySet(day + '|' + App.user.userId + '|warm', snap, 2);
+    w = { day, spec: items.map((it) => ({ tpl: it.tpl, seed: it.seed })), choices: {}, checked: {}, saved: false, t0: now() };
+    LS.set(warmKey(), w);
+  }
+  w.items = w.spec.map((x) => makeItem(x.tpl, x.seed));
+  return w;
+}
+const saveWarm = (w) => LS.set(warmKey(), { day: w.day, spec: w.spec, choices: w.choices, checked: w.checked, saved: w.saved, t0: w.t0 });
+
+function warmItemHtml(w, it, k) {
+  const c = w.choices[k];
+  const done = !!w.checked[k];
+  const ok = done && grade(it, c);
+  let h = '<div class="warm-q"><div class="small muted">Câu ' + (k + 1) + ' · ' + esc(FMT_LABEL[it.fmt]) + ' · ' + esc(TOPICS[it.topic]) + '</div>';
+  const optBtn = (o, label, i, multi) => {
+    const on = multi ? (c || []).includes(o) : c === o;
+    let cls = '', mark = '';
+    if (done) { const right = it.fmt === 'multi' ? it.answer.includes(o) : o === it.answer; if (right) { cls = ' correct'; mark = '✓'; } else if (on) { cls = ' wrong'; mark = '✗'; } }
+    return '<button class="opt' + (multi ? ' se-box' : '') + cls + '" role="' + (multi ? 'checkbox' : 'radio') + '" aria-checked="' + on + '"' + (done ? ' disabled' : '') +
+      ' data-act="qw-pick" data-day="' + w.day + '" data-k="' + k + '" data-o="' + esc(o) + '"><span class="num">' + label + '</span><span>' + esc(it.fmt === 'qc' ? QC_CHOICES[o] : o) + '</span><span class="mark">' + mark + '</span></button>';
+  };
+  if (it.fmt === 'qc') {
+    h += '<div class="qz-given">' + esc(it.stem) + '</div><div class="qz-qty"><div><span class="muted small">Quantity A</span><b>' + esc(it.qa) + '</b></div><div><span class="muted small">Quantity B</span><b>' + esc(it.qb) + '</b></div></div>' +
+      '<div class="options">' + ['A', 'B', 'C', 'D'].map((o) => optBtn(o, o, 0, false)).join('') + '</div>';
+  } else if (it.fmt === 'num') {
+    h += '<p class="rc-stem">' + esc(it.stem) + '</p><div class="warm-num"><input class="input qz-num" data-qw="' + k + '" data-day="' + w.day + '" inputmode="decimal" autocomplete="off" value="' + esc(c || '') + '"' + (done ? ' disabled' : '') + '>' +
+      (done ? '' : '<button class="btn primary" data-act="qw-check" data-day="' + w.day + '" data-k="' + k + '">Kiểm tra</button>') + '</div>';
+  } else {
+    const multi = it.fmt === 'multi';
+    h += '<p class="rc-stem">' + esc(it.stem) + '</p><div class="options">' + it.options.map((o, i) => optBtn(o, multi ? i + 1 : LETTERS[i], i, multi)).join('') + '</div>' +
+      (multi && !done ? '<div class="form-grid" style="margin-top:8px"><button class="btn primary" data-act="qw-check" data-day="' + w.day + '" data-k="' + k + '"' + ((c || []).length ? '' : ' disabled') + '>Kiểm tra</button></div>' : '');
+  }
+  if (done) {
+    h += '<div class="rcp-verdict ' + (ok ? 'good' : 'bad') + '">' + (ok ? '✓ Đúng' : '✗ Sai. Đáp án: ' + esc(answerText(it))) + '</div><div class="explain small">' + esc(it.explain) + '</div>' +
+      callout('trap', 'Bẫy: ' + TRAPS[it.trap].label, '<div class="small">' + esc(it.tip) + '</div>');
+  }
+  return h + '</div>';
+}
+
+/** Thẻ 2 bài Quant khởi động cho trang Hôm nay. */
+export function warmQuantCard(day) {
+  if (!App.user) return '';
+  const w = warmState(day);
+  const n = Object.keys(w.checked).length;
+  const nOk = w.items.filter((it, k) => w.checked[k] && grade(it, w.choices[k])).length;
+  return '<div class="card warm-card" id="warmQuant"><div class="card-kind"><span>🧮 Quant khởi động</span><span class="dotsep">' + (n === 2 ? nOk + '/2 đúng' : n + '/2 đã làm') + '</span></div>' +
+    w.items.map((it, k) => warmItemHtml(w, it, k)).join('') +
+    '<div class="small muted">Bộ 4 câu đầy đủ ở <a href="#quant" data-nav="quant">Luyện tập › Quant</a>.</div></div>';
+}
+
+function warmUpdate(day, k, fn) {
+  const w = warmState(day);
+  fn(w, w.items[k]);
+  if (!w.saved && w.items.every((_, i) => w.checked[i])) {
+    const items = w.items.map((it, i) => {
+      const c = w.choices[i];
+      return { tpl: it.tpl, trap: it.trap, fmt: it.fmt, topic: it.topic, ok: grade(it, c), sec: Math.min(600, Math.round((now() - w.t0) / 2000)),
+        c: c == null ? '' : Array.isArray(c) ? c.join('; ') : String(c), a: answerText(it), stem: it.stem + (it.qa ? ' | A: ' + it.qa + ' | B: ' + it.qb : '') };
+    });
+    const h = hist(); h.push({ day: w.day, no: 'w', at: now(), sec: items.reduce((t, x) => t + x.sec, 0), items }); LS.set(histKey(), h.slice(-400));
+    w.saved = true;
+  }
+  saveWarm(w);
+  const y = window.scrollY; render(); window.scrollTo(0, y);
+}
+Object.assign(actions, {
+  'qw-pick': (t) => warmUpdate(t.dataset.day || today(), +t.dataset.k, (w, it) => {
+    const k = +t.dataset.k, o = t.dataset.o;
+    if (w.checked[k]) return;
+    if (it.fmt === 'multi') { const c = w.choices[k] || []; w.choices[k] = c.includes(o) ? c.filter((x) => x !== o) : c.concat([o]); }
+    else { w.choices[k] = o; w.checked[k] = true; }
+  }),
+  'qw-check': (t) => warmUpdate(t.dataset.day || today(), +t.dataset.k, (w) => {
+    const k = +t.dataset.k;
+    const inp = document.querySelector('[data-qw="' + k + '"]');
+    if (inp) w.choices[k] = inp.value;
+    const c = w.choices[k];
+    if (c != null && c !== '' && !(Array.isArray(c) && !c.length)) w.checked[k] = true;
+  })
 });

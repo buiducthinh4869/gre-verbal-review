@@ -575,7 +575,7 @@ export function templateMeta() {
 }
 
 /**
- * Bộ câu cho một ngày: n câu (mặc định 4), ít nhất 2 câu QC và 1 câu không phải QC, không trùng mẫu, không quá 2 câu cùng chủ đề.
+ * Bộ câu cho một ngày: n câu (mặc định 4), ít nhất 2 câu QC (1 nếu n < 4) và 1 câu không phải QC (khi n ≥ 2), không trùng mẫu, không quá 2 câu cùng chủ đề.
  * seedStr: ví dụ "2026-11-27|user01|0" (số cuối là lượt Làm thêm trong ngày).
  */
 export function dailySet(seedStr, hist, n = 4) {
@@ -599,8 +599,8 @@ export function dailySet(seedStr, hist, n = 4) {
       chosen.push(id); topicCount[meta.topic[id]] = (topicCount[meta.topic[id]] || 0) + 1;
     }
   };
-  need((f) => f === 'qc', 2);
-  need((f) => f !== 'qc', 1);
+  need((f) => f === 'qc', n >= 4 ? 2 : 1);
+  need((f) => f !== 'qc', n >= 2 ? 1 : 0);
   need(() => true, n - chosen.length);
   const ordered = r.shuffle(chosen);
   return ordered.map((id, i) => makeItem(id, hashStr(seedStr + '#' + i + id)));

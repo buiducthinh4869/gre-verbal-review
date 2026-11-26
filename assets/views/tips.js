@@ -2,6 +2,7 @@
 // Nội dung tóm tắt (diễn đạt lại) từ The Official Guide to the GRE General Test (ETS) và trang ets.org/gre/shorter.
 // Trang tĩnh, không gọi API.
 import { esc, views } from '../state.js';
+import { tocLayout, bindToc, calloutList } from './ui.js';
 
 const STRUCTURE = [
   ['Section 1', '12 câu', '18 phút', 'Độ khó trung bình. Kết quả section này quyết định độ khó của Section 2.'],
@@ -116,7 +117,6 @@ const VOCAB = [
 
 const TOC = [['t-format', 'Cấu trúc và cách chấm'], ['t-tc', 'Text Completion'], ['t-se', 'Sentence Equivalence'], ['t-rc', 'Reading'], ['t-tasks', 'Dạng câu hỏi Reading'],
   ['t-arg', 'Lỗi lập luận'], ['t-traps', 'Bẫy trong phương án'], ['t-pace', 'Thời gian và đoán'], ['t-vocab', 'Học từ vựng']];
-let spy = null;
 
 const ul = (arr) => '<ul class="tips-list">' + arr.map((x) => '<li>' + esc(x) + '</li>').join('') + '</ul>';
 const ol = (arr) => '<ol class="tips-list">' + arr.map((x) => '<li>' + esc(x) + '</li>').join('') + '</ol>';
@@ -125,61 +125,28 @@ views.tips = {
   title: 'Chiến lược',
   render() {
     let h = '<div class="page-head"><h1>Chiến lược làm bài Verbal</h1><p>Tóm tắt từ The Official Guide to the GRE General Test và quy định đề rút gọn của ETS (áp dụng từ 22/9/2023).</p></div>';
-    h += '<div class="tips-layout"><nav class="tips-toc" aria-label="Mục lục"><div class="tips-toc-title">Mục lục</div><ol>' +
-      TOC.map(([id, l], k) => '<li><a href="#tips" data-jump="' + id + '"><span class="tips-toc-n">' + (k + 1) + '</span><span>' + l + '</span></a></li>').join('') +
-      '</ol><div class="tips-progress" aria-hidden="true"><i></i></div></nav><div class="tips-main">';
-    h += '<section class="card tips-card" id="t-format"><h2 class="section">Cấu trúc và cách chấm</h2>';
-    h += '<div class="table-wrap"><table class="mock-table"><thead><tr><th>Section</th><th>Số câu</th><th>Thời gian</th><th>Ghi chú</th></tr></thead><tbody>' +
+    let m = '';
+    m += '<section class="card tips-card" id="t-format"><h2 class="section">Cấu trúc và cách chấm</h2>';
+    m += '<div class="table-wrap"><table class="mock-table"><thead><tr><th>Section</th><th>Số câu</th><th>Thời gian</th><th>Ghi chú</th></tr></thead><tbody>' +
       STRUCTURE.map((r) => '<tr>' + r.map((c) => '<td>' + esc(c) + '</td>').join('') + '</tr>').join('') + '</tbody></table></div>';
-    h += ul(RULES) + '</section>';
+    m += ul(RULES) + '</section>';
 
     TYPES.forEach((t) => {
-      h += '<section class="card tips-card" id="t-' + t.id + '"><h2 class="section">' + esc(t.title) + '</h2>';
-      h += '<h3 class="tips-h">Định dạng</h3>' + ul(t.format) + '<h3 class="tips-h">Cách làm</h3>' + ol(t.steps) + '</section>';
+      m += '<section class="card tips-card" id="t-' + t.id + '"><h2 class="section">' + esc(t.title) + '</h2>';
+      m += '<h3 class="tips-h">Định dạng</h3>' + ul(t.format) + calloutList('tip', 'Cách làm', t.steps, true) + '</section>';
     });
 
-    h += '<section class="card tips-card" id="t-tasks"><h2 class="section">Các dạng câu hỏi Reading</h2>';
-    h += '<div class="table-wrap"><table class="mock-table tips-table"><thead><tr><th>Dạng</th><th>Câu hỏi thường gặp</th><th>Mẹo</th></tr></thead><tbody>' +
+    m += '<section class="card tips-card" id="t-tasks"><h2 class="section">Các dạng câu hỏi Reading</h2>';
+    m += '<div class="table-wrap"><table class="mock-table tips-table"><thead><tr><th>Dạng</th><th>Câu hỏi thường gặp</th><th>Mẹo</th></tr></thead><tbody>' +
       TASKS.map(([a, b, c]) => '<tr><td><b>' + esc(a) + '</b></td><td><i lang="en">' + esc(b) + '</i></td><td>' + esc(c) + '</td></tr>').join('') + '</tbody></table></div></section>';
 
-    h += '<section class="card tips-card" id="t-arg"><h2 class="section">Lỗi lập luận hay gặp trong đoạn argument</h2>' +
+    m += '<section class="card tips-card" id="t-arg"><h2 class="section">Lỗi lập luận hay gặp trong đoạn argument</h2>' +
       '<dl class="tips-dl">' + FLAWS.map(([a, b]) => '<dt>' + esc(a) + '</dt><dd>' + esc(b) + '</dd>').join('') + '</dl></section>';
-    h += '<section class="card tips-card" id="t-traps"><h2 class="section">Bẫy trong phương án</h2>' + ul(TRAPS) + '</section>';
-    h += '<section class="card tips-card" id="t-pace"><h2 class="section">Phân bổ thời gian và đoán</h2>' + ul(PACING) + '</section>';
-    h += '<section class="card tips-card" id="t-vocab"><h2 class="section">Học từ vựng cho TC và SE</h2>' + ul(VOCAB) + '</section>';
-    return h + '</div></div>';
+    m += '<section class="card tips-card" id="t-traps"><h2 class="section">Bẫy trong phương án</h2>' + calloutList('trap', 'Phương án nhiễu hay gặp', TRAPS) + '</section>';
+    m += '<section class="card tips-card" id="t-pace"><h2 class="section">Phân bổ thời gian và đoán</h2>' + calloutList('tip', 'Nguyên tắc', PACING) + '</section>';
+    m += '<section class="card tips-card" id="t-vocab"><h2 class="section">Học từ vựng cho TC và SE</h2>' + calloutList('tip', 'Cách học', VOCAB) + '</section>';
+    return h + tocLayout(TOC, m);
   },
   wide: () => true,
-  after() {
-    if (spy) spy.disconnect();
-    const links = [...document.querySelectorAll('.tips-toc [data-jump]')];
-    const setActive = (id) => links.forEach((a) => {
-      const on = a.dataset.jump === id;
-      a.classList.toggle('on', on);
-      if (on) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current');
-      // Màn hẹp (hàng nút cuộn ngang): đưa nút đang đọc vào giữa hàng, chỉ cuộn ngang
-      const ol = a.closest('ol');
-      if (on && ol && ol.scrollWidth > ol.clientWidth) ol.scrollLeft = a.parentElement.offsetLeft - (ol.clientWidth - a.parentElement.offsetWidth) / 2;
-    });
-    links.forEach((a) => a.addEventListener('click', (e) => {
-      e.preventDefault();
-      const el = document.getElementById(a.dataset.jump);
-      if (el) { el.scrollIntoView({ behavior: 'smooth', block: 'start' }); setActive(a.dataset.jump); }
-    }));
-    // Mục đang đọc: mục trên cùng còn nằm trong vùng nhìn; thanh tiến độ theo vị trí cuộn của trang
-    const bar = document.querySelector('.tips-progress i');
-    const ids = TOC.map(([id]) => id);
-    const update = () => {
-      if (!document.querySelector('.tips-layout')) { window.removeEventListener('scroll', update); return; }
-      let cur = ids[0];
-      ids.forEach((id) => { const el = document.getElementById(id); if (el && el.getBoundingClientRect().top < 140) cur = id; });
-      const max = document.documentElement.scrollHeight - window.innerHeight;
-      if (max > 0 && window.scrollY >= max - 2) cur = ids[ids.length - 1];
-      setActive(cur);
-      if (bar) bar.style.width = (max > 0 ? Math.min(100, Math.round(100 * window.scrollY / max)) : 100) + '%';
-    };
-    spy = { disconnect: () => window.removeEventListener('scroll', update) };
-    window.addEventListener('scroll', update, { passive: true });
-    update();
-  }
+  after() { bindToc(); }
 };

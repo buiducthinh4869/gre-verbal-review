@@ -257,3 +257,13 @@ test('đề hiển thị khớp tham số; unitInterval tính từ chữ hiển 
   items('divisors').forEach((it) => has(it, 'N = ' + it.params.N));
   items('lapLcm').forEach((it) => assert.ok(!it.stem.includes('0 phút')));
 });
+
+test('bộ 2 câu khởi động: 1 QC và 1 dạng khác, cố định theo seed', () => {
+  for (let d = 1; d <= 40; d++) {
+    const s = Q.dailySet('2026-12-' + d + '|u1|warm', [], 2);
+    assert.equal(s.length, 2);
+    assert.equal(s.filter((x) => x.fmt === 'qc').length, 1);
+    assert.notEqual(s[0].tpl, s[1].tpl);
+  }
+  assert.deepEqual(Q.dailySet('x|warm', [], 2).map((x) => x.stem), Q.dailySet('x|warm', [], 2).map((x) => x.stem));
+});
