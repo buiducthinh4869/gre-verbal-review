@@ -102,13 +102,13 @@ T.sumFixed = (r) => {
   const v = r.pick(['pos', 'distinct', 'greater']);
   if (v === 'greater') {
     return {
-      topic: 'alg', trap: 'equalcase', fmt: 'qc', stem: 'x + y = ' + k + ' và x > y', params: { k, v }, qa: 'x', qb: String(k / 2), answer: 'A',
+      topic: 'alg', trap: 'equalcase', fmt: 'qc', stem: 'x + y = ' + k + ' and x > y', params: { k, v }, qa: 'x', qb: String(k / 2), answer: 'A',
       explain: 'x > y và x + y = ' + k + ' nên 2x > x + y = ' + k + ', suy ra x > ' + k / 2 + '. Ở đây có thêm điều kiện x > y nên loại được trường hợp bằng nhau.'
     };
   }
   const distinct = v === 'distinct';
   return {
-    params: { k, v }, topic: 'alg', trap: 'equalcase', fmt: 'qc', stem: 'x và y là các số dương' + (distinct ? ' khác nhau' : '') + ', x + y = ' + k, qa: 'xy', qb: String(k * k / 4),
+    params: { k, v }, topic: 'alg', trap: 'equalcase', fmt: 'qc', stem: 'x and y are ' + (distinct ? 'distinct ' : '') + 'positive numbers, and x + y = ' + k, qa: 'xy', qb: String(k * k / 4),
     answer: distinct ? 'B' : 'D',
     explain: 'Với tổng cố định, tích lớn nhất khi x = y = ' + k / 2 + ', lúc đó xy = ' + k * k / 4 + '. ' +
       (distinct ? 'Đề cho x ≠ y nên xy luôn nhỏ hơn ' + k * k / 4 + ': B.' : 'Đề KHÔNG cấm x = y, nên xy có thể bằng ' + k * k / 4 + ' hoặc nhỏ hơn: D. Đây đúng là bẫy đã gặp ở bài thi thử 26/11.')
@@ -123,9 +123,9 @@ T.countAbs = (r) => {
   const other = r.pick([2 * b, count, count + (r.bool() ? 1 : -1)]);
   const lo = strict ? a - b + 1 : a - b, hi = strict ? a + b - 1 : a + b;
   return {
-    topic: 'arith', trap: 'countvalues', fmt: 'qc', stem: 'x là số nguyên và |' + (a === 0 ? 'x' : a < 0 ? 'x + ' + -a : 'x − ' + a) + '| ' + (strict ? '<' : '≤') + ' ' + b,
+    topic: 'arith', trap: 'countvalues', fmt: 'qc', stem: 'x is an integer and |' + (a === 0 ? 'x' : a < 0 ? 'x + ' + -a : 'x − ' + a) + '| ' + (strict ? '<' : '≤') + ' ' + b,
     params: { a, b, strict },
-    qa: 'Số các giá trị có thể của x', qb: String(other), answer: cmp(count, other),
+    qa: 'The number of possible values of x', qb: String(other), answer: cmp(count, other),
     explain: 'Quantity A là SỐ LƯỢNG giá trị, không phải giá trị của x. ' + a + ' − ' + b + ' ' + (strict ? '<' : '≤') + ' x ' + (strict ? '<' : '≤') + ' ' + a + ' + ' + b +
       ', nên x chạy từ ' + lo + ' đến ' + hi + ': có ' + count + ' số nguyên (' + (strict ? 'dấu < bỏ hai đầu mút' : 'dấu ≤ lấy cả hai đầu mút') + ').'
   };
@@ -137,8 +137,8 @@ T.triangleCount = (r) => {
   const count = 2 * a - 1; // b − a < c < a + b
   const other = r.pick([2 * a, count, 2 * a - 2, a + b - 1]);
   return {
-    params: { a, b }, topic: 'geo', trap: 'triangle', fmt: 'qc', stem: 'Một tam giác có hai cạnh dài ' + a + ' và ' + b + '; cạnh thứ ba có độ dài là số nguyên c.',
-    qa: 'Số các giá trị có thể của c', qb: String(other), answer: cmp(count, other),
+    params: { a, b }, topic: 'geo', trap: 'triangle', fmt: 'qc', stem: 'A triangle has two sides of lengths ' + a + ' and ' + b + '. The length of the third side, c, is an integer.',
+    qa: 'The number of possible values of c', qb: String(other), answer: cmp(count, other),
     explain: b + ' − ' + a + ' < c < ' + b + ' + ' + a + ', tức ' + (b - a) + ' < c < ' + (a + b) + '. Số nguyên từ ' + (b - a + 1) + ' đến ' + (a + b - 1) + ': có ' + count + ' giá trị. Không lấy hai đầu mút vì tam giác sẽ suy biến.'
   };
 };
@@ -151,16 +151,16 @@ T.sdAdd = (r) => {
     const s = sd(base);
     const v = r.pick(['pairBig', 'pairSmall', 'mean']);
     let add, text;
-    if (v === 'mean') { add = [m]; text = 'thêm số ' + m; } else {
+    if (v === 'mean') { add = [m]; text = 'adding the number ' + m + ' to S'; } else {
       const d = v === 'pairBig' ? Math.ceil(s) + r.int(1, 3) : Math.max(1, Math.floor(s) - r.int(1, 2));
       if (v === 'pairSmall' && d >= s) continue;
-      add = [m - d, m + d]; text = 'thêm hai số ' + (m - d) + ' và ' + (m + d);
+      add = [m - d, m + d]; text = 'adding the two numbers ' + (m - d) + ' and ' + (m + d) + ' to S';
     }
     const s2 = sd(base.concat(add));
     if (Math.abs(s2 - s) < 1e-6) continue;
     return {
-      params: { base, add }, topic: 'data', trap: 'sdshift', fmt: 'qc', stem: 'Tập dữ liệu S = {' + base.join(', ') + '}. Tập T có được khi ' + text + ' vào S.',
-      qa: 'Độ lệch chuẩn của T', qb: 'Độ lệch chuẩn của S', answer: cmp(s2, s),
+      params: { base, add }, topic: 'data', trap: 'sdshift', fmt: 'qc', stem: 'Data set S = {' + base.join(', ') + '}. Data set T is formed by ' + text + '.',
+      qa: 'The standard deviation of T', qb: 'The standard deviation of S', answer: cmp(s2, s),
       explain: 'Mean của S là ' + m + ', SD của S ≈ ' + s.toFixed(2) + '. ' +
         (v === 'mean' ? 'Thêm đúng giá trị mean làm tăng n mà không thêm độ phân tán: SD giảm.' :
           'Hai số thêm vào cách mean ' + (add[1] - m) + (add[1] - m > s ? ' > SD hiện tại, nên SD tăng.' : ' < SD hiện tại, nên SD giảm.')) + ' Không cần tính chính xác SD của T.'
@@ -185,7 +185,7 @@ T.pctIncrease = (r) => {
     if (new Set(opts).size < 5) continue;
     return {
       params: { o1, s1, o2, s2 }, topic: 'data', trap: 'pctbase', fmt: 'mc',
-      stem: 'Doanh thu của một cửa hàng (triệu đồng): năm 2024 Online ' + o1 + ', Tại quầy ' + s1 + '; năm 2025 Online ' + o2 + ', Tại quầy ' + s2 + '. Doanh thu Online tăng bao nhiêu phần trăm từ 2024 đến 2025?',
+      stem: 'A store\'s revenue, in thousands of dollars: in 2024, Online ' + o1 + ' and In-store ' + s1 + '; in 2025, Online ' + o2 + ' and In-store ' + s2 + '. By what percent did Online revenue increase from 2024 to 2025?',
       options: r.shuffle(opts), answer: g + '%',
       explain: 'Hỏi phần trăm tăng của CHÍNH doanh thu Online: (' + o2 + ' − ' + o1 + ') / ' + o1 + ' = ' + g + '%. Các phương án nhiễu: thay đổi tỷ trọng tính theo điểm phần trăm (' + ppt + '%), theo phần trăm của tỷ trọng (' + shareChg + '%), tăng của tổng doanh thu (' + totalChg + '%), và chia nhầm cho năm sau (' + wrongBase + '%).'
     };
@@ -202,10 +202,11 @@ T.lapLcm = (r) => {
     const mins = L / 60;
     const opts = [mins, L, L / 100, (a * b) / 60, mins * 2].map((x) => +x.toFixed(2));
     if (new Set(opts).size < 5) continue;
-    const show = (s) => (s < 60 ? s + ' giây' : s % 60 ? Math.floor(s / 60) + ' phút ' + (s % 60) + ' giây' : s / 60 + ' phút');
+    const pl = (n, w) => n + ' ' + w + (n === 1 ? '' : 's');
+    const show = (s) => (s < 60 ? pl(s, 'second') : s % 60 ? pl(Math.floor(s / 60), 'minute') + ' ' + pl(s % 60, 'second') : pl(s / 60, 'minute'));
     return {
       params: { a, b }, topic: 'word', trap: 'unitback', fmt: 'mc',
-      stem: 'An chạy một vòng sân hết ' + show(a) + ', Bình chạy một vòng hết ' + show(b) + '. Hai người xuất phát cùng lúc tại cùng một vạch và chạy đều. Sau ít nhất bao nhiêu PHÚT thì cả hai cùng có mặt lại ở vạch xuất phát?',
+      stem: 'Ann runs one lap of a track in ' + show(a) + ', and Ben runs one lap in ' + show(b) + '. They start together from the starting line and run at constant speeds. After how many MINUTES will they first be at the starting line together again?',
       options: r.shuffle(opts.map(String)), answer: String(mins),
       explain: 'Đổi sang giây: ' + a + ' và ' + b + '. BCNN = ' + L + ' giây. Đề hỏi phút nên đổi ngược: ' + L + ' / 60 = ' + mins + ' phút. Phương án ' + L + ' là quên đổi ngược; ' + +(a * b / 60).toFixed(2) + ' là nhân thay vì lấy BCNN.'
     };
@@ -217,8 +218,8 @@ T.successive = (r) => {
   const v = r.pick([[25, 20], [20, 20], [10, 10], [50, 30], [25, 25], [100, 50], [20, 15]]);
   const f = (1 + v[0] / 100) * (1 - v[1] / 100);
   return {
-    params: { p: v[0], q: v[1] }, topic: 'pct', trap: 'successive', fmt: 'qc', stem: 'Giá một món hàng tăng ' + v[0] + '%, sau đó giảm ' + v[1] + '% so với giá đã tăng.',
-    qa: 'Giá cuối cùng', qb: 'Giá ban đầu', answer: cmp(f, 1),
+    params: { p: v[0], q: v[1] }, topic: 'pct', trap: 'successive', fmt: 'qc', stem: 'The price of an item is increased by ' + v[0] + '%, and the increased price is then decreased by ' + v[1] + '%.',
+    qa: 'The final price', qb: 'The original price', answer: cmp(f, 1),
     explain: 'Giá cuối = giá đầu × ' + (1 + v[0] / 100) + ' × ' + (1 - v[1] / 100) + ' = ' + fmtNum(+f.toFixed(4)) + ' × giá đầu. ' +
       (Math.abs(f - 1) < 1e-9 ? 'Bằng đúng giá ban đầu dù ' + v[0] + ' ≠ ' + v[1] + ': C.' : f < 1 ? 'Nhỏ hơn giá đầu.' : 'Lớn hơn giá đầu.') + ' Không được tính ' + v[0] + ' − ' + v[1] + '.'
   };
@@ -232,9 +233,9 @@ T.pctReverse = (r) => {
   const uniq = [...new Set(opts)].slice(0, 5);
   while (uniq.length < 5) uniq.push(+(ans + uniq.length * 7).toFixed(2));
   return {
-    params: { p: v[0] }, topic: 'pct', trap: 'pctbase', fmt: 'mc', stem: 'Lương của Hà nhiều hơn lương của Minh ' + v[0] + '%. Lương của Minh ít hơn lương của Hà bao nhiêu phần trăm? (làm tròn 2 chữ số thập phân nếu cần)',
+    params: { p: v[0] }, topic: 'pct', trap: 'pctbase', fmt: 'mc', stem: 'Ann\'s salary is ' + v[0] + '% greater than Ben\'s salary. Ben\'s salary is what percent less than Ann\'s salary? (Round to two decimal places if necessary.)',
     options: r.shuffle(uniq.map((x) => x + '%')), answer: ans + '%',
-    explain: 'Đặt Minh = 100 thì Hà = ' + (100 + v[0]) + '. Chênh lệch ' + v[0] + ', nhưng gốc so sánh bây giờ là lương Hà: ' + v[0] + ' / ' + (100 + v[0]) + ' ≈ ' + ans + '%. Chọn ' + v[0] + '% là dùng nhầm gốc.'
+    explain: 'Đặt lương Ben = 100 thì lương Ann = ' + (100 + v[0]) + '. Chênh lệch ' + v[0] + ', nhưng gốc so sánh bây giờ là lương Ann: ' + v[0] + ' / ' + (100 + v[0]) + ' ≈ ' + ans + '%. Chọn ' + v[0] + '% là dùng nhầm gốc.'
   };
 };
 
@@ -259,14 +260,14 @@ T.remainder = (r) => {
     const val = rem % k;
     const other = r.pick([val, (val + 1) % k, rem % k === 0 ? 1 : 0]);
     return {
-      params: { m, rem, k }, topic: 'arith', trap: 'remainder', fmt: 'qc', stem: 'Khi chia số nguyên dương n cho ' + m + ' được số dư ' + rem + '.', qa: 'Số dư khi chia n cho ' + k, qb: String(other), answer: cmp(val, other),
+      params: { m, rem, k }, topic: 'arith', trap: 'remainder', fmt: 'qc', stem: 'When the positive integer n is divided by ' + m + ', the remainder is ' + rem + '.', qa: 'The remainder when n is divided by ' + k, qb: String(other), answer: cmp(val, other),
       explain: 'n = ' + m + 'q + ' + rem + '. Vì ' + k + ' là ước của ' + m + ' nên số dư khi chia cho ' + k + ' là số dư của ' + rem + ' khi chia cho ' + k + ' = ' + val + '.'
     };
   }
   const vals = [0, 1, 2, 3].map((q) => (m * q + rem) % k);
   const other = vals[0];
   return {
-    params: { m, rem, k }, topic: 'arith', trap: 'remainder', fmt: 'qc', stem: 'Khi chia số nguyên dương n cho ' + m + ' được số dư ' + rem + '.', qa: 'Số dư khi chia n cho ' + k, qb: String(other),
+    params: { m, rem, k }, topic: 'arith', trap: 'remainder', fmt: 'qc', stem: 'When the positive integer n is divided by ' + m + ', the remainder is ' + rem + '.', qa: 'The remainder when n is divided by ' + k, qb: String(other),
     answer: vals.every((x) => x === other) ? 'C' : 'D',
     explain: k + ' không phải ước của ' + m + '. Thử n = ' + [0, 1, 2, 3].map((q) => m * q + rem).join(', ') + ': số dư khi chia cho ' + k + ' lần lượt là ' + vals.join(', ') + '. ' + (vals.every((x) => x === other) ? 'Luôn bằng nhau.' : 'Thay đổi theo n nên chọn D.')
   };
@@ -283,7 +284,7 @@ T.meanMedian = (r) => {
     const mn = mean(data), md = median(data);
     if (Math.abs(mn - md) < 0.5) continue;
     return {
-      topic: 'data', trap: 'meanmedian', fmt: 'qc', stem: 'Tập dữ liệu: ' + r.shuffle(data).join(', '), qa: 'Trung bình cộng (mean)', qb: 'Trung vị (median)', answer: cmp(mn, md),
+      topic: 'data', trap: 'meanmedian', fmt: 'qc', stem: 'A data set consists of the numbers ' + r.shuffle(data).join(', ') + '.', qa: 'The mean of the data', qb: 'The median of the data', answer: cmp(mn, md),
       data,
       explain: 'Sắp xếp: ' + data.join(', ') + '. Median = ' + fmtNum(md) + ', mean = ' + fmtNum(+mn.toFixed(2)) + '. ' + (mn > md ? 'Một giá trị rất lớn kéo mean lên trên median.' : 'Một giá trị rất nhỏ kéo mean xuống dưới median.')
     };
@@ -299,8 +300,8 @@ T.avgSpeed = (r) => {
     if (h.d !== 1) continue;
     const ari = (v1 + v2) / 2;
     return {
-      params: { v1, v2 }, topic: 'word', trap: 'harmonic', fmt: 'qc', stem: 'Một người đi từ A đến B với tốc độ ' + v1 + ' km/h và quay về theo đúng đường đó với tốc độ ' + v2 + ' km/h.',
-      qa: 'Tốc độ trung bình cả đi và về (km/h)', qb: String(ari), answer: 'B',
+      params: { v1, v2 }, topic: 'word', trap: 'harmonic', fmt: 'qc', stem: 'A cyclist rides from town A to town B at ' + v1 + ' kilometers per hour and returns along the same route at ' + v2 + ' kilometers per hour.',
+      qa: 'The average speed for the round trip, in kilometers per hour', qb: String(ari), answer: 'B',
       explain: 'Đặt quãng đường là d: thời gian = d/' + v1 + ' + d/' + v2 + '. Tốc độ trung bình = 2d / thời gian = 2·' + v1 + '·' + v2 + '/(' + v1 + ' + ' + v2 + ') = ' + h.n + ' < ' + ari + '. Thời gian đi chậm dài hơn nên kéo trung bình xuống.'
     };
   }
@@ -311,7 +312,7 @@ T.workRate = (r) => {
   const a = r.int(2, 9), b = r.int(a + 1, 12);
   const f = frac(a * b, a + b);
   return {
-    params: { a, b }, topic: 'word', trap: 'harmonic', fmt: 'num', stem: 'Vòi thứ nhất chảy đầy bể trong ' + a + ' giờ, vòi thứ hai trong ' + b + ' giờ. Nếu mở cả hai vòi cùng lúc thì bao nhiêu giờ đầy bể? (nhập phân số hoặc số thập phân chính xác)',
+    params: { a, b }, topic: 'word', trap: 'harmonic', fmt: 'num', stem: 'Pipe A alone fills a tank in ' + a + ' hours, and pipe B alone fills it in ' + b + ' hours. Working together at these rates, how many hours do the two pipes take to fill the tank? (Enter a fraction or an exact decimal.)',
     answer: f, explain: 'Mỗi giờ hai vòi chảy được 1/' + a + ' + 1/' + b + ' = ' + (a + b) + '/' + a * b + ' bể. Thời gian = ' + a * b + '/' + (a + b) + ' = ' + fracStr(f) + ' giờ. Lấy trung bình (' + a + ' + ' + b + ')/2 là sai.'
   };
 };
@@ -321,7 +322,7 @@ T.noReplace = (r) => {
   const red = r.int(3, 7), blue = r.int(2, 8), n = red + blue;
   const f = frac(red * (red - 1), n * (n - 1));
   return {
-    params: { red, blue }, topic: 'data', trap: 'replacement', fmt: 'num', stem: 'Một hộp có ' + red + ' bi đỏ và ' + blue + ' bi xanh. Rút ngẫu nhiên lần lượt 2 bi, không hoàn lại. Xác suất cả hai bi đều đỏ là bao nhiêu? (nhập phân số)',
+    params: { red, blue }, topic: 'data', trap: 'replacement', fmt: 'num', stem: 'A box contains ' + red + ' red marbles and ' + blue + ' blue marbles. Two marbles are drawn at random, one after the other, without replacement. What is the probability that both marbles are red? (Enter a fraction.)',
     answer: f, explain: 'Lần 1: ' + red + '/' + n + '. Lần 2 còn ' + (red - 1) + ' đỏ trong ' + (n - 1) + ' bi: ' + (red - 1) + '/' + (n - 1) + '. Nhân lại: ' + fracStr(f) + '. Dùng (' + red + '/' + n + ')² là tính như có hoàn lại.'
   };
 };
@@ -332,7 +333,7 @@ T.handshake = (r) => {
   const ans = n * (n - 1) / 2;
   const opts = [ans, n * (n - 1), n * n, ans - n, (n - 1) * (n - 2) / 2];
   return {
-    params: { n }, topic: 'data', trap: 'overcount', fmt: 'mc', stem: 'Trong một buổi họp có ' + n + ' người, mỗi người bắt tay mỗi người khác đúng một lần. Có tất cả bao nhiêu cái bắt tay?',
+    params: { n }, topic: 'data', trap: 'overcount', fmt: 'mc', stem: 'At a meeting of ' + n + ' people, each person shakes hands exactly once with every other person. How many handshakes take place?',
     options: r.shuffle(opts.map(String)), answer: String(ans),
     explain: 'Mỗi người bắt tay ' + (n - 1) + ' người, nhưng mỗi cái bắt tay được đếm hai lần (A với B và B với A): ' + n + '·' + (n - 1) + '/2 = ' + ans + '.'
   };
@@ -343,7 +344,7 @@ T.areaScale = (r) => {
   const p = r.pick([10, 20, 30, 50]);
   const inc = ((1 + p / 100) ** 2 - 1) * 100;
   return {
-    params: { p }, topic: 'geo', trap: 'scaling', fmt: 'qc', stem: 'Bán kính của một hình tròn tăng ' + p + '%.', qa: 'Phần trăm tăng của diện tích', qb: 2 * p + '%', answer: 'A',
+    params: { p }, topic: 'geo', trap: 'scaling', fmt: 'qc', stem: 'The radius of a circle is increased by ' + p + '%.', qa: 'The percent increase in the area of the circle', qb: 2 * p + '%', answer: 'A',
     explain: 'Diện tích tỉ lệ với r²: (1 + ' + p / 100 + ')² = ' + fmtNum(+((1 + p / 100) ** 2).toFixed(4)) + ', tức tăng ' + fmtNum(+inc.toFixed(2)) + '% > ' + 2 * p + '%. Phần dư ' + fmtNum(+(p * p / 100).toFixed(2)) + '% đến từ số hạng p².'
   };
 };
@@ -353,7 +354,7 @@ T.divVar = (r) => {
   const k = r.int(2, 9);
   const opts = ['0', String(k), String(-k), String(k * k), '1'];
   return {
-    params: { k }, topic: 'alg', trap: 'divbyvar', fmt: 'multi', stem: 'x² = ' + k + 'x. Giá trị nào dưới đây có thể là x? Chọn mọi đáp án đúng.',
+    params: { k }, topic: 'alg', trap: 'divbyvar', fmt: 'multi', stem: 'x² = ' + k + 'x. Which of the following could be the value of x? Indicate all such values.',
     options: r.shuffle(opts), answer: ['0', String(k)],
     explain: 'x² − ' + k + 'x = 0 ⇔ x(x − ' + k + ') = 0 ⇔ x = 0 hoặc x = ' + k + '. Chia hai vế cho x sẽ mất nghiệm x = 0.'
   };
@@ -367,7 +368,7 @@ T.absMulti = (r) => {
   const all = [...new Set(sums.concat([a * b, 0, a - b + 1, -(a + b) - 1]))].filter((v) => v !== undefined).slice(0, 6);
   const opts = r.shuffle(all.slice(0, Math.max(5, sums.length + 1)).map(String));
   return {
-    params: { a, b }, topic: 'arith', trap: 'negatives', fmt: 'multi', stem: '|x| = ' + a + ' và |y| = ' + b + '. Giá trị nào dưới đây có thể là x + y? Chọn mọi đáp án đúng.',
+    params: { a, b }, topic: 'arith', trap: 'negatives', fmt: 'multi', stem: '|x| = ' + a + ' and |y| = ' + b + '. Which of the following could be the value of x + y? Indicate all such values.',
     options: opts, answer: sums.filter((s) => opts.includes(String(s))).map(String),
     explain: 'x = ±' + a + ', y = ±' + b + ': x + y ∈ {' + sums.sort((p, q) => q - p).join(', ') + '}. Chỉ lấy x, y dương là bỏ sót ba trường hợp.'
   };
@@ -380,8 +381,8 @@ T.weightedAvg = (r) => {
   const all = (n1 * m1 + n2 * m2) / (n1 + n2), simple = (m1 + m2) / 2;
   return {
     params: { n1, n2, m1, m2 }, topic: 'data', trap: 'weighted', fmt: 'qc',
-    stem: 'Lớp X có ' + n1 + ' học sinh, điểm trung bình ' + m1 + '. Lớp Y có ' + n2 + ' học sinh, điểm trung bình ' + m2 + '.',
-    qa: 'Điểm trung bình của cả ' + (n1 + n2) + ' học sinh', qb: fmtNum(simple), answer: cmp(all, simple),
+    stem: 'Class X has ' + n1 + ' students with an average score of ' + m1 + '. Class Y has ' + n2 + ' students with an average score of ' + m2 + '.',
+    qa: 'The average score of all ' + (n1 + n2) + ' students', qb: fmtNum(simple), answer: cmp(all, simple),
     explain: 'Trung bình chung = (' + n1 + '·' + m1 + ' + ' + n2 + '·' + m2 + ') / ' + (n1 + n2) + ' ≈ ' + fmtNum(+all.toFixed(2)) + '. ' +
       (n1 === n2 ? 'Hai lớp đông bằng nhau nên đúng bằng trung bình cộng hai mean: C.' : 'Lớp ' + (n1 > n2 ? 'X' : 'Y') + ' đông hơn nên kéo trung bình chung về phía ' + (n1 > n2 ? m1 : m2) + '.')
   };
@@ -395,8 +396,8 @@ T.sdConstant = (r) => {
   const T2 = base.map((x) => (v === 'add' ? x + c : v === 'sub' ? x - c : x * c));
   return {
     params: { base, T2 }, topic: 'data', trap: 'sdshift', fmt: 'qc',
-    stem: 'Tập S = {' + base.join(', ') + '}. Tập T có được khi ' + (v === 'add' ? 'cộng ' + c + ' vào' : v === 'sub' ? 'trừ ' + c + ' khỏi' : 'nhân ' + c + ' với') + ' mỗi phần tử của S.',
-    qa: 'Độ lệch chuẩn của T', qb: 'Độ lệch chuẩn của S', answer: v === 'mul' ? 'A' : 'C',
+    stem: 'Data set S = {' + base.join(', ') + '}. Data set T is formed by ' + (v === 'add' ? 'adding ' + c + ' to' : v === 'sub' ? 'subtracting ' + c + ' from' : 'multiplying by ' + c) + ' each number in S.',
+    qa: 'The standard deviation of T', qb: 'The standard deviation of S', answer: v === 'mul' ? 'A' : 'C',
     explain: v === 'mul' ? 'Nhân mọi phần tử với ' + c + ' thì mọi khoảng cách tới mean nhân ' + c + ': SD tăng ' + c + ' lần.' : 'Cộng hay trừ cùng một số chỉ dịch mean, khoảng cách tới mean giữ nguyên: SD không đổi.'
   };
 };
@@ -426,7 +427,7 @@ T.isosceles = (r) => {
     const qb = r.pick([P, P, P - 1, a + 2 * b - (b - 2 * a), 2 * a + b]);
     if (qb === 2 * a + b && qb === P) continue;
     return {
-      params: { a, b }, topic: 'geo', trap: 'hiddendet', fmt: 'qc', stem: 'Một tam giác cân có hai cạnh dài ' + a + ' và ' + b + '.', qa: 'Chu vi của tam giác', qb: String(qb), answer: cmp(P, qb),
+      params: { a, b }, topic: 'geo', trap: 'hiddendet', fmt: 'qc', stem: 'An isosceles triangle has two sides of lengths ' + a + ' and ' + b + '.', qa: 'The perimeter of the triangle', qb: String(qb), answer: cmp(P, qb),
       explain: 'Hai trường hợp: (' + a + ', ' + a + ', ' + b + ') hoặc (' + a + ', ' + b + ', ' + b + '). Trường hợp đầu không phải tam giác vì ' + a + ' + ' + a + ' = ' + 2 * a + ' < ' + b + '. Chỉ còn (' + a + ', ' + b + ', ' + b + '), chu vi ' + P + '. Chọn D là mắc bẫy.'
     };
   }
@@ -437,13 +438,13 @@ T.pctSymmetry = (r) => {
   const v = r.pick(['sym', 'sym', 'scaled']);
   if (v === 'sym') {
     return {
-      params: { v }, topic: 'pct', trap: 'hiddendet', fmt: 'qc', stem: 'x và y là các số dương.', qa: 'x% của y', qb: 'y% của x', answer: 'C',
+      params: { v }, topic: 'pct', trap: 'hiddendet', fmt: 'qc', stem: 'x and y are positive numbers.', qa: 'x% of y', qb: 'y% of x', answer: 'C',
       explain: 'x% của y = xy/100 = y% của x, với mọi x, y. Không có thông tin về x, y nhưng hai đại lượng luôn bằng nhau: C, không phải D.'
     };
   }
   const k = r.pick([2, 3, 4]);
   return {
-    params: { v, k }, topic: 'pct', trap: 'hiddendet', fmt: 'qc', stem: 'x và y là các số dương.', qa: k * 10 + '% của ' + k + 'x', qb: 'x% của ' + k * k * 10 + '', answer: cmp(k * 10 * k, k * k * 10),
+    params: { v, k }, topic: 'pct', trap: 'hiddendet', fmt: 'qc', stem: 'x is a positive number.', qa: k * 10 + '% of ' + k + 'x', qb: 'x% of ' + k * k * 10, answer: cmp(k * 10 * k, k * k * 10),
     explain: k * 10 + '% của ' + k + 'x = ' + (k * k * 10) + 'x/100; x% của ' + k * k * 10 + ' = ' + k * k * 10 + 'x/100. Bằng nhau với mọi x > 0: C.'
   };
 };
@@ -457,7 +458,7 @@ T.rootSigns = (r) => {
     const vals = [a, -a].map((x) => cmp(x, y));
     const ans = vals[0] === vals[1] ? vals[0] : 'D';
     return {
-      params: { a, y }, topic: 'alg', trap: 'signs', fmt: 'qc', stem: 'x² = ' + a * a + ' và y³ = ' + y ** 3, qa: 'x', qb: 'y', answer: ans,
+      params: { a, y }, topic: 'alg', trap: 'signs', fmt: 'qc', stem: 'x² = ' + a * a + ' and y³ = ' + String(y ** 3).replace('-', '−'), qa: 'x', qb: 'y', answer: ans,
       explain: 'x = ' + a + ' hoặc x = −' + a + '; y³ = ' + y ** 3 + ' chỉ cho y = ' + y + '. So ' + a + ' với ' + y + ' cho ' + vals[0] + ', so −' + a + ' với ' + y + ' cho ' + vals[1] + '. ' +
         (ans === 'D' ? 'Hai kết quả khác nhau: D.' : 'Cả hai trường hợp cùng kết quả: ' + ans + '. Nghiệm âm cũng phải xét, nhưng ở đây không đổi kết luận.')
     };
@@ -474,8 +475,8 @@ T.overlap = (r) => {
     if (qb < 0) continue;
     const ans = qb < lo ? 'A' : qb > hi ? 'B' : 'D';
     return {
-      params: { n, A, B, qb }, topic: 'data', trap: 'overlap', fmt: 'qc', stem: 'Trong ' + n + ' sinh viên, ' + A + ' người học Kinh tế và ' + B + ' người học Toán (một người có thể học cả hai hoặc không học môn nào).',
-      qa: 'Số sinh viên học cả hai môn', qb: String(qb), answer: ans,
+      params: { n, A, B, qb }, topic: 'data', trap: 'overlap', fmt: 'qc', stem: 'Of the ' + n + ' students in a class, ' + A + ' study economics and ' + B + ' study mathematics. A student may study both subjects or neither.',
+      qa: 'The number of students who study both subjects', qb: String(qb), answer: ans,
       explain: 'Phần giao ít nhất là ' + A + ' + ' + B + ' − ' + n + (A + B - n < 0 ? ' < 0, tức ít nhất 0' : ' = ' + lo) + ', nhiều nhất là min(' + A + ', ' + B + ') = ' + hi + '. ' +
         (ans === 'D' ? qb + ' nằm trong khoảng [' + lo + ', ' + hi + '] nên chưa xác định: D.' : qb + ' nằm ngoài khoảng [' + lo + ', ' + hi + ']: ' + ans + '.')
     };
@@ -490,7 +491,7 @@ T.divisors = (r) => {
   const cnt = (a + 1) * (b + 1);
   const qb = r.pick([cnt, a * b, a + b + 1, cnt + 1, cnt - 1].filter((x) => x > 0));
   return {
-    params: { N }, topic: 'arith', trap: 'countvalues', fmt: 'qc', stem: 'N = ' + N, qa: 'Số ước số nguyên dương của N', qb: String(qb), answer: cmp(cnt, qb),
+    params: { N }, topic: 'arith', trap: 'countvalues', fmt: 'qc', stem: 'N = ' + N, qa: 'The number of positive divisors of N', qb: String(qb), answer: cmp(cnt, qb),
     explain: N + ' = ' + p[0] + (a > 1 ? '^' + a : '') + ' × ' + p[1] + (b > 1 ? '^' + b : '') + '. Số ước = (' + a + ' + 1)(' + b + ' + 1) = ' + cnt + ', tính cả 1 và chính N. Đếm số thừa số nguyên tố hay quên 1 và N là hai lỗi hay gặp.'
   };
 };
@@ -500,7 +501,7 @@ T.consecutive = (r) => {
   const k = r.pick([5, 7, 9, 6, 8]);
   const odd = k % 2 === 1;
   return {
-    params: { k }, topic: 'arith', trap: 'hiddendet', fmt: 'qc', stem: 'Tổng của ' + k + ' số nguyên liên tiếp là S.', qa: odd ? 'Số ở giữa trong ' + k + ' số' : 'Trung vị của ' + k + ' số', qb: 'S/' + k, answer: 'C',
+    params: { k }, topic: 'arith', trap: 'hiddendet', fmt: 'qc', stem: 'The sum of ' + k + ' consecutive integers is S.', qa: odd ? 'The middle number of the ' + k + ' integers' : 'The median of the ' + k + ' integers', qb: 'S/' + k, answer: 'C',
     explain: 'Dãy cách đều nên trung bình cộng bằng trung vị: S/' + k + ' = ' + (odd ? 'số ở giữa' : 'trung bình của hai số giữa') + ' với mọi dãy. Không biết S nhưng vẫn bằng nhau: C.'
   };
 };

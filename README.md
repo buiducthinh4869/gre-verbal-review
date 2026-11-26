@@ -42,7 +42,7 @@ tests/                  srs, distractors, mock, bank, content, api (server chạ
 
 ## Các trang
 
-Thanh tab: Hôm nay · Từ vựng · Thi thử · Hay quên · Chiến lược · Thêm từ · **Luyện tập** (ngoài cùng phải). Luyện tập có thanh điều hướng con (`practiceShell` trong `assets/views/ui.js`) gồm Verbal (`#practice`), Reading (`#reading`), Quant (`#quant`). Hôm nay có mục lục bên trái, khối Reading trong ngày (`dailyReadingCard`) và 2 bài Quant khởi động (`warmQuantCard`, ghi vào lịch sử Quant với `no: 'w'`). Ô mẹo 💡 / bẫy ⚠️ dùng `callout` trong `assets/views/ui.js`.
+Thanh tab: Hôm nay · Từ vựng · **Reading** (`#rclearn`) · **Quant** (`#qlearn`) · Thi thử · Hay quên · Chiến lược · **Luyện tập** (ngoài cùng phải). Reading và Quant là tab kiến thức (`assets/views/learn.js`): định dạng, cách làm, từng dạng câu / kiểu bẫy kèm bài mẫu có lời giải. Luyện tập chỉ để luyện, có thanh điều hướng con (`practiceShell` trong `assets/views/ui.js`): Verbal (`#practice`), Reading (`#reading`), Quant (`#quant`). Thêm từ nằm trong menu tài khoản. Hôm nay: từ vựng, chủ đề và câu nhanh, tiến độ theo cụm, rồi Reading trong ngày (`dailyReadingCard`) và 2 câu Quant khởi động (`warmQuantCard`, ghi vào lịch sử Quant với `no: 'w'`), có mục lục bên trái. Đề Quant viết bằng tiếng Anh; lời giải tiếng Việt. Ô mẹo 💡 / bẫy ⚠️ dùng `callout` trong `assets/views/ui.js`.
 
 - **Từ vựng** có ba cấp, định tuyến bằng hash (nút Quay lại của trình duyệt đi đúng giữa các cấp):
   - `#vocab`: lưới thẻ cụm.

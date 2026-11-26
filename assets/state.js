@@ -283,6 +283,8 @@ export const views = {};   // tên -> { render(): html, after?(), title?, auth?:
 export const actions = {}; // data-act -> fn(target, event)
 
 const ICONS = {
+  rclearn: '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M12 6.5C10 5 7 4.5 3.5 5v13c3.5-.5 6.5 0 8.5 1.5m0-13c2-1.5 5-2 8.5-1.5v13c-3.5-.5-6.5 0-8.5 1.5m0-13v13"/></svg>',
+  qlearn: '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M5 4h14v16H5zM8 8h8M8.5 12.5h1M11.5 12.5h1M14.5 12.5h1M8.5 16h1M11.5 16h1M14.5 16h1"/></svg>',
   today: '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M4 6.5h16M4 6.5V19a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V6.5M4 6.5 5 4h14l1 2.5M8 11h3v3H8z"/></svg>',
   vocab: '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M5 4.5h10.5a3 3 0 0 1 3 3V20H8a3 3 0 0 1-3-3V4.5Zm0 12.5a3 3 0 0 1 3-3h10.5M9 8.5h5.5"/></svg>',
   mock: '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M12 21a7.5 7.5 0 1 0 0-15 7.5 7.5 0 0 0 0 15Zm0-11v3.8l2.4 1.6M10 2.8h4M18.4 6.6l1.3-1.3"/></svg>',
@@ -296,15 +298,16 @@ const ICONS = {
 const TABS = [
   { id: 'today', long: 'Hôm nay', short: 'Hôm nay' },
   { id: 'vocab', long: 'Từ vựng', short: 'Từ vựng' },
+  { id: 'rclearn', long: 'Reading', short: 'Reading' },
+  { id: 'qlearn', long: 'Quant', short: 'Quant' },
   { id: 'mock', long: 'Thi thử', short: 'Thi thử' },
   { id: 'book', long: 'Sổ từ hay quên', short: 'Hay quên' },
   { id: 'tips', long: 'Chiến lược', short: 'Mẹo' },
-  { id: 'add', long: 'Thêm từ', short: 'Thêm từ' },
   { id: 'practice', long: 'Luyện tập', short: 'Luyện tập' }
 ];
 /** Trang con của tab Luyện tập (Verbal, Reading, Quant): thanh tab sáng mục Luyện tập. */
 const PRACTICE_VIEWS = ['practice', 'reading', 'quant'];
-export const ROUTES = ['today', 'vocab', 'practice', 'reading', 'quant', 'mock', 'book', 'tips', 'add', 'account', 'admin', 'mysugg'];
+export const ROUTES = ['today', 'vocab', 'practice', 'reading', 'quant', 'rclearn', 'qlearn', 'mock', 'book', 'tips', 'add', 'account', 'admin', 'mysugg'];
 
 function renderChrome() {
   const authView = !!(views[App.view] && views[App.view].auth);

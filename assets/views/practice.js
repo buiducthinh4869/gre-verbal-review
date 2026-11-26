@@ -118,7 +118,6 @@ views.practice = {
     const modeOpt = (id, title, desc, n) => '<label class="mode"><input type="radio" name="pmode" value="' + id + '"' + (P.mode === id ? ' checked' : '') + (avail[id] || (id === 'gre' && greScope) ? '' : ' disabled') + '>' +
       '<span><b>' + title + '</b><span>' + desc + ' · ' + n + '</span></span></label>';
     let h = '<div class="page-head"><h1>Luyện Verbal</h1><p>Từ vựng, Text Completion và Sentence Equivalence. Chọn phạm vi và dạng bài; kết quả được tính vào lịch ôn.</p></div>' +
-      calloutList('tip', 'Mẹo TC và SE', ['Tự nghĩ từ của mình cho chỗ trống trước khi đọc phương án.', 'Gạch từ tín hiệu: although, yet, far from (đổi chiều); moreover, dấu hai chấm (cùng chiều).', 'TC nhiều chỗ trống: làm chỗ dễ nhất trước, không bắt buộc chỗ 1.', 'SE: hai đáp án phải cho hai câu cùng nghĩa; cặp đồng nghĩa không hợp câu là bẫy.']) +
       '<div class="form-grid">';
     h += scopeField(P, clusters, groups);
     h += '<p class="scope-line">Phạm vi hiện có <b>' + words.length + ' từ</b> và <b>' + greScope + ' câu GRE</b>' +

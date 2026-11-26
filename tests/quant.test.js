@@ -240,22 +240,22 @@ test('đề hiển thị khớp tham số; unitInterval tính từ chữ hiển 
   items('triangleCount').forEach((it) => has(it, it.params.a, it.params.b));
   items('sdAdd').forEach((it) => it.params.add.forEach((v) => has(it, v)));
   items('successive').forEach((it) => has(it, it.params.p + '%', it.params.q + '%'));
-  items('remainder').forEach((it) => has(it, 'cho ' + it.params.m, 'dư ' + it.params.rem, 'cho ' + it.params.k));
-  items('avgSpeed').forEach((it) => has(it, it.params.v1 + ' km/h', it.params.v2 + ' km/h'));
-  items('workRate').forEach((it) => has(it, it.params.a + ' giờ', it.params.b + ' giờ'));
-  items('noReplace').forEach((it) => has(it, it.params.red + ' bi đỏ', it.params.blue + ' bi xanh'));
-  items('handshake').forEach((it) => has(it, it.params.n + ' người'));
+  items('remainder').forEach((it) => has(it, 'divided by ' + it.params.m, 'remainder is ' + it.params.rem, 'divided by ' + it.params.k));
+  items('avgSpeed').forEach((it) => has(it, it.params.v1 + ' kilometers', it.params.v2 + ' kilometers'));
+  items('workRate').forEach((it) => has(it, it.params.a + ' hours', it.params.b + ' hours'));
+  items('noReplace').forEach((it) => has(it, it.params.red + ' red marbles', it.params.blue + ' blue marbles'));
+  items('handshake').forEach((it) => has(it, it.params.n + ' people'));
   items('pctIncrease').forEach((it) => has(it, 'Online ' + it.params.o1, 'Online ' + it.params.o2));
   items('pctReverse').forEach((it) => has(it, it.params.p + '%'));
   items('areaScale').forEach((it) => has(it, it.params.p + '%'));
   items('divVar').forEach((it) => has(it, it.params.k + 'x'));
   items('absMulti').forEach((it) => has(it, '|x| = ' + it.params.a, '|y| = ' + it.params.b));
-  items('weightedAvg').forEach((it) => { has(it, it.params.n1 + ' học sinh', it.params.m1, it.params.m2); assert.ok(it.params.m2 <= 100 && it.params.m1 <= 100); });
+  items('weightedAvg').forEach((it) => { has(it, it.params.n1 + ' students', it.params.m1, it.params.m2); assert.ok(it.params.m2 <= 100 && it.params.m1 <= 100); });
   items('ineqFlip').forEach((it) => has(it, '−' + it.params.a + 'x', it.params.c));
-  items('isosceles').forEach((it) => has(it, it.params.a + ' và ' + it.params.b));
-  items('overlap').forEach((it) => has(it, it.params.n + ' sinh viên', it.params.A + ' người', it.params.B + ' người'));
+  items('isosceles').forEach((it) => has(it, it.params.a + ' and ' + it.params.b));
+  items('overlap').forEach((it) => has(it, it.params.n + ' students', it.params.A + ' study economics', it.params.B + ' study mathematics'));
   items('divisors').forEach((it) => has(it, 'N = ' + it.params.N));
-  items('lapLcm').forEach((it) => assert.ok(!it.stem.includes('0 phút')));
+  items('lapLcm').forEach((it) => assert.ok(!/\b0 minutes?\b/.test(it.stem) && !/\b1 seconds\b/.test(it.stem)));
 });
 
 test('bộ 2 câu khởi động: 1 QC và 1 dạng khác, cố định theo seed', () => {
@@ -266,4 +266,11 @@ test('bộ 2 câu khởi động: 1 QC và 1 dạng khác, cố định theo see
     assert.notEqual(s[0].tpl, s[1].tpl);
   }
   assert.deepEqual(Q.dailySet('x|warm', [], 2).map((x) => x.stem), Q.dailySet('x|warm', [], 2).map((x) => x.stem));
+});
+
+test('đề Quant viết bằng tiếng Anh (không còn chữ tiếng Việt trong đề, Quantity, phương án)', () => {
+  const vi = /[ăâđêôơưàảãáạằẳẵắặầẩẫấậèẻẽéẹềểễếệìỉĩíịòỏõóọồổỗốộờởỡớợùủũúụừửữứựỳỷỹýỵ]/i;
+  Q.TEMPLATE_IDS.forEach((tpl) => items(tpl).slice(0, 60).forEach((it) => {
+    [it.stem, it.qa || '', it.qb || ''].concat(it.fmt === 'qc' ? [] : (it.options || [])).forEach((x) => assert.ok(!vi.test(x), tpl + ': ' + x));
+  }));
 });

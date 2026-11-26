@@ -66,30 +66,6 @@ const TYPES = [
   }
 ];
 
-const TASKS = [
-  ['Ý chính / mục đích', 'The primary purpose of the passage is to…', 'Đoạn văn làm gì: bác bỏ, điều chỉnh, giải thích, so sánh. Loại phương án quá rộng hoặc quá hẹp.'],
-  ['Chi tiết', 'According to the passage, which of the following is true of X?', 'Đáp án nằm thẳng trong bài, thường diễn đạt lại.'],
-  ['Suy luận', 'It can be inferred from the passage that…', 'Dạng gặp nhiều nhất. Đáp án phải chắc chắn đúng theo bài, không chỉ có thể đúng.'],
-  ['Chức năng', 'The author mentions X primarily in order to…', 'Hỏi vì sao chi tiết có mặt, không hỏi nó nói gì.'],
-  ['Thái độ tác giả', "The author's attitude toward X is best described as…", 'Thường là thái độ có chừng mực (qualified approval, measured skepticism).'],
-  ['Nghĩa từ trong ngữ cảnh', 'In the context in which it appears, X most nearly means…', 'Thường hỏi nghĩa phụ của từ quen. Thay từng phương án vào câu.'],
-  ['Chọn câu trong đoạn', 'Select the sentence in the passage that…', 'Đối chiếu mô tả với từng câu; câu chỉ khớp một phần là bẫy.'],
-  ['Làm yếu (argument)', 'Which of the following, if true, most seriously weakens the argument?', 'Tìm nguyên nhân khác hoặc phá giả định ngầm.'],
-  ['Củng cố (argument)', 'Which of the following, if true, most strengthens…?', 'Loại bỏ nguyên nhân khác hoặc xác nhận giả định.'],
-  ['Giả định (argument)', 'The argument depends on which of the following assumptions?', 'Phép thử phủ định: phủ định phương án, nếu lập luận sụp thì đó là giả định.'],
-  ['Giải thích nghịch lý', 'Which of the following, if true, best explains the apparent discrepancy?', 'Đáp án làm cả hai sự kiện cùng đúng; không phủ nhận sự kiện nào.'],
-  ['Vai trò phần in đậm', 'In the argument, the two portions in boldface play which of the following roles?', 'Xác định kết luận chính trước, rồi xem từng phần hỗ trợ hay chống lại nó.']
-];
-
-const FLAWS = [
-  ['Nhân quả vội', 'Xảy ra trước hoặc đi cùng không có nghĩa là gây ra. Tìm yếu tố thứ ba hoặc chiều nhân quả ngược.'],
-  ['Giải thích khác', 'Cùng một dữ kiện có thể do nguyên nhân khác. Phương án đưa ra nguyên nhân khác thường làm yếu lập luận.'],
-  ['Giả định ngầm', 'Kết luận cần một tiền đề không nói ra. Phá tiền đề đó là làm yếu; xác nhận nó là củng cố.'],
-  ['Mẫu khảo sát', 'Mẫu nhỏ, không đại diện, câu hỏi dẫn dắt, người trả lời tự chọn tham gia.'],
-  ['Số lượng và tỷ lệ', 'Số tuyệt đối tăng không có nghĩa tỷ lệ tăng. Số khiếu nại tăng có thể do khiếu nại dễ hơn.'],
-  ['Khái quát quá mức', 'Kết quả hẹp bị mở rộng thành kết luận chung; phương án nói quá ý tác giả.']
-];
-
 const TRAPS = [
   'Phương án đúng một phần: nửa đầu khớp bài, nửa sau sai hoặc nói quá.',
   'Phương án đúng nhưng lạc câu hỏi: nhắc đúng chi tiết trong bài nhưng không trả lời điều được hỏi.',
@@ -115,8 +91,8 @@ const VOCAB = [
   'Giáo trình chính thức không cho danh sách từ; trên web này, mục Từ vựng và sổ Hay quên đóng vai trò đó.'
 ];
 
-const TOC = [['t-format', 'Cấu trúc và cách chấm'], ['t-tc', 'Text Completion'], ['t-se', 'Sentence Equivalence'], ['t-rc', 'Reading'], ['t-tasks', 'Dạng câu hỏi Reading'],
-  ['t-arg', 'Lỗi lập luận'], ['t-traps', 'Bẫy trong phương án'], ['t-pace', 'Thời gian và đoán'], ['t-vocab', 'Học từ vựng']];
+const TOC = [['t-format', 'Cấu trúc và cách chấm'], ['t-tc', 'Text Completion'], ['t-se', 'Sentence Equivalence'],
+  ['t-traps', 'Bẫy trong phương án'], ['t-pace', 'Thời gian và đoán'], ['t-vocab', 'Học từ vựng']];
 
 const ul = (arr) => '<ul class="tips-list">' + arr.map((x) => '<li>' + esc(x) + '</li>').join('') + '</ul>';
 const ol = (arr) => '<ol class="tips-list">' + arr.map((x) => '<li>' + esc(x) + '</li>').join('') + '</ol>';
@@ -124,24 +100,18 @@ const ol = (arr) => '<ol class="tips-list">' + arr.map((x) => '<li>' + esc(x) + 
 views.tips = {
   title: 'Chiến lược',
   render() {
-    let h = '<div class="page-head"><h1>Chiến lược làm bài Verbal</h1><p>Tóm tắt từ The Official Guide to the GRE General Test và quy định đề rút gọn của ETS (áp dụng từ 22/9/2023).</p></div>';
+    let h = '<div class="page-head"><h1>Chiến lược làm bài</h1><p>Cấu trúc đề, Text Completion, Sentence Equivalence và nguyên tắc chung. Reading và Quant có tab kiến thức riêng. Tóm tắt từ The Official Guide to the GRE General Test và quy định đề rút gọn của ETS (áp dụng từ 22/9/2023).</p></div>';
     let m = '';
     m += '<section class="card tips-card" id="t-format"><h2 class="section">Cấu trúc và cách chấm</h2>';
     m += '<div class="table-wrap"><table class="mock-table"><thead><tr><th>Section</th><th>Số câu</th><th>Thời gian</th><th>Ghi chú</th></tr></thead><tbody>' +
       STRUCTURE.map((r) => '<tr>' + r.map((c) => '<td>' + esc(c) + '</td>').join('') + '</tr>').join('') + '</tbody></table></div>';
     m += ul(RULES) + '</section>';
 
-    TYPES.forEach((t) => {
+    TYPES.filter((t) => t.id !== 'rc').forEach((t) => {
       m += '<section class="card tips-card" id="t-' + t.id + '"><h2 class="section">' + esc(t.title) + '</h2>';
       m += '<h3 class="tips-h">Định dạng</h3>' + ul(t.format) + calloutList('tip', 'Cách làm', t.steps, true) + '</section>';
     });
 
-    m += '<section class="card tips-card" id="t-tasks"><h2 class="section">Các dạng câu hỏi Reading</h2>';
-    m += '<div class="table-wrap"><table class="mock-table tips-table"><thead><tr><th>Dạng</th><th>Câu hỏi thường gặp</th><th>Mẹo</th></tr></thead><tbody>' +
-      TASKS.map(([a, b, c]) => '<tr><td><b>' + esc(a) + '</b></td><td><i lang="en">' + esc(b) + '</i></td><td>' + esc(c) + '</td></tr>').join('') + '</tbody></table></div></section>';
-
-    m += '<section class="card tips-card" id="t-arg"><h2 class="section">Lỗi lập luận hay gặp trong đoạn argument</h2>' +
-      '<dl class="tips-dl">' + FLAWS.map(([a, b]) => '<dt>' + esc(a) + '</dt><dd>' + esc(b) + '</dd>').join('') + '</dl></section>';
     m += '<section class="card tips-card" id="t-traps"><h2 class="section">Bẫy trong phương án</h2>' + calloutList('trap', 'Phương án nhiễu hay gặp', TRAPS) + '</section>';
     m += '<section class="card tips-card" id="t-pace"><h2 class="section">Phân bổ thời gian và đoán</h2>' + calloutList('tip', 'Nguyên tắc', PACING) + '</section>';
     m += '<section class="card tips-card" id="t-vocab"><h2 class="section">Học từ vựng cho TC và SE</h2>' + calloutList('tip', 'Cách học', VOCAB) + '</section>';

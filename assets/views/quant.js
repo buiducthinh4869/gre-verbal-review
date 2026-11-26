@@ -91,14 +91,6 @@ function homeScreen() {
   }
   html += '</section>';
 
-  html += calloutList('tip', 'Mẹo làm Quantitative Comparison', ['Bốn phương án cố định: A lớn hơn, B lớn hơn, bằng nhau, không xác định được (D).',
-      'Thử nhiều loại số: số âm, số 0, phân số giữa 0 và 1, số rất lớn, hai số bằng nhau. Hai lần thử cho hai kết quả khác nhau thì chọn D.',
-      'Rút gọn cả hai vế bằng phép biến đổi giữ chiều: cộng trừ cùng một lượng, nhân chia cùng một số DƯƠNG.',
-      'Không chọn D nếu cả hai đại lượng tính ra được con số cụ thể.',
-      'Hình vẽ không theo tỉ lệ: không suy độ dài hay góc vuông từ hình.',
-      'Đọc đúng điều được hỏi: số lượng hay giá trị, tổng hay đơn giá, phần trăm hay điểm phần trăm, đơn vị (nghìn, triệu, phút, giây).',
-      'Điền số: phân số không cần rút gọn; chỉ làm tròn khi đề yêu cầu, và chỉ làm tròn ở bước cuối.'
-    ]);
 
   const keys = Object.keys(st).sort((a, b) => (st[a].ok / st[a].n) - (st[b].ok / st[b].n));
   if (keys.length) {
@@ -270,7 +262,7 @@ function warmItemHtml(w, it, k) {
   const c = w.choices[k];
   const done = !!w.checked[k];
   const ok = done && grade(it, c);
-  let h = '<div class="warm-q"><div class="small muted">Câu ' + (k + 1) + ' · ' + esc(FMT_LABEL[it.fmt]) + ' · ' + esc(TOPICS[it.topic]) + '</div>';
+  let h = '<div class="card warm-card warm-q"><div class="warm-meta">🧮 Câu ' + (k + 1) + ' · ' + esc(FMT_LABEL[it.fmt]) + ' · ' + esc(TOPICS[it.topic]) + (done ? ' · ' + (ok ? '✓ đúng' : '✗ sai') : '') + '</div>';
   const optBtn = (o, label, i, multi) => {
     const on = multi ? (c || []).includes(o) : c === o;
     let cls = '', mark = '';
@@ -302,9 +294,8 @@ export function warmQuantCard(day) {
   const w = warmState(day);
   const n = Object.keys(w.checked).length;
   const nOk = w.items.filter((it, k) => w.checked[k] && grade(it, w.choices[k])).length;
-  return '<div class="card warm-card" id="warmQuant"><div class="card-kind"><span>🧮 Quant khởi động</span><span class="dotsep">' + (n === 2 ? nOk + '/2 đúng' : n + '/2 đã làm') + '</span></div>' +
-    w.items.map((it, k) => warmItemHtml(w, it, k)).join('') +
-    '<div class="small muted">Bộ 4 câu đầy đủ ở <a href="#quant" data-nav="quant">Luyện tập › Quant</a>.</div></div>';
+  return '<div id="warmQuant"><p class="small muted warm-sub">' + (n === 2 ? 'Đã xong: ' + nOk + '/2 câu đúng.' : n + '/2 câu đã làm. Chọn đáp án là chấm ngay.') + ' Bộ 4 câu đầy đủ ở <a href="#quant" data-nav="quant">Luyện tập › Quant</a>.</p>' +
+    w.items.map((it, k) => warmItemHtml(w, it, k)).join('') + '</div>';
 }
 
 function warmUpdate(day, k, fn) {

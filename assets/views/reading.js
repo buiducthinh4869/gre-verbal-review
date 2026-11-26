@@ -77,7 +77,6 @@ function listScreen() {
   h += '<div class="field"><span class="label">Trạng thái</span><div class="chips-wrap">' + Object.keys(STATUS).map((k) => chip('rcp-status', k, f.status === k, STATUS[k])).join('') + '</div></div>';
   h += '<div class="form-grid"><button class="btn primary big" data-act="rcp-next"' + (list.length ? '' : ' disabled') + '>Làm đoạn tiếp theo' + (list.length ? ' (' + list.length + ' đoạn phù hợp)' : ': không có đoạn phù hợp') + '</button></div></section>';
 
-  h += calloutList('tip', 'Cách đọc đoạn văn trước khi trả lời', READ_GUIDE.all.concat(Object.keys(LENGTHS).map((k) => READ_GUIDE[k])));
 
   if (tot.n) {
     h += '<h2 class="section">Theo dạng câu</h2><div class="table-wrap"><table class="mock-table rcp-stats"><thead><tr><th>Dạng</th><th>Câu</th><th>Đúng</th><th>Giây/câu</th><th></th></tr></thead><tbody>' +
@@ -357,24 +356,30 @@ export function dailyPassage(day) {
 /** Thẻ đoạn văn trong ngày cho trang Hôm nay. */
 export function dailyReadingCard(day) {
   const p = dailyPassage(day);
-  if (!p) return '<div class="card warm-card"><div class="card-kind"><span>📖 Reading trong ngày</span></div><p class="muted">Chưa có đoạn văn nào dùng được.</p></div>';
+  if (!p) return '<div class="card warm-card"><p class="muted">Chưa có đoạn văn nào dùng được.</p></div>';
   const todayAt = (a) => a && a.pid === p.id && new Date(a.at + 7 * 3600e3).toISOString().slice(0, 10) === day;
   const a = hist().filter(todayAt).pop();
   const tasks = [...new Set(p.questionIds.map((id) => taskOf(q(id))))];
   const preview = sentPlain(p.sentences[0]);
-  let h = '<div class="card warm-card"><div class="card-kind"><span>📖 Reading trong ngày</span><span class="dotsep">' + esc(LENGTHS[p.length] || '') + ' · ' + p.questionIds.length + ' câu · gợi ý ' + mmss(budgetSec(p)) + '</span></div>' +
-    '<h3 class="warm-title">' + esc(p.title) + '</h3><p class="warm-preview">' + esc(preview.length > 180 ? preview.slice(0, 177) + '…' : preview) + '</p>' +
-    '<div class="small muted">' + tasks.map((t) => esc(TASKS[t].label)).join(' · ') + '</div>';
+  let h = '<div class="card warm-card"><div class="warm-meta">📖 ' + esc(LENGTHS[p.length] || '') + ' · ' + p.questionIds.length + ' câu · gợi ý ' + mmss(budgetSec(p)) + '</div>' +
+    '<h3 class="warm-title">' + esc(p.title) + '</h3><p class="warm-preview">' + esc(preview.length > 220 ? preview.slice(0, 217) + '…' : preview) + '</p>' +
+    '<div class="warm-tags">' + tasks.map((t) => '<span class="tag">' + esc(TASKS[t].label) + '</span>').join('') + '</div>';
   if (a) {
     const ok = a.items.filter((x) => x.ok).length;
     h += '<div class="warm-done ' + (ok === a.items.length ? 'good' : 'bad') + '">' + (ok === a.items.length ? '✓' : '✗') + ' Đã làm hôm nay: ' + ok + '/' + a.items.length + ' câu đúng, ' + mmss(a.sec) + '</div>' +
-      '<div class="form-grid"><button class="btn" data-act="rcp-daily" data-id="' + esc(p.id) + '">Làm lại</button></div>';
-  } else h += '<div class="form-grid"><button class="btn primary" data-act="rcp-daily" data-id="' + esc(p.id) + '">Làm ngay (chế độ Học)</button></div>';
+      '<div class="warm-actions"><button class="btn" data-act="rcp-daily" data-id="' + esc(p.id) + '">Làm lại</button></div>';
+  } else h += '<div class="warm-actions"><button class="btn primary" data-act="rcp-daily" data-id="' + esc(p.id) + '">Làm ngay (chế độ Học)</button></div>';
   return h + '</div>';
 }
 actions['rcp-daily'] = (t) => {
   if (!pas(t.dataset.id)) return;
   prefs(); R.mode = 'study';
   Object.assign(R, { screen: 'do', pid: t.dataset.id, cur: 0, choices: {}, checked: {}, start: now(), attempt: null });
+  goView('reading');
+};
+// Từ tab kiến thức Reading: mở Luyện tập › Reading, lọc sẵn một dạng câu
+actions['rcp-drill-go'] = (t) => {
+  Object.assign(prefs(), { tasks: [t.dataset.id], length: 'all', status: 'all' }); savePrefs();
+  R.screen = 'list'; R.attempt = null;
   goView('reading');
 };

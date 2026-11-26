@@ -1102,24 +1102,24 @@ h1, h2, h3, .hero-title, .page-head h1, .word-big, .meaning-big, .group-head h3,
 /* Thanh tab có 8 mục: màn vừa dùng nhãn ngắn, màn hẹp hơn chỉ còn biểu tượng (nhãn trong title);
    điện thoại: Thêm từ chuyển vào menu tài khoản để thanh dưới còn 7 mục */
 .me-menu .menu-add { display: none; }
-@media (min-width: 1080px) {
+@media (min-width: 1200px) {
   .brand-text { display: none; }
   .tab { padding: 8px 9px; gap: 6px; }
   .tab .tab-long { display: none; }
   .tab .tab-short { display: inline; }
 }
-@media (min-width: 860px) and (max-width: 1079px) {
+@media (min-width: 860px) and (max-width: 1199px) {
   .tab .tab-long, .tab .tab-short { display: none; }
   .tab { padding: 8px 10px; position: relative; }
   .tab .badge { position: absolute; top: 0; right: -2px; }
 }
 @media (max-width: 859px) {
-  .tab[data-nav="add"], .tab[data-nav="tips"] { display: none; }
+  .tab[data-nav="tips"] { display: none; }
   .me-menu .menu-add { display: block; }
   .tab { padding: 6px 0; font-size: 10.5px; letter-spacing: -.01em; }
   .tab .tab-short { white-space: nowrap; }
 }
-@media (min-width: 1180px) { .brand-text { display: inline; } }
+@media (min-width: 1440px) { .brand-text { display: inline; } }
 
 /* Tab Quant hằng ngày (#quant) */
 .qz-today { margin: 0 0 16px; }
@@ -1167,21 +1167,48 @@ h1, h2, h3, .hero-title, .page-head h1, .word-big, .meaning-big, .group-head h3,
   .px-item small { display: block; }
 }
 
-/* Trang Hôm nay: khởi động Reading và Quant */
-.t-warm { margin: 22px 0; }
-.t-h2 { font: 500 21px/1.3 var(--serif); margin: 0 0 12px; }
-.warm-grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); align-items: start; }
-.warm-card { margin: 0; }
-.warm-title { font: 500 19px/1.3 var(--serif); margin: 6px 0; }
-.warm-preview { font: 400 16px/1.6 var(--serif); color: var(--muted); margin: 0 0 8px; }
-.warm-done { font-weight: 600; margin: 10px 0 4px; }
+/* Trang Hôm nay: Reading trong ngày và Quant khởi động (mỗi thẻ một hàng) */
+.t-warm { margin: 36px 0 12px; }
+.t-h2 { font: 500 22px/1.3 var(--serif); margin: 0 0 14px; }
+.t-h2-gap { margin-top: 32px; }
+.warm-card { margin: 0 0 18px; padding: 24px 26px; }
+.warm-meta { font-size: 13px; color: var(--muted); margin-bottom: 10px; }
+.warm-title { font: 500 20px/1.35 var(--serif); margin: 0 0 10px; }
+.warm-preview { font: 400 16.5px/1.7 var(--serif); color: var(--muted); margin: 0 0 14px; }
+.warm-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 18px; }
+.warm-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.warm-done { font-weight: 600; margin: 4px 0 14px; }
 .warm-done.good { color: var(--good); }
 .warm-done.bad { color: var(--bad); }
-.warm-q { padding: 10px 0 14px; border-bottom: 1px solid var(--rule); margin-bottom: 10px; }
-.warm-q:last-of-type { border-bottom: 0; }
-.warm-q .qz-given { font-size: 16px; padding: 8px 10px; }
-.warm-q .qz-qty b { font-size: 16px; }
-.warm-q .opt { min-height: 0; padding: 6px 10px; font-size: 15px; }
-.warm-num { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.warm-sub { margin: -4px 0 14px; }
+.warm-q .qz-given { margin-top: 4px; }
+.warm-q .options { display: grid; gap: 10px; }
+.warm-num { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-top: 6px; }
+.warm-q .rcp-verdict { margin-top: 16px; }
+.warm-q .explain { margin-top: 10px; }
 .toc-sec { scroll-margin-top: 130px; }
 @media (min-width: 900px) { .toc-sec { scroll-margin-top: 80px; } }
+
+/* Tab kiến thức Reading / Quant */
+.learn-card { margin: 0 0 22px; padding: 26px 28px; }
+.learn-h { font: 500 20px/1.35 var(--serif); margin: 0 0 8px; }
+.learn-card > p { margin: 0 0 6px; }
+.learn-actions { display: flex; justify-content: flex-end; margin-top: 18px; }
+.sample { margin-top: 18px; padding: 16px 18px; border: 1px dashed var(--rule-strong); border-radius: 10px; }
+.sample-head { font-weight: 600; margin-bottom: 10px; }
+.sample-passage summary, .sample-ans summary { cursor: pointer; color: var(--accent); font-size: 14px; margin: 6px 0; }
+.sample-passage .rc-text { margin-top: 8px; }
+.sample-opts { margin: 6px 0 10px; padding-left: 1.6em; }
+.sample-opts li { margin: 0 0 6px; line-height: 1.5; }
+.sample-ans[open] { padding-top: 4px; }
+.sample-ans .explain { margin-top: 8px; }
+.tips-card { padding: 26px 28px; }
+.page-head p a { white-space: nowrap; }
+
+/* Khoảng thở chung */
+.callout { margin: 16px 0; padding: 14px 16px; }
+.callout .tips-list li { margin-bottom: 8px; }
+.tabs { gap: 4px; }
+.topbar-right { margin-left: auto; padding-left: 16px; gap: 10px; }
+.rcp-actions, .form-grid { row-gap: 12px; }
+

@@ -14,6 +14,7 @@ import './views/notebook.js';
 import './views/tips.js';
 import './views/reading.js';
 import './views/quant.js';
+import './views/learn.js';
 import './views/addword.js';
 import './views/account.js';
 import './views/admin.js';

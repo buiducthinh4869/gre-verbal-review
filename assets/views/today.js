@@ -220,7 +220,6 @@ views.today = {
         (more ? '<button class="btn" data-act="more-new">Học thêm 5 từ mới</button>' : '') + '<button class="btn" data-act="quick-gre">Làm 10 câu GRE</button></div></div>';
     }
     m += '</section>';
-    m += '<section id="td-warm" class="toc-sec t-warm"><h2 class="t-h2">Khởi động Reading và Quant</h2><div class="warm-grid">' + dailyReadingCard(t) + warmQuantCard(t) + '</div></section>';
     m += '<section id="td-topics" class="toc-sec"><div class="t-grid"><div class="t-main">' + topicsBlock(L, done, read, t) + '</div><div class="t-side">' + quickBlock(L, read) + leechBlock(L) + '</div></div></section>';
     m += lastMockLine();
     m += '<section id="td-progress" class="toc-sec"><details class="t-section t-progress"><summary><h2>Tiến độ theo cụm</h2></summary>';
@@ -236,7 +235,9 @@ views.today = {
         '</div></div>';
     });
     m += '<div class="legend">' + ['Chưa học', 'Hộp 1', 'Hộp 2', 'Hộp 3', 'Hộp 4', 'Hộp 5'].map((l, b) => '<span><i class="b' + b + '"></i>' + l + '</span>').join('') + '</div></details></section>';
-    h += tocLayout([['td-steps', 'Từ vựng hôm nay'], ['td-warm', 'Reading và Quant'], ['td-topics', 'Chủ đề và câu nhanh'], ['td-progress', 'Tiến độ theo cụm']], m, 'Hôm nay');
+    m += '<section id="td-warm" class="toc-sec t-warm"><h2 class="t-h2">Reading trong ngày</h2>' + dailyReadingCard(t) +
+      '<h2 class="t-h2 t-h2-gap">Quant khởi động</h2>' + warmQuantCard(t) + '</section>';
+    h += tocLayout([['td-steps', 'Từ vựng hôm nay'], ['td-topics', 'Chủ đề và câu nhanh'], ['td-progress', 'Tiến độ theo cụm'], ['td-warm', 'Reading và Quant']], m, 'Hôm nay');
     App.keyHandler = (e) => { if (e.key === 'Enter' && q.total && !isTyping(e) && !(e.target && e.target.closest && e.target.closest('button, summary, a'))) { e.preventDefault(); startDaily(); } };
     return h;
   },
